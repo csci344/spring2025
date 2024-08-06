@@ -1,0 +1,85 @@
+{% assign all_assignments = site.assignments | where: 'type', 'tutorial' %}
+
+{% assign everything = all_assignments | concat: site.lectures %}
+{% assign labs = site.assignments | where: 'type', 'tutorial' %}
+{% assign modules = site.lectures | where: 'type', 'module' %}
+{% assign quizzes = site.lectures | where: 'type', 'quiz' %}
+{% assign main_listing = modules | concat: quizzes %}
+{% assign dates = everything | sort: 'due_date'| map: 'due_date' | uniq %}
+<h2 id="schedule">Weekly Topics</h2> 
+<p>Note that the schedule is dynamic and subject to change.</p>
+<table class="schedule-simple">
+    <thead>
+        <tr>
+            <th>Week</th>
+            <th></th>
+            <th>Topic</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+    {% assign last_week = 0 %}
+    {% assign num = 0 %}
+    {% for date in dates %}
+        {% assign topic = site.lectures | where: 'due_date', date | where: 'type', 'module' | last %}
+        {% assign holiday = site.lectures | where: 'due_date', date | where: 'type', 'holiday' | last %}
+        {% assign lecture = main_listing | where: 'due_date', date | last %}
+                <!-- Calculate the Week -->
+        {% assign dateStart = site.term_start_date | date: '%s' %}
+        {% assign lectureDate = date | date: '%s' %}
+        {% assign diffSeconds = lectureDate | minus: dateStart %}
+        {% assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 | plus: 1 %}
+        {% assign week = diffDays | divided_by: 7 | plus: 1 %}
+        {% assign prefix = None %}
+                        
+        {% if topic %}
+            {% assign rowClass = "section" %}
+            {% assign num = num | plus : 1 %}
+            {% assign prefix = "Topic " | append: num %}
+        {% endif %}
+        <tr {% if week != last_week and week != 1 %}style="border-top:solid 1px #CCC;"{% endif %}>
+            <th>
+            {% if week != last_week %}
+                Week {{week}}
+            {% endif %}
+            <span class="due-date">
+                {{ date | date: "%m/%d/%y" }}
+            </span>
+            </th>
+
+            <!-- If lecture -->
+            <td> 
+                {% if lecture.type != 'tutorial' %}
+                    {{ date | date: "%a, %m/%d" }}
+                {% else %}
+                    Tutorial
+                {% endif %} 
+            </td>
+            {% if lecture %}
+                <td>
+                    {% assign className = 'lec' %}
+                   
+                    {% if lecture.type == 'tutorial' %}
+                        {% assign className = 'lab' %}
+                        {% assign prefix = "Tutorial " | append: lecture.num %}
+                    {% endif %} 
+                    {% if lecture.type == 'review' or lecture.type == 'exam' %}
+                        {% assign prefix = lecture.title %}
+                    {% endif %}
+                    {% if lecture.draft == 1 %}
+                        {{ lecture.title }} 
+                    {% else %} 
+                        <a href="{{site.baseurl}}{{lecture.url}}">{{ lecture.title }}</a>
+                    {% endif %}
+                </td>
+            {% else %}
+                <td>
+                <!-- If no lecture -->
+                
+                </td>
+            {% endif %}
+        </tr>
+        {% assign last_week = week %}
+    {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,52 @@
+title: "CSCI 344: Fall 2024"
+subtitle: "Advanced Web Technology"
+email: vanwars@unca.edu
+baseurl: "/fall2024"
+term_start_date: "2024-08-19"
+term_end_date: "2024-12-10"
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jekyllrb
+github_username:  jekyll
+
+timezone: "America/New_York"
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+exclude: 
+  - course-files/*/*/solutions/node_modules*
+  - course-files/*/*/node_modules*
+  - course-files/*/*/answers/node_modules*
+  - course-files/*/*/solutions/env*
+  - course-files/*/*/env*
+  - course-files/*/*/answers/env*
+  - _lectures/draft
+  - _assignments/draft
+  - course-files/administrative
+  - course-files/build
+  - course-files/exams
+  - course-files/*/drafts
+collections:
+  assignments:
+    output: true
+    sort_by: ordering
+    permalink: /assignments/:name
+  lectures:
+    output: true
+    sort_by: lecture_date
+    permalink: /lectures/:name
+  activities:
+    output: true
+    permalink: /activities/:name
+
+
+collections_dir: pages
+
+sass:
+  style: compact
+  sass_dir: _sass
+
+deadline_reminder: true
+
+
