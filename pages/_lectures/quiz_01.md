@@ -4,7 +4,7 @@ title: "Quiz 1: JavaScript"
 type: quiz
 draft: 1
 num: 1
-due_date: 2024-10-11
+due_date: 2024-10-16
 ---
 
 ## The Actual Quiz 

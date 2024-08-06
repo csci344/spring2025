@@ -29,6 +29,9 @@ notes: "One year of programming experience is strongly recommended."
 ## Course Format
 The course includes a mix of lectures, in-class activities, tutorials, quizzes, homework, and a final exam. It is your responsibility to keep up-to-date on class material and announcements, as the schedule is subject to change. This includes material presented and announcements made in class, via email, or on Moodle.
 
+<!-- topics and labs here -->
+{% include schedule-very-simple.html %}
+
 ### Class Participation and In-Class Exercises (15%)
 We will use our scheduled class time to go over web development and programming concepts, do practice problems together and make sure your questions get answered. Class meetings will be in person. Organizationally, most topics will span about a week (see the [course schedule](../)). Most class sessions have accompanying readings.
 

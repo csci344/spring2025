@@ -1,0 +1,41 @@
+{% assign lectures = site.lectures | where: 'type', 'module' | where_exp: "lecture", "lecture.is_review != 1" %}
+{% assign tutorials = site.assignments | where: 'type', 'tutorial' %}
+
+
+<div class="schedule-simple">
+    <div class="header">
+        <h2 id="schedule">Weekly Topics & Tutorials</h2>
+        <p>Note that these topics are subject to change.</p>
+    </div>
+    <div class="group">
+        <h3>Topics</h3>
+        <ol>
+            {% for lecture in lectures %}
+            <li>
+
+                {% if lecture.draft == 1 %}
+                {{ lecture.title }}
+                {% else %}
+                <a href="{{site.baseurl}}{{lecture.url}}">{{ lecture.title }}</a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+
+    <div class="group">
+        <h3>Tutorials</h3>
+        <ol>
+            {% for lab in tutorials %}
+            <li>
+
+                {% if lab.draft == 1 %}
+                {{ lab.title }}
+                {% else %}
+                <a href="{{site.baseurl}}{{lab.url}}">{{ lab.title }}</a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+</div>

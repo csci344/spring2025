@@ -4,7 +4,7 @@ title: "Web Sockets & Chat Apps"
 type: module
 num: 15
 draft: 1
-due_date: 2024-11-27
+due_date: 2024-11-22
 ---
 
 ## Readings

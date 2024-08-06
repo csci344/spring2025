@@ -1,7 +1,7 @@
 ---
 layout: module
-title: Spring Break
+title: Thanksgiving Break
 type: holiday
 draft: 1
-due_date: 2024-10-18
+due_date: 2024-11-29
 ---

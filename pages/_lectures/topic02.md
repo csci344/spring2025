@@ -3,7 +3,7 @@ layout: two-column
 title: The Internet & Society
 type: module
 num: 2
-draft: 1
+draft: 0
 due_date: 2024-08-21
 ---
 

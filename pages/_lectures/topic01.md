@@ -3,7 +3,7 @@ layout: two-column
 title: Intro to the Internet
 type: module
 num: 1
-draft: 1
+draft: 0
 due_date: 2024-08-19
 ---
 
