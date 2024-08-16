@@ -3,7 +3,7 @@ layout: assignment-two-column
 title: Make Your First Website
 type: tutorial
 abbreviation: Tutorial 2
-draft: 1
+draft: 0
 points: 6
 num: 2
 due_date: 2024-08-30

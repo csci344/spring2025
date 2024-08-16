@@ -105,70 +105,68 @@ layout: default
                 <td>
                     {% assign className = 'lec' %}
                     {% if lecture.type == 'review' or lecture.type == 'exam' or lecture.type == 'quiz'%}
-                    {% assign className = 'quiz' %}
-                    {% assign prefix = lecture.type | append: " " | append: lecture.num %}
+                        {% assign className = 'quiz' %}
+                        {% assign prefix = lecture.type | append: " " | append: lecture.num %}
                     {% endif %}
                     {% if lecture.type == 'tutorial' %}
-                    {% assign className = 'lab' %}
-                    {% assign prefix = "Tutorial " | append: lecture.num %}
+                        {% assign className = 'lab' %}
+                        {% assign prefix = "Tutorial " | append: lecture.num %}
                     {% endif %}
 
                     <!-- output -->
                     {% if lecture.type == "tutorial" %}
 
                     {% elsif lecture.draft == 1 and prefix %}
-                    <span class="badge">
-                        {{ prefix }}
-                    </span>
-                    {{ lecture.title }}
+                        <span class="badge">
+                            {{ prefix }}
+                        </span>
+                        {{ lecture.title }}
                     {% elsif prefix %}
-                    <a class="{{ className }}" href="{{site.baseurl}}{{lecture.url}}">
-                        {{ prefix }} <i class="fas fa-link"></i>
-                    </a>
-                    {{ lecture.title }}
+                        <a class="{{ className }}" href="{{site.baseurl}}{{lecture.url}}">
+                            {{ prefix }} <i class="fas fa-link"></i>
+                        </a>
+                        {{ lecture.title }}
                     {% else %}
-                    {{ lecture.title }}
+                        {{ lecture.title }}
                     {% endif %}
                 </td>
                 {% elsif lab_start %}
-                <!-- Display Lab -->
-                {% assign classname = "lab" %}
-                <td>{{ date | date: "%a, %m/%d" }}</td>
-                <td>
-                    {% if lab_start.draft == 1 %}
-                    <strong>{{ lab_start.abbreviation }}:</strong> {{ lab_start.title }}
-                    {% else %}
-                    <a href="{{site.baseurl}}{{lab_start.url}}" class="{{classname}}">
-                        {{ lab_start.abbreviation }}
-                        <i class="fa fa-link"></i>
-                    </a> {{ lab_start.title }}
-                    {% endif %}
-                </td>
+                    <!-- Display Lab -->
+                    {% assign classname = "lab" %}
+                    <td>{{ date | date: "%a, %m/%d" }}</td>
+                    <td>
+                        {% if lab_start.draft == 1 %}
+                            <strong>{{ lab_start.abbreviation }}:</strong> {{ lab_start.title }}
+                        {% else %}
+                            <a href="{{site.baseurl}}{{lab_start.url}}" class="{{classname}}">
+                                {{ lab_start.abbreviation }}
+                                <i class="fa fa-link"></i>
+                            </a> {{ lab_start.title }}
+                        {% endif %}
+                    </td>
                 {% else %}
-                <!-- If no lecture -->
-                <td>{{ date | date: "%a, %m/%d" }}</td>
-                <td></td>
+                    <!-- If no lecture -->
+                    <td>{{ date | date: "%a, %m/%d" }}</td>
+                    <td></td>
                 {% endif %}
                 <td>
                     {% for assignment in assignments %}
-                    {% assign classname = "pj" %}
-                    {% if assignment.type == "homework" %}
-                    {% assign classname = "hw" %}
-                    {% endif %}
-                    {% if assignment.type == "tutorial" %}
-                    {% assign classname = "lab" %}
-                    {% endif %}
+                        {% assign classname = "pj" %}
+                        {% if assignment.type == "homework" %}
+                            {% assign classname = "hw" %}
+                        {% endif %}
+                        {% if assignment.type == "tutorial" %}
+                            {% assign classname = "lab" %}
+                        {% endif %}
 
-                    {% if assignment.type == "tutorial" %}
-                    {{ assignment.abbreviation }}<br>
-                    {% elsif assignment.draft == 1 %}
-                    <strong>{{ assignment.abbreviation }}:</strong> {{ assignment.title }}<br>
-                    {% else %}
-                    <a href="{{site.baseurl}}{{assignment.url}}" class="{{classname}}">
-                        {{ assignment.abbreviation }}
-                        <i class="fa fa-link"></i>
-                    </a> {{ assignment.title }}<br>
-                    {% endif %}
+                        {% if assignment.draft == 1 %}
+                            {{ assignment.abbreviation }}<br>
+                        {% else %}
+                            <a href="{{site.baseurl}}{{assignment.url}}" class="{{classname}}">
+                                {{ assignment.abbreviation }}
+                                <i class="fa fa-link"></i>
+                            </a> {{ assignment.title }}<br>
+                        {% endif %}
                     {% endfor %}
                 </td>
             </tr>

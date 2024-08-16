@@ -4,40 +4,95 @@ title: The Internet & Society
 type: module
 num: 2
 draft: 0
-due_date: 2024-08-21
+due_date: 2024-08-26
 ---
 
-Why did the Internet take off so quickly? Why does it look the way it does? How does the Internet reflect the same desires, interests, and curiosities (and which ones) as our offline world? Do the same systems of power that function "offline" function "online"?
+What are some of the societal impacts and challenges that have resulted from the networked information and communication technologies powered by the Internet?
 
 ## Assigned Readings
-1. Watch: Black Mirror (Oct. 21, 2016). <a href="https://www.netflix.com/watch/80104627" target="_blank">Nosedive</a>, Season 3, Episode 1. Netflix.
-    * If you don't have Netflix, you can purchase it for $1.99 on Amazon.
-    * Content warning: some profanity and lewd language
-2. If you do not want to watch Nosedive, please read Ahmed, Shazeda (May, 2019). <a href="https://logicmag.io/china/the-messy-truth-about-social-credit/" target="_blank">The Messy Truth About Social Credit (China)</a>. Logic Magazine.
+pick one of the topics from the following list and read:
+<table>
+    <tr>
+        <th>Internet Censorship</th>
+        <td>
+            <ul>
+                <li>
+                    <a href="https://townsendcenter.berkeley.edu/blog/internet-censorship-part-1-technology-working-web">https://townsendcenter.berkeley.edu/blog/internet-censorship-part-1-technology-working-web</a>
+                </li>
+                <li>
+                    <a href="https://townsendcenter.berkeley.edu/blog/internet-censorship-part-1-technology-working-web">https://townsendcenter.berkeley.edu/blog/internet-censorship-part-2-technology-information-control</a>
+                </li>
+                
+                <li>
+                    <a href="https://www.politico.com/news/magazine/2020/09/01/china-great-firewall-generation-405385">In China, the ‘Great Firewall’ Is Changing a Generation</a>. Politico
+                </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <th>Surveillance</th>
+        <td>
+            <ul>
+                <li>
+                    <a href="https://www.theguardian.com/world/interactive/2013/nov/01/snowden-nsa-files-surveillance-revelations-decoded" target="_blank">NSA Files Decoded</a>. The Guardian. 2013
+                </li>
+                <li>
+                    <a href="https://www.nytimes.com/2019/01/29/opinion/artificial-intelligence-surveillance.html" target="_blank">Warning! Everything Is Going Deep: ‘The Age of Surveillance Capitalism’</a>. Thomas Friedman. NY Times.
+                </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <th>Security & Hacking</th>
+        <td>
+            <ul>
+                <li>
+                    <a href="https://arstechnica.com/information-technology/2016/01/how-to-search-the-internet-of-things-for-photos-of-sleeping-babies/" target="_blank">"Internet of Things" security is hilariously broken and getting worse</a>. Ars Technica
+                </li>
+                <li>
+                    <a href="https://www.wired.com/2015/07/hackers-remotely-kill-jeep-highway/" target="_blank">Hackers Remotely Kill a Jeep on the Highway—With Me in It</a>. Wired
+                </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <th>Fake News</th>
+        <td>
+            <ul>
+                <li>
+                    <a href="https://www.politico.com/magazine/story/2016/12/fake-news-history-long-violent-214535" target="_blank">The Long and Brutal History of Fake News</a>. Politico.
+                </li>
+                <li>
+                    <a href="https://www.nytimes.com/2024/08/12/opinion/uk-riots-far-right.html" target="_blank">What’s Happening in Britain Is Shocking. But It’s Not Surprising</a>. NY Times.
+                </li>
+                <li>
+                    <a href="https://www.netflix.com/title/80117542" target="_blank">The Great Hack</a>. Netflix.
+                </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <th>Social Media</th>
+        <td>
+            <ul>
+                <li>
+                    <a href="https://www.wsj.com/articles/facebook-knows-instagram-is-toxic-for-teen-girls-company-documents-show-11631620739?mod=hp_lead_pos7&amp;mod=article_inline">Facebook Knows Instagram Is Toxic for Teen Girls, Company Documents Show</a>
+                </li>
+                <li>
+                    <a href="https://www.wsj.com/articles/facebook-services-are-used-to-spread-religious-hatred-in-india-internal-documents-show-11635016354?mod=article_inline">Facebook Services Are Used to Spread Religious Hatred in India, Internal Documents Show</a>
+                </li>
+                <li>
+                    <a href="https://www.wsj.com/articles/facebook-bad-for-you-360-million-users-say-yes-company-documents-facebook-files-11636124681?mod=article_inline">Is Facebook Bad for You? It Is for About 360 Million Users, Company Surveys Suggest</a>
+                </li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
 
 ## Slides
-* <a href="https://docs.google.com/presentation/d/1EgbqAkA-qiJNz5d0ro8DO2nAth_IuLT8MD9uY6uh91A/edit?usp=sharing" target="_blank">The Internet & Society</a>
+Slides will be posted before class.
 
-## Discussion Questions
+<!-- * <a href="https://docs.google.com/presentation/d/1EgbqAkA-qiJNz5d0ro8DO2nAth_IuLT8MD9uY6uh91A/edit?usp=sharing" target="_blank">The Internet & Society</a> -->
 
-### Nosedive
-* What is being measured? 
-* How is meaning assigned to a score?
-* How does the system not only "measure" reality, but also shape it?
-* What resources & opportunities does this system mediate?
-
-### Other Societal Questions
-* Does the Internet amplify all voices equally?
-* Why is privacy such a huge concern for the Web / Internet?
-* How does life online shape life offline (and vice versa)? 
-
-<!-- ### Friday: Societal Considerations
-While there are *many* societal considerations associated with the Internet, for your first tutorial, you will consider 3: privacy, censorship, and representation. Please read the following short articles: 
-
-* Data Privacy: <a href="https://teachprivacy.com/10-reasons-privacy-matters/">10 Reasons Why Data Privacy Matters</a>. Daniel Solove, 2014.
-* Censorship: <a href="https://www.security.org/vpn/internet-censorship/">Internet Censorship in 2022: The Impact of Internet Restrictions</a>. Aliza Vigderman & Gabe Turner. 
-* Censorship: https://cyber.harvard.edu/pubrelease/internet-control/
-* Representation: Wikipedia?
-{:.compact}
- -->
 
