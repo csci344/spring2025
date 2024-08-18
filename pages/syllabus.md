@@ -27,31 +27,27 @@ notes: "One year of programming experience is strongly recommended."
 </style>
 
 ## Course Format
-The course includes a mix of lectures, in-class activities, tutorials, quizzes, homework, and a final exam. It is your responsibility to keep up-to-date on class material and announcements, as the schedule is subject to change. This includes material presented and announcements made in class, via email, or on Moodle.
+The course includes a mix of lectures, in-class activities, tutorials, quizzes, and homework. It is your responsibility to keep up-to-date on class material and announcements, as the schedule is subject to change. This includes material presented and announcements made in class, via email, or on Moodle.
 
 <!-- topics and labs here -->
 {% include schedule-very-simple.html %}
 
-### Class Participation and In-Class Exercises (15%)
+### Class Participation and In-Class Exercises (10%)
 We will use our scheduled class time to go over web development and programming concepts, do practice problems together and make sure your questions get answered. Class meetings will be in person. Organizationally, most topics will span about a week (see the [course schedule](../)). Most class sessions have accompanying readings.
 
 * I will take attendance during every class session. You may miss three class sessions -- no questions asked -- without a grade penalty. Any additional absences (beyond the three "freebies") will impact your participation grade (and more to the point, your capacity to productively engage with the class).
 
-
-### Tutorials (15%)
+### Tutorials (20%)
 Most Fridays, we will complete a coding / design "tutorial." Tutorials are intended to help you:
-1. Become familiar with the types of strategies you might use to approach problems (which will be closely related to the homework / projects).
+1. Become familiar with the types of strategies you might use to approach problems (which will be closely related to the homework).
 1. Get comfortable writing lots of programs (practice makes perfect!)
 1. Assess what you know and don't know, so that you can make a plan to review various ideas and/or attend office hours.
 
 ### Homework (50%)
-You will be given regular homework assignments that are intended to give you additional practice with the course ideas beyond the tutorials. They are each designed to take between 6-8 hours to complete, so leave yourself enough time!
+You will be given regular homework assignments that are intended to give you additional practice with the course ideas beyond the tutorials. They are each designed to take between **6-8 hours** to complete, so leave yourself enough time!
 
-### Quizzes (10%)
-There will be 2 quizzes, which are intended to ensure that you understand the programming and web-related concepts relevant to the course. Your final exam score can replace one of your quiz scores if you did poorly on a quiz.
-
-### Final Exam (10%)
-There will be a cumulative final exam that will be administered during your regularly scheduled final exam slot.
+### Quizzes (20%)
+There will be 2-3 quizzes, which are intended to ensure that you understand the programming and web-related concepts relevant to the course. 
 
 ## Expectations
 * You will come to class prepared and ready to engage in an intellectual discussion about the readings and concepts.
@@ -72,10 +68,7 @@ As this is a programming course, you will be using the free software programs li
 * <a href="https://nodejs.org/en/" target="_blank">node.js</a> and <a href="https://www.npmjs.com/" target="_blank">npm</a>
 * <a href="https://www.python.org/downloads/" target="_blank">Python</a>
 * <a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a>
-* <a href="https://devcenter.heroku.com/articles/heroku-cli" target="_blank">Heroku CLI</a>
 
-
-This software will also be installed on all of the classroom computers.
 
 ### Course References
 I have compiled a list of web-based reference materials on the course website:
@@ -87,7 +80,7 @@ I have compiled a list of web-based reference materials on the course website:
 * [Design Resources](/fall2024/design-reference)
 * [Accessibility Resources](/fall2024/accessibility-reference)
 
-Before each class, you may be assigned some pre-recorded videos, readings, or tutorial links from this resource guide, which will cover specific concepts and ideas that we will be practicing during lecture. Please set aside time to review these materials, as they will make the assignments and projects easier!
+Before each class, you may be assigned some videos, readings, or tutorial links from this resource guide, which will cover specific concepts and ideas that we will be practicing during lecture. Please set aside time to review these materials, as they will make the assignments easier!
 
 ## Getting Questions Answered
 
@@ -106,34 +99,29 @@ You may also talk to me about concerns about your progress in the course, person
 
 
 ## Grading
-Your course grade is calculated based on homework and projects, quizzes, tutorials, and attendance / participation:
+Your course grade is calculated based on homework, quizzes, tutorials, and attendance / participation:
 
 {:.small}
-| **Homework and Projects** | 50% |
-| **Tutorials** | 15% |
-| **Attendance & Participation** | 15% |
-| **Quizzes** | 10% |
-| **Final Exam** | 10% |
+| **Homework** | 50% |
+| **Tutorials** | 20% |
+| **Attendance & Participation** | 10% |
+| **Quizzes** | 20% |
 
 Final grades are assigned on a fixed scale: 93-100 is 
-an A, 90-92.99 is an A-, 87-89.99 is a B+, etc. Some other logistics:
-
-1. Final course grades will not be rounded or curved.
-1. There will not be a final exam, but you will be presenting your final projects during exam time.
+an A, 90-92.99 is an A-, 87-89.99 is a B+, etc. Final course grades will not be rounded or curved.
 
 > ### NOTE: Leniency is built into the course
 > * You can drop your lowest tutorial score. 
 > * You may miss **three** class sessions without your participation grade being affected.
 > * You may resubmit assignments with a 10% penalty.
-> * Your final exam score may replace one of your quiz scores.
 >
 > Use this leniency wisely. I will not grant additional exceptions unless the circumstances are exceptional, and this will need to be done in coordination with Dean of Student's office.
 
-### Homework & Project Grading
+### Homework Grading
 Homework will be due approximately every other week at 11:59pm on the specified date. Homework will be graded according to a published rubric that will be given when the assignment is released. 
 
 #### Late Policy
-* Homework and project assignments must be submitted before the due time. Late work will be accepted within 30 days of the due date/time, with a 20% late penalty. No homework will be accepted if it is submitted after 30 days have passed.
+Homework assignments must be submitted before the due time. Late work will be accepted within 2 weeks of the due date/time, with a 20% late penalty. No homework will be accepted beyond the 14 day cutoff.
  
 #### Resubmission Policy
 If you did not successfully complete the objectives of a homework assignment, you may correct your errors and resubmit. However, your grade will be penalized 10% with each subsequent attempt. 
@@ -149,10 +137,10 @@ Tutorials will be graded according to the following scale (from 0-3 points):
 | 2pts | Check | Most of the assignment was completed; works as expected. |
 | 3pts | Check Plus | assignment completed. Works as expected. |
 
-Tutorials are due by 11:59PM on Friday (but I recommend that you just submit them at the end of class). I **do not accept late tutorials** because I post the solutions right away.
+Tutorials are due by 11:59PM on Friday (but I recommend that you just submit them at the end of class). I **do not accept late tutorials**.
 
-### Quizzes & Final Exam
-There will be 2 quizzes and one final exam over the course of the semester. The purpose of these assessments is to ensure that you understand the programming and design concepts that we have been studying.
+### Quizzes
+There will be 3 quizzes over the course of the semester. The purpose of these assessments is to ensure that you understand the programming and design concepts that we have been studying. The final quiz will happen during the scheduled final exam time slot.
 
 ### Regrading Policy
 I have been known to make the occasional grading error. If you have any grading questions/concerns, please email me within a week to resolve the issue.
@@ -164,17 +152,11 @@ I have been known to make the occasional grading error. If you have any grading 
 * Be respectful of others during classroom discussions and presentations.
 * We may have the occasional remote class session. We can decide as a class how we want to do that.
 
-### COVID Policies
-* **Masking.** Currently, there is no masking mandate at UNCA with the exception of healthcare settings and University shuttles. Please respect individuals’ personal decisions to either wear or not wear a mask in any given circumstance.
-    * ***Note:*** I may require masks in my office. I may also request that students voluntarily continue wearing masks in class, with the understanding that masking cannot be required.
-* **Social distancing.** There is no official policy regarding social distancing in the classroom. Please be sensitive to the fact that everyone’s comfort level will vary. Whenever possible, please keep several feet between yourself and a classmate. If a classmate requests more space, please do so kindly and without judgment or question. 
-* **Illness policy.** Please stay home if you are ill, and email me -- I will let you know how you can catch up / participate remotely.
-
 ### Academic Honesty
 In the past, there have been a few unfortunate instances in which students have presented work other than their own. Here are some guidelines to help you understand what is and is not appropriate"
 
 #### Tutorials
-Helping other students with their in-class tutorial code is allowed and encouraged, but each student should type their own solution unless otherwise specified in the Tutorial instructions.
+Helping other students with their in-class tutorial code is allowed and encouraged, but each student should type their own solution unless otherwise specified in the tutorial instructions.
 
 #### Homework
 You are allowed and encouraged to discuss general approaches to solving problems, but all work you submit must be your own. Working “together” and presenting variants of the same file is not acceptable. Here are some specific guidelines to make sure you don’t cross the line:
@@ -182,50 +164,66 @@ You are allowed and encouraged to discuss general approaches to solving problems
 * While working with other students, it is perfectly acceptable to ‘look’ at each other’s code (perhaps while helping someone to debug), but you should NEVER be scribing (typing or writing) your own work while looking at someone else’s (on a computer screen, paper, whiteboard, etc.).
 * Uploading materials from this course to websites that sell such content to students is prohibited by UNCA’s academic integrity policies, and may also put you at risk for violating copyright policies in UNCA’s Student Conduct Code.
 
+### ChatGPT Policy (adapted from Boston University)
+
+#### Students shall...
+* Give credit to AI tools whenever used, even if only to generate ideas rather than usable text or code.
+* When using AI tools on assignments, add an appendix showing:
+    1. the entire exchange, highlighting the most relevant sections
+    2. a description of precisely which AI tools were used (e.g. ChatGPT private subscription version, CoPilot, etc.)
+    3. an explanation of how the AI tools were used (e.g. to generate ideas, understand functions or coding ideas, etc.)
+    4. an account of why AI tools were used (e.g. to save time, to to stimulate thinking, to handle mounting stress, to clarify prose, to experiment for fun, etc.).
+* **Not use AI tools during in-class examinations or quizzes** unless explicitly permitted and instructed.
+* Use AI tools wisely and intelligently, aiming to deepen understanding of subject matter and to support learning.
+
+#### I (Sarah) shall...
+* Seek to understand the strengths and weaknesses or AI tools for teaching and learning, to optimize their value for student learning.
+* Impose a significant penalty for:
+    1. using code that you do not understand and/or cannot clearly explain.
+    2. low-energy or unreflective reuse of material generated by AI tools and/or merely reproducing the output from AI tools.
+    3. using antiquated language features or antipatterns (e.g., using "var," using floats or tables for page layouts, etc.).
+
+#### This policy recognizes that...
+* This policy depends on goodwill, a sense of fairness, and honorable character.
+* This policy takes account of the existence of subscription versions of AI tools, which are not affordable for some students; the policy may need to be revised as the differences between subscription and free versions become better understood.
+* This policy may be revised in light of other policies and novel technological developments in AI tools.
+ 
 Contact Sarah Van Wart if you have any questions about what is appropriate.
 
 #### Using the Broader Web for Code and Ideas
-In this class, I encourage you to explore the broader web for tutorials, code samples, new coding techniques, libraries, etc. After all, learning how to build websites is all about studying existing websites and how the work! That said, you must **acknowledge all sources contributing to your work.**  If you receive any assistance from any source (Internet, peer, social media, etc.), please describe your source and that source’s contribution(s). If you have any questions about this, please don't hesitate to contact me.
+In this class, I encourage you to explore the broader web for tutorials, code samples, new coding techniques, libraries, etc. After all, learning how to build websites is all about studying existing websites and how the work! That said, you must **acknowledge all sources contributing to your work.**  If you receive any assistance from any source (Internet, peer, social media, ChatGPT, etc.), please describe your source and that source’s contribution(s). If you have any questions about this, please don't hesitate to contact me.
 
-Students violating the academic honesty policy on a test or exam will receive a grade of "F" in the course. Students violating the academic honesty policy on an assignment other than a test or exam will receive a grade of 0 on that assignment for the first offense, and will receive a grade of "F" in the course for the second offense. This will apply to all students involved in the violation, including both the source student and the copying student. It is your responsibility to ensure that your work is not used by other students.
+Students violating the academic honesty policy on an assignment or quiz will receive a grade of 0 on that assignment/quiz for the first offense, and will receive a grade of "F" in the course for the second offense. This will apply to all students involved in the violation, including both the source student and the copying student. It is your responsibility to ensure that your work is not used by other students.
 
-All cases of academic dishonesty will be reported to the Assistant Provost.
-
+All cases of academic dishonesty will be reported to the university administration.
 
 ### Class Cancellation Policy
 If a class meeting is canceled or due dates are moved due to inclement weather or any other reason, I will inform you via campus email (ending with unca.edu).
 
 
-
-
 ## University Policies
-### Acknowledgement of the COVID-19 Pandemic
-As a community in this time of uncertainty, we seek to uphold and embody our ideals of compassion, resilience, understanding, and flexibility for each other.  With that understanding, here are a list of course policies active for this semester:
-1. We all are expected to abide by our institution's [community expectations](https://coronavirus.unca.edu/return-to-campus/community-expectations/). If you are in a public space you are expected to wash your hands and maintain social distance from others. 
-2. COVID-19 vaccines are strongly encouraged for all students, faculty, and staff; surveillance testing is also available on campus.
-3. If you become ill: 
-    * Do not physically attend any classes.
-    * If emergency, dial 911. For non-emergency medical help contact [UNC Asheville Health and Counseling Center](https://healthandcounseling.unca.edu/) at (828) 251-6520, Monday-Friday 8:00am - 4:30pm. After hours call MAHEC at (828)257-4740.
-    * Reach out to your instructor as you are able.
 
-### Office of Academic Accessibility 
-UNC-Asheville values the diversity of our student body as a strength and a critical component of our dynamic community. Students with disabilities or temporary injuries/conditions may require accommodations due to barriers in the structure of facilities, course design, technology used for curricular purposes, or other campus resources. Students who experience a barrier to full access to this class should let the professor know, and/or make an appointment to meet with the Office of Academic Accessibility as soon as possible. To make an appointment, call 828.232.5050; email academicaccess@unca.edu; visit [https://oaa.unca.edu/](https://oaa.unca.edu/) and click on "Schedule an Appointment"; or drop by the Academic Accessibility Office, room 008 in the One Stop suite (lower level of Ramsey Library). Learn more about the process of registering, and the services available through the Office of Academic Accessibility here: [https://oaa.unca.edu/](https://oaa.unca.edu/)
+### Office of Accessibility & Academic Accommodations
+UNC Asheville is committed to providing an inclusive experience, accessible learning environments and equal opportunity to individuals with disabilities in accordance with the Americans with Disabilities Act (ADA) and Section 504 of the Rehabilitation Act. 
 
-While students may disclose disability at any point in the semester, students who receive Letters of Accommodation are strongly encouraged to request, obtain and present these to their professors as early in the semester as possible so that accommodations can be made in a timely manner. It is the student’s responsibility to follow this process each semester.
+If you are a student experiencing barriers to access or full participation in this course on the basis of a disability, contact the Office of Accessibility to apply for reasonable accommodations and discuss available resources. You may contact the Office of Accessibility at academicaccess@unca.edu or 828-251-6292. 
+
+Students are responsible for discussing their Letter of Accommodations (LOA) with their faculty. Students and faculty are encouraged to discuss the LOA as early in the semester as possible to allow for extended access to accommodations. However, students may disclose a disability at any point in the semester. Accommodations are not retroactive and are activated when the LOA is discussed.  
 
 ### Promoting Gender Equity, Addressing Sexual Misconduct
-UNC Asheville is dedicated to cultivating and maintaining a safe, respectful, and inclusive environment, free from harassment and discrimination. We strive to ensure that all have equal access to the educational and employment opportunities the University provides. If you or someone you know has been affected by sexual misconduct, including sexual or gender-based harassment, sexual assault, dating or domestic violence, or stalking, please know that help and support are available. UNC Asheville strongly encourages all members of the community to take action, seek support, and report incidents of sexual harassment to the Title IX Office. You may contact the Title IX Office or Heather Lindkvist, the Title IX Coordinator, directly at 828.232.5658 or at titleix@unca.edu. Learn more by visiting [titleix.unca.edu](https://titleix.unca.edu).
+UNC Asheville is dedicated to cultivating and maintaining a safe, respectful, and inclusive environment, free from harassment and discrimination. We strive to ensure that all have equal access to the educational and employment opportunities the University provides. If you or someone you know has been affected by sex-based harassment or sexual misconduct, including sexual assault, dating or domestic violence, or stalking, please know that help and support are available. UNC Asheville strongly encourages all members of the community to take action, seek support, and report incidents of sexual harassment to the Title IX Office.  You may contact the Title IX Office or Heather Lindkvist, the Title IX Coordinator, directly at 828.232.5658 or via titleix@unca.edu or learn more by visiting the Title IX website.
 
 As a faculty member, I am a “responsible employee” and private resource. This means that if you share any information or discuss an incident with me regarding sexual or gender-based harassment, I must disclose this information to the Title IX Coordinator. Our goal is to ensure you are aware of the range of options available to you and have access to the resources you may need. 
 
-If you wish to speak with a confidential resource, contact University Health and Counseling Services at 828.251.6520. Off-campus confidential resources include Our Voice (24-Hour Hotline at 828.255.7576) and HelpMate (24-Hour Hotline at 828.254.0516).
+If you wish to speak with a confidential resource, contact University Health and Counseling Services at 828.251.6520. Off-campus confidential resources include Our Voice (24-Hour Hotline at 828.255.7576) and Helpmate (24-Hour Hotline at 828.254.0516).
 
-### Academic Indicators
-Faculty at UNC Asheville are required to use the university's Academic Indicators system. The purpose of this system is to communicate with students about their progress in courses. Academic Indicators can reflect that a student’s performance is satisfactory at the time it is submitted, or they can indicate concerns (e.g., academic difficulty, attendance problems, or other concerns). Professors use this system because they are invested in student success and want to encourage open conversations about how students can improve their performance. When a faculty member submits an indicator that expresses a concern, the student receives an email from Academic Advising notifying them of the indicator and subsequent registration hold on their account. To clear the hold, the student must complete an online Response Form included in the alert e-mail. 
+### Academic Alerts
+Faculty at UNC Asheville have access to an Academic Alert system. The purpose of this system is to support communication with students about their progress in courses, especially if there are concerns (e.g., academic difficulty, attendance problems). Professors use the Alert system because they are invested in their students’ success. Entering an academic alert is a great way to supplement open conversations between instructors and students about how students can improve their academic performance. 
 
-The student’s responses will be shared with the instructor and advising staff. If a student receives three or more indicators that show problems, they will need to meet with an advisor by scheduling an appointment using the online appointment service at [advising.unca.edu](https://advising.unca.edu/) and select ‘Academic Alert Appointment’ as the type of appointment. The professor may also request to meet with the student to discuss the indicator.  It is in the student's best interest to complete the process quickly, as students who do so are more likely to earn credit for the course. Failure to complete the process means the student won't be able to register for the next semester's classes until they have submitted the required form and completed any requested meeting requirements. Questions about the indicator system can be directed to Anne Marie Roberts (amrober1@unca.edu) in the [Academic Success Center](https://www.unca.edu/academics/academic-success/).
+When a faculty member submits an alert that expresses a concern, the student receives outreach from their academic advisor or the team in the Office of Academic Advising. Students are no longer receiving automated notification emails when an alert is submitted. It is in the student's best interest to address the alert quickly, as students who do so are more likely to earn credit for the course. Questions about the Academic Alert system can be directed to Anne Marie Roberts (amrober1@unca.edu) in the Academic Success Center.
+
 
 ### Mental Health Support
-As a student, you may experience a range of challenges that can interfere with learning, such as stressful life events, experiences of anxiety and/or depression, self-harm, substance use, and/or unusual difficulty with ordinary life activities. The increased stress of school can also make existing mental health struggles more difficult to manage. Support is available and treatment can help. Learn more about the confidential mental health services UNC Asheville provides to support student success at [https://www.unca.edu/life/health-counseling/](https://www.unca.edu/life/health-counseling/)
+As a student, you may experience a range of challenges that can interfere with learning, such as stressful life events, experiences of anxiety and/or depression, self-harm, substance use, and/or unusual difficulty with ordinary life activities. The increased stress of school can also make existing mental health struggles more difficult to manage. Support is available and treatment can help. Learn more about the confidential mental health services UNC Asheville provides to support student success at [https://www.unca.edu/life/health-counseling/](https://www.unca.edu/life/health-counseling/).
 
 The Health and Counseling Center is located at 118 W.T. Weaver Boulevard. Appointments can be made by calling 828-251-6520. A UNC Asheville counselor on call is available after 5 p.m. and on weekends; the counselor on call can be accessed by calling the UNCA Campus Police dispatcher at 828-251-6710. Additionally available after hours and on weekends, call the Bulldog Health Link at 1-888-267-3675, where you can get immediate support for mental health, medical consultation, concern for a friend, and/or community resources. In case of an emergency, you can also call RHA’s Mental Health Mobile Crisis Unit at 1-888-573-1006.

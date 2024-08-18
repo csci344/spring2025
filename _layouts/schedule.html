@@ -160,7 +160,7 @@ layout: default
                         {% endif %}
 
                         {% if assignment.draft == 1 %}
-                            {{ assignment.abbreviation }}<br>
+                            {{ assignment.abbreviation }}: {{ assignment.title }}<br>
                         {% else %}
                             <a href="{{site.baseurl}}{{assignment.url}}" class="{{classname}}">
                                 {{ assignment.abbreviation }}
