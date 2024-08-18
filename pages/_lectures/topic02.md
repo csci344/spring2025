@@ -10,7 +10,7 @@ due_date: 2024-08-26
 What are some of the societal impacts and challenges that have resulted from the networked information and communication technologies powered by the Internet?
 
 ## Assigned Readings
-pick one of the topics from the following list and read:
+Pick one of the topics from the following list and read:
 <table>
     <tr>
         <th>Internet Censorship</th>

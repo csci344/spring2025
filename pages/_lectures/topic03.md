@@ -43,15 +43,17 @@ readings:
 ---
 
 ## Slides
-1. Lecture 3: <a href="https://docs.google.com/presentation/d/12WYA5s533mUD6tZOJw6KDkDb4otLQJhUIC_5V12Uu2I/edit?usp=sharing" target="_blank">Intro to HTML</a> (Wednesday, 01/18)
-1. Lecture 4: <a href="https://docs.google.com/presentation/d/165uWV0UGuZ_lZ4ci0UCXxmoKDQb-lpv1gY2Q_XYaFA0/edit?usp=sharing" target="_blank">Intro to semantic tags, more linking</a> (Monday, 01/23)
+Slides will be posted before class.
 
-## Videos & Lecture Files
+<!-- 1. Lecture 3: <a href="https://docs.google.com/presentation/d/12WYA5s533mUD6tZOJw6KDkDb4otLQJhUIC_5V12Uu2I/edit?usp=sharing" target="_blank">Intro to HTML</a> (Wednesday, 01/18)
+1. Lecture 4: <a href="https://docs.google.com/presentation/d/165uWV0UGuZ_lZ4ci0UCXxmoKDQb-lpv1gY2Q_XYaFA0/edit?usp=sharing" target="_blank">Intro to semantic tags, more linking</a> (Monday, 01/23) -->
+
+<!-- ## Videos & Lecture Files
 Videos and worked examples will be published after class:
 * <a href="https://drive.google.com/drive/folders/1b0RGogU8P2rKJAtcRpxMspHB919GUAXT?usp=sharing" target="_blank">Videos on Google Drive</a>
 * <a href="https://github.com/vanwars/csci344" target="_blank">Worked examples on GitHub</a>
 
 ## Activities
-1. Lecture 3: <a href="https://docs.google.com/document/d/1WcarSfoGJAqlcG0c-BLyKk6SoC8IIbBoTIpodAPG0HA/edit?usp=sharing" target="_blank">Write your first HTML page</a> (Wednesday, 01/18)
+1. Lecture 3: <a href="https://docs.google.com/document/d/1WcarSfoGJAqlcG0c-BLyKk6SoC8IIbBoTIpodAPG0HA/edit?usp=sharing" target="_blank">Write your first HTML page</a> (Wednesday, 01/18) -->
 
 
