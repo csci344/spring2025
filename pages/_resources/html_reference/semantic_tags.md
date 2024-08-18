@@ -3,7 +3,6 @@ layout: two-column-resources
 title: Semantic Tags
 nav_order: 7
 parent: HTML Resources
-permalink: /html-reference/semantic-tags/
 ---
 
 Semantic elements both (a) clearly describe the purpose of the tag in the tag itself, and (b) help group content sections together. Examples of semantic tags include &lt;header&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;article&gt;, &lt;footer&gt;, &lt;aside&gt;, etc. Semantic tags are useful for grouping your page into logical sections that are easy for a screen reader or web crawler to interpret.

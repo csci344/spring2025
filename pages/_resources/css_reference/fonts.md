@@ -3,7 +3,6 @@ layout: two-column-resources
 title: Text & Fonts
 parent: CSS Resources
 nav_order: 4
-permalink: /css-reference/fonts/
 ---
 
 ## Font & icon resources

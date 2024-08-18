@@ -3,7 +3,6 @@ layout: two-column-resources
 title: Media Tags
 nav_order: 5
 parent: HTML Resources
-permalink: /html-reference/media-tags/
 ---
 
 In the previous sections, we reviewed the simplest and most *frequently used* tags: `<h1></h1>...<h6></h6>, <p></p>, <a></a>, <img />`

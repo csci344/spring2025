@@ -39,6 +39,9 @@ collections:
   activities:
     output: true
     permalink: /activities/:name
+  resources:
+    output: true
+    permalink: /resources/:name
 
 
 collections_dir: pages

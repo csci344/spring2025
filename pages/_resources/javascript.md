@@ -1,10 +1,8 @@
 ---
-layout: two-column
+layout: two-column-resources
 title: JavaScript Cheatsheet
 nav_order: 2
 has_children: true
-permalink: /javascript-reference/
-show_outline: false
 ---
 
 <style>
@@ -15,6 +13,12 @@ show_outline: false
         width: 60%;
     }
 </style>
+
+## Useful Web References
+* <a href="https://roadmap.sh/javascript" target="_blank">JavaScript Roadmap</a>
+* <a href="" target="_blank">YYY</a>
+* <a href="" target="_blank">YYY</a>
+* <a href="" target="_blank">YYY</a>
 
 ## Debugging
 
@@ -194,8 +198,9 @@ Means that the variable may be reassigned / can be changed.
 Means that the variable won"t be reassigned. It’s "immutable." Used in cases where you declare and assign once, but don’t change it afterwards.
 
 **`var`**
-Avoid. Old way to do things prior to ES6.
-“The weakest signal available” — “The variable may or may not be reassigned, and the variable may or may not be used for an entire function.”
+For this class: try to avoid (o)ld way to do things prior to ES6). This is not because of efficiency, but because of communication -- “The weakest signal available”. When you see it, you think:
+* "The variable may or may not be reassigned" (who knows!?)
+* "The variable may or may not be needed globally (because of <a href="https://www.youtube.com/watch?v=EvfRXyKa_GI" target="_blank">hoisting</a>). 
 
 ## Operators
 
@@ -240,6 +245,18 @@ See <a href="https://www.w3schools.com/js/js_comparisons.asp" target="_blank">W3
 * You can also create your own functions
 
 ### 1. Syntax
+There are many syntaxes for creating functions that perform a little bit differently:
+
+#### Function Declarations
+
+```js
+function addTwoNums(num1, num2) {
+   	return num1 + num2;
+}
+```
+
+#### Arrow Functions
+
 ```js
 const nameOfFunction = (parameters) => {
     statement 1;
@@ -249,19 +266,11 @@ const nameOfFunction = (parameters) => {
 };
 ```
 
-#### Avoid Older Syntax
-While you will see the syntax below in many web posts, avoid if possible (to maintain consistency with newer versions): 
-```js
-// Old JavaScript syntax (avoid)
-function addTwoNums(num1, num2) {
-   	return num1 + num2;
-}
+#### Differences
+Some notable distinctions between arrow functions and function declarations:
+* Function declarations are <a href="https://www.youtube.com/watch?v=EvfRXyKa_GI" target="_blank">hoisted</a>. Arrow functions are now.
+* Function declarations used to define class methods and honor the object scope for the "this" keyword. Arrow functions are not used as class methods.
 
-// Old JavaScript syntax (avoid)
-var document.querySelector(‘button’).onclick = function(num1, num2) {
-   	return num1 + num2;
-};
-```
 
 ### 2. Terminology
 
@@ -276,12 +285,12 @@ var document.querySelector(‘button’).onclick = function(num1, num2) {
 
 ## Events
 When JavaScript is used in HTML pages, JavaScript can "react" to particular “events," which include (among others): 
-* onchange
-* onclick
-* onmouseover
-* onmouseout
-* onkeydown
-* onload
+* change
+* click
+* mouseover
+* mouseout
+* keydown
+* load
 
 ### 1. Making events work for you
 Events are comprised of two parts:
@@ -303,7 +312,12 @@ const subscribe = () => {
 };
 
 // event listener:
-document.querySelector('#subscribe').onclick = subscribe;
+document.querySelector('#subscribe').addEventListener("click", subscribe);
+
+// you can also attach an event listener to an anonymous function: 
+document.querySelector('#subscribe').addEventListener("click", () => {
+   	alert('Perform subscribe functionality...');
+});
 ```
 
 Therefore, to create an event-driven interaction, you need to tell your browser three things:

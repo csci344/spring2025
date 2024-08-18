@@ -3,7 +3,6 @@ layout: two-column-resources
 title: Media Queries
 parent: CSS Resources
 nav_order: 9
-permalink: /css-reference/media-queries/
 ---
 
 

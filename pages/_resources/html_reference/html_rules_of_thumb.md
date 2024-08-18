@@ -4,7 +4,6 @@ title: Rules of Thumb
 nav_order: 1
 show_outline: true
 parent: HTML Resources
-permalink: /html-reference/rules-of-thumb/
 ---
 
 Most of the HTML language is best learned through practice, however below are ten rules of thumb that can help you learn how to use the tags to create the desired result.

@@ -3,7 +3,6 @@ layout: two-column-resources
 title: Form Tags
 nav_order: 8
 parent: HTML Resources
-permalink: /html-reference/forms/
 ---
 
 Forms are use to gather information from a user, and typically post user information to a server that is expecting it. We will cover this in more detail when we get to our HTTP / REST unit.

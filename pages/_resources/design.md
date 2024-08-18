@@ -1,10 +1,8 @@
 ---
 layout: two-column-resources
 title: Design Resources
-# parent: Design Resources
 nav_order: 1
 has_children: true
-permalink: /design-reference/
 ---
 
 <style>

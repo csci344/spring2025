@@ -4,7 +4,6 @@ title: Rules of Thumb
 parent: CSS Resources
 nav_order: 1
 show_outline: true
-permalink: /css-reference/rules-of-thumb/
 ---
 
 ### 1. Follow the CSS naming conventions

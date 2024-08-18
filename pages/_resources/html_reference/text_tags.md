@@ -4,7 +4,6 @@ title: Text Markup Tags
 nav_order: 2
 show_outline: true
 parent: HTML Resources
-permalink: /html-reference/text-tags/
 ---
 
 The simplest HTML tags are those that help your browser understand how to interpret blocks of text.

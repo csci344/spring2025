@@ -1,11 +1,44 @@
 ---
 layout: two-column-resources
 title: HTML Resources
-# parent: HTML Resources
 nav_order: 10
 has_children: true
-permalink: /html-reference/
 ---
+<blockquote class="blockquote-no-margin">
+    <h2>Recommended Online Tutorials / References</h2>
+    <ul class="compact">
+        <li>
+            <a href="https://github.com/denysdovhan/learnyouhtml" target="_blank">Interactive HTML Course</a>
+        </li>
+        <li>
+            <a href="https://www.w3schools.com/html/html_intro.asp" target="_blank">W3Schools: Learn HTML</a>
+        </li>
+        <li>
+            <a href="https://htmlreference.io/" target="_blank">reference.io: All HTML elements at a glance</a>
+        </li>
+        <li>
+            <a href="https://html.com" target="_blank">HTML For Beginners The Easy Way</a>
+        </li>
+        <li>
+            <a href="https://internetingishard.netlify.app/html-and-css/index.html" target="_blank">Web Development Basics</a>
+        </li>
+        <li>
+            <a href="https://www.htmhell.dev/adventcalendar/2023/2/" target="_blank">You don’t need JavaScript for that</a>
+        </li>
+        <li>
+            <a href="https://youtu.be/mJgBOIoGihA" target="_blank">HTML Full Course for Beginners</a>
+        </li>
+        <li>
+            <a href="https://www.youtube.com/watch?v=pQN-pnXPaVg" target="_blank">HTML Full Course - Build a Website Tutorial</a>
+        </li>
+        <li>
+            <a href="https://www.youtube.com/watch?v=qz0aGYrrlhU" target="_blank">HTML Tutorial for Beginners: HTML Crash Course</a>
+        </li>
+        <li>
+            <a href="https://app.daily.dev/tags/html?ref=roadmapsh" target="_blank">Explore top posts about HTML</a>
+        </li>
+    </ul>
+</blockquote>
 
 HyperText Markup Language, commonly abbreviated as HTML, is the standard markup language used to create web pages and web applications. It is typically used in conjunction with CSS (for styling and layouts), and JavaScript (for interactivity).
 

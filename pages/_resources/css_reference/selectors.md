@@ -3,7 +3,6 @@ layout: two-column-resources
 title: Selectors
 parent: CSS Resources
 nav_order: 2
-permalink: /css-reference/selectors/
 ---
 
 ## Recommended Resources

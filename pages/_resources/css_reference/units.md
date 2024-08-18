@@ -3,7 +3,6 @@ layout: two-column-resources
 title: CSS Units
 parent: CSS Resources
 nav_order: 6
-permalink: /css-reference/units/
 ---
 
 There are many units that CSS supports:

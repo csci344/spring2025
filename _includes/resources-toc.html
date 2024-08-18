@@ -1,0 +1,11 @@
+{% assign sortedPages = site.resources | sort: 'nav_order' %}
+
+<ol>
+    {% for p in sortedPages %}
+        {% if p.has_children and p.nav_order != 0 %}
+        <li>
+            <a href="{{site.baseurl}}{{p.url}}">{{ p.title }}</a>
+        </li>
+        {% endif %}
+    {% endfor %}
+</ol>

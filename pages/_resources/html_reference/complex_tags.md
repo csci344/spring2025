@@ -3,7 +3,6 @@ layout: two-column-resources
 title: Compound Tags
 nav_order: 6
 parent: HTML Resources
-permalink: /html-reference/compound-tags/
 ---
 
 Some tags only work in conjunction with one another (which this guide refers to as "compound tags"). For instance, to make a list, you need a tag to indicate where the list starts and ends (either `<ol></ol>` or `<ul></ul>`) and a tag for each list item (`<li></li>`). Similarly, for a table, you need a way to indicate where the table starts and ends, where the row starts and ends, and how many cells exist in each row. Please see the code samples below:
