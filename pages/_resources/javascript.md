@@ -14,11 +14,9 @@ has_children: true
     }
 </style>
 
-## Useful Web References
-* <a href="https://roadmap.sh/javascript" target="_blank">JavaScript Roadmap</a>
-* <a href="" target="_blank">YYY</a>
-* <a href="" target="_blank">YYY</a>
-* <a href="" target="_blank">YYY</a>
+{:.blockquote-no-margin}
+> ## Useful Web References
+> * <a href="https://roadmap.sh/javascript" target="_blank">JavaScript Roadmap</a>
 
 ## Debugging
 
@@ -268,8 +266,8 @@ const nameOfFunction = (parameters) => {
 
 #### Differences
 Some notable distinctions between arrow functions and function declarations:
-* Function declarations are <a href="https://www.youtube.com/watch?v=EvfRXyKa_GI" target="_blank">hoisted</a>. Arrow functions are now.
-* Function declarations used to define class methods and honor the object scope for the "this" keyword. Arrow functions are not used as class methods.
+* Function declarations are <a href="https://www.youtube.com/watch?v=EvfRXyKa_GI" target="_blank">hoisted</a>. Arrow functions are not.
+* You can't use arrow functions as class methods (doesn't honor the "this" keyword)
 
 
 ### 2. Terminology
@@ -353,9 +351,15 @@ const changeColor = (ev) => {
 };
 
 // event listener attach to all of the buttons:
-document.querySelector('#color1').onclick = changeColor;
-document.querySelector('#color2').onclick = changeColor;
-document.querySelector('#color3').onclick = changeColor;
+document.querySelector('#color1').addEventListener("click", changeColor);
+document.querySelector('#color2').addEventListener("click", changeColor);
+document.querySelector('#color3').addEventListener("click", changeColor);
+
+
+// or...
+['#color1', '#color1', '#color1'].forEach(item => {
+    document.querySelector(item).addEventListener("click", changeColor);
+});
 ```
 
 
