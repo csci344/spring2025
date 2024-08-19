@@ -1,114 +1,120 @@
 ---
 layout: assignment-two-column
-title: "JavaScript: Practice with higher-order iteration functions"
+title: "JavaScript: Event Handlers"
 type: tutorial
 abbreviation: Tutorial 5
 draft: 1
 points: 6
 num: 5
-due_date: 2024-09-20
+start_date: 2024-09-20
+due_date: 2024-09-23
 ---
 
-<style>
-    .screenshot {
-       width:60%;
-       min-width: 500px;
-    }
-    .frame {
-        border: solid 3px #0076A5;
-    }
-    .frame:hover {
-        border-color: hotpink;
-    }
-</style>
 
-{:.blockquote-no-margin}
-> ## Update: Deadline Extended to Monday
-> Because this tutorial is a bit more involved, you may have until **Monday, 2/13** to complete it.
+## Introduction 
+The goal of today's tutorial is to:
+1. Help you practice using JavaScript to target and modify HTML elements in your DOM Tree.
+2. Continue practicing your CSS skills.
+2. Encourage you to keep thinking about improving the accessibility of your website.
 
-For Tutorial 5, you will make a UNCA Course Search interface for the Computer Science Department that works like this:
+## Cheatsheet
+Below is a cheatsheet (below) with examples of different selector methods and approaches to updating the DOM.
 
-<a href="https://vanwars.github.io/csci344/tutorials/tutorial05_solutions/index.html" target="_blank"><img class="frame screenshot" src="/fall2024/assets/images/tutorials/tutorial05/screenshot-course-lookup.png" /></a>
+### Selector Methods 
 
-<a href="https://vanwars.github.io/csci344/tutorials/tutorial05_solutions/index.html" target="_blank">Demo Video</a>
+| Method | Example |
+|--|--|
+| getElementById() | document.getElementById("my_element") |
+| querySelector() | document.querySelector("#my_element")<br>document.querySelector("p")<br>document.querySelector(“.my-announcements") |
+| querySelectorAll() | document.querySelectorAll("p") |
+| getElementsByTagName() | document.getElementsByTagName("div") |
+| getElementsByClassName() | document.getElementsByClassName(".panel") |
 
-Please download the starter files below and then complete the following tasks:
+### Some examples of HTML attributes you can modify
 
-<a href="/fall2024/course-files/tutorials/tutorial05.zip" class="nu-button">Tutorial 5 Starter Files<i class="fas fa-download"></i></a> 
+| Attribute | Example |
+|--|--|
+| className | document.querySelector("div").className = "panel"; |
+| innerHTML | document.querySelector("div").innerHTML = "&lt;p&gt;hi&lt;/p&gt;"; |
+| src (for images) | document.querySelector(".my_image").src = "sponge_bob.png"; |
+| href (for links) | document.querySelector(".my_link").href = 'https://www.wikipedia.org'; |
 
-## I. Implement the helper functions
 
-### 1. Filter functions
-Implement two filter functions (which should return either true or false):
-* `filterClassFull`: This function will take a course object as an argument and return `true` if the course is full, and `false` if it is not.
-* `filterTermMatched`: This function will take a course object as an argument and return `true` if the course "matches" the search term, and `false` if it does not.
-    * Use your discretion to determine a good matching algorithm. For instance, you could return `true` if the search string matches (or partially matches) one or more of the data fields (Code, CRN, Title, one of the instructor's names, etc.).
+### Some examples of style properties you can modify
 
-#### Tips
-1. Use some of the <a href="https://www.javascripttutorial.net/javascript-string-methods/" target="_blank">JavaScript built-in string methods</a>. It also might be useful to convert everything to uppercase / lowercase. Some particularly useful methods to checkout:
+| Property | Example |
+|--|--|
+| width | document.querySelector("div").style.width = "200px"; |
+| height | document.querySelector("div").style.width = "200px"; |
+| background-color | document.querySelector("div").style.backgroundColor = "hotpink"; |
+| border-width | document.querySelector("div").style.borderWidth = "5px"; |
+| padding | document.querySelector("div").style.padding = "10px"; |
+| display | document.querySelector("div").style.display = "none"; |
+
+## Your Tasks
+
+<a href="/fall2024/course-files/tutorials/tutorial04.zip" class="nu-button">Download Tutorial 4 <i class="fas fa-download"></i></a> 
+
+Please download the tutorial04.zip file, unzip it, and move the tutorials folder inside of your `csci344/tutorials` folder. Then complete the tasks:
+
+### 1. Font Size Adjuster
+Open font-switcher/index.html in VS Code, and note the HTML tags. Also note that within the header tag there is a script tag that links to your JavaScript file:
+
+```html
+<script src="index.js" defer></script>
+```
+
+The keyword `defer` means that the script won't run until your entire web page is loaded.
+
+
+Open `01-font-switcher/index.html`:
+1. Attach the `makeBigger()` event handler to the `#bigger` button.
+2. Attach the `makeSmaller()` event handler to the `#smaller` button.
+
+Next, open `01-font-switcher/index.js` and, modify the body of the `makeBigger` and `makeSmaller` functions so that they update the font size of the `div.content` element and the `h1` element. There should be at least two statements within the body of each function (one to target and manipulate `div.content`, and one to target and manipulate `h1`). When you're done, your web page should look like this:
+
+<img class="large frame" src="/fall2024/assets/images/tutorials/tutorial04/font-switcher.gif" />
+
+
+### 2. Theme Switcher
+Another way to make your site more accessible is to create a "high-contrast" stylesheet or CSS class. For this exercise, please do the following:
+
+1. Open `02-theme-switcher/index.js` and attach a click event handler to each of the four of the buttons in the nav bar. 
+2. Each event handler should modify the class of the `body` tag to match the theme of the button that was clicked (just like we did in class for Lecture 10). 
+    * The available theme classes are: `ocean`, `desert` and `high-contrast`. To see the themes, open the `style.css` file and scroll to the bottom.
+3. If the `default` button is clicked, just unset the class on the body tag.
+4. [Optional] If you have time, try creating your own theme in the `../style.css` file and creating another button so that when you click on the new button, your theme shows up.
+
+When you're done, your web page should look like this:
+
+<img class="large frame" src="/fall2024/assets/images/tutorials/tutorial04/theme-switcher.gif" />
+
+### 3. Dyslexia Mode (Recommended, but Optional)
+In part 3, you will use JavaScript to create a method for people with dyslexia to more easily read your web page. This technique is based on this artice: <a href="https://www.smashingmagazine.com/2021/11/dyslexia-friendly-mode-website/" target="_blank">Adding A Dyslexia-Friendly Mode To A Website</a>. Please complete the following tasks:
+
+1. In `style.css`, create a new class called `.dyslexia-mode`. 
+2. Following the recommendations from the Smashing Magazine article above, ensure that your class does the following:
+
     {:.compact}
-    * includes()
-    * toUpperCase()
-    * toLowerCase()
-1. The filter must conform to one of the [function signatures specified in the JavaScript language](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).
+    * Adjust the letter and word spacing to the recommended settings
+    * Disables ligatures
+    * Modify the line spacing
+    * Modify either the font weight (to be bolder) or the color (to be darker)
+    * Make the font-size bigger
+    * Narrow the line width (lines that are too long in the horizontal direction are hard to read)
+3. When you're done, create a button and add the needed functionality to enabled the user to toggle the "Dyslexia Mode" on and off.
+4. Note that the Smashing Magazine also makes use of localStorage so that the site "remembers" the users' preferences for the next time.
 
-```js
-// Part 1.1a
-const filterClassFull = course => {
-    // modify this
-    return true;
-}
+When you're done, your web page should look like this:
 
-// Part 1.1b
-const filterTermMatched = course => {
-    // modify this
-    return true;
-}
-```
+<img class="large frame" src="/fall2024/assets/images/tutorials/tutorial04/dyslexia.gif" />
 
-### 2. "Data to HTML" function
-Implement the `dataToHTML` function, which takes a course object as an argument and returns an HTML string that represents the course.
-* See the `index.html` file to examine the structure of the HTML "card" that represents a course.
+## What to Submit
+Please make sure that you have completed the following:
 
-```js
-// Part 1.2
-const dataToHTML = course => {
-    // modify this
-    return `Some HTML representation of the course...`;
-}
-```
+{:.checkbox-list}
+* Implemented the font size adjuster
+* Implemented the theme switcher
+* Implemented "dyslexia mode" (optional, but recommended)
 
-> #### Tips
-> * Use a template literal (backticks).
-> * Feel free to create some helper variables to format the string output.
-> {:.compact}
-
-## II. Implement the showData function / event handler
-
-### Implement the showData function
-To actually display relevant course "cards" to the screen, you will also need to implement a `showData` function. To do this, use the built-in **filter**, **map**, and **join** array methods -- and any relevant DOM methods -- to build the interface. Specifically, you will:
-
-
-1. Use the array's built in "filter" method, which takes a filter function as an argument, to return an array of objects that match the search criteria.
-    * You will make use of the  `filterClassFull` and `filterTermMatched` functions.
-    * Consider chaining multiple invocations of the filter method to progressively winnow down the courses matching the search criteria.<br>For instance: `const matches = data.filter(filterClassFull).filter(filterTermMatched)`).
-2. Use the array's built in "map" method to generate an array of HTML strings.
-3. Use the array's built in "join" method to convert the array of strings to one large HTML string (join on the empty string or the newline character).
-4. Clear out the existing courses in the DOM.
-5. And finally, insert the HTML string into the DOM (suggestion: use the `insertAdjacentHTML` method).
-
-```js
-// Part 2
-const showData = (searchTerm, openOnly) => {
-    console.log(searchTerm, openOnly);
-    console.log(data); // imported from course-data.js
-    // Your code here:
-    
-}
-```
-
-### Attach your showData function to the button's click event
-Now that you have implemented your button, don't forget to attach your event handler to the button's click event (like we've been doing in class for the past few weeks).
-
-## III. What to Submit
-When you have completed the tasks listed above and your search interface looks similar to the one in the demo, zip your entire `tutorial05` folder and upload it to the Moodle under **Tutorial 5**.
+When you're done, zip your entire `tutorial04` folder and upload it to the Moodle under **Tutorial 4**.

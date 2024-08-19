@@ -3,7 +3,7 @@ layout: two-column
 title: "Activity: Configuring Git and GitHub"
 type: tutorial
 abbreviation: Activity 2
-draft: 0
+draft: 1
 points: 6
 num: 2
 ---

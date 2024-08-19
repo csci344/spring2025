@@ -1,108 +1,115 @@
 ---
 layout: assignment-two-column
-title: "JavaScript: Working with external data"
+title: "JavaScript: Practice with higher-order iteration functions"
 type: tutorial
 abbreviation: Tutorial 6
 draft: 1
 points: 6
 num: 6
-due_date: 2024-09-27
+start_date: 2024-09-27
+due_date: 2024-09-30
 ---
 
-## Introduction
-In this week's tutorial, we will be creating an interface to interact with a REST API. You are welcome to work solo or with a partner. Even if you work with a partner, everyone should submit their own files. 
+<style>
+    .screenshot {
+       width:60%;
+       min-width: 500px;
+    }
+    .frame {
+        border: solid 3px #0076A5;
+    }
+    .frame:hover {
+        border-color: hotpink;
+    }
+</style>
 
-A few notes:
+{:.blockquote-no-margin}
+> ## Update: Deadline Extended to Monday
+> Because this tutorial is a bit more involved, you may have until **Monday, 2/13** to complete it.
 
-{:.compact}
-* You will only be using the GET method this week (to request resources *from* a server).
-* You will be using the API Tutor proxy server for select REST APIs so that we can avoid having to think about authentication. 
-* You will allow your user to ask the API questions (via a web form), and then you will display the resulting data to the user as an HTML representation of the data.
+For Tutorial 5, you will make a UNCA Course Search interface for the Computer Science Department that works like this:
 
-## API Endpoint Documentation & Examples
+<a href="https://vanwars.github.io/csci344/tutorials/tutorial05_solutions/index.html" target="_blank"><img class="frame screenshot" src="/fall2024/assets/images/tutorials/tutorial05/screenshot-course-lookup.png" /></a>
 
-### Yelp
-
-{:.compact}
-* <a href="https://docs.developer.yelp.com/reference/v3_business_search" target="_blank" target="_blank">Documentation</a>
-* Actual Endpoint: **https://api.yelp.com/v3/businesses/search**<br>(won't work unless you get an API key from Yelp and pass it as an HTTP header)
-* Proxy Server
-    * Endpoint: **https://www.apitutor.org/yelp/v3/businesses/search** (needs query parameters)
-    * Example:  <a href="https://www.apitutor.org/yelp/v3/businesses/search?location=Asheville,+NC" target="_blank">https://www.apitutor.org/yelp/v3/businesses/search?location=Asheville,+NC</a>
-    {:.compact}
-* **[Recommended]** Proxy Server Simplified Data
-    * Endpoint: **https://www.apitutor.org/yelp/simple/v3/businesses/search** (needs query parameters)
-    * Example:  <a href="https://www.apitutor.org/yelp/simple/v3/businesses/search?location=Asheville,+NC" target="_blank">https://www.apitutor.org/yelp/simple/v3/businesses/search?location=Asheville,+NC</a>
-    {:.compact}
-
-
-### Spotify
-
-{:.compact}
-* <a href="https://developer.spotify.com/documentation/web-api/reference/#/operations/search" target="_blank">Documentation</a>
-* Actual Endpoint: **https://api.spotify.com/v1/search**<br>(won't work unless you get an API key from Spotify and pass it as an HTTP header)
-* Proxy Server
-    * Endpoint: **https://www.apitutor.org/spotify/v1/search** (needs query parameters)
-    * Example:  <a href="https://www.apitutor.org/spotify/v1/search?q=beyonce&type=track" target="_blank">https://www.apitutor.org/spotify/v1/search?q=beyonce&type=track</a>
-    {:.compact}
-* **[Recommended]** Proxy Server Simplified Data
-    * Endpoint: **https://www.apitutor.org/spotify/simple/v1/search** (needs query parameters)
-    * Example **Tracks** Query:<br><a href="https://www.apitutor.org/spotify/simple/v1/search?q=beyonce&type=track" target="_blank">https://www.apitutor.org/spotify/simple/v1/search?q=beyonce&type=track</a>
-    * Example **Artists** Query:<br><a href="https://www.apitutor.org/spotify/simple/v1/search?q=beyonce&type=artist" target="_blank">https://www.apitutor.org/spotify/simple/v1/search?q=beyonce&type=artist</a>
-    * Example **Albums** Query:<br><a href="https://www.apitutor.org/spotify/simple/v1/search?q=beyonce&type=album" target="_blank">https://www.apitutor.org/spotify/simple/v1/search?q=beyonce&type=album</a>
-    {:.compact}
-
-### Twitter
-
-{:.compact}
-* <a href="https://developer.twitter.com/en/docs/twitter-api/v1/tweets/search/api-reference/get-search-tweets" target="_blank">Documentation</a>
-* Actual Endpoint: **https://api.twitter.com/1.1/search/tweets.json**<br>(won't work unless you get an API key from Yelp and pass it as an HTTP header)
-* Proxy Server
-    * Endpoint: **https://www.apitutor.org/twitter/1.1/search/tweets.json** (needs query parameters)
-    * Example:  <a href="https://www.apitutor.org/twitter/1.1/search/tweets.json?q=cats" target="_blank">https://www.apitutor.org/twitter/1.1/search/tweets.json?q=cats</a>
-    {:.compact}
-* **[Recommended]** Proxy Server Simplified Data
-    * Endpoint: **https://www.apitutor.org/twitter/simple/1.1/search/tweets.json** (needs query parameters)
-    * Example:  <a href="https://www.apitutor.org/twitter/simple/1.1/search/tweets.json?q=cats" target="_blank">https://www.apitutor.org/twitter/simple/1.1/search/tweets.json?q=cats</a>
-    {:.compact}
-{:.compact}
-
-
-## Your Tasks
+<a href="https://vanwars.github.io/csci344/tutorials/tutorial05_solutions/index.html" target="_blank">Demo Video</a>
 
 Please download the starter files below and then complete the following tasks:
 
-<a href="/fall2024/course-files/tutorials/tutorial06.zip" class="nu-button">Tutorial 6 Starter Files<i class="fas fa-download"></i></a> 
+<a href="/fall2024/course-files/tutorials/tutorial05.zip" class="nu-button">Tutorial 5 Starter Files<i class="fas fa-download"></i></a> 
+
+## I. Implement the helper functions
+
+### 1. Filter functions
+Implement two filter functions (which should return either true or false):
+* `filterClassFull`: This function will take a course object as an argument and return `true` if the course is full, and `false` if it is not.
+* `filterTermMatched`: This function will take a course object as an argument and return `true` if the course "matches" the search term, and `false` if it does not.
+    * Use your discretion to determine a good matching algorithm. For instance, you could return `true` if the search string matches (or partially matches) one or more of the data fields (Code, CRN, Title, one of the instructor's names, etc.).
+
+#### Tips
+1. Use some of the <a href="https://www.javascripttutorial.net/javascript-string-methods/" target="_blank">JavaScript built-in string methods</a>. It also might be useful to convert everything to uppercase / lowercase. Some particularly useful methods to checkout:
+    {:.compact}
+    * includes()
+    * toUpperCase()
+    * toLowerCase()
+1. The filter must conform to one of the [function signatures specified in the JavaScript language](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).
+
+```js
+// Part 1.1a
+const filterClassFull = course => {
+    // modify this
+    return true;
+}
+
+// Part 1.1b
+const filterTermMatched = course => {
+    // modify this
+    return true;
+}
+```
+
+### 2. "Data to HTML" function
+Implement the `dataToHTML` function, which takes a course object as an argument and returns an HTML string that represents the course.
+* See the `index.html` file to examine the structure of the HTML "card" that represents a course.
+
+```js
+// Part 1.2
+const dataToHTML = course => {
+    // modify this
+    return `Some HTML representation of the course...`;
+}
+```
+
+> #### Tips
+> * Use a template literal (backticks).
+> * Feel free to create some helper variables to format the string output.
+> {:.compact}
+
+## II. Implement the showData function / event handler
+
+### Implement the showData function
+To actually display relevant course "cards" to the screen, you will also need to implement a `showData` function. To do this, use the built-in **filter**, **map**, and **join** array methods -- and any relevant DOM methods -- to build the interface. Specifically, you will:
 
 
-1. Pick **ONE** of the REST APIs above (Yelp, Spotify, or Twitter).
-1. Create a web form to enable the user to ask the API a question.
-1. Attach an event handler to the "Submit" button. Feel free to copy the form from Tutorial 4 to get you started.
-1. Use the data that the user typed into the form as a basis for formulating the query.
-1. When the server responds, transform that data (using the `map` and `join` methods) into an HTML string that you will add to the DOM.
-1. Follow any additional provider-specific instructions below:
+1. Use the array's built in "filter" method, which takes a filter function as an argument, to return an array of objects that match the search criteria.
+    * You will make use of the  `filterClassFull` and `filterTermMatched` functions.
+    * Consider chaining multiple invocations of the filter method to progressively winnow down the courses matching the search criteria.<br>For instance: `const matches = data.filter(filterClassFull).filter(filterTermMatched)`).
+2. Use the array's built in "map" method to generate an array of HTML strings.
+3. Use the array's built in "join" method to convert the array of strings to one large HTML string (join on the empty string or the newline character).
+4. Clear out the existing courses in the DOM.
+5. And finally, insert the HTML string into the DOM (suggestion: use the `insertAdjacentHTML` method).
 
-### If you choose Yelp...
-If you choose Yelp, allow your user to input both a search `term` and a `location`.
+```js
+// Part 2
+const showData = (searchTerm, openOnly) => {
+    console.log(searchTerm, openOnly);
+    console.log(data); // imported from course-data.js
+    // Your code here:
+    
+}
+```
 
-* Sample Query: <a href="https://www.apitutor.org/yelp/simple/v3/businesses/search?location=Asheville,%20NC&term=pizza" target="_blank">https://www.apitutor.org/yelp/simple/v3/businesses/search?location=Asheville,%20NC&term=pizza</a>
-* <a href="/fall2024/course-files/tutorials/tutorial06/answers/yelp/">Yelp Demo</a>
+### Attach your showData function to the button's click event
+Now that you have implemented your button, don't forget to attach your event handler to the button's click event (like we've been doing in class for the past few weeks).
 
-
-### If you choose Spotify...
-If you choose Spotify, allow your user to specify both a search term (`q` parameter) and a resource `type` (album, artist, or track).
-
-* Caveat: since each resource has a different data representation, you will have to create three different templates (depending on the resource). In other words, an `artist` object has a different data representation than an `album` object or a `track` object.
-* Sample Query: <a href="https://www.apitutor.org/spotify/simple/v1/search?q=beyonce&type=track" target="_blank">https://www.apitutor.org/spotify/simple/v1/search?q=beyonce&type=track</a>
-* <a href="/fall2024/course-files/tutorials/tutorial06/answers/spotify/">Spotify Demo</a>
-
-### If you choose Twitter...
-If you choose Twitter, allow your user to specify both a search term (`q` parameter) and a `result_type` (mixed, recent, or popular).
-
-* Sample Query: <a href="https://www.apitutor.org/twitter/simple/1.1/search/tweets.json?q=cats&result_type=popular" target="_blank">https://www.apitutor.org/twitter/simple/1.1/search/tweets.json?q=cats&result_type=popular</a>
-* <a href="/fall2024/course-files/tutorials/tutorial06/answers/twitter/">Twitter Demo</a>
-
-
-## What to Submit
-* A zip file of your completed Tutorial 6
-* If you worked with a partner, please name your partner by adding a comment in the Moodle.
+## III. What to Submit
+When you have completed the tasks listed above and your search interface looks similar to the one in the demo, zip your entire `tutorial05` folder and upload it to the Moodle under **Tutorial 5**.

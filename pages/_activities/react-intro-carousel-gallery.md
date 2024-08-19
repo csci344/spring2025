@@ -3,7 +3,7 @@ layout: two-column
 title: "Activity: Intro to React (Carousel + Gallery)"
 type: tutorial
 abbreviation: Activity 3
-draft: 0
+draft: 1
 num: 3
 ---
 

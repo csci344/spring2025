@@ -1,291 +1,185 @@
 ---
 layout: assignment-two-column
-title: "Web Sockets"
+title: "Building your first REST API endpoint"
 type: tutorial
-abbreviation: Tutorial 12
+abbreviation: Tutorial 11
 draft: 1
 points: 6
-num: 12
-due_date: 2024-11-29
+num: 11
+due_date: 2024-11-15
 ---
 
-{:.blockquote-no-margin}
-## Acknowledgements
-Thank you to Cooper Barth and Victoria Chávez, who helped design this lesson
+<style>
+    .compact li {
+        margin-bottom: 2px;
+        line-height: 1.5em;
+    }
+    table li {
+        margin-bottom: 0px;
+    }
+    table code.highlighter-rouge {
+        /* background: #f3f3f387; */
+        background: transparent;
+        font-weight: 600;
+        font-size: 1.2em;
+    }
 
-{:.blockquote-no-margin}
-> ## Course Chat Server
-> If you want to try using a publicly available version of the server code we've made together, use this: <a href="wss://chat-server-csci344.herokuapp.com" target="_blank">wss://chat-server-csci344.herokuapp.com</a> (so we can all chat with one another).
+    table td:first-child, table th:first-child {
+        min-width: auto;
+        max-width: auto;
+        width: auto;
+    }
+    table td:nth-child(2), table th:nth-child(2) {
+        min-width: 80px;
+        max-width: auto;
+        width: auto;
+    }
+</style>
 
-## Background Readings
-### Web Sockets
-* <a href="https://stackoverflow.blog/2019/12/18/websockets-for-fun-and-profit/" target="_blank">WebSockets for fun and profit</a> (a nice, concise overview)
-* <a href="https://www.ably.io/topic/websockets" target="_blank">A conceptual overview of WebSockets</a> (a longer, more detailed overview)
-* <a href="https://websockets.readthedocs.io/en/latest/index.html" target="_blank">The websockets library (Python)</a>
-* <a href="https://www.youtube.com/watch?v=SfQd1FdcTlI" target="_blank">Demo using websockets and Python</a>
+The goal of this week's lab is to ensure that your starter code is running, and to get all of the `GET` methods for the `Post` resource to pass. Once you get through this hurdle, you will be ready to work on HW7-HW8. 
 
-### Accessibility Resources
-* <a href="https://timwright.org/blog/2017/02/18/using-aria-live-regions/" target="_blank">Using Aria Live Regions</a>
-* <a href="https://gaurav5430.medium.com/quick-accessibility-wins-multiple-aria-live-on-single-action-caveat-b79a6f41e7cc" target="_blank">Assertive clears queue</a>
-* <a href="https://github.com/w3c/aria/issues/1689" target="_blank">Mac Screenreader bugs</a>
+## Before You Begin
+Before you begin, ensure that you have completed the first three steps of HW7 (configuration / installation steps and relevant readings):
 
+1. [Introduction](hw07#part1)
+1. [Setting everything up](hw07#part2)
+1. [Background readings and concepts](hw07#part3)
 
-
-Until now, we've been using the HTTP protocol to send messages between a user's client at the server. Using HTTP, clients must initiate individual connections to the server in order to request and receive data.
-
-However, there are examples in which it may be useful for the server to send data to the client without the client explicitly requesting it. WebSockets are useful for these cases, since each client establishes a persistent connection to the server over which the server can send messages.
-
-<table style="border-width:0px;">
-    <tr>
-        <td>
-            <img class="large frame" src="/fall2024/assets/images/tutorials/tutorial12/img1.png" />
-            <p>HTTP Protocol (http:// or https://)</p>
-        </td>
-        <td>
-            <img class="large frame" src="/fall2024/assets/images/tutorials/tutorial12/img2.png" />
-            <p>Web Socket Protocol (ws:// or wss://)</p> 
-        </td>
-    </tr>
-</table>
+If you have already completed these steps, just be sure that before you run Flask and run your tests, your have **activated your virtual environment** (done from within the `hw07` folder on your command line):
 
 
-Today, you will building a messaging app using WebSockets. This requires two components:
-
-- A WebSocket server that handles incoming messages from each client
-- A client that establishes a connection to the server and sends messages to the server whenever a user chats.
-
-Note that the server and the client don't have to be on the same machine (and furthermore the client doesn't even have to be hosted in the cloud)!
-
-## 1. Setup Your Files and Local Server
-
-<a class="nu-button" style="margin-top:20px;display:inline-block;" href="/fall2024/course-files/tutorials/tutorial12.zip">tutorial12.zip<i class="fas fa-download" aria-hidden="true"></i></a>
-
-### 1. Organize files
-1. Download the `tutorial12.zip` file and unzip it. You should see the following files:
-
+### For Mac, Unix, Linux
 ```bash
-tutorial12
-├── client
-│   ├── client.js
-│   ├── index.css
-│   └── index.html
-└── server
-    ├── .env
-    ├── Procfile
-    ├── app.py
-    └── requirements.txt
-```
-
-### 2. Set Up Your Virtual Environment
-Open the terminal and navigate to the `server` directory inside your `tutorial12` directory. Then, set up a virtual environment and install the dependencies as follows (depending on your operating system):
-
-#### For Mac, Unix, Linux, or GitBash
-
-```bash
-python3 -m venv env
+# activates your virtual environment
 source env/bin/activate
-python -m pip install -r requirements.txt    # install dependencies
 ```
 
-#### For Windows Powershell or Command Prompt
+### For Windows Powershell or Command Prompt
 
-```bash
-# create the virtual environment
-py -m venv env  
-
+```powershell
 # run the activate.bat script as follows:
 env\Scripts\activate
-
-# and finally, install the Python dependencies
-py -m pip install -r requirements.txt
 ```
 
-### 3. Run Your Server
-Note that this IS **NOT** a Flask server. Given this:
+> ### Note: Everyone must have their own files working locally
+> If you are collaborating with a partner, it is important that **both partners** configure their computers to run the HW7-HW8 files locally.
 
-1. You will  run the server as a regular python file (with your virtual environment activated):<br>`python app.py`
-1. Each time you make a change to `app.py` you will have to **restart the server**.
+## Your Tasks
+When you are done with the configuration step, you will complete the GET methods for the `/api/posts` and `/api/posts/<int:id>` endpoints (listed below). You will know when you're done if **all 8** of the Post-related tests pass (see `tests/run_tests_hw07.py` for details).
 
-## 2. Implement the Server Functionality
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Method/Route</th>
+            <th>Description and Examples</th>
+            <th>Parameters</th>
+            <th>Response Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1.</td>
+            <td>GET /api/posts</td>
+            <td>
+                All posts in the current users' feed. This includes the current user's posts, as well as the people that the current user is following. You will need to modify this endpoint to get it to work as specified.
+                <ul>
+                    <li><a href="https://csci344-hw07.herokuapp.com/api/posts">/api/posts</a></li>
+                    <li><a href="https://csci344-hw07.herokuapp.com/api/posts?limit=5">/api/posts?limit=5</a></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li><code class="highlighter-rouge">limit (int, optional)</code>: Limits the number of posts returned (defaults to 20, maximum is 50)</li>
+                </ul>
+            </td>
+            <td>List of Post objects</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>GET /api/posts/&lt;int:id&gt;</td>
+            <td>
+                The post associated with the id (already started for you).
+                <ul>
+                    <li><a href="https://csci344-hw07.herokuapp.com/api/posts/1">/api/posts/1</a></li>
+                    <li><a href="https://csci344-hw07.herokuapp.com/api/posts/2">/api/posts/2</a></li>
+                </ul>
+            </td>
+            <td></td>
+            <td>Post object</td>
+        </tr>
+    </tbody>
+</table>
 
-Before implementing anything, take stock of the code. First, open `server/app.py` in VS Code and take a look at it. A few things to note:
-* This server isn't using flask. Rather, it's using the `websockets` third-party library to listen for websocket requests.
-* The `respond_to_message` function naively echos a message back to the originating client.
-* The server doesn't keep track of all of the websockets that are connected to it. Therefore, it does not know how to broadcast a user's message to all of the other socket connections.
+### What should the Post resource look like?
+Recall (from HW7 instructions) that the Post resource should contain data about the **post**, the **user**, and any associated **comments** (order within the json object doesn't matter). It should also contain some convenience data fields such as whether the current user has liked or bookmarked the post (e.g. **current_user_like_id** and **current_user_bookmark_id**). The `to_dict()` method in the `Post` model already does this for you, so you will invoke the model's to_dict() method when returning resources.
 
-```python
-async def respond_to_message(websocket, message):
-    data = json.loads(message)
-    print(data)
-    websocket.send(json.dumps(data))
-```
-
-Your job is to edit the `app.py` code to handle the three different types of JSON messages shown below. These data formats are abitrary -- we just made them up as reasonable ways to send login, disconnect, and chat information. You could set these messages up however you want, but we just made some decisions here about how to do things:
-
-### 1. Login
-
+{:.overflow}
 ```json
-{ 
-    "type": "login", 
-    "user_joined": "walter", 
-    "active_users": ["walter", "maria", "laura"] 
-}
-```
-
-### 2. Disconnect
-
-```json
-{ 
-    "type": "login", 
-    "user_left": "walter", 
-    "active_users": ["maria", "laura"] 
-}
-```
-
-### 3. Chat
-
-```json
-{ 
-    "type": "chat", 
-    "text": "is this working?", 
-    "username": "my_username" 
-}
-```
-
-You will handle each of these messages according to the specifications outlined below:
-
-### 1. Login
-If `data.get('type')` is "login", add the socket and the logged in user to the `logged_in_users` dictionary:
-
-```python
-logged_in_users[websocket] = data.get('username')
-```
-
-Then, send the following message back to each client:
-
-```python
 {
-    "type": "login",
-    "user_joined": data.get('username'),
-    "active_users": list(logged_in_users.values())
+   "id": 99,
+   "image_url": "https://picsum.photos/600/430?id=605",
+   "user": {
+      "id": 11,
+      "first_name": "Jason",
+      "last_name": "Lopez",
+      "username": "jason_lopez",
+      "email": "jason_lopez@yahoo.com",
+      "image_url": "https://picsum.photos/300/200?id=368",
+      "thumb_url": "https://picsum.photos/30/30?id=582"
+   },
+   "caption": "Sometimes degree food never sit probably remember main education race machine.",
+   "alt_text": "Descriptive text",
+   "display_time": "7 days ago",
+   "current_user_like_id": 56,
+   "current_user_bookmark_id": 20,
+   "likes": [
+      {
+         "id": 263,
+         "user_id": 2,
+         "post_id": 99
+      },
+      {
+         "id": 264,
+         "user_id": 20,
+         "post_id": 99
+      },
+      ...
+   ],
+   "comments": [
+      {
+         "id": 256,
+         "text": "Night ability such already study make bed there total tonight military democratic expect our serious second perform interesting modern send table window kid dinner message although degree law town standard head special image.",
+         "post_id": 99,
+         "user": {
+            "id": 15,
+            "first_name": "Lisa",
+            "last_name": "Parrish",
+            "username": "lisa_parrish",
+            "email": "lisa_parrish@yahoo.com",
+            "image_url": "https://picsum.photos/300/200?id=982",
+            "thumb_url": "https://picsum.photos/30/30?id=999"
+         }
+      },
+      {
+         "id": 257,
+         "text": "Start difference news gas administration hot deal support anyone explain task water anything more street better herself yourself its guess sport fall collection war natural foreign stage training example act eat television over happy dark bring character foreign low black establish skill rock science food close people help thought garden task test option help agency.",
+         "post_id": 99,
+         "user": {
+            "id": 12,
+            "first_name": "Samantha",
+            "last_name": "Acosta",
+            "username": "samantha_acosta",
+            "email": "samantha_acosta@yahoo.com",
+            "image_url": "https://picsum.photos/300/200?id=220",
+            "thumb_url": "https://picsum.photos/30/30?id=79"
+         }
+      },
+      ...
+   ]
 }
 ```
 
-You can test this by opening `tutorial12/client/index.html` in your web browser, clicking the "Connect" and "Set Name" buttons (and also providing a username), and seeing if you get the correct JSON output in the browser console.
+## What to turn in
 
-### 2. Disconnect
-If the `data.type` is "disconnect", removed the user from the logged_in_users dictionary. 
-
-```python
-del logged_in_users[websocket]
-```
-
-Then, send the following message back to each client:
-
-```python
-{
-    "type": "disconnect",
-    "user_left": data.get('username'),
-    "active_users": list(logged_in_users.values())
-}
-```
-
-You can test this by opening `tutorial12/client/index.html` in a second browser tab and clicking the "Connect" and "Set Name" buttons (and also providing a username). Then, close the browser tab you just opened. Now go back to your first browser tab and look at the console. You should see a messages in the console indicating that a user both connected and then disconnected from the chat server.
-
-### 3. Chat
-If the `data.get('type')` is "chat", just send the `data` object to each client (no processing needed). You can test this by sending a chat message in the client and then seeing if you get the correct JSON output in the browser console.
-
-If the `data.get('type')` isn't "login," "disconnect," or "message", ignore the message (don't pass it on), and log it to the console: `console.log('Unrecognized message type:', data);`
-
-### Relaying the message to everyone
-Finally, you will write code that will iterate through the tracked websockets from the `logged_in_users` and broadcast the received message to all of the connected clients:
-
-```python
-for sock in logged_in_users:
-    # Be sure to replace "data" with a message that conforms to
-    # the specs above:
-    await sock.send(json.dumps(data))
-```
-
-> ### Some notes on extending this exercise
-> If we were building this into a full application, we would (probably) store each user, conversation, and message in a database to load the appropriate chat history whenever the user opens the application. For now, messages will just be stored on the client and not be persisted between sessions (perhaps a privacy feature?).
->
-> We would also probably require that the user authenticates using a JWT token, and that a user could only broadcast messages to people with reciprocal following relationships (you follow me and I follow you). 
-
-## 3. Implement the Client Functionality
-
-Open `index.html` in your browser. The interface is a simple chat interface that allows the user to select a chatroom (just localhost for now), set their name, and send messages to other users in the chatroom. 
-
-Now open `client.js` in VS Code and take a look at it. Much of this (simple) client has already been implemented for you, including:
-
-{:.compact}
-1. Code for setting up the web socket + socket event listeners (when the user clicks the "Connect" button).
-1. Code for sending messages to the server (responding to UI events).
-1. Code for listening for and responding to (some) DOM events.
-1. Code for handling UI changes (i.e., showing and hiding DOM elements).
-1. An event handler (function) stub called `handleServerMessage` that you will implement.
-
-**Your job** will be to implement the `handleServerMessage` event handler, which will update the UI whenever the client receives a message from the server. You will handle server messages according to the specifications outlined below:
-
-### 1. Login or Disconnect
-If the data.type is "login" or "disconnect", display the list of logged in users in the `#users-list` div (right-hand panel).
-
-### 2. Chat
-If data.type is "chat", append the chat message to the `#chat` div (main panel) with the sender's name and message. Use the "left" and "right" classes to differentiate the current user from all the other users.
-
-If your client and server are both working, you should be able to open `index.html` in two separate browser tabs, log in to the same server on each, and send messages between them (see video below)!
-
-<img class="large frame" style="width:100%;" src="/fall2024/assets/images/tutorials/tutorial12/live-demo.gif" />
-
-<!-- ## 4. Accessibility
-It is important to think about how low-vision or blind users might interact with a chat app. Specifically:
-
-{:.compact}
-1. New chat messages are inserted into the DOM anytime another user sends a message.
-2. New users are coming and going all of the time.
-
-Given this, please ensure that all of the regions that are updated when websocket messages are received use the `aria-live` and `role` attributes. <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions" target="_blank">Read more on live regions here</a>. 
-
-Both Apple and Windows machines have a pre-installed screenreader. Use VoiceOver on Mac or Narrator on Windows to test the behavior described above (see instructions below).
-
-### Screen Reader Demo
-Here is an example of how a screen reader might interact with your chat interface (turn on the volume):
-
-<iframe src="https://northwestern.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=4df0a27a-6133-43ab-82cb-aea000f51bcd&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
-
-### Mac VoiceOver Instructions
-#### Turn on VoiceOver
-Open System Preferences, go to Accessibility, and enable VoiceOver
-<img class="large frame" style="width:100%;" alt= "animated image of the instructions described above" src="/fall2024/assets/images/tutorials/tutorial12/mac-voiceover-open.gif" />
-
-#### Turn off VoiceOver
-Click the X on the top left of the gray VoiceOver transcription box
-<img class="large frame" style="width:100%;" alt= "animated image of the instructions described above" src="/fall2024/assets/images/tutorials/tutorial12/mac-voiceover-close.gif" />
-
-### Windows Narrator Instructions
-#### Turn on Narrator
-Open the Start menu, search for Narrator, enable and **do not close** the Narrator window
-<img class="large frame" style="width:100%;" alt= "animated image of the instructions described above" src="/fall2024/assets/images/tutorials/tutorial12/windows-narrator-open.gif" />    
-
-#### Turn off Narrator
-Pull up the Narrator window and click Exit Narrator. If you've closed this window, press the Windows logo key + Ctrl + Enter on your keyboard. In earlier versions of Windows, you may need to press Windows logo key + Enter.
-<img class="large frame" style="width:100%;" alt= "animated image of the instructions described above" src="/fall2024/assets/images/tutorials/tutorial12/windows-narrator-close.gif" />    
-
-
-## 5. (Optional) Experiment with ngrok
-
-Ngrok is a command line tool for creating a secure URL that points to server that is running on your local computer. Using this url, others can access your server securely without you having to host it online.
-
-You should [sign up](https://dashboard.ngrok.com/signup) for ngrok using your Northwestern email and [download](https://ngrok.com/download)/extract the version for your preferred OS.
-
-Run `ngrok help`; if the command fails, find the location where the ngrok executable was downloaded to and add the folder to your system PATH. Then, run `ngrok authtoken <token>` with the token listed in your ngrok dashboard.
-
-<img class="large frame" src="/fall2024/assets/images/tutorials/tutorial12/img3.png" />
-
-With your server running in another terminal window, type `ngrok http 8081` to open a tunnel to your server. You should now be able to add the forwarding url (minus the http://) to the list of servers on your client and use it as a separate chat room. -->
-
-<!-- If you want, feel free to send the link to any open tunnels to your app in the Zoom chat so others can connect to it with their clients. Ideally, we'll be able to create several open chatrooms that your classmates can use! -->
-
-## What to Turn In
-
-When you're done, zip the completed folder and submit it to the Moodle.
+Please submit a link to your GitHub repository to the Moodle. The repository should include your hw07 folder, which should include the code that you wrote for `views/posts.py`.

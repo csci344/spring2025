@@ -29,8 +29,8 @@ layout: default
 
 
 
-{% assign everything = site.assignments | concat: site.lectures %}
-{% assign main_listing = site.lectures %}
+{% assign everything = site.assignments | concat: site.lectures | concat: site.quizzes %}
+{% assign main_listing = site.lectures | concat: site.quizzes %}
 
 <!-- This additional date loop adds any unorthodox deadlines -->
 {% assign assignment_dates = everything | sort: 'due_date' | map: 'due_date' | uniq %}
@@ -57,119 +57,122 @@ layout: default
         <tbody>
             {% assign num = 0 %}
             {% for date in dates %}
-            {% assign topic = site.lectures | where: 'due_date', date | where: 'type', 'module' | last %}
-            {% assign holiday = site.lectures | where: 'due_date', date | where: 'type', 'holiday' | last %}
-            {% assign lecture = main_listing | where: 'due_date', date | last %}
-            {% assign deadline = site.lectures | where: 'due_date', date | where: 'type', 'deadline' | last %}
-            {% assign lab_start = site.assignments | where: 'start_date', date | where: 'type', 'tutorial' | last %}
-            {% assign assignments = site.assignments | where: 'due_date', date %}
+                {% assign topic = site.lectures | where: 'due_date', date | where: 'type', 'module' | last %}
+                {% assign holiday = site.lectures | where: 'due_date', date | where: 'type', 'holiday' | last %}
+                {% assign lecture = main_listing | where: 'due_date', date | last %}
+                {% assign deadline = site.lectures | where: 'due_date', date | where: 'type', 'deadline' | last %}
+                {% assign lab_start = site.assignments | where: 'start_date', date | where: 'type', 'tutorial' | last %}
+                {% assign assignments = site.assignments | where: 'due_date', date %}
 
-            <!-- Calculate the Week -->
-            {% assign dateStart = site.term_start_date | date: '%s' %}
-            {% assign lectureDate = date | date: '%s' %}
-            {% assign diffSeconds = lectureDate | minus: dateStart %}
-            {% assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 | plus: 1 %}
-            {% assign week = diffDays | divided_by: 7 | plus: 1 %}
-            {% assign rowClass = "" %}
-            {% assign prefix = None %}
+                <!-- Calculate the Week -->
+                {% assign dateStart = site.term_start_date | date: '%s' %}
+                {% assign lectureDate = date | date: '%s' %}
+                {% assign diffSeconds = lectureDate | minus: dateStart %}
+                {% assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 | plus: 1 %}
+                {% assign week = diffDays | divided_by: 7 | plus: 1 %}
+                {% assign rowClass = "" %}
+                {% assign prefix = None %}
 
-            {% if topic %}
-            {% assign rowClass = "section" %}
-            {% assign num = topic.num %}
-            {% assign prefix = topic.abbreviation %}
-            {% if prefix == null %}
-            {% assign prefix = "Topic " | append: num %}
-            {% endif %}
-            {% endif %}
-            {% if holiday %}
-            {% assign rowClass = "holiday" %}
-            {% endif %}
-            <tr class="{{rowClass}}">
-                <th>
-                    {% assign mod = diffDays | modulo: 7 %}
-                    {% if mod == 0 %}
-                    Week {{week}}
+                {% if topic %}
+                    {% assign rowClass = "section" %}
+                    {% assign num = topic.num %}
+                    {% assign prefix = topic.abbreviation %}
+                    {% if prefix == null %}
+                        {% assign prefix = "Topic " | append: num %}
                     {% endif %}
-                    {% if mod == 1 %}
-                    Week {{week}}
-                    {% endif %}
-                    <span class="due-date">
-                        {{ date | date: "%m/%d/%y" }}
-                    </span>
-                </th>
-                {% if lecture %}
-                <!-- If lecture -->
-                <td>
-                    {{ date | date: "%a, %m/%d" }}
-                </td>
-                <td>
-                    {% assign className = 'lec' %}
-                    {% if lecture.type == 'review' or lecture.type == 'exam' or lecture.type == 'quiz'%}
-                        {% assign className = 'quiz' %}
-                        {% assign prefix = lecture.type | append: " " | append: lecture.num %}
-                    {% endif %}
-                    {% if lecture.type == 'tutorial' %}
-                        {% assign className = 'lab' %}
-                        {% assign prefix = "Tutorial " | append: lecture.num %}
-                    {% endif %}
-
-                    <!-- output -->
-                    {% if lecture.type == "tutorial" %}
-
-                    {% elsif lecture.draft == 1 and prefix %}
-                        <span class="badge">
-                            {{ prefix }}
+                {% endif %}
+                {% if holiday %}
+                    {% assign rowClass = "holiday" %}
+                {% endif %}
+                <tr class="{{rowClass}}">
+                    <th>
+                        {% assign mod = diffDays | modulo: 7 %}
+                        {% if mod == 0 %}
+                            Week {{week}}
+                        {% endif %}
+                        {% if mod == 1 %}
+                            Week {{week}}
+                        {% endif %}
+                        <span class="due-date">
+                            {{ date | date: "%m/%d/%y" }}
                         </span>
-                        {{ lecture.title }}
-                    {% elsif prefix %}
-                        <a class="{{ className }}" href="{{site.baseurl}}{{lecture.url}}">
-                            {{ prefix }} <i class="fas fa-link"></i>
-                        </a>
-                        {{ lecture.title }}
-                    {% else %}
-                        {{ lecture.title }}
-                    {% endif %}
-                </td>
-                {% elsif lab_start %}
-                    <!-- Display Lab -->
-                    {% assign classname = "lab" %}
-                    <td>{{ date | date: "%a, %m/%d" }}</td>
-                    <td>
-                        {% if lab_start.draft == 1 %}
-                            <strong>{{ lab_start.abbreviation }}:</strong> {{ lab_start.title }}
-                        {% else %}
+                    </th>
+                    {% if lecture %}
+                        <!-- If lecture -->
+                        <td>
+                            {{ date | date: "%a, %m/%d" }}
+                        </td>
+                        <td>
+                            {% assign className = 'lec' %}
+                            {% if lecture.type == 'review' or lecture.type == 'exam' or lecture.type == 'quiz'%}
+                                {% assign className = 'quiz' %}
+                                {% assign prefix = lecture.type | append: " " | append: lecture.num %}
+                            {% endif %}
+                            {% if lecture.type == 'tutorial' %}
+                                {% assign className = 'lab' %}
+                                {% assign prefix = "Tutorial " | append: lecture.num %}
+                            {% endif %}
+
+                            <!-- output -->
+                            {% if lecture.type == "tutorial" %}
+
+                            {% elsif lecture.draft == 1 and prefix %}
+                                <span class="badge">
+                                    {{ prefix }}
+                                </span>
+                                {{ lecture.title }}
+                            {% elsif prefix %}
+                                <a class="{{ className }}" href="{{site.baseurl}}{{lecture.url}}">
+                                    {{ prefix }} <i class="fas fa-link"></i>
+                                </a>
+                                {{ lecture.title }}
+                            {% else %}
+                                {{ lecture.title }}
+                            {% endif %}
+                        </td>
+                    {% elsif lab_start %}
+                        <!-- Display Lab -->
+                        {% assign classname = "lab" %}
+                        <td>{{ date | date: "%a, %m/%d" }}</td>
+                        <td>
+                            {% if lab_start.draft == 1 %}
+                            <span class="badge">{{ lab_start.abbreviation }}</span> {{ lab_start.title }}
+                            {% else %}
                             <a href="{{site.baseurl}}{{lab_start.url}}" class="{{classname}}">
                                 {{ lab_start.abbreviation }}
                                 <i class="fa fa-link"></i>
                             </a> {{ lab_start.title }}
-                        {% endif %}
-                    </td>
-                {% else %}
-                    <!-- If no lecture -->
-                    <td>{{ date | date: "%a, %m/%d" }}</td>
-                    <td></td>
-                {% endif %}
-                <td>
-                    {% for assignment in assignments %}
-                        {% assign classname = "pj" %}
-                        {% if assignment.type == "homework" %}
-                            {% assign classname = "hw" %}
-                        {% endif %}
-                        {% if assignment.type == "tutorial" %}
-                            {% assign classname = "lab" %}
-                        {% endif %}
+                            {% endif %}
+                        </td>
+                    {% else %}
+                        <!-- If no lecture -->
+                        <td>{{ date | date: "%a, %m/%d" }}</td>
+                        <td></td>
+                    {% endif %}
+                    <td>
+                        {% for assignment in assignments %}
+                            {% assign classname = "pj" %}
+                            {% if assignment.type == "homework" %}
+                                {% assign classname = "hw" %}
+                            {% endif %}
+                            {% if assignment.type == "tutorial" %}
+                                {% assign classname = "lab" %}
+                            {% endif %}
 
-                        {% if assignment.draft == 1 %}
-                            {{ assignment.abbreviation }}: {{ assignment.title }}<br>
-                        {% else %}
-                            <a href="{{site.baseurl}}{{assignment.url}}" class="{{classname}}">
-                                {{ assignment.abbreviation }}
-                                <i class="fa fa-link"></i>
-                            </a> {{ assignment.title }}<br>
-                        {% endif %}
-                    {% endfor %}
-                </td>
-            </tr>
+                            {% if assignment.type == "tutorial" %}
+                                <!-- <span class="badge">{{ assignment.abbreviation }}</span><br> -->
+                                {{ assignment.abbreviation }}<br>
+                            {% elsif assignment.draft == 1 %}
+                                <span class="badge">{{ assignment.abbreviation }}</span> {{ assignment.title }}<br>
+                            {% else %}
+                                <a href="{{site.baseurl}}{{assignment.url}}" class="{{classname}}">
+                                    {{ assignment.abbreviation }}
+                                    <i class="fa fa-link"></i>
+                                </a> {{ assignment.title }}<br>
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
             {% endfor %}
         </tbody>
     </table>

@@ -1,36 +1,42 @@
 ---
-layout: two-column
-title: "Intro to JavaScript & DOM manipulation"
+layout: module
+title: Design
 type: module
 prefix: topic
 num: 5
 draft: 1
 due_date: 2024-09-11
+readings: 
+   - url: ../css-reference/css-grid/
+     title: CSS Grid
+     internal: 1
+   - url: ../css-reference/media-queries/
+     title: Media Queries
+     internal: 1
+   - url: https://cssgridgarden.com/
+     title: "CSS Grid Garden"
+     notes: Complete at least the first 10 levels
+   - url: https://flexboxfroggy.com/
+     title: Flexbox Froggy
+     notes: Complete at least the first 10 levels
+   - url: https://university.webflow.com/lesson/flexbox-vs-grid
+     title: When to use Flex versus CSS Grid?
+     optional: 1
+   - url: https://css-tricks.com/snippets/css/complete-guide-grid/
+     title: "CSS Tricks: A Complete Guide to Grid"
+     optional: 1
+   - url: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+     optional: 1
+     title: "CSS Tricks: A Complete Guide to Flexbox"
+   - url: https://www.w3schools.com/css/css3_flexbox.asp
+     title: W3 Schools Flexbox Guide
+     optional: 1
 ---
 
-## Readings
-
-### DOM Manipulation
-* <a href="https://www.digitalocean.com/community/tutorials/introduction-to-the-dom" target="_blank">Intro to the DOM</a>. <em>Digital Ocean</em>
-* <a href="https://www.digitalocean.com/community/tutorials/understanding-the-dom-tree-and-nodes" target="_blank">Understanding the DOM Tree and Nodes</a>.<em>Digital Ocean</em>
-* <a href="https://www.digitalocean.com/community/tutorials/how-to-access-elements-in-the-dom" target="_blank">How To Access Elements in the DOM</a>.<em>Digital Ocean</em>
-* <a href="https://www.digitalocean.com/community/tutorials/how-to-traverse-the-dom" target="_blank">How to Traverse the DOM</a>. <em>Digital Ocean</em>
-* <a href="https://www.digitalocean.com/community/tutorials/how-to-make-changes-to-the-dom" target="_blank">How to Make Changes to the DOM</a>. <em>Digital Ocean</em>
-* <a href="https://www.digitalocean.com/community/tutorials/how-to-modify-attributes-classes-and-styles-in-the-dom" target="_blank">How to Modify Attributes, Classes, and Styles in the DOM</a>. <em>Digital Ocean</em>
-* <a href="https://www.digitalocean.com/community/tutorials/understanding-events-in-javascript" target="_blank">Understanding Events in JavaScript</a>
-
-### Intro to the JavaScript Language
-* <a href="https://www.digitalocean.com/community/tutorials/how-to-define-functions-in-javascript" target="_blank">How To Define Functions in JavaScript</a> <em>Digital Ocean</em>
-* <a href="https://www.digitalocean.com/community/tutorials/understanding-template-literals-in-javascript" target="_blank">Understanding Template Literals in JavaScript</a> <em>Digital Ocean</em>
-* <a href="https://dmitripavlutin.com/differences-between-arrow-and-regular-functions/" target="_blank">5 Differences Between Arrow and Regular Functions</a>
-* <a href="https://www.digitalocean.com/community/tutorials/understanding-events-in-javascript" target="_blank">Understanding Events in JavaScript</a>. <em>Digital Ocean</em>
-* <a href="https://www.digitalocean.com/community/tutorials/how-to-write-conditional-statements-in-javascript" target="_blank">How To Write Conditional Statements in JavaScript</a>. <em>Digital Ocean</em>
-* <a href="https://www.digitalocean.com/community/tutorials/using-while-loops-and-do-while-loops-in-javascript" target="_blank">Using While Loops and Do...While Loops in JavaScript</a>. <em>Digital Ocean</em>
-* <a href="https://www.digitalocean.com/community/tutorials/for-loops-for-of-loops-and-for-in-loops-in-javascript" target="_blank">For Loops, For...Of Loops and For...In Loops in JavaScript</a>. <em>Digital Ocean</em>
 
 ## Slides
-* Lecture 7: <a href="https://docs.google.com/presentation/d/1pwGXy43ajGQP8IynROyaLyaaNO7ZxlPZv9r5kEy-EoU/edit?usp=sharing" target="_blank">Intro to DOM Manipulation</a> (Wednesday, 02/01)
-* Lecture 8: <a href="https://docs.google.com/presentation/d/1VNeVoT166YjiyUcnLVnn8Mo3Xw4NowtUT0YkKz2qxoY/edit?usp=sharing" target="_blank">JavaScript Primer</a> (Monday, 02/06)
+* Lecture 5: <a href="https://docs.google.com/presentation/d/1BxcnJOclo4XIW40P8C07GUU-2Ga8rDvrRc6TompFC-Y/edit?usp=sharing" target="_blank">CSS Layouts</a> (Wednesday, 01/25)
+* Lecture 6: <a href="https://docs.google.com/presentation/d/13IJvgaXJeoWzPzHfRC9HLzbHodVpdZ4E3I4-VISoBg0/edit?usp=sharing" target="_blank">Media Queries & CSS Wrap-Up</a> (Monday, 01/30)
 
 ## Videos & Lecture Files
 Videos and worked examples will be published after class:
@@ -38,5 +44,5 @@ Videos and worked examples will be published after class:
 * <a href="https://github.com/vanwars/csci344" target="_blank">Worked examples on GitHub</a>
 
 ## Activities
-* Lecture 7 files: [DOM manipulation practice](/fall2024/course-files/lectures/lecture07.zip) (Wednesday, 02/01)
-* Lecture 8 files: [Intro to the language](/fall2024/course-files/lectures/lecture08.zip) (Monday, 02/06)
+1. <a href="/fall2024/course-files/lectures/lecture05.zip">Lecture 5 files</a> (Wednesday, 01/25)
+1. <a href="/fall2024/course-files/lectures/lecture06.zip">Lecture 6 files</a> (Monday, 01/30)

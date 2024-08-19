@@ -6,7 +6,8 @@ abbreviation: Tutorial 2
 draft: 1
 points: 6
 num: 2
-due_date: 2024-08-30
+start_date: 2024-08-30
+due_date: 2024-09-03
 ---
 
 {:.blockquote-no-margin}

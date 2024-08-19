@@ -1,338 +1,291 @@
 ---
 layout: assignment-two-column
-title: Setting up Flask
+title: "React: Refactoring PhotoApp"
 type: tutorial
 abbreviation: Tutorial 9
 draft: 1
 points: 6
 num: 9
-due_date: 2024-11-01
+start_date: 2024-10-18
+due_date: 2024-10-21
 ---
 
 <style>
-    table th:first-child, table td:first-child {
-        min-width: auto;
-        max-width: auto;
-        width: auto;
+    .two-column table th:first-child, 
+    .two-column table td:first-child {
+        min-width: auto !important;
+        width: auto !important;
+    }
+
+    .two-column table th:nth-child(2), 
+    .two-column table td:nth-child(2) {
+        min-width: 200px; !important;
+        width: auto !important;
+    }
+
+
+    blockquote.updates {
+        background-color: #d4edda;
+        border: solid 1px #c3e6cb;
+    }
+    blockquote.updates h2, 
+    blockquote.updates p, 
+    blockquote.updates li, 
+    blockquote.updates a {
+        color: #155724;
+    }
+    blockquote.updates h2 {
+        border-bottom: solid 1px #155724;
+    }
+    blockquote.updates a:hover {
+        background-color: transparent;
     }
 </style>
 
-> ## Background Readings
-> Before beginning this tutorial, please read (or at least skim) the following:
-> 
-> {:.compact}
-> * Towards Data Science. <a href="https://towardsdatascience.com/virtual-environments-104c62d48c54#8025" target="_blank">Intro to Python Virtual Environments</a>
-> * Flask website. <a href="https://flask.palletsprojects.com/en/2.0.x/quickstart/" target="_blank">Flask Quickstart Guide</a>
-> * Janetakis, Nick (Oct., 2017). <a href="https://nickjanetakis.com/blog/server-side-templates-vs-rest-api-and-javascript-front-end" target="_blank">Server Side Templates vs REST API and Javascript Front-End</a>.
-
-## 1. Intro to Flask
-<a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">Flask</a> is a framework, built with Python, for helping people build dynamic, scalable web applications. I have selected Flask as our web server engine for this semester because it has a relatively simple set of common abstractions, and is therefore easier to learn than some other frameworks. At the same time, it is also very powerful, and has features such as:
-
-* Templating, using the <a href="https://jinja.palletsprojects.com/en/3.0.x/" target="_blank">Jinja template engine</a>
-* A simple way to define <a href="https://flask.palletsprojects.com/en/2.0.x/api/#url-route-registrations" target="_blank">routes</a> (which bind URL addresses to functions), and to specify which HTTP methods are valid for a particular route (HEAD, OPTIONS, GET, POST, PUT, PATCH, DELETE)
-* A way to listen for and parse HTTP requests over a specified port
-* A way to create and send HTTP responses
-
-In addition, since Flask is written in Python, you have access to any and all Python libraries (e.g., for connecting to various databases, taking advantage of pretrained models, and so forth).
-
-Most frameworks have abstractions similar to those offered by Flask, so once you learn Flask, learning new server-side web frameworks will be easier. Some other web frameworks that are analagous to Flask (that you may have heard of) include:
-
-{:.small}
-| Python | Flask, Django, Web2Py, Pyramid, etc.| 
-| Node.js | Express, etc. |
-| PHP | Larvel, Symfony, etc. |
-| Ruby | Rails, etc. |
-| Java | Spring, Struts, Guice, etc. |
-| C# | ASP.NET |
-
-
-## 2. Intro to Python Virtual Environments
-To run Flask, we are going to create a self-contained Python virtual environment, to ensure that your python dependencies don't interfere with any global python installations you might have.
-
-{:.blockquote-no-margin}
-> From the <a href="https://docs.python.org/3/library/venv.html" target="_blank">Python Docs</a>: 
+> ## 1. Do the Readings
+> If you haven't yet taken a look at these documents, carve out some time to do it. They're important.
 >
-> A virtual environment is a Python environment such that the Python interpreter, libraries and scripts installed into it are isolated from those installed in other virtual environments, and (by default) any libraries installed in a “system” Python, i.e., one which is installed as part of your operating system.
+> * <a href="https://beta.reactjs.org/learn" target="_blank">Quick Start</a>
+> * <a href="https://beta.reactjs.org/learn/tutorial-tic-tac-toe" target="_blank">Tic Tac Toe</a>
+> * <a href="https://beta.reactjs.org/learn/thinking-in-react" target="_blank">Thinking in React</a>
+> * <a href="https://beta.reactjs.org/learn/sharing-state-between-components" target="_blank">Sharing state between components</a>
 
-Practically speaking, a virtual environment (venv) "sandboxes" your Python installation so that anything installed within a venv is not available outside of it. Libraries installed in a "system" Python ARE available to your venv, but can be overridden from within the venv. For instance, if `numpy version 1.15.4` is installed on your "system" Python and you decide to install `numpy version 1.16.1` in your venv, then within the venv, `1.16.1` will take precedence. 
+## 2. Set Up Instructions
 
-Some commands to know:
+<a class="nu-button" href="/fall2024/course-files/tutorials/tutorial08.zip">tutorial08.zip<i class="fas fa-download" aria-hidden="true"></i></a>
 
-### Mac / Unix / Linux
+* If you haven't downloaded and installed Node.js, do that first (see lecture materials).
+* Download the starter files and save them in your `csci344/tutorials` folder.
+* On your terminal / command line, navigate to `csci344/tutorials/tutorial08` folder.
+* Install the Node.js dependencies using `npm install`
+* Finally, run your React app by typing `npm start`
 
-```bash
-python3 -m venv env      # creates a new virtual environment called "env"
-source env/bin/activate  # activates the virtual environment
-deactivate               # deactivates the virtual environment
+### Deployment Notes
+Although we are using Node to build and run our React app, we will ultimately be compiling our React app to HTML, CSS, and JavaScript so that the browser can download these files from our website and run them client-side. It's confusing, but the final output of our React App is client-side code that our browser will run.
+* Try building your React App by issuing `npm run build` on the command line. The resulting build folder will have "vanilla" HTML, CSS, and JavaScript that your browser understands.
+
+### A few things to notice
+Before you start coding, please take a look at the following:
+
+#### 1. Proxy URL
+`package.json` is a configuration file used by Node.js. It specifies rules for which packages dependencies should be installed (read via the `npm install`). It also has some speficications for how the application should behave. One of these is a property called `proxy`, which is set to <a href="https://photo-app-secured.herokuapp.com/" target="_blank">https://photo-app-secured.herokuapp.com/</a>. What this means is that in each of your fetch endpoints, you don't need to specify the fully qualified path. For instance, if you want to query for a list of Post objects, you only need to specify this address: `/api/posts`.
+
+#### 2. public/index.html
+Your base HTML file is located in the `public` folder. Take a look at it, noting how simple it is:
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Photo App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+    <div id="root"></div>
+
+</body>
+</html>
 ```
 
-### Windows Powershell or Command Prompt
+#### 3. src/index.js
+`src/index.js` "kicks off" your web app. Ope it and take a look at it. Note that the `renderApp()` function is invoked at the bottom. The function first authenticates to the <a href="https://photo-app-secured.herokuapp.com/" target="_blank">https://photo-app-secured.herokuapp.com/</a> server with the `webdev/password` (you should switch this to your username and password). Then, it passes the authentication token as an argument to the `<App />` component. This component is then added to the DOM (located in the `public/index.html` file) within `#root` DOM element.
 
-```msshell
-py -m venv env          # creates a new virtual environment called "env"
-env\Scripts\activate    # activates the virtual environment
-deactivate              # deactivates the virtual environment
-```
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import './index.css';
+import {getAccessToken} from './utils';
 
-Note that when your venv is activated, there will be a `(env)` prefix in front of your command prompt. When activated, any python or `pip install` commands will be interacting with your virtual environment. 
-
-
-## 3. Set Up
-If you haven't used Python before, please download and install it: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a>. Any version of python >= 3.7 will work.
-
-Once Python is installed, download tutorial09.zip (below), unzip it, and move your `tutorial09` folder inside of your `tutorials` folder. 
-
-<a class="nu-button" href="/fall2024/course-files/tutorials/tutorial09.zip">tutorial09.zip<i class="fas fa-download" aria-hidden="true"></i></a>
-
-
-### Set Up Your Virtual Environment
-Open the terminal and navigate to your `tutorial09` folder. Then, set up a virtual environment and install the dependencies as follows (depending on your operating system):
-
-#### For Mac, Unix, Linux, or GitBash
-
-```bash
-python3 -m venv env
-source env/bin/activate
-pip install -r requirements.txt    # install dependencies
-```
-
-#### For Windows Powershell or Command Prompt
-
-```bash
-# create the virtual environment
-py -m venv env  
-
-# run the activate.bat script as follows:
-env\Scripts\activate
-
-# and finally, install the Python dependencies
-py -m pip install -r requirements.txt
-```
-
-### Run Your Flask Web Server
-
-When you're done, try running your flask app from your command line:
-
-
-```bash
-flask run --debug
-
-# if you named your app something other than app.py (say, hello.py) type this:
-# flask flask --app hello run --debug
-```
-
-You should see the following output:
-```bash
- * Serving Flask app "app.py" (lazy loading)
- * Environment: development
- * Debug mode: on
- * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
- * Restarting with stat
- * Debugger is active!
- * Debugger PIN: 273-580-071
- ```
-
- Navigate to <a href="http://127.0.0.1:5000/" target="_blank">http://127.0.0.1:5000/</a>, and you should see a screen that lists the exercises that you are to complete:
-
-<img class="medium frame" src="/fall2024/assets/images/tutorials/tutorial09/home.png" />
-
-
-
-## 4. Required Flask Exercises
-Once you've set up your flask installation, you will complete 5 required exercises. You may also complete the optional exercise (#6) for extra credit:
-
-|  | Exercise | Purpose |
-|--|--|--|
-| 1. | [Display personalized greeting](#task_1) | Practice generating and sending a dynamic string via HTTP |
-| 2. | [Grab data from a "database"](#task_2) | Practice sending a JSON string from a "database" via HTTP |
-| 3. | [Grab data from another server](#task_3) | Query another REST API and then forward the resulting data as an HTTP response. Allow the user to specify criteria using query parameters. |
-| 4. | [Merge your data with a template](#task_4) | Practice creating a data-driven, server-side HTML file from a template. Templates allow you to separate the data from the presentation of the data. |
-| 5. | [Merge someone else's data with a template](#task_5) | Merge yelp data with a template that you design. |
-| 6. | [Merge someone else's data with a template](#extra_credit) (more practice) | **Extra Credit** Same as task 5 except that you will loop through each restaurant using Jinja looping syntax. |
-
-Each of these exercises is intended to help you get a sense of the kinds of things you can do with Flask (or any web framework):
-
-{:#task_1}
-### 1. Display personalized greeting
-Update the `exercise1` function so that it returns a personalized greeting to the user. In other words, replace "Hello World!" with something like, "Hi Erick Rubi!"
-* Assume that the `current_user` variable, defined at the top of `app.py` represents the user who is currently logged in. 
-
-<img class="medium frame" src="/fall2024/assets/images/tutorials/tutorial09/hello-erick.png" />
-
-{:#task_2}
-### 2. Grab Data from "database"
-The big idea with REST APIs is that they expose a subset of your organization's data (from a database) to the outside world. Within `app.py`, scroll down to the `exercise2` function. This function opens a simple "database" file (just a JSON file), loads the data into memory, and then sends it as response to the requestor. Currently, it just returns an empty dictionary. You will replace the return statement with the following:
-
-```python
-return json.dumps(data)
-```
-
-After editing the function, test your endpoint by accessing <a href="http://127.0.0.1:5000/data/quotes/" target="_blank">http://127.0.0.1:5000/data/quotes/</a>. If your code worked, you should see JSON of "famous quotes."
-
-<img class="medium frame" src="/fall2024/assets/images/tutorials/tutorial09/quotes-json.png" />
-
-A quick note on the `json` library:
-* `json.dumps()` converts a Python dictionary into JSON (a string).
-* `json.loads()` convert JSON (a string) into a Python dictionary.
-{:.compact}
-
-{:#task_3}
-### 3. Grab data from another server
-Servers can also be clients that issue requests to other servers (the thing doing the "asking" is usually referred to as the client). In other words, your Flask server can query data from other servers (using HTTP or other protocols) and then make use of that data in their own way. The `exercise3` function queries a proxy server that Sarah made (<a href="https://www.apitutor.org" target="_blank">https://www.apitutor.org</a>) for accessing Yelp (and other providers). In this example, we are querying Yelp for restaurants that match a ***location*** and ***term***:
-
-```python
-@app.route('/data/yelp/')
-@app.route('/data/yelp')
-def exercise3():
-    args = request.args
-    print(args)
-    search_term = 'pizza'
-    location = 'Asheville, NC'
-    # go fetch data from another server and give it to the requestor:
-    url = 'https://www.apitutor.org/yelp/simple/v3/businesses/search?location={location}&term={search_term}&limit={count}'.format(
-        location=location, 
-        search_term=search_term, 
-        count=5)
-    response = requests.get(url)
-    data = response.json()
-    return json.dumps(data)
-```
-
-
-You are going to make this route more customizable by allowing the requestor to pass query parameters to the `/data/yelp/` endpoint. For instance:
-
-<a href="http://127.0.0.1:5000/data/yelp/?location=Asheville+NC&term=thai" target="_blank">http://127.0.0.1:5000/data/yelp/?location=Asheville+NC&term=thai</a>
-
-Recall from previous lectures:
-
-{:.compact}
-* The `?` character is used to specify where the route ends and the query parameters begin. 
-* If there is more than one query parameter, then each parameter/argument pair is separated by an `&` character (see examples below). 
-* The parameter name is on the left side of the `=` and the value is on the right side.
-* In flask, you can access the query parameters via the `request.args`, which stores a dictionary representation of any query parameters associated with a given route.
-
-
-#### Your Task
-Replace the hard-coded 'pizza' and 'Asheville, NC' terms with the user's preferences, using the the `request.args` dictionary. In python, to get a key from a dictionary, you can do this:
-
-```python
-search_term = request.args.get('term')
-location = request.args.get('location')
-```
-
-Also, be sure to check if they passed in both a "location" and a "term" parameter. If they didn't, give them an error message and tell them to try again:
-
-
-* <a href="http://127.0.0.1:5000/data/yelp/?location=Asheville,+NC&term=chinese" target="_blank">http://127.0.0.1:5000/data/yelp/?location=Asheville,+NC&term=chinese</a> (Chinese restaurants in Asheville)
-* <a href="http://127.0.0.1:5000/data/yelp/?location=San+Diego,CA&term=thai" target="_blank">http://127.0.0.1:5000/data/yelp/?location=San+Diego,CA&term=thai</a> (Thai restaurants in San Diego)
-
-If you implemented this function correctly:
-
-* The "location" search parameter is honored
-* The "term" search parameter is honored
-* If either parameter is missing, an error message displays
-{:.compact}
-
-<img class="large frame" src="/fall2024/assets/images/tutorials/tutorial09/yelp-json.png" />
-
-
-{:#task_4}
-### 4. Merge your data with a template
-The `exercise4` function uses a template to generate an HTML string, which is returned as a response. Specifically, python parses the `templates/quote-of-the-day.html` file, finds any Jinja syntax, evaluates that syntax, and finally sends a "plain" HTML file back to the client (very similar to a template literal or JSX, but with more power):
-
-```python
-@app.route('/quote')
-def exercise2():
-    return render_template(
-        'quote-of-the-day.html',
-        user=current_user
-    )
-```
-Open the `templates/quote-of-the-day.html` file and examine how the Jinja template allows python logic to be evaluated from within the HTML template (using double curly brace notation). Note that **in order to give your template access to data, it must be passed into the `render_template` function as a keyword argument** (from `app.py`). You may pass in as many keyword arguments (i.e. pieces of data) as you like into the template. These pieces of data are often referred to as the template's "context."
-
-#### Your Task
-Please make the following modifications:
-1. In `app.py`, add another context variable, called `quote` that holds a randomly selected quote from the `quotes` list (see ~line 17). 
-    *  The context variable must be included as a keyword argument in your `render_template` function.
-    * I recommend that you use Python's built-in <a href="https://www.w3schools.com/python/ref_random_choice.asp" target="_blank">random.choice</a> function to select a random element from a list.
-1. In `templates/quote-of-the-day.html`, update the template so that the quote of the day is displayed.
-    * [Jinja Cheatsheet](https://www.codecademy.com/learn/learn-flask/modules/flask-templates-and-forms/cheatsheet)
-
-
-<img class="medium frame" src="/fall2024/assets/images/tutorials/tutorial09/erick-quote.png" />
-
-<!-- {:#task_5}
-### 5. Accessing data from other servers -->
-
-
-{:#task_5}
-### 5. Merge someone else's data with a template
-Now, you're going to create a data-driven **template** to display information about the "Top Restaurant" (according to Yelp) that matches your search criteria. Consider the following code:
-
-```python
-@app.route('/ui/first-restaurant/')
-@app.route('/ui/first-restaurant')
-def exercise5():
-    # code to parse the query parameters (like in exercise 3):
-    args = request.args
-    location = args.get('location')
-    search_term = args.get('term')
+// Kicks off the app after the user "logs in":
+async function renderApp() {
+    const token = await getAccessToken('webdev', 'password');
     
-    # error handling:
-    if not (location and search_term):
-        return '"location" and "term" are required query parameters'
+    ReactDOM.render(
+        <App token={token} />,
+        document.getElementById('root')
+    );
+}
 
-    # code to query yelp:
-    url = 'https://www.apitutor.org/yelp/simple/v3/businesses/search?location={0}&term={1}&limit=1'.format(
-        location, search_term)
-    response = requests.get(url)
-    restaurants = response.json()
-    
-    # code to render the template (and to pass the template the data it needs)
-    return render_template(
-        'restaurant.html',
-        endpoint='/ui/first-restaurant/',
-        user=current_user,
-        search_term=search_term,
-        location=location,
-        restaurant=restaurants[0] # just show the first restaurant
-    )
+renderApp();
 ```
 
-It works very similarly to the code in exercise 3, except for it merges with the `restaurant.html` template (instead of dumping raw JSON data). Please try testing these routes by experimenting with the following URLs:
+#### 3. src/App.js
+`src/App.js` is your top-level React component. Open it and take a look at it. You should see a structure like the one shown below. Your first and second tasks are to create components for each of the data-generated sections of your app (we will walk through this process together).
 
-* <a href="http://127.0.0.1:5000/ui/first-restaurant/?location=Asheville,%20NC&term=chinese" target="_blank">http://127.0.0.1:5000/ui/first-restaurant/?location=Asheville,%20NC&term=chinese</a> (Chinese restaurants in Asheville)
-* <a href="http://127.0.0.1:5000/ui/first-restaurant/?location=San Diego,%20CA&term=thai" target="_blank">http://127.0.0.1:5000/ui/first-restaurant/?location=San Diego,%20CA/thai</a> (Thai restaurants in San Diego)
+```jsx
+import React from 'react';
+import NavLinks from './NavLinks';
 
-Note that the `restaurant.html` template uses a new construct -- the "include" -- as a way to modularize code.
+export default function App ({token}) { 
+    console.log('access token:', token);
+    
+    return (
+        <div>
+            
+            {/* Navbar */}
+            <nav className="main-nav">
+                <h1>Photo App</h1>
+                <NavLinks token={token} />
+            </nav>
+           
+           {/* Right Panel */}
+            <aside>
+                <header>
+                    Profile Goes Here...
+                </header>
+                <div className="suggestions">
+                    <div>
+                        Suggestions go here...
+                    </div>
+                </div>
+            </aside>
 
-<img class="large frame" src="/fall2024/assets/images/tutorials/tutorial09/template-before.png" />
+            <main>
 
-#### Your Task
-Modify the HTML in the `restaurant.html` template so that it displays the Yelp data in a more visual format. For instance, Sarah made her's look like this:
+                {/* Stories */}
+                <header className="stories">
+                    Stories go here...
+                </header>
 
-<img class="medium frame" src="/fall2024/assets/images/tutorials/tutorial09/template-after.png" />
+                {/* Posts */}
+                <div id="posts">
+                    Posts go here...
+                </div>
 
-Feel free to jazz up your template any way you like!
-* [Jinja Cheatsheet](https://www.codecademy.com/learn/learn-flask/modules/flask-templates-and-forms/cheatsheet)
+            </main>
 
-{:#extra_credit}
-## 5. Extra Credit (5pts)
-If you have more time, please also try `exercise6`. It's similar to `exercise5`, but requires a Jinja
+        </div>
+    );
+    
+}
+```
 
-### 1. Looping using Jinja
-In `exercise5`, you only display a single restaurant. Look at the <a href="https://jinja.palletsprojects.com/en/3.0.x/templates/" target="_blank">Jinja documentation</a> and see if you can figure out how to output all of the matching restaurants for the search (not just the first one). See if you can make your template look like this one:
 
-<img class="large frame" src="/fall2024/assets/images/tutorials/tutorial09/restaurants.png" />
+## 3. Your Tasks
+In this week's tutorial, you will begin HW6 (re-implementing the Photo App UI using React). To get full credit for this tutorial, complete the following tasks:
 
-### 2. Includes
-See if you can convert the HTML that shows a single restaurant card into an include file (similar to `includes/header.html`)
+{:.compact}
+1. [Create a component hierarchy](#step1) (we will walk through this together)
+1. [Create stubs for each component](#step2)
+1. [Implement the "Posts" and "Post" components](#step3)
+1. [Implement the "LikeButton" component](#step4)
+
+
+
+{:#step1}
+### Step 1: Component Hierarchy
+As described in the <a href="https://beta.reactjs.org/learn/thinking-in-react" target="_blank">Thinking in React</a> piece, it is important to be able to look at a wireframe / mockup and consider what might constitute a component (keeping in mind that components can have child components).
+
+Given (a) the starter `App.js` file we have given you and (b) what you already know about the "Photo App" app you made in Homework 4 & 5, think about how you might break up this web app into different components, where each component does a small job within the larger application. One potential strategy (though there could certainly be others) might involve splitting up your functionality into 5 top-level components, where each component has 1 job:
+
+| 1. | **NavLinks component** | (Already done for you) Responsible for displaying the name of the logged in user, and perhaps a menu down the line. |
+| 2. | **Profile component** | Responsible for displaying a profile of the logged in user. | 
+| 3. | **Suggestions component** | Responsible for displaying suggested users to follow. | 
+| 4. | **Stories component** | Responsible for displaying recent stories of people you're following. | 
+| 5. | **Posts component** | Responsible for displaying the posts in your news feed. | 
+
+Note that each of these 5 top-level components may also have sub-components. For instance:
+* `Posts` will probably be comprised of one or more `Post` components
+* Each `Post` component will be comprised of, say, an `AddComment` component, a `LikeButton`, a `BookmarkButton`, and potentially others. Here's one way of visualizing this heirarchy:
+
+<img style="width:100%;margin:20px 0px;" src="/fall2024/assets/images/tutorials/tutorial08/react-diagram.svg" />
+
+Some questions you should be asking yourself:
+* What does the JSX look like for each component?
+* Which of your components will issue fetch requests?
+* If your component is updated, does it affect the state of the other components?
+{:.compact}
+
+Also, You are **strongly encourageed** to add a comment at the top of each component that is a 1-sentence summary of what the component's "job" is (which is good software engineering practice).
+
+
+{:#step2}
+### Step 2: Create stubs for each component
+Once you've decided on your components, create a JavaScript file for each of the 5 components listed above -- `NavLinks` (already done for you), `Profile`, `Suggestions`, `Stories`, `Posts` -- in your `src` directory. To begin with, each React component should just return the simplest JSX representation of the component that you can think of (given that we're not querying the API yet). We will make our components "smarter" later on. So, for instance, the `Posts` component could render a simple `div` element (but would eventually render a list of posts):
+
+```jsx
+import React from 'react';
+
+export default function Posts() { 
+   
+    return (
+        <div>Your posts here...</div>
+    ); 
+
+}
+```
+
+When you're done creating all of your components, refactor your `App.js` to use the 5 React components you just made (don't forget to import them all).
+
+```jsx
+import React from 'react';
+import NavBar from './NavLinks';
+import Profile from './Profile';
+import Stories from './Stories';
+import Suggestions from './Suggestions';
+import Posts from './Posts';
+
+export default function App ({token}) { 
+    console.log('access token:', token);
+    
+    return (
+        <div>
+            {/* Navbar */}
+            <nav className="main-nav">
+                <h1>Photo App</h1>
+                <NavLinks token={token} />
+            </nav>
+            
+            <aside>
+                <Profile />
+                <Suggestions />
+            </aside>
+
+            <main className="content">
+                <Stories />
+                <Posts />
+            </main>
+
+        </div>
+    );
+}
+```
+
+
+{:#step3}
+### Step 3. Implement the "Posts" and "Post" Components
+Next, modify the logic of your `Posts` component to display all of the posts in the news feed. Recall that in the React model, your fetch logic and your rendering logic are decoupled. In other words, you'll probably want to:
+  
+* Fetch the posts from the course's "Photo App" endpoint (<a href="/api/posts">/api/posts</a>).
+    * Important: make sure that any fetch logic that needs to happen **when the component loads** is done inside the `useEffect()` function.
+    * If you do not do this, React will infinitely fetch, then render, then fetch again, then render, and so forth. If Sarah hasn't done a demo of this issue, ask her to.
+    * You can read more about this on the <a href="https://beta.reactjs.org/reference/react/useEffect#fetching-data-with-effects" target="_blank">React documentation</a> and <a href="https://beta.reactjs.org/learn/synchronizing-with-effects" target="_blank">Step 2 of Synchronizing with Effects</a>
+    {:.compact}
+* Ensure that the fetched posts are stored as a **state variable** (using react's built-in `useState()` function).
+    * Why? Because any change to a state variable triggers a component redraw (so that the presentation is always in sync with the data).
+* Because each post is complex, and will likely be refactored into several different subcomponents, go ahead and create a new `Post.js` component. It can be simple for now (just display the username, photo, and caption).
+
+#### Suggested References
+* <a href="https://beta.reactjs.org/learn/passing-props-to-a-component" target="_blank">Passing props to a component</a>
+* <a href="https://beta.reactjs.org/learn/state-a-components-memory" target="_blank">State: a component's memory</a>
+* <a href="https://beta.reactjs.org/learn/synchronizing-with-effects" target="_blank">Effects and the useEffect function</a>
+{:.compact}
+
+If you get stuck, look at the `hints` folder and study the `Post.js` structure. Don't just copy it...look at it and try to understand what's happening. 
+
+
+{:#step4}
+### Step 4. Implement the LikeButton Component
+Recall from HW4 that when the user clicks the "like button," a request is issued to the `/api/posts/likes` endpoint to either create or delete a like entry in the corresponding database table. Because this update causes a change to the post's information (# of likes), it needs to be re-fetched from the server and re-displayed. In this exercise, you will create a brand new `LikeButton` component, whose job it will be to issue Like/Unlike requests to the server, and to draw the heart.
+
+The `LikeButton` also needs to notify the `Post` component to redraw after it fetches data from the server. Therefore, you're going to have to figure out how to communicate between your components. When you click on the heart in your `LikeButton` component, how can notify your `Post` component to requery the server and re-render? To do this, you will be doing something called "lifting up state." The strategy discussed involves:
+
+1. Creating a function in the parent (`Post`) component to requery for the Post and set the Post component's state.
+1. Making this function available to the `LikeButton` component (by passing it in as a property).
+1. Ensuring that this method is called by the `LikeButton` component after the like/unlike functionality completes.
+
 
 ## What to Turn In
-To submit Tutorial 9, you can either:
-1. Commit and sync your code to GitHub using git and paste a link to your repo, or
-2. Zip your tutorial 9 **EXCLUDING YOUR VIRTUAL ENVIRONMENT (env) folder**
-
-If you worked with a partner, list your partner as a comment.
-If you did the extra credit, tell me so that I can look for it.
-
+When you're done, zip your `tutorial08` directory and submit your zip file to Canvas. Please **DO NOT** include your `node_modules` in the zip file (which will add hundreds of megabytes to your zip file).

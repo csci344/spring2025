@@ -21,8 +21,9 @@ exclude:
   - course-files/*/*/solutions/env*
   - course-files/*/*/env*
   - course-files/*/*/answers/env*
-  - _lectures/draft
-  - _assignments/draft
+  - _lectures/draft*
+  - _assignments/draft*
+  - _quizzes/draft*
   - course-files/administrative
   - course-files/build
   - course-files/exams
@@ -39,6 +40,10 @@ collections:
   activities:
     output: true
     permalink: /activities/:name
+  quizzes:
+    output: true
+    sort_by: lecture_date
+    permalink: /assignments/:name
   resources:
     output: true
     permalink: /resources/:name

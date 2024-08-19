@@ -1,41 +1,21 @@
 ---
 layout: module
-title: "Building REST API Endpoints with Flask and SQLAlchemy"
+title: "Intro to REST"
 type: module
 num: 13
 draft: 1
-due_date: 2024-11-11
+due_date: 2024-11-04
 ---
 
 ## Readings
+* <a href="https://nickjanetakis.com/blog/server-side-templates-vs-rest-api-and-javascript-front-end" target="_blank">Server Side Templates vs REST API and Javascript Front-End</a>. Janetakis, Nick (Oct., 2017).
+* Avraham, Shif Ben (Sept. 5, 2017). <a href="https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-1-introduction-b4a072f8740f" target="_blank">What is REST — A Simple Explanation for Beginners</a>. 
+* Fielding, Roy (2000). <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm" target="_blank">Roy Fielding's original paper</a>. For you reference.
 
-### SQLAlchemy
-
-{:.compact}
-* <a href="https://flask-sqlalchemy.palletsprojects.com/en/3.0.x/" target="_blank">Flask SQLAlchemy 3.x Documentation</a>
-    * <a href="https://flask-sqlalchemy.palletsprojects.com/en/3.0.x/models/" target="_blank">Models & Tables</a>
-    * <a href="https://flask-sqlalchemy.palletsprojects.com/en/3.0.x/queries/" target="_blank">Modifying and Querying Data</a>
-    * <a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/quickstart/#simple-relationships" target="_blank">Simple relationships</a>
-    {:.compact}
-* <a href="https://www.digitalocean.com/community/tutorials/how-to-use-one-to-many-database-relationships-with-flask-sqlalchemy" target="_blank">How to Use One-to-Many Database Relationships with Flask-SQLAlchemy</a>
-* <a href="https://docs.sqlalchemy.org/en/20/orm/queryguide/index.html" target="_blank">Advanced Queries with SQLAlchemy 2.x</a>
-{:.compact}
-
-### Flask RESTful
-
-{:.compact}
-* <a href="https://flask-restful.readthedocs.io/en/latest/" target="_blank">Flask RESTful Documentation</a>
-    * <a href="https://flask-restful.readthedocs.io/en/latest/quickstart.html" target="_blank">Quickstart</a>
-    {:.compact}
-
-### Python Decorators
-* <a href="https://realpython.com/primer-on-python-decorators/" target="_blank">Primer on Python Decorators</a>
-{:.compact}
 
 ## Slides
-* Lecture 21: <a href="https://docs.google.com/presentation/d/1ECRnFqjdc7i6z25EnpUbcLF_LQn3A8oOSrACdWT3FIA/edit?usp=sharing" target="_blank">Intro to Object Relational Mappings with SQLAlchemy</a>
-* Lecture 22: <a href="https://docs.google.com/presentation/d/1FiHA7Y78guwq2s2cQSUnAnHdACRaHYaaX5XNkQ_UBPU/edit?usp=sharing" target="_blank">Intro to MVC and Flask RESTful</a>
-* Lecture 23: <a href="https://docs.google.com/presentation/d/14nNLeDkjs_Jstg-rk9x_DBhAXjAjBsBB5e9Qw0SCkS0/edit?usp=sharing" target="_blank">Decorators</a>
+* Lecture 19: <a href="https://docs.google.com/presentation/d/1pu6MeTrgUTEiljevL_50X8b0bgJfKDMZV5jsn_QBOZ0/edit?usp=sharing" target="_blank">Intro to REST</a>
+
 
 ## Videos & Lecture Files
 Videos and worked examples will be published after class:
@@ -44,6 +24,4 @@ Videos and worked examples will be published after class:
 
 
 ## Activities
-1. Lecture 21 (Monday): [SQL Alchemy & Object-Relational Mapping](../activities/intro-sql-alchemy)
-1. Lecture 22 (Wednesday): Flask RESTful and Python Decorators (HW7 Walkthrough)
-1. Lecture 23 (Monday): [Intro to Decorators](/fall2024/course-files/lectures/lecture23.zip)
+1. Lecture 19 Activity (Monday): <a href="https://docs.google.com/document/d/1J2Aym9HhVbZIHjE8s-Fs78ilxqv0Mx9xad279GaPUcI/edit#" target="_blank">Design a REST API</a>

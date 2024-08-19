@@ -1,6 +1,6 @@
 ---
-layout: module
-title: "Introduction to HTTP & the JavaScript Fetch API"
+layout: two-column
+title: "JavaScript: Looping, Iteration, and Higher-Order Functions"
 type: module
 prefix: topic
 num: 7
@@ -9,31 +9,13 @@ due_date: 2024-09-25
 ---
 
 ## Readings
-
-### Intro to HTTP
-* <a href="https://www.freecodecamp.org/news/http-and-everything-you-need-to-know-about-it/" target="_blank">An introduction to HTTP: everything you need to know</a>. Free Code Camp
-* Sign up for <a href="https://identity.getpostman.com/signup" target="_blank">Postman</a>.
-{:.compact}
-
-### Intro to Fetch & Promises
-* Lazaris, Louis (2020). <a href="" target="_blank">Fetch API Tutorial for Beginners: How to Use Fetch API</a>.
-* <a href="https://dev.to/silvenleaf/fetch-api-easiest-explanation-part-1-4-get-silvenleaf-21e2" target="_blank">fetch GET examples</a>.<br>Note: this example (and subsequent ones) demonstrate both "then" "async/await" techniques.
-* <a href="https://dev.to/silvenleaf/fetch-api-easiest-explanation-part-2-4-post-by-silvenleaf-1kmh" target="_blank">fetch POST examples</a>.
-* <a href="https://dev.to/silvenleaf/fetch-api-easiest-explanation-part-3-4-put-by-silvenleaf-3oe8" target="_blank">fetch PUT examples</a>.<br>Note: PATCH works the same way as PUT. Recall that PATCH only updates specific attributes of a resource while PUT replaces the entire resource with a new version.
-* <a href="https://dev.to/silvenleaf/fetch-api-easiest-explanation-part-4-4-delete-by-silvenleaf-4376">fetch DELETE examples</a>.
-
-<!-- ## Promises
-* https://www.w3schools.com/js/js_promise.asp 
-* https://promisesaplus.com/#terminology -->
+* <a href="https://www.digitalocean.com/community/tutorials/how-to-use-array-methods-in-javascript-iteration-methods" target="_blank">How To Use Array Methods in JavaScript: Iteration Methods</a>
+* <a href="https://eloquentjavascript.net/05_higher_order.html" target="_blank">Higher-Order Functions</a>
 
 
 ## Slides
-* Lecture 11: <a href="https://docs.google.com/presentation/d/1CJkMkHYmM0INk4N-Qx5xr0lsw52xLJFcGmia1SvFhAU/edit?usp=sharing" target="_blank">Intro to HTTP & Fetch</a>
-* Lecture 12: <a href="https://docs.google.com/presentation/d/1ymquHG5WCKCWI-gpBdrewQHwbYDlkycq8fSAXx9GdTs/edit?usp=sharing" target="_blank">Authentication Headers, GitHub Pages, Intro to HW4</a>
-* Lecture 13: <a href="https://docs.google.com/presentation/d/1yh52FPBvmWF5TOhhHMux1uStYqIZRn0aGrTaBm5b91Q/edit?usp=sharing" target="_blank">HW4 tips, modal windows</a>
-
-<!-- Use this lecture for promises: 
-https://cs396-web-dev.github.io/spring2021/lectures/lecture06 -->
+* Lecture 9: <a href="https://docs.google.com/presentation/d/1YijHKWI86pNWuObEfpC_TV-_0p-LJFTHX7tUfgdYJ7M/edit?usp=sharing" target="_blank">High-Order Functions (forEach, map, filter, reduce)</a> (02/08)
+* Lecture 10: <a href="https://docs.google.com/presentation/d/16W34RmBL0JuD2s6x-2NO33IxlB-tdYlMJQafdvbtG6c/edit?usp=sharing" target="_blank">Higher-Order Functions continued + advanced templates</a>
 
 ## Videos & Lecture Files
 Videos and worked examples will be published after class:
@@ -41,5 +23,5 @@ Videos and worked examples will be published after class:
 * <a href="https://github.com/vanwars/csci344" target="_blank">Worked examples on GitHub</a>
 
 ## Activities
-* Lecture 11 files: [Fetch Examples](/fall2024/course-files/lectures/lecture11.zip) (Wednesday, 02/15)
-* Lecture 12 files: [Modal Windows](/fall2024/course-files/lectures/lecture12.zip) (Wednesday, 02/22)
+* Lecture 9 files: [forEach, map, filter, reduce](/fall2024/course-files/lectures/lecture09.zip) (Wednesday, 02/08)
+* Lecture 10 files: [Implementing higher-order methods](/fall2024/course-files/lectures/lecture10.zip) (Monday, 02/13)

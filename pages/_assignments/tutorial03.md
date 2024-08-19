@@ -1,12 +1,13 @@
 ---
 layout: assignment-two-column
-title: CSS Activity
+title: CSS Exercises
 type: tutorial
 abbreviation: Tutorial 3
 draft: 1
 points: 6
 num: 3
-due_date: 2024-09-06
+start_date: 2024-09-06
+due_date: 2024-09-11
 ---
 
 <style>

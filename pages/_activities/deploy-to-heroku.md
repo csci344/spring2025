@@ -3,7 +3,7 @@ layout: two-column
 title: "Activity: Deploying to Heroku"
 type: tutorial
 abbreviation: Activity 7
-draft: 0
+draft: 1
 num: 7
 ---
 
