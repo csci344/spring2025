@@ -1,6 +1,6 @@
 ---
 layout: module
-title: "Building REST API Endpoints with Flask and SQLAlchemy"
+title: "Building REST API Endpoints with Fast API and SQLAlchemy"
 type: module
 num: 15
 draft: 1

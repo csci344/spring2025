@@ -1,6 +1,6 @@
 ---
 layout: module
-title: "Server-Side Programming (w/Flask & Python)"
+title: "Server-Side Programming (w/Fast API & Python)"
 type: module
 num: 12
 draft: 1
