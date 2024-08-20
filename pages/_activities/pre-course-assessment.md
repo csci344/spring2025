@@ -113,7 +113,9 @@ for i in range(1, 101):
 ```
 
 
-## 3. What is the output of this code block (which is written in Python):
+## 3. What is the output of this code block:
+
+### Written in Python
 ```python
 a = 3
 b = 2
@@ -123,14 +125,32 @@ while b > 0:
    print(a, b)
 ```
 
+### Written in Java
+```java
+public class Main {
+    public static void main(String[] args) {
+        int a = 3;
+        int b = 2;
+
+        while (b > 0) {
+            a -= b;
+            b += a;
+            System.out.println("a: " + a + ", b: " + b);
+        }
+    }
+}
+```
+
 ### Answer:
 ```
-1 3
--2 1
+ 1  3
+-2  1
 -3 -2
 ```
 
-## 4. What will print to the screen, given the following code block below (written in Python)?
+## 4. What will print to the screen, given the following code block:
+
+### Written in Java
 
 ```python
 a = True
@@ -153,6 +173,33 @@ elif not c:
 
 
 print('giraffe')
+```
+
+### Written in Java
+```java
+public class Main {
+    public static void main(String[] args) {
+        boolean a = true;
+        boolean b = true;
+        boolean c = false;
+
+        if (a && c) {
+            System.out.println("squirrel");
+        } else if (a) {
+            System.out.println("lion");
+        }
+
+        if (a && !c) {
+            System.out.println("cat");
+        } else if (a) {
+            System.out.println("dog");
+        } else if (!c) {
+            System.out.println("penguin");
+        }
+
+        System.out.println("giraffe");
+    }
+}
 ```
 
 ### Answer:
