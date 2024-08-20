@@ -8,44 +8,6 @@ points: 6
 num: 2
 ---
 
-# The Questions
-1) Write a function called add_nums that takes two numbers as arguments and returns their sum. 
-
-2) Write a loop (any kind of loop you want) that prints the integers from 1 to 100 in order (e.g., 1, 2, 3, …, 99, 100). Don't worry about line breaks.
-
-3) What is the output of this code block (which is written in Python):
-```python
-a = 3
-b = 2
-while b > 0:
-   a -= b
-   b += a
-   print(a, b)
-```
-4) What will print to the screen, given the following code block below (written in Python)?
-
-```python
-a = True
-b = True
-c = False
-
-
-if a and c:
-   print('squirrel')
-elif a:
-   print('lion')
-
-
-if a and not c:
-   print('cat')
-elif a:
-   print('dog')
-elif not c:
-   print('penguin')
-```
-
-# Answers
-
 ## 1. Write a function called add_nums that takes two numbers as arguments and returns their sum. 
 If I invoke your function as follows, it will return the number 9: add_nums(4, 5)
 
@@ -95,13 +57,8 @@ for (let i = 1; i <= 100; i++) {
 
 ### Java
 ```java
-public class Main {
-    public static void main(String[] args) {
-        // Using a for loop
-        for (int i = 1; i <= 100; i++) {
-            System.out.println(i + " ");
-        }
-    }
+for (int i = 1; i <= 100; i++) {
+    System.out.println(i + " ");
 }
 ```
 
@@ -127,17 +84,13 @@ while b > 0:
 
 ### Written in Java
 ```java
-public class Main {
-    public static void main(String[] args) {
-        int a = 3;
-        int b = 2;
+int a = 3;
+int b = 2;
 
-        while (b > 0) {
-            a -= b;
-            b += a;
-            System.out.println("a: " + a + ", b: " + b);
-        }
-    }
+while (b > 0) {
+    a -= b;
+    b += a;
+    System.out.println(a + " " + b);
 }
 ```
 
@@ -177,29 +130,25 @@ print('giraffe')
 
 ### Written in Java
 ```java
-public class Main {
-    public static void main(String[] args) {
-        boolean a = true;
-        boolean b = true;
-        boolean c = false;
+boolean a = true;
+boolean b = true;
+boolean c = false;
 
-        if (a && c) {
-            System.out.println("squirrel");
-        } else if (a) {
-            System.out.println("lion");
-        }
-
-        if (a && !c) {
-            System.out.println("cat");
-        } else if (a) {
-            System.out.println("dog");
-        } else if (!c) {
-            System.out.println("penguin");
-        }
-
-        System.out.println("giraffe");
-    }
+if (a && c) {
+    System.out.println("squirrel");
+} else if (a) {
+    System.out.println("lion");
 }
+
+if (a && !c) {
+    System.out.println("cat");
+} else if (a) {
+    System.out.println("dog");
+} else if (!c) {
+    System.out.println("penguin");
+}
+
+System.out.println("giraffe");
 ```
 
 ### Answer:
