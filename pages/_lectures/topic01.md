@@ -14,6 +14,9 @@ In this unit, we will explore how the Internet and the Web work at a high-level.
 ### Slides
 1. Monday (8/19) <a href="https://docs.google.com/presentation/d/1paJdPjcArLJdMz14uQPQIi6-5BA7OdLj/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Intro to the course</a>
 
+### Activities
+* <a href="/fall2024/activities/pre-course-assessment" target="_blank">Pre-course assessment questions & answers</a>
+
 ## Wednesday (8/21)
 
 ### Assigned Readings
