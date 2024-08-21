@@ -100,10 +100,11 @@ while (b > 0) {
 -2  1
 -3 -2
 ```
+<a href="https://drive.google.com/file/d/1Okpuh1z2wZtJGWhFW_1OdS3-Nh8cRRKi/view?usp=drive_link" target="_blank">video walkthrough</a>
 
 ## 4. What will print to the screen, given the following code block:
 
-### Written in Java
+### Written in Python
 
 ```python
 a = True
@@ -157,3 +158,4 @@ lion
 cat
 giraffe
 ```
+<a href="https://drive.google.com/file/d/1OZ4yBazJztLDNMT6e27d_gIBGFhS0Wuh/view?usp=drive_link" target="_blank">video walkthrough</a>
