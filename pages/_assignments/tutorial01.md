@@ -2,7 +2,7 @@
 layout: assignment-two-column
 title: Analyze an Internet Platform
 type: tutorial
-draft: 1
+draft: 0
 points: 6
 abbreviation: Tutorial 1
 num: 1
@@ -19,11 +19,10 @@ In today's tutorial, we will examine how platforms and ad networks store, analyz
 ## Slides
 Slides will be posted before class. 
 
-<!-- * <a href="https://docs.google.com/presentation/d/1O-uvoS2x4Qt5aG7_g7FJ9AtUH-gK0ZRGlmh4SD3TYaE/edit#slide=id.p" target="_blank">Tutorial 1: Background Information</a> -->
+<!-- * <a href="https://docs.google.com/presentation/d/140io00CSsFjBLUsDQjQTTHomxBHCDZF6/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Tutorial 1: Background Information</a> -->
 
-## Activities 
-1. <a href="https://docs.google.com/document/d/1yKOwkE8hyltWnhMJo0UDgqIVIxwtL1oWTEvvlYfOSNs/edit?usp=sharing" target="_blank">Analyze a website</a>
-2. <a href="https://docs.google.com/document/d/1JSG4h_MML3Z1JAIS7CTvSf2fpjB6lCtt6_UKADG1hPw/edit?usp=sharing" target="_blank">Understanding Internet Tracking</a>
+## Activity
+1. <a href="https://docs.google.com/document/d/1JSG4h_MML3Z1JAIS7CTvSf2fpjB6lCtt6_UKADG1hPw/edit" target="_blank">Understanding Internet Tracking</a>
 
 ## What to turn in
-* Please submit your answers from <a href="https://docs.google.com/document/d/1JSG4h_MML3Z1JAIS7CTvSf2fpjB6lCtt6_UKADG1hPw/edit?usp=sharing" target="_blank">Understanding Internet Tracking</a> to the Moodle. To do this, make a copy of the Google Doc and answer the questions listed on page 2.
+* Please submit your answers to Part 3 to the Moodle

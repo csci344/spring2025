@@ -37,6 +37,10 @@ Please complete before class on Wednesday:
 1. <a href="https://docs.google.com/presentation/d/1ggu9Q0Q9hagBP8ucgOGt3K9iI3BwuF_U/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Intro to the Internet</a>
 1. <a href="https://docs.google.com/presentation/d/1YYJxR8UrIR211wLwD03CvI6KUYj9EELj/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Intro to the Web</a>
 
+
+### Activity
+1. <a href="https://docs.google.com/document/d/1yKOwkE8hyltWnhMJo0UDgqIVIxwtL1oWTEvvlYfOSNs/edit" target="_blank">Analyze a website</a>
+
 ## Friday (8/23)
 
 ### Assigned Readings
@@ -72,8 +76,3 @@ Please complete before class on Wednesday:
 * What is a search engine? What are some examples?
 * How can someone "own" a domain name?
 {:.compact}
-
-
-<!-- ## Activities
-* <a href="https://forms.gle/SxsV2EMcpnPxFEXn7" target="_blank">Pre-Course Questionnaire</a>
-{:.compact} -->
