@@ -1,6 +1,6 @@
 ---
 layout: module
-title: CSS + Paper Presentations
+title: CSS
 type: module
 prefix: topic
 num: 3

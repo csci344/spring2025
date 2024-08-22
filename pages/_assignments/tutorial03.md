@@ -1,6 +1,6 @@
 ---
 layout: assignment-two-column
-title: CSS Exercises
+title: CSS Exercises + Paper Presentations
 type: tutorial
 abbreviation: Tutorial 3
 draft: 1
