@@ -6,7 +6,7 @@ course: "CSCI 344: Advanced Web Technology"
 term: "Fall 2024"
 email: svanwart@unca.edu
 prerequisites: "CSCI182 or CSCI183 or CSCI185 or CSCI201 or instructor permission."
-office_hours: "MWF 3:30pm - 4:30pm (in person), Rhoades Robinson Hall, Rm. 220"
+office_hours: "Mo, Tu, Fr 3:30pm - 4:30pm (in person), Rhoades Robinson Hall, Rm. 220"
 professor: "Dr. Sarah Van Wart (she/her)"
 section1: "MWF 2:00-3:15PM, Zeis Hall, Rm. 201"
 notes: "One year of programming experience is strongly recommended."
