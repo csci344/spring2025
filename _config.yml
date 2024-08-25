@@ -11,10 +11,16 @@ github_username:  jekyll
 timezone: "America/New_York"
 # Build settings
 markdown: kramdown
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
 theme: minima
 plugins:
   - jekyll-feed
 exclude: 
+  - course-files/programming-bootcamp*
   - course-files/*/*/solutions/node_modules*
   - course-files/*/*/node_modules*
   - course-files/*/*/answers/node_modules*

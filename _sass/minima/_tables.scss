@@ -25,8 +25,9 @@ table {
         }
     }
 
-    td:first-child, th:first-child {
-        min-width: 80px;
+    td, th {
+        border-bottom: dotted 1px #CCC;
+        padding: 8px;
     }
 
     thead tr:first-child {
@@ -34,12 +35,7 @@ table {
     }
 
     tr.section {
-        // td, th {
-        //     border-top: solid 1px #444;
-        // }
         td:nth-child(3) {
-            // font-weight: 600;
-            // text-transform: uppercase;
             span, a {
                 font-weight: normal;
             }
@@ -49,11 +45,6 @@ table {
         td, th {
             background: #F3F3F3;
         }
-    }
-
-    td, th {
-        border-bottom: dotted 1px #CCC;
-        padding: 8px;
     }
     th {
         font-weight: 500;
@@ -83,6 +74,44 @@ table.rubric {
         margin: 0px;
     }
 }
+
+.schedule table {
+    td:first-child, th:first-child {
+        min-width: 80px;
+    }
+    td:nth-child(2), th:nth-child(2) {
+        min-width: 100px;
+    }
+}
+
+.assignments table {
+    td:first-child, th:first-child {
+        min-width: 80px;
+    }
+    td:nth-child(2), th:nth-child(2) {
+        min-width: 80px;
+        min-width: 60px !important;
+    }
+
+    td, th {
+        border-bottom: dotted 1px #CCC;
+        padding: 8px;
+    }
+}
+
+.highlight table {
+    border-width: 0;
+    margin-bottom: 0;
+    td, th {
+        font-size: 1.1em;
+        border-width: 0;
+        padding: 0;
+    }
+
+    .rouge-gutter.gl {
+        width: 30px !important;
+    }
+} 
 
 .assignments {
     td:nth-child(1), th:nth-child(1) {

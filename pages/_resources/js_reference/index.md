@@ -125,15 +125,16 @@ console.log('last child\'s parent:', parent);
 
 ## Data
 
-| Type | Description | Example |
-|--|--|--|
-| number  | For numbers of any kind: integer or floating-point| 1.4, 33, 99999999 |
-| string | For strings (text). A string may have one or more characters, there’s no separate single-character type | "hello world!" |
-| boolean | for true/false. | true, false |
-| null | for unknown values – has a single value null | null |
-| undefined | for unassigned values – has a single value undefined | undefined |
-| object | for more complex data structures.| { name: "ralph", species: "dog" } | 
-| symbol | for unique identifiers (we won’t be using this one) | |
+| | Type | Description | Example |
+|--|--|--|--|
+| 1 | number  | For numbers of any kind: integer or floating-point| 1.4, 33, 99999999 |
+| 2 | bigint  | For storing very large integers that can't be represented by the number datatype | BigInt("123456789012345678901234567890") |
+| 3 | string | For strings (text). A string may have one or more characters, there’s no separate single-character type | "hello world!" |
+| 4 | boolean | for true/false. | true, false |
+| 5 | null | for unknown values – has a single value null | null |
+| 6 | undefined | for unassigned values – has a single value undefined | undefined |
+| 7 | object | for more complex data structures.| { name: "ralph", species: "dog" } | 
+| 8 | symbol | for unique identifiers (we won’t be using this one) | |
  
 
 ### 1. Figuring out the type of data you have

@@ -14,6 +14,7 @@ __pycache__
 Gemfile.lock
 cpd.db
 .vscode
+course-files/programming-bootcamp*
 course-files/**/results/*.db
 course-files/**/results/*.log
 course-files/**/results/*.jpg
