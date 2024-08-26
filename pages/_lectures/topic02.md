@@ -6,31 +6,31 @@ num: 2
 draft: 0
 due_date: 2024-08-26
 readings:
-   - url: ../html-reference/
+   - url: ../resources/html-resources
      title: HTML Resources
      internal: 1
-   - url: ../html-reference/rules-of-thumb/
+   - url: ../resources/html-rules-of-thumb
      title: Rules of Thumb
      internal: 1
-   - url: ../html-reference/text-tags/
+   - url: ../resources/text-tags
      title: Text Markup Tags
      internal: 1
-   - url: ../html-reference/links/
+   - url: ../resources/linking
      title: Hyperlinks
      internal: 1
-   - url: ../html-reference/images/
+   - url: ../resources/image-tags
      title: Image Tags
      internal: 1
-   - url: ../html-reference/media-tags/
+   - url: ../resources/media-tags
      title: Media Tags
      internal: 1
-   - url: ../html-reference/compound-tags/
+   - url: ../resources/complex-tags
      title: Compound Tags
      internal: 1
-   - url: ../html-reference/forms/
+   - url: ../resources/form-tags
      title: Form Tags
      internal: 1
-   - url: ../html-reference/semantic-tags/
+   - url: ../resources/semantic-tags
      title: Semantic Tags
      internal: 1
    - url: https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/
