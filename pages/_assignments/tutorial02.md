@@ -3,7 +3,7 @@ layout: assignment-two-column
 title: Make Your First Website
 type: tutorial
 abbreviation: Tutorial 2
-draft: 1
+draft: 0
 points: 6
 num: 2
 start_date: 2024-08-30
@@ -15,7 +15,7 @@ due_date: 2024-09-03
 
 ## Part 1. Setting Up Your Development Environment
 
-### 1. Install Visual Studio Code
+### 1. Install Visual Studio Code (if you haven't already)
 Download and install Visual Studio Code: <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a>. 
 * This does not need to be done if you are working on the computer lab computers -- just if you're working on your laptop.
 
@@ -30,14 +30,11 @@ File management and organization are an essential part of programming and web de
 
 ```
 csci344
-    |-- tutorials
-    │   |-- tutorial02
-    |   ...
-    |
-    |-- homework
-    |-- lectures
-        |-- lecture03
-        ...
+    ├── tutorials
+    │   └── tutorial02
+    │   ...
+    └── lectures
+        └── lecture03
 ```
 
 ### 3. Take a look at your files
@@ -211,6 +208,18 @@ The purpose of this tutorial was to get you familiar with some HTML widgets and 
 2. Understanding the rules of various tags, and how to nest them.
 3. Understanding how to link files together using both relative and absolute paths (more next week).
 4. Semantic containers
+
+> ## For Folks Wanting More Programming Practice...
+> I highly recommend that you review all of [these introductory exercises](../resources/programming-review#step6), using JavaScript. Here's a suggested workflow:
+> 
+> 1. Review the reference materials (e.g., data, expressions and statements, control, etc.)
+> 2. Select a problem to try (say, 6.1.1. Data Type Conversion).
+> 3. Make a new directory inside of your `csci344` folder called `programming-practice`
+> 4. Inside of your `programming-practice`, create a file called `data-type-practice.mjs` (`.mjs` indicates that you're making a JavaScript module).
+> 5. Write the code to solve the problem.
+> 6. Test your solution using the node interpreter on the command line:<br>`node data-type-practice.mjs`
+>
+> If you have any questions about how to do this, please come to office hours!
 
 
 ## What to turn in

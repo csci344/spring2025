@@ -398,7 +398,7 @@ References
 
 ### 6.1. Input / Output
 #### 6.1.1. Data Type Conversion
-Write a JavaScript code snippet that prompts the user to enter two numbers, converts the inputs to numbers, and then logs the sum of these two numbers to the console. 
+Write a JavaScript program that prompts the user to enter two numbers, converts the inputs to numbers, and then logs the sum of these two numbers to the console. 
 * In order to ask for input from the user, you will need to install an external module called `prompt-sync`:<br>`npm install prompt-sync`. 
 
 Here is some code to get you started:
@@ -420,7 +420,7 @@ To run your code, save your code as a node module (e.g., `add-nums.mjs`) and the
 ### 6.2. Conditionals
 
 #### 6.2.1. Practice with Conditionals: Which Decade?
-Write a JavaScript code snippet that prompts the user for their age, converts the input to a number, and then logs a message indicating which decade of their life they are in:
+Write a JavaScript program that prompts the user for their age, converts the input to a number, and then logs a message indicating which decade of their life they are in:
 * If the age is between 20-29, log 'You are in your 20s'
 * If between 30-39, log 'You are in your 30s'
 * If between 40-49, log 'You are in your 40s'
@@ -428,7 +428,7 @@ Write a JavaScript code snippet that prompts the user for their age, converts th
 {:.compact}
 
 #### 6.2.2. Practice with Conditionals: Color Mixer
-Write a JavaScript code snippet that asks the user which paints they are mixing (red, blue, yellow) by prompting them with binary choices (1 for yes, 0 for no). Convert these inputs to boolean values, determine the resulting color based on the combinations of paints used, and then log the resulting color to the console. The color combinations are as follows:
+Write a JavaScript program that asks the user which paints they are mixing (red, blue, yellow) by prompting them with binary choices (1 for yes, 0 for no). Convert these inputs to boolean values, determine the resulting color based on the combinations of paints used, and then log the resulting color to the console. The color combinations are as follows:
 * red + blue + yellow &rarr; black
 * red + blue &rarr; purple
 * red + yellow &rarr; orange
@@ -441,15 +441,15 @@ Write a JavaScript code snippet that asks the user which paints they are mixing 
 
 ### 6.3. Loops
 #### 6.3.1. Practice with While Loops: Output the numbers 0-99
-1. Using a while loop, output the numbers 0-99 to the console in ascending order (0, 1, 2, 3,...,999).
-1. Using a while loop, output the numbers 0-99 to the console in descending order (99, 98, 97,...,0).
+1. Using a while loop, output the numbers 0-99 to the console in **ascending** order (0, 1, 2, 3,...,999).
+1. Using a while loop, output the numbers 0-99 to the console in **descending** order (99, 98, 97,...,0).
 1. Using a while loop, output only the even numbers between 0 and 99 (hint: use the modulus operator).
 1. Using a while loop, output only the odd numbers between 0 and 99 (hint: use the modulus operator).
 
 
 #### 6.3.2. Practice with For Loops: Output the numbers 0-99
-1. Using a for loop, output the numbers 0-99 to the console in ascending order (0, 1, 2, 3,...,999).
-1. Using a for loop, output the numbers 0-99 to the console in descending order (99, 98, 97,...,0).
+1. Using a for loop, output the numbers 0-99 to the console in **ascending** order (0, 1, 2, 3,...,999).
+1. Using a for loop, output the numbers 0-99 to the console in **descending** order (99, 98, 97,...,0).
 1. Using a for loop, output only the even numbers between 0 and 99.
 1. Using a for loop, output only the odd numbers between 0 and 99.
 
@@ -458,7 +458,7 @@ Write a program that takes any string and prints it in reverse order.
 
 
 #### 6.3.4. Practice with For Loops: Sum of the numbers in an array
-Use a for loop to find the sum of an array of numbers. Your loop should be able to figure this out regardless of the length of the array and the values contained in the array (so long as they are numbers).
+Write a program that uses a for loop to find the sum of an array of numbers. Your loop should be able to figure this out regardless of the length of the array and the values contained in the array (so long as they are numbers).
 
 ```js
 //Sample arrays:
@@ -469,7 +469,7 @@ let array3 = [20, 26, 41, 8, ];
 
 
 #### 6.3.5. Practice with For Loops: Biggest number in an array
-Use a for loop to find the biggest number in an array of numbers. Your loop should be able to figure this out regardless of the length of the array and the values contained in the array (so long as they are numbers).
+Write a program that uses a for loop to find the biggest number in an array of numbers. Your loop should be able to figure this out regardless of the length of the array and the values contained in the array (so long as they are numbers).
 
 ```js
 //Sample arrays:
@@ -481,7 +481,7 @@ let array3 = [20, 26, 41, 8, ];
 ### 6.4. Functions
 
 #### 6.4.1. Find the Square
-Write a function `square` that takes a number as an argument and returns its square.
+Write a function `square` that takes a number as an argument and returns its square. Then test your function with several different function invocations (see example invocations below).
 
 ```js
 // sample function calls below:
@@ -490,7 +490,7 @@ console.log(square(10)); // Outputs: 100
 ```
 
 #### 6.4.2. Even or Odd?
-Write a function `isEven` that takes a number as an argument and returns true if the number is even, and false if it is odd.
+Write a function `isEven` that takes a number as an argument and returns true if the number is even, and false if it is odd. Then test your function with several different function invocations (see example invocations below).
 
 ```js
 // sample function calls below:
@@ -499,7 +499,7 @@ console.log(isEven(7)); // Outputs: false
 ```
 
 #### 6.4.3. Max of Three
-Write a function `maxOfThree` that takes three numbers as arguments and returns the largest of the three.
+Write a function `maxOfThree` that takes three numbers as arguments and returns the largest of the three. Then test your function with several different function invocations (see example invocations below).
 
 ```js
 // sample function calls below:
@@ -508,7 +508,7 @@ console.log(maxOfThree(7, 2, 8)); // Outputs: 8
 ```
 
 #### 6.4.4. Factorial
-Write a function `factorial` that takes a non-negative integer as an argument and returns its factorial.
+Write a function `factorial` that takes a non-negative integer as an argument and returns its factorial. Then test your function with several different function invocations (see example invocations below).
 
 ```js
 // sample function calls below:
@@ -517,7 +517,7 @@ console.log(factorial(0)); // Outputs: 1
 ```
 
 #### 6.4.5. Sum of an Array of Numbers
-Write a function `sumArray` that takes an array of numbers and returns the sum of all the numbers in the array.
+Write a function `sumArray` that takes an array of numbers and returns the sum of all the numbers in the array. Then test your function with several different function invocations (see example invocations below).
 
 ```js
 // sample function calls below:
