@@ -217,7 +217,8 @@ The purpose of this tutorial was to get you familiar with some HTML widgets and 
 > 3. Make a new directory inside of your `csci344` folder called `programming-practice`
 > 4. Inside of your `programming-practice`, create a file called `data-type-practice.mjs` (`.mjs` indicates that you're making a JavaScript module).
 > 5. Write the code to solve the problem.
-> 6. Test your solution using the node interpreter on the command line:<br>`node data-type-practice.mjs`
+> 6. Open GitBash (Windows) or Terminal (Mac) and navigate to your `programming-practice` folder. If you don't know how to do this, come to office hours.
+> 7. Test your solution using the node interpreter on the command line:<br>`node data-type-practice.mjs`
 >
 > If you have any questions about how to do this, please come to office hours!
 
