@@ -11,7 +11,7 @@ due_date: 2024-09-03
 ---
 
 {:.blockquote-no-margin}
-> **Assumptions:** This tutorial assumes that you have reviewed the materials assigned in the [Intro to HTML lecture](/fall2024/lectures/topic03).
+> **Assumptions:** This tutorial assumes that you have reviewed the materials assigned in the [Intro to HTML lecture](/fall2024/lectures/topic02).
 
 ## Part 1. Setting Up Your Development Environment
 
@@ -35,9 +35,6 @@ csci344
     |   ...
     |
     |-- homework
-    │   |-- hw02
-    |   ...
-    |
     |-- lectures
         |-- lecture03
         ...
@@ -207,14 +204,14 @@ Please [follow these instructions](../activities/github) to publish your tutoria
 
 
 ## How to think about this exercise (meta-comment)
-The purpose of this tutorial was to get you familiar with some HTML widgets and conventions. We will have **one more day** of HTML instruction and then we'll be moving on to CSS and JavaScript. What you should be comfortable with after the HTML unit (next week):
+The purpose of this tutorial was to get you familiar with some HTML widgets and conventions. We are now officially done with HTML instruction. What you should be comfortable with after this tutorial:
 
 {:.compact}
 1. Finding online resources (like <a href="https://www.w3schools.com/html/default.asp" target="_blank">W3Schools</a> and the [course HTML reference](/fall2024/html-reference/)) that help you learn about and integrate HTML tags.
 2. Understanding the rules of various tags, and how to nest them.
 3. Understanding how to link files together using both relative and absolute paths (more next week).
-4. Semantic containers (more next week).
+4. Semantic containers
 
 
 ## What to turn in
-Submit your tutorial files by zipping your entire tutorial02 folder and uploading it to Moodle under **Tutorial 2**.
+Please commit and push all of your edits to GitHub. Then, paste a link to your GitHub Repository and to your GitHub pages in the Moodle submission.

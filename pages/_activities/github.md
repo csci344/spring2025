@@ -173,4 +173,4 @@ This will generate a link to your GitHub site.
 
 > ### A note on GitHub Pages
 > * It make take a few minutes for your webpage to display
-> * In order to preview the webpage you made in `tutorial02`, you have to append the `/tutorials/tutorial02/index.html` file path to the end of your github pages to indicate which file to display.
+> * In order to preview the webpage you made in the `lecture03` folder, you have to append the `/lectures/lecture03/index.html` file path to the end of your github pages to indicate which file to display.

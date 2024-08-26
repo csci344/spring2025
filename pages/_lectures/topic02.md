@@ -40,20 +40,22 @@ readings:
      optional: 1
      source: https://www.html5rocks.com/
      date: 2011
+   - url: https://medium.com/the-underdog-writing-project/introduction-to-git-and-github-a5fdf5633923
+     title: "Intro to git and GitHub"
+     notes: "A little technical, but please do your best to read it and come to tutorial with questions."
+   - url: https://youtu.be/i_23KUAEtUM
+     title: "Using GitHub with Visual Studio Code"
 ---
 
 ## Slides
-Slides will be posted before class.
+1. Lecture 3: <a href="https://docs.google.com/presentation/d/1U8KFD9jWyQp6nqQOS-cUe3_vHVaKoF_T/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Intro to HTML</a> (Monday, 08/26)
+1. Lecture 4: <a href="https://docs.google.com/presentation/d/1h-grizseMadQCAno5iL2dkDm0h9VlT1o/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Intro to semantic tags, more linking, intro to GitHub</a> (Wednesday, 08/28)
 
-<!-- 1. Lecture 3: <a href="https://docs.google.com/presentation/d/12WYA5s533mUD6tZOJw6KDkDb4otLQJhUIC_5V12Uu2I/edit?usp=sharing" target="_blank">Intro to HTML</a> (Wednesday, 01/18)
-1. Lecture 4: <a href="https://docs.google.com/presentation/d/165uWV0UGuZ_lZ4ci0UCXxmoKDQb-lpv1gY2Q_XYaFA0/edit?usp=sharing" target="_blank">Intro to semantic tags, more linking</a> (Monday, 01/23) -->
-
-<!-- ## Videos & Lecture Files
+## Videos & Lecture Files
 Videos and worked examples will be published after class:
-* <a href="https://drive.google.com/drive/folders/1b0RGogU8P2rKJAtcRpxMspHB919GUAXT?usp=sharing" target="_blank">Videos on Google Drive</a>
+* <a href="https://drive.google.com/drive/folders/11Ra-DrGJOYMOC6Ag_3GS6ShxZFCPdKh6" target="_blank">Videos on Google Drive</a>
 * <a href="https://github.com/vanwars/csci344" target="_blank">Worked examples on GitHub</a>
 
 ## Activities
-1. Lecture 3: <a href="https://docs.google.com/document/d/1WcarSfoGJAqlcG0c-BLyKk6SoC8IIbBoTIpodAPG0HA/edit?usp=sharing" target="_blank">Write your first HTML page</a> (Wednesday, 01/18) -->
-
-
+* Activity 2: <a href="https://docs.google.com/document/d/1S6P6G3xBS4nBcAZEWBvIC0_lqH5p_Xp6/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Write your first HTML page</a> (Monday, 08/26)
+* Activity 3: <a href="../activities/github">Configure git and GitHub</a> (Wednesday, 08/28)
