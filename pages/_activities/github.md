@@ -111,12 +111,27 @@ Please ensure that your `csci344` folder looks like this:
 csci334
 ├── lectures
 │   └── lecture03
-│       └── index.html
+│   │    └── index.html
+│   └── lecture04
+│       ├── README.md
+│       └── my_website
+│           ├── files
+│           │   └── gallery.html
+│           ├── home
+│           │   ├── contact.html
+│           │   ├── index.html
+│           │   └── styles
+│           │       ├── dark
+│           │       │   └── new.css
+│           │       └── my_style.css
+│           ├── images
+│           │   ├── cat.jpg
+│           │   └── dog.jpg
+│           └── test.html
 └── tutorials
-    └── tutorial02
 ```
 
-It's OK if your lectures folder isn't set up yet, but make sure your tutorials folder looks like the one shown above. This is very important. As your peer mentor to verify that your folder nesting is correct (`tutorial02` should be contained within `tutorials` which should contained within `csci344`).
+It's OK if your tutorials folder isn't set up yet, but make sure your lectures folder looks like the one shown above. This is very important. 
 
 ### 3. Initialize a Git Repository
 After you've doublechecked your file structure, open your entire `csci344` folder in VS Code. Next, click on the icon that looks like a tree branch, and click the blue button that says "Initialize Repository":
