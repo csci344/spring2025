@@ -4,10 +4,11 @@ title: Text & Fonts
 parent: CSS Resources
 nav_order: 4
 ---
+## Video Tutorials & Demos
+* <a href="https://www.youtube.com/watch?v=E7QPO8P8nls" target="_blank">How to add a Google font to your website</a>
 
 ## Font & icon resources
 * [https://fontawesome.com/icons](https://fontawesome.com/icons) 
-* [https://material.io/tools/icons/?style=baseline](https://material.io/tools/icons/?style=baseline) 
 * [https://fonts.google.com/](https://fonts.google.com/) 
 
 ## Common text properties
@@ -28,4 +29,4 @@ nav_order: 4
 
 ## Demo
 
-<iframe src="//codepen.io/alexpeach/embed/xOdLpg/?theme-id=18654&default-tab=html,result" allowfullscreen="true" class="codepen-frame"></iframe>
+<iframe src="//codepen.io/vanwars/embed/YzoREYB/?theme-id=18654&default-tab=html,result" allowfullscreen="true" class="codepen-frame"></iframe>

@@ -148,7 +148,7 @@ When you're done, your page should look like this:
 
 
 {:.blockquote-no-margin}
-> **Hint**: Please see the course resources on [images](/fall2024/html-reference/images/) for more detail.
+> **Hint**: Please see the course resources on [images](/fall2024/resources/image-tags/) for more detail.
 
 {:#step4}
 ### 4. Add two videos to the videos.html file
@@ -165,7 +165,7 @@ When you're done, your page should look like this (except with *your* videos):
 <img class="frame medium" src="/fall2024/assets/images/tutorials/tutorial02/j.png" />
 
 {:.blockquote-no-margin}
-> **More examples**: Please also see the course resources on [media tags](/fall2024/html-reference/media-tags/).
+> **More examples**: Please also see the course resources on [media tags](/fall2024/resources/media-tags/).
 
 {:#step5}
 ### 5. Add a Spotify player to music.html
@@ -190,9 +190,9 @@ While we have not yet covered CSS, try using Google and various online resources
 > #### CSS Reference
 > Please also see the course resources on CSS:
 >
-> * [fonts](/fall2024/css-reference/fonts/)
-> * [color](/fall2024/css-reference/color/)
-> * [selectors](/fall2024/css-reference/selectors/)
+> * [fonts](/fall2024/resources/fonts/)
+> * [color](/fall2024/resources/color/)
+> * [selectors](/fall2024/resources/selectors/)
 
 <!-- ## Part 3. Publishing to GitHub
 Please [follow these instructions](../activities/github) to publish your tutorial02 to GitHub. -->
@@ -202,7 +202,7 @@ Please [follow these instructions](../activities/github) to publish your tutoria
 The purpose of this tutorial was to get you familiar with some HTML widgets and conventions. We are now officially done with HTML instruction. What you should be comfortable with after this tutorial:
 
 {:.compact}
-1. Finding online resources (like <a href="https://www.w3schools.com/html/default.asp" target="_blank">W3Schools</a> and the [course HTML reference](/fall2024/html-reference/)) that help you learn about and integrate HTML tags.
+1. Finding online resources (like <a href="https://www.w3schools.com/html/default.asp" target="_blank">W3Schools</a> and the [course HTML reference](/fall2024/resources/html-resources)) that help you learn about and integrate HTML tags.
 2. Understanding the rules of various tags, and how to nest them.
 3. Understanding how to link files together using both relative and absolute paths (more next week).
 4. Semantic containers

@@ -26,7 +26,17 @@ layout: default
         </thead>
         <tbody>
         {% assign last_week = 0 %}
-        {% assign sortedAssignments = site.assignments | sort: 'due_date' %}
+
+        <!-- Hack to filter out assignments without due dates: -->
+        {% assign sortedAssignments = ''|split:''%}
+        {% assign allSortedAssignments = site.assignments | sort: 'due_date' %}
+        {% for a in allSortedAssignments %}
+            {% if a.due_date %}
+                {% assign sortedAssignments = sortedAssignments|push:a%}
+            {% endif %}
+        {% endfor %}
+        <!-- end hack -->
+
         {% assign labs = site.lectures | sort: 'due_date' | where: "type", "lab" %}
         {% assign exams = site.lectures | sort: 'due_date' | where: "type", "exam" %}
         {% assign assignments = sortedAssignments | concat: labs  | concat: exams | sort: 'due_date' %}

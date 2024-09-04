@@ -6,6 +6,7 @@ nav_order: 8
 ---
 
 ## Resources & Documentation
+* <a href="https://cssgridgarden.com/" target="_blank">CSS Grid Garden</a> (game)
 * <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">CSS Tricks: Complete Guide to CSS Grid</a> (recommended)
 * <a href="https://medium.freecodecamp.org/learn-css-grid-in-5-minutes-f582e87b1228" target="_blank">Learn CSS Grid in 5 Minutes</a>
 

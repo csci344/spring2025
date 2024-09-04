@@ -6,6 +6,8 @@ nav_order: 7
 ---
 
 ## Resources & Documentation
+
+* <a href="https://flexboxfroggy.com/" target="_blank">Flexbox Froggy</a> (game)
 * <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">CSS Tricks: A guide to flexbox</a> (recommended)
 
 

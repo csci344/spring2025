@@ -1,6 +1,6 @@
 ---
 layout: module
-title: Design
+title: Design with Accessibility in Mind
 type: module
 prefix: topic
 num: 5
