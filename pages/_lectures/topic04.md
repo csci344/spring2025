@@ -1,20 +1,23 @@
 ---
 layout: module
-title: CSS Layouts
+title: CSS Layouts + Paper Presentations
 type: module
 prefix: topic
 num: 4
 draft: 0
-due_date: 2024-09-09
+due_date: 2024-09-06
 readings: 
-   - url: ../resources/css-grid/
-     title: CSS Grid
+   - url: ../resources/units/
+     title: Units
+     internal: 1
+   - url: ../resources/media-queries/
+     title: Media Queries
      internal: 1
    - url: ../resources/flexbox/
      title: CSS Flex
      internal: 1
-   - url: ../resources/media-queries/
-     title: Media Queries
+   - url: ../resources/css-grid/
+     title: CSS Grid
      internal: 1
    - url: https://cssgridgarden.com/
      title: "CSS Grid Garden"
@@ -40,9 +43,8 @@ readings:
 ## Slides
 Slides will be posted before class.
 
-<!-- * Lecture 6: <a href="#" target="_blank">CSS Layouts</a> (Monday, 09/09) -->
+<!-- * Lecture 6 (Good to go!): <a href="https://docs.google.com/presentation/d/1PjbqofH0W1PCIyM9TqDYib1poSJdeoia/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">CSS Layouts</a> (Monday, 09/09) -->
 
 
 <!-- ## Activities
-1. <a href="/fall2024/course-files/lectures/lecture05.zip">Lecture 5 files</a> (Wednesday, 01/25)
-1. <a href="/fall2024/course-files/lectures/lecture06.zip">Lecture 6 files</a> (Monday, 01/30) -->
+* <a href="/fall2024/course-files/lectures/lecture06.zip">Lecture 6 files</a> (Friday, 09/06) -->

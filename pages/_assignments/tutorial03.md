@@ -1,12 +1,12 @@
 ---
 layout: assignment-two-column
-title: CSS Exercises + Paper Presentations
+title: CSS Exercises
 type: tutorial
 abbreviation: Tutorial 3
 draft: 0
 points: 6
 num: 3
-start_date: 2024-09-06
+start_date: 2024-09-09
 due_date: 2024-09-11
 ---
 
