@@ -41,10 +41,8 @@ readings:
 
 
 ## Slides
-Slides will be posted before class.
-
-<!-- * Lecture 6 (Good to go!): <a href="https://docs.google.com/presentation/d/1PjbqofH0W1PCIyM9TqDYib1poSJdeoia/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">CSS Layouts</a> (Monday, 09/09) -->
+* Lecture 6 (Good to go!): <a href="https://docs.google.com/presentation/d/1PjbqofH0W1PCIyM9TqDYib1poSJdeoia/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">CSS Layouts</a> (Friday, 09/06)
 
 
-<!-- ## Activities
-* <a href="/fall2024/course-files/lectures/lecture06.zip">Lecture 6 files</a> (Friday, 09/06) -->
+## Activities
+* <a href="/fall2024/course-files/lectures/lecture06.zip">Lecture 6 files</a> (Friday, 09/06)
