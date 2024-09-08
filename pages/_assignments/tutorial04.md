@@ -258,7 +258,7 @@ After adding the above code within the body tag, go ahead and preview your `inde
 
 <img class="small" src="/fall2024/assets/images/tutorials/tutorial04/tailwind-screenshot-unformatted.png" />
 
-### 2. Making some Tailwind customizations
+### 2. Make some Tailwind customizations
 Although Tailwind comes with a baseline set of styles, you can override them as you like in order to customize the look and feel of your website. Let's make a few customizations:
 
 First, let's use the Poppins font from Google Fonts. Add the following line to the top of your `src/input.css` file (before your Tailwind directives):
