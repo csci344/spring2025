@@ -3,7 +3,7 @@ layout: assignment-two-column
 title: CSS Frameworks (Tailwind)
 type: tutorial
 abbreviation: Tutorial 4
-draft: 1
+draft: 0
 points: 6
 num: 4
 start_date: 2024-09-13

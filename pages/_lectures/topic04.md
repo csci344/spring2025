@@ -41,7 +41,7 @@ readings:
 
 
 ## Slides
-* Lecture 6 (Good to go!): <a href="https://docs.google.com/presentation/d/1PjbqofH0W1PCIyM9TqDYib1poSJdeoia/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">CSS Layouts</a> (Friday, 09/06)
+* Lecture 6: <a href="https://docs.google.com/presentation/d/1PjbqofH0W1PCIyM9TqDYib1poSJdeoia/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">CSS Layouts</a> (Friday, 09/06)
 
 
 ## Activities
