@@ -210,11 +210,12 @@ pre.highlight {
     margin-top: 0px;
 }
 blockquote {
-    border-left: solid 7px $lightgrey;
+    margin-top: 0px;
+    border-left: solid 7px $br1;
     background: #F6F6F6;
     padding: 10px;
     margin: 0px;
-    margin-top: 30px;
+    // margin-top: 30px;
     margin-bottom: 20px;
     
     p:last-child {
