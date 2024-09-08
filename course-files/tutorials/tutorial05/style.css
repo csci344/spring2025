@@ -1,77 +1,118 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-body * {
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+document, body {
+   margin: 0px;
+   font-family: 'Montserrat';
 }
 
-h1, h2 {
-    font-family: 'Poppins', sans-serif;
+body * {
+   box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header, nav {
+   display: flex;
+   justify-content: center;
+   height: 100%;
 }
 
 header {
-    margin: 50px 5vw;
-}
-
-.search-form {
-    display: grid;
-    grid-template-columns: 50px 400px 100px;
-    justify-items: flex-start;
     align-items: center;
-    column-gap: 10px;
-    row-gap: 10px;
-    padding: 20px 20px;
-    background: #F4F4F4;
-    border-radius: 4px;
-    border: solid 1px #DDD;
-    margin: 20px 0;
+    color: #555;
+    border-bottom: solid 1px #CCC;
+    background-color: #F2F2F2;
+    height: 100px;
 }
-.search-form label {
-    justify-self: flex-end;
-    font-weight: 500;
+nav {
+    height: 50px;
+    border-bottom: solid 1px #CCC;
+    justify-content: flex-end;
+    padding-right: 20px;
 }
-.search-form button {
-    grid-column: 3 / 4;
-}
-.search-form span {
-    grid-column: 2 / 4;
-    grid-row: 2 / 3;
-    justify-self: flex-start;
-}
-.search-form input[type="text"] {
-    min-width: 400px;
-    padding: 5px 10px;
-}
-.search-form button {
-    padding: 5px 20px;
-}
-.search-form input[type="text"], 
-.search-form button {
+
+button {
+    background-color: transparent;
+    border: 0px;
+    text-decoration: none;
     font-size: 1.1em;
+    color: #666;
+    margin-right: 15px;
 }
 
-.courses {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 20px 5vw;
-    column-gap: 20px;
-    row-gap: 20px;
+#a1 {
+   font-size: 2em;
+}
+#a2 {
+   font-size: 1em;
 }
 
-.course {
-    border: solid 1px #CCC;
-    padding: 0 20px;
+.content {
+   padding: 40px;
+   font-size: 1.4em;
+   color: #666;
+   min-height: 100vh;
 }
 
-.course h2 {
-    margin-bottom: 10px;
-    font-weight: 400;
-    line-height: 1.2em;
-    font-size: 1.3em;
+h1 {
+    font-size: 2em;
 }
 
-.fa-circle-check {
-    color: rgb(46, 168, 46);
+
+/******************/
+/* Custom Classes */
+/******************/
+
+.ocean header {
+   background: #434a6c;
+   color: white;
+   font-family: 'Montserrat';
 }
-.fa-circle-xmark {
-    color: rgb(169, 36, 36);
+.ocean button, .ocean .content {
+    color: #434a6c;
+}
+.ocean .content {
+   background: #99cccc;
+   line-height: 1.6em;
+}
+.ocean header, .ocean nav {
+    border-bottom: solid 1px #434a6c;
+}
+
+.desert header {
+    background: #A8651E;
+    color: #EFDEC2;
+}
+.desert button {
+    color: #A8651E;
+}
+.desert .content {
+    background: #EFDEC2;
+    color: #A8651E;
+}
+.desert header, .desert nav {
+    border-bottom: solid 1px #774713;
+}
+
+.high-contrast header {
+    background: black;
+    color: white;
+}
+.high-contrast .content {
+    background: white;
+    color: black;
+}
+.high-contrast header, .high-contrast nav {
+    border-bottom: solid 1px black;
+}
+.high-contrast header {
+    background: black;
+    color: white;
+}
+.high-contrast button {
+    color: black;
 }

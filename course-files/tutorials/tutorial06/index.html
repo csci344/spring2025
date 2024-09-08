@@ -6,50 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="course-data.js" defer></script>
     <script src="main.js" defer></script>
     <title>Course Search</title>
 </head>
 <body>
     <header>
-        <h1>Your Search Interface</h1>
-        <p>Adjust this form, depending on how you want the user to interact with the REST API and which provider you're using:</p>
-    </header>
-    <section class="search-form">
-        <div>
+        <h1>Schedule of Courses</h1>
+        <div class="search-form">
             <label for="search_term">Term: </label>
-            <input type="text" id="search_term" placeholder="Your search term here..." />
+            <input type="text" id="search_term" tabindex="1" placeholder="Your search term here..." />
+            <button aria-label="Search for classes" tabindex="3" onclick="search(event)">Search</button>
+            <span>
+                <input type="checkbox" tabindex="2" id="is_open" />
+                <label for="is_open">Show open classes only</label>
+            </span>
         </div>
+    </header>
 
-        <!-- Yelp:  -->
-        <!-- <div>
-            <label for="location">Location (for Yelp): </label>
-            <input type="text" id="location" placeholder="Your location here..." />
-        </div> -->
+    <main class="courses">
 
-        <!-- Spotify: -->
-        <!-- <div>
-            <label for="resource_type">Resource Type (for Spotify): </label>
-            <select id="resource_type">
-                <option value="track">Track</option>
-                <option value="artist">Artist</option>
-                <option value="album">Album</option>
-            </select>
-        </div> -->
+        <section class="course">
+            <h2>CSCI 182.001: Intro to Programming: Media Applications</h2>
+            <p>
+                <i class="fa-solid fa-circle-check"></i> 
+                Open  &bull; 10174 &bull; Seats Available: 1
+            </p>
+            <p>
+                MWF &bull; ZEI 201 &bull; 3 credit hour(s)
+            </p>
+            <p><strong>Whitley, Adam</strong></p>
+        </section>
 
-        <!-- Twitter: -->
-        <!-- <div>
-            <label for="result_type">Result Type (for Twitter): </label>
-            <select id="result_type">
-                <option value="mixed">Mix of Recent & Popular</option>
-                <option value="recent">Most Recent</option>
-                <option value="popular">Popular</option>
-            </select>
-        </div> -->
-        <button aria-label="Search">Search</button>
-    </section>
 
-    <main id="results">
-        Search Results go here...
+        <section class="course">
+            <h2>CSCI 183.001: Intro to Programming: Numerical Applications</h2>
+            <p>
+                <i class="fa-solid fa-circle-xmark"></i> 
+                Closed &bull; 10498 &bull; Number on Waitlist 0
+            </p>
+            <p>
+                MWF &bull;  ZEI 201 &bull; 3 credit hour(s)
+            </p>
+            <p><strong>Sarris, Michael</strong></p>
+
+        </section>
+
+
     </main>
 
 </body>

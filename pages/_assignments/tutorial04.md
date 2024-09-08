@@ -21,129 +21,169 @@ due_date: 2024-09-16
     }
 </style>
 
-## Overview
-This tutorial can be completed individually or in pairs. Working in pairs does not mean "splitting up the work" so that each person does half of the tasks. Rather, both parties should complete the tasks and help one another as questions arise. Because this tutorial is a bit longer than the previous ones, you may have until **Monday, 1/30 at 11:59PM** to complete it. We will also use class time on Wednesday and Friday to work on the tutorial.
+## Readings
+* <a href="https://designlab.com/blog/guide-to-ux-design-systems" target="_blank">Design Systems 101: An Introductory Guide</a>
+* <a href="https://www.creative-tim.com/twcomponents/cheatsheet" target="_blank">Tailwind Cheatsheet</a>
 
-### References
-CSS is best understood through practice, and by consulting online resources as needed. Here are a curated list of resources that should help you complete your tasks:
+## Tutorial Video
+* <a href="https://www.youtube.com/watch?v=sNXfI3woBEw" target="_blank">Get Started With Tailwind CSS</a>
 
-#### Common CSS Properties and Techniques
+### More Background
+* <a href="https://johnpolacek.medium.com/by-the-numbers-a-year-and-half-with-atomic-css-39d75b1263b4" target="_blank">By The Numbers: A Year and Half with Atomic CSS</a>
 
+## Set Up & Configuration
+Most advanced front-end developers use frameworks to help them organize and maintain their HTML, CSS, and JavaScript files. One common way of managing these frameworks is by using Node.js. You already installed Node.js during the first week of CSCI344. When you did this, you installed a JavaScript engine (specifically, the V8 JavaScript Engine that powers Chrome), a built-in package manager, `npm` -- to manage and install dependencies, and a way to "transpile" higher-level languages (e.g., TypeScript, SCSS, CoffeeScript, React, etc.) into "vanilla" HTML, CSS, and JavaScript. Today, we're going to try using Node.js to help us work with a third-party CSS library and design system called **Tailwind**.
+
+### 1. Create a node.js application
+1. Open your entire `csci344` directory in VS Code
+1. Then, open your terminal in VS Code (**`View >> Terminal`** in the top menu). 
+1. Use the `cd` command to navigate to your `tutorial04` directory (within your `csci338` directory) in your terminal.
+1. Verify that you're in the `tutorial04` directory by typing `pwd`. 
+1. Finally, initialize a new node project as follows:
 {:.compact}
-* <a href="../css-reference/rules-of-thumb/">CSS Rules of Thumb</a> 
-* <a href="../css-reference/selectors/">Selectors</a>
-    * [CSS Diner](https://flukeout.github.io/)
-* <a href="../css-reference/color/">Color</a>
-* [CSS Units](/fall2024/css-reference/units/)
-* <a href="../css-reference/fonts/">Text &amp; Fonts</a>
-* <a href="../css-reference/box-model/">The Box Model</a>
-* <a href="../css-reference/css-grid/">CSS Grid</a>  
-* <a href="../css-reference/media-queries/">Media Queries</a>    
 
-#### CSS Grid
+```bash
+npm init -y
+```
 
+If you did this correctly, a `package.json` file should have been created at the root of your `tutorial04` directory. `package.json` is a configuration file that helps you to (among other things): 
+
+1. Keep track of various dependencies that you install to make a client-side web app, and
+1. Run various testing and compilation scripts on the command line. 
 {:.compact}
-* <a href="https://cssgridgarden.com/" target="_blank">CSS Grid Garden</a> <br>Please try to complete at least the first 10 levels 
-* <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">CSS Tricks: A Complete Guide to Grid</a>
-* <a href="https://www.freecodecamp.org/news/learn-css-grid-by-building-5-layouts/" target="_blank">Learn CSS Grid by Building 5 Layouts in 17 minutes</a>
 
-#### Flex
+`npm` stands for "node package manager." We will be using `npm` to install and keep track of dependencies that we will pull down from the Internet.
 
+### 2. Install the Tailwind library
+Next, you will install the Tailwind library by issuing the following command on the terminal:
+
+```bash
+npm install -D tailwindcss
+```
+
+This command asks the node package manager to go out to the Internet and download the tailwind.css library and any additional dependencies that tailwind requires. When the download is complete, you should see output on your terminal that looks like this:
+
+```bash
+added 113 packages, and audited 114 packages in 4s
+
+29 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+```
+
+You should also notice that a `node_modules` directory has been created inside of `tutorial04`, which contains various third-party modules (tailwind and some dependencies). We'll talk more about this in the coming weeks.
+
+### 3. Configure Tailwind via the `tailwind.config.js` file
+Tailwind also requires that you create a special configuration file called `tailwind.config.js`. To autogenerate this file, type the following on the terminal:
+
+```bash
+npx tailwindcss init
+```
+
+After generating it, you will edit `tailwind.config.js` by modifying the content entry as follows in order to tell the tailwind build process which of your website files will be using tailwind: 
+
+```
+content: ["./*html"],
+```
+
+When you're done, your `tailwind.config.js` file should look like this:
+
+```js
+module.exports = {
+    content: ["./*html"],
+    theme: {
+        extend: {},
+    },
+    plugins: [],
+};
+```
+
+### 4. Configure your package.json
+You will also need to configure your `package.json` file so that you can compile your tailwind css files. To do this, you will add a "build:tailwind" entry to `package.json` inside of the "scripts" section. Note that in JSON, each key-value pair needs to be separated by a comma.
+
+```json
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:tailwind": "tailwindcss -i ./src/input.css -o public/output.css --watch"
+  }
+```
+
+When you're done, your `package.json` file should look like this:
+
+```json
+{
+  "name": "tutorial04",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:tailwind": "tailwindcss -i ./src/input.css -o public/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  }
+}
+```
+
+
+
+### 5. Build your stylesheet
+Finally, you're ready to build your Tailwind stylesheet. To do this, issue the following command in the terminal:
+
+```bash
+npm run build:tailwind
+```
+
+This script will continuously build your tailwind CSS file as you add various tailwind classes to your `index.html` file.
+
+### 6. Link your compiled tailwind stylesheet
+Finally, add a link from your `index.html` file to your compiled Tailwind stylesheet by adding the following link within the `<head>` tag of your `index.html` file: 
+
+```html
+<link rel="stylesheet" href="./public/output.css">
+```
+
+Your entire `index.html` file should look something like this (ensure that your stylesheet link looks correct):
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/output.css">
+    <title>Tutorial 4: Tailwind</title>
+</head>
+
+<body></body>
+
+</html>
+```
+Also note that you should now have a `public` folder that has a `output.css` file inside of it. Take a look at the `output.css` file (which was generated from the `npm run build:tailwind` you just issued).
+
+### 6. Install Tailwind CSS Intellisense
+TODO...
+
+### 7. Review
+To recap what you've done, you:
+1. Created a new Node.js project (`npm init -y`)
+1. Installed the code files that allow you to work with tailwind (`npm install -D tailwindcss`)
+1. Configured tailwind to watch your `index.html` file (within `tailwind.config.js`)
+1. Taught node.js how to compile your tailwind stylesheet (within `package.json`)
+1. Ran the tailwind compilation script to generate the `public/output.css` file.
+1. Linked your `index.html` to `public/output.css` 
 {:.compact}
-* <a href="https://flexboxfroggy.com/" target="_blank">Flexbox Froggy</a>.<br>Please try to complete at least the first 10 levels
-* <a href="https://university.webflow.com/lesson/flexbox-vs-grid" target="_blank">When to use Flex versus CSS Grid?</a>      
-* <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">CSS Tricks: A Complete Guide to Flexbox</a>
-* <a href="https://www.w3schools.com/css/css3_flexbox.asp" target="_blank">W3 Schools Flexbox Guide</a>    
 
-
+You are now ready to begin working with Tailwind!
 
 ## Your Tasks
-<a href="/fall2024/course-files/tutorials/tutorial03.zip" class="nu-button">Download Tutorial Files <i class="fas fa-download"></i></a>
-
-Download the `tutorial03.zip` file, unzip it and move the unzipped tutorial03 folder into the `csci344/tutorials` folder (see diagram below).
-
-```
-csci344
-    |-- tutorials
-    │   |-- tutorial02
-    │   |-- tutorial03
-    |   ...
-    |
-    |-- homework
-    │   |-- hw02
-    |   ...
-    |
-    |-- lectures
-        |-- lecture03
-        |-- lecture05
-        ...
-```
-
-### Task 1: CSS Selectors
-Complete the first 14 steps of <a href="https://flukeout.github.io/" target="_blank">CSS Diner</a>. When you're done, take a screenshot showing you completed all of the levels. Your screenshot should have a green checkmark next to each level (like the one below but with checkmarks).
-
-<img class="small frame" src="/fall2024/assets/images/tutorials/tutorial03/exercise01.png" />
-
-### Task 2: Box Model Properties
-Open `02-box-model` and modify the CSS so that the card looks like the screenshot shown below. You should only need to use [Box Model](../css-reference/box-model/) properties.
-
-<img class="small" src="/fall2024/assets/images/tutorials/tutorial03/exercise02.png" />
-
-### Task 3: Use an external stylesheet
-Open `03-fonts` and use CSS to style the `h1` and `h2` tags using a Google font (example shown below). You can Google "How to use a Google Font in CSS" if you need help.
-
-<img class="frame xsmall" src="/fall2024/assets/images/tutorials/tutorial03/exercise03.png" />
-
-### Task 4: Center-align elements within a container
-
-Open `04-flex` and create the layout shown below by editing the CSS file. You should not need to edit the HTML.
-
-<img src="/fall2024/assets/images/tutorials/tutorial03/exercise04.gif" />
-
-Please ensure that the following criteria are met:
-
-{:.compact}
-* The height of each `section` should be the same as the height of the browser window.
-* The content inside of each `section` tag should be centered horizontally and vertically.
-* Each `section` should have a different background color.
-* The content in each `section` should be stacked vertically
-
-### Task 5: Create a Navigation Bar
-Open `05-navbar`, and try to make the following layout using flex. The navigation bar should also be anchored to the top so when you scroll, the nav bar stays fixed.
-
-<img class="frame large" src="/fall2024/assets/images/tutorials/tutorial03/exercise05.png" />
-
-Hints:
-
-{:.compact}
-* Both the `nav` and `ul` elements will need to be put into flex mode.
-* Use the Chrome inspector to adjust the alignment properties.
-* To turn the bullets off, set the `list-style-type` property to `none`.
-* To create a fixed menu, see <a href="https://codepen.io/vanwars/pen/LYBdyzJ?editors=0100" target="_blank">this code sample</a>: 
+For this assignment, you are going to create the following "card" using the Tailwind CSS Classes:
 
 
-### Task 6: Create this layout
-
-Open `06-grid`, and try to make the following layout using CSS Grid. You should not need to modify the HTML file. Note that the gridlines are just for demonstration, but they won’t actually be visible.
-
-<img class="small" src="/fall2024/assets/images/tutorials/tutorial03/exercise06b.png" />
-
-**Note:** You do NOT have to center the text inside of each section unless you want to.
-
-### Task 7: Create the Taco Temple layout
-
-Open `07-tacotemple`, and try to make the following layout using CSS Grid. You should only have to edit the CSS file. 
-
-<img class="large" src="/fall2024/assets/images/tutorials/tutorial03/tacotemple01.png" />
-
-**A few hints:**
-The `main` container is a grid with two columns -- no rows specified). See grid lines: 
-
-<img class="large" src="/fall2024/assets/images/tutorials/tutorial03/tacotemple02.png" />
-
-The `section` container is also a grid with two columns. See grid lines: 
-
-<img class="small" src="/fall2024/assets/images/tutorials/tutorial03/tacotemple03.png" />
-
-## What to turn in
-Submit your tutorial files -- including your screenshot from task 1 -- by zipping your entire tutorial03 folder and uploading it to Moodle under **Tutorial 3**. If you collaborated with someone, please list your partner's name in the comments section.
+To do this, 
