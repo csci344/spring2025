@@ -22,7 +22,7 @@ due_date: 2024-09-13
 </style>
 
 ## Overview
-This tutorial can be completed individually or in pairs. Working in pairs does not mean "splitting up the work" so that each person does half of the tasks. Rather, both parties should complete the tasks and help one another as questions arise. Because this tutorial is a bit longer than the previous ones, you may have until **Wed, 9/11 at 11:59PM** to complete it. We will use class time on Friday and Monday to work on the tutorial.
+This tutorial can be completed individually or in pairs. Working in pairs does not mean "splitting up the work" so that each person does half of the tasks. Rather, both parties should complete the tasks and help one another as questions arise. Because this tutorial is a bit longer than the previous ones, you may have until **Fri, 9/13 at 11:59PM** to complete it. We will use class time on Friday and Monday to work on the tutorial.
 
 ### References
 CSS is best understood through practice, and by consulting online resources as needed. Here are a curated list of resources that should help you complete your tasks:
