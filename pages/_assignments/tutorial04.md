@@ -21,12 +21,15 @@ due_date: 2024-09-16
     }
 </style>
 
-## Readings
+## Suggested Readings
 * [Theory] <a href="https://designlab.com/blog/guide-to-ux-design-systems" target="_blank">Design Systems 101: An Introductory Guide</a>
 * [Theory] <a href="https://johnpolacek.medium.com/by-the-numbers-a-year-and-half-with-atomic-css-39d75b1263b4" target="_blank">By The Numbers: A Year and Half with Atomic CSS</a>: How design systems improve efficiency
 * [Practice] <a href="https://www.creative-tim.com/twcomponents/cheatsheet" target="_blank">Tailwind Cheatsheet</a>
-* [Practice] <a href="https://www.youtube.com/watch?v=sNXfI3woBEw" target="_blank">Get Started With Tailwind CSS</a>: Video tutorial that walks you through today's activity
 {:.compact}
+
+> ### About Today's Tutorial
+> Today's tutorial is based on the <a href="https://www.youtube.com/watch?v=sNXfI3woBEw" target="_blank">Get Started With Tailwind CSS</a> video tutorial by John Komarnicki. If you would like additional context / explanation, please check out the video!
+
 
 ## Set Up & Configuration
 Most practicing front-end developers use frameworks to help them organize and maintain their HTML, CSS, and JavaScript files. In this class, we will be using Node.js to help us manage various client-side frameworks. You already installed Node.js during the first week of CSCI344. When you did this, you installed a JavaScript engine (specifically, the V8 JavaScript Engine that powers Chrome), a built-in package manager, `npm` -- to manage and install dependencies, and a way to "transpile" higher-level languages (e.g., TypeScript, SCSS, CoffeeScript, React, etc.) into "vanilla" HTML, CSS, and JavaScript. Today, we're going to try using Node.js to help us work with a third-party CSS library and design system called **Tailwind**. Please follow the set up and configuration instructions below so that you can complete the tutorial.
