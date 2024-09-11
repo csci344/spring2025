@@ -11,7 +11,7 @@ due_date: 2024-09-11
 ## Overview
 Today we will be discussing visual design, usability, and accessibility principles:
 
-* Selecting [colors](../css-reference/color/)
+* Selecting [colors](../resources/color/)
 * Communicating <a href="https://docs.google.com/document/d/1Vv5tPZ8UjqJNYO9pCp_PQhxHT8qoGY09deKX6uygUFA/edit?usp=sharing" target="_blank">values</a> through visual design
 * Examples of [style guides and design systems](../resources/style-guides/)
 
@@ -43,6 +43,4 @@ Today we will be discussing visual design, usability, and accessibility principl
 
 
 ## Slides
-Slides will be posted before class
-
-<!-- * Lecture X: <a href="#" target="_blank">Design with Accessibility In Mind</a> -->
+* Lecture 7: <a href="https://docs.google.com/presentation/d/1UymkCliLyKWju3wAkc5juFI4whjaFFHD8J8gJfY8Vbs/edit?usp=sharing" target="_blank">Design with Accessibility In Mind</a> (Wed, 9/11)
