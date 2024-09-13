@@ -4,8 +4,8 @@ title: "Intro to JavaScript & DOM manipulation"
 type: module
 prefix: topic
 num: 6
-draft: 1
-due_date: 2024-09-18
+draft: 0
+due_date: 2024-09-16
 ---
 
 ## Readings
