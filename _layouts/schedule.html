@@ -36,7 +36,9 @@ layout: default
 {% assign assignment_dates = everything | sort: 'due_date' | map: 'due_date' | uniq %}
 {% for d in assignment_dates %}
     {% assign dd = d | date: "%Y-%m-%d" %}
-    {% assign dates = dates | push: dd %}
+    {% if dd != null %}
+        {% assign dates = dates | push: dd %}
+    {% endif %}
 {% endfor %}
 {% assign dates = dates | uniq | sort_natural %}
 

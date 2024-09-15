@@ -3,7 +3,7 @@ subtitle: "Advanced Web Technology"
 email: vanwars@unca.edu
 baseurl: "/fall2024"
 term_start_date: "2024-08-19"
-term_end_date: "2024-12-10"
+term_end_date: "2024-12-11"
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll

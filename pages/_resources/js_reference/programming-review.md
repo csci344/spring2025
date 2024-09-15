@@ -1,6 +1,6 @@
 ---
 layout: two-column-resources
-title: "Programming Review Using JavaScript"
+title: "Intro to Programming with JavaScript"
 nav_order: 2
 has_children: true
 ---
@@ -44,7 +44,7 @@ console.log(typeof [1, 3, 4, 6]);
 console.log(typeof { name: "Lester", species: "dog", age: 15});
 ```
 
-#### 1.1.2. Use the built-in DataType classes to convert between data types...
+#### 1.1.2. Use the built-in data type classes to convert between data types...
 
 ```js
 // String(), Number(), Boolean()
