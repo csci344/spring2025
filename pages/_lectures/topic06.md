@@ -25,11 +25,12 @@ due_date: 2024-09-16
 
 
 ## Slides
-Slides will be posted before class.
+* Lecture 8: <a href="https://docs.google.com/presentation/d/1UUvKFOpIf9FMiHaNhUSOuGidI3V7tjdN/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Intro to DOM Manipulation</a> (Monday, 09/16)
 
-<!-- * Lecture 7: <a href="https://docs.google.com/presentation/d/1pwGXy43ajGQP8IynROyaLyaaNO7ZxlPZv9r5kEy-EoU/edit?usp=sharing" target="_blank">Intro to DOM Manipulation</a> (Wednesday, 02/01)
-* Lecture 8: <a href="https://docs.google.com/presentation/d/1VNeVoT166YjiyUcnLVnn8Mo3Xw4NowtUT0YkKz2qxoY/edit?usp=sharing" target="_blank">JavaScript Primer</a> (Monday, 02/06) -->
+<!-- * Lecture 8: <a href="https://docs.google.com/presentation/d/1VNeVoT166YjiyUcnLVnn8Mo3Xw4NowtUT0YkKz2qxoY/edit?usp=sharing" target="_blank">JavaScript Primer</a> (Monday, 02/06) -->
 
-<!-- ## Activities
-* Lecture 7 files: [DOM manipulation practice](/fall2024/course-files/lectures/lecture07.zip) (Wednesday, 02/01)
-* Lecture 8 files: [Intro to the language](/fall2024/course-files/lectures/lecture08.zip) (Monday, 02/06) -->
+## Activities
+* Lecture 8 files: [DOM manipulation practice](/fall2024/course-files/lectures/lecture08.zip) (Monday, 09/16)
+
+
+<!-- * Lecture 9 files: [Intro to the language](/fall2024/course-files/lectures/lecture09.zip) (Wednesday, 09/18) -->

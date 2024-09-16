@@ -48,7 +48,7 @@ collections:
   quizzes:
     output: true
     sort_by: lecture_date
-    permalink: /assignments/:name
+    permalink: /quizzes/:name
   resources:
     output: true
     permalink: /resources/:name
