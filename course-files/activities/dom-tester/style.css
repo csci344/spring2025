@@ -1,0 +1,29 @@
+body * {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-content: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.box,
+.frame {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    border: solid 1px #000;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+}
+
+.frame {
+    border: solid 1px #CCC;
+    border-radius: 3px;
+    padding: 10px;
+}

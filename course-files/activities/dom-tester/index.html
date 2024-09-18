@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DOM Demo</title>
+    <link rel="stylesheet" href="page.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <!-- <link rel="stylesheet" href="dark.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <form onsubmit="updateScreen(event)">
+            <section id="formula">
+                <div>
+                    <span>const</span>
+                    <span>myElement</span>
+                    <span>=</span>
+                </div>
+                <div>
+                    <span>document.querySelector("</span>
+                    <input id="selector" type="text" placeholder="selector" />
+                    <span>");</span>
+                </div>
+            </section>
+            <section id="formula">
+                <div>
+                    <span>myElement.</span>
+                    <input id="thing-to-change" type="text" placeholder="attribute or style.property" />
+                    <span>=</span>
+                </div>
+                <div><span>"</span>
+                    <input id="value" type="text" placeholder="new value" />
+                    <span>";</span>
+                </div>
+            </section>
+        </form>
+        <button class="button"><i class="fa-solid fa-plus"></i> Add Rule</button>
+    </header>
+    <main>
+        <section class="output">
+            <h2>Instructions</h2>
+            <ul>
+                <li>Change the first section's background color to red.</li>
+                <li>Change the second section's text color to blue.</li>
+                <li>Change the third section's inner HTML to "Hello world!"</li>
+                <li>Change the second and third image to display a bird.</li>
+                <li>Change each image's class from "box" to "frame".</li>
+            </ul>
+            <div>
+                <h1>HTML</h1>
+                <pre id="code">
+                    <code class="language-html">
+&lt;div class=&quot;container&quot;&gt;
+    &lt;section id=&quot;section1&quot; class=&quot;box&quot;&gt;Section 1&lt;/section&gt;
+    &lt;section id=&quot;section2&quot; class=&quot;box&quot;&gt;Section 2&lt;/section&gt;
+    &lt;section id=&quot;section3&quot; class=&quot;box&quot;&gt;Section 3&lt;/section&gt;
+    &lt;img id=&quot;img1&quot; class=&quot;box&quot; src=&quot;images/bird.jpg&quot /&gt;
+    &lt;img id=&quot;img2&quot; class=&quot;box&quot; src=&quot;images/cat.jpg&quot /&gt;
+    &lt;img id=&quot;img3&quot; class=&quot;box&quot; src=&quot;images/dog.jpg&quot /&gt;
+&lt;/div&gt;
+                    </code>
+                </pre>
+                <h1>JavaScript</h1>
+                <pre><code class="language-js" id="js"></code></pre>
+
+        </section>
+
+        <div class="container">
+            <section id="section1" class="box">Section 1</section>
+            <section id="section2" class="box">Section 2</section>
+            <section id="section3" class="box">Section 3</section>
+            <img id="img1" class="box" src="images/bird.jpg" />
+            <img id="img2" class="box" src="images/cat.jpg" />
+            <img id="img3" class="box" src="images/dog.jpg" />
+        </div>
+    </main>
+
+
+
+    <script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
