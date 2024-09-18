@@ -3,7 +3,7 @@ layout: assignment-two-column
 title: "JavaScript: Event Handlers"
 type: tutorial
 abbreviation: Tutorial 5
-draft: 1
+draft: 0
 points: 6
 num: 5
 start_date: 2024-09-20
@@ -53,9 +53,9 @@ Below is a cheatsheet (below) with examples of different selector methods and ap
 
 ## Your Tasks
 
-<a href="/fall2024/course-files/tutorials/tutorial04.zip" class="nu-button">Download Tutorial 4 <i class="fas fa-download"></i></a> 
+<a href="/fall2024/course-files/tutorials/tutorial05.zip" class="nu-button">Download Tutorial 5 <i class="fas fa-download"></i></a> 
 
-Please download the tutorial04.zip file, unzip it, and move the tutorials folder inside of your `csci344/tutorials` folder. Then complete the tasks:
+Please download the tutorial05.zip file, unzip it, and move the tutorials folder inside of your `csci344/tutorials` folder. Then complete the tasks:
 
 ### 1. Font Size Adjuster
 Open font-switcher/index.html in VS Code, and note the HTML tags. Also note that within the header tag there is a script tag that links to your JavaScript file:
@@ -73,7 +73,7 @@ Open `01-font-switcher/index.html`:
 
 Next, open `01-font-switcher/index.js` and, modify the body of the `makeBigger` and `makeSmaller` functions so that they update the font size of the `div.content` element and the `h1` element. There should be at least two statements within the body of each function (one to target and manipulate `div.content`, and one to target and manipulate `h1`). When you're done, your web page should look like this:
 
-<img class="large frame" src="/fall2024/assets/images/tutorials/tutorial04/font-switcher.gif" />
+<img class="large frame" src="/fall2024/assets/images/tutorials/tutorial05/font-switcher.gif" />
 
 
 ### 2. Theme Switcher
@@ -87,7 +87,7 @@ Another way to make your site more accessible is to create a "high-contrast" sty
 
 When you're done, your web page should look like this:
 
-<img class="large frame" src="/fall2024/assets/images/tutorials/tutorial04/theme-switcher.gif" />
+<img class="large frame" src="/fall2024/assets/images/tutorials/tutorial05/theme-switcher.gif" />
 
 ### 3. Dyslexia Mode (Recommended, but Optional)
 In part 3, you will use JavaScript to create a method for people with dyslexia to more easily read your web page. This technique is based on this artice: <a href="https://www.smashingmagazine.com/2021/11/dyslexia-friendly-mode-website/" target="_blank">Adding A Dyslexia-Friendly Mode To A Website</a>. Please complete the following tasks:
@@ -107,7 +107,7 @@ In part 3, you will use JavaScript to create a method for people with dyslexia t
 
 When you're done, your web page should look like this:
 
-<img class="large frame" src="/fall2024/assets/images/tutorials/tutorial04/dyslexia.gif" />
+<img class="large frame" src="/fall2024/assets/images/tutorials/tutorial05/dyslexia.gif" />
 
 ## What to Submit
 Please make sure that you have completed the following:
@@ -117,4 +117,7 @@ Please make sure that you have completed the following:
 * Implemented the theme switcher
 * Implemented "dyslexia mode" (optional, but recommended)
 
-When you're done, zip your entire `tutorial04` folder and upload it to the Moodle under **Tutorial 4**.
+When you're done, please create a link from your homepage to each of your Tutorial 5 web pages (see <a href="https://vanwars.github.io/csci344" target="_blank">Sarah's homepage</a> for an example). Then, commit and push all of your edits to GitHub and, paste a link to your GitHub Repository and to your GitHub pages in the Moodle submission.
+
+* If you collaborated with someone, please list your partner's name in the comments section.
+

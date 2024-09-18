@@ -1,12 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-document, body {
-   margin: 0px;
-   font-family: 'Montserrat';
+document,
+body {
+    margin: 0px;
+    font-family: 'Montserrat';
 }
 
 body * {
-   box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .container {
@@ -15,10 +16,11 @@ body * {
     flex-direction: column;
 }
 
-header, nav {
-   display: flex;
-   justify-content: center;
-   height: 100%;
+header,
+nav {
+    display: flex;
+    justify-content: center;
+    height: 100%;
 }
 
 header {
@@ -28,6 +30,7 @@ header {
     background-color: #F2F2F2;
     height: 100px;
 }
+
 nav {
     height: 50px;
     border-bottom: solid 1px #CCC;
@@ -44,18 +47,19 @@ button {
     margin-right: 15px;
 }
 
-#a1 {
-   font-size: 2em;
+#bigger {
+    font-size: 2em;
 }
-#a2 {
-   font-size: 1em;
+
+#smaller {
+    font-size: 1em;
 }
 
 .content {
-   padding: 40px;
-   font-size: 1.4em;
-   color: #666;
-   min-height: 100vh;
+    padding: 40px;
+    font-size: 1.4em;
+    color: #666;
+    min-height: 100vh;
 }
 
 h1 {
@@ -68,18 +72,23 @@ h1 {
 /******************/
 
 .ocean header {
-   background: #434a6c;
-   color: white;
-   font-family: 'Montserrat';
+    background: #434a6c;
+    color: white;
+    font-family: 'Montserrat';
 }
-.ocean button, .ocean .content {
+
+.ocean button,
+.ocean .content {
     color: #434a6c;
 }
+
 .ocean .content {
-   background: #99cccc;
-   line-height: 1.6em;
+    background: #99cccc;
+    line-height: 1.6em;
 }
-.ocean header, .ocean nav {
+
+.ocean header,
+.ocean nav {
     border-bottom: solid 1px #434a6c;
 }
 
@@ -87,14 +96,18 @@ h1 {
     background: #A8651E;
     color: #EFDEC2;
 }
+
 .desert button {
     color: #A8651E;
 }
+
 .desert .content {
     background: #EFDEC2;
     color: #A8651E;
 }
-.desert header, .desert nav {
+
+.desert header,
+.desert nav {
     border-bottom: solid 1px #774713;
 }
 
@@ -102,17 +115,22 @@ h1 {
     background: black;
     color: white;
 }
+
 .high-contrast .content {
     background: white;
     color: black;
 }
-.high-contrast header, .high-contrast nav {
+
+.high-contrast header,
+.high-contrast nav {
     border-bottom: solid 1px black;
 }
+
 .high-contrast header {
     background: black;
     color: white;
 }
+
 .high-contrast button {
     color: black;
 }
