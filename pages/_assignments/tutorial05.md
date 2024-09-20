@@ -18,7 +18,8 @@ The goal of today's tutorial is to:
 2. Encourage you to keep thinking about improving the accessibility of your website.
 
 ## Cheatsheet
-Below is a cheatsheet (below) with examples of different selector methods and approaches to updating the DOM.
+* Below is a cheatsheet (below) with examples of different selector methods and approaches to updating the DOM.
+* You can also try practicing with Sarah's interactive <a href="/fall2024/course-files/activities/dom-tester" target="_blank">DOM manipulation tool</a>.
 
 ### Selector Methods 
 
