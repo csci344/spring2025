@@ -30,16 +30,10 @@ due_date: 2024-09-30
 ## Slides
 * Lecture 11: <a href="https://docs.google.com/presentation/d/1CJkMkHYmM0INk4N-Qx5xr0lsw52xLJFcGmia1SvFhAU/edit?usp=sharing" target="_blank">Intro to HTTP & Fetch</a>
 * Lecture 12: <a href="https://docs.google.com/presentation/d/1ymquHG5WCKCWI-gpBdrewQHwbYDlkycq8fSAXx9GdTs/edit?usp=sharing" target="_blank">Authentication Headers, GitHub Pages, Intro to HW4</a>
-* Lecture 13: <a href="https://docs.google.com/presentation/d/1yh52FPBvmWF5TOhhHMux1uStYqIZRn0aGrTaBm5b91Q/edit?usp=sharing" target="_blank">HW4 tips, modal windows</a>
 
-<!-- Use this lecture for promises: 
-https://cs396-web-dev.github.io/spring2021/lectures/lecture06 -->
+<!-- * Lecture 13: <a href="https://docs.google.com/presentation/d/1yh52FPBvmWF5TOhhHMux1uStYqIZRn0aGrTaBm5b91Q/edit?usp=sharing" target="_blank">HW4 tips, modal windows</a> -->
 
-## Videos & Lecture Files
-Videos and worked examples will be published after class:
-* <a href="https://drive.google.com/drive/folders/1b0RGogU8P2rKJAtcRpxMspHB919GUAXT?usp=sharing" target="_blank">Videos on Google Drive</a>
-* <a href="https://github.com/vanwars/csci344" target="_blank">Worked examples on GitHub</a>
 
-## Activities
+<!-- ## Activities
 * Lecture 11 files: [Fetch Examples](/fall2024/course-files/lectures/lecture11.zip) (Wednesday, 02/15)
-* Lecture 12 files: [Modal Windows](/fall2024/course-files/lectures/lecture12.zip) (Wednesday, 02/22)
+* Lecture 12 files: [Modal Windows](/fall2024/course-files/lectures/lecture12.zip) (Wednesday, 02/22) -->

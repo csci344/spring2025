@@ -1,6 +1,6 @@
 ---
 layout: assignment-two-column
-title: "JavaScript: Practice with Fetch + CRUD Operations"
+title: "Get Started on HW3 & HW4"
 type: tutorial
 abbreviation: Tutorial 7
 draft: 1

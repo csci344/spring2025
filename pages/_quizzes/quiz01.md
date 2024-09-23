@@ -9,6 +9,9 @@ num: 1
 due_date: 2024-09-23
 ---
 
+> ## Actual Quiz Link
+> After you complete the written portion of the quiz, navigate to the <a href="/fall2024/activities/quiz01" target="_blank">Quiz 1 Instructions</a>
+
 ## 1. Guidelines (Please Read Carefully)
 Quiz 1 will be completed during class on Monday, 9/23. It is due at the end of class.
 * Half of the quiz will paper-based. For this portion, you will not be able to use a computer, but you may bring a 1-page cheatsheet. 

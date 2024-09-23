@@ -4,7 +4,7 @@ title: "JavaScript: Looping, Iteration, and Higher-Order Functions"
 type: module
 prefix: topic
 num: 7
-draft: 1
+draft: 0
 due_date: 2024-09-25
 ---
 
@@ -14,14 +14,10 @@ due_date: 2024-09-25
 
 
 ## Slides
-* Lecture 9: <a href="https://docs.google.com/presentation/d/1YijHKWI86pNWuObEfpC_TV-_0p-LJFTHX7tUfgdYJ7M/edit?usp=sharing" target="_blank">High-Order Functions (forEach, map, filter, reduce)</a> (02/08)
-* Lecture 10: <a href="https://docs.google.com/presentation/d/16W34RmBL0JuD2s6x-2NO33IxlB-tdYlMJQafdvbtG6c/edit?usp=sharing" target="_blank">Higher-Order Functions continued + advanced templates</a>
+Slides will be posted before class.
 
-## Videos & Lecture Files
-Videos and worked examples will be published after class:
-* <a href="https://drive.google.com/drive/folders/1b0RGogU8P2rKJAtcRpxMspHB919GUAXT?usp=sharing" target="_blank">Videos on Google Drive</a>
-* <a href="https://github.com/vanwars/csci344" target="_blank">Worked examples on GitHub</a>
+<!-- * Lecture 10: <a href="https://docs.google.com/presentation/d/1YijHKWI86pNWuObEfpC_TV-_0p-LJFTHX7tUfgdYJ7M/edit?usp=sharing" target="_blank">High-Order Functions (forEach, map, filter, reduce)</a> (09/25)
+-->
 
-## Activities
-* Lecture 9 files: [forEach, map, filter, reduce](/fall2024/course-files/lectures/lecture09.zip) (Wednesday, 02/08)
-* Lecture 10 files: [Implementing higher-order methods](/fall2024/course-files/lectures/lecture10.zip) (Monday, 02/13)
+<!-- ## Activities
+* Lecture 10 files: [forEach, map, filter, reduce](/fall2024/course-files/lectures/lecture10.zip) (Wednesday, 09/25) -->
