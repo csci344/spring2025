@@ -14,10 +14,8 @@ due_date: 2024-09-25
 
 
 ## Slides
-Slides will be posted before class.
+* Lecture 10: <a href="https://docs.google.com/presentation/d/1nP4LfWZi2cz1lNC47_Q-rw9NxE8Ysp9z/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">High-Order Functions (forEach, map, filter, reduce)</a> (09/25)
 
-<!-- * Lecture 10: <a href="https://docs.google.com/presentation/d/1YijHKWI86pNWuObEfpC_TV-_0p-LJFTHX7tUfgdYJ7M/edit?usp=sharing" target="_blank">High-Order Functions (forEach, map, filter, reduce)</a> (09/25)
--->
 
-<!-- ## Activities
-* Lecture 10 files: [forEach, map, filter, reduce](/fall2024/course-files/lectures/lecture10.zip) (Wednesday, 09/25) -->
+## Activities
+* Lecture 10 files: [forEach, map, filter, reduce](/fall2024/course-files/lectures/lecture10.zip) (Wednesday, 09/25)
