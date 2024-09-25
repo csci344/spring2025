@@ -1,4 +1,4 @@
-// https://meteor.unca.edu/registrar/class-schedules/api/v1/courses/2023/spring/
+// https://meteor.unca.edu/registrar/class-schedules/api/v1/courses/2024/fall/
 const data = [
     {
         CRN: 61162,

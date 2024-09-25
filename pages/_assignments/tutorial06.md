@@ -3,7 +3,7 @@ layout: assignment-two-column
 title: "JavaScript: Practice with higher-order iteration functions"
 type: tutorial
 abbreviation: Tutorial 6
-draft: 1
+draft: 0
 points: 6
 num: 6
 start_date: 2024-09-27
@@ -15,23 +15,19 @@ due_date: 2024-10-02
        width:60%;
        min-width: 500px;
     }
-    .frame {
+    /* .frame {
         border: solid 3px #0076A5;
-    }
-    .frame:hover {
-        border-color: hotpink;
-    }
+    } */
+
 </style>
 
 {:.blockquote-no-margin}
-> ## Update: Deadline Extended to Monday
+> ## Deadline Wednesday
 > Because this tutorial is a bit more involved, you may have until **Wednesday, 10/02** to complete it.
 
 For Tutorial 6, you will make a UNCA Course Search interface for the Computer Science Department that works like this:
 
-<a href="https://vanwars.github.io/csci344/tutorials/tutorial05_solutions/index.html" target="_blank"><img class="frame screenshot" src="/fall2024/assets/images/tutorials/tutorial06/screenshot-course-lookup.png" /></a>
-
-<a href="https://vanwars.github.io/csci344/tutorials/tutorial05_solutions/index.html" target="_blank">Demo Video</a>
+<img class="frame screenshot" src="/fall2024/assets/images/tutorials/tutorial06/demo-course-search.gif" />
 
 Please download the starter files below and then complete the following tasks:
 
@@ -112,4 +108,4 @@ const showData = (searchTerm, openOnly) => {
 Now that you have implemented your button, don't forget to attach your event handler to the button's click event (like we've been doing in class for the past few weeks).
 
 ## III. What to Submit
-When you have completed the tasks listed above and your search interface looks similar to the one in the demo, zip your entire `tutorial05` folder and upload it to the Moodle under **Tutorial 6**.
+When you have completed the tasks listed above and your search interface looks similar to the one in the demo, zip your entire `tutorial06` folder and upload it to the Moodle under **Tutorial 6**.
