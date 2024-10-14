@@ -4,7 +4,7 @@ title: "Server-Side Programming (w/Fast API & Python)"
 type: module
 num: 12
 draft: 1
-due_date: 2024-10-28
+due_date: 2024-11-13
 ---
 
 ## Readings

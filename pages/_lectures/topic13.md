@@ -4,7 +4,7 @@ title: "Intro to REST"
 type: module
 num: 13
 draft: 1
-due_date: 2024-11-04
+due_date: 2024-11-15
 ---
 
 ## Readings

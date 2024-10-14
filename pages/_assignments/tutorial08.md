@@ -6,7 +6,7 @@ abbreviation: Tutorial 8
 draft: 1
 points: 6
 num: 8
-start_date: 2024-10-11
-due_date: 2024-10-14
+start_date: 2024-11-08
+due_date: 2024-11-11
 ---
 TODO

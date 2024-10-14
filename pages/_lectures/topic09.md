@@ -4,7 +4,7 @@ title: "Introduction to React"
 type: module
 num: 9
 draft: 1
-due_date: 2024-10-09
+due_date: 2024-11-04
 ---
 
 ## Readings

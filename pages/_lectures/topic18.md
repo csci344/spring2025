@@ -1,10 +1,10 @@
 ---
 layout: module
-title: "Course Reflection & Deployment to the Cloud"
+title: "Course Reflection"
 type: module
-num: 18
+num: 17
 draft: 1
-due_date: 2024-12-02
+due_date: 2024-12-06
 ---
 
 ## Readings

@@ -4,7 +4,7 @@ title: "Intro to Databases"
 type: module
 num: 14
 draft: 1
-due_date: 2024-11-06
+due_date: 2024-11-20
 ---
 
 ## Readings

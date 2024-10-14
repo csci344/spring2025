@@ -4,7 +4,7 @@ title: "Authentication with JWTs"
 type: module
 num: 16
 draft: 1
-due_date: 2024-11-18
+due_date: 2024-11-30
 ---
 
 ## Readings

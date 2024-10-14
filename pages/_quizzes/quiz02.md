@@ -5,7 +5,7 @@ type: quiz
 draft: 1
 num: 2
 abbreviation: "Quiz 2"
-due_date: 2024-10-25
+due_date: 2024-12-11
 ---
 
 TBD

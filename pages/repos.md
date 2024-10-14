@@ -16,12 +16,12 @@ permalink: /repos-hidden/
 | 5 | Ben | [repo](https://github.com/blynch87/csci344-coursework) | [pages](https://blynch87.github.io/csci344-coursework/) |  |
 | 6 | Brendan | [repo](https://github.com/ringojuic/csci344-coursework) | [pages](https://ringojuic.github.io/csci344-coursework/) | Missing homepage |
 | 7 | Chris  | [repo](https://github.com/ChrisB220/csci344) | [pages](https://chrisb220.github.io/csci344/) |  |
-| 8 | Dorsey  | [repo](https://github.com/dtkelleher/CSCI-344-coursework) | [pages](https://dtkelleher.github.io/CSCI-344-coursework/) | Please rename folders and repo to all lowercase. |
+| 8 | Dorsey  | [repo](https://github.com/dtkelleher/CSCI-344-coursework) | [pages](https://dtkelleher.github.io/CSCI-344-coursework/) |  |
 | 9 | Ethan | [repo](https://github.com/EPC233/csci344) | [pages](https://epc233.github.io/csci344/) |  |
 | 10 | Given | [repo](https://github.com/givensuman/csci344) | [pages](https://givensuman.github.io/csci344/) |  |
 | 11 | Jesse  | [repo](https://github.com/JesseRayCrouse/csci344) | [pages](https://jesseraycrouse.github.io/csci344/) |  |
 | 12 | Kiko  | [repo](https://github.com/KiCorp/csci344) | [pages](https://kicorp.github.io/csci344/) |  |
-| 13 | Laiza  | [repo](https://github.com/HLaiK/csci344) | [pages](https://hlaik.github.io/csci344/main.html) |  |
+| 13 | Laiza  | [repo](https://github.com/HLaiK/csci344) | [pages](https://hlaik.github.io/csci344/main.html) | Homepage is named "main.html" |
 | 14 | Maria  | [repo](https://github.com/Tangerinedream13/csci344) | [pages](https://tangerinedream13.github.io/csci344/) |  |
 | 15 | Max  | [repo](https://github.com/MaxwellChalmers/csci344-coursework) | [pages](https://maxwellchalmers.github.io/csci344-coursework/) |  |
 | 16 | Natasha  | [repo](https://github.com/NatashaEarley/csci344) | [pages](https://natashaearley.github.io/csci344/) |  |
@@ -31,4 +31,4 @@ permalink: /repos-hidden/
 | 20 | Sofia | [repo](https://github.com/sofiarc19/csci-344-coursework) | [pages](https://sofiarc19.github.io/csci-344-coursework/) |  |
 | 21 | Sophie | [repo](https://github.com/slundin24/csci344) | [pages](https://slundin24.github.io/csci344/) |  |
 | 22 | Tyler | [repo](https://github.com/Swissssst/csci344) | [pages](https://swissssst.github.io/csci344/) | |
-| 23 | Vlad | [repo](https://github.com/vlkrvc/CSCI344/) | [pages](https://vlkrvc.github.io/CSCI344/) |  Ask to rename his repo to all lowercase: `CSCI344` -> `csci344`  |
+| 23 | Vlad | [repo](https://github.com/vlkrvc/CSCI344/) | [pages](https://vlkrvc.github.io/CSCI344/) | |

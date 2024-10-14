@@ -4,7 +4,7 @@ title: "Building REST API Endpoints with Fast API and SQLAlchemy"
 type: module
 num: 15
 draft: 1
-due_date: 2024-11-11
+due_date: 2024-11-25
 ---
 
 ## Readings

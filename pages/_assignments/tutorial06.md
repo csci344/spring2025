@@ -6,8 +6,8 @@ abbreviation: Tutorial 6
 draft: 0
 points: 6
 num: 6
-start_date: 2024-09-27
-due_date: 2024-10-02
+start_date: 2024-10-28
+due_date: 2024-11-01
 ---
 
 <style>
@@ -20,10 +20,6 @@ due_date: 2024-10-02
     } */
 
 </style>
-
-{:.blockquote-no-margin}
-> ## Deadline Wednesday
-> Because this tutorial is a bit more involved, you may have until **Wednesday, 10/02** to complete it.
 
 For Tutorial 6, you will make a UNCA Course Search interface for the Computer Science Department that works like this:
 

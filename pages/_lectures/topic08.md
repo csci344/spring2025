@@ -5,7 +5,7 @@ type: module
 prefix: topic
 num: 8
 draft: 1
-due_date: 2024-09-30
+due_date: 2024-10-30
 ---
 
 ## Readings
