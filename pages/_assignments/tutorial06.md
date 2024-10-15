@@ -104,4 +104,6 @@ const showData = (searchTerm, openOnly) => {
 Now that you have implemented your button, don't forget to attach your event handler to the button's click event (like we've been doing in class for the past few weeks).
 
 ## III. What to Submit
-When you have completed the tasks listed above and your search interface looks similar to the one in the demo, zip your entire `tutorial06` folder and upload it to the Moodle under **Tutorial 6**.
+When you’re done, please create a link from your homepage to your Tutorial 6 web page (see Sarah’s homepage for an example). Then, commit and push all of your edits to GitHub and, paste a link to your GitHub Repository and to your GitHub pages in the Moodle submission.
+
+If you collaborated with someone, please list your partner’s name in the comments section.
