@@ -4,7 +4,7 @@ title: "HTTP & the Fetch API"
 type: module
 prefix: topic
 num: 8
-draft: 1
+draft: 0
 due_date: 2024-10-30
 ---
 
@@ -28,12 +28,13 @@ due_date: 2024-10-30
 
 
 ## Slides
-* Lecture 11: <a href="https://docs.google.com/presentation/d/1CJkMkHYmM0INk4N-Qx5xr0lsw52xLJFcGmia1SvFhAU/edit?usp=sharing" target="_blank">Intro to HTTP & Fetch</a>
-* Lecture 12: <a href="https://docs.google.com/presentation/d/1ymquHG5WCKCWI-gpBdrewQHwbYDlkycq8fSAXx9GdTs/edit?usp=sharing" target="_blank">Authentication Headers, GitHub Pages, Intro to HW4</a>
+Slides will be posted before class
+
+<!-- * Lecture 11: <a href="https://docs.google.com/presentation/d/1zSRy-ae4G9Sohu_VXaeSbxOpLgyg2XVj/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Intro to HTTP & Fetch</a> -->
+<!-- * Lecture 12: <a href="" target="_blank">Authentication Headers, GitHub Pages, Intro to HW4</a> -->
 
 <!-- * Lecture 13: <a href="https://docs.google.com/presentation/d/1yh52FPBvmWF5TOhhHMux1uStYqIZRn0aGrTaBm5b91Q/edit?usp=sharing" target="_blank">HW4 tips, modal windows</a> -->
 
 
-<!-- ## Activities
-* Lecture 11 files: [Fetch Examples](/fall2024/course-files/lectures/lecture11.zip) (Wednesday, 02/15)
-* Lecture 12 files: [Modal Windows](/fall2024/course-files/lectures/lecture12.zip) (Wednesday, 02/22) -->
+## Activities
+* Lecture 11 files: [Fetch Examples](/fall2024/course-files/lectures/lecture11.zip) (Wednesday, 10/30)
