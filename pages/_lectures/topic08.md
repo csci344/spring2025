@@ -28,7 +28,7 @@ due_date: 2024-10-30
 
 
 ## Slides
-Slides will be posted before class
+Slides will be posted before class.
 
 <!-- * Lecture 11: <a href="https://docs.google.com/presentation/d/1zSRy-ae4G9Sohu_VXaeSbxOpLgyg2XVj/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Intro to HTTP & Fetch</a> -->
 <!-- * Lecture 12: <a href="" target="_blank">Authentication Headers, GitHub Pages, Intro to HW4</a> -->

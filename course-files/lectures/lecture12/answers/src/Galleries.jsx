@@ -10,7 +10,7 @@ export default function Galleries({ galleries, galleryIdx, setGalleryIdx }) {
                     <div key={idx} className="row">
                         <button
                             onClick={() => setGalleryIdx(idx)}
-                            className={idx === galleryIdx ? "selected" : ""}
+                            className={idx === galleryIdx && "selected"}
                         >
                             {gallery.name}
                         </button>
