@@ -6,9 +6,11 @@ course: "CSCI 344: Advanced Web Technology"
 term: "Fall 2024"
 email: svanwart@unca.edu
 prerequisites: "CSCI182 or CSCI183 or CSCI185 or CSCI201 or instructor permission."
-office_hours: "Mo, Tu, Fr 3:30pm - 4:30pm (in person), Rhoades Robinson Hall, Rm. 220"
+office_hours: "Mo, Tu, Fr 3:30pm - 4:30pm (on Zoom)"
+office_hours_zoom_link: https://unca-edu.zoom.us/j/7543717427
 professor: "Dr. Sarah Van Wart (she/her)"
-section1: "MWF 2:00-3:15PM, Zeis Hall, Rm. 201"
+time: "MWF 2:00-3:15PM"
+zoom: https://unca-edu.zoom.us/j/99241301278?pwd=7mLk2whOUVhDI2MJbDAHIzDKyECQtB.1
 notes: "One year of programming experience is strongly recommended."
 ---
 
@@ -25,6 +27,34 @@ notes: "One year of programming experience is strongly recommended."
         background-color: transparent;
     }
 </style>
+
+
+{:.info}
+> ## Post-Helene Updates
+> Welcome back! Due to the time lost because of Helene, the following schedule adjustments have been made:
+> 
+> * **Quiz 2**: Quiz 2 has been cancelled. There will still be a final exam on select JavaScript concepts. Your quiz grade will be an average of your two quiz scores.
+> * **Class Meetings**: We will still be meeting _synchronously_ during regularly scheduled class time on Zoom (2-3:15PM M,W,F). All class meetings will be recorded. 
+> * **Attendance / Participation Grade**: I would really like you to keep coming to the synchronous zoom sessions if at all possible. We will be working on the assignments together in class. That said, I will no longer be grading you on attendance (though I will still be taking attendance). Your attendance grade will be based on your attendance from the beginning of the course through September 25. 
+> * **Schedule Adjusted**: The schedule has been adjusted and is up-to-date. Please see the [updated schedule](/fall2024/).
+> * **Specific Adjustments Made**:
+>     * Attendance grading: You will no longer be graded on attendance (see above)
+>     * Cancelled topics: Web Sockets (Chat) & Cloud Deployment
+>     * Reduced number of tutorials
+>     * 2 quizzes instead of 3
+>     * Significantly trimmed down the homework assignments to just the core ideas (fewer deliverables, same concepts)
+>     {:.compact}
+>
+> Please also remember the leniency measures:
+> * You can drop your lowest tutorial score.
+> * You may resubmit assignments with a 10% penalty.
+> {:.compact}
+
+
+## About the Course
+What does it take to build a website from scratch? How do designers create web interfaces? How do websites send, store, and leverage different kinds of data? What is a "framework"? This course aims to answer these questions by giving students exposure to the technologies and strategies used by professional web developers in industry. Throughout the semester, students will learn how to build a “full-stack” application to be deployed on a live web server.
+
+Students will spend the entire quarter learning about the basics of creating web applications, including building a web server and REST API, setting up a database, designing usable interfaces, and deploying it all for public use.
 
 ## Course Format
 The course includes a mix of lectures, in-class activities, tutorials, quizzes, and homework. It is your responsibility to keep up-to-date on class material and announcements, as the schedule is subject to change. This includes material presented and announcements made in class, via email, or on Moodle.
