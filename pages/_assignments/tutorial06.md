@@ -21,6 +21,9 @@ due_date: 2024-11-01
 
 </style>
 
+> ## Introductory Slides
+> * <a href="https://docs.google.com/presentation/d/1FgfR9MteqUbuqx-EKmqoWEFoDbMgQlxo/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Tutorial 6 Slides</a>
+
 For Tutorial 6, you will make a UNCA Course Search interface for the Computer Science Department that works like this:
 
 <img class="frame screenshot" src="/fall2024/assets/images/tutorials/tutorial06/demo-course-search.gif" />
