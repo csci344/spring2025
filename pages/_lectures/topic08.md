@@ -22,18 +22,9 @@ due_date: 2024-10-30
 * <a href="https://dev.to/silvenleaf/fetch-api-easiest-explanation-part-3-4-put-by-silvenleaf-3oe8" target="_blank">fetch PUT examples</a>.<br>Note: PATCH works the same way as PUT. Recall that PATCH only updates specific attributes of a resource while PUT replaces the entire resource with a new version.
 * <a href="https://dev.to/silvenleaf/fetch-api-easiest-explanation-part-4-4-delete-by-silvenleaf-4376">fetch DELETE examples</a>.
 
-<!-- ## Promises
-* https://www.w3schools.com/js/js_promise.asp 
-* https://promisesaplus.com/#terminology -->
-
 
 ## Slides
-Slides will be posted before class.
-
-<!-- * Lecture 11: <a href="https://docs.google.com/presentation/d/1zSRy-ae4G9Sohu_VXaeSbxOpLgyg2XVj/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Intro to HTTP & Fetch</a> -->
-<!-- * Lecture 12: <a href="" target="_blank">Authentication Headers, GitHub Pages, Intro to HW4</a> -->
-
-<!-- * Lecture 13: <a href="https://docs.google.com/presentation/d/1yh52FPBvmWF5TOhhHMux1uStYqIZRn0aGrTaBm5b91Q/edit?usp=sharing" target="_blank">HW4 tips, modal windows</a> -->
+* Lecture 11: <a href="https://docs.google.com/presentation/d/1zSRy-ae4G9Sohu_VXaeSbxOpLgyg2XVj/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Intro to HTTP & Fetch</a>
 
 
 ## Activities
