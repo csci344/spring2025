@@ -19,6 +19,9 @@ In this tutorial, we will be getting started on some concepts that should help y
 3. Create data using the API.
 4. Delete data using the API.
 
+### Slides:
+* <a href="https://docs.google.com/presentation/d/1txLx35U4GMYCBqsefAcUKj-72vecU8xl/edit#slide=id.p2" target="_blank">Tutorial 7 Slides</a>
+
 
 ## What to Submit
 To submit this tutorial, please create a link from your homepage to your Homework 3 web page (see Sarah’s homepage for an example). Then, commit and push all of your edits to GitHub and, paste a link to your GitHub Repository and to your GitHub pages in the Moodle submission for Tutorial 7.
