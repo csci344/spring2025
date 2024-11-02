@@ -47,6 +47,7 @@
     flex-direction: column;
     
     .badge, a.badge,
+    .update, a.update,
     .hw, a.hw, 
     .pj, a.pj, 
     .lec, a.lec, 
@@ -69,6 +70,10 @@
     }
     .badge, .badge:hover {
         background: $lightgrey;
+        color: #444;
+    }
+    .update, .update:hover {
+        background: #DDD;
         color: #444;
     }
     .hw, .hw:hover {

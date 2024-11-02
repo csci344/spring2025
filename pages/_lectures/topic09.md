@@ -8,8 +8,8 @@ due_date: 2024-11-04
 ---
 
 ## Readings
-* <a href="https://beta.reactjs.org/learn" target="_blank">Quick Start</a>
-* <a href="https://beta.reactjs.org/learn/tutorial-tic-tac-toe" target="_blank">Tic Tac Toe</a>. You are strongly encouraged to do this on your own.
+* <span class="badge">Required</span> <a href="https://react.dev/learn/describing-the-ui" target="_blank">Describing the UI</a>
+* <span class="badge">Recommended</span> <a href="https://beta.reactjs.org/learn/tutorial-tic-tac-toe" target="_blank">Tic Tac Toe</a>. You are strongly encouraged to do this on your own.
 
 
 ## Slides

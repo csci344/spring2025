@@ -7,8 +7,15 @@ draft: 0
 points: 6
 num: 7
 start_date: 2024-11-01
-due_date: 2024-11-04
+due_date: 2024-11-06
 ---
+
+{% include hw03-walkthroughs.html %}
+
+## Introductory Slides
+* <a href="https://docs.google.com/presentation/d/1txLx35U4GMYCBqsefAcUKj-72vecU8xl/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Tutorial 7 Slides</a>
+* <a href="https://drive.google.com/file/d/1JxSLmUWhC9tVZO8V6N3iitz5zoAiMouT/view?usp=drive_link" target="_blank">Lecture recording</a>
+
 
 ## Overview
 In this tutorial, we will be getting started on some concepts that should help you in [Homework 3](hw03). Specifically, we will:
@@ -18,9 +25,6 @@ In this tutorial, we will be getting started on some concepts that should help y
 2. Fetch data from the API to display on a web page.
 3. Create data using the API.
 4. Delete data using the API.
-
-### Slides:
-* <a href="https://docs.google.com/presentation/d/1txLx35U4GMYCBqsefAcUKj-72vecU8xl/edit#slide=id.p2" target="_blank">Tutorial 7 Slides</a>
 
 
 ## What to Submit
