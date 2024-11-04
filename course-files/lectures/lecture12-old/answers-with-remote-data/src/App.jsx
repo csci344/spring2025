@@ -42,15 +42,12 @@ export default function App() {
     //     getPosts();
     // }, []);
 
-    if (photos) {
-        return (
+    return (
+        photos && (
             <div>
                 <h1>This is a Gallery of Photos</h1>
                 <Carousel gallery={photos} />
             </div>
         )
-    } else {
-        // Only return photos if the photos are defined.
-        return <></>
-    }
+    );
 }

@@ -1,51 +1,65 @@
 import React from "react";
 import Carousel from "./Carousel";
-import Galleries from "./Galleries";
-import { useState } from "react";
+import Gallery from "./Gallery";
+import { useState, useEffect } from "react";
+import { getAccessToken } from "./get-token";
 import "./App.css";
 
 export default function App() {
-    const [galleryIdx, setGalleryIdx] = useState(0);
+    const [photos, setPhotos] = useState(null);
+    const [toggle, setToggle] = useState("carousel");
 
-    const galleries = [
-        {
-            name: "Gallery 1",
-            images: [
-                "https://picsum.photos/400/300?id=1",
-                "https://picsum.photos/400/300?id=2",
-                "https://picsum.photos/400/300?id=3",
-            ],
-        },
-        {
-            name: "Gallery 2",
-            images: [
-                "https://picsum.photos/400/300?id=4",
-                "https://picsum.photos/400/300?id=5",
-                "https://picsum.photos/400/300?id=6",
-                "https://picsum.photos/400/300?id=7",
-                "https://picsum.photos/400/300?id=8",
-                "https://picsum.photos/400/300?id=9",
-            ],
-        },
-        {
-            name: "Gallery 3",
-            images: [
-                "https://picsum.photos/400/300?id=10",
-                "https://picsum.photos/400/300?id=11",
-                "https://picsum.photos/400/300?id=12",
-                "https://picsum.photos/400/300?id=13",
-                "https://picsum.photos/400/300?id=14",
-            ],
-        },
-    ];
-    return (
-        <div className="page-layout">
-            <Galleries
-                galleries={galleries}
-                galleryIdx={galleryIdx}
-                setGalleryIdx={setGalleryIdx}
-            />
-            <Carousel gallery={galleries[galleryIdx]} />
-        </div>
-    );
+    async function getPosts() {
+        const rootURL = "https://photo-app-secured.herokuapp.com";
+        const token = await getAccessToken(rootURL, "sarah", "password");
+
+        // endpoint:
+        const endpoint = `${rootURL}/api/posts/`;
+        const response = await fetch(endpoint, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: "Bearer " + token,
+            },
+        });
+        const posts = await response.json();
+        const urls = posts.map((post) => post.image_url);
+        console.log(urls);
+        setPhotos(urls);
+    }
+
+    useEffect(() => {
+        getPosts();
+    }, []);
+
+    const displayType = toggle[0].toUpperCase() + toggle.substring(1);
+    if (photos) {
+        return (
+            <div
+                style={{
+                    maxWidth: "800px",
+                    margin: "0 auto",
+                }}
+            >
+                <div class="buttons">
+                    <button aria-label="show carousel" onClick={() => setToggle("carousel")}>
+                    
+                    <i class="fa-solid fa-panorama"></i> Carousel
+                    </button>
+                    <button onClick={() => setToggle("gallery")}>
+                    <i className="fa-regular fa-images"></i> Gallery
+                    </button>
+                </div>
+                <h1>This is a {displayType} of Photos</h1>
+                {toggle === "carousel" ? (
+                    <Carousel gallery={photos} />
+                ) : (
+                    <Gallery gallery={photos} />
+                )}
+            </div>
+        );
+    } else {
+        // Only return photos if the photos are defined.
+        return <></>;
+    }
 }
