@@ -10,7 +10,7 @@ start_date: 2024-11-01
 due_date: 2024-11-06
 ---
 
-{% include hw03-walkthroughs.html %}
+{% include walkthrough-hw03.html %}
 
 ## Introductory Slides
 * <a href="https://docs.google.com/presentation/d/1txLx35U4GMYCBqsefAcUKj-72vecU8xl/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Tutorial 7 Slides</a>

@@ -7,6 +7,9 @@ draft: 1
 num: 4
 ---
 
+{% include walkthrough-react-activity.html %}
+
+
 ## 1. Don't forget to do the readings
 
 {:.info}
@@ -157,15 +160,16 @@ Now, we’re going to make a few changes to our HTML and JavaScript to make it a
         ...
         ```
 
-    1. Change the script src to point to the new **main.jsx** file you just made:
+    1. Add the following JavaScript reference within the `<head></head>` of your HTML file to point to the **main.jsx** file you just made:
 
         ```html
-        ...
-        <script type="module" src="./src/main.jsx" type="text/javascript" defer></script>
-        ...
+        <head>
+            ...
+            <script type="module" src="./src/main.jsx" type="text/javascript" defer></script>
+        </head>
         ```
 
-Now, go and check [http://localhost:**5173**/](http://localhost:5173/) in your web browser, and you should see a new element in your web browser
+Now, go and check <a href="http://localhost:5173/" target="_blank">http://localhost:5173/</a> in your web browser, and you should see a new element in your web browser.
 
 ### Q: What just happened?
 You have now successfully configured your computer to run React applications. A few notes:

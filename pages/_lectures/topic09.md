@@ -7,6 +7,7 @@ draft: 0
 due_date: 2024-11-04
 ---
 
+{% include walkthrough-react-activity.html %}
 
 ## Readings
 
