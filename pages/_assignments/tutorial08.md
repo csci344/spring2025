@@ -10,6 +10,7 @@ start_date: 2024-11-08
 due_date: 2024-11-15
 ---
 
+{% include walkthrough-hw04.html %}
 
 ## Overview
 In this tutorial, we will be getting started on some React concepts that should help you in [Homework 4](hw04). Specifically, we will:
