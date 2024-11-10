@@ -3,7 +3,7 @@ layout: module
 title: "Intro to Databases"
 type: module
 num: 12
-draft: 1
+draft: 0
 due_date: 2024-11-20
 ---
 
@@ -19,13 +19,6 @@ due_date: 2024-11-20
 {:.compact}
 
 ## Slides
-* Lecture 20: <a href="https://docs.google.com/presentation/d/1grql4XbDbsYlwjeMrAztEX4-DkXk37_qCcg5RA1Rhew/edit?usp=sharing" target="_blank">Intro to Relational Databases</a>
+Slides will be posted before class
 
-## Videos & Lecture Files
-Videos and worked examples will be published after class:
-* <a href="https://drive.google.com/drive/folders/1b0RGogU8P2rKJAtcRpxMspHB919GUAXT?usp=sharing" target="_blank">Videos on Google Drive</a>
-* <a href="https://github.com/vanwars/csci344" target="_blank">Worked examples on GitHub</a>
-
-
-<!-- ## Activities
-1. Lecture 18 Activity (Wednesday): [Python practice](/fall2024/course-files/lectures/lecture18.zip) -->
+<!-- * Lecture 16: <a href="#" target="_blank">Intro to Relational Databases</a> -->
