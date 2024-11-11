@@ -43,3 +43,4 @@ due_date: 2024-11-04
 ## Activities
 
 1. [Hands-on React Activity](../activities/react-activity)
+1. [Design Systems Activity](../activities/design-systems)
