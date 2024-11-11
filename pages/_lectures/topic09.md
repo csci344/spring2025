@@ -38,7 +38,7 @@ due_date: 2024-11-04
 
 ## Slides
 * Lecture 12: <a href="https://docs.google.com/presentation/d/1SZTCjDpey1k4EGUYFBz-mWUIulUnc3nD/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Intro to React</a> (Monday & Wednesday)
-* Lecture 13: Design Systems and Third-Party Components (Monday, 11/11)
+* Lecture 13: <a href="https://docs.google.com/presentation/d/1M1LDyHw8vfNfXK6kzxCjbdGu8XujRkHj/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Intro to Design Systems</a>  (Monday, 11/11)
 
 ## Activities
 
