@@ -14,8 +14,5 @@ due_date: 2024-11-13
 
 
 ## Slides
-Slides will be posted before class
-
-<!-- These are the right slides:
-* Lecture 14: <a href="https://docs.google.com/presentation/d/1DYFQLWNAnLIxecswQb1uvz0BEou541pk/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Server-Side Web Architectures + REST</a> -->
+* Lecture 14: <a href="https://docs.google.com/presentation/d/1DYFQLWNAnLIxecswQb1uvz0BEou541pk/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Server-Side Web Architectures + REST</a>
 
