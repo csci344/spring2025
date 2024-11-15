@@ -3,7 +3,7 @@ layout: assignment-two-column
 title: Setting up Flask
 type: tutorial
 abbreviation: Tutorial 9
-draft: 1
+draft: 0
 points: 6
 num: 9
 start_date: 2024-11-18
@@ -78,7 +78,7 @@ To run Flask, we are going to create a self-contained Python virtual environment
 >
 > A virtual environment is a Python environment such that the Python interpreter, libraries and scripts installed into it are isolated from those installed in other virtual environments, and (by default) any libraries installed in a “system” Python, i.e., one which is installed as part of your operating system.
 
-Practically speaking, a virtual environment (venv) "sandboxes" your Python installation so that anything installed within a venv is not available outside of it. Libraries installed in a "system" Python ARE available to your venv, but can be overridden from within the venv. For instance, if `numpy version 1.15.4` is installed on your "system" Python and you decide to install `numpy version 1.16.1` in your venv, then within the venv, `1.16.1` will take precedence. 
+Practically speaking, a virtual environment (venv) "sandboxes" your Python installation so that anything installed within a venv is not available outside of it. Libraries installed in a "system" Python ARE available to your venv, but can be overridden from within the venv. For instance, `numpy` is a python module that is commonly used in data science tasks. So, if `numpy version 1.15.4` is installed on your "system" Python and you decide to install `numpy version 1.16.1` in your venv, then within the venv, `1.16.1` will take precedence. 
 
 Some commands to know:
 
@@ -102,9 +102,7 @@ Note that when your venv is activated, there will be a `(env)` prefix in front o
 
 
 ## 4. Set Up
-If you haven't used Python before, please download and install it: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a>. Any version of python >= 3.8 will work.
-
-Once Python is installed, download tutorial09.zip (below), unzip it, and move your `tutorial09` folder inside of your `tutorials` folder. 
+After you have installed Python is installed, download tutorial09.zip (below), unzip it, and move your `tutorial09` folder inside of your `tutorials` folder. 
 
 <a class="nu-button" href="/fall2024/course-files/tutorials/tutorial09.zip">tutorial09.zip<i class="fas fa-download" aria-hidden="true"></i></a>
 
@@ -354,8 +352,7 @@ See if you can convert the HTML that shows a single restaurant card into an incl
 
 ## What to Turn In
 To submit Tutorial 9, you can either:
-1. Commit and sync your code to GitHub using git and paste a link to your repo, or
-2. Zip your tutorial 9 **EXCLUDING YOUR VIRTUAL ENVIRONMENT (env) folder**
+1. Commit and sync your code to GitHub using git and paste a link to your repo. You do not need to link this exercise to your home page, because GitHub Pages doesn't know how to run a Flask application. We will need a more complicated server architecture for that.
 
 If you worked with a partner, list your partner as a comment.
 If you did the extra credit, tell me so that I can look for it.

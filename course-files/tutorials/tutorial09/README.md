@@ -1,38 +1,48 @@
-# Setup Instructions
+### Set Up Your Virtual Environment
+Open the terminal and navigate to your `tutorial09` folder. Then, set up a virtual environment and install the dependencies as follows (depending on your operating system):
 
-## Ensure that Python >= 3.8 and Poetry are installed
-1. Check whether you have python installed by running the following on your command line: 
-    ```bash
-    python3 --version
-    ```
-    
-2. If you get a command not found, try running these commands (just in case you have a different way of running python on your system):
-    ```
-    python ---version
-    py -- version
-    ```
+#### For Mac, Unix, Linux, or GitBash
 
-3. Install / upgrade if necessary:
-    * If your do not have python installed on your machine, you will need to install it. Please follow these instructions:
-    * If you have an older python version installed on your machine, you'll have to upgrade. Please follow these instructions:
+```bash
+python3 -m venv env
+source env/bin/activate
+pip install -r requirements.txt    # install dependencies
+```
 
-4. Install poetry 
+#### For Windows Powershell or Command Prompt
 
-## Create a virtual environment and install the dependencies
-1. Navigate to your fast-api directory on the command line.
+```bash
+# create the virtual environment
+py -m venv env  
 
-2. Install the poetry dependencies as follows:
-    ```bash
-    poetry install
-    ```
-    This should download all of the Python libraries needed to run your FAST API backend.
+# run the activate.bat script as follows:
+env\Scripts\activate
 
-3. Run your "backend" server:
-    ```bash
-    poetry run fastapi dev main.py
-    ```
+# and finally, install the Python dependencies
+py -m pip install -r requirements.txt
+```
 
-3. Navigate to http://127.0.0.1:8000/docs in your web browser
+### Run Your Flask Web Server
 
-## Practice
-See the Tutorial 9 instructions
+When you're done, try running your flask app from your command line:
+
+
+```bash
+flask run --debug
+
+# if you named your app something other than app.py (say, hello.py) type this:
+# flask flask --app hello run --debug
+```
+
+You should see the following output:
+```bash
+ * Serving Flask app "app.py" (lazy loading)
+ * Environment: development
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 273-580-071
+ ```
+
+ Navigate to <a href="http://127.0.0.1:5000/" target="_blank">http://127.0.0.1:5000/</a>, and you should see a screen that lists the exercises that you are to complete:
