@@ -1,6 +1,6 @@
 ---
 layout: assignment-two-column
-title: Setting up Fast API
+title: Setting up Flask
 type: tutorial
 abbreviation: Tutorial 9
 draft: 1
@@ -26,7 +26,30 @@ due_date: 2024-11-20
 > * Flask website. <a href="https://flask.palletsprojects.com/en/2.0.x/quickstart/" target="_blank">Flask Quickstart Guide</a>
 > * Janetakis, Nick (Oct., 2017). <a href="https://nickjanetakis.com/blog/server-side-templates-vs-rest-api-and-javascript-front-end" target="_blank">Server Side Templates vs REST API and Javascript Front-End</a>.
 
-## 1. Intro to Flask
+## 1. Install Python
+
+{:.info}
+> ### What if I've already installed Python on my laptop?
+> Note: many people who have programmed with Python before already have Python 3.x installed. To check, search for an existing Python installation. If you already have a version of Python3 that is greater than Python 3.8, move on to Part 2. It doesn't hurt to install another version of Python, but it's not necessary. If you have any questions, feel free to ask Sarah or one of the peer mentors / TAs.
+
+To install python, download the latest version (3.13.x) of python here: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a>
+
+After going through the installation process, navigate to the folder on your machine where Python was installed. For me, on a Mac, my IDLE was saved to Applications > Python 3.9 (or you can also search for it). For Windows users, it will likely be in a folder inside of Program Files (which you can also search for).
+
+Inside, the Python 3.13 folder, you'll find a file called **IDLE** - this is the IDLE executable. Double click on that file to run it. You should then see something like this (the screen shows version 3.8, but any version >= 3.8 is OK):
+
+<img class="frame medium" src="/fall2024/assets/images/tutorials/tutorial09/python-cmd-1.png" />
+
+I recommend keeping IDLE in your dock (on a Mac) or making a Desktop Shortcut to IDLE (on Windows).
+
+At the **&gt;&gt;&gt;** prompt, you can type any valid python command. For example, type `print("hello world!")` and hit enter. You should see something like this:
+
+<img class="frame medium" src="/fall2024/assets/images/tutorials/tutorial09/python-cmd-2.png" />
+
+If you have any issues installing Python or IDLE, come to office hours.
+
+
+## 2. Intro to Flask
 <a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">Flask</a> is a framework, built with Python, for helping people build dynamic, scalable web applications. I have selected Flask as our web server engine for this semester because it has a relatively simple set of common abstractions, and is therefore easier to learn than some other frameworks. At the same time, it is also very powerful, and has features such as:
 
 * Templating, using the <a href="https://jinja.palletsprojects.com/en/3.0.x/" target="_blank">Jinja template engine</a>
@@ -47,7 +70,7 @@ Most frameworks have abstractions similar to those offered by Flask, so once you
 | C# | ASP.NET |
 
 
-## 2. Intro to Python Virtual Environments
+## 3. Intro to Python Virtual Environments
 To run Flask, we are going to create a self-contained Python virtual environment, to ensure that your python dependencies don't interfere with any global python installations you might have.
 
 {:.blockquote-no-margin}
@@ -78,8 +101,8 @@ deactivate              # deactivates the virtual environment
 Note that when your venv is activated, there will be a `(env)` prefix in front of your command prompt. When activated, any python or `pip install` commands will be interacting with your virtual environment. 
 
 
-## 3. Set Up
-If you haven't used Python before, please download and install it: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a>. Any version of python >= 3.7 will work.
+## 4. Set Up
+If you haven't used Python before, please download and install it: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a>. Any version of python >= 3.8 will work.
 
 Once Python is installed, download tutorial09.zip (below), unzip it, and move your `tutorial09` folder inside of your `tutorials` folder. 
 
@@ -139,7 +162,7 @@ You should see the following output:
 
 
 
-## 4. Required Flask Exercises
+## 5. Required Flask Exercises
 Once you've set up your flask installation, you will complete 5 required exercises. You may also complete the optional exercise (#6) for extra credit:
 
 |  | Exercise | Purpose |

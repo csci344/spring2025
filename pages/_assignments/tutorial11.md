@@ -1,6 +1,6 @@
 ---
 layout: assignment-two-column
-title: "Building your first REST API endpoint (Async)"
+title: "Building your first REST API endpoint"
 type: tutorial
 abbreviation: Tutorial 11
 draft: 1
