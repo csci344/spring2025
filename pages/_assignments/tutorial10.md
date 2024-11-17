@@ -3,7 +3,7 @@ layout: assignment-two-column
 title: Database Activity
 type: tutorial
 abbreviation: Tutorial 10
-draft: 1
+draft: 0
 points: 6
 num: 10
 start_date: 2024-11-22
@@ -98,12 +98,12 @@ Another nice thing about SQL is that these queries can be optimized to be very e
 
 {:#installation}
 ## 1. Installation
-In order to complete today's lab, you will need to install PostgreSQL on your laptop. These installation instructions are based on the  <a href="https://www.postgresqltutorial.com/postgresql-getting-started/" target="_blank">PostgreSQL Getting Started Guide</a>. Please do the following:
+In order to complete today's lab, you will need to install PostgreSQL on your laptop. These installation instructions are based on the  <a href="https://neon.tech/postgresql/postgresql-getting-started" target="_blank">PostgreSQL Getting Started Guide</a>. Please do the following:
 
 * <a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads" target="_blank">Download the latest PostgreSQL version</a> (currently v. 15.x) for either Windows or Mac
 * Follow the OS-Specific instructions to install and verify your PostgreSQL installation:
-    * <a href="https://www.postgresqltutorial.com/install-postgresql/" target="_blank">Windows</a>
-    * <a href="https://www.postgresqltutorial.com/install-postgresql-macos/" target="_blank">Mac</a>
+    * <a href="https://neon.tech/postgresql/postgresql-getting-started/install-postgresql" target="_blank">Windows</a>
+    * <a href="https://neon.tech/postgresql/postgresql-getting-started/install-postgresql-macos" target="_blank">Mac</a>
 * A few notes as you run the installer:
     * **DO NOT FORGET** the DB Admin password you assign for the `postgres` account
     * Take all the defaults, and use a default port of `5432`
@@ -112,29 +112,16 @@ In order to complete today's lab, you will need to install PostgreSQL on your la
 
 {:#configuration}
 ## 2. Configuration
-<a class="nu-button" href="/fall2024/course-files/tutorials/tutorial10.zip">tutorial10.zip<i class="fas fa-download" aria-hidden="true"></i></a>
+In order to do today's tutorial, you need to create a new database and load your data. There are two ways to do this: 
+1. Through the PGAdmin GUI (graphical user interface)
+2. Using the `psql` command line tool.
 
-* Download tutorial10.zip (above) and unzip it, and move it into your `csci344/tutorials` folder / git repo.
-* Follow the procedure outlined in <a href="https://www.postgresqltutorial.com/load-postgresql-sample-database/" target="_blank">these instructions</a>, but make the following modifications:
-    * Create a database called `tutorial10`, using either the command line interface or the PGAdmin GUI interface.
-    * Load the `tutorial10.tar` (in the tutorial10 folder you just downloaded) into the empty `tutorial10` database (to create the table structure and table data).
-
-<!-- pg_dump -U postgres -p 5432 -Ft photo-app > ~/Desktop/tutorial10.tar
-postgres=# CREATE DATABASE tutorial10;
-pg_restore -U postgres -d tutorial10 ~/Desktop/tutorial10.tar -->
-
-You have a few options for interacting with your database: 
-
-### 1. PGAdmin
-PGAdmin is a GUI tool for managing PostgreSQL databases. 
-
-### 2. Adding psql to your path
-`psql` is a command line program that allows you to interact with PostgreSQL databases. Open your Terminal or command prompt and type `psql -U postgres`. 
-* If the `psql -U postgres` command was recognized, jump to [Section 3](#sql) ("Walkthrough of SQL Commands"). Otherwise, you'll have to add it to your path by following the instructions below.
+### 1. Verify that your path is configured correctly
+Open your command line and type: `psql -U postgres`. If your command was recognized, jump to [Part 2](#db_setup) ("Set up your database"). Otherwise, you'll have to add it to your path by following the instructions below:
 
 #### 1. Mac instructions
 Note: you only have to do this if the `psql -U postgres` command was NOT recognized on your Terminal.
-1. Find the location of your `psql` executable on your computer by searching for `psql`. Make a note of where it is (for Sarah, it's located at `/Library/PostgreSQL/15/bin/psql`)
+1. Find the location of your `psql` executable on your computer by searching for `psql`. It should be in your `/Library` folder somewhere. Make a note of where it is (for Sarah, it's located at `/Library/PostgreSQL/15/bin/psql`)
 1. Open a Terminal window. Figure out which shell you're using by typing `echo $SHELL` at the command prompt.
 1. Depending on the shell version you're using, open *one* of the files below (in your home directory) in a text editor:
     * for zsh edit one of these:
@@ -161,6 +148,23 @@ Follow <a href="https://sqlbackupandftp.com/blog/setting-windows-path-for-postgr
 1. Once you do, you will append the path to your PostgreSQL bin to your PATH environment variable. <a href="https://www.mathworks.com/matlabcentral/answers/94933-how-do-i-edit-my-system-path-in-windows" target="_blank">Here is how to do this</a>.
 1. Once you save your changes, be sure to restart your command prompt.
 1. Finally, type `psql -U postgres` on your command line and it should work.
+
+{:#db_setup}
+### 2. Set up your database
+
+<a class="nu-button" href="/fall2024/course-files/tutorials/tutorial10.zip">tutorial10.zip<i class="fas fa-download" aria-hidden="true"></i></a>
+
+* Download tutorial10.zip (above) and unzip it, and move it into your `csci344/tutorials` folder / git repo.
+* Create a new database and load in the Photo App sample data by following the procedure outlined in <a href="https://neon.tech/postgresql/postgresql-getting-started/load-postgresql-sample-database" target="_blank">these instructions</a> -- but with the following modifications:
+    * Instead of creating a database called `dvdrental`, name your database `tutorial10`. You can do this using either the command line interface or the PGAdmin GUI interface.
+    * Instead of loading the `dvdrental.tar` file, load the `tutorial10.tar` file (in the tutorial10 folder you just downloaded) into the empty `tutorial10` database (to create the table structure and table data).
+        * Again, you can do this via PGAdmin or throught the `pg_restore` command on the command line.
+        * If you want to use `pg_restore`, navigate to your `tutorial10` folder on the command line and run this command: `pg_restore -U postgres -d tutorial10 tutorial10.tar`
+
+<!-- pg_dump -U postgres -p 5432 -Ft photo-app > ~/Desktop/tutorial10.tar
+postgres=# CREATE DATABASE tutorial10;
+pg_restore -U postgres -d tutorial10 ~/Desktop/tutorial10.tar -->
+
 
 After you have configured your database, your `tutorial10` database should have the following structure:
 
