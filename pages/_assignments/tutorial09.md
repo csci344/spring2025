@@ -16,15 +16,22 @@ due_date: 2024-11-20
         max-width: auto;
         width: auto;
     }
+
+    .mtop {
+        margin-top: 50px;
+    }
 </style>
 
+{% include walkthrough-tutorial09.html %}
+
+
+{:.mtop}
 > ## Background Readings
 > Before beginning this tutorial, please read (or at least skim) the following:
 > 
 > {:.compact}
 > * Towards Data Science. <a href="https://towardsdatascience.com/virtual-environments-104c62d48c54#8025" target="_blank">Intro to Python Virtual Environments</a>
 > * Flask website. <a href="https://flask.palletsprojects.com/en/2.0.x/quickstart/" target="_blank">Flask Quickstart Guide</a>
-> * Janetakis, Nick (Oct., 2017). <a href="https://nickjanetakis.com/blog/server-side-templates-vs-rest-api-and-javascript-front-end" target="_blank">Server Side Templates vs REST API and Javascript Front-End</a>.
 
 ## 1. Install Python
 
@@ -92,7 +99,7 @@ deactivate               # deactivates the virtual environment
 
 ### Windows Powershell or Command Prompt
 
-```msshell
+```dos
 py -m venv env          # creates a new virtual environment called "env"
 env\Scripts\activate    # activates the virtual environment
 deactivate              # deactivates the virtual environment
