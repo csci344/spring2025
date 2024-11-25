@@ -3,7 +3,7 @@ layout: module
 title: "Building REST API Endpoints with Flask and SQLAlchemy"
 type: module
 num: 13
-draft: 1
+draft: 0
 due_date: 2024-11-25
 ---
 
@@ -28,22 +28,9 @@ due_date: 2024-11-25
     * <a href="https://flask-restful.readthedocs.io/en/latest/quickstart.html" target="_blank">Quickstart</a>
     {:.compact}
 
-### Python Decorators
-* <a href="https://realpython.com/primer-on-python-decorators/" target="_blank">Primer on Python Decorators</a>
-{:.compact}
 
 ## Slides
-* Lecture 21: <a href="https://docs.google.com/presentation/d/1ECRnFqjdc7i6z25EnpUbcLF_LQn3A8oOSrACdWT3FIA/edit?usp=sharing" target="_blank">Intro to Object Relational Mappings with SQLAlchemy</a>
-* Lecture 22: <a href="https://docs.google.com/presentation/d/1FiHA7Y78guwq2s2cQSUnAnHdACRaHYaaX5XNkQ_UBPU/edit?usp=sharing" target="_blank">Intro to MVC and Flask RESTful</a>
-* Lecture 23: <a href="https://docs.google.com/presentation/d/14nNLeDkjs_Jstg-rk9x_DBhAXjAjBsBB5e9Qw0SCkS0/edit?usp=sharing" target="_blank">Decorators</a>
-
-## Videos & Lecture Files
-Videos and worked examples will be published after class:
-* <a href="https://drive.google.com/drive/folders/1b0RGogU8P2rKJAtcRpxMspHB919GUAXT?usp=sharing" target="_blank">Videos on Google Drive</a>
-* <a href="https://github.com/vanwars/csci344" target="_blank">Worked examples on GitHub</a>
-
+* Lecture 17: <a href="https://docs.google.com/presentation/d/1KsxAOxNLewVX5fafVmki3TlFGTgkc026/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Intro to Object Relational Mappings with SQLAlchemy</a>
 
 ## Activities
-1. Lecture 21 (Monday): [SQL Alchemy & Object-Relational Mapping](../activities/intro-sql-alchemy)
-1. Lecture 22 (Wednesday): Flask RESTful and Python Decorators (HW7 Walkthrough)
-1. Lecture 23 (Monday): [Intro to Decorators](/fall2024/course-files/lectures/lecture23.zip)
+1. Lecture  17 (Monday): [SQL Alchemy & Object-Relational Mapping](../activities/intro-sql-alchemy)

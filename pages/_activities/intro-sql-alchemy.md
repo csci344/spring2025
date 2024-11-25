@@ -3,17 +3,108 @@ layout: two-column
 title: "Intro to SQLAlchemy"
 type: tutorial
 abbreviation: Activity 6
-draft: 1
-points: 6
+draft: 0
 num: 2
 ---
 
 As stated on the <a href="https://www.sqlalchemy.org/" target="_blank">SQL Alchemy project page</a>: "SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL." In other words, SQL Alchemy is a python abstraction that makes communication with databases easier. It is database agnostic, meaning that you use the same commands, regardless of whether you're interacting with PostgreSQL, SQLite, MySQL, or some other relational database. 
 
+
+## Set Up Today's Exercises
+1. Create an empty database  by opening your terminal / dos prompt and typing (you will need to type in your database password):
+
+    ```
+    psql -U postgres
+    ```
+
+    Once you're on the psql command prompt, create a new database called `orm_test` as follows:
+
+    ```sql
+    create database orm_test;
+    ```
+
+    Once you get a "Database Created" message, exit `psql` by typing `\q`
+
+1. Download today's lecture files, unzip them, and save the `orm_introduction` folder in your `csci344/lectures` directory. <br><br><a class="nu-button" href="/fall2024/course-files/activities/orm-introduction.zip">ORM Sample Files  <i class="fas fa-download"></i></a>
+
+1. Open VS Code
+
+1. From within the VS Code terminal, to your `lectures/orm-introduction` folder. Then, set up a virtual environment and install the dependencies as follows (depending on your operating system):
+
+    **For Mac, Unix, Linux, or GitBash:**
+
+    ```bash
+    python3 -m venv env
+    source env/bin/activate
+    pip install -r requirements.txt    # install dependencies
+    ```
+
+    **For Windows Powershell or Command Prompt:**
+
+    ```bash
+    # create the virtual environment
+    py -m venv env  
+
+    # run the activate.bat script as follows:
+    env\Scripts\activate
+
+    # and finally, install the Python dependencies
+    py -m pip install -r requirements.txt
+    ```
+
+
+1. Update your database connection string with your password. To do this, open in the `.env` file and edit the `DB_URL` string. So, instead of...
+
+    ```
+    DB_URL=postgresql://postgres:12345@localhost/orm_test
+    ```
+
+    You will change it to...
+
+    ```
+    DB_URL=postgresql://postgres:your_password@localhost/orm_test   # but replace your_password
+    ```
+
+1. After updating your database connection string, run the database populate script from your command prompt (from within the `orm-introduction` folder).
+
+    ```bash
+    python populate.py
+    ```
+
+1. Finally, run your flask server as follows:
+    
+    ```bash
+    flask run --debug
+
+    # if you named your app something other than app.py (say, hello.py) type this:
+    # flask flask --app hello run --debug
+    ```
+
+    You should see the following output:
+    ```bash
+    * Serving Flask app "app.py" (lazy loading)
+    * Environment: development
+    * Debug mode: on
+    * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+    * Restarting with stat
+    * Debugger is active!
+    * Debugger PIN: 273-580-071
+    ```
+
+    Navigate to <a href="http://127.0.0.1:5000/" target="_blank">http://127.0.0.1:5000/</a>, and you should see a screen that lists the exercises that you are to complete:
+
+
+{:.info}
+> ### What just happened?
+> In the intructions above, we created a new database, installed and configured our python files / libraries to interact with our database, populated our database, and are now running the flask server.
+>
+> This infrastructure will allow your users to query a database from their client code!
+
+
 ## What is an Object Relational Mapping (ORM)?
 ORMs allow a programmer to associate user-defined Python classes with database tables, and instances of those classes (objects) with rows in their corresponding tables (<a href="https://docs.sqlalchemy.org/en/14/orm/tutorial.html" target="_blank">more on ORM here</a>). In other words, rather than writing SQL directly, you interact with SQL Alchemy "models" that issue SQL queries under-the-hood.
 
-I have already created all of the data models for you in the `models` directory inside your `hw07`. Let's take a look at the `Post` model, located in `models/posts.py` to see what it looks like...
+
 
 ### Post Model
 ```python
