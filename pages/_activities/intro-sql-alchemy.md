@@ -149,8 +149,9 @@ Please read the SQL Alchemy section carefully, and try executing some of the sam
 
 {:.compact}
 1. Open your Terminal / command prompt,
-2. Navigate to your `hw07` files, and 
-3. Type `flask shell`
+2. Navigate to your `hw05` files, 
+3. Make sure your virtual environment is activated, and 
+4. Type `flask shell`
 
 Within the **flask shell**, you can interact with any of the data models (described in more detail below).
 
@@ -176,7 +177,8 @@ To create a new record in the `posts` table using SQL, you would issue this comm
 In SQL Alchemy, you create a record just like you would create any object. The only difference is that you have to add and commit the object to the database session:
 
 ```python
-from models import Post, db
+from models.post import Post
+from models import db
 
 # 1. Create:
 new_post = Post(
@@ -205,7 +207,8 @@ SELECT * FROM posts;
 Using **Flask SQLAlchemy** via the flask shell:
 
 ```python
-from models import Post, db
+from models.post import Post
+from models import db
 
 # get all of the posts:
 posts = Post.query.all()
@@ -234,7 +237,8 @@ SELECT * FROM posts LIMIT 10;
 Using **Flask SQLAlchemy** via the flask shell:
 
 ```python
-from models import Post, db
+from models.post import Post
+from models import db
 posts = Post.query.limit(10).all()
 ```
 
@@ -249,7 +253,8 @@ SELECT * FROM posts WHERE user_id = 5;
 Using **Flask SQLAlchemy** via the flask shell:
 
 ```python
-from models import Post, db
+from models.post import Post
+from models import db
 # filter the posts (simple):
 posts = Post.query.filter_by(user_id=5).all()
 ```
@@ -266,7 +271,8 @@ Using **Flask SQLAlchemy** via the flask shell:
 
 
 ```python
-from models import Post, db
+from models.post import Post
+from models import db
 # filter the posts (by attribute of a joined table):
 posts = Post.query.filter(Post.user.has(username='chad_marks')).all()
 ```
@@ -280,7 +286,8 @@ SELECT * FROM posts where id = 5;
 Using **Flask SQL Alchemy** via the flask shell:
 
 ```python
-from models import Post, db
+from models.post import Post
+from models import db
 # get single post based on primary key (id column):
 post = Post.query.get(5)
 print(post)
@@ -291,7 +298,8 @@ print(post)
 With SQLAlchemy, you can also query related tables via foreign keys. For instance, in the code below, `post.user` queries the users table and `post.comments` queries the comments table:
 
 ```python
-from models import Post, db
+from models.post import Post
+from models import db
 # get single post based on primary key (id column):
 post = Post.query.get(5)
 
@@ -306,7 +314,11 @@ post.comments # under the hood, queries for all comments associated with the pos
 "Flask SQLAlchemy" also inherits from "SQLAlchemy," so if you're looking to execute more complex queries, consult the regular SQLAlchemy documentation (<a href="https://docs.sqlalchemy.org/en/14/orm/tutorial.html#common-filter-operators" target="_blank">SQL Alchemy documentation here</a>). Some samples of some more complex queries are shown below. Again, you are encouraged to run these commands for yourself using the flask shell:
 
 ```python
-from models import db, Post, User, Comment, Following
+from models import db
+from models.post import Post
+from models.user import User
+from models.comment import Comment
+from models.following import Following
 from sqlalchemy import func
 
 engine = db.engine
@@ -505,7 +517,8 @@ WHERE id=6;
 In SQLAlchemy, you update the object (like you would any Python object) and then commit the change to the database:
 
 ```python
-from models import Post, db
+from models.post import Post
+from models import db
 
 post = Post.query.get(5)
 
@@ -533,7 +546,8 @@ DELETE FROM posts WHERE id=5;
 In SQLAlchemy, you specify the query matching the items you want to delete, and then invoke the `delete()` method:
 
 ```python
-from models import Post, db
+from models.post import Post
+from models import db
 
 Post.query.filter_by(id=5).delete()
 db.session.commit()
