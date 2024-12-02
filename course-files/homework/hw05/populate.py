@@ -8,17 +8,15 @@ from dotenv import load_dotenv
 from faker import Faker
 from flask import Flask
 
-from models import (
-    Bookmark,
-    Comment,
-    Following,
-    LikeComment,
-    LikePost,
-    Post,
-    Story,
-    User,
-    db,
-)
+from models import db
+from models.bookmark import Bookmark
+from models.comment import Comment
+from models.following import Following
+from models.like_comment import LikeComment
+from models.like_post import LikePost
+from models.post import Post
+from models.story import Story
+from models.user import User
 
 load_dotenv()
 
@@ -89,7 +87,9 @@ def _create_user(data=None):
         tokens = profile["name"].split(" ")
         first_name = tokens.pop(0)
         last_name = " ".join(tokens)
-        username = "{0}_{1}".format(first_name, last_name.replace(" ", "_")).lower()
+        username = "{0}_{1}".format(
+            first_name, last_name.replace(" ", "_")
+        ).lower()
         provider = profile["mail"].split("@")[1]
         email = "{0}@{1}".format(username, provider)
     else:
@@ -339,11 +339,17 @@ with app.app_context():
     db.drop_all()
     step += 1
 
-    print("{0}. creating DB tables (if they don't already exist)...".format(step))
+    print(
+        "{0}. creating DB tables (if they don't already exist)...".format(step)
+    )
     db.create_all()
     step += 1
 
-    print("{0}. creating 30 accounts (slow b/c of password hashing)...".format(step))
+    print(
+        "{0}. creating 30 accounts (slow b/c of password hashing)...".format(
+            step
+        )
+    )
     create_webdev_user()
     try:
         create_users_from_csv()

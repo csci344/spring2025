@@ -4,8 +4,6 @@ import re
 from datetime import datetime, timedelta
 
 from faker import Faker
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
 
 import models
 from models import db
@@ -37,7 +35,9 @@ def password_check_is_valid(password):
     lowercase_error = re.search(r"[a-z]", password) is None
 
     # searching for symbols
-    symbol_error = re.search(r"[ !#$%&'()*+,-./[\\\]^_`{|}~" + r'"]', password) is None
+    symbol_error = (
+        re.search(r"[ !#$%&'()*+,-./[\\\]^_`{|}~" + r'"]', password) is None
+    )
 
     # overall result
     password_ok = not (
@@ -73,174 +73,6 @@ def generate_image(id: int = None, width: int = 300, height: int = 200):
     return "https://picsum.photos/{w}/{h}?id={id}".format(
         id=image_id, w=width, h=height
     )
-
-
-def create_fake_posts(user):
-    fake = Faker()
-    posts = []
-    for i in range(0, 5):
-        time_of_post = datetime.now() - timedelta(hours=random.randint(1, 100))
-        post = models.Post(
-            generate_image(width=600, height=430),
-            user.id,
-            caption=fake.sentence(nb_words=random.randint(15, 50)),
-            pub_date=time_of_post,
-        )
-        db.session.add(post)
-        posts.append(post)
-    db.session.commit()
-    return posts
-
-
-def create_fake_story(user):
-    fake = Faker()
-    time_of_post = datetime.now() - timedelta(hours=random.randint(1, 100))
-    story = models.Story(
-        fake.sentence(nb_words=random.randint(10, 30)), user.id, pub_date=time_of_post
-    )
-    db.session.add(story)
-    db.session.commit()
-
-
-def send_activation_email(user):
-    print("Sending activation email...")
-    # create unique identifier:
-    message = Mail(
-        from_email=os.environ.get("FROM_EMAIL"),
-        to_emails=user.email,
-        subject="Confirm your account",
-        html_content="""
-            <h2>Hello {username},</h2> 
-            <p>
-                You are in the process of registering for an account for {url}. 
-                To complete your registration click this link: 
-                <a href="{url}/activate/{user_id}/{hash}">{url}/activate/{user_id}/{hash}</a>.
-            </p>""".format(
-            username=user.username,
-            url=os.environ.get("HEROKU_URL") or "http://127.0.0.1:5000",
-            user_id=str(user.id),
-            hash=user.get_unique_identifier(),
-        ),
-    )
-    try:
-        sg = SendGridAPIClient(os.environ.get("SENDGRID_API_KEY"))
-        response = sg.send(message)
-        # print(response.status_code, response.body, response.headers)
-        print("Message sent!")
-        return True
-    except Exception as e:
-        print("Error sending message: " + e)
-        return False
-
-
-def send_password_reset_email(user):
-    print("Sending password reset email...")
-    # create unique identifier:
-    message = Mail(
-        from_email=os.environ.get("FROM_EMAIL"),
-        to_emails=user.email,
-        subject="Reset your password",
-        html_content="""
-            <h2>Hello {username},</h2> 
-            <p>
-                Please reset your password by following this link: 
-                <a href="{url}/reset-password/{user_id}/{hash}">{url}/reset-password/{user_id}/{hash}</a>.
-            </p>""".format(
-            username=user.username,
-            url=os.environ.get("HEROKU_URL") or "http://127.0.0.1:5000",
-            user_id=str(user.id),
-            hash=user.get_unique_identifier(),
-        ),
-    )
-    try:
-        sg = SendGridAPIClient(os.environ.get("SENDGRID_API_KEY"))
-        response = sg.send(message)
-        # print(response.status_code, response.body, response.headers)
-        print("Message sent!")
-        return True
-    except Exception as e:
-        print("Error sending message: " + e)
-        return False
-
-
-def follow_some_users(user):
-    users = models.User.query.all()
-    accounts_to_follow = []
-    while len(accounts_to_follow) < 3:
-        candidate_account = random.choice(users)
-        if candidate_account != user and candidate_account not in accounts_to_follow:
-            following = models.Following(user.id, candidate_account.id)
-            db.session.add(following)
-            accounts_to_follow.append(candidate_account)
-    db.session.commit()
-
-
-def like_every_third_post(user):
-    ids_for_me_and_my_friends = get_authorized_user_ids(user)
-    posts = models.Post.query.filter(models.Post.user_id.in_(ids_for_me_and_my_friends))
-    for i in range(0, len(posts.all())):
-        if i % 3 == 0:
-            like = models.LikePost(user.id, posts[i].id)
-            db.session.add(like)
-    db.session.commit()
-
-
-def bookmark_every_fourth_post(user):
-    ids_for_me_and_my_friends = get_authorized_user_ids(user)
-    posts = models.Post.query.filter(models.Post.user_id.in_(ids_for_me_and_my_friends))
-    for i in range(0, len(posts.all())):
-        if i % 4 == 0:
-            bookmark = models.Bookmark(user.id, posts[i].id)
-            db.session.add(bookmark)
-    db.session.commit()
-
-
-def comment_on_every_fifth_post(user):
-    fake = Faker()
-    ids_for_me_and_my_friends = get_authorized_user_ids(user)
-    posts = models.Post.query.filter(models.Post.user_id.in_(ids_for_me_and_my_friends))
-    for i in range(0, len(posts.all())):
-        if i % 5 == 0:
-            comment = models.Comment(
-                fake.sentence(nb_words=random.randint(15, 50)), user.id, posts[i].id
-            )
-            db.session.add(comment)
-    db.session.commit()
-
-
-def like_on_every_fifth_comment(user):
-    ids_for_me_and_my_friends = get_authorized_user_ids(user)
-    comments = models.Comment.query.filter(
-        models.Comment.user_id.in_(ids_for_me_and_my_friends)
-    )
-    for i in range(0, len(comments.all())):
-        if i % 5 == 0:
-            like = models.LikeComment(user.id, comments[i].id)
-            db.session.add(like)
-    db.session.commit()
-
-
-def create_starter_data(user):
-    print("Creating fake posts...")
-    create_fake_posts(user)
-
-    print("Creating a fake story...")
-    create_fake_story(user)
-
-    print("Assigning users some accounts to follow...")
-    follow_some_users(user)
-
-    print("Creating fake post likes...")
-    like_every_third_post(user)
-
-    print("Creating fake bookmarks...")
-    bookmark_every_fourth_post(user)
-
-    print("Creating fake comments...")
-    comment_on_every_fifth_post(user)
-
-    print("Creating fake comment likes...")
-    like_on_every_fifth_comment(user)
 
 
 def delete_account(user):
