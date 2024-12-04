@@ -16,7 +16,6 @@ due_date: 2024-12-04
 * <a href="https://www.youtube.com/watch?v=eHqbh0kyRYk" target="_blank">CSRF Explained | Understanding Cross Site Request Forgery | What is XSRF?</a>
 
 ## Slides
-Slides will be posted befire lecture
 
-<!-- * Lecture 24: <a href="https://docs.google.com/presentation/d/1nTGnWc-e6l6B5SmG-4C6eHM2weUQEzy8gBkiJaYRB8I/edit?usp=sharing" target="_blank">Authentication</a> (Wednesday, 4/12)
-* Lecture 25: <a href="https://docs.google.com/presentation/d/1ogRqbhjgt7SXzzrDLE3BbB-oO5cCLBhktcqizIauIlQ/edit?usp=sharing" target="_blank">Securing Your App Using JWTs</a> (Monday, 4/17) -->
+* Lecture 18: <a href="https://docs.google.com/presentation/d/14t4ijnXx4srcJsub9P6R0Yxr99mLNUYu/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Security & Authentication</a> (Wednesday, 12/4)
+
