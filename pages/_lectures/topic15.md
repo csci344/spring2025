@@ -3,7 +3,7 @@ layout: module
 title: "Course Reflection"
 type: module
 num: 15
-draft: 1
+draft: 0
 due_date: 2024-12-06
 ---
 
@@ -13,13 +13,7 @@ due_date: 2024-12-06
 * <a href="https://www.youtube.com/watch?v=Uo3cL4nrGOk" target="_blank">Interview with Senior JS Developer</a> (Parody)
 
 ## Slides
-* Lecture 27: <a href="https://docs.google.com/presentation/d/1kq7Kc12AQqu01rErihQrhivq74lFPkr4Ig1VyV5esiM/edit?usp=sharing" target="_blank">Course Recap</a> (Monday, 4/24)
+* Lecture 19: <a href="https://docs.google.com/presentation/d/1kVw-KG74OMaav7ztrenoL5cdH7bphsFw/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Course Recap</a> (Friday, 12/6)
 
-## Videos & Lecture Files
-Videos and worked examples will be published after class:
-* <a href="https://drive.google.com/drive/folders/1b0RGogU8P2rKJAtcRpxMspHB919GUAXT?usp=sharing" target="_blank">Videos on Google Drive</a>
-* <a href="https://github.com/vanwars/csci344" target="_blank">Worked examples on GitHub</a>
-
-
-## Activity
-* [Deploying to Heroku](../activities/deploy-to-heroku)
+## Activities
+* <a href="/fall2024/course-files/lectures/lecture19.zip">Quiz Practice</a>
