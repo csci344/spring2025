@@ -27,24 +27,32 @@ Quiz 2 is designed to be a 2 hour exam. You will have a 48 hour window to comple
 
 ## Task 1: Create a getBusinesses Function [20pts]
 Create an asynchronous function called `getBusinesses` in `task01/main.js` that queries the Yelp API and returns a list of business objects matching the query. Your function should take three arguments…
-1. search_term (search term for finding businesses)
-2. location  (location of the business)
-3. num_results (how many results to return)
+1. **search_term** (search term for finding businesses)
+2. **location**  (location of the business)
+3. **num_results** (how many results to return)
 …and return a list of businesses that match the query.
 
 The endpoint and a sample query are provided for you below:
 <table>
 <tr>
-    <th>Endpoint:</th>
+    <th>Endpoint & Sample Query:</th>
     <td>
-        <a href="https://www.apitutor.org/yelp/simple/v3/businesses/search" target="_blank">https://www.apitutor.org/yelp/simple/v3/businesses/search</a>
+        <ul>
+            <li>
+                Sample Query:  <a href="https://www.apitutor.org/yelp/simple/v3/businesses/search?location=Asheville,%20NC&term=breakfast&limit=3" target="_blank">https://www.apitutor.org/yelp/simple/v3/businesses/search?location=Asheville,%20NC&term=breakfast&limit=3</a>
+            </li>
+            <li>
+                Endpoint: <a href="https://www.apitutor.org/yelp/simple/v3/businesses/search" target="_blank">https://www.apitutor.org/yelp/simple/v3/businesses/search</a>
+            </li>
+        </ul>
+        
     </td>
 </tr>
 <tr>
     <th>Parameters:</th>
     <td>
         <ul>
-            <li><strong>q</strong> (search term for finding businesses)</li>
+            <li><strong>term</strong> (search term for finding businesses)</li>
             <li><strong>location</strong> (location of the business)</li>
             <li><strong>limit</strong> (number of results to return)</li>
         </ul>
@@ -60,7 +68,6 @@ Test your `getBusinesses` function by:
 1. Looking at the JavaScript console (using the browser’s built-in developer tools) to ensure that that data returned by the query is accurate.  
 
 
-
 ## Task 2: businessToHTML Function [20pts]
 Create a function called `businessToHTML` in `task02/main.js` that takes a business object as an argument and returns an HTML representation of the business that displays the following information:
 1. The name of the business
@@ -73,7 +80,7 @@ Create a function called `businessToHTML` in `task02/main.js` that takes a busin
 
 Your HTML representation should produce some HTML that renders something like this (CSS not important):
 
-<img class="small" src="/fall2024/assets/images/quizzes/quiz02/quiz02-demo.png" alt="Demo image of output" />
+<img class="small" src="/fall2024/assets/images/quizzes/quiz02/quiz02-ss1.png" alt="Demo image of output" />
 
 
 ### Testing Your Code
@@ -91,6 +98,10 @@ You will modify the HTML and JavaScript as needed so that when search button is 
 * Queries the Yelp API for the first 10 businesses that match the user’s search term and location preferences, and
 * Displays all of the business below the search box.
 
+<img class="large frame" src="/fall2024/assets/images/quizzes/quiz02/quiz02-ss2.png" alt="Demo image of output" />
+
+* <a href="https://drive.google.com/file/d/1WX_v9WwbZQcJpUArpLOzQRQL4v7ppmqa/view?usp=drive_link" target="_blank">Video Demo</a>
+
 Don’t worry about the CSS. Make sure you fulfill all of the requirements for both subtasks.
 
 
@@ -99,6 +110,10 @@ When you're done with 3.1, enhance your form by adding a checkbox indicating whe
 * If the user checks the checkbox, you will only show businesses are open now,
 * Otherwise, you will show any business that matches the location and search term.
 * In order to check if something is "open now" in Yelp, you'll need to append the `&open_now=true` query parameter onto your URL (e.g., <a href="https://www.apitutor.org/yelp/simple/v3/businesses/search?location=Asheville,%20NC&term=breakfast&limit=3&open_now=true" target="_blank">https://www.apitutor.org/yelp/simple/v3/businesses/search?location=Asheville,%20NC&term=breakfast&limit=3&open_now=true</a>).
+
+<img class="large frame" src="/fall2024/assets/images/quizzes/quiz02/quiz02-ss3.png" alt="Demo image of output" />
+
+* <a href="https://drive.google.com/file/d/1b2K2JlYIOMztaGq1PBa381Sg6iVDSTKx/view?usp=drive_link" target="_blank">Video Demo</a>
 
 ## What to Turn In
 Please zip your entire final-exam folder and upload it to the Moodle. It is your responsibility to ensure that you didn’t accidentally submit the starter files.
