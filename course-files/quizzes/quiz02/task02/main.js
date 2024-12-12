@@ -1,4 +1,4 @@
-// 2. Define businessToHTML here:
+// 1. Create your businessToHTML function here:
 
 
 
@@ -8,14 +8,9 @@
 
 
 
+// 2. When you're done, uncomment the test code below and preview index.html in your browser:
 
-
-
-/****************/
-/* Testing Code */
-/****************/
-
-const businessObjPriceDefined = {
+/*const businessObjPriceDefined = {
     id: "d8Vg0DxRY-s2a8xnZ6ratw",
     name: "Chestnut",
     rating: 4.5,
@@ -38,6 +33,7 @@ const businessObjPriceNotDefined = {
     review_count: 1257,
 };
 
-// uncomment this line when you've finished with Q2A:
-// console.log("HTML representation of a business:", businessToHTML(businessObjPriceDefined));
-// console.log("HTML representation of a business (no price):", businessToHTML(businessObjPriceNotDefined));
+
+console.log("HTML representation of a business:", businessToHTML(businessObjPriceDefined));
+console.log("HTML representation of a business (no price):", businessToHTML(businessObjPriceNotDefined));
+*/
