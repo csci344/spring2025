@@ -17,11 +17,11 @@ include_pages:
 
 Please download the exercise files (below).
 
-<a href="/fall2024/course-files/activities/intro-css-gallery.zip" class="nu-button">Download Activity Files <i class="fas fa-download"></i></a>
+<a href="/spring2025/course-files/activities/intro-css-gallery.zip" class="nu-button">Download Activity Files <i class="fas fa-download"></i></a>
 
 Then, use the CSS Property Cheatsheet (below) and what you've learned about selectors to make the following drawing:
 
-<img class="large" src="/fall2024/assets/images/activities/intro-css/gallery.png" />
+<img class="large" src="/spring2025/assets/images/activities/intro-css/gallery.png" />
 
 ### Tips
 

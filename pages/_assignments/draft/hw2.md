@@ -19,7 +19,7 @@ draft: 1
     }
 </style>
 
-<a class="nu-button" href="/fall2024/course-files/homework/hw02.zip">
+<a class="nu-button" href="/spring2025/course-files/homework/hw02.zip">
     download starter files 
     <i class="fas fa-download"></i>
 </a>

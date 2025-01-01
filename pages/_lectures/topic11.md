@@ -4,7 +4,7 @@ title: "Python Crash Course"
 type: module
 num: 11
 draft: 0
-due_date: 2024-11-15
+due_date: 2025-04-11
 ---
 
 
@@ -18,6 +18,6 @@ due_date: 2024-11-15
 
 
 ## Activities
-* Lecture 15 files: [Fetch Examples](/fall2024/course-files/lectures/lecture15.zip) (Friday, 11/15)
+* Lecture 15 files: [Fetch Examples](/spring2025/course-files/lectures/lecture15.zip) (Friday, 11/15)
 
 

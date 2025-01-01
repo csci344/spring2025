@@ -20,7 +20,7 @@ draft: 1
     } 
 </style>
 
-<a class="nu-button" href="/fall2024/course-files/homework/hw04.zip" target="_blank">
+<a class="nu-button" href="/spring2025/course-files/homework/hw04.zip" target="_blank">
     Homework Starter Files <i class="fas fa-download"></i>
 </a> 
 
@@ -34,8 +34,8 @@ The goal of this homework assignment is to get you more comfortable working with
 > 1. Practice working with JavaScript's built-in Math.random() module
 
 ## Part 1: Landscapes
-<img class="large frame" src="/fall2024/assets/images/homework/hw04/bubbles.png" /> 
-<img class="large frame" src="/fall2024/assets/images/homework/hw04/stars.png" /> 
+<img class="large frame" src="/spring2025/assets/images/homework/hw04/bubbles.png" /> 
+<img class="large frame" src="/spring2025/assets/images/homework/hw04/stars.png" /> 
 
 > ### Your task (8 pts)
 > In `landscapes/sketch.js`, replace the code on lines 18-22 (which is repetitive) with a loop (any kind of loop you want) that makes 1,000 stars (or bubbles -- up to you) that fill the entire canvas. 
@@ -55,7 +55,7 @@ The goal of this homework assignment is to get you more comfortable working with
 
 ## Part 2: Animation
 
-<img class="cars" src="/fall2024/assets/images/homework/hw04/cars.gif" /> 
+<img class="cars" src="/spring2025/assets/images/homework/hw04/cars.gif" /> 
 
 ### Introduction
 Open the `cars/sketch.js` file and examine the starter code. Some things to note:

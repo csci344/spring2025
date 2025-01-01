@@ -36,7 +36,7 @@ notes: "One year of programming experience is strongly recommended."
 > * **Quiz 2**: Quiz 2 has been cancelled. There will still be a final exam on select JavaScript concepts. Your quiz grade will be an average of your two quiz scores.
 > * **Class Meetings**: We will still be meeting _synchronously_ during regularly scheduled class time on Zoom (2-3:15PM M,W,F). All class meetings will be recorded. 
 > * **Attendance / Participation Grade**: I would really like you to keep coming to the synchronous zoom sessions if at all possible. We will be working on the assignments together in class. That said, I will no longer be grading you on attendance (though I will still be taking attendance). Your attendance grade will be based on your attendance from the beginning of the course through September 25. 
-> * **Schedule Adjusted**: The schedule has been adjusted and is up-to-date. Please see the [updated schedule](/fall2024/).
+> * **Schedule Adjusted**: The schedule has been adjusted and is up-to-date. Please see the [updated schedule](/spring2025/).
 > * **Specific Adjustments Made**:
 >     * Attendance grading: You will no longer be graded on attendance (see above)
 >     * Cancelled topics: Web Sockets (Chat) & Cloud Deployment
@@ -104,11 +104,11 @@ As this is a programming course, you will be using the free software programs li
 I have compiled a list of web-based reference materials on the course website:
 
 {:.compact}
-* [HTML Resources](/fall2024/html-reference)
-* [CSS Resources](/fall2024/css-reference)
-* [JavaScript Resources](/fall2024/javascript-reference)
-* [Design Resources](/fall2024/design-reference)
-* [Accessibility Resources](/fall2024/accessibility-reference)
+* [HTML Resources](/spring2025/html-reference)
+* [CSS Resources](/spring2025/css-reference)
+* [JavaScript Resources](/spring2025/javascript-reference)
+* [Design Resources](/spring2025/design-reference)
+* [Accessibility Resources](/spring2025/accessibility-reference)
 
 Before each class, you may be assigned some videos, readings, or tutorial links from this resource guide, which will cover specific concepts and ideas that we will be practicing during lecture. Please set aside time to review these materials, as they will make the assignments easier!
 

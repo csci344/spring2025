@@ -1,9 +1,9 @@
-title: "CSCI 344: Fall 2024"
+title: "CSCI 344: Spring 2025"
 subtitle: "Advanced Web Technology"
 email: vanwars@unca.edu
-baseurl: "/fall2024"
-term_start_date: "2024-08-19"
-term_end_date: "2024-12-11"
+baseurl: "/spring2025"
+term_start_date: "2025-01-13"
+term_end_date: "2025-05-09"
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll

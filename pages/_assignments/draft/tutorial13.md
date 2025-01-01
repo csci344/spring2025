@@ -38,11 +38,11 @@ However, there are examples in which it may be useful for the server to send dat
 <table style="border-width:0px;">
     <tr>
         <td>
-            <img class="large frame" src="/fall2024/assets/images/tutorials/tutorial12/img1.png" />
+            <img class="large frame" src="/spring2025/assets/images/tutorials/tutorial12/img1.png" />
             <p>HTTP Protocol (http:// or https://)</p>
         </td>
         <td>
-            <img class="large frame" src="/fall2024/assets/images/tutorials/tutorial12/img2.png" />
+            <img class="large frame" src="/spring2025/assets/images/tutorials/tutorial12/img2.png" />
             <p>Web Socket Protocol (ws:// or wss://)</p> 
         </td>
     </tr>
@@ -58,7 +58,7 @@ Note that the server and the client don't have to be on the same machine (and fu
 
 ## 1. Setup Your Files and Local Server
 
-<a class="nu-button" style="margin-top:20px;display:inline-block;" href="/fall2024/course-files/tutorials/tutorial12.zip">tutorial12.zip<i class="fas fa-download" aria-hidden="true"></i></a>
+<a class="nu-button" style="margin-top:20px;display:inline-block;" href="/spring2025/course-files/tutorials/tutorial12.zip">tutorial12.zip<i class="fas fa-download" aria-hidden="true"></i></a>
 
 ### 1. Organize files
 1. Download the `tutorial12.zip` file and unzip it. You should see the following files:
@@ -235,7 +235,7 @@ If data.type is "chat", append the chat message to the `#chat` div (main panel) 
 
 If your client and server are both working, you should be able to open `index.html` in two separate browser tabs, log in to the same server on each, and send messages between them (see video below)!
 
-<img class="large frame" style="width:100%;" src="/fall2024/assets/images/tutorials/tutorial12/live-demo.gif" />
+<img class="large frame" style="width:100%;" src="/spring2025/assets/images/tutorials/tutorial12/live-demo.gif" />
 
 <!-- ## 4. Accessibility
 It is important to think about how low-vision or blind users might interact with a chat app. Specifically:
@@ -256,20 +256,20 @@ Here is an example of how a screen reader might interact with your chat interfac
 ### Mac VoiceOver Instructions
 #### Turn on VoiceOver
 Open System Preferences, go to Accessibility, and enable VoiceOver
-<img class="large frame" style="width:100%;" alt= "animated image of the instructions described above" src="/fall2024/assets/images/tutorials/tutorial12/mac-voiceover-open.gif" />
+<img class="large frame" style="width:100%;" alt= "animated image of the instructions described above" src="/spring2025/assets/images/tutorials/tutorial12/mac-voiceover-open.gif" />
 
 #### Turn off VoiceOver
 Click the X on the top left of the gray VoiceOver transcription box
-<img class="large frame" style="width:100%;" alt= "animated image of the instructions described above" src="/fall2024/assets/images/tutorials/tutorial12/mac-voiceover-close.gif" />
+<img class="large frame" style="width:100%;" alt= "animated image of the instructions described above" src="/spring2025/assets/images/tutorials/tutorial12/mac-voiceover-close.gif" />
 
 ### Windows Narrator Instructions
 #### Turn on Narrator
 Open the Start menu, search for Narrator, enable and **do not close** the Narrator window
-<img class="large frame" style="width:100%;" alt= "animated image of the instructions described above" src="/fall2024/assets/images/tutorials/tutorial12/windows-narrator-open.gif" />    
+<img class="large frame" style="width:100%;" alt= "animated image of the instructions described above" src="/spring2025/assets/images/tutorials/tutorial12/windows-narrator-open.gif" />    
 
 #### Turn off Narrator
 Pull up the Narrator window and click Exit Narrator. If you've closed this window, press the Windows logo key + Ctrl + Enter on your keyboard. In earlier versions of Windows, you may need to press Windows logo key + Enter.
-<img class="large frame" style="width:100%;" alt= "animated image of the instructions described above" src="/fall2024/assets/images/tutorials/tutorial12/windows-narrator-close.gif" />    
+<img class="large frame" style="width:100%;" alt= "animated image of the instructions described above" src="/spring2025/assets/images/tutorials/tutorial12/windows-narrator-close.gif" />    
 
 
 ## 5. (Optional) Experiment with ngrok
@@ -280,7 +280,7 @@ You should [sign up](https://dashboard.ngrok.com/signup) for ngrok using your No
 
 Run `ngrok help`; if the command fails, find the location where the ngrok executable was downloaded to and add the folder to your system PATH. Then, run `ngrok authtoken <token>` with the token listed in your ngrok dashboard.
 
-<img class="large frame" src="/fall2024/assets/images/tutorials/tutorial12/img3.png" />
+<img class="large frame" src="/spring2025/assets/images/tutorials/tutorial12/img3.png" />
 
 With your server running in another terminal window, type `ngrok http 8081` to open a tunnel to your server. You should now be able to add the forwarding url (minus the http://) to the list of servers on your client and use it as a separate chat room. -->
 

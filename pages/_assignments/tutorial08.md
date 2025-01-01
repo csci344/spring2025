@@ -6,8 +6,8 @@ abbreviation: Tutorial 8
 draft: 0
 points: 6
 num: 8
-start_date: 2024-11-08
-due_date: 2024-11-15
+start_date: 2025-04-04
+due_date: 2025-04-11
 ---
 
 {% include walkthrough-hw04.html %}

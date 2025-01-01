@@ -5,7 +5,7 @@ type: quiz
 draft: 0
 num: 2
 abbreviation: "Quiz 2"
-due_date: 2024-12-13
+due_date: 2025-05-09
 ---
 
 Quiz 2 is designed to be a 2 hour exam. You will have a 48 hour window to complete it. It's due at midnight on 12/13, but you are encouraged to complete it as soon as possible. 
@@ -23,7 +23,7 @@ Quiz 2 is designed to be a 2 hour exam. You will have a 48 hour window to comple
 > 1. Goes w/o saying, but saying it: **It is your responsibility to ensure that you don’t “accidentally zip the starter files.”**
 
 
-<a href="/fall2024/course-files/quizzes/quiz02.zip" class="nu-button">Quiz 2 Starter Files <i class="fas fa-download"></i></a>
+<a href="/spring2025/course-files/quizzes/quiz02.zip" class="nu-button">Quiz 2 Starter Files <i class="fas fa-download"></i></a>
 
 ## Task 1: Create a getBusinesses Function [20pts]
 Create an asynchronous function called `getBusinesses` in `task01/main.js` that queries the Yelp API and returns a list of business objects matching the query. Your function should take three arguments…
@@ -80,7 +80,7 @@ Create a function called `businessToHTML` in `task02/main.js` that takes a busin
 
 Your HTML representation should produce some HTML that renders something like this (CSS not important):
 
-<img class="small" src="/fall2024/assets/images/quizzes/quiz02/quiz02-ss1.png" alt="Demo image of output" />
+<img class="small" src="/spring2025/assets/images/quizzes/quiz02/quiz02-ss1.png" alt="Demo image of output" />
 
 
 ### Testing Your Code
@@ -98,7 +98,7 @@ You will modify the HTML and JavaScript as needed so that when search button is 
 * Queries the Yelp API for the first 10 businesses that match the user’s search term and location preferences, and
 * Displays all of the business below the search box.
 
-<img class="large frame" src="/fall2024/assets/images/quizzes/quiz02/quiz02-ss2.png" alt="Demo image of output" />
+<img class="large frame" src="/spring2025/assets/images/quizzes/quiz02/quiz02-ss2.png" alt="Demo image of output" />
 
 * <a href="https://drive.google.com/file/d/1WX_v9WwbZQcJpUArpLOzQRQL4v7ppmqa/view?usp=drive_link" target="_blank">Video Demo</a>
 
@@ -111,7 +111,7 @@ When you're done with 3.1, enhance your form by adding a checkbox indicating whe
 * Otherwise, you will show any business that matches the location and search term.
 * In order to check if something is "open now" in Yelp, you'll need to append the `&open_now=true` query parameter onto your URL (e.g., <a href="https://www.apitutor.org/yelp/simple/v3/businesses/search?location=Asheville,%20NC&term=breakfast&limit=3&open_now=true" target="_blank">https://www.apitutor.org/yelp/simple/v3/businesses/search?location=Asheville,%20NC&term=breakfast&limit=3&open_now=true</a>).
 
-<img class="large frame" src="/fall2024/assets/images/quizzes/quiz02/quiz02-ss3.png" alt="Demo image of output" />
+<img class="large frame" src="/spring2025/assets/images/quizzes/quiz02/quiz02-ss3.png" alt="Demo image of output" />
 
 * <a href="https://drive.google.com/file/d/1b2K2JlYIOMztaGq1PBa381Sg6iVDSTKx/view?usp=drive_link" target="_blank">Video Demo</a>
 

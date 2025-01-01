@@ -12,7 +12,7 @@ num: 4
 1. Open your entire `csci344` folder in VS Code.
 1.  Download and unzip the starter code:
 
-    <a href="/fall2024/course-files/activities/design-systems.zip" class="nu-button"><i class="fas fa-download"></i> Design Systems Starter Code </a>
+    <a href="/spring2025/course-files/activities/design-systems.zip" class="nu-button"><i class="fas fa-download"></i> Design Systems Starter Code </a>
 1. Save the `design-systems` folder inside of `csci344/lectures.
 1. From the command line, navigate into your`design-systems` folder. You can also open the VS Code Integrated terminal. 
 1. Verify that you’re in the correct folder by typing **pwd**

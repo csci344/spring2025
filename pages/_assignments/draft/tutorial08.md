@@ -83,7 +83,7 @@ Therefore, each event handler (add / remove bookmark, add / remove like, add com
 4. **Tip:** If the current user has liked / bookmarked a post, you will have to embed the like / bookmark id as a button attribute so that you know what to delete later on.
 
 
-<img class="frame large" src="/fall2024/assets/images/tutorials/tutorial07/workflow1.gif" alt="workflow 1" />
+<img class="frame large" src="/spring2025/assets/images/tutorials/tutorial07/workflow1.gif" alt="workflow 1" />
 
 #### 2. Following / Unfollowing
 Creating or deleting a `Following` resource has no bearing on the state of any other resource. As such, the workflow is simpler:
@@ -94,12 +94,12 @@ Creating or deleting a `Following` resource has no bearing on the state of any o
 1. **Tip:** Note that if you want the ability to "unfollow" a user after having just created a `Following` resource, you will have to embed the id of the following resource in the element (so you know which resource to delete later on). See animation below:
 
 
-<img class="frame large" src="/fall2024/assets/images/tutorials/tutorial07/follow-unfollow.gif" alt="follow / unfollow diagram" />
+<img class="frame large" src="/spring2025/assets/images/tutorials/tutorial07/follow-unfollow.gif" alt="follow / unfollow diagram" />
 
 ## Your Task
 For today's tutorial we will be implementing the "Bookmark Button" together. Download the starter code and save it in `tutorials/tutorial07`. 
 
-<a href="/fall2024/course-files/tutorials/tutorial07.zip" class="nu-button">Tutorial 7 Starter Files<i class="fas fa-download"></i></a> 
+<a href="/spring2025/course-files/tutorials/tutorial07.zip" class="nu-button">Tutorial 7 Starter Files<i class="fas fa-download"></i></a> 
 
 Then, complete the following tasks:
 

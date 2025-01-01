@@ -6,8 +6,8 @@ abbreviation: Tutorial 9
 draft: 0
 points: 6
 num: 9
-start_date: 2024-11-18
-due_date: 2024-11-20
+start_date: 2025-04-14
+due_date: 2025-04-16
 ---
 
 <style>
@@ -45,13 +45,13 @@ After going through the installation process, navigate to the folder on your mac
 
 Inside, the Python 3.13 folder, you'll find a file called **IDLE** - this is the IDLE executable. Double click on that file to run it. You should then see something like this (the screen shows version 3.8, but any version >= 3.8 is OK):
 
-<img class="frame medium" src="/fall2024/assets/images/tutorials/tutorial09/python-cmd-1.png" />
+<img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial09/python-cmd-1.png" />
 
 I recommend keeping IDLE in your dock (on a Mac) or making a Desktop Shortcut to IDLE (on Windows).
 
 At the **&gt;&gt;&gt;** prompt, you can type any valid python command. For example, type `print("hello world!")` and hit enter. You should see something like this:
 
-<img class="frame medium" src="/fall2024/assets/images/tutorials/tutorial09/python-cmd-2.png" />
+<img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial09/python-cmd-2.png" />
 
 If you have any issues installing Python or IDLE, come to office hours.
 
@@ -111,7 +111,7 @@ Note that when your venv is activated, there will be a `(env)` prefix in front o
 ## 4. Set Up
 After you have installed Python is installed, download tutorial09.zip (below), unzip it, and move your `tutorial09` folder inside of your `tutorials` folder. 
 
-<a class="nu-button" href="/fall2024/course-files/tutorials/tutorial09.zip">tutorial09.zip<i class="fas fa-download" aria-hidden="true"></i></a>
+<a class="nu-button" href="/spring2025/course-files/tutorials/tutorial09.zip">tutorial09.zip<i class="fas fa-download" aria-hidden="true"></i></a>
 
 
 ### Set Up Your Virtual Environment
@@ -163,7 +163,7 @@ You should see the following output:
 
  Navigate to <a href="http://127.0.0.1:5000/" target="_blank">http://127.0.0.1:5000/</a>, and you should see a screen that lists the exercises that you are to complete:
 
-<img class="medium frame" src="/fall2024/assets/images/tutorials/tutorial09/home.png" />
+<img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial09/home.png" />
 
 
 
@@ -186,7 +186,7 @@ Each of these exercises is intended to help you get a sense of the kinds of thin
 Update the `exercise1` function so that it returns a personalized greeting to the user. In other words, replace "Hello World!" with something like, "Hi Erick Rubi!"
 * Assume that the `current_user` variable, defined at the top of `app.py` represents the user who is currently logged in. 
 
-<img class="medium frame" src="/fall2024/assets/images/tutorials/tutorial09/hello-erick.png" />
+<img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial09/hello-erick.png" />
 
 {:#task_2}
 ### 2. Grab Data from "database"
@@ -198,7 +198,7 @@ return json.dumps(data)
 
 After editing the function, test your endpoint by accessing <a href="http://127.0.0.1:5000/data/quotes/" target="_blank">http://127.0.0.1:5000/data/quotes/</a>. If your code worked, you should see JSON of "famous quotes."
 
-<img class="medium frame" src="/fall2024/assets/images/tutorials/tutorial09/quotes-json.png" />
+<img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial09/quotes-json.png" />
 
 A quick note on the `json` library:
 * `json.dumps()` converts a Python dictionary into JSON (a string).
@@ -262,7 +262,7 @@ If you implemented this function correctly:
 * If either parameter is missing, an error message displays
 {:.compact}
 
-<img class="large frame" src="/fall2024/assets/images/tutorials/tutorial09/yelp-json.png" />
+<img class="large frame" src="/spring2025/assets/images/tutorials/tutorial09/yelp-json.png" />
 
 
 {:#task_4}
@@ -288,7 +288,7 @@ Please make the following modifications:
     * [Jinja Cheatsheet](https://www.codecademy.com/learn/learn-flask/modules/flask-templates-and-forms/cheatsheet)
 
 
-<img class="medium frame" src="/fall2024/assets/images/tutorials/tutorial09/erick-quote.png" />
+<img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial09/erick-quote.png" />
 
 <!-- {:#task_5}
 ### 5. Accessing data from other servers -->
@@ -335,12 +335,12 @@ It works very similarly to the code in exercise 3, except for it merges with the
 
 Note that the `restaurant.html` template uses a new construct -- the "include" -- as a way to modularize code.
 
-<img class="large frame" src="/fall2024/assets/images/tutorials/tutorial09/template-before.png" />
+<img class="large frame" src="/spring2025/assets/images/tutorials/tutorial09/template-before.png" />
 
 #### Your Task
 Modify the HTML in the `restaurant.html` template so that it displays the Yelp data in a more visual format. For instance, Sarah made her's look like this:
 
-<img class="medium frame" src="/fall2024/assets/images/tutorials/tutorial09/template-after.png" />
+<img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial09/template-after.png" />
 
 Feel free to jazz up your template any way you like!
 * [Jinja Cheatsheet](https://www.codecademy.com/learn/learn-flask/modules/flask-templates-and-forms/cheatsheet)
@@ -352,7 +352,7 @@ If you have more time, please also try `exercise6`. It's similar to `exercise5`,
 ### 1. Looping using Jinja
 In `exercise5`, you only display a single restaurant. Look at the <a href="https://jinja.palletsprojects.com/en/3.0.x/templates/" target="_blank">Jinja documentation</a> and see if you can figure out how to output all of the matching restaurants for the search (not just the first one). See if you can make your template look like this one:
 
-<img class="large frame" src="/fall2024/assets/images/tutorials/tutorial09/restaurants.png" />
+<img class="large frame" src="/spring2025/assets/images/tutorials/tutorial09/restaurants.png" />
 
 ### 2. Includes
 See if you can convert the HTML that shows a single restaurant card into an include file (similar to `includes/header.html`)

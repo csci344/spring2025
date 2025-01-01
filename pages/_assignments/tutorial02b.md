@@ -15,7 +15,7 @@ Download and install Visual Studio Code: <a href="https://code.visualstudio.com/
 * This does not need to be done if you are working on the computer lab computers -- just if you're working on your laptop.
 
 ### 2. Organize your files
-<a href="/fall2024/course-files/tutorials/tutorial02b.zip" class="nu-button">Download Tutorial Files <i class="fas fa-download"></i></a>
+<a href="/spring2025/course-files/tutorials/tutorial02b.zip" class="nu-button">Download Tutorial Files <i class="fas fa-download"></i></a>
 
 
 File management and organization are an essential part of programming and web development. As such, we suggest the following system:
@@ -112,7 +112,7 @@ The most important thing to understand in the `main.js` file is that `setup()` r
 #### B. View file in Web Browser 
 Once you’ve taken a look at the code in VS Code, view it in your browser using the Live Server plugin you installed on Monday. It should look something like this:
 
-<img class="frame small" src="/fall2024/assets/images/tutorials/tutorial02/circles.png" />
+<img class="frame small" src="/spring2025/assets/images/tutorials/tutorial02/circles.png" />
 
 Try uncommenting **`draw5RedSquares();`** to see what happens!
 
@@ -138,7 +138,7 @@ Create a function called `drawNCircles(n)` that uses a for loop to draw any numb
 ### 4. For Loop - More flexibility
 Create a function called `drawNCirclesFlexible(n, size, x, y)` that uses a for loop to draw  a column of circles of any size, starting at any x, y position. If I invoke your function as follows: `drawNCirclesFlexible(30, 25, 400, 0)` it should produce the following picture:
 
-<img class="frame small" src="/fall2024/assets/images/tutorials/tutorial02/flexi-circles.png" />
+<img class="frame small" src="/spring2025/assets/images/tutorials/tutorial02/flexi-circles.png" />
 
 ### 5. For Loop - Even more flexibility
 Create a function called `drawNShapesFlexible(n, size, x, y, shape)` that uses a for loop to draw  a column of shapes of any size, starting at any x, y position. If the shape === "circle", it will draw a column of circles. Otherwise it will draw a column of squares.

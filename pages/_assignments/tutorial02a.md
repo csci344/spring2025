@@ -9,7 +9,7 @@ num: 2
 ---
 
 {:.blockquote-no-margin}
-> **Assumptions:** This tutorial assumes that you have reviewed the materials assigned in the [Intro to HTML lecture](/fall2024/lectures/topic02).
+> **Assumptions:** This tutorial assumes that you have reviewed the materials assigned in the [Intro to HTML lecture](/spring2025/lectures/topic02).
 
 ## Part 1. Setting Up Your Development Environment
 
@@ -18,7 +18,7 @@ Download and install Visual Studio Code: <a href="https://code.visualstudio.com/
 * This does not need to be done if you are working on the computer lab computers -- just if you're working on your laptop.
 
 ### 2. Organize your files
-<a href="/fall2024/course-files/tutorials/tutorial02a.zip" class="nu-button">Download Tutorial Files <i class="fas fa-download"></i></a>
+<a href="/spring2025/course-files/tutorials/tutorial02a.zip" class="nu-button">Download Tutorial Files <i class="fas fa-download"></i></a>
 
 File management and organization are an essential part of programming and web development. As such, we suggest the following system:
 1. Create a course folder called **csci344** somewhere on your computer. Many people store theirs in Documents or on their Desktop.
@@ -77,7 +77,7 @@ You will be ***editing*** your files using VS Code (or another code editor of yo
 #### B. View file in Web Browser 
 Once you’ve taken a look at the code in VS Code, view it in your browser using the Live Server plugin you installed on Monday. It should look something like this:
 
-<img class="frame xsmall" src="/fall2024/assets/images/tutorials/tutorial02/a.png" />
+<img class="frame xsmall" src="/spring2025/assets/images/tutorials/tutorial02/a.png" />
 
 ## Part 2. Completing the Exercises
 Now that you're set up, please complete the 6 tasks below:
@@ -107,12 +107,12 @@ This "link tag" instructs the browser to style the `index.html` according to the
 
 Test your change by refreshing your web browser. Your page should now look like this:
 
-<img class="frame medium" src="/fall2024/assets/images/tutorials/tutorial02/b.png" />
+<img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial02/b.png" />
 
 Next, add this same stylesheet link tag inside of the head tag of the `videos.html` and `music.html` files, and then preview both of these in your web browser. These pages should look like this:
 
-<img class="frame medium" src="/fall2024/assets/images/tutorials/tutorial02/c.png" />
-<img class="frame medium" src="/fall2024/assets/images/tutorials/tutorial02/d.png" />
+<img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial02/c.png" />
+<img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial02/d.png" />
 
 {:#step2}
 ### 2. Link your pages to one another in the navigation section
@@ -131,7 +131,7 @@ Next, modify the anchor tags within the navigation section (in each of your page
 
 Update all of your anchor tags on all three pages. When you're done, all of the pages should link together as shown below:
 
-<img class="frame small" src="/fall2024/assets/images/tutorials/tutorial02/e.gif" />
+<img class="frame small" src="/spring2025/assets/images/tutorials/tutorial02/e.gif" />
 
 {:#step3}
 ### 3. Add some images to the index.html file
@@ -144,28 +144,28 @@ Inside the `index.html` file:
 
 When you're done, your page should look like this:
 
-<img class="frame medium" src="/fall2024/assets/images/tutorials/tutorial02/f.png" />
+<img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial02/f.png" />
 
 
 {:.blockquote-no-margin}
-> **Hint**: Please see the course resources on [images](/fall2024/resources/image-tags/) for more detail.
+> **Hint**: Please see the course resources on [images](/spring2025/resources/image-tags/) for more detail.
 
 {:#step4}
 ### 4. Add two videos to the videos.html file
 Inside the `videos.html` file, add two different YouTube or Vimeo videos inside of the `<section class="video-section"></section>` region of your page. To get the embed code of any YouTube video, (a) navigate to the video, (b) click "share", (c) then click "embed," and (d) then copy the embed code (iframe tag), as pictured below (note the pink squares):
 
-<img class="frame small" src="/fall2024/assets/images/tutorials/tutorial02/g.png" />
+<img class="frame small" src="/spring2025/assets/images/tutorials/tutorial02/g.png" />
 
-<img class="frame small" src="/fall2024/assets/images/tutorials/tutorial02/h.png" />
+<img class="frame small" src="/spring2025/assets/images/tutorials/tutorial02/h.png" />
 
-<img class="frame small" src="/fall2024/assets/images/tutorials/tutorial02/i.png" />
+<img class="frame small" src="/spring2025/assets/images/tutorials/tutorial02/i.png" />
 
 When you're done, your page should look like this (except with *your* videos):
 
-<img class="frame medium" src="/fall2024/assets/images/tutorials/tutorial02/j.png" />
+<img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial02/j.png" />
 
 {:.blockquote-no-margin}
-> **More examples**: Please also see the course resources on [media tags](/fall2024/resources/media-tags/).
+> **More examples**: Please also see the course resources on [media tags](/spring2025/resources/media-tags/).
 
 {:#step5}
 ### 5. Add a Spotify player to music.html
@@ -173,7 +173,7 @@ Inside the `music.html` file, add one or more embedded music players inside of t
 
 When you're done, your page should look like this (except with *your* videos):
 
-<img class="frame medium" src="/fall2024/assets/images/tutorials/tutorial02/k.png" />
+<img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial02/k.png" />
 
 
 {:#step6}
@@ -190,9 +190,9 @@ While we have not yet covered CSS, try using Google and various online resources
 > #### CSS Reference
 > Please also see the course resources on CSS:
 >
-> * [fonts](/fall2024/resources/fonts/)
-> * [color](/fall2024/resources/color/)
-> * [selectors](/fall2024/resources/selectors/)
+> * [fonts](/spring2025/resources/fonts/)
+> * [color](/spring2025/resources/color/)
+> * [selectors](/spring2025/resources/selectors/)
 
 <!-- ## Part 3. Publishing to GitHub
 Please [follow these instructions](../activities/github) to publish your tutorial02 to GitHub. -->
@@ -202,7 +202,7 @@ Please [follow these instructions](../activities/github) to publish your tutoria
 The purpose of this tutorial was to get you familiar with some HTML widgets and conventions. We are now officially done with HTML instruction. What you should be comfortable with after this tutorial:
 
 {:.compact}
-1. Finding online resources (like <a href="https://www.w3schools.com/html/default.asp" target="_blank">W3Schools</a> and the [course HTML reference](/fall2024/resources/html-resources)) that help you learn about and integrate HTML tags.
+1. Finding online resources (like <a href="https://www.w3schools.com/html/default.asp" target="_blank">W3Schools</a> and the [course HTML reference](/spring2025/resources/html-resources)) that help you learn about and integrate HTML tags.
 2. Understanding the rules of various tags, and how to nest them.
 3. Understanding how to link files together using both relative and absolute paths (more next week).
 4. Semantic containers

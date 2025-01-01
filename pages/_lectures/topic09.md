@@ -4,7 +4,7 @@ title: "Introduction to React"
 type: module
 num: 9
 draft: 0
-due_date: 2024-11-04
+due_date: 2025-03-31
 ---
 
 {% include walkthrough-react-activity.html %}

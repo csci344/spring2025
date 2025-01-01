@@ -23,4 +23,4 @@ Videos and worked examples will be published after class:
 * <a href="https://github.com/vanwars/csci344" target="_blank">Worked examples on GitHub</a>
 
 ## Activities
-1. Lecture 26 (Wednesday): [Web Sockets Exercises](/fall2024/course-files/lectures/lecture26.zip)
+1. Lecture 26 (Wednesday): [Web Sockets Exercises](/spring2025/course-files/lectures/lecture26.zip)

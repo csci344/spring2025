@@ -4,7 +4,7 @@ title: HTML
 type: module
 num: 2
 draft: 0
-due_date: 2024-08-26
+due_date: 2025-01-20
 readings:
    - url: ../resources/html-resources
      title: HTML Resources
@@ -58,5 +58,5 @@ Videos and worked examples will be published after class:
 
 ## Activities
 * Activity 2: <a href="https://docs.google.com/document/d/1S6P6G3xBS4nBcAZEWBvIC0_lqH5p_Xp6/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Write your first HTML page</a> (Monday, 08/26)
-* Activity 3a: <a href="/fall2024/course-files/lectures/lecture04.zip">Linking</a> (Wednesday, 08/28)
+* Activity 3a: <a href="/spring2025/course-files/lectures/lecture04.zip">Linking</a> (Wednesday, 08/28)
 * Activity 3b: <a href="../activities/github">Configure git and GitHub</a> (Wednesday, 08/28)

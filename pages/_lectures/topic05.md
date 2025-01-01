@@ -5,7 +5,7 @@ type: module
 prefix: topic
 num: 5
 draft: 0
-due_date: 2024-09-11
+due_date: 2025-02-05
 ---
 
 ## Overview
@@ -36,7 +36,7 @@ Today we will be discussing visual design, usability, and accessibility principl
 * Groves, Karl (Sept., 2013). <a href="https://karlgroves.com/2013/09/05/the-6-simplest-web-accessibility-tests-anyone-can-do" target="_blank">The 6 Simplest Web Accessibility Tests Anyone Can Do</a>.
 * <a href="https://ukhomeoffice.github.io/accessibility-posters/" target="_blank">Designing accessible services</a>.
 * Dodson, Rob (2018). <a href="https://www.youtube.com/watch?v=cOmehxAU_4s" target="_blank">Watch: How I do an accessibility check -- A11ycasts #11</a>.
-* (Oct., 2019). <a href="https://www.latimes.com/politics/story/2019-10-07/blind-person-dominos-ada-supreme-court-disabled" target="_blank">Supreme Court allows blind people to sue retailers if their websites are not accessible</a>. LA Times
+* (Oct., 2019). <a href="https://www.latimes.com/politics/story/2020-03-02/blind-person-dominos-ada-supreme-court-disabled" target="_blank">Supreme Court allows blind people to sue retailers if their websites are not accessible</a>. LA Times
 * Stokel-Walker, Chris (Oct., 2019). <a href="https://onezero.medium.com/researchers-are-making-memes-accessible-to-the-blind-46b9ef0550da" target="_blank">Researchers are making memes accessible to the blind</a>. Medium
 * Ladner, Richard (Mar-Apr, 2015). <a href="https://www.nixdell.com/classes/HCI-and-Design-Spring-2017/p24-ladner.pdf" target="_blank">Design for User Empowerment</a>. Interactions (ACM)
 {:.compact}

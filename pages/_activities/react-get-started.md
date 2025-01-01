@@ -46,7 +46,7 @@ Node.js can also be used to automate tasks such as minifying JavaScript and CSS 
 ## 4. Create Your First React Project
 Complete the React <a href="https://beta.reactjs.org/learn/tutorial-tic-tac-toe" target="_blank">Tic Tac Toe Tutorial</a>. Begin by downloading the starter files below and saving them in `csci344/activities/react-get-started`.
 
-<a href="/fall2024/course-files/activities/react-get-started.zip" class="nu-button">React Tic Tac Toe Starter Files <i class="fas fa-download"></i></a>
+<a href="/spring2025/course-files/activities/react-get-started.zip" class="nu-button">React Tic Tac Toe Starter Files <i class="fas fa-download"></i></a>
 
 
 

@@ -6,8 +6,8 @@ abbreviation: Tutorial 2
 draft: 0
 points: 6
 num: 2
-start_date: 2024-08-30
-due_date: 2024-09-03
+start_date: 2025-01-24
+due_date: 2025-01-28
 ---
 
 * If you have not taken CSCI 185, you will be working on an HTML / linking exercise. Please see [these instructions](tutorial02a).

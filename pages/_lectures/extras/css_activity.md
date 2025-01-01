@@ -2,9 +2,9 @@
 
 Please download the exercise files (above) and use the CSS Property Cheatsheet (above) and what you've learned about selectors to make the following drawing:
 
-<img class="large" src="/fall2024/assets/images/lectures/lecture04/gallery.png" />
+<img class="large" src="/spring2025/assets/images/lectures/lecture04/gallery.png" />
 
-<!-- <a href="/fall2024/course-files/lectures/lecture04.zip" class="nu-button">Download Lecture Files <i class="fas fa-download"></i></a> -->
+<!-- <a href="/spring2025/course-files/lectures/lecture04.zip" class="nu-button">Download Lecture Files <i class="fas fa-download"></i></a> -->
 
 #### Some extra challenges (if you have time)
 1. Make one of the image "cards" have a different background color.

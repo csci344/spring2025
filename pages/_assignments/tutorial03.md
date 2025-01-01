@@ -6,8 +6,8 @@ abbreviation: Tutorial 3
 draft: 0
 points: 6
 num: 3
-start_date: 2024-09-09
-due_date: 2024-09-13
+start_date: 2025-02-03
+due_date: 2025-02-07
 ---
 
 <style>
@@ -58,7 +58,7 @@ CSS is best understood through practice, and by consulting online resources as n
 
 
 ## Your Tasks
-<a href="/fall2024/course-files/tutorials/tutorial03.zip" class="nu-button">Download Tutorial Files <i class="fas fa-download"></i></a>
+<a href="/spring2025/course-files/tutorials/tutorial03.zip" class="nu-button">Download Tutorial Files <i class="fas fa-download"></i></a>
 
 Download the `tutorial03.zip` file, unzip it and move the unzipped tutorial03 folder into the `csci344/tutorials` folder (see diagram below).
 
@@ -82,12 +82,12 @@ csci344
 ### Task 1: CSS Selectors
 Complete the first 14 steps of <a href="https://flukeout.github.io/" target="_blank">CSS Diner</a>. When you're done, take a screenshot showing you completed all of the levels. Your screenshot should have a green checkmark next to each level (like the one below but with checkmarks).
 
-<img class="small frame" src="/fall2024/assets/images/tutorials/tutorial03/exercise01.png" />
+<img class="small frame" src="/spring2025/assets/images/tutorials/tutorial03/exercise01.png" />
 
 ### Task 2: Box Model Properties
 Open `02-box-model` and modify the CSS so that the card looks like the screenshot shown below. You should only need to use [Box Model](../resources/box-model/) properties.
 
-<img class="small" src="/fall2024/assets/images/tutorials/tutorial03/exercise02.png" />
+<img class="small" src="/spring2025/assets/images/tutorials/tutorial03/exercise02.png" />
 
 ### Task 3: Use an external stylesheet
 Open `03-fonts` and use CSS to style the `h1` and `h2` tags using a Google font (example shown below). If you need help...
@@ -95,7 +95,7 @@ Open `03-fonts` and use CSS to style the `h1` and `h2` tags using a Google font 
 * You can Google "How to use a Google Font in CSS" 
 {:.compact}
 
-<img class="frame xsmall" src="/fall2024/assets/images/tutorials/tutorial03/exercise03.png" />
+<img class="frame xsmall" src="/spring2025/assets/images/tutorials/tutorial03/exercise03.png" />
 
 ### Task 4: Center-align elements within a container
 
@@ -106,7 +106,7 @@ Open `04-flex` and create the layout shown below by editing the CSS file. You sh
 {:.compact}
 
 
-<img src="/fall2024/assets/images/tutorials/tutorial03/exercise04.gif" />
+<img src="/spring2025/assets/images/tutorials/tutorial03/exercise04.gif" />
 
 Please ensure that the following criteria are met:
 
@@ -119,7 +119,7 @@ Please ensure that the following criteria are met:
 ### Task 5: Create a Navigation Bar
 Open `05-navbar`, and try to make the following layout using flex. The navigation bar should also be anchored to the top so when you scroll, the nav bar stays fixed.
 
-<img class="frame large" src="/fall2024/assets/images/tutorials/tutorial03/exercise05.png" />
+<img class="frame large" src="/spring2025/assets/images/tutorials/tutorial03/exercise05.png" />
 
 Hints:
 
@@ -134,7 +134,7 @@ Hints:
 
 Open `06-grid`, and try to make the following layout using CSS Grid. You should not need to modify the HTML file. Note that the gridlines are just for demonstration, but they won’t actually be visible.
 
-<img class="small" src="/fall2024/assets/images/tutorials/tutorial03/exercise06b.png" />
+<img class="small" src="/spring2025/assets/images/tutorials/tutorial03/exercise06b.png" />
 
 **Note:** You do NOT have to center the text inside of each section unless you want to.
 
@@ -142,16 +142,16 @@ Open `06-grid`, and try to make the following layout using CSS Grid. You should 
 
 Open `07-tacotemple`, and try to make the following layout using CSS Grid. You should only have to edit the CSS file. 
 
-<img class="large" src="/fall2024/assets/images/tutorials/tutorial03/tacotemple01.png" />
+<img class="large" src="/spring2025/assets/images/tutorials/tutorial03/tacotemple01.png" />
 
 **A few hints:**
 The `main` container is a grid with two columns -- no rows specified). See grid lines: 
 
-<img class="large" src="/fall2024/assets/images/tutorials/tutorial03/tacotemple02.png" />
+<img class="large" src="/spring2025/assets/images/tutorials/tutorial03/tacotemple02.png" />
 
 The `section` container is also a grid with two columns. See grid lines: 
 
-<img class="small" src="/fall2024/assets/images/tutorials/tutorial03/tacotemple03.png" />
+<img class="small" src="/spring2025/assets/images/tutorials/tutorial03/tacotemple03.png" />
 
 ## What to turn in
 Please create a link from your homepage to your completed tutorial 3 (see <a href="https://vanwars.github.io/csci344" target="_blank">Sarah's homepage</a> for an example). Then, commit and push all of your edits to GitHub and, paste a link to your GitHub Repository and to your GitHub pages in the Moodle submission.

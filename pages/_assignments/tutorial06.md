@@ -6,8 +6,8 @@ abbreviation: Tutorial 6
 draft: 0
 points: 6
 num: 6
-start_date: 2024-10-28
-due_date: 2024-11-01
+start_date: 2025-03-24
+due_date: 2025-03-28
 ---
 
 <style>
@@ -27,11 +27,11 @@ due_date: 2024-11-01
 
 For Tutorial 6, you will make a UNCA Course Search interface for the Computer Science Department that works like this:
 
-<img class="frame screenshot" src="/fall2024/assets/images/tutorials/tutorial06/demo-course-search.gif" />
+<img class="frame screenshot" src="/spring2025/assets/images/tutorials/tutorial06/demo-course-search.gif" />
 
 Please download the starter files below and then complete the following tasks:
 
-<a href="/fall2024/course-files/tutorials/tutorial06.zip" class="nu-button">Tutorial 6 Starter Files<i class="fas fa-download"></i></a> 
+<a href="/spring2025/course-files/tutorials/tutorial06.zip" class="nu-button">Tutorial 6 Starter Files<i class="fas fa-download"></i></a> 
 
 ## I. Implement the helper functions
 

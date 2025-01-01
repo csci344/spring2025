@@ -5,7 +5,7 @@ type: module
 prefix: topic
 num: 3
 draft: 0
-due_date: 2024-09-04
+due_date: 2025-01-29
 readings: 
    - url: ../resources/css-rules-of-thumb
      title: "CSS Rules of Thumb"

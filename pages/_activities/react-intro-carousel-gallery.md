@@ -12,7 +12,7 @@ num: 3
 If you haven't already, please <a href="https://nodejs.org/en/download/">install Node.js</a>.
 
 ## 2. Download the starter files
-<a href="/fall2024/course-files/lectures/lecture16.zip" class="nu-button">Carousel Exercise <i class="fas fa-download"></i></a>
+<a href="/spring2025/course-files/lectures/lecture16.zip" class="nu-button">Carousel Exercise <i class="fas fa-download"></i></a>
 
 
 ## 3. Install the dependencies
@@ -51,4 +51,4 @@ Add functionality so that when the user selects (clicks) one of the galleries, t
 * [video](https://drive.google.com/file/d/1RY2YnpCUm5Kuzv0W5HZ_cEH3HvyG066J/view?usp=sharing)
 
 
-<img class="large frame" src="/fall2024/assets/images/lectures/intro-react.gif">
+<img class="large frame" src="/spring2025/assets/images/lectures/intro-react.gif">

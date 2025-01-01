@@ -73,7 +73,7 @@ A few notes:
 
 Please download the starter files below and then complete the following tasks:
 
-<a href="/fall2024/course-files/tutorials/tutorial06.zip" class="nu-button">Tutorial 6 Starter Files<i class="fas fa-download"></i></a> 
+<a href="/spring2025/course-files/tutorials/tutorial06.zip" class="nu-button">Tutorial 6 Starter Files<i class="fas fa-download"></i></a> 
 
 
 1. Pick **ONE** of the REST APIs above (Yelp, Spotify, or Twitter).
@@ -87,7 +87,7 @@ Please download the starter files below and then complete the following tasks:
 If you choose Yelp, allow your user to input both a search `term` and a `location`.
 
 * Sample Query: <a href="https://www.apitutor.org/yelp/simple/v3/businesses/search?location=Asheville,%20NC&term=pizza" target="_blank">https://www.apitutor.org/yelp/simple/v3/businesses/search?location=Asheville,%20NC&term=pizza</a>
-* <a href="/fall2024/course-files/tutorials/tutorial06/answers/yelp/">Yelp Demo</a>
+* <a href="/spring2025/course-files/tutorials/tutorial06/answers/yelp/">Yelp Demo</a>
 
 
 ### If you choose Spotify...
@@ -95,13 +95,13 @@ If you choose Spotify, allow your user to specify both a search term (`q` parame
 
 * Caveat: since each resource has a different data representation, you will have to create three different templates (depending on the resource). In other words, an `artist` object has a different data representation than an `album` object or a `track` object.
 * Sample Query: <a href="https://www.apitutor.org/spotify/simple/v1/search?q=beyonce&type=track" target="_blank">https://www.apitutor.org/spotify/simple/v1/search?q=beyonce&type=track</a>
-* <a href="/fall2024/course-files/tutorials/tutorial06/answers/spotify/">Spotify Demo</a>
+* <a href="/spring2025/course-files/tutorials/tutorial06/answers/spotify/">Spotify Demo</a>
 
 ### If you choose Twitter...
 If you choose Twitter, allow your user to specify both a search term (`q` parameter) and a `result_type` (mixed, recent, or popular).
 
 * Sample Query: <a href="https://www.apitutor.org/twitter/simple/1.1/search/tweets.json?q=cats&result_type=popular" target="_blank">https://www.apitutor.org/twitter/simple/1.1/search/tweets.json?q=cats&result_type=popular</a>
-* <a href="/fall2024/course-files/tutorials/tutorial06/answers/twitter/">Twitter Demo</a>
+* <a href="/spring2025/course-files/tutorials/tutorial06/answers/twitter/">Twitter Demo</a>
 
 
 ## What to Submit

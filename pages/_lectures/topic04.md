@@ -5,7 +5,7 @@ type: module
 prefix: topic
 num: 4
 draft: 0
-due_date: 2024-09-06
+due_date: 2025-01-31
 readings: 
    - url: ../resources/units/
      title: Units
@@ -45,4 +45,4 @@ readings:
 
 
 ## Activities
-* <a href="/fall2024/course-files/lectures/lecture06.zip">Lecture 6 files</a> (Friday, 09/06)
+* <a href="/spring2025/course-files/lectures/lecture06.zip">Lecture 6 files</a> (Friday, 09/06)

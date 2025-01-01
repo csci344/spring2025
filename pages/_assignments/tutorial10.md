@@ -6,8 +6,8 @@ abbreviation: Tutorial 10
 draft: 0
 points: 6
 num: 10
-start_date: 2024-11-22
-due_date: 2024-11-25
+start_date: 2025-04-18
+due_date: 2025-04-21
 ---
 
 
@@ -152,7 +152,7 @@ Follow <a href="https://sqlbackupandftp.com/blog/setting-windows-path-for-postgr
 {:#db_setup}
 ### 2. Set up your database
 
-<a class="nu-button" href="/fall2024/course-files/tutorials/tutorial10.zip">tutorial10.zip<i class="fas fa-download" aria-hidden="true"></i></a>
+<a class="nu-button" href="/spring2025/course-files/tutorials/tutorial10.zip">tutorial10.zip<i class="fas fa-download" aria-hidden="true"></i></a>
 
 * Download tutorial10.zip (above) and unzip it, and move it into your `csci344/tutorials` folder / git repo.
 * Create a new database and load in the Photo App sample data by following the procedure outlined in <a href="https://neon.tech/postgresql/postgresql-getting-started/load-postgresql-sample-database" target="_blank">these instructions</a> -- but with the following modifications:
@@ -168,7 +168,7 @@ pg_restore -U postgres -d tutorial10 ~/Desktop/tutorial10.tar -->
 
 After you have configured your database, your `tutorial10` database should have the following structure:
 
-<img class="large" src="/fall2024/assets/images/tutorials/tutorial10/schema.svg" />
+<img class="large" src="/spring2025/assets/images/tutorials/tutorial10/schema.svg" />
 
 {:#sql}
 ## 3. Walkthrough of SQL Commands
@@ -295,37 +295,37 @@ Write a query to retrieve all of the records in the `users` table. It should ret
 ```
  id | first_name |   last_name   |     username      |    password_plaintext    |                                             password_hash                                              |            email            |              image_url               |             thumb_url              |        date_created        | is_verified | is_disabled 
 ----+------------+---------------+-------------------+--------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------+--------------------------------------+------------------------------------+----------------------------+-------------+-------------
-  1 | Webdev     | User          | webdev            | password                 | pbkdf2:sha256:260000$F1DNoH1iCqK0LI5t$7a8c70ef93b705e209dd66195d320de93b40556c3ef753502fe2b3620c5f16b2 | webdev@u.northwestern.edu   | https://picsum.photos/300/200?id=566 | https://picsum.photos/30/30?id=589 | 2022-04-10 17:45:59.163585 | f           | f
-  2 | David      | Cole          | david_cole        | up_knowledge_end         | pbkdf2:sha256:260000$apWgUPOjsMiGkMDv$f15a8ce254ffe961e17c5bb6d9fb10b3123e82e8e846ddf7d7034cf8647e55b4 | david_cole@yahoo.com        | https://picsum.photos/300/200?id=313 | https://picsum.photos/30/30?id=958 | 2022-04-10 17:46:03.979957 | f           | f
-  3 | Jamie      | Evans         | jamie_evans       | police_start_series      | pbkdf2:sha256:260000$umfdYNHpQAwyil8s$1b04bcfa094321daff5dff07ffd66bf38a53a004575247c3cf048d3bf0c5975d | jamie_evans@hotmail.com     | https://picsum.photos/300/200?id=328 | https://picsum.photos/30/30?id=124 | 2022-04-10 17:46:03.979963 | f           | f
-  4 | Mary       | Green         | mary_green        | effect_painting          | pbkdf2:sha256:260000$oEXou2jcxRoQj4iE$c8bb4629b989de55708924da83e569550a24782f6c8f000aef4d991fe28293de | mary_green@yahoo.com        | https://picsum.photos/300/200?id=637 | https://picsum.photos/30/30?id=397 | 2022-04-10 17:46:03.979966 | f           | f
-  5 | Jason      | Morris        | jason_morris      | building_seek            | pbkdf2:sha256:260000$IegvobCoRH2s5gWd$ee3e25a8ad9a7adaeb77f8191807144d818cf256ef450d4479f454ccc45395aa | jason_morris@yahoo.com      | https://picsum.photos/300/200?id=812 | https://picsum.photos/30/30?id=370 | 2022-04-10 17:46:03.979969 | f           | f
-  6 | Erika      | Smith         | erika_smith       | area_how_area            | pbkdf2:sha256:260000$7jddojBiVhNAgF6J$484b91a4aec1741ad4aeb5b619ea7bbef867d481f9f9c3ce65097ea2b2f3cd2a | erika_smith@yahoo.com       | https://picsum.photos/300/200?id=809 | https://picsum.photos/30/30?id=923 | 2022-04-10 17:46:03.979971 | f           | f
-  7 | Timothy    | Maldonado     | timothy_maldonado | thus_difficult           | pbkdf2:sha256:260000$EUuh12mYmnKm6Yjp$ca6007aa630aec090f82a028db16fa59a4a5cea3efe0a288d3b7cfb65114c81b | timothy_maldonado@yahoo.com | https://picsum.photos/300/200?id=525 | https://picsum.photos/30/30?id=666 | 2022-04-10 17:46:03.979973 | f           | f
-  8 | Rachel     | Murphy        | rachel_murphy     | team_property_much       | pbkdf2:sha256:260000$yZx8RM3e7DFyiCwy$ccc9e9952cb8a208ba415c51385187d693094a04c41264c02f0d27d4a1f1744b | rachel_murphy@yahoo.com     | https://picsum.photos/300/200?id=335 | https://picsum.photos/30/30?id=600 | 2022-04-10 17:46:03.979976 | f           | f
-  9 | Sharon     | Ritter        | sharon_ritter     | culture_avoid            | pbkdf2:sha256:260000$zFqp3eBo7UCHYzCD$bc103e6235b9c56de34155f523410b00f15fcb851992f90da76d119e1eeada72 | sharon_ritter@hotmail.com   | https://picsum.photos/300/200?id=355 | https://picsum.photos/30/30?id=117 | 2022-04-10 17:46:03.979978 | f           | f
- 10 | Carla      | Fleming       | carla_fleming     | skill                    | pbkdf2:sha256:260000$grhLOI018dy9Dsgu$326fa7f1f9f2835590dd97e6c096c7d4e124393f92543ee0e4f6753321e56730 | carla_fleming@yahoo.com     | https://picsum.photos/300/200?id=295 | https://picsum.photos/30/30?id=973 | 2022-04-10 17:46:03.979981 | f           | f
- 11 | Kayla      | Johnson       | kayla_johnson     | common_else_while        | pbkdf2:sha256:260000$tLvL58hfE6en23aE$f42a85d8202da749dcc146cbf9fececf441084f70037feb6da48735b4936279b | kayla_johnson@hotmail.com   | https://picsum.photos/300/200?id=635 | https://picsum.photos/30/30?id=668 | 2022-04-10 17:46:03.979983 | f           | f
- 12 | Rebecca    | Brown         | rebecca_brown     | hand_help_save           | pbkdf2:sha256:260000$mDa1Cp5UA5RCb4FQ$2440db2dd530318a83f23ecb63f6e28ae7573fd3f79e6b1fd99281bd9bb399a1 | rebecca_brown@yahoo.com     | https://picsum.photos/300/200?id=527 | https://picsum.photos/30/30?id=714 | 2022-04-10 17:46:03.979985 | f           | f
- 13 | Ryan       | Valentine     | ryan_valentine    | phone                    | pbkdf2:sha256:260000$zFsRgNl4zKQRZDZT$a61675c1c5a7b64903d7275d6c13d7bd333794e9367adb9faf6f1110fce88a0f | ryan_valentine@hotmail.com  | https://picsum.photos/300/200?id=378 | https://picsum.photos/30/30?id=909 | 2022-04-10 17:46:03.979988 | f           | f
- 14 | Adam       | Wilcox        | adam_wilcox       | next_wish                | pbkdf2:sha256:260000$zzQDAbKj6w9al9o0$77e1327648f71eff922353d0aa771dc49f753562967e17d71424fe2a2f8edc77 | adam_wilcox@hotmail.com     | https://picsum.photos/300/200?id=346 | https://picsum.photos/30/30?id=671 | 2022-04-10 17:46:03.97999  | f           | f
- 15 | John       | Morales       | john_morales      | city_baby                | pbkdf2:sha256:260000$i9VMHH4LqWMRjaZb$68f9c6d69e763d1c38d1cc7241f4544c12199c3abacf3848f8db495453148fd7 | john_morales@gmail.com      | https://picsum.photos/300/200?id=421 | https://picsum.photos/30/30?id=845 | 2022-04-10 17:46:03.980003 | f           | f
- 16 | David      | Robinson      | david_robinson    | miss_ground              | pbkdf2:sha256:260000$LEsaYcAhkEGowwmy$252fcfaf4615e02cfa733c0d5a6454f700cb2a514f8446b9a472f1850e387a0a | david_robinson@gmail.com    | https://picsum.photos/300/200?id=982 | https://picsum.photos/30/30?id=947 | 2022-04-10 17:46:03.980005 | f           | f
- 17 | Stephen    | Landry        | stephen_landry    | interesting_little       | pbkdf2:sha256:260000$bYZYzHJJmEI4Mj6o$ef181877de16261f1c965910b981891f701e0138964a2e15ee7ab0b49617c175 | stephen_landry@gmail.com    | https://picsum.photos/300/200?id=582 | https://picsum.photos/30/30?id=996 | 2022-04-10 17:46:03.980008 | f           | f
- 18 | Tyler      | Williams      | tyler_williams    | save_remain_rest_public  | pbkdf2:sha256:260000$71aNF161vumjYK9O$60632348a29df11ed2373a9ab95c3f65b1447cb908cc0311ae49581b4eb7d7e4 | tyler_williams@yahoo.com    | https://picsum.photos/300/200?id=449 | https://picsum.photos/30/30?id=270 | 2022-04-10 17:46:03.98001  | f           | f
- 19 | Mr.        | Daniel Turner | mr._daniel_turner | word_perform_ball        | pbkdf2:sha256:260000$K38BeuLHLY787mCR$f45360fa41344a185727a269d08441469dd38f44c4dde1993b4ece2d06d9c279 | mr._daniel_turner@yahoo.com | https://picsum.photos/300/200?id=336 | https://picsum.photos/30/30?id=810 | 2022-04-10 17:46:03.980012 | f           | f
- 20 | Geoffrey   | Reed          | geoffrey_reed     | health_inside_high       | pbkdf2:sha256:260000$uVPRasclLW3CA9Yc$47f9d75875c75fcad094803be2b2873cad8ef3afecca78f5680ef02f81ed90cb | geoffrey_reed@hotmail.com   | https://picsum.photos/300/200?id=369 | https://picsum.photos/30/30?id=825 | 2022-04-10 17:46:03.980015 | f           | f
- 21 | Russell    | Sellers       | russell_sellers   | pick_body_pass_audience  | pbkdf2:sha256:260000$1xu4UBaMeWahEHjt$eee72b86340655aaa760666637006d9ad7862d9a44e47aecfed93a34acb80f61 | russell_sellers@yahoo.com   | https://picsum.photos/300/200?id=579 | https://picsum.photos/30/30?id=541 | 2022-04-10 17:46:03.980017 | f           | f
- 22 | Rodney     | Marshall      | rodney_marshall   | somebody_reach_agency    | pbkdf2:sha256:260000$3h6vr3HEHkdlRujC$123c51c924cba211d86a24913de4bfddbca77098abe7c74467ec471d962da7eb | rodney_marshall@hotmail.com | https://picsum.photos/300/200?id=293 | https://picsum.photos/30/30?id=984 | 2022-04-10 17:46:03.980019 | f           | f
- 23 | George     | Thomas        | george_thomas     | second_decade_despite    | pbkdf2:sha256:260000$arNwdma41nx3WnrT$9a13754a2b27a02d0c61b1a38077bd933406c3693cd3ab19ef57ef04e82b6f28 | george_thomas@gmail.com     | https://picsum.photos/300/200?id=157 | https://picsum.photos/30/30?id=461 | 2022-04-10 17:46:03.980022 | f           | f
- 24 | Lori       | Horton        | lori_horton       | their_realize            | pbkdf2:sha256:260000$J7uxTO6hTl4MDKk1$2c50befdbef69d71ebb0db37aa4d64977475431cf3039f5fed1c2e40cc2f5211 | lori_horton@yahoo.com       | https://picsum.photos/300/200?id=757 | https://picsum.photos/30/30?id=864 | 2022-04-10 17:46:03.980024 | f           | f
- 25 | Daniel     | Myers         | daniel_myers      | officer_natural          | pbkdf2:sha256:260000$JK0Po4tnSI5cLMA4$bf120278bb2bd5348b6a775e947a4330e417f7f2226b18fc32aa1d0250ceb167 | daniel_myers@gmail.com      | https://picsum.photos/300/200?id=110 | https://picsum.photos/30/30?id=894 | 2022-04-10 17:46:03.980027 | f           | f
- 26 | Nicholas   | Khan          | nicholas_khan     | everything_change_answer | pbkdf2:sha256:260000$wcQkkkj9adctcdCN$dee3043de0f4e007eaaab4f94a4a0151b1c5cd6b236ef5bd0625666f2e1ff08a | nicholas_khan@gmail.com     | https://picsum.photos/300/200?id=893 | https://picsum.photos/30/30?id=47  | 2022-04-10 17:46:03.980045 | f           | f
- 27 | Barbara    | Armstrong     | barbara_armstrong | painting_material        | pbkdf2:sha256:260000$2u4px7fehQt4DKyP$4840a43930c3e5fce505dd13bc6c12f2fce467776bc450a08f5842ce38859d3e | barbara_armstrong@gmail.com | https://picsum.photos/300/200?id=82  | https://picsum.photos/30/30?id=595 | 2022-04-10 17:46:03.980052 | f           | f
- 28 | Heather    | Moore         | heather_moore     | nor_nice                 | pbkdf2:sha256:260000$ifanUDOqYyZSDmSi$a8c2bfc911c836ac8d4c8e16615c113ca3c2f3d70a6e9f1abd5e3414afbb9b31 | heather_moore@yahoo.com     | https://picsum.photos/300/200?id=434 | https://picsum.photos/30/30?id=563 | 2022-04-10 17:46:03.980057 | f           | f
- 29 | John       | Hughes        | john_hughes       | whether_open_mouth       | pbkdf2:sha256:260000$jrbPqV2Oy4E0Q111$08cddc76dd0aaf2820a6dcb842fdd5f23f5d138c450f281525e5ea86ace003ac | john_hughes@gmail.com       | https://picsum.photos/300/200?id=962 | https://picsum.photos/30/30?id=860 | 2022-04-10 17:46:03.980059 | f           | f
- 30 | Barbara    | Stone         | barbara_stone     | media_table              | pbkdf2:sha256:260000$NwXMDTOvdecGLpsL$3c02600be389049dd48bd6adbabaecdb25d134fc5fb9a84ff52305d5b7f391ce | barbara_stone@yahoo.com     | https://picsum.photos/300/200?id=81  | https://picsum.photos/30/30?id=199 | 2022-04-10 17:46:03.980061 | f           | f
- 31 | Shannon    | Dyer          | shannon_dyer      | couple_few               | pbkdf2:sha256:260000$NAobYTH9gXhdcrZS$886c55bff5b2099da9f0d1b85eccb6c33e486c6e8d81385dafc7768b60ef01e9 | shannon_dyer@yahoo.com      | https://picsum.photos/300/200?id=732 | https://picsum.photos/30/30?id=693 | 2022-04-10 17:46:03.980064 | f           | f
+  1 | Webdev     | User          | webdev            | password                 | pbkdf2:sha256:260000$F1DNoH1iCqK0LI5t$7a8c70ef93b705e209dd66195d320de93b40556c3ef753502fe2b3620c5f16b2 | webdev@u.northwestern.edu   | https://picsum.photos/300/200?id=566 | https://picsum.photos/30/30?id=589 | 2022-09-04 17:45:59.163585 | f           | f
+  2 | David      | Cole          | david_cole        | up_knowledge_end         | pbkdf2:sha256:260000$apWgUPOjsMiGkMDv$f15a8ce254ffe961e17c5bb6d9fb10b3123e82e8e846ddf7d7034cf8647e55b4 | david_cole@yahoo.com        | https://picsum.photos/300/200?id=313 | https://picsum.photos/30/30?id=958 | 2022-09-04 17:46:03.979957 | f           | f
+  3 | Jamie      | Evans         | jamie_evans       | police_start_series      | pbkdf2:sha256:260000$umfdYNHpQAwyil8s$1b04bcfa094321daff5dff07ffd66bf38a53a004575247c3cf048d3bf0c5975d | jamie_evans@hotmail.com     | https://picsum.photos/300/200?id=328 | https://picsum.photos/30/30?id=124 | 2022-09-04 17:46:03.979963 | f           | f
+  4 | Mary       | Green         | mary_green        | effect_painting          | pbkdf2:sha256:260000$oEXou2jcxRoQj4iE$c8bb4629b989de55708924da83e569550a24782f6c8f000aef4d991fe28293de | mary_green@yahoo.com        | https://picsum.photos/300/200?id=637 | https://picsum.photos/30/30?id=397 | 2022-09-04 17:46:03.979966 | f           | f
+  5 | Jason      | Morris        | jason_morris      | building_seek            | pbkdf2:sha256:260000$IegvobCoRH2s5gWd$ee3e25a8ad9a7adaeb77f8191807144d818cf256ef450d4479f454ccc45395aa | jason_morris@yahoo.com      | https://picsum.photos/300/200?id=812 | https://picsum.photos/30/30?id=370 | 2022-09-04 17:46:03.979969 | f           | f
+  6 | Erika      | Smith         | erika_smith       | area_how_area            | pbkdf2:sha256:260000$7jddojBiVhNAgF6J$484b91a4aec1741ad4aeb5b619ea7bbef867d481f9f9c3ce65097ea2b2f3cd2a | erika_smith@yahoo.com       | https://picsum.photos/300/200?id=809 | https://picsum.photos/30/30?id=923 | 2022-09-04 17:46:03.979971 | f           | f
+  7 | Timothy    | Maldonado     | timothy_maldonado | thus_difficult           | pbkdf2:sha256:260000$EUuh12mYmnKm6Yjp$ca6007aa630aec090f82a028db16fa59a4a5cea3efe0a288d3b7cfb65114c81b | timothy_maldonado@yahoo.com | https://picsum.photos/300/200?id=525 | https://picsum.photos/30/30?id=666 | 2022-09-04 17:46:03.979973 | f           | f
+  8 | Rachel     | Murphy        | rachel_murphy     | team_property_much       | pbkdf2:sha256:260000$yZx8RM3e7DFyiCwy$ccc9e9952cb8a208ba415c51385187d693094a04c41264c02f0d27d4a1f1744b | rachel_murphy@yahoo.com     | https://picsum.photos/300/200?id=335 | https://picsum.photos/30/30?id=600 | 2022-09-04 17:46:03.979976 | f           | f
+  9 | Sharon     | Ritter        | sharon_ritter     | culture_avoid            | pbkdf2:sha256:260000$zFqp3eBo7UCHYzCD$bc103e6235b9c56de34155f523410b00f15fcb851992f90da76d119e1eeada72 | sharon_ritter@hotmail.com   | https://picsum.photos/300/200?id=355 | https://picsum.photos/30/30?id=117 | 2022-09-04 17:46:03.979978 | f           | f
+ 10 | Carla      | Fleming       | carla_fleming     | skill                    | pbkdf2:sha256:260000$grhLOI018dy9Dsgu$326fa7f1f9f2835590dd97e6c096c7d4e124393f92543ee0e4f6753321e56730 | carla_fleming@yahoo.com     | https://picsum.photos/300/200?id=295 | https://picsum.photos/30/30?id=973 | 2022-09-04 17:46:03.979981 | f           | f
+ 11 | Kayla      | Johnson       | kayla_johnson     | common_else_while        | pbkdf2:sha256:260000$tLvL58hfE6en23aE$f42a85d8202da749dcc146cbf9fececf441084f70037feb6da48735b4936279b | kayla_johnson@hotmail.com   | https://picsum.photos/300/200?id=635 | https://picsum.photos/30/30?id=668 | 2022-09-04 17:46:03.979983 | f           | f
+ 12 | Rebecca    | Brown         | rebecca_brown     | hand_help_save           | pbkdf2:sha256:260000$mDa1Cp5UA5RCb4FQ$2440db2dd530318a83f23ecb63f6e28ae7573fd3f79e6b1fd99281bd9bb399a1 | rebecca_brown@yahoo.com     | https://picsum.photos/300/200?id=527 | https://picsum.photos/30/30?id=714 | 2022-09-04 17:46:03.979985 | f           | f
+ 13 | Ryan       | Valentine     | ryan_valentine    | phone                    | pbkdf2:sha256:260000$zFsRgNl4zKQRZDZT$a61675c1c5a7b64903d7275d6c13d7bd333794e9367adb9faf6f1110fce88a0f | ryan_valentine@hotmail.com  | https://picsum.photos/300/200?id=378 | https://picsum.photos/30/30?id=909 | 2022-09-04 17:46:03.979988 | f           | f
+ 14 | Adam       | Wilcox        | adam_wilcox       | next_wish                | pbkdf2:sha256:260000$zzQDAbKj6w9al9o0$77e1327648f71eff922353d0aa771dc49f753562967e17d71424fe2a2f8edc77 | adam_wilcox@hotmail.com     | https://picsum.photos/300/200?id=346 | https://picsum.photos/30/30?id=671 | 2022-09-04 17:46:03.97999  | f           | f
+ 15 | John       | Morales       | john_morales      | city_baby                | pbkdf2:sha256:260000$i9VMHH4LqWMRjaZb$68f9c6d69e763d1c38d1cc7241f4544c12199c3abacf3848f8db495453148fd7 | john_morales@gmail.com      | https://picsum.photos/300/200?id=421 | https://picsum.photos/30/30?id=845 | 2022-09-04 17:46:03.980003 | f           | f
+ 16 | David      | Robinson      | david_robinson    | miss_ground              | pbkdf2:sha256:260000$LEsaYcAhkEGowwmy$252fcfaf4615e02cfa733c0d5a6454f700cb2a514f8446b9a472f1850e387a0a | david_robinson@gmail.com    | https://picsum.photos/300/200?id=982 | https://picsum.photos/30/30?id=947 | 2022-09-04 17:46:03.980005 | f           | f
+ 17 | Stephen    | Landry        | stephen_landry    | interesting_little       | pbkdf2:sha256:260000$bYZYzHJJmEI4Mj6o$ef181877de16261f1c965910b981891f701e0138964a2e15ee7ab0b49617c175 | stephen_landry@gmail.com    | https://picsum.photos/300/200?id=582 | https://picsum.photos/30/30?id=996 | 2022-09-04 17:46:03.980008 | f           | f
+ 18 | Tyler      | Williams      | tyler_williams    | save_remain_rest_public  | pbkdf2:sha256:260000$71aNF161vumjYK9O$60632348a29df11ed2373a9ab95c3f65b1447cb908cc0311ae49581b4eb7d7e4 | tyler_williams@yahoo.com    | https://picsum.photos/300/200?id=449 | https://picsum.photos/30/30?id=270 | 2022-09-04 17:46:03.98001  | f           | f
+ 19 | Mr.        | Daniel Turner | mr._daniel_turner | word_perform_ball        | pbkdf2:sha256:260000$K38BeuLHLY787mCR$f45360fa41344a185727a269d08441469dd38f44c4dde1993b4ece2d06d9c279 | mr._daniel_turner@yahoo.com | https://picsum.photos/300/200?id=336 | https://picsum.photos/30/30?id=810 | 2022-09-04 17:46:03.980012 | f           | f
+ 20 | Geoffrey   | Reed          | geoffrey_reed     | health_inside_high       | pbkdf2:sha256:260000$uVPRasclLW3CA9Yc$47f9d75875c75fcad094803be2b2873cad8ef3afecca78f5680ef02f81ed90cb | geoffrey_reed@hotmail.com   | https://picsum.photos/300/200?id=369 | https://picsum.photos/30/30?id=825 | 2022-09-04 17:46:03.980015 | f           | f
+ 21 | Russell    | Sellers       | russell_sellers   | pick_body_pass_audience  | pbkdf2:sha256:260000$1xu4UBaMeWahEHjt$eee72b86340655aaa760666637006d9ad7862d9a44e47aecfed93a34acb80f61 | russell_sellers@yahoo.com   | https://picsum.photos/300/200?id=579 | https://picsum.photos/30/30?id=541 | 2022-09-04 17:46:03.980017 | f           | f
+ 22 | Rodney     | Marshall      | rodney_marshall   | somebody_reach_agency    | pbkdf2:sha256:260000$3h6vr3HEHkdlRujC$123c51c924cba211d86a24913de4bfddbca77098abe7c74467ec471d962da7eb | rodney_marshall@hotmail.com | https://picsum.photos/300/200?id=293 | https://picsum.photos/30/30?id=984 | 2022-09-04 17:46:03.980019 | f           | f
+ 23 | George     | Thomas        | george_thomas     | second_decade_despite    | pbkdf2:sha256:260000$arNwdma41nx3WnrT$9a13754a2b27a02d0c61b1a38077bd933406c3693cd3ab19ef57ef04e82b6f28 | george_thomas@gmail.com     | https://picsum.photos/300/200?id=157 | https://picsum.photos/30/30?id=461 | 2022-09-04 17:46:03.980022 | f           | f
+ 24 | Lori       | Horton        | lori_horton       | their_realize            | pbkdf2:sha256:260000$J7uxTO6hTl4MDKk1$2c50befdbef69d71ebb0db37aa4d64977475431cf3039f5fed1c2e40cc2f5211 | lori_horton@yahoo.com       | https://picsum.photos/300/200?id=757 | https://picsum.photos/30/30?id=864 | 2022-09-04 17:46:03.980024 | f           | f
+ 25 | Daniel     | Myers         | daniel_myers      | officer_natural          | pbkdf2:sha256:260000$JK0Po4tnSI5cLMA4$bf120278bb2bd5348b6a775e947a4330e417f7f2226b18fc32aa1d0250ceb167 | daniel_myers@gmail.com      | https://picsum.photos/300/200?id=110 | https://picsum.photos/30/30?id=894 | 2022-09-04 17:46:03.980027 | f           | f
+ 26 | Nicholas   | Khan          | nicholas_khan     | everything_change_answer | pbkdf2:sha256:260000$wcQkkkj9adctcdCN$dee3043de0f4e007eaaab4f94a4a0151b1c5cd6b236ef5bd0625666f2e1ff08a | nicholas_khan@gmail.com     | https://picsum.photos/300/200?id=893 | https://picsum.photos/30/30?id=47  | 2022-09-04 17:46:03.980045 | f           | f
+ 27 | Barbara    | Armstrong     | barbara_armstrong | painting_material        | pbkdf2:sha256:260000$2u4px7fehQt4DKyP$4840a43930c3e5fce505dd13bc6c12f2fce467776bc450a08f5842ce38859d3e | barbara_armstrong@gmail.com | https://picsum.photos/300/200?id=82  | https://picsum.photos/30/30?id=595 | 2022-09-04 17:46:03.980052 | f           | f
+ 28 | Heather    | Moore         | heather_moore     | nor_nice                 | pbkdf2:sha256:260000$ifanUDOqYyZSDmSi$a8c2bfc911c836ac8d4c8e16615c113ca3c2f3d70a6e9f1abd5e3414afbb9b31 | heather_moore@yahoo.com     | https://picsum.photos/300/200?id=434 | https://picsum.photos/30/30?id=563 | 2022-09-04 17:46:03.980057 | f           | f
+ 29 | John       | Hughes        | john_hughes       | whether_open_mouth       | pbkdf2:sha256:260000$jrbPqV2Oy4E0Q111$08cddc76dd0aaf2820a6dcb842fdd5f23f5d138c450f281525e5ea86ace003ac | john_hughes@gmail.com       | https://picsum.photos/300/200?id=962 | https://picsum.photos/30/30?id=860 | 2022-09-04 17:46:03.980059 | f           | f
+ 30 | Barbara    | Stone         | barbara_stone     | media_table              | pbkdf2:sha256:260000$NwXMDTOvdecGLpsL$3c02600be389049dd48bd6adbabaecdb25d134fc5fb9a84ff52305d5b7f391ce | barbara_stone@yahoo.com     | https://picsum.photos/300/200?id=81  | https://picsum.photos/30/30?id=199 | 2022-09-04 17:46:03.980061 | f           | f
+ 31 | Shannon    | Dyer          | shannon_dyer      | couple_few               | pbkdf2:sha256:260000$NAobYTH9gXhdcrZS$886c55bff5b2099da9f0d1b85eccb6c33e486c6e8d81385dafc7768b60ef01e9 | shannon_dyer@yahoo.com      | https://picsum.photos/300/200?id=732 | https://picsum.photos/30/30?id=693 | 2022-09-04 17:46:03.980064 | f           | f
 (31 rows)
 
 ```
@@ -551,104 +551,104 @@ Your query should return the following data:
 ```
  id  |          pub_date          | following_id 
 -----+----------------------------+--------------
-   1 | 2022-04-10 08:46:04.107741 |            1
-   2 | 2022-04-07 01:46:04.109636 |            1
-   3 | 2022-04-08 14:46:04.109914 |            1
-   4 | 2022-04-07 13:46:04.110164 |            1
-   5 | 2022-04-08 14:46:04.110432 |            1
-   6 | 2022-04-07 03:46:04.110664 |            1
-   7 | 2022-04-06 12:46:04.110901 |            1
-   8 | 2022-04-07 03:46:04.111115 |            1
-   9 | 2022-04-06 12:46:04.111333 |            1
-  10 | 2022-04-06 11:46:04.111537 |            1
-  18 | 2022-04-07 11:46:04.119333 |            3
-  19 | 2022-04-08 03:46:04.122143 |            3
-  20 | 2022-04-10 11:46:04.122361 |            3
-  21 | 2022-04-09 02:46:04.122557 |            3
-  22 | 2022-04-08 08:46:04.122763 |            3
-  23 | 2022-04-07 16:46:04.12298  |            3
-  24 | 2022-04-06 22:46:04.123155 |            3
-  25 | 2022-04-07 12:46:04.123328 |            3
-  26 | 2022-04-08 17:46:04.123505 |            3
-  27 | 2022-04-08 22:46:04.123696 |            3
-  28 | 2022-04-10 10:46:04.123897 |            3
-  29 | 2022-04-09 12:46:04.124087 |            3
-  63 | 2022-04-07 04:46:04.141871 |            7
-  64 | 2022-04-07 20:46:04.146565 |            7
-  65 | 2022-04-07 13:46:04.146911 |            7
-  66 | 2022-04-06 18:46:04.147154 |            7
-  67 | 2022-04-09 12:46:04.147364 |            7
-  68 | 2022-04-07 10:46:04.147587 |            7
-  69 | 2022-04-08 08:46:04.147805 |            7
-  70 | 2022-04-07 20:46:04.148125 |            7
-  71 | 2022-04-07 12:46:04.149393 |            7
-  72 | 2022-04-09 20:46:04.150657 |            7
-  73 | 2022-04-09 22:46:04.151621 |            7
-  86 | 2022-04-07 15:46:04.157701 |            9
-  87 | 2022-04-06 16:46:04.16126  |            9
-  88 | 2022-04-07 13:46:04.161501 |            9
-  89 | 2022-04-07 04:46:04.161717 |            9
-  90 | 2022-04-08 16:46:04.161915 |            9
-  91 | 2022-04-08 18:46:04.162115 |            9
-  92 | 2022-04-08 23:46:04.162303 |            9
- 111 | 2022-04-10 06:46:04.173387 |           12
- 112 | 2022-04-08 11:46:04.176721 |           12
- 113 | 2022-04-06 17:46:04.176973 |           12
- 114 | 2022-04-09 11:46:04.177188 |           12
- 115 | 2022-04-07 20:46:04.177394 |           12
- 116 | 2022-04-07 22:46:04.17761  |           12
- 117 | 2022-04-10 07:46:04.177816 |           12
- 118 | 2022-04-10 04:46:04.178003 |           12
- 119 | 2022-04-09 02:46:04.178177 |           12
- 129 | 2022-04-08 13:46:04.183366 |           14
- 130 | 2022-04-07 04:46:04.18636  |           14
- 131 | 2022-04-09 04:46:04.186605 |           14
- 132 | 2022-04-07 07:46:04.186818 |           14
- 133 | 2022-04-10 12:46:04.187029 |           14
- 134 | 2022-04-08 09:46:04.187244 |           14
- 135 | 2022-04-08 16:46:04.187434 |           14
- 136 | 2022-04-07 02:46:04.187638 |           14
- 137 | 2022-04-07 14:46:04.187832 |           14
- 138 | 2022-04-07 16:46:04.18803  |           14
- 139 | 2022-04-07 06:46:04.188211 |           14
- 140 | 2022-04-08 09:46:04.188385 |           14
- 141 | 2022-04-09 20:46:04.188572 |           15
- 142 | 2022-04-08 00:46:04.192009 |           15
- 143 | 2022-04-09 19:46:04.192274 |           15
- 144 | 2022-04-06 22:46:04.192526 |           15
- 145 | 2022-04-06 15:46:04.192746 |           15
- 146 | 2022-04-08 15:46:04.192964 |           15
- 147 | 2022-04-06 10:46:04.193175 |           15
- 148 | 2022-04-08 00:46:04.193359 |           15
- 149 | 2022-04-07 22:46:04.193548 |           16
- 150 | 2022-04-07 01:46:04.196439 |           16
- 151 | 2022-04-07 19:46:04.196667 |           16
- 152 | 2022-04-08 01:46:04.196886 |           16
- 153 | 2022-04-08 01:46:04.197089 |           16
- 154 | 2022-04-06 16:46:04.19728  |           16
- 155 | 2022-04-07 23:46:04.197598 |           16
- 156 | 2022-04-10 09:46:04.197831 |           16
- 157 | 2022-04-07 06:46:04.198055 |           16
- 158 | 2022-04-08 03:46:04.198384 |           16
- 217 | 2022-04-08 19:46:04.232795 |           24
- 218 | 2022-04-06 12:46:04.237888 |           24
- 219 | 2022-04-08 04:46:04.238135 |           24
- 220 | 2022-04-08 17:46:04.23835  |           24
- 221 | 2022-04-10 10:46:04.238647 |           24
- 222 | 2022-04-07 09:46:04.238853 |           24
- 223 | 2022-04-10 00:46:04.239056 |           24
- 224 | 2022-04-09 01:46:04.239256 |           24
- 225 | 2022-04-08 14:46:04.239441 |           24
- 226 | 2022-04-09 01:46:04.239652 |           24
- 227 | 2022-04-10 01:46:04.239837 |           24
- 245 | 2022-04-09 02:46:04.249785 |           27
- 246 | 2022-04-07 06:46:04.25299  |           27
- 247 | 2022-04-09 15:46:04.253233 |           27
- 248 | 2022-04-08 07:46:04.253455 |           27
- 249 | 2022-04-08 12:46:04.253678 |           27
- 250 | 2022-04-09 14:46:04.2539   |           27
- 251 | 2022-04-06 18:46:04.254123 |           27
- 252 | 2022-04-09 23:46:04.254296 |           27
+   1 | 2022-09-04 08:46:04.107741 |            1
+   2 | 2022-09-01 01:46:04.109636 |            1
+   3 | 2022-09-02 14:46:04.109914 |            1
+   4 | 2022-09-01 13:46:04.110164 |            1
+   5 | 2022-09-02 14:46:04.110432 |            1
+   6 | 2022-09-01 03:46:04.110664 |            1
+   7 | 2022-08-31 12:46:04.110901 |            1
+   8 | 2022-09-01 03:46:04.111115 |            1
+   9 | 2022-08-31 12:46:04.111333 |            1
+  10 | 2022-08-31 11:46:04.111537 |            1
+  18 | 2022-09-01 11:46:04.119333 |            3
+  19 | 2022-09-02 03:46:04.122143 |            3
+  20 | 2022-09-04 11:46:04.122361 |            3
+  21 | 2022-09-03 02:46:04.122557 |            3
+  22 | 2022-09-02 08:46:04.122763 |            3
+  23 | 2022-09-01 16:46:04.12298  |            3
+  24 | 2022-08-31 22:46:04.123155 |            3
+  25 | 2022-09-01 12:46:04.123328 |            3
+  26 | 2022-09-02 17:46:04.123505 |            3
+  27 | 2022-09-02 22:46:04.123696 |            3
+  28 | 2022-09-04 10:46:04.123897 |            3
+  29 | 2022-09-03 12:46:04.124087 |            3
+  63 | 2022-09-01 04:46:04.141871 |            7
+  64 | 2022-09-01 20:46:04.146565 |            7
+  65 | 2022-09-01 13:46:04.146911 |            7
+  66 | 2022-08-31 18:46:04.147154 |            7
+  67 | 2022-09-03 12:46:04.147364 |            7
+  68 | 2022-09-01 10:46:04.147587 |            7
+  69 | 2022-09-02 08:46:04.147805 |            7
+  70 | 2022-09-01 20:46:04.148125 |            7
+  71 | 2022-09-01 12:46:04.149393 |            7
+  72 | 2022-09-03 20:46:04.150657 |            7
+  73 | 2022-09-03 22:46:04.151621 |            7
+  86 | 2022-09-01 15:46:04.157701 |            9
+  87 | 2022-08-31 16:46:04.16126  |            9
+  88 | 2022-09-01 13:46:04.161501 |            9
+  89 | 2022-09-01 04:46:04.161717 |            9
+  90 | 2022-09-02 16:46:04.161915 |            9
+  91 | 2022-09-02 18:46:04.162115 |            9
+  92 | 2022-09-02 23:46:04.162303 |            9
+ 111 | 2022-09-04 06:46:04.173387 |           12
+ 112 | 2022-09-02 11:46:04.176721 |           12
+ 113 | 2022-08-31 17:46:04.176973 |           12
+ 114 | 2022-09-03 11:46:04.177188 |           12
+ 115 | 2022-09-01 20:46:04.177394 |           12
+ 116 | 2022-09-01 22:46:04.17761  |           12
+ 117 | 2022-09-04 07:46:04.177816 |           12
+ 118 | 2022-09-04 04:46:04.178003 |           12
+ 119 | 2022-09-03 02:46:04.178177 |           12
+ 129 | 2022-09-02 13:46:04.183366 |           14
+ 130 | 2022-09-01 04:46:04.18636  |           14
+ 131 | 2022-09-03 04:46:04.186605 |           14
+ 132 | 2022-09-01 07:46:04.186818 |           14
+ 133 | 2022-09-04 12:46:04.187029 |           14
+ 134 | 2022-09-02 09:46:04.187244 |           14
+ 135 | 2022-09-02 16:46:04.187434 |           14
+ 136 | 2022-09-01 02:46:04.187638 |           14
+ 137 | 2022-09-01 14:46:04.187832 |           14
+ 138 | 2022-09-01 16:46:04.18803  |           14
+ 139 | 2022-09-01 06:46:04.188211 |           14
+ 140 | 2022-09-02 09:46:04.188385 |           14
+ 141 | 2022-09-03 20:46:04.188572 |           15
+ 142 | 2022-09-02 00:46:04.192009 |           15
+ 143 | 2022-09-03 19:46:04.192274 |           15
+ 144 | 2022-08-31 22:46:04.192526 |           15
+ 145 | 2022-08-31 15:46:04.192746 |           15
+ 146 | 2022-09-02 15:46:04.192964 |           15
+ 147 | 2022-08-31 10:46:04.193175 |           15
+ 148 | 2022-09-02 00:46:04.193359 |           15
+ 149 | 2022-09-01 22:46:04.193548 |           16
+ 150 | 2022-09-01 01:46:04.196439 |           16
+ 151 | 2022-09-01 19:46:04.196667 |           16
+ 152 | 2022-09-02 01:46:04.196886 |           16
+ 153 | 2022-09-02 01:46:04.197089 |           16
+ 154 | 2022-08-31 16:46:04.19728  |           16
+ 155 | 2022-09-01 23:46:04.197598 |           16
+ 156 | 2022-09-04 09:46:04.197831 |           16
+ 157 | 2022-09-01 06:46:04.198055 |           16
+ 158 | 2022-09-02 03:46:04.198384 |           16
+ 217 | 2022-09-02 19:46:04.232795 |           24
+ 218 | 2022-08-31 12:46:04.237888 |           24
+ 219 | 2022-09-02 04:46:04.238135 |           24
+ 220 | 2022-09-02 17:46:04.23835  |           24
+ 221 | 2022-09-04 10:46:04.238647 |           24
+ 222 | 2022-09-01 09:46:04.238853 |           24
+ 223 | 2022-09-04 00:46:04.239056 |           24
+ 224 | 2022-09-03 01:46:04.239256 |           24
+ 225 | 2022-09-02 14:46:04.239441 |           24
+ 226 | 2022-09-03 01:46:04.239652 |           24
+ 227 | 2022-09-04 01:46:04.239837 |           24
+ 245 | 2022-09-03 02:46:04.249785 |           27
+ 246 | 2022-09-01 06:46:04.25299  |           27
+ 247 | 2022-09-03 15:46:04.253233 |           27
+ 248 | 2022-09-02 07:46:04.253455 |           27
+ 249 | 2022-09-02 12:46:04.253678 |           27
+ 250 | 2022-09-03 14:46:04.2539   |           27
+ 251 | 2022-08-31 18:46:04.254123 |           27
+ 252 | 2022-09-03 23:46:04.254296 |           27
 (98 rows)
 ```
 
@@ -660,104 +660,104 @@ Write a query that displays the same information as in the previous exercise, bu
 ```
  id  |          pub_date          | following_id |     username      
 -----+----------------------------+--------------+-------------------
- 133 | 2022-04-10 12:46:04.187029 |           14 | adam_wilcox
-  20 | 2022-04-10 11:46:04.122361 |            3 | jamie_evans
- 221 | 2022-04-10 10:46:04.238647 |           24 | lori_horton
-  28 | 2022-04-10 10:46:04.123897 |            3 | jamie_evans
- 156 | 2022-04-10 09:46:04.197831 |           16 | david_robinson
-   1 | 2022-04-10 08:46:04.107741 |            1 | webdev
- 117 | 2022-04-10 07:46:04.177816 |           12 | rebecca_brown
- 111 | 2022-04-10 06:46:04.173387 |           12 | rebecca_brown
- 118 | 2022-04-10 04:46:04.178003 |           12 | rebecca_brown
- 227 | 2022-04-10 01:46:04.239837 |           24 | lori_horton
- 223 | 2022-04-10 00:46:04.239056 |           24 | lori_horton
- 252 | 2022-04-09 23:46:04.254296 |           27 | barbara_armstrong
-  73 | 2022-04-09 22:46:04.151621 |            7 | timothy_maldonado
- 141 | 2022-04-09 20:46:04.188572 |           15 | john_morales
-  72 | 2022-04-09 20:46:04.150657 |            7 | timothy_maldonado
- 143 | 2022-04-09 19:46:04.192274 |           15 | john_morales
- 247 | 2022-04-09 15:46:04.253233 |           27 | barbara_armstrong
- 250 | 2022-04-09 14:46:04.2539   |           27 | barbara_armstrong
-  67 | 2022-04-09 12:46:04.147364 |            7 | timothy_maldonado
-  29 | 2022-04-09 12:46:04.124087 |            3 | jamie_evans
- 114 | 2022-04-09 11:46:04.177188 |           12 | rebecca_brown
- 131 | 2022-04-09 04:46:04.186605 |           14 | adam_wilcox
- 245 | 2022-04-09 02:46:04.249785 |           27 | barbara_armstrong
- 119 | 2022-04-09 02:46:04.178177 |           12 | rebecca_brown
-  21 | 2022-04-09 02:46:04.122557 |            3 | jamie_evans
- 226 | 2022-04-09 01:46:04.239652 |           24 | lori_horton
- 224 | 2022-04-09 01:46:04.239256 |           24 | lori_horton
-  92 | 2022-04-08 23:46:04.162303 |            9 | sharon_ritter
-  27 | 2022-04-08 22:46:04.123696 |            3 | jamie_evans
- 217 | 2022-04-08 19:46:04.232795 |           24 | lori_horton
-  91 | 2022-04-08 18:46:04.162115 |            9 | sharon_ritter
- 220 | 2022-04-08 17:46:04.23835  |           24 | lori_horton
-  26 | 2022-04-08 17:46:04.123505 |            3 | jamie_evans
- 135 | 2022-04-08 16:46:04.187434 |           14 | adam_wilcox
-  90 | 2022-04-08 16:46:04.161915 |            9 | sharon_ritter
- 146 | 2022-04-08 15:46:04.192964 |           15 | john_morales
- 225 | 2022-04-08 14:46:04.239441 |           24 | lori_horton
-   5 | 2022-04-08 14:46:04.110432 |            1 | webdev
-   3 | 2022-04-08 14:46:04.109914 |            1 | webdev
- 129 | 2022-04-08 13:46:04.183366 |           14 | adam_wilcox
- 249 | 2022-04-08 12:46:04.253678 |           27 | barbara_armstrong
- 112 | 2022-04-08 11:46:04.176721 |           12 | rebecca_brown
- 140 | 2022-04-08 09:46:04.188385 |           14 | adam_wilcox
- 134 | 2022-04-08 09:46:04.187244 |           14 | adam_wilcox
-  69 | 2022-04-08 08:46:04.147805 |            7 | timothy_maldonado
-  22 | 2022-04-08 08:46:04.122763 |            3 | jamie_evans
- 248 | 2022-04-08 07:46:04.253455 |           27 | barbara_armstrong
- 219 | 2022-04-08 04:46:04.238135 |           24 | lori_horton
- 158 | 2022-04-08 03:46:04.198384 |           16 | david_robinson
-  19 | 2022-04-08 03:46:04.122143 |            3 | jamie_evans
- 153 | 2022-04-08 01:46:04.197089 |           16 | david_robinson
- 152 | 2022-04-08 01:46:04.196886 |           16 | david_robinson
- 148 | 2022-04-08 00:46:04.193359 |           15 | john_morales
- 142 | 2022-04-08 00:46:04.192009 |           15 | john_morales
- 155 | 2022-04-07 23:46:04.197598 |           16 | david_robinson
- 149 | 2022-04-07 22:46:04.193548 |           16 | david_robinson
- 116 | 2022-04-07 22:46:04.17761  |           12 | rebecca_brown
- 115 | 2022-04-07 20:46:04.177394 |           12 | rebecca_brown
-  70 | 2022-04-07 20:46:04.148125 |            7 | timothy_maldonado
-  64 | 2022-04-07 20:46:04.146565 |            7 | timothy_maldonado
- 151 | 2022-04-07 19:46:04.196667 |           16 | david_robinson
- 138 | 2022-04-07 16:46:04.18803  |           14 | adam_wilcox
-  23 | 2022-04-07 16:46:04.12298  |            3 | jamie_evans
-  86 | 2022-04-07 15:46:04.157701 |            9 | sharon_ritter
- 137 | 2022-04-07 14:46:04.187832 |           14 | adam_wilcox
-  88 | 2022-04-07 13:46:04.161501 |            9 | sharon_ritter
-  65 | 2022-04-07 13:46:04.146911 |            7 | timothy_maldonado
-   4 | 2022-04-07 13:46:04.110164 |            1 | webdev
-  71 | 2022-04-07 12:46:04.149393 |            7 | timothy_maldonado
-  25 | 2022-04-07 12:46:04.123328 |            3 | jamie_evans
-  18 | 2022-04-07 11:46:04.119333 |            3 | jamie_evans
-  68 | 2022-04-07 10:46:04.147587 |            7 | timothy_maldonado
- 222 | 2022-04-07 09:46:04.238853 |           24 | lori_horton
- 132 | 2022-04-07 07:46:04.186818 |           14 | adam_wilcox
- 246 | 2022-04-07 06:46:04.25299  |           27 | barbara_armstrong
- 157 | 2022-04-07 06:46:04.198055 |           16 | david_robinson
- 139 | 2022-04-07 06:46:04.188211 |           14 | adam_wilcox
- 130 | 2022-04-07 04:46:04.18636  |           14 | adam_wilcox
-  89 | 2022-04-07 04:46:04.161717 |            9 | sharon_ritter
-  63 | 2022-04-07 04:46:04.141871 |            7 | timothy_maldonado
-   8 | 2022-04-07 03:46:04.111115 |            1 | webdev
-   6 | 2022-04-07 03:46:04.110664 |            1 | webdev
- 136 | 2022-04-07 02:46:04.187638 |           14 | adam_wilcox
- 150 | 2022-04-07 01:46:04.196439 |           16 | david_robinson
-   2 | 2022-04-07 01:46:04.109636 |            1 | webdev
- 144 | 2022-04-06 22:46:04.192526 |           15 | john_morales
-  24 | 2022-04-06 22:46:04.123155 |            3 | jamie_evans
- 251 | 2022-04-06 18:46:04.254123 |           27 | barbara_armstrong
-  66 | 2022-04-06 18:46:04.147154 |            7 | timothy_maldonado
- 113 | 2022-04-06 17:46:04.176973 |           12 | rebecca_brown
- 154 | 2022-04-06 16:46:04.19728  |           16 | david_robinson
-  87 | 2022-04-06 16:46:04.16126  |            9 | sharon_ritter
- 145 | 2022-04-06 15:46:04.192746 |           15 | john_morales
- 218 | 2022-04-06 12:46:04.237888 |           24 | lori_horton
-   9 | 2022-04-06 12:46:04.111333 |            1 | webdev
-   7 | 2022-04-06 12:46:04.110901 |            1 | webdev
-  10 | 2022-04-06 11:46:04.111537 |            1 | webdev
- 147 | 2022-04-06 10:46:04.193175 |           15 | john_morales
+ 133 | 2022-09-04 12:46:04.187029 |           14 | adam_wilcox
+  20 | 2022-09-04 11:46:04.122361 |            3 | jamie_evans
+ 221 | 2022-09-04 10:46:04.238647 |           24 | lori_horton
+  28 | 2022-09-04 10:46:04.123897 |            3 | jamie_evans
+ 156 | 2022-09-04 09:46:04.197831 |           16 | david_robinson
+   1 | 2022-09-04 08:46:04.107741 |            1 | webdev
+ 117 | 2022-09-04 07:46:04.177816 |           12 | rebecca_brown
+ 111 | 2022-09-04 06:46:04.173387 |           12 | rebecca_brown
+ 118 | 2022-09-04 04:46:04.178003 |           12 | rebecca_brown
+ 227 | 2022-09-04 01:46:04.239837 |           24 | lori_horton
+ 223 | 2022-09-04 00:46:04.239056 |           24 | lori_horton
+ 252 | 2022-09-03 23:46:04.254296 |           27 | barbara_armstrong
+  73 | 2022-09-03 22:46:04.151621 |            7 | timothy_maldonado
+ 141 | 2022-09-03 20:46:04.188572 |           15 | john_morales
+  72 | 2022-09-03 20:46:04.150657 |            7 | timothy_maldonado
+ 143 | 2022-09-03 19:46:04.192274 |           15 | john_morales
+ 247 | 2022-09-03 15:46:04.253233 |           27 | barbara_armstrong
+ 250 | 2022-09-03 14:46:04.2539   |           27 | barbara_armstrong
+  67 | 2022-09-03 12:46:04.147364 |            7 | timothy_maldonado
+  29 | 2022-09-03 12:46:04.124087 |            3 | jamie_evans
+ 114 | 2022-09-03 11:46:04.177188 |           12 | rebecca_brown
+ 131 | 2022-09-03 04:46:04.186605 |           14 | adam_wilcox
+ 245 | 2022-09-03 02:46:04.249785 |           27 | barbara_armstrong
+ 119 | 2022-09-03 02:46:04.178177 |           12 | rebecca_brown
+  21 | 2022-09-03 02:46:04.122557 |            3 | jamie_evans
+ 226 | 2022-09-03 01:46:04.239652 |           24 | lori_horton
+ 224 | 2022-09-03 01:46:04.239256 |           24 | lori_horton
+  92 | 2022-09-02 23:46:04.162303 |            9 | sharon_ritter
+  27 | 2022-09-02 22:46:04.123696 |            3 | jamie_evans
+ 217 | 2022-09-02 19:46:04.232795 |           24 | lori_horton
+  91 | 2022-09-02 18:46:04.162115 |            9 | sharon_ritter
+ 220 | 2022-09-02 17:46:04.23835  |           24 | lori_horton
+  26 | 2022-09-02 17:46:04.123505 |            3 | jamie_evans
+ 135 | 2022-09-02 16:46:04.187434 |           14 | adam_wilcox
+  90 | 2022-09-02 16:46:04.161915 |            9 | sharon_ritter
+ 146 | 2022-09-02 15:46:04.192964 |           15 | john_morales
+ 225 | 2022-09-02 14:46:04.239441 |           24 | lori_horton
+   5 | 2022-09-02 14:46:04.110432 |            1 | webdev
+   3 | 2022-09-02 14:46:04.109914 |            1 | webdev
+ 129 | 2022-09-02 13:46:04.183366 |           14 | adam_wilcox
+ 249 | 2022-09-02 12:46:04.253678 |           27 | barbara_armstrong
+ 112 | 2022-09-02 11:46:04.176721 |           12 | rebecca_brown
+ 140 | 2022-09-02 09:46:04.188385 |           14 | adam_wilcox
+ 134 | 2022-09-02 09:46:04.187244 |           14 | adam_wilcox
+  69 | 2022-09-02 08:46:04.147805 |            7 | timothy_maldonado
+  22 | 2022-09-02 08:46:04.122763 |            3 | jamie_evans
+ 248 | 2022-09-02 07:46:04.253455 |           27 | barbara_armstrong
+ 219 | 2022-09-02 04:46:04.238135 |           24 | lori_horton
+ 158 | 2022-09-02 03:46:04.198384 |           16 | david_robinson
+  19 | 2022-09-02 03:46:04.122143 |            3 | jamie_evans
+ 153 | 2022-09-02 01:46:04.197089 |           16 | david_robinson
+ 152 | 2022-09-02 01:46:04.196886 |           16 | david_robinson
+ 148 | 2022-09-02 00:46:04.193359 |           15 | john_morales
+ 142 | 2022-09-02 00:46:04.192009 |           15 | john_morales
+ 155 | 2022-09-01 23:46:04.197598 |           16 | david_robinson
+ 149 | 2022-09-01 22:46:04.193548 |           16 | david_robinson
+ 116 | 2022-09-01 22:46:04.17761  |           12 | rebecca_brown
+ 115 | 2022-09-01 20:46:04.177394 |           12 | rebecca_brown
+  70 | 2022-09-01 20:46:04.148125 |            7 | timothy_maldonado
+  64 | 2022-09-01 20:46:04.146565 |            7 | timothy_maldonado
+ 151 | 2022-09-01 19:46:04.196667 |           16 | david_robinson
+ 138 | 2022-09-01 16:46:04.18803  |           14 | adam_wilcox
+  23 | 2022-09-01 16:46:04.12298  |            3 | jamie_evans
+  86 | 2022-09-01 15:46:04.157701 |            9 | sharon_ritter
+ 137 | 2022-09-01 14:46:04.187832 |           14 | adam_wilcox
+  88 | 2022-09-01 13:46:04.161501 |            9 | sharon_ritter
+  65 | 2022-09-01 13:46:04.146911 |            7 | timothy_maldonado
+   4 | 2022-09-01 13:46:04.110164 |            1 | webdev
+  71 | 2022-09-01 12:46:04.149393 |            7 | timothy_maldonado
+  25 | 2022-09-01 12:46:04.123328 |            3 | jamie_evans
+  18 | 2022-09-01 11:46:04.119333 |            3 | jamie_evans
+  68 | 2022-09-01 10:46:04.147587 |            7 | timothy_maldonado
+ 222 | 2022-09-01 09:46:04.238853 |           24 | lori_horton
+ 132 | 2022-09-01 07:46:04.186818 |           14 | adam_wilcox
+ 246 | 2022-09-01 06:46:04.25299  |           27 | barbara_armstrong
+ 157 | 2022-09-01 06:46:04.198055 |           16 | david_robinson
+ 139 | 2022-09-01 06:46:04.188211 |           14 | adam_wilcox
+ 130 | 2022-09-01 04:46:04.18636  |           14 | adam_wilcox
+  89 | 2022-09-01 04:46:04.161717 |            9 | sharon_ritter
+  63 | 2022-09-01 04:46:04.141871 |            7 | timothy_maldonado
+   8 | 2022-09-01 03:46:04.111115 |            1 | webdev
+   6 | 2022-09-01 03:46:04.110664 |            1 | webdev
+ 136 | 2022-09-01 02:46:04.187638 |           14 | adam_wilcox
+ 150 | 2022-09-01 01:46:04.196439 |           16 | david_robinson
+   2 | 2022-09-01 01:46:04.109636 |            1 | webdev
+ 144 | 2022-08-31 22:46:04.192526 |           15 | john_morales
+  24 | 2022-08-31 22:46:04.123155 |            3 | jamie_evans
+ 251 | 2022-08-31 18:46:04.254123 |           27 | barbara_armstrong
+  66 | 2022-08-31 18:46:04.147154 |            7 | timothy_maldonado
+ 113 | 2022-08-31 17:46:04.176973 |           12 | rebecca_brown
+ 154 | 2022-08-31 16:46:04.19728  |           16 | david_robinson
+  87 | 2022-08-31 16:46:04.16126  |            9 | sharon_ritter
+ 145 | 2022-08-31 15:46:04.192746 |           15 | john_morales
+ 218 | 2022-08-31 12:46:04.237888 |           24 | lori_horton
+   9 | 2022-08-31 12:46:04.111333 |            1 | webdev
+   7 | 2022-08-31 12:46:04.110901 |            1 | webdev
+  10 | 2022-08-31 11:46:04.111537 |            1 | webdev
+ 147 | 2022-08-31 10:46:04.193175 |           15 | john_morales
 (98 rows)
 ```
 

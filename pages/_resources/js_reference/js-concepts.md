@@ -110,7 +110,7 @@ console.log('last child\'s parent:', parent);
 ```
 
 #### More practice
-Use Sarah's interactive <a href="/fall2024/course-files/activities/dom-tester" target="_blank">DOM manipulation worksheet</a> to get more practice!
+Use Sarah's interactive <a href="/spring2025/course-files/activities/dom-tester" target="_blank">DOM manipulation worksheet</a> to get more practice!
 
 ### 4. Style properties
 

@@ -66,37 +66,37 @@ Register for Heroku (if you don't yet have an account): <a href="https://signup.
 
 Create a new app on Heroku by logging into the Heroku website and using the Web UI. Name it anything you want!
 
-<img class="frame xsmall" src="/fall2024/assets/images/activities/github-deployment/heroku1.png" />
+<img class="frame xsmall" src="/spring2025/assets/images/activities/github-deployment/heroku1.png" />
 
-<img class="large frame" src="/fall2024/assets/images/activities/github-deployment/heroku2.png" />
+<img class="large frame" src="/spring2025/assets/images/activities/github-deployment/heroku2.png" />
 
 {:#db}
 ### 2. Create a Hosted Database 
 After creating your app, you will create a database using <a href="https://elements.heroku.com/addons/heroku-postgresql" target="_blank">Heroku Postgres</a>. Click the "Install Heroku Postgres" button (purple).
 * You will have to <a href="https://www.heroku.com/students" target="_blank">register with Heroku as a student</a> to get this database for free. 
 
-<img class="small frame" src="/fall2024/assets/images/activities/github-deployment/heroku6a.png" />
+<img class="small frame" src="/spring2025/assets/images/activities/github-deployment/heroku6a.png" />
 
 Next, search for the app you just made and then click "Submit Order Form"
 
-<img class="large frame" src="/fall2024/assets/images/activities/github-deployment/heroku6b.png" />
+<img class="large frame" src="/spring2025/assets/images/activities/github-deployment/heroku6b.png" />
 
-<img class="large frame" src="/fall2024/assets/images/activities/github-deployment/heroku7.png" />
+<img class="large frame" src="/spring2025/assets/images/activities/github-deployment/heroku7.png" />
 
 When you're done, you should see a confirmation screen:
 
-<img class="large frame" src="/fall2024/assets/images/activities/github-deployment/heroku8.png" />
+<img class="large frame" src="/spring2025/assets/images/activities/github-deployment/heroku8.png" />
 
 {:#configure}
 ### 3. Add Environment Variables
 
 Now navigate to the "Settings" tab:
 
-<img class="large frame" src="/fall2024/assets/images/activities/github-deployment/heroku9.png" />
+<img class="large frame" src="/spring2025/assets/images/activities/github-deployment/heroku9.png" />
 
 Scroll down and click the "Reveal Config Vars"
 
-<img class="medium frame" src="/fall2024/assets/images/activities/github-deployment/heroku10.png" />
+<img class="medium frame" src="/spring2025/assets/images/activities/github-deployment/heroku10.png" />
 
 You should notice that Heroku Postgres has created a database connection string for you in the format: 
 
@@ -104,12 +104,12 @@ You should notice that Heroku Postgres has created a database connection string 
 postgres://<username>:<password>@<host>:5432/<database_name>
 ```
 
-<img class="large frame" src="/fall2024/assets/images/activities/github-deployment/heroku11.png" />
+<img class="large frame" src="/spring2025/assets/images/activities/github-deployment/heroku11.png" />
 
 * You are going to create a new environment variable called `DB_URL` that is identical to the `DATABASE_URL` string, but prefixed by `postgresql://` instead of `postgres://` (which is necessary to work with SQL Alchemy).
 * You are also going to create a second environment variable that holds your `JWT_SECRET` (see below)
 
-<img class="large frame" src="/fall2024/assets/images/activities/github-deployment/heroku12.png" />
+<img class="large frame" src="/spring2025/assets/images/activities/github-deployment/heroku12.png" />
 
 Copy the new DB_URL environment variable into your `.env` file and comment out the DB_URL environment variable pointing to your local database instance as shown below:
 

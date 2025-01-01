@@ -48,7 +48,7 @@ Once you complete the <a href="https://docs.google.com/document/d/1Qy0P49yKP4Jpi
 ## Introduction
 For the coding portion of this quiz, you will be replicating part of the Taco Temple interface as pictured below:
 
-<img class="large frame" src="/fall2024/assets/images/quizzes/quiz01/tt-screenshot.png" alt="Taco Temple Screenshot" />
+<img class="large frame" src="/spring2025/assets/images/quizzes/quiz01/tt-screenshot.png" alt="Taco Temple Screenshot" />
 
 
 > ### Guidelines
@@ -64,7 +64,7 @@ For the coding portion of this quiz, you will be replicating part of the Taco Te
 
 ## Set-Up
 
-<a href="/fall2024/course-files/quizzes/quiz01.zip" class="nu-button">Quiz 1 Starter Files <i class="fas fa-download"></i></a>
+<a href="/spring2025/course-files/quizzes/quiz01.zip" class="nu-button">Quiz 1 Starter Files <i class="fas fa-download"></i></a>
 
 * Download the starter files and unzip them. They should be unzipped in a folder called `quiz01`.
 * Create a `quizzes` folder inside of your `csci344` folder. Move your `quiz01` folder into your `csci344/quizzes` folder.
@@ -108,7 +108,7 @@ Make the header section look like the picture below, following the guidelines pr
 * [5pts] Don't forget the spacing surrounding the image and navigation (i.e., the content shouldn't be too close to the sides)
 {:.compact}
 
-<img class="large" src="/fall2024/assets/images/quizzes/quiz01/header.png" />
+<img class="large" src="/spring2025/assets/images/quizzes/quiz01/header.png" />
 
 
 {:#part3}
@@ -134,7 +134,7 @@ Within the `main` section of your HTML page, create layout shown below by follow
     * Make sure you apply some padding within each card
 {:.compact}
 
-<a style="text-decoration: none; border: none;" href="/fall2024/assets/images/quizzes/quiz01/main.png" target="_blank"><img class="frame large" src="/fall2024/assets/images/quizzes/quiz01/main.png" /></a>
+<a style="text-decoration: none; border: none;" href="/spring2025/assets/images/quizzes/quiz01/main.png" target="_blank"><img class="frame large" src="/spring2025/assets/images/quizzes/quiz01/main.png" /></a>
 
 
 {:#part5}
@@ -143,7 +143,7 @@ Use the WAVE browser extension to fix any accessibility errors. When you're done
 * You **do NOT** have to submit a screenshot of your accessibility report.
 * You **do** have to correct all the errors.
 
-<img class="medium" src="/fall2024/assets/images/quizzes/quiz01/wave.png" />
+<img class="medium" src="/spring2025/assets/images/quizzes/quiz01/wave.png" />
 
 
 {:#part6}
@@ -169,11 +169,11 @@ Verify that you've completed **all 7 tasks** and that you're final Taco Temple m
 <div class="verify">
     <section>
         <h4>Desktop Layout</h4>
-        <img src="/fall2024/assets/images/quizzes/quiz01/desktop-ui.gif" alt="Animation of Desktop layout" />
+        <img src="/spring2025/assets/images/quizzes/quiz01/desktop-ui.gif" alt="Animation of Desktop layout" />
     </section>
     <section class="tablet">
         <h4>Tablet / Mobile</h4>
-        <img src="/fall2024/assets/images/quizzes/quiz01/mobile-ui.gif" alt="Animation of Tablet / Mobile layout" />
+        <img src="/spring2025/assets/images/quizzes/quiz01/mobile-ui.gif" alt="Animation of Tablet / Mobile layout" />
     </section>
 </div>
 

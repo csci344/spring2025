@@ -5,7 +5,7 @@ type: module
 prefix: topic
 num: 8
 draft: 0
-due_date: 2024-10-30
+due_date: 2025-03-26
 ---
 
 ## Readings
@@ -28,4 +28,4 @@ due_date: 2024-10-30
 
 
 ## Activities
-* Lecture 11 files: [Fetch Examples](/fall2024/course-files/lectures/lecture11.zip) (Wednesday, 10/30)
+* Lecture 11 files: [Fetch Examples](/spring2025/course-files/lectures/lecture11.zip) (Wednesday, 10/30)

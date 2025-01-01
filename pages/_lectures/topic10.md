@@ -4,7 +4,7 @@ title: "Server-Side Web Architectures + REST"
 type: module
 num: 10
 draft: 0
-due_date: 2024-11-13
+due_date: 2025-04-09
 ---
 
 ## Readings

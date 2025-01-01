@@ -25,7 +25,7 @@ As stated on the <a href="https://www.sqlalchemy.org/" target="_blank">SQL Alche
 
     Once you get a "Database Created" message, exit `psql` by typing `\q`
 
-1. Download today's lecture files, unzip them, and save the `orm_introduction` folder in your `csci344/lectures` directory. <br><br><a class="nu-button" href="/fall2024/course-files/activities/orm-introduction.zip">ORM Sample Files  <i class="fas fa-download"></i></a>
+1. Download today's lecture files, unzip them, and save the `orm_introduction` folder in your `csci344/lectures` directory. <br><br><a class="nu-button" href="/spring2025/course-files/activities/orm-introduction.zip">ORM Sample Files  <i class="fas fa-download"></i></a>
 
 1. Open VS Code
 
@@ -140,7 +140,7 @@ class Post(db.Model):
 ```
 
 ### Post Table
-<img src="/fall2024/assets/images/activities/sql-alchemy/posts.png" class="large frame" />
+<img src="/spring2025/assets/images/activities/sql-alchemy/posts.png" class="large frame" />
 
 With this `Post` model definition, I am able to create, read, update, and delete records from the `posts` table. Some examples of how you would perform each of these operations are listed below:
 

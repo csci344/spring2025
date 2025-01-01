@@ -28,7 +28,7 @@ Homework 5 is designed to be a culmination of the JavaScript techniques we've be
 ### 2. Starter Files & Samples
 Please begin by downloading the assignment files:
 
-<a class="nu-button" href="/fall2024/course-files/homework/hw05.zip">
+<a class="nu-button" href="/spring2025/course-files/homework/hw05.zip">
     download starter files 
     <i class="fas fa-download"></i>
 </a>

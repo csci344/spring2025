@@ -6,8 +6,8 @@ abbreviation: Tutorial 4
 draft: 0
 points: 6
 num: 4
-start_date: 2024-09-13
-due_date: 2024-09-16
+start_date: 2025-02-07
+due_date: 2025-02-10
 ---
 
 <style>
@@ -35,7 +35,7 @@ due_date: 2024-09-16
 ## Set Up & Configuration
 Most practicing front-end developers use frameworks to help them organize and maintain their HTML, CSS, and JavaScript files. In this class, we will be using Node.js to help us manage various client-side frameworks. You already installed Node.js during the first week of CSCI344. When you did this, you installed a JavaScript engine (specifically, the V8 JavaScript Engine that powers Chrome), a built-in package manager, `npm` -- to manage and install dependencies, and a way to "transpile" higher-level languages (e.g., TypeScript, SCSS, CoffeeScript, React, etc.) into "vanilla" HTML, CSS, and JavaScript. Today, we're going to try using Node.js to help us work with a third-party CSS library and design system called **Tailwind**. Please follow the set up and configuration instructions below so that you can complete the tutorial.
 
-<a href="/fall2024/course-files/tutorials/tutorial04.zip" class="nu-button">Download Tutorial Files <i class="fas fa-download"></i></a>
+<a href="/spring2025/course-files/tutorials/tutorial04.zip" class="nu-button">Download Tutorial Files <i class="fas fa-download"></i></a>
 
 Download the `tutorial04.zip` file, unzip it and move the unzipped tutorial04 folder into the `csci344/tutorials` folder (see diagram below).
 
@@ -209,7 +209,7 @@ Your entire `index.html` file should look something like this (ensure that your 
 ### 8. Install Tailwind CSS IntelliSense
 Finally, to make it more convenient for you to use the Tailwind library, please install the **"Tailwind CSS IntelliSense"** extension in VS Code. You will click the "Extensions" icon (left toolbar, looks like 4 squares), search for **"Tailwind CSS IntelliSense"**, and install it:
 
-<img class="large frame" src="/fall2024/assets/images/tutorials/tutorial04/extension.png" />
+<img class="large frame" src="/spring2025/assets/images/tutorials/tutorial04/extension.png" />
 
 ### 9. Review
 To recap what you've done, you:
@@ -230,7 +230,7 @@ Great work! You are on your way to becoming a skillful web developer, and you ar
 ## Your Tasks
 To get a sense of what the Tailwind CSS library offers, you are going to create the following "card" using the Tailwind CSS classes. When your done, your `index.html` file should produce this web page:
 
-<img class="medium frame" src="/fall2024/assets/images/tutorials/tutorial04/tailwind-screenshot.png" />
+<img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial04/tailwind-screenshot.png" />
 
 ### 1. Add the starter HTML code
 Let's start our Tailwind experiment by pasting the code block below ***within the body tag*** of our `index.html` file. These are the HTML instructions for producing an "unstyled" card: 
@@ -260,7 +260,7 @@ Let's start our Tailwind experiment by pasting the code block below ***within th
 
 After adding the above code within the body tag, go ahead and preview your `index.html` file in the browser using live server. It should look something like this:
 
-<img class="small" src="/fall2024/assets/images/tutorials/tutorial04/tailwind-screenshot-unformatted.png" />
+<img class="small" src="/spring2025/assets/images/tutorials/tutorial04/tailwind-screenshot-unformatted.png" />
 
 ### 2. Make some Tailwind customizations
 Although Tailwind comes with a baseline set of styles, you can override them as you like in order to customize the look and feel of your website. Let's make a few customizations:
@@ -349,7 +349,7 @@ Now you will add styling to the `div` that holds all of the card information by 
 
 When you're done with steps 1-4, your page should look like this...
 
-<img class="medium frame" src="/fall2024/assets/images/tutorials/tutorial04/wip-1.png" />
+<img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial04/wip-1.png" />
 
 ...and your code should look something like this...
 
@@ -374,11 +374,11 @@ Add the following Tailwind classes to the image...
 ### 6. Style the rest of the content
 Now that you get the basic idea, style the rest of the card using the following styles (see screen shot below):
 
-<img class="large frame" src="/fall2024/assets/images/tutorials/tutorial04/the-rest.png" alt="Card code sample" />
+<img class="large frame" src="/spring2025/assets/images/tutorials/tutorial04/the-rest.png" alt="Card code sample" />
 
 If you've done everything correctly, your page should now look completed:
 
-<img class="medium frame" src="/fall2024/assets/images/tutorials/tutorial04/tailwind-screenshot.png" />
+<img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial04/tailwind-screenshot.png" />
 
 
 ### 7. Simplify the buttons

@@ -52,7 +52,7 @@ due_date: 2024-10-21
 
 ## 2. Set Up Instructions
 
-<a class="nu-button" href="/fall2024/course-files/tutorials/tutorial08.zip">tutorial08.zip<i class="fas fa-download" aria-hidden="true"></i></a>
+<a class="nu-button" href="/spring2025/course-files/tutorials/tutorial08.zip">tutorial08.zip<i class="fas fa-download" aria-hidden="true"></i></a>
 
 * If you haven't downloaded and installed Node.js, do that first (see lecture materials).
 * Download the starter files and save them in your `csci344/tutorials` folder.
@@ -190,7 +190,7 @@ Note that each of these 5 top-level components may also have sub-components. For
 * `Posts` will probably be comprised of one or more `Post` components
 * Each `Post` component will be comprised of, say, an `AddComment` component, a `LikeButton`, a `BookmarkButton`, and potentially others. Here's one way of visualizing this heirarchy:
 
-<img style="width:100%;margin:20px 0px;" src="/fall2024/assets/images/tutorials/tutorial08/react-diagram.svg" />
+<img style="width:100%;margin:20px 0px;" src="/spring2025/assets/images/tutorials/tutorial08/react-diagram.svg" />
 
 Some questions you should be asking yourself:
 * What does the JSX look like for each component?

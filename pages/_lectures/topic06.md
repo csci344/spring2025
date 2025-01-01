@@ -5,13 +5,13 @@ type: module
 prefix: topic
 num: 6
 draft: 0
-due_date: 2024-09-16
+due_date: 2025-02-10
 ---
 
 ## Readings
 
 ### Intro to the JavaScript Language (Monday)
-* Please read the [Intro to Programming with JavaScript](/fall2024/resources/programming-review) page.
+* Please read the [Intro to Programming with JavaScript](/spring2025/resources/programming-review) page.
 
 
 ### DOM Manipulation (Wednesday)
@@ -20,7 +20,7 @@ due_date: 2024-09-16
 * <a href="https://www.digitalocean.com/community/tutorials/how-to-access-elements-in-the-dom" target="_blank">How To Access Elements in the DOM</a>.<em>Digital Ocean</em>
 * <a href="https://www.digitalocean.com/community/tutorials/how-to-modify-attributes-classes-and-styles-in-the-dom" target="_blank">How to Modify Attributes, Classes, and Styles in the DOM</a>. <em>Digital Ocean</em>
 * <a href="https://www.digitalocean.com/community/tutorials/understanding-events-in-javascript" target="_blank">Understanding Events in JavaScript</a>. <em>Digital Ocean</em>
-* Sarah's interactive <a href="/fall2024/course-files/activities/dom-tester" target="_blank">DOM manipulation worksheet</a>
+* Sarah's interactive <a href="/spring2025/course-files/activities/dom-tester" target="_blank">DOM manipulation worksheet</a>
 {:.compact}
 
 #### Recommended but Optional
@@ -35,8 +35,8 @@ due_date: 2024-09-16
 {:.compact}
 
 ## Activities
-* Lecture 8 files: [Intro to the language](/fall2024/course-files/lectures/lecture08.zip) (Monday, 09/16)
-* Lecture 9 files: [DOM manipulation practice](/fall2024/course-files/lectures/lecture09.zip) (Wednesday, 09/18)
+* Lecture 8 files: [Intro to the language](/spring2025/course-files/lectures/lecture08.zip) (Monday, 09/16)
+* Lecture 9 files: [DOM manipulation practice](/spring2025/course-files/lectures/lecture09.zip) (Wednesday, 09/18)
 {:.compact}
 
 ## Check Your Understanding
@@ -50,12 +50,12 @@ After this week, you should be familiar with:
 * Know the differences between equality (==) and strict equality (===) -- use strict equality as much as possible
 * Control syntax is almost identical to Java (if/else if/else, for loops, while loops)
 * JavaScript can be interpreted with Node.js or by a web browser
-* See the [programming with JavaScript](/fall2024/resources/programming-review) cheatsheet for a review
+* See the [programming with JavaScript](/spring2025/resources/programming-review) cheatsheet for a review
 {:.compact}
 
 ### 2. JavaScript and the DOM
 * JavaScript DOM objects and methods are only used in **"client-side" programming** (within a browser). They are not supported in Node.js
 * JavaScript allows you to manipulate HTML and CSS dynamically -- usually through event handlers.
-* Practice targeting and changing DOM elements using the <a href="/fall2024/course-files/activities/dom-tester" target="_blank">DOM manipulation worksheet</a>
-* Please refer to the [working with the DOM](/fall2024/resources/js-concepts#working-with-the-dom) section of the JavaScript cheatsheet and make sure you know how to interact with the DOM.
+* Practice targeting and changing DOM elements using the <a href="/spring2025/course-files/activities/dom-tester" target="_blank">DOM manipulation worksheet</a>
+* Please refer to the [working with the DOM](/spring2025/resources/js-concepts#working-with-the-dom) section of the JavaScript cheatsheet and make sure you know how to interact with the DOM.
 {:.compact}

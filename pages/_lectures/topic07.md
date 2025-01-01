@@ -5,7 +5,7 @@ type: module
 prefix: topic
 num: 7
 draft: 0
-due_date: 2024-09-25
+due_date: 2025-02-19
 ---
 
 ## Readings
@@ -18,4 +18,4 @@ due_date: 2024-09-25
 
 
 ## Activities
-* Lecture 10 files: [forEach, map, filter, reduce](/fall2024/course-files/lectures/lecture10.zip) (Wednesday, 09/25)
+* Lecture 10 files: [forEach, map, filter, reduce](/spring2025/course-files/lectures/lecture10.zip) (Wednesday, 09/25)

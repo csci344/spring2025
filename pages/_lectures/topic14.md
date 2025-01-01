@@ -4,7 +4,7 @@ title: "Authentication & Security"
 type: module
 num: 14
 draft: 0
-due_date: 2024-12-04
+due_date: 2025-04-30
 ---
 
 ## Readings

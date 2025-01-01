@@ -12,7 +12,7 @@ num: 4
 * <a href="https://beta.reactjs.org/learn/you-might-not-need-an-effect" target="_blank">You might not need an effect</a>
 
 ## 2. Download the starter files
-<a href="/fall2024/course-files/lectures/lecture17.zip" class="nu-button">Carousel + Server Data <i class="fas fa-download"></i></a>
+<a href="/spring2025/course-files/lectures/lecture17.zip" class="nu-button">Carousel + Server Data <i class="fas fa-download"></i></a>
 
 
 ## 3. Install the dependencies
