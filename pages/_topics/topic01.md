@@ -1,5 +1,5 @@
 ---
-layout: module
+layout: topic
 title: Intro to the Web
 description: > 
     Welcome to the course! In this unit, we will go over some of the foundational technologies and socio-technical developments that have made the web and the internet possible.

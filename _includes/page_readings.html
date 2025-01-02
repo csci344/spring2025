@@ -1,8 +1,13 @@
 {% assign topic = page || topic %}
 {% assign lecture = topic | get_lectures_by_topic: site | filter_list_by_date: date | first %}
+{% assign tutorial = topic | get_tutorials_by_topic: site | filter_list_by_date: date | first %}
 
-<!-- Readings -->
 {% assign readings = lecture.readings %}
+{% if tutorial.readings.size > 0 %}
+    {% assign readings = readings | concat: tutorial.readings %}
+{% endif %}
+
+<!-- Lecture Readings -->
 <ul>
     {% for reading in readings %}
     <li>
@@ -10,3 +15,4 @@
     </li>
     {% endfor %}
 </ul>
+

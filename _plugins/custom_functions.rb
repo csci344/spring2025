@@ -88,6 +88,8 @@ module Jekyll
         link_class = simple ? "" : (is_draft ? "badge" : type)
         
         notes = show_notes ? "<div>#{page['notes']}</div>" : ""
+        temp_date = convert_to_date_if_not_already(page['due_date'])
+        due_date = temp_date ? "(due #{temp_date.strftime('%a, %-m/%-d')})" : ""
         
         if type == "reading" && page["citation"]
             return "<span class='mb-1 #{class_name}'>"\
@@ -105,7 +107,7 @@ module Jekyll
                 "<a class='#{link_class}' href='#{url}' target='#{target}'>"\
                     "#{link_icon} #{badge_text}"\
                 "</a>#{colon}"\
-                "#{title}"\
+                "#{title} #{due_date}"\
             "</span>"\
             "#{notes}"
         end
@@ -192,9 +194,6 @@ module Jekyll
                 |item| topic['tutorials'].include?(item['num']) && item['type'] == 'tutorial' 
             }
         end
-        puts topic['num']
-        puts topic['tutorials']
-        puts "Number of tutorials: #{tutorials.size}"  # This will print the length of the tutorials array
         return tutorials
       end
 

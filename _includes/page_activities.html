@@ -12,8 +12,8 @@
     {{ activity | display_link_or_badge: false, true }}
 {% endfor %}
 
-<!-- Labs -->
+<!-- Tutorials -->
 {% assign tutorials = topic | get_tutorials_by_topic: site | filter_list_by_date: date %}
 {% for tutorial in tutorials %}
-{{ tutorial | display_link_or_badge: false, true }}
+    {{ tutorial | display_link_or_badge: false, true }}
 {% endfor %}

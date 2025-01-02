@@ -1,5 +1,5 @@
 ---
-layout: module
+layout: topic
 title: HTML
 description: > 
     HTML a declarative programming language used to make web pages. It consists of a series of “markup tags” that specify how content should be presented (e.g., lists, tables, paragraphs, headings, sections, navigation bars, and so forth). In this unit, we will learn the rules for using HTML, practice working with some of the most common markup tags, and learn how to publish our HTML documents to a web server using GitHub pages.
@@ -30,5 +30,3 @@ questions:
     - Know how to make an HTML file and a CSS file from scratch using VS Code (like you did in Tutorial 2).
 
 ---
-
-TBD
