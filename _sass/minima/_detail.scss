@@ -1,9 +1,8 @@
 .subtitle {
-    margin: -20px 0px 15px 0px;
-    color: #676767;
-    // font-family:"Campton Extra Light";
-    // color: $br2;
+    margin: -15px 0px 35px 0px;
     font-size: 1.2em;
+    font-weight: bold;
+    color: #777;
 }
 
 .caption {
@@ -103,7 +102,7 @@ table.instructions {
 ol.compact, ul.compact {
     li {
         margin: 0;
-        // line-height: 1.2em;
+        line-height: 1.4em;
     }
 }
 

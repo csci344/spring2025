@@ -2,10 +2,10 @@
 layout: assignment-two-column
 title: Make Your First Website
 type: tutorial
-abbreviation: Tutorial 2a
+abbreviation: Tutorial 1a
 draft: 0
 points: 6
-num: 2
+num: 1
 ---
 
 {:.blockquote-no-margin}

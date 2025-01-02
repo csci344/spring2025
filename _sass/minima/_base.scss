@@ -18,6 +18,7 @@ $clay: #C26E60;
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 70px;
 }
 
 * {
@@ -54,10 +55,17 @@ section, article {
     p, li {
         font-size: 16px;
         color: #5c5962;
-        line-height: 1.7em;
-        // line-height: 1.5em;
-        margin-top: 5px;
+        line-height: 1.6em;
     }
+    code, code * {
+        font-size: 0.95rem;
+    }
+    // p {
+    //     margin: 0 0 15px 0;
+    // }
+    // li {
+    //     margin: 0 0 3px 0;
+    // }
 }
 
 a, a:hover, a:visited, a:active {
@@ -117,7 +125,7 @@ h1 {
 }
 
 h2, h3, h4, h5 {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     &.slashes {
         &::before, &::after {
             background: url(https://common.northwestern.edu/v8/css/images/icons/grey-slash.svg) no-repeat 50%/17px 21px;
@@ -135,13 +143,13 @@ h2, h3, h4, h5 {
 }
 
 h2 {
-    border-bottom: dotted 1px #999;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
+    // border-bottom: dotted 1px #999;
+    // padding-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 h3 {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     color: $br1 !important;
 }
 h4 {
@@ -151,9 +159,12 @@ h4 {
     // font-style: italic;
 }
 h5 {
-    font-size: 1.1em;
+    font-size: 1em;
     margin-top: 10px;
-    color: #999;
+    color: #222;
+    font-weight: 700;
+    margin-bottom: 5px !important;
+    // font-style: italic;
 }
 strong {
     font-weight: 600;
@@ -165,6 +176,36 @@ code.highlighter-rouge {
 }
 .codepen-frame {
     height: 350px;
+}
+
+.highlight table {
+    margin: 0 !important;
+    border: 0 !important;
+}
+.highlight table td, .highlight table th {
+    border-bottom: 0;
+    padding: 0px;
+}
+
+pre.highlight {
+    padding: 0 10px;
+}
+
+.highlight table td, .highlight table th {
+    
+    font-size: 1.1em;
+    line-height: 1.1em;
+}
+
+.rouge-gutter.gl {
+    width: 25px;
+}
+pre.highlight {
+    margin: 0;
+}
+
+.rouge-gutter {
+    padding-right: 5px !important;
 }
 
 .desktop { display: flex; }
@@ -203,32 +244,28 @@ ol.flush, ul.flush {
 pre.highlight {
     border-radius: 10px;
     background: #F6F6F6;
-    padding: 0 10px;
+    padding: 10px;
 }
-
-blockquote.info {
-    background-color: #0076a514;
-    padding: 25px 50px;
-    border-width: 0;
-    padding: 20px 0px 20px 40px;
-    border-radius: 10px;
-} 
 
 .blockquote-no-margin {
     margin-top: 0px;
 }
-
 blockquote {
-    margin: 0;
-    border-left: solid 7px $br1;
+    border-left: solid 7px $lightgrey;
     background: #F6F6F6;
-    padding: 10px;
+    padding: 20px;
+    margin: 0px;
     // margin-top: 30px;
     margin-bottom: 20px;
-    
-    p:last-child {
+    border-left: solid 7px $br1;
+
+    p {
         margin: 0px;
     }
+    // * {
+    //     margin: 2px 0 !important;
+    //     padding: 0 !important;
+    // }
 }
   
 footer {
@@ -260,8 +297,6 @@ header {
     background: $primary;
     height: 116px;
     background-image: url(/spring2025/assets/images/banner-bg.png); //, linear-gradient(90deg, $br2 0%, $br1 45%, $primary 80%);
-    // background: $br1;
-    // background: linear-gradient(90deg, $br1 48%, $primary 94%);
     display: grid;
     grid-template-columns: 5fr 1fr;
     align-items: center;

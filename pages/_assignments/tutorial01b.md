@@ -2,10 +2,10 @@
 layout: assignment-two-column
 title: Programming Refresher 
 type: tutorial
-abbreviation: Tutorial 2b
+abbreviation: Tutorial 1b
 draft: 0
 points: 6
-num: 2
+num: 1
 ---
 
 ## Part 1. Setting Up Your Development Environment

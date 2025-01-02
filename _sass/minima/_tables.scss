@@ -25,17 +25,17 @@ table {
         }
     }
 
-    td, th {
-        border-bottom: dotted 1px #CCC;
-        padding: 8px;
-    }
-
     thead tr:first-child {
         border-bottom: solid 1px #444;
     }
 
     tr.section {
+        // td, th {
+        //     border-top: solid 1px #444;
+        // }
         td:nth-child(3) {
+            // font-weight: 600;
+            // text-transform: uppercase;
             span, a {
                 font-weight: normal;
             }
@@ -46,12 +46,40 @@ table {
             background: #F3F3F3;
         }
     }
+
+    tr {
+        border-bottom: dotted 1px #CCC;
+    }
+
+    td, th {
+        padding: 8px;
+    }
     th {
         font-weight: 500;
         min-width: 60px;
         text-align: left;
     }
 }
+
+.schedule table {
+    td:first-child, th:first-child {
+        width: 80px;
+    }
+    td:nth-child(2), th:nth-child(2) {
+        width: 100px;
+    }
+}
+
+.assignments table {
+    td:first-child, th:first-child {
+        width: 80px;
+    }
+    td:nth-child(2), th:nth-child(2) {
+        width: 130px;
+        min-width: 60px !important;
+    }
+}
+
 table.rubric-short {
     td:nth-child(1), th:nth-child(1) {
         width: 40px;
@@ -75,58 +103,20 @@ table.rubric {
     }
 }
 
-.schedule table {
-    td:first-child, th:first-child {
-        min-width: 80px;
-    }
-    td:nth-child(2), th:nth-child(2) {
-        min-width: 100px;
-    }
-}
-
-.assignments table {
-    td:first-child, th:first-child {
-        min-width: 80px;
-    }
-    td:nth-child(2), th:nth-child(2) {
-        min-width: 80px;
-        min-width: 60px !important;
-    }
-
-    td, th {
-        border-bottom: dotted 1px #CCC;
-        padding: 8px;
-    }
-}
-
-.highlight table {
-    border-width: 0;
-    margin-bottom: 0;
-    td, th {
-        font-size: 1.1em;
-        border-width: 0;
-        padding: 0;
-    }
-
-    .rouge-gutter.gl {
-        width: 30px !important;
-    }
-} 
-
 .assignments {
     td:nth-child(1), th:nth-child(1) {
-        width: 60px !important;
+        // width: 60px !important;
         font-weight: 500;
     }
 }
 
 .readings, .schedule, .labs {
-    td:nth-child(2), th:nth-child(2) {
-        min-width: 80px;
-    }
-    td:nth-child(2), th:nth-child(2) {
-        min-width: 100px;
-    }
+    // td:nth-child(2), th:nth-child(2) {
+    //     min-width: 80px;
+    // }
+    // td:nth-child(2), th:nth-child(2) {
+    //     min-width: 100px;
+    // }
     td:nth-child(3), th:nth-child(3) {
         min-width: 310px;
     }

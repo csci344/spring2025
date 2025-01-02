@@ -18,22 +18,20 @@
 
 .assignments, .lectures, .readings, .syllabus, .schedule {
     .passed {
-        // color: #777;
-        // td, th {
-        //     background: #F9F9F9;
+        // .hw, a.hw, 
+        // .homework, a.homework, 
+        // .pj, a.pj,  
+        // .project, a.project,
+        // .lec, a.lec, 
+        // .activity, a.activity, 
+        // .topic, a.topic, 
+        // .project, a.pj,
+        // .lab, a.lab,
+        // .video, video.lab,
+        // .quiz, a.quiz,
+        // .ec, a.ec {
+        //     background: #CCC;
         // }
-        // li, li::before {
-        //     color: #777;
-        // }
-        .hw, a.hw, 
-        .pj, a.pj, 
-        .lec, a.lec, 
-        .lab, a.lab,
-        .quiz, a.quiz,
-        .ec, a.ec {
-            // opacity: 0.6;
-            background: #CCC;
-        }
         strong, th {
             font-weight: 200;
             color: #5c5962;
@@ -47,11 +45,22 @@
     flex-direction: column;
     
     .badge, a.badge,
-    .update, a.update,
+    .badge-dark, a.badge-dark,
+    .topic, a.topic, 
     .hw, a.hw, 
+    .homework, a.homework, 
     .pj, a.pj, 
+    .project, a.project, 
     .lec, a.lec, 
+    .activity, a.activity,
+    .reading, a.reading,
+    .video, a.video,
+    .lecture, a.lecture, 
     .lab, a.lab, 
+    .tutorial, a.tutorial, 
+    .optional, a.optional, 
+    .required, a.required, 
+    .skim, a.skim
     .quiz, a.quiz, 
     .live, .recorded, 
     .ec, a.ec {
@@ -64,33 +73,50 @@
         text-decoration: none;
         padding: 3px 7px;
         border-bottom: solid transparent 1px;
-        min-width: 42px;
+        // min-width: 42px;
         margin-right: 5px;
         text-indent: 0px;
     }
     .badge, .badge:hover {
-        background: $lightgrey;
-        color: #444;
-    }
-    .update, .update:hover {
+        // background: $lightgrey;
         background: #DDD;
         color: #444;
     }
-    .hw, .hw:hover {
+    .hw, .hw:hover, .homework, .hw:hover {
         background: $river;
     }
     .quiz, .quiz:hover {
         background: $mapleRed;
     }
-    .pj, .pj:hover {
+    .pj, .pj:hover, .project, .project:hover {
         background: $clay;
     }
+    .lecture, .lecture:hover, a.lecture,
     .lec, .lec:hover, a.lec {
-        background: $br3;
-    }
-    .lab, .lab:hover {
         background: $forest;
+    }
+    .activity, .activity:hover, a.activity {
+        background-color: $gold;
+    }
+    .video, .video:hover {
+        background: $clay;
+    }
+    .reading, a.reading {
+        background: $autumn;
+        // color: #222;
+    }
+    .topic, .topic:hover, a.topic {
+        background: $nightSky;
+    }
+    .lab, .lab:hover, .tutorial, .tutorial:hover {
+        background: $br1;
         // font-weight: 600;
+    }
+    .optional, .optional:hover, .required, 
+    .required:hover, .badge-dark, .badge-dark:hover,
+    .skim, .skim:hover {
+        background: #DDD;
+        color: #222;
     }
     .ec, .ec:hover {
         background: $nightSky;
@@ -207,6 +233,14 @@ ol.readings, ul.readings {
     }
 }
 
+blockquote.info {
+    background-color: #0076a514;
+    padding: 25px 50px;
+    border-width: 0;
+    padding: 20px 0px 20px 40px;
+    border-radius: 10px;
+} 
+
 blockquote.caveat {
     margin: 20px 0px 20px 40px;
     background: none;
@@ -255,9 +289,73 @@ blockquote.quote {
         font-size: 3em;
     }
 }
+
+div.schedule-simple {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #F4F4F4;
+    column-gap: 30px;
+    padding: 10px;
+
+    // .group {
+    //     padding: 10px;
+    //     background-color: #F4F4F4;
+    // }
+
+    .header {
+        grid-column: 1 / span 2;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    div.schedule-simple {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+
+        .header {
+            grid-column: 1 / span 1;
+        }
+    }
+}
+
+.syllabus article .course-overview {
+    li {
+        margin-bottom: 0;
+    }
+    ul {
+        margin-bottom: 10px;
+    }
+} 
+
+.schedule-simple ul, schedule-simple ol, .syllabus article {
+    li {
+        margin-bottom: 5px;
+    }
+
+    ul ul li,
+    li ul li,
+    li ul li {
+        margin-bottom: 0px;
+    }
+}
+
 table.schedule-simple {
+    max-width: 700px;
+    // background-color: #F4F4F4;
+    border: solid transparent 0 !important;
+
+    thead tr:first-child {
+        border-bottom: solid #CCC 0px !important;
+        background: #DDD;
+        display: none;
+    }
+    tr {
+        border: solid transparent 0 !important;
+    }
     th, td {
-        padding: 4px;
+        padding: 4px 0px 4px 12px;
+        border: solid transparent 0;
     }
 }
 .schedule, .labs {
@@ -283,14 +381,13 @@ table.schedule-simple {
             font-weight: bold;
             display: inline-block;
             text-indent: -16px;
-            vertical-align: text-bottom;
+            // vertical-align: text-bottom;
             color: $br1;
         }
     }
     h2 {
-        border-bottom: solid 1px $lightgrey;
-        // color: $primary;
-        color: #222;
+        // border-bottom: solid 1px #DDD;
+        color: $primary;
     }
     h3 {
         color: #444;
