@@ -31,9 +31,7 @@ layout: default
 
     .assignments.topics ul {
         padding: 0;
-        padding-left: 35px;
-        margin-top: 5px;
-        margin-bottom: 15px;
+        padding-left: 15px;
     }
 
     .assignments.topics table {
@@ -85,17 +83,21 @@ layout: default
     }
 </style>
 
-{{content}}
+{% include toggle-button.html %}
 
+{{content}}
 <section class="assignments topics">
-    {% assign topic = page %}
+    {% assign topics = site.topics | sort: 'start_date' %}
+    {% for topic in topics %}
     {% assign lastWeek = "" %}
+    <!-- Topic Header -->
+    <h2 id="topic_{{topic.num}}">Topic {{topic.num}}. {{ topic.title }}</h2>
 
     <p>{{ topic.description }}</p>
 
     {% assign module_dates = topic | get_module_dates: site %}
     {% if module_dates.size > 0 %}
-    <h2>Readings & Activities</h2>
+    {% expandable expanded="true" level=3 title="Readings & Activities" %}
     <table>
         <thead>
             <th>Week</th>
@@ -127,19 +129,22 @@ layout: default
             {% endfor %}
         </tbody>
     </table>
+    {% endexpandable %}
     {% else %}
     <p>Coming Soon!</p>
     {% endif %}
 
 
     {% if topic.questions %}
-    <h2>Study Questions / Concepts</h2>
+    {% expandable expanded="true" level=3 title="Study Questions" %}
     <ol>
         {% for question in topic.questions %}
-        <li class="mb-4">{{question}}</li>
+        <li>{{question}}</li>
         {% endfor %}
     </ol>
+    {% endexpandable %}
     {% endif %}
+    {% endfor %}
     </div>
 
 

@@ -81,11 +81,15 @@ module Jekyll
         target = get_target(page['url'])
         title = (hide_title || simple) ? "" : "<span>#{page['title']}</span>"
         link_icon = simple ? "" : " <i class='fa-solid fa-link'></i>"
-        extras = (page['type'] == "reading" and page['required'] == nil and page['pick_one'] == nil) ? " <span class='optional'>optional</span>" : ""
-        extras = (page['type'] == "reading" and page['skim'] == 1) ? " <span class='optional'>skim</span>" : extras
+        extras = ""
+        # extras = (page['type'] == "reading" and page['required'] == nil and page['pick_one'] == nil) ? " <span class='optional'>optional</span>" : ""
+        # extras = (page['type'] == "reading" and page['skim'] == 1) ? " <span class='optional'>skim</span>" : extras
         colon = "<span style='display: none'>: </span>"
         is_draft = (page['draft'] == 1)
         link_class = simple ? "" : (is_draft ? "badge" : type)
+        if page['tag'] != nil
+            link_class = "badge"
+        end
         
         notes = show_notes ? "<div>#{page['notes']}</div>" : ""
         temp_date = convert_to_date_if_not_already(page['due_date'])
@@ -94,7 +98,7 @@ module Jekyll
         if type == "reading" && page["citation"]
             return "<span class='mb-1 #{class_name}'>"\
                "#{extras}"\
-               "<span class='#{link_class}'>#{badge_text}</span>#{colon}"\
+               "<span class='#{link_class}'>#{page['tag'] != nil ? page['tag'] : badge_text}</span>#{colon}"\
                   "#{page["citation"]}"\
             "</span>"\
             "#{notes}"
@@ -105,7 +109,7 @@ module Jekyll
           return "<span class='mb-1 #{class_name}' target=''>"\
                 "#{extras}"\
                 "<a class='#{link_class}' href='#{url}' target='#{target}'>"\
-                    "#{link_icon} #{badge_text}"\
+                    "#{link_icon} #{page['tag'] != nil ? page['tag'] : badge_text}"\
                 "</a>#{colon}"\
                 "#{title} #{due_date}"\
             "</span>"\
@@ -116,7 +120,7 @@ module Jekyll
             # Return a span if no url exists
             return "<span class='mb-1 #{class_name}'>"\
                "#{extras}"\
-               "<span class='#{link_class}'>#{badge_text}</span>#{colon}"\
+               "<span class='#{link_class}'>#{page['tag'] != nil ? page['tag'] : badge_text}</span>#{colon}"\
                   "#{title}"\
               "</span>"\
               "#{notes}"
@@ -184,9 +188,6 @@ module Jekyll
         return labs
       end
 
-
-
-
       def get_tutorials_by_topic(topic, site)
         tutorials = []
         if topic['tutorials'] 
@@ -214,6 +215,27 @@ module Jekyll
         return lectures
       end
 
+      def filter_readings(readings, type)
+        if !readings
+            return []
+        end
+        if type == "required"
+            return readings.select { |reading| reading['required'] == 1 }
+        end
+        if type == "optional"
+            return readings.select { |reading| 
+                reading['required'] == nil && 
+                reading['pick_one'] == nil && 
+                reading['skim'] == nil 
+            }
+        end
+        if type == "skim"
+            return readings.select { |reading| reading['skim'] != nil }
+        end
+        if type == "pick_one"
+            return readings.select { |reading| reading['pick_one'] != nil }
+        end
+      end
 
       def get_all_module_activities(topic, site)
         resources = []

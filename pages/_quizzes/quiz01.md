@@ -6,14 +6,12 @@ type: quiz
 abbreviation: "Quiz 1"
 draft: 0
 num: 1
-due_date: 2025-02-17
+start_date: 2025-02-10
+due_date: 2025-02-10
 ---
 
-> ## Actual Quiz Link
-> After you complete the written portion of the quiz, navigate to the <a href="/spring2025/activities/quiz01" target="_blank">Quiz 1 Instructions</a>
-
 ## 1. Guidelines (Please Read Carefully)
-Quiz 1 will be completed during class on Monday, 9/23. It is due at the end of class.
+Quiz 1 will be completed during class on Monday, 2/10. It is due at the end of class.
 * Half of the quiz will paper-based. For this portion, you will not be able to use a computer, but you may bring a 1-page cheatsheet. 
 * Half ot the quiz will be coding exercises. For this portion of the quiz:
     * You **MAY** use the course website, as well as any notes, lecture files, or internet reference materials to complete the quiz.

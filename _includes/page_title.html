@@ -6,34 +6,26 @@
     {% assign week = diffDays | divided_by: 7 | plus: 1 %}
 {% endif %}
 {% if page.title %}
-    {% if page.layout == 'assignment' or page.layout == 'assignment-two-column' %}
+    {% if page.layout == 'assignment' or page.layout == 'assignment-two-column' or page.type == "tutorial" %}
         <h1>
             <a href="../assignments/">Assignments</a> > 
             {{page.abbreviation}}: {{ page.title }}
         </h1>
-    {% elsif page.type == 'module' %}
+    {% elsif page.type == 'topic' %}
 
         {% assign prefix = "" %}
         {% if page.num %}
             {% assign prefix = page.num | append: ". " %}
         {% endif %}
         <h1>
-            <a href="../">Schedule</a> > {{prefix}} {{ page.title }}
+            <a href="../">Topics</a> > {{prefix}} {{ page.title }}
         </h1>
-        <div class="subtitle">
-            {% if page.due_date %}
+        
+        {% if page.due_date %}
+            <div class="subtitle">
                 Week {{ week }}: {{ page.due_date  | date: "%a, %b %-d" }}
-            {% endif %}
-        </div>
-    {% elsif page.type == "lab" %}
-        <h1>
-            <a href="../">Schedule</a> > Lab {{ page.num }}. {{ page.title }}
-        </h1>
-        <div class="subtitle">
-            Week {{ week }}
-        </div>
-    {% elsif page.type == "lecture" %}
-        <h1><a href="../#l{{page.num}}">Lectures</a> > {{page.num}}. {{ page.title }}</h1>
+            </div>
+        {% endif %}
     {% else %}
         <h1>{{ page.title }}</h1>
     {% endif %}

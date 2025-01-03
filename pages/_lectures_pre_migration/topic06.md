@@ -1,6 +1,6 @@
 ---
 layout: two-column
-title: "Intro to JavaScript & DOM manipulation"
+title: "Intro to Client-Side JavaScript"
 type: module
 prefix: topic
 num: 6

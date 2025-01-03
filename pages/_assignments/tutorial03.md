@@ -11,17 +11,18 @@ due_date: 2025-02-10
 readings:
     - type: reading
       citation: > 
-        [Theory] <a href="https://designlab.com/blog/guide-to-ux-design-systems" target="_blank">Design Systems 101: An Introductory Guide</a>
+        <a href="https://designlab.com/blog/guide-to-ux-design-systems" target="_blank">Design Systems 101: An Introductory Guide</a>
       required: 1
     - type: reading
       citation: > 
-        [Theory] <a href="https://johnpolacek.medium.com/by-the-numbers-a-year-and-half-with-atomic-css-39d75b1263b4" target="_blank">By The Numbers: A Year and Half with Atomic CSS</a>: How design systems improve efficiency
+        <a href="https://johnpolacek.medium.com/by-the-numbers-a-year-and-half-with-atomic-css-39d75b1263b4" target="_blank">By The Numbers: A Year and Half with Atomic CSS</a>: How design systems improve efficiency
     - type: reading
       citation: > 
-        [Practice] <a href="https://www.creative-tim.com/twcomponents/cheatsheet" target="_blank">Tailwind Cheatsheet</a>
+        <a href="https://www.creative-tim.com/twcomponents/cheatsheet" target="_blank">Tailwind Cheatsheet</a>
+      skim: 1
     - type: reading
       citation: >
-        [Practice] <a href="https://www.youtube.com/watch?v=sNXfI3woBEw" target="_blank">Get Started With Tailwind CSS</a>: Video tutorial that walks you through today's activity
+        <a href="https://www.youtube.com/watch?v=sNXfI3woBEw" target="_blank">Get Started With Tailwind CSS</a>: Video tutorial that walks you through today's activity
 ---
 
 <style>

@@ -1,151 +1,43 @@
 ---
-layout: two-column
+layout: default
 ---
 
 <style>
-    h2 a,
-    h2 a:hover {
-        border-bottom: dotted 1px !important;
-        /* background-color: transparent; */
-    }
-
-    td .reading,
-    td .lecture,
-    td .badge,
-    td .lab,
-    td .activity {
-        font-size: 0.8rem !important;
-    }
-
-    .mb-1 {
-        margin-bottom: 4px;
-    }
-
-    .reading {
-        vertical-align: bottom;
-    }
-
-    .inline-block span {
-        font-weight: 500;
-    }
-
-    .assignments.topics ul {
-        padding: 0;
-        padding-left: 15px;
-    }
-
-    .assignments.topics table {
-        margin-bottom: 50px;
-        border-color: #CCC;
-        border-width: 0px;
-    }
-
-    .assignments.topics table tr {
+    .topic-card {
         display: grid;
-        grid-template-columns: 80px 80px 300px 1fr;
-        border-bottom: dotted 1px #CCC;
-    }
-
-    .assignments.topics p,
-    .assignments.li {
-        margin-bottom: 10;
-        line-height: 1.6em;
-    }
-
-    .card {
-        border: solid 1px #F9F9F9;
-        border-radius: 6px;
+        grid-template-columns: 120px 1fr;
         padding: 20px;
-        background-color: #FAFAFA;
-        margin-bottom: 20px;
-    }
-
-
-
-    @media screen and (max-width: 1000px) {
-        main {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        .assignments.topics table tr {
-            display: grid;
-            grid-template-columns: 80px 80px 1fr;
-        }
-
-        .assignments.topics table tr td:nth-child(4) {
-            grid-column: 3 / 4;
-        }
-
-        .assignments.topics table tr th:nth-child(4) {
-            display: none;
-        }
+        border-bottom: dotted 1px #CCC;
     }
 </style>
 
 {% include toggle-button.html %}
 
 {{content}}
-<section class="assignments topics">
-    {% assign topics = site.topics | sort: 'start_date' %}
-    {% for topic in topics %}
-    {% assign lastWeek = "" %}
-    <!-- Topic Header -->
-    <h2 id="topic_{{topic.num}}">Topic {{topic.num}}. {{ topic.title }}</h2>
 
-    <p>{{ topic.description }}</p>
+{% assign topics = site.topics | sort: 'start_date' %}
+{% assign topics = topics | concat: site.quizzes | sort: 'start_date' %}
 
-    {% assign module_dates = topic | get_module_dates: site %}
-    {% if module_dates.size > 0 %}
-    {% expandable expanded="true" level=3 title="Readings & Activities" %}
-    <table>
-        <thead>
-            <th>Week</th>
-            <th></th>
-            <th>Slides / Activities</th>
-            <th>Readings</th>
-        </thead>
-        <tbody>
-            <!-- Topic Details -->
-            {% for date in module_dates %}
-            {% assign week = site.term_start_date | get_week_number: date %}
-            <tr>
-                <td>
-                    {% if lastWeek != week %}
-                    <strong>Week {{week}}</strong>
-                    {% assign lastWeek = week %}
-                    {% endif %}
-                </td>
-                <td>
-                    {{ date | date: "%a, %-m/%-d" }}
-                </td>
-                <td>
-                    {% include page_activities.html %}
-                </td>
-                <td>
-                    {% include page_readings.html %}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    {% endexpandable %}
-    {% else %}
-    <p>Coming Soon!</p>
+
+<div class="assignments topics">
+{% for topic in topics %}
+    {% assign section_class = "" %}
+    {% if topic.type == "holiday" or topic.type == "quiz" %}
+        {% assign section_class = "bg-gray100" %}
     {% endif %}
+    <section class="topic-card {{section_class}}">
+        <div>
+            <p class="semibold m0 line-height-reset">{{ topic.start_date | date: "%a, %-m/%-d" }}</p>
+        </div>
+        <div>
+            {% if topic.draft == 0 %}
+                <a class="{{topic.type}}" href="/spring2025{{topic.url}}">{{topic.type}} {{topic.num}}</a> <strong>{{topic.title}}</strong>
+            {% else %}
+                <span class="badge">{{topic.type}} {{topic.num}}</span> {{topic.title}}
+            {% endif %}
+            <p class="m3 m-top">{{ topic.description }}</p>
+        </div>
+    </section>
 
-
-    {% if topic.questions %}
-    {% expandable expanded="true" level=3 title="Study Questions" %}
-    <ol>
-        {% for question in topic.questions %}
-        <li>{{question}}</li>
-        {% endfor %}
-    </ol>
-    {% endexpandable %}
-    {% endif %}
     {% endfor %}
-    </div>
-
-
-</section>
+</div>

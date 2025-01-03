@@ -2,7 +2,7 @@
 layout: topic
 title: Design with Accessibility in Mind
 description: > 
-    TBD
+    Design is an important part of making functional, usable interfaces. Given this, we're going to learn about some design principles and how they can and are applied to websites. We will also take a quick look at design systems, and try using a CSS Framework that can be easily customized according to a design system. 
 type: topic
 num: 4
 draft: 0
@@ -10,7 +10,6 @@ start_date: 2025-02-03
 lectures: [8, 9]
 tutorials: [3]
 ---
-
 
 
 ## Overview
