@@ -32,5 +32,10 @@ readings:
       citation: >
         Sarah's interactive <a href="/spring2025/course-files/activities/dom-tester" target="_blank">DOM manipulation worksheet</a>
       skim: 1
+activities:
+    - num: 9
+      draft: 1
+      type: activity
+      title: DOM manipulation practice
+      url: /course-files/lectures/lecture09.zip
 ---
-

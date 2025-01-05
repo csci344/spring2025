@@ -7,7 +7,7 @@ draft: 0
 start_date: 2025-01-31
 slides:
     - title: CSS Layouts
-      type: lecture
+      type: slides
       num: 7
       draft: 0
       url: https://docs.google.com/presentation/d/1PjbqofH0W1PCIyM9TqDYib1poSJdeoia/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true

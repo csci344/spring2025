@@ -8,9 +8,8 @@ start_date: 2025-01-13
 slides:
     - title: Intro to the Course
       type: lecture
-      num: 1
-      draft: 0
-      url: https://docs.google.com/presentation/d/1paJdPjcArLJdMz14uQPQIi6-5BA7OdLj/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
+      draft: 1
+      url: https://docs.google.com/presentation/d/1JdVt_AVQLOv6SPNCSnOCAG4TIgf4nYyX/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings: 
     - type: reading
       citation: >
@@ -23,7 +22,7 @@ readings:
 activities:
     - num: 1
       type: activity
-      draft: 0
+      draft: 1
       title: Pre-course assessment questions & answers
       url: /activities/pre-course-assessment
 ---

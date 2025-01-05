@@ -3,11 +3,11 @@ layout: assignment-two-column
 title: "Get Started on HW3: GET, POST, and DELETE"
 type: tutorial
 abbreviation: Tutorial 7
-draft: 0
+draft: 1
 points: 6
 num: 7
-start_date: 2025-03-28
-due_date: 2025-04-02
+start_date: 2025-03-07
+due_date: 2025-03-17
 ---
 
 {% include walkthrough-hw03.html %}

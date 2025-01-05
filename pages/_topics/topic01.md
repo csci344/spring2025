@@ -2,7 +2,7 @@
 layout: topic
 title: Intro to the Web
 description: > 
-    Welcome to the course! In this unit, we will go over some of the foundational technologies and socio-technical developments that have made the web and the internet possible.
+    The web and the internet are interconnected systems that facilitate the exchange of data across computers worldwide. Web browsers communicate with servers using the HTTP/HTTPS protocol to fetch and display content, while the internet provides the infrastructure for this communication. Understanding IP addresses, DNS, and how websites are hosted provides a foundation for developing web applications.
 type: topic
 num: 1
 draft: 0

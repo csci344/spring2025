@@ -1,12 +1,12 @@
 ---
 layout: module
-title: Python
-description: > 
-    TBD
+title: Server Architectures
 type: topic
 num: 11
+description: >
+    Server-side architectures define how web applications process requests and serve responses from the server. This includes understanding client-server models, HTTP request-response cycles, and technologies like RESTful APIs and GraphQL. A solid grasp of server-side architecture is essential for building scalable and efficient web applications.
 draft: 1
-start_date: 2025-03-31
+start_date: 2025-04-07
 ---
 
 TBD

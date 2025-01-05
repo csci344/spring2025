@@ -2,7 +2,7 @@
 layout: topic
 title: CSS
 description: > 
-    CSS (Cascading Style Sheets) allow you to target particular parts of your web page in order to control the look and feel of your site (colors, fonts, layouts, simple animations, etc.). Like HTML, CSS is a declarative programming language that your web browser interprets in order to "paint" the screen according to the rules you specify. In this unit, you will learn how to target and style web elements; and how to create responsive layouts.
+    CSS (Cascading Style Sheets) is used to control the layout and visual presentation of HTML elements. It allows developers to define styles such as colors, fonts, and spacing, enhancing user experience. CSS also includes techniques like Flexbox and Grid for responsive, modern web designs.
 type: topic
 num: 3
 draft: 0

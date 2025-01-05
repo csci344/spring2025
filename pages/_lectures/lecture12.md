@@ -1,40 +1,29 @@
 ---
 layout: module
-title: "Higher Order Functions"
+title: "Higher Order Functions: Part I"
 type: lecture
 num: 12
 draft: 0
 start_date: 2025-02-24
 slides:
-    - title: "Higher Order Functions"
+    - title: "High-Order Functions (forEach, map, filter, reduce)"
       type: lecture
-      num: 10
+      num: 12
       draft: 1
-      url: #
+      url: https://docs.google.com/presentation/d/1nP4LfWZi2cz1lNC47_Q-rw9NxE8Ysp9z/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings: 
     - type: reading
       citation: >
-        <a href="https://www.digitalocean.com/community/tutorials/introduction-to-the-dom" target="_blank">Intro to the DOM</a>. <em>Digital Ocean</em>
+        <a href="https://www.digitalocean.com/community/tutorials/how-to-use-array-methods-in-javascript-iteration-methods" target="_blank">How To Use Array Methods in JavaScript: Iteration Methods</a>
       required: 1
     - type: reading
       citation: >
-        <a href="https://www.digitalocean.com/community/tutorials/how-to-access-elements-in-the-dom" target="_blank">How To Access Elements in the DOM</a>. <em>Digital Ocean</em>
+        <a href="https://eloquentjavascript.net/05_higher_order.html" target="_blank">Higher-Order Functions</a>
       required: 1
-    - type: reading
-      citation: >
-        <a href="https://www.digitalocean.com/community/tutorials/how-to-access-elements-in-the-dom" target="_blank">How To Access Elements in the DOM</a>. <em>Digital Ocean</em>
-      required: 1
-    - type: reading
-      citation: >
-        <a href="https://www.digitalocean.com/community/tutorials/how-to-modify-attributes-classes-and-styles-in-the-dom" target="_blank">How to Modify Attributes, Classes, and Styles in the DOM</a>. <em>Digital Ocean</em>
-      required: 1
-    - type: reading
-      citation: >
-        <a href="https://www.digitalocean.com/community/tutorials/understanding-events-in-javascript" target="_blank">Understanding Events in JavaScript</a>. <em>Digital Ocean</em>
-      required: 1
-    - type: reading
-      citation: >
-        Sarah's interactive <a href="/spring2025/course-files/activities/dom-tester" target="_blank">DOM manipulation worksheet</a>
-      skim: 1
+activities:
+    - num: 12
+      draft: 1
+      type: activity
+      title: "Lecture 12 files: forEach, map, filter, reduce"
+      url: /spring2025/course-files/lectures/lecture10.zip
 ---
-

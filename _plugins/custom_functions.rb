@@ -76,7 +76,10 @@ module Jekyll
         type = page['type'] == "homework" ? "hw" : page['type']
         class_name = new_line ? "block" : "inline"
         badge_text = type ? type.capitalize : ""
-        badge_text = simple ? page['title'] : "#{badge_text} #{page['num']}"
+        badge_text = simple ? page['title'] : "#{badge_text}"
+        if page['type'] == "homework" or page['type'] == "tutorial" or page['type'] == "quiz"
+            badge_text = simple ? page['title'] : "#{badge_text} #{page['num']}"
+        end
         url = get_url(page['url'])
         target = get_target(page['url'])
         title = (hide_title || simple) ? "" : "<span>#{page['title']}</span>"
@@ -238,35 +241,12 @@ module Jekyll
       end
 
       def get_all_module_activities(topic, site)
-        resources = []
+        activities = []
         lectures = get_lectures_by_topic(topic, site)
         tutorials = get_tutorials_by_topic(topic, site)
-        # slides = page['slides'] || []
-        # readings = page['readings'] || []
-        # activities = page['activities'] || []
-        # exams = page['exams'] || []
-        # exercise_files = page['exercise_files'] || [] 
-        # videos = page['videos'] || []   
-        # labs = []
-        # if page['labs'] # Ensure page['labs'] is not nil before using it
-        #     labs = site['assignments']\
-        #         .select { |item| page['labs'].include?(item['num']) }\
-        #         .select { |item| item['type'] == 'lab' }
-        # end
-        # projects = []
-        # if page['projects'] # Ensure page['labs'] is not nil before using it
-        #     projects = site['assignments']\
-        #         .select { |item| page['projects'].include?(item['num']) }\
-        #         .select { |item| item['type'] == 'project' }
-        # end
-        resources = resources.concat(lectures).concat(tutorials)
-        return resources
-        # resources = resources.concat(slides).concat(exams).concat(readings)\
-        #     .concat(activities).concat(videos).concat(exercise_files)\
-        #     .concat(labs).concat(projects)
-        # return resources
+        activities = activities.concat(lectures).concat(tutorials)
+        return activities
       end
-
 
 
       def get_module_dates(page, site)

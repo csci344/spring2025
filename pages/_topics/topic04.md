@@ -1,8 +1,8 @@
 ---
 layout: topic
-title: Design with Accessibility in Mind
+title: Design and Accessibility
 description: > 
-    Design is an important part of making functional, usable interfaces. Given this, we're going to learn about some design principles and how they can and are applied to websites. We will also take a quick look at design systems, and try using a CSS Framework that can be easily customized according to a design system. 
+    Design refers to the process of creating an aesthetically pleasing and functional user interface (UI) and user experience (UX). It encompasses layout, typography, color schemes, and interactivity to ensure the site is intuitive,  visually appealing, and accessible. Good design is crucial for engaging users and meeting their needs effectively. While design is a huge topic in its own right, we will briefly review some important design principles, and take a quick look at some design tools and systems.
 type: topic
 num: 4
 draft: 0

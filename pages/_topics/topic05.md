@@ -1,8 +1,8 @@
 ---
 layout: topic
-title: Intro to Client-Side JavaScript
+title: "JavaScript: Foundational Concepts"
 description: > 
-    JavaScript is the "most popular programming language in the world"
+    JavaScript is a versatile, high-level programming language that runs in web browsers, enabling interactivity and dynamic content. It allows developers to manipulate the Document Object Model (DOM) and implement features like animations, forms, and real-time updates. This unit introduces core JavaScript concepts like variables, data types, functions, loops, and event handling. By the end of this section, you will know enough to start building simple, interactive web applications.
 type: topic
 num: 5
 draft: 0

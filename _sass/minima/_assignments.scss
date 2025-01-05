@@ -56,6 +56,7 @@
     .reading, a.reading,
     .video, a.video,
     .lecture, a.lecture, 
+    .slides, a.slides, 
     .lab, a.lab, 
     .tutorial, a.tutorial, 
     .optional, a.optional, 
@@ -92,7 +93,8 @@
         background: $clay;
     }
     .lecture, .lecture:hover, a.lecture,
-    .lec, .lec:hover, a.lec {
+    .lec, .lec:hover, a.lec,
+    .slides, .slides:hover, a.slides {
         background: $forest;
     }
     .activity, .activity:hover, a.activity {
@@ -168,7 +170,7 @@
     }
 }
 
-.assignment, .reference, .lecture, .two-column article, .syllabus, .schedule {
+.assignment, .reference, .lecture, .slides, .two-column article, .syllabus, .schedule {
     ul.toc {
         padding-left: 0px;
         li {
@@ -362,7 +364,7 @@ table.schedule-simple {
     ul { padding-left: 20px; }
 }
 
-.assignment, .lecture, .details, .two-column article, .syllabus, .schedule {
+.assignment, .lecture, .slides, .details, .two-column article, .syllabus, .schedule {
     .outline {
         margin-top: 30px;
     }

@@ -4,7 +4,7 @@ show_schedule: 1
 title: "Quiz 1: Web Architecture, HTML, CSS, and Accessibility"
 type: quiz
 abbreviation: "Quiz 1"
-draft: 0
+draft: 1
 num: 1
 start_date: 2025-02-10
 due_date: 2025-02-10

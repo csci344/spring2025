@@ -2,7 +2,7 @@
 layout: assignment-two-column
 title: Understanding Internet Tracking
 type: tutorial
-draft: 0
+draft: 1
 points: 6
 abbreviation: Tutorial 1
 num: 1

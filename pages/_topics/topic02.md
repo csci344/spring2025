@@ -2,11 +2,11 @@
 layout: topic
 title: HTML
 description: > 
-    HTML a declarative programming language used to make web pages. It consists of a series of “markup tags” that specify how content should be presented (e.g., lists, tables, paragraphs, headings, sections, navigation bars, and so forth). In this unit, we will learn the rules for using HTML, practice working with some of the most common markup tags, and learn how to publish our HTML documents to a web server using GitHub pages.
+    HTML (HyperText Markup Language) is the backbone of web content, structuring information on web pages. HTML can be used to create semantic, accessible layouts using elements like headings, paragraphs, lists, links, and media. This topic emphasizes the role of HTML in the broader web development process and how it integrates with CSS and JavaScript.
 type: topic
 num: 2
 draft: 0
-start_date: 2025-01-17
+start_date: 2025-01-20
 lectures: [4, 5]
 tutorials: [1]
 questions:

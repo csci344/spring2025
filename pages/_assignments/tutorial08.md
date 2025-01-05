@@ -3,7 +3,7 @@ layout: assignment-two-column
 title: "React: Making Your First Component"
 type: tutorial
 abbreviation: Tutorial 8
-draft: 0
+draft: 1
 points: 6
 num: 8
 start_date: 2025-04-04

@@ -3,7 +3,7 @@ layout: assignment-two-column
 title: Setting up Flask
 type: tutorial
 abbreviation: Tutorial 9
-draft: 0
+draft: 1
 points: 6
 num: 9
 start_date: 2025-04-14

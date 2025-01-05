@@ -3,11 +3,11 @@ layout: assignment-two-column
 title: "JavaScript: Practice with higher-order iteration functions"
 type: tutorial
 abbreviation: Tutorial 6
-draft: 0
+draft: 1
 points: 6
 num: 6
-start_date: 2025-03-24
-due_date: 2025-03-28
+start_date: 2025-02-28
+due_date: 2025-03-02
 ---
 
 <style>
