@@ -3,11 +3,11 @@ layout: assignment-two-column
 title: "React: Custom & Third-Party Components"
 type: tutorial
 abbreviation: Tutorial 8
-draft: 0
+draft: 1
 points: 6
 num: 8
 start_date: 2025-03-28
-due_date: 2025-04-03
+due_date: 2025-03-31
 ---
 
 

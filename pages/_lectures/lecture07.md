@@ -3,13 +3,13 @@ layout: module
 title: CSS Layouts
 type: lecture
 num: 7
-draft: 0
+draft: 1
 start_date: 2025-01-31
 slides:
     - title: CSS Layouts
       type: slides
       num: 7
-      draft: 0
+      draft: 1
       url: https://docs.google.com/presentation/d/1PjbqofH0W1PCIyM9TqDYib1poSJdeoia/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings: 
    - url: ../resources/units/
@@ -56,6 +56,7 @@ readings:
      type: reading
 activities:
     - num: 7
+      draft: 1
       type: activity
       title: Lecture files
       url: /course-files/lectures/lecture07.zip

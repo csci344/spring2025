@@ -3,7 +3,7 @@ layout: module
 title: "Security"
 type: lecture
 num: 24
-draft: 0
+draft: 1
 start_date: 2025-04-21
 slides:
     - title: "Security"

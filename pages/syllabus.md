@@ -3,14 +3,13 @@ layout: syllabus
 title: Syllabus
 permalink: /syllabus/
 course: "CSCI 344: Advanced Web Technology"
-term: "Fall 2024"
+term: "Spring 2025"
 email: svanwart@unca.edu
 prerequisites: "CSCI182 or CSCI183 or CSCI185 or CSCI201 or instructor permission."
-office_hours: "Mo, Tu, Fr 3:30pm - 4:30pm (on Zoom)"
-office_hours_zoom_link: https://unca-edu.zoom.us/j/7543717427
+office_hours: "Mo, We, Fr 3:30pm - 4:30pm, RRO 220"
 professor: "Dr. Sarah Van Wart (she/her)"
-time: "MWF 2:00-3:15PM"
-zoom: https://unca-edu.zoom.us/j/99241301278?pwd=7mLk2whOUVhDI2MJbDAHIzDKyECQtB.1
+time: "MWF 12:30-1:45PM"
+location: WHI 008
 notes: "One year of programming experience is strongly recommended."
 ---
 
@@ -29,32 +28,8 @@ notes: "One year of programming experience is strongly recommended."
 </style>
 
 
-{:.info}
-> ## Post-Helene Updates
-> Welcome back! Due to the time lost because of Helene, the following schedule adjustments have been made:
-> 
-> * **Quiz 2**: Quiz 2 has been cancelled. There will still be a final exam on select JavaScript concepts. Your quiz grade will be an average of your two quiz scores.
-> * **Class Meetings**: We will still be meeting _synchronously_ during regularly scheduled class time on Zoom (2-3:15PM M,W,F). All class meetings will be recorded. 
-> * **Attendance / Participation Grade**: I would really like you to keep coming to the synchronous zoom sessions if at all possible. We will be working on the assignments together in class. That said, I will no longer be grading you on attendance (though I will still be taking attendance). Your attendance grade will be based on your attendance from the beginning of the course through September 25. 
-> * **Schedule Adjusted**: The schedule has been adjusted and is up-to-date. Please see the [updated schedule](/spring2025/).
-> * **Specific Adjustments Made**:
->     * Attendance grading: You will no longer be graded on attendance (see above)
->     * Cancelled topics: Web Sockets (Chat) & Cloud Deployment
->     * Reduced number of tutorials
->     * 2 quizzes instead of 3
->     * Significantly trimmed down the homework assignments to just the core ideas (fewer deliverables, same concepts)
->     {:.compact}
->
-> Please also remember the leniency measures:
-> * You can drop your lowest tutorial score.
-> * You may resubmit assignments with a 10% penalty.
-> {:.compact}
-
-
 ## About the Course
-What does it take to build a website from scratch? How do designers create web interfaces? How do websites send, store, and leverage different kinds of data? What is a "framework"? This course aims to answer these questions by giving students exposure to the technologies and strategies used by professional web developers in industry. Throughout the semester, students will learn how to build a “full-stack” application to be deployed on a live web server.
-
-Students will spend the entire quarter learning about the basics of creating web applications, including building a web server and REST API, setting up a database, designing usable interfaces, and deploying it all for public use.
+What does it take to build a website from scratch? How do designers create web interfaces? How do websites send, store, and leverage different kinds of data? What is a "framework"? This course aims to answer these questions by giving students exposure to the technologies and strategies used by professional web developers in industry. Throughout the semester, students will learn the basics of creating web applications, including building a web server and REST API, setting up a database, designing usable interfaces, and implementing security and authentication measures.
 
 ## Course Format
 The course includes a mix of lectures, in-class activities, tutorials, quizzes, and homework. It is your responsibility to keep up-to-date on class material and announcements, as the schedule is subject to change. This includes material presented and announcements made in class, via email, or on Moodle.
@@ -73,11 +48,11 @@ Most Fridays, we will complete a coding / design "tutorial." Tutorials are inten
 1. Get comfortable writing lots of programs (practice makes perfect!)
 1. Assess what you know and don't know, so that you can make a plan to review various ideas and/or attend office hours.
 
-### Homework (50%)
-You will be given regular homework assignments that are intended to give you additional practice with the course ideas beyond the tutorials. They are each designed to take between **6-8 hours** to complete, so leave yourself enough time!
+### Quizzes (30%)
+There will be 3 quizzes, which are intended to ensure that you understand the programming and web-related concepts relevant to the course. 
 
-### Quizzes (20%)
-There will be 2-3 quizzes, which are intended to ensure that you understand the programming and web-related concepts relevant to the course. 
+### Homework (40%)
+You will be given regular homework assignments that are intended to give you additional practice with the course ideas beyond the tutorials. They are each designed to take between **6-8 hours** to complete, so leave yourself enough time!
 
 ## Expectations
 * You will come to class prepared and ready to engage in an intellectual discussion about the readings and concepts.
@@ -104,11 +79,11 @@ As this is a programming course, you will be using the free software programs li
 I have compiled a list of web-based reference materials on the course website:
 
 {:.compact}
-* [HTML Resources](/spring2025/html-reference)
-* [CSS Resources](/spring2025/css-reference)
-* [JavaScript Resources](/spring2025/javascript-reference)
-* [Design Resources](/spring2025/design-reference)
-* [Accessibility Resources](/spring2025/accessibility-reference)
+* [HTML Resources](/spring2025/resources/html-resources)
+* [CSS Resources](/spring2025/resources/css-reference)
+* [JavaScript Resources](/spring2025/resources/js-concepts)
+* [Design Resources](/spring2025/resources/design)
+* [Accessibility Resources](/spring2025/resources/accessibility)
 
 Before each class, you may be assigned some videos, readings, or tutorial links from this resource guide, which will cover specific concepts and ideas that we will be practicing during lecture. Please set aside time to review these materials, as they will make the assignments easier!
 
@@ -132,10 +107,10 @@ You may also talk to me about concerns about your progress in the course, person
 Your course grade is calculated based on homework, quizzes, tutorials, and attendance / participation:
 
 {:.small}
-| **Homework** | 50% |
-| **Tutorials** | 20% |
 | **Attendance & Participation** | 10% |
-| **Quizzes** | 20% |
+| **Tutorials** | 20% |
+| **Quizzes** | 30% |
+| **Homework** | 40% |
 
 Final grades are assigned on a fixed scale: 93-100 is 
 an A, 90-92.99 is an A-, 87-89.99 is a B+, etc. Final course grades will not be rounded or curved.
@@ -167,7 +142,7 @@ Tutorials will be graded according to the following scale (from 0-3 points):
 | 2pts | Check | Most of the assignment was completed; works as expected. |
 | 3pts | Check Plus | assignment completed. Works as expected. |
 
-Tutorials are due by 11:59PM on Friday (but I recommend that you just submit them at the end of class). I **do not accept late tutorials**.
+Tutorials are due at the midnight following the next class meeting. For instance, if the tutorial was assigned on Friday, it is due at midnight the following Monday unless otherwise specified. **I do not accept late tutorials**.
 
 ### Quizzes
 There will be 3 quizzes over the course of the semester. The purpose of these assessments is to ensure that you understand the programming and design concepts that we have been studying. The final quiz will happen during the scheduled final exam time slot.

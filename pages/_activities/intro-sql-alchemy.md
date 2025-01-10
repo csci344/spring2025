@@ -3,7 +3,7 @@ layout: two-column
 title: "Intro to SQLAlchemy"
 type: tutorial
 abbreviation: Activity 6
-draft: 0
+draft: 1
 num: 2
 ---
 

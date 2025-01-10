@@ -3,7 +3,7 @@ layout: module
 title: Intro to the Course
 type: lecture
 num: 1
-draft: 0
+draft: 1
 start_date: 2025-01-13
 slides:
     - title: Intro to the Course

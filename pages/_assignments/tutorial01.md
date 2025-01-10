@@ -3,11 +3,11 @@ layout: assignment-two-column
 title: Client-Side Warmups
 type: tutorial
 abbreviation: Tutorial 1
-draft: 0
+draft: 1
 points: 6
 num: 1
 start_date: 2025-01-27
-due_date: 2025-01-31
+due_date: 2025-01-29
 ---
 
 * If you have not taken CSCI 185, you will be working on an HTML / linking exercise. Please see [these instructions](tutorial01a).

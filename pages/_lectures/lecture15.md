@@ -3,7 +3,7 @@ layout: module
 title: "Asynchronous Functions and the JavaScript Fetch API"
 type: lecture
 num: 15
-draft: 0
+draft: 1
 start_date: 2025-03-05
 slides:
     - title: "Asynchronous Functions and the JavaScript Fetch API"
@@ -33,6 +33,7 @@ readings:
       required: 1
 activities:
     - type: activity
+      draft: 1
       title: Fetch Examples
       url: /course-files/lectures/lecture15.zip
 ---

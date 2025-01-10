@@ -3,7 +3,7 @@ layout: assignment-two-column
 title: Make Your First Website
 type: tutorial
 abbreviation: Tutorial 1a
-draft: 0
+draft: 1
 points: 6
 num: 1
 ---

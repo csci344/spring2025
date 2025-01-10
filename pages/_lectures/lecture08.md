@@ -3,7 +3,7 @@ layout: module
 title: Design with Accessibility in Mind
 type: lecture
 num: 8
-draft: 0
+draft: 1
 start_date: 2025-02-05
 slides:
     - title: Design with Accessibility in Mind

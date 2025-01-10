@@ -3,7 +3,7 @@ layout: module
 title: "Intro to Databases"
 type: lecture
 num: 22
-draft: 0
+draft: 1
 start_date: 2025-04-11
 slides:
     - title: "Intro to Databases"
@@ -45,6 +45,7 @@ readings:
 activities:
     - type: activity
       title: Get started on Tutorial 12
+      draft: 1
       url: /assignments/tutorial12
       notes: >
         See if you can get through the installation and configuration tasks.

@@ -7,7 +7,7 @@ draft: 1
 points: 6
 num: 7
 start_date: 2025-03-07
-due_date: 2025-03-17
+due_date: 2025-03-07
 ---
 
 {% include walkthrough-hw03.html %}

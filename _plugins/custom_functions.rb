@@ -124,7 +124,7 @@ module Jekyll
             return "<span class='mb-1 #{class_name}'>"\
                "#{extras}"\
                "<span class='#{link_class}'>#{page['tag'] != nil ? page['tag'] : badge_text}</span>#{colon}"\
-                  "#{title}"\
+                  "#{title}  #{due_date}"\
               "</span>"\
               "#{notes}"
         end

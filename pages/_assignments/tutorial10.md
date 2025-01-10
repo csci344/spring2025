@@ -7,7 +7,7 @@ draft: 1
 points: 6
 num: 10
 start_date: 2025-04-04
-due_date: 2025-04-10
+due_date: 2025-04-07
 ---
 
 TBD

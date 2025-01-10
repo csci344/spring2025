@@ -3,7 +3,7 @@ layout: module
 title: "Python Primer"
 type: lecture
 num: 20
-draft: 0
+draft: 1
 start_date: 2025-04-02
 slides:
     - title: "Python Primer"
@@ -17,6 +17,7 @@ readings:
       required: 1
 activities:
     - type: activity
+      draft: 1
       title: Lecture files
       url: /course-files/lectures/lecture20.zip
 ---

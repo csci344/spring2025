@@ -1,71 +1,72 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        {% include head.html %}
-    </head>
-    <body class="two-column">
-        {% include header.html %}
-        {% include navigation.html %}
-        {% capture schedule_simple %}{% include schedule-simple.html %}{% endcapture %}
-        {% assign all_content = schedule_simple | append: content %}
-        <main>
-            <aside>
-                {% include toc.html html=all_content class='side-menu' ordered=true %}
-            </aside>
-            <article>
-                {% include page_title.html %} 
 
-                <table>
-                    <tbody>
-                        <tr>
-                          <td><strong>Term</strong></td>
-                          <td>{{ page.term }}</td>
-                        </tr>
-                      <tr>
+<head>
+    {% include head.html %}
+</head>
+
+<body class="two-column">
+    {% include header.html %}
+    {% include navigation.html %}
+    {% capture schedule_simple %}{% include schedule-simple.html %}{% endcapture %}
+    {% assign all_content = schedule_simple | append: content %}
+    <main>
+        <aside>
+            {% include toc.html html=all_content class='side-menu' ordered=true %}
+        </aside>
+        <article>
+            {% include page_title.html %}
+
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>Term</strong></td>
+                        <td>{{ page.term }}</td>
+                    </tr>
+                    <tr>
                         <td><strong>Course</strong></td>
                         <td>{{ page.course }}</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td><strong>Prerequisites</strong></td>
                         <td>{{ page.prerequisites }}</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td><strong>Professor</strong></td>
                         <td>{{ page.professor }}</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td><strong>Contact Info</strong></td>
                         <td>{{ page.email }}</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td><strong>Time / Location</strong></td>
                         <td>
-                            {{ page.time }}<br>
-                            <a href="{{ page.zoom }}" target="_blank">Lecture Zoom Link</a>
+                            {{ page.time }}, {{ page.location }}
                         </td>
-                      </tr>
-                      <tr>
-                        <td><strong>Office Hours Time / Location</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Office Hours</strong></td>
                         <td>
                             {{ page.office_hours }}<br>
-                            <a href="{{ page.office_hours_zoom_link }}" target="_blank">Office Hours Zoom Link</a>
                         </td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td><strong>Notes</strong></td>
                         <td>{{ page.notes }}</td>
-                      </tr>
-                    </tbody>
-                </table>
-  
-                {{ content }}
+                    </tr>
+                </tbody>
+            </table>
 
-            </article>  
-        </main>
+            {{ content }}
 
-        {% include footer.html %}
-        {% include scripts.html %}
-        <script type="text/javascript" src="{{site.baseurl}}/assets/js/scrollspy.js"></script>
-        <script type="text/javascript" src="{{site.baseurl}}/assets/js/expandable.js"></script>
-    </body>
+        </article>
+    </main>
+
+    {% include footer.html %}
+    {% include scripts.html %}
+    <script type="text/javascript" src="{{site.baseurl}}/assets/js/scrollspy.js"></script>
+    <script type="text/javascript" src="{{site.baseurl}}/assets/js/expandable.js"></script>
+</body>
+
 </html>

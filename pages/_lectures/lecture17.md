@@ -3,7 +3,7 @@ layout: module
 title: "React I"
 type: lecture
 num: 17
-draft: 0
+draft: 1
 start_date: 2025-03-21
 slides:
     - title: "React I"
@@ -21,5 +21,6 @@ readings:
 activities: 
     - title: Hands-on React Activity
       url: /activities/react-activity
+      draft: 1
       type: activity
 ---

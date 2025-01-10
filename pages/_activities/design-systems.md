@@ -3,7 +3,7 @@ layout: two-column
 title: "Activity: Design Systems in React"
 type: tutorial
 abbreviation: Activity 5
-draft: 0
+draft: 1
 num: 4
 ---
 

@@ -3,13 +3,13 @@ layout: module
 title: Introduction to HTML
 type: lecture
 num: 5
-draft: 0
+draft: 1
 start_date: 2025-01-24
 slides:
     - title: Intro to semantic tags, more linking, intro to GitHub
       type: lecture
       num: 5
-      draft: 0
+      draft: 1
       url: https://docs.google.com/presentation/d/1h-grizseMadQCAno5iL2dkDm0h9VlT1o/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings:
    - url: /resources/linking
@@ -39,10 +39,12 @@ readings:
      type: reading
 activities:
     - num: 4
+      draft: 1
       type: activity
       title: Linking
       url: /course-files/lectures/lecture04.zip
     - num: 5
+      draft: 1
       type: activity
       title: Configure git and GitHub
       url: /activities/github

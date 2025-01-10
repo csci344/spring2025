@@ -3,7 +3,7 @@ layout: module
 title: "HTTP & REST"
 type: lecture
 num: 21
-draft: 0
+draft: 1
 start_date: 2025-04-07
 slides:
     - title: "HTTP & REST"

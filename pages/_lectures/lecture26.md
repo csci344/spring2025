@@ -2,8 +2,8 @@
 layout: module
 title: "Reflection & Next Steps"
 type: lecture
-num: 25
-draft: 0
+num: 26
+draft: 1
 start_date: 2025-04-28
 slides:
     - title: "Reflection & Next Steps"

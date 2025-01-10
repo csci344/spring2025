@@ -3,7 +3,7 @@ layout: module
 title: "Working with the DOM: Part II"
 type: lecture
 num: 11
-draft: 0
+draft: 1
 start_date: 2025-02-19
 slides:
     - title: "Working with the DOM: Part II"

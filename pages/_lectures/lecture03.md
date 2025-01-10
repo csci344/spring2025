@@ -3,7 +3,7 @@ layout: module
 title: Intro to the Course
 type: lecture
 num: 2
-draft: 0
+draft: 1
 start_date: 2025-01-17
 slides:
     - title: Societal & Ethical Considerations

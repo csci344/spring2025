@@ -3,7 +3,7 @@ layout: module
 title: "Authentication"
 type: lecture
 num: 25
-draft: 0
+draft: 1
 start_date: 2025-04-23
 slides:
     - title: "Authentication"

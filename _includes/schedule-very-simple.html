@@ -1,4 +1,3 @@
-{% assign lectures = site.lectures | where: 'type', 'module' | where_exp: "lecture", "lecture.is_review != 1" %}
 {% assign tutorials = site.assignments | where: 'type', 'tutorial' %}
 
 
@@ -10,13 +9,13 @@
     <div class="group">
         <h3>Topics</h3>
         <ol>
-            {% for lecture in lectures %}
+            {% for topic in site.topics %}
             <li>
 
-                {% if lecture.draft == 1 %}
-                {{ lecture.title }}
+                {% if topic.draft == 1 %}
+                {{ topic.title }}
                 {% else %}
-                <a href="{{site.baseurl}}{{lecture.url}}">{{ lecture.title }}</a>
+                <a href="{{site.baseurl}}{{topic.url}}">{{ topic.title }}</a>
                 {% endif %}
             </li>
             {% endfor %}

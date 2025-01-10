@@ -7,7 +7,7 @@ type: topic
 num: 4
 draft: 0
 start_date: 2025-02-03
-lectures: [8, 9]
+lectures: [8]
 tutorials: [3]
 ---
 

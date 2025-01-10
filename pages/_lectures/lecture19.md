@@ -3,7 +3,7 @@ layout: module
 title: "React Component Libraries"
 type: lecture
 num: 19
-draft: 0
+draft: 1
 start_date: 2025-03-26
 slides:
     - title: "React Component Libraries"

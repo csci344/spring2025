@@ -3,7 +3,7 @@ layout: module
 title: Intro to JavaScript
 type: lecture
 num: 9
-draft: 0
+draft: 1
 start_date: 2025-02-12
 slides:
     - title: Intro to the JavaScript Language
