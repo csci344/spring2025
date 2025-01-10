@@ -78,3 +78,4 @@ fi
 git checkout main
 rm -rf _site
 rm -rf "$TEMP_DIR"
+
