@@ -31,4 +31,8 @@ readings:
       citation: >
         <a href="https://dev.to/silvenleaf/fetch-api-easiest-explanation-part-4-4-delete-by-silvenleaf-4376">fetch DELETE examples</a>.
       required: 1
+activities:
+    - type: activity
+      title: Fetch Examples
+      url: /course-files/lectures/lecture15.zip
 ---

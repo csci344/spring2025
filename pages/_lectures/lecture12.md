@@ -25,5 +25,5 @@ activities:
       draft: 1
       type: activity
       title: "Lecture 12 files: forEach, map, filter, reduce"
-      url: /spring2025/course-files/lectures/lecture10.zip
+      url: /spring2025/course-files/lectures/lecture12.zip
 ---

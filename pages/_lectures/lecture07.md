@@ -57,6 +57,6 @@ readings:
 activities:
     - num: 7
       type: activity
-      title: Lecture 7 exercise files
+      title: Lecture files
       url: /course-files/lectures/lecture07.zip
 ---
