@@ -12,22 +12,22 @@ slides:
       draft: 1
       url: https://docs.google.com/presentation/d/1PjbqofH0W1PCIyM9TqDYib1poSJdeoia/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings: 
-   - url: ../resources/units/
+   - url: /resources/units/
      title: Units
      type: reading
      required: 1
      internal: 1
-   - url: ../resources/media-queries/
+   - url: /resources/media-queries/
      title: Media Queries
      type: reading
      required: 1
      internal: 1
-   - url: ../resources/flexbox/
+   - url: /resources/flexbox/
      title: CSS Flex
      type: reading
      required: 1
      internal: 1
-   - url: ../resources/css-grid/
+   - url: /resources/css-grid/
      title: CSS Grid
      type: reading
      required: 1

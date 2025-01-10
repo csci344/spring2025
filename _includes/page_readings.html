@@ -13,7 +13,7 @@ Required:
 <ul>
     {% for reading in required_readings %}
     <li class="mb-4">
-        {{ reading | display_link_or_badge: true, false, true }}
+        {{ reading | display_reading }}
     </li>
     {% endfor %}
 </ul>
@@ -26,7 +26,7 @@ Skim:
 <ul>
     {% for reading in skim_readings %}
     <li class="mb-4">
-        {{ reading | display_link_or_badge: true, false, true }}
+        {{ reading | display_reading }}
     </li>
     {% endfor %}
 </ul>
@@ -39,7 +39,7 @@ Pick One:
 <ul>
     {% for reading in pick_one_readings %}
     <li class="mb-4">
-        {{ reading | display_link_or_badge: true, false, true }}
+        {{ reading | display_reading }}
     </li>
     {% endfor %}
 </ul>
@@ -52,7 +52,7 @@ Optional:
 <ul>
     {% for reading in optional_readings %}
     <li class="mb-4">
-        {{ reading | display_link_or_badge: true, false, true }}
+        {{ reading | display_reading }}
     </li>
     {% endfor %}
 </ul>

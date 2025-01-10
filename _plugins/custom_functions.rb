@@ -1,271 +1,170 @@
 module Jekyll
-
     module MyCustomFilters
+      # Simple string reversal
       def reverse_string(input)
         input.reverse
       end
-
-
-
-      # Custom filter to generate all Tuesdays and Thursdays between two dates
+  
+      # Get all Tuesdays and Thursdays in a date range
       def tuesdays_and_thursdays(start_date, end_date)
-        # Parse the input dates
-        start_date = Date.parse(start_date)
-        end_date = Date.parse(end_date)
-  
-        # Initialize an empty array to store the result
-        result = []
-  
-        # Iterate through the date range
-        (start_date..end_date).each do |date|
-          # Check if the day is Tuesday (2) or Thursday (4)
-          if date.wday == 2 || date.wday == 4
-            result << date
-          end
-        end
-  
-        # Return the result as an array of date strings
-        result.map(&:to_s)
+        (Date.parse(start_date)..Date.parse(end_date)).select { |date| [2, 4].include?(date.wday) }.map(&:to_s)
       end
-
-
-
+  
+      # Extract and sort unique due dates from pages
       def extract_due_dates(pages)
-        # Select only pages that have a `due_date` field and return their dates
-        pages.map { |page| 
-        # Parse the due_date string into a Date object
-        page['due_date'] if page['due_date'] 
-      }.compact.uniq.sort
+        pages.map { |page| page['due_date'] if page['due_date'] }.compact.uniq.sort
       end
-
-
+  
+      # Combine and sort dates from two arrays
       def combine_dates(arr1, arr2)
-        combined = arr1.concat(arr2)
-        # Parse the date strings to Date objects if they are strings
-        combined.map! do |date|
-            convert_to_date_if_not_already(date)
-        end
-        combined.compact.uniq.sort
+        (arr1 + arr2).map { |date| convert_to_date_if_not_already(date) }.compact.uniq.sort
       end
-
+  
+      # Get the week number difference between two dates
+    #   def get_week_number(start_date, end_date)
+    #     ((Date.parse(end_date) - Date.parse(start_date)) / 7).to_i + 1
+    #   end
 
       def get_week_number(start_date, end_date)
-        # Parse the start date and end date into Date objects if they are strings
-        start_date = Date.strptime(start_date, '%Y-%m-%d') if start_date.is_a?(String)
-        end_date = Date.strptime(end_date, '%Y-%m-%d') if end_date.is_a?(String)
-  
-        # Calculate the difference in days between the two dates
-        days_difference = (end_date - start_date).to_i
-  
-        # Convert the difference in days to weeks and return the result
-        (days_difference / 7.0).to_i + 1
+        start_date = start_date.is_a?(Date) ? start_date : Date.parse(start_date)
+        end_date = end_date.is_a?(Date) ? end_date : Date.parse(end_date)
+        
+        ((end_date - start_date) / 7).to_i + 1
       end
-
-
+  
+      # Normalize URL and set target attribute
       def get_url(url)
-        return nil if not url
-        url.start_with?("http") ? url: "/spring2025#{url}"
+        url&.start_with?("http") ? url : "/spring2025#{url}"
+      end
+  
+      def get_target(url)
+        url&.start_with?("http") ? "_blank" : ""
       end
 
-      def get_target(url)
-        (url && url.start_with?("http")) ? "_blank" : ""
+      def display_reading(reading)
+        type = reading['type']
+        title = "<span>#{reading['title']}</span>"
+        target = get_target(reading['url'])
+        notes = "<div>#{reading['notes']}</div>"
+        url = get_url(reading['url'])
+        colon = "<span style='display: none'>: </span>"
+
+        if reading["citation"]
+            return "<span class='mb-1'>"\
+                "#{reading['citation']}"\
+            "</span>"\
+            "#{notes}"
+        end
+
+        return "<a class='mb-1' href='#{url}' target='#{target}'>"\
+                "#{reading['tag'] != nil ? reading['tag'] : reading['title']}"\
+            "</a>"\
+          "#{notes}"
       end
 
 
       def display_link_or_badge(page, hide_title=false, new_line=true, simple=false, show_notes=true)
         type = page['type'] == "homework" ? "hw" : page['type']
         class_name = new_line ? "block" : "inline"
-        badge_text = type ? type.capitalize : ""
-        badge_text = simple ? page['title'] : "#{badge_text}"
-        if page['type'] == "homework" or page['type'] == "tutorial" or page['type'] == "quiz"
-            badge_text = simple ? page['title'] : "#{badge_text} #{page['num']}"
-        end
+        badge_text = simple ? page['title'] : "#{type.capitalize}#{' ' + page['num'].to_s if %w[homework tutorial quiz].include?(page['type'])}"
         url = get_url(page['url'])
         target = get_target(page['url'])
         title = (hide_title || simple) ? "" : "<span>#{page['title']}</span>"
-        link_icon = simple ? "" : " <i class='fa-solid fa-link'></i>"
-        extras = ""
-        # extras = (page['type'] == "reading" and page['required'] == nil and page['pick_one'] == nil) ? " <span class='optional'>optional</span>" : ""
-        # extras = (page['type'] == "reading" and page['skim'] == 1) ? " <span class='optional'>skim</span>" : extras
         colon = "<span style='display: none'>: </span>"
-        is_draft = (page['draft'] == 1)
-        link_class = simple ? "" : (is_draft ? "badge" : type)
-        if page['tag'] != nil
-            link_class = "badge"
-        end
-        
-        notes = show_notes ? "<div>#{page['notes']}</div>" : ""
-        temp_date = convert_to_date_if_not_already(page['due_date'])
-        due_date = temp_date ? "(due #{temp_date.strftime('%a, %-m/%-d')})" : ""
-        
-        if type == "reading" && page["citation"]
-            return "<span class='mb-1 #{class_name}'>"\
-               "#{extras}"\
-               "<span class='#{link_class}'>#{page['tag'] != nil ? page['tag'] : badge_text}</span>#{colon}"\
-                  "#{page["citation"]}"\
-            "</span>"\
-            "#{notes}"
-        end
-
-        if !is_draft && url != nil
-          # Return an anchor (<a>) tag if the url exists
-          return "<span class='mb-1 #{class_name}' target=''>"\
-                "#{extras}"\
-                "<a class='#{link_class}' href='#{url}' target='#{target}'>"\
-                    "#{link_icon} #{page['tag'] != nil ? page['tag'] : badge_text}"\
-                "</a>#{colon}"\
-                "#{title} #{due_date}"\
-            "</span>"\
-            "#{notes}"
-        end
-
-        if is_draft || url == nil
-            # Return a span if no url exists
-            return "<span class='mb-1 #{class_name}'>"\
-               "#{extras}"\
-               "<span class='#{link_class}'>#{page['tag'] != nil ? page['tag'] : badge_text}</span>#{colon}"\
-                  "#{title}  #{due_date}"\
-              "</span>"\
-              "#{notes}"
-        end
-        
-        if page['notes'] != nil
-            return page['notes']
-        end
-
-        return ""
-      end
+        is_draft = page['draft'] == 1
+        link_class = page['tag'] ? "badge" : (simple ? "" : (is_draft ? "badge" : type))
+        link_icon = " <i class='fa-solid fa-link'></i>"
+        notes = show_notes && page['notes'] ? "<div>#{page['notes']}</div>" : ""
+        due_date = page['due_date'] ? "(due #{convert_to_date_if_not_already(page['due_date']).strftime('%a, %-m/%-d')})" : ""
       
-
-
-      def display_assignment(page, hide_title=false, new_line=true)
-        if page['type'] == 'lab'
-          # Return an anchor (<a>) tag if the url exists
-          "<div class='mb-1'>Lab #{page['num']}</div>"
-        else
-          # Return a span if no url exists
-          display_link_or_badge(page, hide_title=hide_title, new_line=new_line)
+        # Handle anchor or span rendering
+        if url && !is_draft
+          return "<span class='mb-1 #{class_name}'>"\
+                   "<a class='#{link_class}' href='#{url}' target='#{target}'>#{link_icon} #{page['tag'] || badge_text}</a>"\
+                   "#{colon}#{title} #{due_date}"\
+                 "</span>#{notes}"
         end
+      
+        # Handle span rendering for drafts or no URL
+        return "<span class='mb-1 #{class_name}'>"\
+          "<span class='#{link_class}'>#{page['tag'] || badge_text}</span>#{colon}"\
+          "#{title} #{due_date}"\
+        "</span>#{notes}"
       end
-
-
+  
+      # Display assignment links or labels
+      def display_assignment(page, hide_title = false, new_line = true)
+        return "<div class='mb-1'>Lab #{page['num']}</div>" if page['type'] == 'lab'
+        display_link_or_badge(page, hide_title, new_line)
+      end
+  
+      # Check for holidays or deadlines
       def has_holiday_or_deadline(pages)
-        # Iterate over the list of pages
-        pages.each do |page|
-          # Check if the page_type is either 'holiday' or 'deadline'
-          if page['type'] == 'holiday' || page['type'] == 'deadline'
-            return true
-          end
-        end
-        # Return false if no page matches
-        false
+        pages.any? { |page| %w[holiday deadline].include?(page['type']) }
       end
-
-
+  
+      # Convert a date if needed
       def convert_to_date_if_not_already(date)
-        # date.is_a?(Time) ? Date.parse(date.to_s) : Date.parse(date)
-        if date.is_a?(String)
-            Date.strptime(date, '%Y-%m-%d')  # Parse string to Date
-        elsif date.is_a?(Date)
-            date  # If it's already a Date object, use it as is
-        end
+        return Date.strptime(date, '%Y-%m-%d') if date.is_a?(String)
+        return date if date.is_a?(Date)
       end
-
-
-      def get_labs_by_module_by_date(page, site, date)
-        labs = get_labs_by_module(page, site)
-        labs = labs.select { |lab| lab['start_date'] == date }
-      end
-
-      def get_projects_by_module_by_date(page, site, date)
-        projects = get_projects_by_module(page, site)
-        projects = projects.select { |project| convert_to_date_if_not_already(project['start_date']) == date }
-      end
-
-
-      def get_labs_by_module(page, site)
-        labs = []
-        if page['labs'] # Ensure page['labs'] is not nil before using it
-            labs = site['assignments'].select { |item| page['labs'].include?(item['num']) && item['type'] == 'lab' }
-        end
-        return labs
-      end
-
-      def get_tutorials_by_topic(topic, site)
-        tutorials = []
-        if topic['tutorials'] 
-            tutorials = site['assignments'].select { 
-                |item| topic['tutorials'].include?(item['num']) && item['type'] == 'tutorial' 
-            }
-        end
-        return tutorials
-      end
-
-      def get_projects_by_module(page, site)
-        projects = []
-        if page['projects'] # Ensure page['labs'] is not nil before using it
-            projects = site['assignments'].select { |item| page['projects'].include?(item['num']) && item['type'] == 'project' }
-        end
-        return projects
-      end
-
-
-      def get_lectures_by_topic(topic, site)
-        lectures = []
-        if topic['lectures'] # Ensure page['labs'] is not nil before using it
-            lectures = site['lectures'].select { |item| topic['lectures'].include?(item['num']) }
-        end
-        return lectures
-      end
-
-      def filter_readings(readings, type)
-        if !readings
-            return []
-        end
-        if type == "required"
-            return readings.select { |reading| reading['required'] == 1 }
-        end
-        if type == "optional"
-            return readings.select { |reading| 
-                reading['required'] == nil && 
-                reading['pick_one'] == nil && 
-                reading['skim'] == nil 
-            }
-        end
-        if type == "skim"
-            return readings.select { |reading| reading['skim'] != nil }
-        end
-        if type == "pick_one"
-            return readings.select { |reading| reading['pick_one'] != nil }
-        end
-      end
-
-      def get_all_module_activities(topic, site)
-        activities = []
-        lectures = get_lectures_by_topic(topic, site)
-        tutorials = get_tutorials_by_topic(topic, site)
-        activities = activities.concat(lectures).concat(tutorials)
-        return activities
-      end
-
-
-      def get_module_dates(page, site)
-        items = get_all_module_activities(page, site)  
-        items.map { |item| 
-            # Parse the due_date string into a Date object
-            convert_to_date_if_not_already(item['start_date']) if item['start_date'] 
-        }.compact.uniq.sort
-      end
-
-
-
+  
+      # Filter content by date
       def filter_list_by_date(list, date)
-        if !list.nil?
-            return list.select{ |item| convert_to_date_if_not_already(item['start_date']) == date if item['start_date'] } 
+        # return list if list.nil? || list.none? { |item| item&.fetch('start_date', nil) }
+      
+        list.select do |item|
+          next false if item.nil? || item['start_date'].nil?
+      
+          convert_to_date_if_not_already(item['start_date']) == date
         end
-        return []
       end
-
+  
+      # Retrieve labs, projects, or tutorials by module
+      def get_items_by_module(page, site, type)
+        items = page[type]
+        site['assignments'].select { |item| items&.include?(item['num']) && item['type'] == type[0..-2] } || []
+      end
+  
+      def get_labs_by_module(page, site)
+        get_items_by_module(page, site, 'labs')
+      end
+  
+      def get_projects_by_module(page, site)
+        get_items_by_module(page, site, 'projects')
+      end
+  
+      def get_tutorials_by_topic(topic, site)
+        get_items_by_module(topic, site, 'tutorials')
+      end
+  
+      def get_lectures_by_topic(topic, site)
+        topic['lectures']&.map { |num| site['lectures'].find { |item| item['num'] == num } } || []
+      end
+  
+      # Filter readings by type
+      def filter_readings(readings, type)
+        return [] unless readings
+        case type
+        when "required" then readings.select { |r| r['required'] }
+        when "optional" then readings.select { |r| !r['required'] && !r['pick_one'] && !r['skim'] }
+        when "skim" then readings.select { |r| r['skim'] }
+        when "pick_one" then readings.select { |r| r['pick_one'] }
+        else []
+        end
+      end
+  
+      # Combine module activities (lectures, tutorials)
+      def get_all_module_activities(topic, site)
+        get_lectures_by_topic(topic, site) + get_tutorials_by_topic(topic, site)
+      end
+  
+      # Get module dates
+      def get_module_dates(page, site)
+        get_all_module_activities(page, site).map do |item| 
+          item && item['start_date'] ? convert_to_date_if_not_already(item['start_date']) : nil
+        end.compact.uniq.sort
+      end
     end
   end
   
