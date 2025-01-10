@@ -60,16 +60,22 @@ git fetch origin
 git checkout gh-pages
 git pull origin gh-pages
 
-# -- Check for changes in the _site folder
-git diff --exit-code _site/
-if [ $? -ne 0 ]; then
-  # If there are changes, clean up the gh-pages branch
-  git rm -rf .
+# -- Check for changes in the _site folder by comparing with the existing gh-pages branch
+git rm -rf . # Remove any existing files in gh-pages branch
 
-  # -- Add, commit, and push the updated files
-  git --work-tree="$TEMP_DIR" add .
-  git --work-tree="$TEMP_DIR" commit -m 'Updated gh-pages with new site content'
-  git --work-tree="$TEMP_DIR" push -f origin gh-pages
+# Copy the contents from the TEMP_DIR to the working directory
+cp -r "$TEMP_DIR/" .
+git add .
+git commit -m 'Updated gh-pages with new site content'
+
+# Check for changes by running `git status`
+git status --porcelain | grep -q '^ M'  # Checks if there are modified files
+
+if [ $? -eq 0 ]; then
+  # If there are modified files, commit and push the changes
+  git add .
+  git commit -m 'Updated gh-pages with new site content'
+  git push -f origin gh-pages
 else
   echo "No changes to push."
 fi
@@ -78,4 +84,3 @@ fi
 git checkout main
 rm -rf _site
 rm -rf "$TEMP_DIR"
-
