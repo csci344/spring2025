@@ -65,8 +65,6 @@ git rm -rf . # Remove any existing files in gh-pages branch
 
 # Copy the contents from the TEMP_DIR to the working directory
 cp -r "$TEMP_DIR/" .
-git add .
-git commit -m 'Updated gh-pages with new site content'
 
 # Check for changes by running `git status`
 git status --porcelain | grep -q '^ M'  # Checks if there are modified files
