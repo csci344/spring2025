@@ -61,7 +61,7 @@ git checkout gh-pages
 git pull origin gh-pages
 
 # -- Check for changes in the _site folder by comparing with the existing gh-pages branch
-# git rm -rf . # Remove any existing files in gh-pages branch
+git rm -rf . # Remove any existing files in gh-pages branch
 
 # Copy the contents from the TEMP_DIR to the working directory
 cp -r "$TEMP_DIR/" .
