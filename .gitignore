@@ -1,7 +1,1 @@
-_site
-.sass-cache
-*.md
-*.sh
-*.yml
-Gemfile
-Gemfile.lock
+_site\n_site\n.sass-cache\n.md\n.sh\n.yml\nGemfile\nGemfile.lock

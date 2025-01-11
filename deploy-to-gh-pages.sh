@@ -10,6 +10,9 @@ rm -r _site
 rm -r .sass-cache
 rm -r Gemfile.lock
 
+# create .gitignore file to exclude unnecessary files
+echo "_site\n_site\n.sass-cache\n.md\n.sh\n.yml\nGemfile\nGemfile.lock" > .gitignore
+
 
 # copy the new site files to the gh-pages branch:
 cp -r "$TEMP_DIR/" .
