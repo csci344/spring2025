@@ -3,7 +3,7 @@ layout: assignment-two-column
 title: CSS Exercises
 type: tutorial
 abbreviation: Tutorial 2
-draft: 0
+draft: 1
 points: 6
 num: 2
 start_date: 2025-02-03
