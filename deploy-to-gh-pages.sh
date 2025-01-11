@@ -1,22 +1,26 @@
-#! /bin/bash
-
-# 1. Build the Jekyll site and copy the contents to a temporary directory:
-bundle exec jekyll build 
+# build the site and copy the files to a temporary directory:
+bundle exec jekyll build
 TEMP_DIR=$(mktemp -d)
 rsync -av --exclude='node_modules' --exclude='*.pyc' _site/ "$TEMP_DIR"
 
-# 2. Checkout gh-pages
+# checkout gh-pages and remove all files:
 git checkout gh-pages
+git rm -rf .
+rm -r _site
+rm -r .sass-cache
+rm -r Gemfile.lock
 
-# 3. Copy the contents from the TEMP_DIR to the working directory
+
+# copy the new site files to the gh-pages branch:
 cp -r "$TEMP_DIR/" .
 
-# 4. Commit the changes and push to the gh-pages branch
+
+# commit changes and send them to GitHub:
 git add .
 git commit -m 'Updated gh-pages with new site content'
 git push -f origin gh-pages
 
-# 5. Restore main branch and clean up:
+# clean up:
 git checkout main
 rm -rf _site
 rm -rf "$TEMP_DIR"
