@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Client-Side Warmups</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="two-column">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li class="active" ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/11Ra-DrGJOYMOC6Ag_3GS6ShxZFCPdKh6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                <ol class="side-menu">
+  <li><a href="#part-1-setting-up-your-development-environment">Part 1. Setting Up Your Development Environment</a>
+    <ol>
+      <li><a href="#1-install-visual-studio-code-if-you-havent-already">1. Install Visual Studio Code (if you haven’t already)</a></li>
+      <li><a href="#2-organize-your-files">2. Organize your files</a></li>
+      <li><a href="#3-take-a-look-at-your-files">3. Take a look at your files</a>
+        <ol>
+          <li><a href="#a-view-file-in-visual-studio-code">A. View file in Visual Studio Code</a></li>
+          <li><a href="#b-view-file-in-web-browser">B. View file in Web Browser</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><a href="#part-2-completing-the-exercises">Part 2. Completing the Exercises</a>
+    <ol>
+      <li><a href="#step1">1. Connect your style.css stylesheet</a></li>
+      <li><a href="#step2">2. Link your pages to one another in the navigation section</a></li>
+      <li><a href="#step3">3. Add some images to the index.html file</a></li>
+      <li><a href="#step4">4. Add two videos to the videos.html file</a></li>
+      <li><a href="#step5">5. Add a Spotify player to music.html</a></li>
+      <li><a href="#step6">6. Optional Enhancements</a>
+        <ol>
+          <li><a href="#css-reference">CSS Reference</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><a href="#how-to-think-about-this-exercise-meta-comment">How to think about this exercise (meta-comment)</a></li>
+  <li><a href="#what-to-turn-in">What to turn in</a></li>
+</ol>
+
+            </aside>
+            <article>
+                
+
+    
+        <h1>
+            <a href="../assignments/">Assignments</a> > 
+            Tutorial 1: Client-Side Warmups
+        </h1>
+    
+ 
+                <p>
+    
+        Due on Wed, 01/29 @ 11:59PM.
+    
+    
+        6 Points.
+    
+    
+</p>
+
+<blockquote class="blockquote-no-margin">
+  <p><strong>Assumptions:</strong> This tutorial assumes that you have reviewed the materials assigned in the <a href="/spring2025/lectures/topic02">Intro to HTML lecture</a>.</p>
+</blockquote>
+
+<h2 id="part-1-setting-up-your-development-environment">Part 1. Setting Up Your Development Environment</h2>
+
+<h3 id="1-install-visual-studio-code-if-you-havent-already">1. Install Visual Studio Code (if you haven’t already)</h3>
+<p>Download and install Visual Studio Code: <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a>.</p>
+<ul>
+  <li>This does not need to be done if you are working on the computer lab computers – just if you’re working on your laptop.</li>
+</ul>
+
+<h3 id="2-organize-your-files">2. Organize your files</h3>
+<p><a href="/spring2025/course-files/tutorials/tutorial02a.zip" class="nu-button">Download Tutorial Files <i class="fas fa-download"></i></a></p>
+
+<p>File management and organization are an essential part of programming and web development. As such, we suggest the following system:</p>
+<ol>
+  <li>Create a course folder called <strong>csci344</strong> somewhere on your computer. Many people store theirs in Documents or on their Desktop.</li>
+  <li>Create a <strong>tutorials</strong> folder inside of your csci344 folder.</li>
+  <li>Download the <code class="highlighter-rouge">tutorial01.zip</code> file, unzip it (ask if you’re new to zipping / unzipping files and I will help you) and move the unzipped tutorial02 folder into the <code class="highlighter-rouge">csci344/tutorials</code> folder (see diagram below).</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>csci344
+    ├── tutorials
+    │   └── tutorial01
+    │   ...
+    │   
+    └── lectures
+        ├── lecture03
+        └── lecture04
+</code></pre></div></div>
+
+<h3 id="3-take-a-look-at-your-files">3. Take a look at your files</h3>
+<p>You will be <strong><em>editing</em></strong> your files using VS Code (or another code editor of your choice), and <strong><em>viewing</em></strong> your rendered files in your web browser.</p>
+
+<h4 id="a-view-file-in-visual-studio-code">A. View file in Visual Studio Code</h4>
+<ol>
+  <li>Open VS Code (your code editor).</li>
+  <li>Add your entire csci344 folder to VS Code by
+    <ul>
+      <li>clicking <code class="highlighter-rouge">File &gt;&gt; Add Folder to Workspace...</code></li>
+      <li>and then navigating to your csci344 folder (wherever you saved it)</li>
+    </ul>
+  </li>
+  <li>Open your index.html file inside of the <code class="highlighter-rouge">tutorial01</code> folder and take a look at it. You should see a very simple HTML file that looks like this:</li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+        <span class="c">&lt;!-- stylesheets and metadata go here --&gt;</span>
+       <span class="nt">&lt;title&gt;</span>Home<span class="nt">&lt;/title&gt;</span>       
+       <span class="c">&lt;!-- &lt;link rel="stylesheet" href="style.css"&gt; --&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+   <span class="nt">&lt;body&gt;</span>
+       <span class="c">&lt;!-- HTML content tags go here --&gt;</span>
+        <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;strong&gt;</span>Home<span class="nt">&lt;/strong&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Music<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Videos<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/nav&gt;</span>
+        <span class="nt">&lt;main&gt;</span>
+            <span class="nt">&lt;h1&gt;</span>Home<span class="nt">&lt;/h1&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Here is some text for the homepage.<span class="nt">&lt;/p&gt;</span>
+
+            <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"photo-section"</span><span class="nt">&gt;</span>
+                <span class="c">&lt;!-- photos go here--&gt;</span>
+            <span class="nt">&lt;/section&gt;</span>
+        <span class="nt">&lt;/main&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h4 id="b-view-file-in-web-browser">B. View file in Web Browser</h4>
+<p>Once you’ve taken a look at the code in VS Code, view it in your browser using the Live Server plugin you installed on Monday. It should look something like this:</p>
+
+<p><img class="frame xsmall" src="/spring2025/assets/images/tutorials/tutorial01/a.png" /></p>
+
+<h2 id="part-2-completing-the-exercises">Part 2. Completing the Exercises</h2>
+<p>Now that you’re set up, please complete the 6 tasks below:</p>
+
+<blockquote class="blockquote-no-margin">
+  <ol>
+    <li><a href="#step1">Connect your stylesheet to your HTML files</a></li>
+    <li><a href="#step2">Link your HTML files together</a></li>
+    <li><a href="#step3">Add some images to index.html</a></li>
+    <li><a href="#step4">Add some embedded videos to videos.html</a></li>
+    <li><a href="#step5">Add a music player to music.html</a></li>
+    <li><a href="#step6">Attempt the optional enhancements (if time)</a></li>
+  </ol>
+</blockquote>
+
+<h3 id="step1">1. Connect your style.css stylesheet</h3>
+<p>Open your <code class="highlighter-rouge">index.html</code> file. Within the <code class="highlighter-rouge">&lt;head&gt;&lt;/head&gt;</code> section, uncomment the following line by removing the <code class="highlighter-rouge">&lt;!--</code> on one side and the <code class="highlighter-rouge">--&gt;</code> on the other:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- &lt;link rel="stylesheet" href="style.css"&gt; --&gt;</span>
+</code></pre></div></div>
+
+<p>This “link tag” instructs the browser to style the <code class="highlighter-rouge">index.html</code> according to the rules specified in the <code class="highlighter-rouge">styles.css</code> stylesheet. When you’re done, it your code should look like this:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"style.css"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>Test your change by refreshing your web browser. Your page should now look like this:</p>
+
+<p><img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial01/b.png" /></p>
+
+<p>Next, add this same stylesheet link tag inside of the head tag of the <code class="highlighter-rouge">videos.html</code> and <code class="highlighter-rouge">music.html</code> files, and then preview both of these in your web browser. These pages should look like this:</p>
+
+<p><img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial01/c.png" />
+<img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial01/d.png" /></p>
+
+<h3 id="step2">2. Link your pages to one another in the navigation section</h3>
+<p>Next, modify the anchor tags within the navigation section (in each of your pages) so that your pages link to one another. To do this, you will modify the value that corresponds to the <code class="highlighter-rouge">href</code> <strong><em>attribute</em></strong> so that it points to the file you want to open when your user clicks the link. In other words, you will replace the <code class="highlighter-rouge">#</code> with a <strong><em>relative path</em></strong> to the relevant HTML file.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;strong&gt;</span>Home<span class="nt">&lt;/strong&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Music<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Videos<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+</code></pre></div></div>
+
+<blockquote class="blockquote-no-margin">
+  <p><strong>Hint</strong>: Please review the <a href="https://www.w3schools.com/html/html_filepaths.asp" target="_blank">W3Schools reference</a> on “HTML File Paths,” if you are not sure what a relative path is.</p>
+</blockquote>
+
+<p>Update all of your anchor tags on all three pages. When you’re done, all of the pages should link together as shown below:</p>
+
+<p><img class="frame small" src="/spring2025/assets/images/tutorials/tutorial01/e.gif" /></p>
+
+<h3 id="step3">3. Add some images to the index.html file</h3>
+<p>Inside the <code class="highlighter-rouge">index.html</code> file:</p>
+
+<ol>
+  <li>Add three image tags inside of the <code class="highlighter-rouge">&lt;section class="photo-section"&gt;&lt;/section&gt;</code> region of your page.</li>
+  <li>Each image should reference one of the flower images inside of the <code class="highlighter-rouge">images</code> folder.</li>
+  <li>Make sure that you use <strong>relative</strong> paths to each of your images.</li>
+  <li>Feel free to save other images into your <code class="highlighter-rouge">images</code> folder and use those if you want.</li>
+</ol>
+
+<p>When you’re done, your page should look like this:</p>
+
+<p><img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial01/f.png" /></p>
+
+<blockquote class="blockquote-no-margin">
+  <p><strong>Hint</strong>: Please see the course resources on <a href="/spring2025/resources/image-tags/">images</a> for more detail.</p>
+</blockquote>
+
+<h3 id="step4">4. Add two videos to the videos.html file</h3>
+<p>Inside the <code class="highlighter-rouge">videos.html</code> file, add two different YouTube or Vimeo videos inside of the <code class="highlighter-rouge">&lt;section class="video-section"&gt;&lt;/section&gt;</code> region of your page. To get the embed code of any YouTube video, (a) navigate to the video, (b) click “share”, (c) then click “embed,” and (d) then copy the embed code (iframe tag), as pictured below (note the pink squares):</p>
+
+<p><img class="frame small" src="/spring2025/assets/images/tutorials/tutorial01/g.png" /></p>
+
+<p><img class="frame small" src="/spring2025/assets/images/tutorials/tutorial01/h.png" /></p>
+
+<p><img class="frame small" src="/spring2025/assets/images/tutorials/tutorial01/i.png" /></p>
+
+<p>When you’re done, your page should look like this (except with <em>your</em> videos):</p>
+
+<p><img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial01/j.png" /></p>
+
+<blockquote class="blockquote-no-margin">
+  <p><strong>More examples</strong>: Please also see the course resources on <a href="/spring2025/resources/media-tags/">media tags</a>.</p>
+</blockquote>
+
+<h3 id="step5">5. Add a Spotify player to music.html</h3>
+<p>Inside the <code class="highlighter-rouge">music.html</code> file, add one or more embedded music players inside of the <code class="highlighter-rouge">&lt;section class="music-section"&gt;&lt;/section&gt;</code> region of your page. There are instructions on how to get the embed code of a Spotify artist profile, album, song, playlist, or podcast on Spotify’s <a href="https://artists.spotify.com/en/help/article/embedded-players" target="_blank">documentation page</a>.</p>
+
+<p>When you’re done, your page should look like this (except with <em>your</em> videos):</p>
+
+<p><img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial01/k.png" /></p>
+
+<h3 id="step6">6. Optional Enhancements</h3>
+<p>While we have not yet covered CSS, try using Google and various online resources to see how you might edit the <code class="highlighter-rouge">style.css</code> file to achieve the following:</p>
+
+<ul>
+  <li>Change the fonts and/or text color of the h1 tag</li>
+  <li>Resize the images</li>
+  <li>Style your iframe to have the the same dimensions as your image</li>
+  <li>Change the background color of you web page</li>
+  <li>Give your hyperlinks a hover effect</li>
+</ul>
+
+<blockquote class="blockquote">
+  <h4 id="css-reference">CSS Reference</h4>
+  <p>Please also see the course resources on CSS:</p>
+
+  <ul>
+    <li><a href="/spring2025/resources/fonts/">fonts</a></li>
+    <li><a href="/spring2025/resources/color/">color</a></li>
+    <li><a href="/spring2025/resources/selectors/">selectors</a></li>
+  </ul>
+</blockquote>
+
+<!-- ## Part 3. Publishing to GitHub
+Please [follow these instructions](../activities/github) to publish your tutorial02 to GitHub. -->
+
+<h2 id="how-to-think-about-this-exercise-meta-comment">How to think about this exercise (meta-comment)</h2>
+<p>The purpose of this tutorial was to get you familiar with some HTML widgets and conventions. We are now officially done with HTML instruction. What you should be comfortable with after this tutorial:</p>
+
+<ol class="compact">
+  <li>Finding online resources (like <a href="https://www.w3schools.com/html/default.asp" target="_blank">W3Schools</a> and the <a href="/spring2025/resources/html-resources">course HTML reference</a>) that help you learn about and integrate HTML tags.</li>
+  <li>Understanding the rules of various tags, and how to nest them.</li>
+  <li>Understanding how to link files together using both relative and absolute paths (more next week).</li>
+  <li>Semantic containers</li>
+</ol>
+
+<h2 id="what-to-turn-in">What to turn in</h2>
+<p>Please commit and push all of your edits to GitHub. Then, paste a link to your GitHub Repository and to your GitHub pages in the Moodle submission.</p>
+
+
+
+            </article>  
+        </main>
+        <footer>
+            <p>    
+                Department of Computer Science, UNC Asheville
+            </p>
+        </footer>
+        
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Get Started on HW3: GET, POST, and DELETE</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="two-column">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li class="active" ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/11Ra-DrGJOYMOC6Ag_3GS6ShxZFCPdKh6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                <ol class="side-menu">
+  <li><a href="#video-walkthroughs">Video Walkthroughs</a></li>
+  <li><a href="#introductory-slides">Introductory Slides</a></li>
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#what-to-submit">What to Submit</a></li>
+</ol>
+
+            </aside>
+            <article>
+                
+
+    
+        <h1>
+            <a href="../assignments/">Assignments</a> > 
+            Tutorial 7: Get Started on HW3: GET, POST, and DELETE
+        </h1>
+    
+ 
+                <p>
+    
+        Due on Fri, 03/07 @ 11:59PM.
+    
+    
+        6 Points.
+    
+    
+</p>
+
+<blockquote class="info">
+  <h2 id="video-walkthroughs">Video Walkthroughs</h2>
+  <p>The folder of videos can be found <a href="https://drive.google.com/drive/folders/1vvFKNgwluLpnHArDkrVBhgpdZG0D8iV-" target="_blank">here</a>. I’ve also linked them individually:</p>
+  <ol>
+    <li><span class="update">from 11/1 lecture</span> <a href="https://drive.google.com/file/d/1843pxACm48d3M53ybH3HBFc-gwLGc1li/view?usp=drive_link" target="_blank">Set Up</a></li>
+    <li><span class="update">from 11/1 lecture</span> <a href="https://drive.google.com/file/d/1rFiiW4IjxvICFGBYoQR6fGAx9ay331UZ/view?usp=drive_link" target="_blank">Retrieving Posts</a></li>
+    <li><span class="update">from 11/1 lecture</span> <a href="https://drive.google.com/file/d/1Q7o0pOyFj2Eboh4e0A-Ah0yxnh0ZR46D/view?usp=drive_link" target="_blank">Rendering the Post (Part 1)</a></li>
+    <li><span class="update">New</span> <a href="https://drive.google.com/file/d/1siy37tm4HdWMycUrCTVGiF7mSOnvgAXa/view?usp=drive_link" target="_blank">Rendering the Post (Part 2)</a></li>
+    <li><span class="update">New</span> <a href="https://drive.google.com/file/d/17B5u4obQInfXDOVi1nuYTNmZJrjvQPt-/view?usp=drive_link" target="_blank">Rendering the Post (Part 3): Comments</a></li>
+    <li><span class="update">New</span> <a href="https://drive.google.com/file/d/1owdSY08MZGJPAH5vMqC9FI-4bApu6E_9/view?usp=drive_link" target="_blank">Rendering the Post (Part 4): Buttons</a></li>
+    <li><span class="update">New</span> <a href="https://drive.google.com/file/d/1xHYJ8AK3XAGCWJKlDS5ASwPi-9QMgHCR/view?usp=drive_link" target="_blank">Creating Bookmarks</a></li>
+    <li><span class="update">New</span> <a href="https://drive.google.com/file/d/1WEmRCxorxdKyDqEEInF_wyS8cdoGI01H/view?usp=drive_link" target="_blank">Deleting Bookmarks</a></li>
+  </ol>
+</blockquote>
+
+<h2 id="introductory-slides">Introductory Slides</h2>
+<ul>
+  <li><a href="https://docs.google.com/presentation/d/1txLx35U4GMYCBqsefAcUKj-72vecU8xl/edit?usp=sharing&amp;ouid=113376576186080604800&amp;rtpof=true&amp;sd=true" target="_blank">Tutorial 7 Slides</a></li>
+  <li><a href="https://drive.google.com/file/d/1JxSLmUWhC9tVZO8V6N3iitz5zoAiMouT/view?usp=drive_link" target="_blank">Lecture recording</a></li>
+</ul>
+
+<h2 id="overview">Overview</h2>
+<p>In this tutorial, we will be getting started on some concepts that should help you in <a href="hw03">Homework 3</a>. Specifically, we will:</p>
+
+<ol>
+  <li>Set up the HW3 starter files.</li>
+  <li>Learn how to authenticate to the Photo App REST API.</li>
+  <li>Fetch data from the API to display on a web page.</li>
+  <li>Create data using the API.</li>
+  <li>Delete data using the API.</li>
+</ol>
+
+<h2 id="what-to-submit">What to Submit</h2>
+<p>To submit this tutorial, please create a link from your homepage to your Homework 3 web page (see Sarah’s homepage for an example). Then, commit and push all of your edits to GitHub and, paste a link to your GitHub Repository and to your GitHub pages in the Moodle submission for Tutorial 7.</p>
+
+<ul>
+  <li>To get full credit for this assignment, you should have (at least) the “Posts Panel” partially implemented, as well as the ability to add and remove bookmarks from a post.</li>
+  <li>If you collaborated with someone, please list your partner’s name in the comments section.</li>
+</ul>
+
+
+
+            </article>  
+        </main>
+        <footer>
+            <p>    
+                Department of Computer Science, UNC Asheville
+            </p>
+        </footer>
+        
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

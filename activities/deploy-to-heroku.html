@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Activity: Deploying to Heroku</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="two-column">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/11Ra-DrGJOYMOC6Ag_3GS6ShxZFCPdKh6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                <ol class="side-menu">
+  <li><a href="#intro-to-heroku">Intro to Heroku</a></li>
+  <li><a href="#publishing-photo-app-on-heroku">Publishing Photo App on Heroku</a>
+    <ol>
+      <li><a href="#create">1. Create a Heroku App</a></li>
+      <li><a href="#db">2. Create a Hosted Database</a></li>
+      <li><a href="#configure">3. Add Environment Variables</a></li>
+      <li><a href="#4-teach-heroku-how-to-compile-your-react-app">4. Teach Heroku how to compile your React App</a></li>
+      <li><a href="#5-configure-git">5. Configure git</a></li>
+      <li><a href="#6-deploy-your-app">6. Deploy your app</a></li>
+    </ol>
+  </li>
+</ol>
+
+            </aside>
+            <article>
+                
+
+    
+        <h1>
+            <a href="../assignments/">Assignments</a> > 
+            Activity 7: Activity: Deploying to Heroku
+        </h1>
+    
+ 
+                <!-- 
+TODO for next time:
+git config --global user.name "Sarah"
+git config --global user.email "my_email@gmail.com"
+
+On Mac, people had to install XCode Tools
+-->
+<style>
+    img {
+        max-width: 750px;
+        width: 60%;
+        border: solid 1px #000;
+    }
+    img.large {
+        max-width: 100%;
+        width: 100%;
+        border: solid 1px #000;
+    }
+    .schematic {
+        border: none;
+        max-width: 850px;
+        width: 70%;
+        display: block;
+        margin: auto;
+    }
+    table.instructions td, table.instructions th {
+        font-size: 1.0em;
+    }
+    table.instructions td:first-child {
+        white-space: nowrap;
+    }
+    ul.spaced li, ol.spaced li {
+        margin-bottom: 25px;
+    }
+
+</style>
+
+<h2 id="intro-to-heroku">Intro to Heroku</h2>
+<p><a href="https://www.heroku.com/about" target="_blank">Heroku</a> is a container-based cloud Platform as a Service (PaaS) that is owned by Salesforce. You can use Heroku to publish many different kinds of web development projects (not just Python, Node, React, etc.). Essentially, Heroku allows you to configure a virtual computer on someone else’s machine, and then save and run your files there. The basic process is as follows:</p>
+<ol>
+  <li><a href="#create">Create a new Heroku app</a> (i.e. “dyno”)</li>
+  <li><a href="#db">Create a hosted database</a> (a cloud version of your database)</li>
+  <li><a href="#configure">Configure your app</a> – by create a few different configuration files and variables. Specifically:
+    <ul class="compact">
+      <li>Create a <code class="highlighter-rouge">requirements.txt</code> file (for installing python packages)</li>
+      <li>Create a <code class="highlighter-rouge">Procfile</code> to tell Heroku that we want to run a Flask web server using <a href="https://devcenter.heroku.com/articles/python-gunicorn" target="_blank">Gunicorn</a></li>
+      <li>Create a <code class="highlighter-rouge">package.json</code> file to teach Heroku how to compile your React app.</li>
+      <li>Set some environment variables that tell Heroku how to access your database and JWT Secret</li>
+    </ul>
+  </li>
+  <li>Deploy your app by downloading and configuring the Heroku Command Line Interface (CLI). Heroku’s CLI, in combination with git, helps you send your files to Heroku.</li>
+</ol>
+
+<p>Heroku also has support for hosting PostgreSQL databases, which is a free service if you register as a student. Also, if you have the free version, it goes to sleep if it hasn’t been used for a while. So the first time you access your Heroku website, it’s a little slow.</p>
+
+<h2 id="publishing-photo-app-on-heroku">Publishing Photo App on Heroku</h2>
+
+<h3 id="create">1. Create a Heroku App</h3>
+<p>Register for Heroku (if you don’t yet have an account): <a href="https://signup.heroku.com/" target="_blank">https://signup.heroku.com/</a>.</p>
+
+<p>Create a new app on Heroku by logging into the Heroku website and using the Web UI. Name it anything you want!</p>
+
+<p><img class="frame xsmall" src="/spring2025/assets/images/activities/github-deployment/heroku1.png" /></p>
+
+<p><img class="large frame" src="/spring2025/assets/images/activities/github-deployment/heroku2.png" /></p>
+
+<h3 id="db">2. Create a Hosted Database</h3>
+<p>After creating your app, you will create a database using <a href="https://elements.heroku.com/addons/heroku-postgresql" target="_blank">Heroku Postgres</a>. Click the “Install Heroku Postgres” button (purple).</p>
+<ul>
+  <li>You will have to <a href="https://www.heroku.com/students" target="_blank">register with Heroku as a student</a> to get this database for free.</li>
+</ul>
+
+<p><img class="small frame" src="/spring2025/assets/images/activities/github-deployment/heroku6a.png" /></p>
+
+<p>Next, search for the app you just made and then click “Submit Order Form”</p>
+
+<p><img class="large frame" src="/spring2025/assets/images/activities/github-deployment/heroku6b.png" /></p>
+
+<p><img class="large frame" src="/spring2025/assets/images/activities/github-deployment/heroku7.png" /></p>
+
+<p>When you’re done, you should see a confirmation screen:</p>
+
+<p><img class="large frame" src="/spring2025/assets/images/activities/github-deployment/heroku8.png" /></p>
+
+<h3 id="configure">3. Add Environment Variables</h3>
+
+<p>Now navigate to the “Settings” tab:</p>
+
+<p><img class="large frame" src="/spring2025/assets/images/activities/github-deployment/heroku9.png" /></p>
+
+<p>Scroll down and click the “Reveal Config Vars”</p>
+
+<p><img class="medium frame" src="/spring2025/assets/images/activities/github-deployment/heroku10.png" /></p>
+
+<p>You should notice that Heroku Postgres has created a database connection string for you in the format:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>postgres://&lt;username&gt;:&lt;password&gt;@&lt;host&gt;:5432/&lt;database_name&gt;
+</code></pre></div></div>
+
+<p><img class="large frame" src="/spring2025/assets/images/activities/github-deployment/heroku11.png" /></p>
+
+<ul>
+  <li>You are going to create a new environment variable called <code class="highlighter-rouge">DB_URL</code> that is identical to the <code class="highlighter-rouge">DATABASE_URL</code> string, but prefixed by <code class="highlighter-rouge">postgresql://</code> instead of <code class="highlighter-rouge">postgres://</code> (which is necessary to work with SQL Alchemy).</li>
+  <li>You are also going to create a second environment variable that holds your <code class="highlighter-rouge">JWT_SECRET</code> (see below)</li>
+</ul>
+
+<p><img class="large frame" src="/spring2025/assets/images/activities/github-deployment/heroku12.png" /></p>
+
+<p>Copy the new DB_URL environment variable into your <code class="highlighter-rouge">.env</code> file and comment out the DB_URL environment variable pointing to your local database instance as shown below:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">FLASK_APP</span><span class="o">=</span>app.py
+
+<span class="c"># Comment out local database string:</span>
+<span class="c"># DB_URL=postgresql://postgres:12345@localhost/photo-app</span>
+
+<span class="c"># Add cloud database string:</span>
+<span class="nv">DB_URL</span><span class="o">=</span>postgresql://some_username:some_password@ec2-34-205-209-14.compute-1.amazonaws.com:5432/some_database
+
+<span class="nv">JWT_SECRET</span><span class="o">=</span>MY_SECRET
+
+</code></pre></div></div>
+
+<p>Then, on your command line from the root of your <code class="highlighter-rouge">photo-app</code> directory, run the populate.py command again:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python populate.py
+</code></pre></div></div>
+
+<p>This will load some fake data into your cloud database. Because you’re inserting ~800 records, this process may take a few minutes.</p>
+
+<h3 id="4-teach-heroku-how-to-compile-your-react-app">4. Teach Heroku how to compile your React App</h3>
+<p>Create a package.json file at the root of your Flask app (note that this is <strong><em>in addition</em></strong> to the package.json file inside of your react-client directory) that has the JSON format shown below.
+The second package.json file at the root of your app teaches Heroku to compile your react app from within the react-client subdirectory.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"photo-app-heroku-react-build-file"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cd react-client &amp;&amp; npm install &amp;&amp; npm run build"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"cross-env"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^7.0.3"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w"> 
+</span></code></pre></div></div>
+
+<h3 id="5-configure-git">5. Configure git</h3>
+<ul>
+  <li>Create a git repository at the root of your web application (if you haven’t already).</li>
+  <li>Also create a <code class="highlighter-rouge">.gitignore</code> file at the root of your repository that excludes your python virtual environment (<code class="highlighter-rouge">env</code>), your <code class="highlighter-rouge">react-client/node_modules</code> folder, and your <code class="highlighter-rouge">react-client/build</code> folder.</li>
+</ul>
+
+<h3 id="6-deploy-your-app">6. Deploy your app</h3>
+<p>Finally, you are ready to deploy your app to Heroku via the Heroku Command Line Interface (CLI). Note that the GitHub integration is broken.</p>
+
+<ol>
+  <li><a href="https://devcenter.heroku.com/articles/getting-started-with-python#set-up" target="_blank">Download and install the Heroku CLI for your OS</a>.</li>
+  <li>Navigate to your <code class="highlighter-rouge">photo-app</code> folder (or whatever you called it) using the command line.</li>
+  <li>Log into your Heroku account using the command line interface (CLI), where you will be prompted for a password:<br /><code class="highlighter-rouge">heroku login</code></li>
+  <li>Connect your local git repo to your newly created Heroku app (you will only have to do this once):<br /><code class="highlighter-rouge">heroku git:remote -a name-of-the-app-you-just-made</code></li>
+  <li>Push your repo to Heroku: <code class="highlighter-rouge">git push heroku main</code>.
+    <ul>
+      <li>Read more on <a href="https://stackoverflow.com/questions/25834500/push-different-branch-to-heroku" target="_blank">StackOverflow</a>.</li>
+    </ul>
+  </li>
+  <li>Test your web server.</li>
+  <li>Don’t forget to also push your repo to GitHub <code class="highlighter-rouge">git push origin main</code> (after you’ve configured it).</li>
+</ol>
+
+
+            </article>  
+        </main>
+        <footer>
+            <p>    
+                Department of Computer Science, UNC Asheville
+            </p>
+        </footer>
+        
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

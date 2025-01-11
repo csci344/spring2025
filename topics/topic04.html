@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Design and Accessibility</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="one-column">
+        <div class="container">
+            <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+            <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/11Ra-DrGJOYMOC6Ag_3GS6ShxZFCPdKh6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+            <main>
+                
+
+    
+
+        
+        
+        <h1>
+            <a href="../">Topics</a> > 4.  Design and Accessibility
+        </h1>
+        
+        
+    
+   
+                <style>
+    h2 a,
+    h2 a:hover {
+        border-bottom: dotted 1px !important;
+        /* background-color: transparent; */
+    }
+
+    td .reading,
+    td .lecture,
+    td .badge,
+    td .lab,
+    td .activity {
+        font-size: 0.8rem !important;
+    }
+
+    .mb-1 {
+        margin-bottom: 4px;
+    }
+
+    .reading {
+        vertical-align: bottom;
+    }
+
+    .inline-block span {
+        font-weight: 500;
+    }
+
+    .assignments.topics ul {
+        padding: 0;
+        padding-left: 35px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    .assignments.topics table {
+        margin-bottom: 50px;
+        border-color: #CCC;
+        border-width: 0px;
+    }
+
+    .assignments.topics table tr {
+        display: grid;
+        grid-template-columns: 80px 80px 300px 1fr;
+        border-bottom: dotted 1px #CCC;
+    }
+
+    .assignments.topics table th:nth-child(2),
+    .assignments.topics table td:nth-child(2) {
+        min-width: 120px;
+    }
+    .assignments.topics p,
+    .assignments.li {
+        margin-bottom: 10;
+        line-height: 1.6em;
+    }
+
+    .card {
+        border: solid 1px #F9F9F9;
+        border-radius: 6px;
+        padding: 20px;
+        background-color: #FAFAFA;
+        margin-bottom: 20px;
+    }
+
+
+
+    @media screen and (max-width: 1000px) {
+        main {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .assignments.topics table tr {
+            display: grid;
+            grid-template-columns: 80px 80px 1fr;
+        }
+
+        .assignments.topics table tr td:nth-child(4) {
+            grid-column: 3 / 4;
+        }
+
+        .assignments.topics table tr th:nth-child(4) {
+            display: none;
+        }
+    }
+</style>
+
+<h2 id="overview">Overview</h2>
+<p>Today we will be discussing visual design, usability, and accessibility principles, including:</p>
+
+<ul>
+  <li>How to select <a href="../resources/color/">colors</a></li>
+  <li>How to communicate <a href="https://docs.google.com/document/d/1Vv5tPZ8UjqJNYO9pCp_PQhxHT8qoGY09deKX6uygUFA/edit?usp=sharing" target="_blank">values</a> through visual design</li>
+  <li>How to work with style guides and design systems <a href="../resources/style-guides/">style guides and design systems</a></li>
+</ul>
+
+<p><img style="width:600px;" src="/spring2025/assets/images/lectures/composition.png" /></p>
+
+
+
+<section class="assignments topics">
+    
+    
+
+    <p>Design refers to the process of creating an aesthetically pleasing and functional user interface (UI) and user experience (UX). It encompasses layout, typography, color schemes, and interactivity to ensure the site is intuitive,  visually appealing, and accessible. Good design is crucial for engaging users and meeting their needs effectively. While design is a huge topic in its own right, we will briefly review some important design principles, and take a quick look at some design tools and systems.
+</p>
+
+    
+    
+    <h2>Readings & Activities</h2>
+    <table>
+        <thead>
+            <th>Week</th>
+            <th></th>
+            <th>Slides / Activities</th>
+            <th>Readings</th>
+        </thead>
+        <tbody>
+            <!-- Topic Details -->
+            
+            
+            <tr>
+                <td>
+                    
+                    <strong>Week 4</strong>
+                    
+                    
+                </td>
+                <td>
+                    Wed, 2/5
+                </td>
+                <td>
+                    
+
+<!-- Slides -->
+
+
+    <span class='mb-1 block'><span class='badge'>Slides</span><span style='display: none'>: </span><span>Design with Accessibility in Mind</span> </span>
+
+
+<!-- Activities -->
+
+
+
+<!-- Tutorials -->
+
+
+                </td>
+                <td>
+                    
+
+
+
+
+
+<!-- Required Readings -->
+
+
+Required:
+<ul>
+    
+    <li class="mb-4">
+        <span class='mb-1'>Williams, Robin (2015). <a href="https://drive.google.com/file/d/1lyeEZlnfo7QJ_SE059TrCgw8JUBiX6rV/view?usp=sharing" target="_blank">The Non-Designer's Design Book, Chapter 1</a>.
+</span><div></div>
+    </li>
+    
+    <li class="mb-4">
+        <span class='mb-1'>Groves, Karl (Sept., 2013). <a href="https://karlgroves.com/2013/09/05/the-6-simplest-web-accessibility-tests-anyone-can-do" target="_blank">The 6 Simplest Web Accessibility Tests Anyone Can Do</a>.
+</span><div></div>
+    </li>
+    
+</ul>
+
+
+<!-- Skimmable Readings -->
+
+
+Skim:
+<ul>
+    
+    <li class="mb-4">
+        <span class='mb-1'>Williams, Robin (2015). <a href="https://drive.google.com/file/d/1Ps9kGmRrj7Uw2B38KM_SoTKHtPhY-a3L/view?usp=sharing" target="_blank">The Non-Designer's Design Book, Chapter 2</a>.
+</span><div></div>
+    </li>
+    
+    <li class="mb-4">
+        <span class='mb-1'>Please skim the <a href="/spring2025/resources/accessibility">Accessibility Resources</a>.
+</span><div></div>
+    </li>
+    
+</ul>
+
+
+<!-- Pick One Readings -->
+
+
+
+<!-- Optional Readings -->
+
+
+
+
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td>
+                    
+                </td>
+                <td>
+                    Fri, 2/7
+                </td>
+                <td>
+                    
+
+<!-- Slides -->
+
+
+
+<!-- Activities -->
+
+
+
+<!-- Tutorials -->
+
+
+    <span class='mb-1 block'><span class='badge'>Tutorial 3</span><span style='display: none'>: </span><span>CSS Frameworks (Tailwind)</span> (due Mon, 2/10)</span>
+
+                </td>
+                <td>
+                    
+
+
+
+
+
+<!-- Required Readings -->
+
+
+Required:
+<ul>
+    
+    <li class="mb-4">
+        <span class='mb-1'><a href="https://designlab.com/blog/guide-to-ux-design-systems" target="_blank">Design Systems 101: An Introductory Guide</a>
+</span><div></div>
+    </li>
+    
+</ul>
+
+
+<!-- Skimmable Readings -->
+
+
+Skim:
+<ul>
+    
+    <li class="mb-4">
+        <span class='mb-1'><a href="https://www.creative-tim.com/twcomponents/cheatsheet" target="_blank">Tailwind Cheatsheet</a>
+</span><div></div>
+    </li>
+    
+</ul>
+
+
+<!-- Pick One Readings -->
+
+
+
+<!-- Optional Readings -->
+
+
+Optional:
+<ul>
+    
+    <li class="mb-4">
+        <span class='mb-1'><a href="https://johnpolacek.medium.com/by-the-numbers-a-year-and-half-with-atomic-css-39d75b1263b4" target="_blank">By The Numbers: A Year and Half with Atomic CSS</a>: How design systems improve efficiency
+</span><div></div>
+    </li>
+    
+    <li class="mb-4">
+        <span class='mb-1'><a href="https://www.youtube.com/watch?v=sNXfI3woBEw" target="_blank">Get Started With Tailwind CSS</a>: Video tutorial that walks you through today's activity
+</span><div></div>
+    </li>
+    
+</ul>
+
+
+
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+    
+
+
+    
+    </div>
+
+
+</section>
+            </main>
+            <footer>
+    <p>    
+        Department of Computer Science, UNC Asheville
+    </p>
+</footer>
+
+        </div>
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

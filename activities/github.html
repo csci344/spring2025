@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Activity: Configuring Git and GitHub</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="two-column">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/11Ra-DrGJOYMOC6Ag_3GS6ShxZFCPdKh6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                <ol class="side-menu">
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#part1">1. Background Readings</a></li>
+  <li><a href="#part2">2. Install Git</a></li>
+  <li><a href="#part3">3. Register for an account on GitHub</a>
+    <ol>
+      <li><a href="#register-for-github-student-developer-pack">Register for GitHub Student Developer Pack</a></li>
+    </ol>
+  </li>
+  <li><a href="#part4">4. Configure the Git / Visual Studio Code Plugin</a>
+    <ol>
+      <li><a href="#1-tell-the-system-who-you-are">1. Tell the system who you are</a>
+        <ol>
+          <li><a href="#note-for-computer-lab-computers">Note for Computer Lab Computers</a></li>
+        </ol>
+      </li>
+      <li><a href="#2-verify-your-file-structure">2. Verify your file structure</a></li>
+      <li><a href="#3-initialize-a-git-repository">3. Initialize a Git Repository</a></li>
+    </ol>
+  </li>
+  <li><a href="#part5">5. Finally, Configure GitHub Pages</a>
+    <ol>
+      <li><a href="#a-note-on-github-pages">A note on GitHub Pages</a></li>
+    </ol>
+  </li>
+</ol>
+
+            </aside>
+            <article>
+                
+
+    
+        <h1>
+            <a href="../assignments/">Assignments</a> > 
+            Activity 2: Activity: Configuring Git and GitHub
+        </h1>
+    
+ 
+                <!-- 
+TODO for next time:
+git config --global user.name "Sarah"
+git config --global user.email "my_email@gmail.com"
+
+On Mac, people had to install XCode Tools
+-->
+<style>
+    img {
+        max-width: 750px;
+        width: 60%;
+        border: solid 1px #000;
+    }
+    img.large {
+        max-width: 100%;
+        width: 100%;
+        border: solid 1px #000;
+    }
+    .schematic {
+        border: none;
+        max-width: 850px;
+        width: 70%;
+        display: block;
+        margin: auto;
+    }
+    table.instructions td, table.instructions th {
+        font-size: 1.0em;
+    }
+    table.instructions td:first-child {
+        white-space: nowrap;
+    }
+    ul.spaced li, ol.spaced li {
+        margin-bottom: 25px;
+    }
+
+</style>
+
+<blockquote class="blockquote-no-margin">
+  <h2 id="overview">Overview</h2>
+  <p>The goal of this activity is to help you publish your web page to GitHub. To do this:</p>
+
+  <ol>
+    <li><a href="#part1">Complete the Background Readings</a></li>
+    <li><a href="#part2">Install git</a></li>
+    <li><a href="#part3">Register for GitHub</a></li>
+    <li><a href="#part4">Configure the Git / Visual Studio Code Plugin</a></li>
+    <li><a href="#part5">Configure Git Pages</a></li>
+  </ol>
+</blockquote>
+
+<h2 id="part1">1. Background Readings</h2>
+<p>Please complete the following readings / video tutorials:</p>
+<ol>
+  <li><a href="https://medium.com/the-underdog-writing-project/introduction-to-git-and-github-a5fdf5633923">Intro to git and GitHub</a>. A little technical, but please do your best to read it and come to tutorial with questions.</li>
+  <li><a href="https://youtu.be/i_23KUAEtUM">Using GitHub with Visual Studio Code</a>. How we will be using GitHub in this class.</li>
+</ol>
+
+<h2 id="part2">2. Install Git</h2>
+<p>In order to interact with GitHub, you need to install git. Before you install it, check and make sure it’s not already installed by:</p>
+
+<ol>
+  <li>Windows: search for the software program “GitBash.” If you find it, git is already installed.</li>
+  <li>Mac:
+    <ol>
+      <li>Opening your Terminal and type the word <code class="highlighter-rouge">git</code> at the command prompt.</li>
+      <li>If you get a message that says “not recognized” or something along those lines, then you need to install it.</li>
+    </ol>
+  </li>
+</ol>
+
+<p>If you need to install it, follow these instructions:   <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a>.</p>
+
+<h2 id="part3">3. Register for an account on GitHub</h2>
+<p>If you don’t already have a GitHub account, register for one: <a href="https://github.com/" target="_blank">https://github.com/join</a>. Some notes:</p>
+
+<ol>
+  <li>Please have your password close at hand. Particularly if you are using the computer lab computers, you will keep being prompted for your password.</li>
+  <li>Mac users may also need to create a <strong>“Personal Access Token”</strong>. The process is described <a href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token" target="_blank">here</a>.</li>
+</ol>
+
+<h3 id="register-for-github-student-developer-pack">Register for GitHub Student Developer Pack</h3>
+<ul>
+  <li>Please follow <a href="https://education.github.com/pack?sort=popularity&amp;tag=Developer+tools" target="_blank">these instructions</a> to register for the GitHub Student Developer Pack.</li>
+</ul>
+
+<h2 id="part4">4. Configure the Git / Visual Studio Code Plugin</h2>
+
+<h3 id="1-tell-the-system-who-you-are">1. Tell the system who you are</h3>
+<p>Tell your computer who you are on Git by running the following commands in GitBash (Windows) or in the Terminal (Mac):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> user.name <span class="s2">"Sarah"</span>
+git config <span class="nt">--global</span> user.email <span class="s2">"my_email@gmail.com"</span>
+</code></pre></div></div>
+
+<p>Please use <strong>your name</strong>, and the <strong>email you used when registering with GitHub</strong>.</p>
+
+<blockquote class="blockquote-no-margin">
+  <h4 id="note-for-computer-lab-computers">Note for Computer Lab Computers</h4>
+  <p>If you are using a computer lab computer, you will need to complete this step each time you use git.</p>
+</blockquote>
+
+<h3 id="2-verify-your-file-structure">2. Verify your file structure</h3>
+
+<p>Please ensure that your <code class="highlighter-rouge">csci344</code> folder looks like this:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>csci334
+├── lectures
+│   └── lecture03
+│   │    └── index.html
+│   └── lecture04
+│       ├── README.md
+│       └── my_website
+│           ├── files
+│           │   └── gallery.html
+│           ├── home
+│           │   ├── contact.html
+│           │   ├── index.html
+│           │   └── styles
+│           │       ├── dark
+│           │       │   └── new.css
+│           │       └── my_style.css
+│           ├── images
+│           │   ├── cat.jpg
+│           │   └── dog.jpg
+│           └── test.html
+└── tutorials
+</code></pre></div></div>
+
+<p>It’s OK if your tutorials folder isn’t set up yet, but make sure your lectures folder looks like the one shown above. This is very important.</p>
+
+<h3 id="3-initialize-a-git-repository">3. Initialize a Git Repository</h3>
+<p>After you’ve doublechecked your file structure, open your entire <code class="highlighter-rouge">csci344</code> folder in VS Code. Next, click on the icon that looks like a tree branch, and click the blue button that says “Initialize Repository”:</p>
+
+<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial02-github/ss2.png" /></p>
+
+<p>You have now created a git repository on your computer in the same folder as your <code class="highlighter-rouge">csci344</code> folder. Now, you will want to “stage” all of your changes. Click the button with the three dots, then select “Changes”, and then “Stage All changes”:</p>
+
+<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial02-github/ss3.png" /></p>
+
+<p>After you “stage” your changes, you will note that the left-hand panel has changed. Specifically:</p>
+
+<ul class="compact">
+  <li>The panel lists all of the files that are “staged” to be committed, with an “A” next to each file (indicating that you are adding the files for the first time).</li>
+  <li>To commit these changes, type a message in the text box that says “My First Commit” and then click the check button to actually issue the commit:</li>
+</ul>
+
+<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial02-github/ss4.png" /></p>
+
+<p>Afterwards, a button will appear that says “Publish Branch.” Click this button. It may prompt you to install a GitHub plugin. Please agree that you are OK to install the GitHub plugin.</p>
+
+<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial02-github/ss5.png" /></p>
+
+<p>You will now create a new GitHub repository called <code class="highlighter-rouge">csci344-coursework</code>. Please ensure that you create a PUBLIC repository:</p>
+
+<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial02-github/ss6.png" /></p>
+
+<p>After VS code issues the “create repository” request to GitHub, it will give you a message indicating that your files are being sent up to GitHub. When the file transfer is complete, you will see a blue button that says “Open On GitHub”. Click that button.</p>
+
+<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial02-github/ss7.png" /></p>
+
+<p>Clicking the button will open your newly created <code class="highlighter-rouge">csci344-coursework</code> repository and show you all of your files (which are now in the cloud):</p>
+
+<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial02-github/ss8.png" /></p>
+
+<h2 id="part5">5. Finally, Configure GitHub Pages</h2>
+<p>GitHub also allows you to host pages. To enable GitHub pages:</p>
+
+<ol class="compact">
+  <li>Go to your repository and click on the settings tab.</li>
+  <li>Click the “GitHub Pages” link in the left-hand menu</li>
+  <li>Click the dropdown menu that asks you to select a branch.</li>
+  <li>Select the “master” branch</li>
+  <li>Click “Save”</li>
+</ol>
+
+<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial02-github/ss9.png" /></p>
+
+<p>This will generate a link to your GitHub site.</p>
+
+<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial02-github/ss10.png" /></p>
+
+<blockquote>
+  <h3 id="a-note-on-github-pages">A note on GitHub Pages</h3>
+  <ul>
+    <li>It make take a few minutes for your webpage to display</li>
+    <li>In order to preview the webpage you made in the <code class="highlighter-rouge">lecture03</code> folder, you have to append the <code class="highlighter-rouge">/lectures/lecture03/index.html</code> file path to the end of your github pages to indicate which file to display.</li>
+  </ul>
+</blockquote>
+
+            </article>  
+        </main>
+        <footer>
+            <p>    
+                Department of Computer Science, UNC Asheville
+            </p>
+        </footer>
+        
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

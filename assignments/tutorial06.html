@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>JavaScript: Practice with higher-order iteration functions</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="two-column">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li class="active" ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/11Ra-DrGJOYMOC6Ag_3GS6ShxZFCPdKh6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                <ol class="side-menu">
+  <li><a href="#introductory-slides">Introductory Slides</a></li>
+  <li><a href="#i-implement-the-helper-functions">I. Implement the helper functions</a>
+    <ol>
+      <li><a href="#1-filter-functions">1. Filter functions</a>
+        <ol>
+          <li><a href="#tips">Tips</a></li>
+        </ol>
+      </li>
+      <li><a href="#2-data-to-html-function">2. “Data to HTML” function</a>
+        <ol>
+          <li><a href="#tips-1">Tips</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><a href="#ii-implement-the-showdata-function--event-handler">II. Implement the showData function / event handler</a>
+    <ol>
+      <li><a href="#implement-the-showdata-function">Implement the showData function</a></li>
+      <li><a href="#attach-your-showdata-function-to-the-buttons-click-event">Attach your showData function to the button’s click event</a></li>
+    </ol>
+  </li>
+  <li><a href="#iii-what-to-submit">III. What to Submit</a></li>
+</ol>
+
+            </aside>
+            <article>
+                
+
+    
+        <h1>
+            <a href="../assignments/">Assignments</a> > 
+            Tutorial 6: JavaScript: Practice with higher-order iteration functions
+        </h1>
+    
+ 
+                <p>
+    
+        Due on Mon, 03/03 @ 11:59PM.
+    
+    
+        6 Points.
+    
+    
+</p>
+
+<style>
+    .screenshot {
+       width:60%;
+       min-width: 500px;
+    }
+    /* .frame {
+        border: solid 3px #0076A5;
+    } */
+
+</style>
+
+<blockquote>
+  <h2 id="introductory-slides">Introductory Slides</h2>
+  <ul>
+    <li><a href="https://docs.google.com/presentation/d/1FgfR9MteqUbuqx-EKmqoWEFoDbMgQlxo/edit?usp=sharing&amp;ouid=113376576186080604800&amp;rtpof=true&amp;sd=true" target="_blank">Tutorial 6 Slides</a></li>
+    <li><a href="https://drive.google.com/file/d/1vFNp0vToM72-j2steBQXBa8u77m4CSOW/view?usp=drive_link" target="_blank">Lecture recording</a></li>
+  </ul>
+</blockquote>
+
+<p>For Tutorial 6, you will make a UNCA Course Search interface for the Computer Science Department that works like this:</p>
+
+<p><img class="frame screenshot" src="/spring2025/assets/images/tutorials/tutorial06/demo-course-search.gif" /></p>
+
+<p>Please download the starter files below and then complete the following tasks:</p>
+
+<p><a href="/spring2025/course-files/tutorials/tutorial06.zip" class="nu-button">Tutorial 6 Starter Files<i class="fas fa-download"></i></a></p>
+
+<h2 id="i-implement-the-helper-functions">I. Implement the helper functions</h2>
+
+<h3 id="1-filter-functions">1. Filter functions</h3>
+<p>Implement two filter functions (which should return either true or false):</p>
+<ul>
+  <li><code class="highlighter-rouge">filterClassFull</code>: This function will take a course object as an argument and return <code class="highlighter-rouge">true</code> if the course is full, and <code class="highlighter-rouge">false</code> if it is not.</li>
+  <li><code class="highlighter-rouge">filterTermMatched</code>: This function will take a course object as an argument and return <code class="highlighter-rouge">true</code> if the course “matches” the search term, and <code class="highlighter-rouge">false</code> if it does not.
+    <ul>
+      <li>Use your discretion to determine a good matching algorithm. For instance, you could return <code class="highlighter-rouge">true</code> if the search string matches (or partially matches) one or more of the data fields (Code, CRN, Title, one of the instructor’s names, etc.).</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="tips">Tips</h4>
+<ol>
+  <li>Use some of the <a href="https://www.javascripttutorial.net/javascript-string-methods/" target="_blank">JavaScript built-in string methods</a>. It also might be useful to convert everything to uppercase / lowercase. Some particularly useful methods to checkout:
+    <ul>
+      <li>includes()</li>
+      <li>toUpperCase()</li>
+      <li>toLowerCase()</li>
+    </ul>
+  </li>
+  <li>The filter must conform to one of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">function signatures specified in the JavaScript language</a>.</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Part 1.1a</span>
+<span class="kd">const</span> <span class="nx">filterClassFull</span> <span class="o">=</span> <span class="nx">course</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// modify this</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Part 1.1b</span>
+<span class="kd">const</span> <span class="nx">filterTermMatched</span> <span class="o">=</span> <span class="nx">course</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// modify this</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="2-data-to-html-function">2. “Data to HTML” function</h3>
+<p>Implement the <code class="highlighter-rouge">dataToHTML</code> function, which takes a course object as an argument and returns an HTML string that represents the course.</p>
+<ul>
+  <li>See the <code class="highlighter-rouge">index.html</code> file to examine the structure of the HTML “card” that represents a course.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Part 1.2</span>
+<span class="kd">const</span> <span class="nx">dataToHTML</span> <span class="o">=</span> <span class="nx">course</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// modify this</span>
+    <span class="k">return</span> <span class="s2">`Some HTML representation of the course...`</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <h4 id="tips-1">Tips</h4>
+  <ul class="compact">
+    <li>Use a template literal (backticks).</li>
+    <li>Feel free to create some helper variables to format the string output.</li>
+  </ul>
+</blockquote>
+
+<h2 id="ii-implement-the-showdata-function--event-handler">II. Implement the showData function / event handler</h2>
+
+<h3 id="implement-the-showdata-function">Implement the showData function</h3>
+<p>To actually display relevant course “cards” to the screen, you will also need to implement a <code class="highlighter-rouge">showData</code> function. To do this, use the built-in <strong>filter</strong>, <strong>map</strong>, and <strong>join</strong> array methods – and any relevant DOM methods – to build the interface. Specifically, you will:</p>
+
+<ol>
+  <li>Use the array’s built in “filter” method, which takes a filter function as an argument, to return an array of objects that match the search criteria.
+    <ul>
+      <li>You will make use of the  <code class="highlighter-rouge">filterClassFull</code> and <code class="highlighter-rouge">filterTermMatched</code> functions.</li>
+      <li>Consider chaining multiple invocations of the filter method to progressively winnow down the courses matching the search criteria.<br />For instance: <code class="highlighter-rouge">const matches = data.filter(filterClassFull).filter(filterTermMatched)</code>).</li>
+    </ul>
+  </li>
+  <li>Use the array’s built in “map” method to generate an array of HTML strings.</li>
+  <li>Use the array’s built in “join” method to convert the array of strings to one large HTML string (join on the empty string or the newline character).</li>
+  <li>Clear out the existing courses in the DOM.</li>
+  <li>And finally, insert the HTML string into the DOM (suggestion: use the <code class="highlighter-rouge">insertAdjacentHTML</code> method).</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Part 2</span>
+<span class="kd">const</span> <span class="nx">showData</span> <span class="o">=</span> <span class="p">(</span><span class="nx">searchTerm</span><span class="p">,</span> <span class="nx">openOnly</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">searchTerm</span><span class="p">,</span> <span class="nx">openOnly</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span> <span class="c1">// imported from course-data.js</span>
+    <span class="c1">// Your code here:</span>
+    
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="attach-your-showdata-function-to-the-buttons-click-event">Attach your showData function to the button’s click event</h3>
+<p>Now that you have implemented your button, don’t forget to attach your event handler to the button’s click event (like we’ve been doing in class for the past few weeks).</p>
+
+<h2 id="iii-what-to-submit">III. What to Submit</h2>
+<p>When you’re done, please create a link from your homepage to your Tutorial 6 web page (see Sarah’s homepage for an example). Then, commit and push all of your edits to GitHub and, paste a link to your GitHub Repository and to your GitHub pages in the Moodle submission.</p>
+
+<p>If you collaborated with someone, please list your partner’s name in the comments section.</p>
+
+
+
+            </article>  
+        </main>
+        <footer>
+            <p>    
+                Department of Computer Science, UNC Asheville
+            </p>
+        </footer>
+        
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

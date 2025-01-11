@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Intro to CSS</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="two-column">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/11Ra-DrGJOYMOC6Ag_3GS6ShxZFCPdKh6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                <ol class="side-menu">
+  <li><a href="#common-css-properties">Common CSS Properties</a>
+    <ol>
+      <li><a href="#tips">Tips</a></li>
+      <li><a href="#some-extra-challenges-if-you-have-time">Some extra challenges (if you have time)</a></li>
+    </ol>
+  </li>
+</ol>
+
+            </aside>
+            <article>
+                
+
+    
+        <h1>Intro to CSS</h1>
+    
+ 
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <h2 id="common-css-properties">Common CSS Properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Sample Values</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>font-size</td>
+      <td><code class="highlighter-rouge">1.2em</code>, <code class="highlighter-rouge">16px</code>, <code class="highlighter-rouge">12pt</code></td>
+      <td><code class="highlighter-rouge">font-size: 1.5em;</code></td>
+    </tr>
+    <tr>
+      <td>font-family</td>
+      <td><code class="highlighter-rouge">Arial, Helvetica, san-serif</code></td>
+      <td><code class="highlighter-rouge">font-family: Arial, Helvetica, san-serif;</code></td>
+    </tr>
+    <tr>
+      <td>color</td>
+      <td><code class="highlighter-rouge">red</code>, <code class="highlighter-rouge">#820263</code>, <code class="highlighter-rouge">rgb(130, 2, 99)</code>, <code class="highlighter-rouge">rgba(130, 2, 99, 0.6)</code></td>
+      <td><code class="highlighter-rouge">color: #820263;</code></td>
+    </tr>
+    <tr>
+      <td>background-color</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">background-color: #820263;</code></td>
+    </tr>
+    <tr>
+      <td>display</td>
+      <td><code class="highlighter-rouge">inline</code>, <code class="highlighter-rouge">inline-block</code>, <code class="highlighter-rouge">block</code>, <code class="highlighter-rouge">flex</code>, <code class="highlighter-rouge">grid</code></td>
+      <td><code class="highlighter-rouge">display: inline-block;</code></td>
+    </tr>
+    <tr>
+      <td>border</td>
+      <td><code class="highlighter-rouge">solid 1px black</code>, <code class="highlighter-rouge">dotted 5px hotpink</code></td>
+      <td><code class="highlighter-rouge">border: solid 1px black;</code></td>
+    </tr>
+    <tr>
+      <td>border-radius</td>
+      <td><code class="highlighter-rouge">3px</code>, <code class="highlighter-rouge">50%</code></td>
+      <td><code class="highlighter-rouge">border-radius: 10px;</code></td>
+    </tr>
+    <tr>
+      <td>width</td>
+      <td><code class="highlighter-rouge">100%</code>, <code class="highlighter-rouge">500px</code>, <code class="highlighter-rouge">50vw</code></td>
+      <td><code class="highlighter-rouge">width: 150px;</code></td>
+    </tr>
+    <tr>
+      <td>height</td>
+      <td><code class="highlighter-rouge">100%</code>, <code class="highlighter-rouge">500px</code>, <code class="highlighter-rouge">50vh</code></td>
+      <td><code class="highlighter-rouge">height: 150px;</code></td>
+    </tr>
+    <tr>
+      <td>border-left</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">border-left: solid 1px black;</code></td>
+    </tr>
+    <tr>
+      <td>border-right</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">border-right: solid 1px black;</code></td>
+    </tr>
+    <tr>
+      <td>border-top</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">border-top: solid 1px black;</code></td>
+    </tr>
+    <tr>
+      <td>border-bottom</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">border-bottom: solid 1px black;</code></td>
+    </tr>
+    <tr>
+      <td>padding</td>
+      <td><code class="highlighter-rouge">5px</code>, <code class="highlighter-rouge">5vw</code>, <code class="highlighter-rouge">5%</code></td>
+      <td><code class="highlighter-rouge">padding: 20px;</code></td>
+    </tr>
+    <tr>
+      <td>padding-left</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">padding-left: 20px;</code></td>
+    </tr>
+    <tr>
+      <td>padding-right</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">padding-right: 20px;</code></td>
+    </tr>
+    <tr>
+      <td>padding-top</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">padding-top: 20px;</code></td>
+    </tr>
+    <tr>
+      <td>padding-bottom</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">padding-bottom: 20px;</code></td>
+    </tr>
+    <tr>
+      <td>margin</td>
+      <td><code class="highlighter-rouge">5px</code>, <code class="highlighter-rouge">5vw</code>, <code class="highlighter-rouge">5%</code></td>
+      <td><code class="highlighter-rouge">margin: 20px;</code></td>
+    </tr>
+    <tr>
+      <td>margin-left</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">margin-left: 20px;</code></td>
+    </tr>
+    <tr>
+      <td>margin-right</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">margin-right: 20px;</code></td>
+    </tr>
+    <tr>
+      <td>margin-top</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">margin-top: 20px;</code></td>
+    </tr>
+    <tr>
+      <td>margin-bottom</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">margin-bottom: 20px;</code></td>
+    </tr>
+  </tbody>
+</table>
+
+        
+    
+
+
+<style>
+    .tips td:first-child, .tips th:first-child {
+        width: 200px;
+    }
+</style>
+
+<p>Please download the exercise files (below).</p>
+
+<p><a href="/spring2025/course-files/activities/intro-css-gallery.zip" class="nu-button">Download Activity Files <i class="fas fa-download"></i></a></p>
+
+<p>Then, use the CSS Property Cheatsheet (below) and what you’ve learned about selectors to make the following drawing:</p>
+
+<p><img class="large" src="/spring2025/assets/images/activities/intro-css/gallery.png" /></p>
+
+<h3 id="tips">Tips</h3>
+
+<table class="tips">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Tip</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>body * { <br />     border: solid 1px black;<br />     padding: 5px;<br />}</td>
+      <td>To make debugging easier, turn on the borders for all elements (temporarily).</td>
+    </tr>
+    <tr>
+      <td>display: inline-block</td>
+      <td>By default, tags like <code class="highlighter-rouge">div</code>, <code class="highlighter-rouge">section</code>, <code class="highlighter-rouge">article</code>, etc. are <code class="highlighter-rouge">display: block;</code> which means that there’s a line break. If you don’t want this, use: <code class="highlighter-rouge">display: inline-block</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="some-extra-challenges-if-you-have-time">Some extra challenges (if you have time)</h3>
+<ol>
+  <li>Make one of the image “cards” have a different background color.</li>
+  <li>Try using a custom Google font instead of one of the built-in system fonts. Resources to consult:
+    <ul>
+      <li><a href="https://www.w3docs.com/snippets/css/how-to-import-google-fonts-in-css-file.html" target="_blank">https://www.w3docs.com/snippets/css/how-to-import-google-fonts-in-css-file.html</a></li>
+      <li><a href="https://developers.google.com/fonts/docs/getting_started" target="_blank">https://developers.google.com/fonts/docs/getting_started</a></li>
+      <li><a href="https://www.w3schools.com/css/css_font_google.asp" target="_blank">https://www.w3schools.com/css/css_font_google.asp</a></li>
+    </ul>
+  </li>
+  <li>Make a hover effect using a “pseudoclass”: when your user mouses over one the cards, make it do something (fade, grow, change colors, etc.). We will go over this in a future lesson, but in the meantime, you can take a look at W3 Schools:
+    <ul>
+      <li><a href="https://www.w3schools.com/css/css_pseudo_classes.asp" target="_blank">https://www.w3schools.com/css/css_pseudo_classes.asp</a></li>
+    </ul>
+  </li>
+</ol>
+
+
+            </article>  
+        </main>
+        <footer>
+            <p>    
+                Department of Computer Science, UNC Asheville
+            </p>
+        </footer>
+        
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

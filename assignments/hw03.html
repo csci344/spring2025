@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Building a "Vanilla" JavaScript Client</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="two-column">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li class="active" ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/11Ra-DrGJOYMOC6Ag_3GS6ShxZFCPdKh6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                <ol class="side-menu">
+  <li><a href="#video-walkthroughs">Video Walkthroughs</a></li>
+  <li><a href="#collaboration-and-code-sharing-policy-read-carefully">Collaboration and Code Sharing Policy: Read Carefully</a></li>
+  <li><a href="#1-introduction">1. Introduction</a>
+    <ol>
+      <li><a href="#11-overview">1.1. Overview</a></li>
+      <li><a href="#working-demo">Working Demo</a></li>
+      <li><a href="#12-set-up">1.2. Set Up</a></li>
+      <li><a href="#13-course-rest-api">1.3. Course REST API</a></li>
+      <li><a href="#14-authentication-notes">1.4. Authentication Notes</a></li>
+    </ol>
+  </li>
+  <li><a href="#3-your-tasks">3. Your Tasks</a>
+    <ol>
+      <li><a href="#init">1. Page Initialization Tasks (20 Points)</a></li>
+      <li><a href="#crud">2. Create / Delete Data with Event Handlers (20 Points)</a></li>
+      <li><a href="#accessibility">3. Accessibility Features (6 points)</a></li>
+      <li><a href="#github-commit">4. Commit Everything to GitHub (2 points)</a></li>
+    </ol>
+  </li>
+  <li><a href="#4-what-to-turn-in">4. What to Turn In</a>
+    <ol>
+      <li><a href="#rubric">Rubric</a></li>
+      <li><a href="#moodle-submission">Moodle Submission</a></li>
+    </ol>
+  </li>
+  <li><a href="#extra-credit">Extra Credit</a></li>
+</ol>
+
+            </aside>
+            <article>
+                
+
+    
+        <h1>
+            <a href="../assignments/">Assignments</a> > 
+            HW3: Building a "Vanilla" JavaScript Client
+        </h1>
+    
+ 
+                <p>
+    
+        Due on Mon, 04/07 @ 11:59PM.
+    
+    
+        50 Points.
+    
+    
+</p>
+
+<style>
+    table.rubric th:first-child, 
+    table.rubric td:first-child {
+        width: 70px !important;
+        min-width: 70px !important;
+    } 
+    table.rubric th:nth-child(4), 
+    table.rubric td:nth-child(4) {
+        width: 90px !important;
+        min-width: 90px !important;
+    }
+
+    .fa-heart, .fa-bookmark {
+        margin-left: 8px;
+    }
+
+    figure {
+        margin: 10px;
+    }
+    figcaption {
+        padding-top: 85px;
+        margin-top: -70px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        color: #003da5;
+        font-size: 1.1em;
+    }
+    .compact li {
+        margin-bottom: 4px;
+        line-height: 1.5em;
+    }
+
+    blockquote.updates {
+        background-color: #d4edda;
+        border: solid 1px #c3e6cb;
+    }
+    blockquote.updates h2, 
+    blockquote.updates p, 
+    blockquote.updates li, 
+    blockquote.updates a {
+        color: #155724;
+    }
+    blockquote.updates h2 {
+        border-bottom: solid 1px #155724;
+    }
+    blockquote.updates a:hover {
+        background-color: transparent;
+    }
+</style>
+
+<blockquote class="info">
+  <h2 id="video-walkthroughs">Video Walkthroughs</h2>
+  <p>The folder of videos can be found <a href="https://drive.google.com/drive/folders/1vvFKNgwluLpnHArDkrVBhgpdZG0D8iV-" target="_blank">here</a>. I’ve also linked them individually:</p>
+  <ol>
+    <li><span class="update">from 11/1 lecture</span> <a href="https://drive.google.com/file/d/1843pxACm48d3M53ybH3HBFc-gwLGc1li/view?usp=drive_link" target="_blank">Set Up</a></li>
+    <li><span class="update">from 11/1 lecture</span> <a href="https://drive.google.com/file/d/1rFiiW4IjxvICFGBYoQR6fGAx9ay331UZ/view?usp=drive_link" target="_blank">Retrieving Posts</a></li>
+    <li><span class="update">from 11/1 lecture</span> <a href="https://drive.google.com/file/d/1Q7o0pOyFj2Eboh4e0A-Ah0yxnh0ZR46D/view?usp=drive_link" target="_blank">Rendering the Post (Part 1)</a></li>
+    <li><span class="update">New</span> <a href="https://drive.google.com/file/d/1siy37tm4HdWMycUrCTVGiF7mSOnvgAXa/view?usp=drive_link" target="_blank">Rendering the Post (Part 2)</a></li>
+    <li><span class="update">New</span> <a href="https://drive.google.com/file/d/17B5u4obQInfXDOVi1nuYTNmZJrjvQPt-/view?usp=drive_link" target="_blank">Rendering the Post (Part 3): Comments</a></li>
+    <li><span class="update">New</span> <a href="https://drive.google.com/file/d/1owdSY08MZGJPAH5vMqC9FI-4bApu6E_9/view?usp=drive_link" target="_blank">Rendering the Post (Part 4): Buttons</a></li>
+    <li><span class="update">New</span> <a href="https://drive.google.com/file/d/1xHYJ8AK3XAGCWJKlDS5ASwPi-9QMgHCR/view?usp=drive_link" target="_blank">Creating Bookmarks</a></li>
+    <li><span class="update">New</span> <a href="https://drive.google.com/file/d/1WEmRCxorxdKyDqEEInF_wyS8cdoGI01H/view?usp=drive_link" target="_blank">Deleting Bookmarks</a></li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <h2 class="callout" id="collaboration-and-code-sharing-policy-read-carefully">Collaboration and Code Sharing Policy: Read Carefully</h2>
+  <p>For this homework, you are welcome to work in pairs (optional). Even if you collaborate with someone else, you must still submit your own HTML and CSS files on Moodle. If you collaborate, you’ll just list your partner in the comments section of Moodle.</p>
+
+  <p>For those of you who are collaborating, please do not (a) “free ride” on your teammates or (b) enable free riders. Everyone in your group should understand every line of code they submit.</p>
+</blockquote>
+
+<h2 id="1-introduction">1. Introduction</h2>
+
+<h3 id="11-overview">1.1. Overview</h3>
+<p>In this assignment, you will build a “data-driven” version of the interface you built in HW2 using JavaScript. Specifically, you will:</p>
+
+<ol>
+  <li>Build a very simple HTML “skeleton,” and then write some “client-side” JavaScript to:
+    <ul class="compact">
+      <li>Query data from a server (using a REST API) and</li>
+      <li>Build DOM elements based on the data returned from the server.</li>
+    </ul>
+  </li>
+  <li>Ensure that your interface is accessible.</li>
+</ol>
+
+<p>For this assignment, everything should be done by writing your own “vanilla” JavaScript. In HW4, we will rebuild this client using React so that you can get a sense of some of the pros and cons of using a JavaScript framework.</p>
+
+<blockquote class="blockquote-no-margin">
+  <h3 id="working-demo">Working Demo</h3>
+  <p>If you want to see a working demo of what Photo App will look like at the end of the course, take a look here:</p>
+
+  <p><a href="https://photo-app-secured.herokuapp.com/" target="_blank">https://photo-app-secured.herokuapp.com/</a></p>
+  <ul class="compact">
+    <li>username: <strong>your first name</strong> (all lowercase)</li>
+    <li>password: <strong>password</strong></li>
+  </ul>
+
+  <p>Note that we will only be implementing a subset of these features for HW3.</p>
+</blockquote>
+
+<h3 id="12-set-up">1.2. Set Up</h3>
+
+<p><a href="/spring2025/course-files/homework/hw03.zip" class="nu-button">HW03 Starter Files <i class="fas fa-download"></i></a></p>
+
+<ol>
+  <li>Download the starter files, unzip them, and save them in your <code class="highlighter-rouge">csci344/homework</code> directory. Your <code class="highlighter-rouge">hw03</code> structure should look like this:
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> hw03
+ ├── README.md
+ ├── index.html
+ ├── js
+ │   ├── main.js
+ │   └── utilities.js
+ ├── package.json
+ ├── public
+ │   └── output.css
+ ├── src
+ │   └── input.css
+ └── tailwind.config.js
+</code></pre></div>    </div>
+  </li>
+  <li>Open your entire <code class="highlighter-rouge">csci344</code> folder in VS Code.</li>
+  <li>On your terminal and navigate to your <code class="highlighter-rouge">csci/homework/hw03</code> folder. Then run the following command:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  npm install
+</code></pre></div>    </div>
+    <p>This command will install your Tailwind dependencies and create a <code class="highlighter-rouge">package-lock.json</code> file and a <code class="highlighter-rouge">node_modules</code> directory. Please verify that this is the case.</p>
+  </li>
+  <li>Run the following command from the terminal (from within your <code class="highlighter-rouge">hw03</code> directory so that Tailwind continuously compiles your Tailwind stylesheet based on the changes you make in the HTML and CSS files:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  npm run build:tailwind
+</code></pre></div>    </div>
+  </li>
+  <li>You are now ready to begin your HW03. Please view your <code class="highlighter-rouge">index.html</code> file in live server to verify that it works.</li>
+</ol>
+
+<h3 id="13-course-rest-api">1.3. Course REST API</h3>
+<p>For this assignment, you will be using Sarah’s version of the PhotoApp REST API, located here: <a href="https://photo-app-secured.herokuapp.com/" target="_blank">https://photo-app-secured.herokuapp.com/</a>. In Homework 5, you will actually be building this REST API, but for now, I’m giving you a working version that you can interact with as you build your Photo App browser client. Credentials:</p>
+<ul>
+  <li>username: your first name (all lowercase)</li>
+  <li>password: “password”</li>
+</ul>
+
+<p>Obviously this is not secure, but this is just a practice API so if it gets hacked, I can just rebuild it in one click :).</p>
+
+<p>After logging in, you can view all of your available REST API endpoints by navigating to the API Docs: <a href="https://photo-app-secured.herokuapp.com/api" target="_blank">https://photo-app-secured.herokuapp.com/api</a>. You’re welcome to click as many buttons as you want. I will periodically clear out and rebuild the data so you can’t mess anything up.</p>
+
+<h3 id="14-authentication-notes">1.4. Authentication Notes</h3>
+<ul class="compact">
+  <li>All fetch requests will need to pass a <code class="highlighter-rouge">Bearer Token</code> (for now) to authenticate with the REST API. We will go over this in class.</li>
+  <li>There is a helper function in <code class="highlighter-rouge">js/utilities.js</code> called <code class="highlighter-rouge">getAccessToken()</code> that will help you retrieve the access token. You will store this token in a variable and include it as an HTTP header in all of your server requests.</li>
+</ul>
+
+<h2 id="3-your-tasks">3. Your Tasks</h2>
+<p>Please complete the tasks listed below. You’re more than welcome to add more CSS &amp; JS files as needed (though this is not necessary).</p>
+
+<h3 id="init">1. Page Initialization Tasks (20 Points)</h3>
+<p>The functionality in this section must be invoked when the page first loads (so that the user sees each of these panels right away).</p>
+
+<table class="rubric">
+    <thead>
+        <tr>
+            <th>Points</th>
+            <th>Task</th>
+            <th>Description</th>
+            <th>Figure</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2pt</td>
+            <td>Right Panel: User Profile
+            </td>
+            <td>
+                Inside of the right panel at the top, render an HTML representation of the current user's profile using data from the <code class="highlighter-rouge">/api/profile</code> endpoint.
+            </td>
+            <td><a href="#fig1">Figure 1</a></td>
+        </tr>
+        <tr>
+            <td>4pts</td>
+            <td>Right Panel: Suggested Accounts</td>
+            <td>
+                Inside of the right panel (underneath the user profile), render an HTML representation of suggested user accounts using data from the <code class="highlighter-rouge">/api/suggestions</code> endpoint.
+            </td>
+            <td><a href="#fig2">Figure 2</a></td>
+        </tr>
+        <tr>
+            <td>4pts</td>
+            <td>Stories Panel</td>
+            <td>
+                Render an HTML representation of stories from the user's network using data from the <code class="highlighter-rouge">/api/stories</code> endpoint.
+            </td>
+            <td><a href="#fig3">Figure 3</a></td>
+        </tr>
+        <tr>
+            <td>10pts</td>
+            <td>Posts Panel</td>
+            <td>
+                Underneath the stories panel, render an HTML representation of the first 10 posts from the user's network using data from the <code class="highlighter-rouge">/api/posts</code> endpoint. Please ensure that the following rules are honored:
+                <ul>
+                    <li>
+                        If there is more than one comment associated with the post, display a “view all n comments” button (replace n by the actual number of comments) and only show the most recent comment. Otherwise, display a single comment below the title of the post (if one exists).
+                    </li>
+                    <li>
+                        If the current user has already liked the post, the heart icon should be red <i style="color: #cf0c0c" class="fas fa-heart"></i>. Otherwise it should be hollow <i class="far fa-heart"></i>. You can check if the current user has liked the post by checking the post's<code class="highlighter-rouge">current_user_like_id</code> data field. If the post has been liked by the current user, then this data field exists. Otherwise, the field is undefined. 
+                    </li>
+                    <li>
+                        If the current user has already bookmarked the post, the bookmark icon should be black <i class="fas fa-bookmark"></i>. Otherwise it should be hollow <i class="far fa-bookmark"></i>. You can check if the current user has bookmarked the post by checking the post's<code class="highlighter-rouge">current_user_bookmark_id</code> data field. If the post has been bookmarked by the current user, then this data field exists. Otherwise, then the field is undefined. 
+                    </li>
+                </ul>
+            </td>
+            <td><a href="#fig4">Figure 4</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Note that the content from each box should be generated from the API data (no hard-coding).</p>
+
+<figure>
+    <figcaption id="fig1">Figure 1: User Profile</figcaption>
+    <img class="screenshot" alt="screen shot of the stories panel" style="width:30%;" src="/spring2025/assets/images/homework/hw05/a.png" />
+</figure>
+
+<figure>
+    <figcaption id="fig2">Figure 2: Suggestions</figcaption>
+    <img class="screenshot" alt="screen shot of the stories panel" style="width:30%;" src="/spring2025/assets/images/homework/hw05/b.png" />
+</figure>
+
+<figure>
+    <figcaption id="fig3">Figure 3: Stories</figcaption>
+    <img class="screenshot" alt="screen shot of the stories panel" style="width:75%;" src="/spring2025/assets/images/homework/hw05/c.png" />
+</figure>
+
+<figure>
+    <figcaption id="fig4">Figure 4: Post</figcaption>
+    <img class="screenshot" alt="screen shot of the post panel" style="width:75%;" src="/spring2025/assets/images/homework/hw05/d.png" />
+</figure>
+
+<h3 id="crud">2. Create / Delete Data with Event Handlers (20 Points)</h3>
+<p>After implementing the read-only functionality, you will implement functionality that actually updates the data in your system as follows:</p>
+
+<table class="rubric">
+    <thead>
+        <tr>
+            <th>Points</th>
+            <th>Task</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>5pts</td>
+            <td>
+                Like Post
+            </td>
+            <td>
+                <ul>
+                    <li>
+                        When the user clicks the heart of "unliked" post, a POST request is issued to the <code class="highlighter-rouge">/api/likes/</code> endpoint.
+                    </li>
+                    <li>Verify that your code works by refreshing the screen and checking to see that the number of likes is updated.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>5pts</td>
+            <td>
+                Unlike Post
+            </td>
+            <td>
+                <ul>
+                    <li>
+                        When the user clicks the heart of "liked" post, a DELETE request is issued to the <code class="highlighter-rouge">/api/likes/&lt;id&gt;</code> endpoint.
+                    </li>
+                    <li>Verify that your code works by refreshing the screen and checking to see that the number of likes is updated.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>5pts</td>
+            <td>
+                Bookmark Post
+            </td>
+            <td>
+                <ul>
+                    <li>
+                        When the user clicks the bookmark button of "unbookmarked" post, a POST request is issued to the <code class="highlighter-rouge">/api/bookmarks/</code> endpoint.
+                    </li>
+                    <li>Verify that your code works by refreshing the screen and checking to see that the post has been bookmarked.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>5pts</td>
+            <td>
+                Unbookmark Post
+            </td>
+            <td>
+                <ul>
+                    <li>
+                        When the user clicks the bookmark button of an "unbookmarked" post, a DELETE request is issued to the <code class="highlighter-rouge">/api/bookmarks/&lt;id&gt;</code> endpoint.
+                    </li>
+                    <li>Verify that your code works by refreshing the screen and checking to see that the post has been unbookmarked.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="accessibility">3. Accessibility Features (6 points)</h3>
+<p>Accessibility can be tricky when you’re relying on the fetch API, because a screen reader doesn’t always know that content has changed on the page. In addition, you don’t want to be over-reliant on the mouse. Please take a look at the <a href="/spring2025/resources/accessibility/">Accessibility Resources</a>, and specifically the resources pertaining to aria roles and attributes.</p>
+
+<table class="rubric">
+    <thead>
+        <tr>
+            <th>Points</th>
+            <th>Task</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2pts</td>
+            <td>
+                Keyboard Navigation
+            </td>
+            <td>
+                <ul class="compact">
+                    <li>Ensure that all of the buttons are tabbable</li>
+                    <li>Ensure that all the event handlers can be triggered using the "spacebar" or "enter / return" keys.</li>
+                    <li>Hint: if you use the HTML <code class="highlighter-rouge">&lt;button&gt;&lt;/button&gt;</code> element for all of your buttons, you get this functionality for free.
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>2pts</td>
+            <td>
+                Alt Text and Contrast
+            </td>
+            <td>
+                <ul class="compact">
+                    <li>Ensure that all images have alt text</li>
+                    <li>Ensure that HTML language attribute has been set and that all colors have sufficient contrast.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>2pts</td>
+            <td>
+                Aria attributes
+            </td>
+            <td>
+                Use the 'aria-label' attribute to indicate to the screen reader the purpose of the "like" and "bookmark" buttons (and any other button).
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="github-commit">4. Commit Everything to GitHub (2 points)</h3>
+<p>Please create a link from your homepage to your completed homework 2 webpage (see <a href="https://vanwars.github.io/csci344" target="_blank">Sarah’s homepage</a> for an example). Then, commit and push all of your edits to GitHub and, paste a link to your GitHub Repository and to your GitHub pages in the Moodle submission.</p>
+
+<ul>
+  <li>If you collaborated with someone, please list your partner’s name in the comments section.</li>
+</ul>
+
+<h2 id="4-what-to-turn-in">4. What to Turn In</h2>
+
+<h3 id="rubric">Rubric</h3>
+<p>Please review the requirements above and ensure you have met them. Specifically:</p>
+
+<table class="medium">
+  <thead>
+    <tr>
+      <th>Points</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#init">20pts</a></td>
+      <td>Page initialization</td>
+    </tr>
+    <tr>
+      <td><a href="#post-detail">20pts</a></td>
+      <td>Create / delete data features </td>
+    </tr>
+    <tr>
+      <td><a href="#accessibility">6pts</a></td>
+      <td>Accessibility features </td>
+    </tr>
+    <tr>
+      <td><a href="#github-commit">2pts</a></td>
+      <td>Successfully Deployed to GitHub + GitHub Pages and linked to your homepage</td>
+    </tr>
+    <tr>
+      <td>2pts</td>
+      <td>Composition and CSS (the UI looks like the screenshots provided). Everything still has to look good and be responsive. </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="moodle-submission">Moodle Submission</h3>
+<p>When you’re done, please submit the following to the Moodle:</p>
+
+<ul class="checkbox-list">
+  <li>A link to your GitHub Repository</li>
+  <li>A link to your GitHub Pages</li>
+  <li>The name of your partner (if applicable)</li>
+  <li>Whether you completed any of the extra credit (so that I can look for it)</li>
+</ul>
+
+<h2 id="extra-credit">Extra Credit</h2>
+<p>If Helene hadn’t happened, these tasks would be required. Instead, I am making them extra credit. Give them a try if you have the bandwidth! The more you practice, the more you will retain!</p>
+
+<table class="rubric">
+    <thead>
+        <tr>
+            <th>Points</th>
+            <th>Task</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+         <tr>
+            <td>5pts</td>
+            <td>
+                Follow Account
+            </td>
+            <td>
+                <ul>
+                    <li>
+                        When the user clicks the follow button of an "unfollowed" account, a POST request is issued to the <code class="highlighter-rouge">/api/following</code> endpoint.
+                    </li>
+                    <li>If the POST response indicates success, redraw the button to indicate that you are now following the account.</li>
+                </ul>
+            </td>
+            <td><a href="#ec1">Extra Credit #1</a></td>
+        </tr>
+        <tr>
+            <td>5pts</td>
+            <td>
+                Unfollow Account
+            </td>
+            <td>
+                <ul>
+                    <li>
+                        When the user clicks the unfollow button of an "followed" account, a DELETE request is issued to the <code class="highlighter-rouge">/api/following/&lt;id&gt;</code> endpoint.
+                    </li>
+                    <li>If the DELETE response indicates success, redraw the button to indicate that you are no longer following the account.</li>
+                </ul>
+            </td>
+            <td><a href="#ec1">Extra Credit #1</a></td>
+        </tr>
+        <tr>
+            <td>8pts</td>
+            <td>
+                Add a Comment
+            </td>
+            <td>
+                <ul>
+                    <li>
+                        When the user types a comment into the textbox and clicks the adjacent "post" button, a POST request is issued to the <code class="highlighter-rouge">/api/comments</code> endpoint.
+                    </li>
+                    <li>If the POST response indicates success, requery for the relevant post (<code class="highlighter-rouge">/api/posts/&lt;id&gt;</code>) and redraw the post.</li>
+                    <li>Ensure that the new comment is rendered to the screen and that the comment count increases to reflect the # of comments associated with the post.</li>
+                </ul>
+            </td>
+            <td><a href="#ec2">Extra Credit #2</a></td>
+        </tr>
+        <tr>
+            <td>10pts</td>
+            <td>Redraw the Post without refreshing the page</td>
+            <td>If you can figure out how to redraw the post without refreshing the page, as seen on <a href="https://photo-app-secured.herokuapp.com/" target="_blank">https://photo-app-secured.herokuapp.com/</a></td>
+            <td><a href="#ec2">Extra Credit #2</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<figure>
+    <figcaption id="ec1">Extra Credit #1: Following and Unfollowing</figcaption>
+    <p>Note that each button click is issuing a request to your API and redrawing the screen (console messages just used for demonstration purposes).</p>
+    <img class="screenshot frame" alt="screen shot of the post panel" style="width:80%;" src="/spring2025/assets/images/homework/hw05/following.gif" />
+</figure>
+
+<figure>
+    <figcaption id="ec2">Extra Credit #2: Add Comment</figcaption>
+    <p>Note that each button click is issuing a request to your API and redrawing the screen (console messages just used for demonstration purposes).</p>
+    <img class="screenshot frame" alt="screen shot of the post panel" style="width:80%;" src="/spring2025/assets/images/homework/hw05/commenting.gif" />
+</figure>
+
+
+
+            </article>  
+        </main>
+        <footer>
+            <p>    
+                Department of Computer Science, UNC Asheville
+            </p>
+        </footer>
+        
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

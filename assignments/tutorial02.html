@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>CSS Exercises</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="two-column">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li class="active" ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/11Ra-DrGJOYMOC6Ag_3GS6ShxZFCPdKh6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                <ol class="side-menu">
+  <li><a href="#overview">Overview</a>
+    <ol>
+      <li><a href="#references">References</a>
+        <ol>
+          <li><a href="#common-css-properties-and-techniques">Common CSS Properties and Techniques</a></li>
+          <li><a href="#css-grid">CSS Grid</a></li>
+          <li><a href="#flex">Flex</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><a href="#your-tasks">Your Tasks</a>
+    <ol>
+      <li><a href="#task-1-css-selectors">Task 1: CSS Selectors</a></li>
+      <li><a href="#task-2-box-model-properties">Task 2: Box Model Properties</a></li>
+      <li><a href="#task-3-use-an-external-stylesheet">Task 3: Use an external stylesheet</a></li>
+      <li><a href="#task-4-center-align-elements-within-a-container">Task 4: Center-align elements within a container</a></li>
+      <li><a href="#task-5-create-a-navigation-bar">Task 5: Create a Navigation Bar</a></li>
+      <li><a href="#task-6-create-this-layout">Task 6: Create this layout</a></li>
+      <li><a href="#task-7-create-the-taco-temple-layout">Task 7: Create the Taco Temple layout</a></li>
+    </ol>
+  </li>
+  <li><a href="#what-to-turn-in">What to turn in</a></li>
+</ol>
+
+            </aside>
+            <article>
+                
+
+    
+        <h1>
+            <a href="../assignments/">Assignments</a> > 
+            Tutorial 2: CSS Exercises
+        </h1>
+    
+ 
+                <p>
+    
+        Due on Fri, 02/07 @ 11:59PM.
+    
+    
+        6 Points.
+    
+    
+</p>
+
+<style>
+    img.xsmall {
+        max-width: 250px;
+        width: 60%;
+    }
+    img.large {
+        max-width: 100%;
+        width: 100%;
+    }
+</style>
+
+<h2 id="overview">Overview</h2>
+<p>This tutorial can be completed individually or in pairs. Working in pairs does not mean “splitting up the work” so that each person does half of the tasks. Rather, both parties should complete the tasks and help one another as questions arise. Because this tutorial is a bit longer than the previous ones, you may have until <strong>Fri, 9/13 at 11:59PM</strong> to complete it. We will use class time on Friday and Monday to work on the tutorial.</p>
+
+<h3 id="references">References</h3>
+<p>CSS is best understood through practice, and by consulting online resources as needed. Here are a curated list of resources that should help you complete your tasks:</p>
+
+<h4 id="common-css-properties-and-techniques">Common CSS Properties and Techniques</h4>
+
+<ul class="compact">
+  <li><a href="../resources/css-rules-of-thumb">CSS Rules of Thumb</a></li>
+  <li><a href="../resources/selectors/">Selectors</a>
+    <ul>
+      <li><a href="https://flukeout.github.io/">CSS Diner</a></li>
+    </ul>
+  </li>
+  <li><a href="../resources/color/">Color</a></li>
+  <li><a href="../resources/units/">CSS Units</a></li>
+  <li><a href="../resources/fonts/">Text &amp; Fonts</a></li>
+  <li><a href="../resources/box-model/">The Box Model</a></li>
+  <li><a href="../resources/css-grid/">CSS Grid</a></li>
+  <li><a href="../resources/media-queries/">Media Queries</a></li>
+</ul>
+
+<h4 id="css-grid">CSS Grid</h4>
+
+<ul class="compact">
+  <li><a href="https://cssgridgarden.com/" target="_blank">CSS Grid Garden</a> <br />Please try to complete at least the first 10 levels</li>
+  <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">CSS Tricks: A Complete Guide to Grid</a></li>
+  <li><a href="https://www.freecodecamp.org/news/learn-css-grid-by-building-5-layouts/" target="_blank">Learn CSS Grid by Building 5 Layouts in 17 minutes</a></li>
+</ul>
+
+<h4 id="flex">Flex</h4>
+
+<ul class="compact">
+  <li><a href="https://flexboxfroggy.com/" target="_blank">Flexbox Froggy</a>.<br />Please try to complete at least the first 10 levels</li>
+  <li><a href="https://university.webflow.com/lesson/flexbox-vs-grid" target="_blank">When to use Flex versus CSS Grid?</a></li>
+  <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">CSS Tricks: A Complete Guide to Flexbox</a></li>
+  <li><a href="https://www.w3schools.com/css/css3_flexbox.asp" target="_blank">W3 Schools Flexbox Guide</a></li>
+</ul>
+
+<h2 id="your-tasks">Your Tasks</h2>
+<p><a href="/spring2025/course-files/tutorials/tutorial03.zip" class="nu-button">Download Tutorial Files <i class="fas fa-download"></i></a></p>
+
+<p>Download the <code class="highlighter-rouge">tutorial03.zip</code> file, unzip it and move the unzipped tutorial03 folder into the <code class="highlighter-rouge">csci344/tutorials</code> folder (see diagram below).</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>csci344
+    |-- tutorials
+    │   |-- tutorial02
+    │   |-- tutorial03
+    |   ...
+    |
+    |-- homework
+    │   |-- hw02
+    |   ...
+    |
+    |-- lectures
+        |-- lecture03
+        |-- lecture05
+        ...
+</code></pre></div></div>
+
+<h3 id="task-1-css-selectors">Task 1: CSS Selectors</h3>
+<p>Complete the first 14 steps of <a href="https://flukeout.github.io/" target="_blank">CSS Diner</a>. When you’re done, take a screenshot showing you completed all of the levels. Your screenshot should have a green checkmark next to each level (like the one below but with checkmarks).</p>
+
+<p><img class="small frame" src="/spring2025/assets/images/tutorials/tutorial03/exercise01.png" /></p>
+
+<h3 id="task-2-box-model-properties">Task 2: Box Model Properties</h3>
+<p>Open <code class="highlighter-rouge">02-box-model</code> and modify the CSS so that the card looks like the screenshot shown below. You should only need to use <a href="../resources/box-model/">Box Model</a> properties.</p>
+
+<p><img class="small" src="/spring2025/assets/images/tutorials/tutorial03/exercise02.png" /></p>
+
+<h3 id="task-3-use-an-external-stylesheet">Task 3: Use an external stylesheet</h3>
+<p>Open <code class="highlighter-rouge">03-fonts</code> and use CSS to style the <code class="highlighter-rouge">h1</code> and <code class="highlighter-rouge">h2</code> tags using a Google font (example shown below). If you need help…</p>
+<ul class="compact">
+  <li>Check out <a href="https://www.youtube.com/watch?v=E7QPO8P8nls" target="_blank">this video</a></li>
+  <li>You can Google “How to use a Google Font in CSS”</li>
+</ul>
+
+<p><img class="frame xsmall" src="/spring2025/assets/images/tutorials/tutorial03/exercise03.png" /></p>
+
+<h3 id="task-4-center-align-elements-within-a-container">Task 4: Center-align elements within a container</h3>
+
+<p>Open <code class="highlighter-rouge">04-flex</code> and create the layout shown below by editing the CSS file. You should not need to edit the HTML. Some hints:</p>
+<ul class="compact">
+  <li>Put each of the containers into “flex” mode and give them a height of 100vh (vh stands for viewport height)</li>
+  <li>To get the children of the container to stack vertically, experiment with the “flex-direction” property</li>
+  <li>To align the items horizontally and vertically, experiment with the “justify-content” and “align-center” properties</li>
+</ul>
+
+<p><img src="/spring2025/assets/images/tutorials/tutorial03/exercise04.gif" /></p>
+
+<p>Please ensure that the following criteria are met:</p>
+
+<ul class="compact">
+  <li>The height of each <code class="highlighter-rouge">section</code> should be the same as the height of the browser window.</li>
+  <li>The content inside of each <code class="highlighter-rouge">section</code> tag should be centered horizontally and vertically.</li>
+  <li>Each <code class="highlighter-rouge">section</code> should have a different background color.</li>
+  <li>The content in each <code class="highlighter-rouge">section</code> should be stacked vertically</li>
+</ul>
+
+<h3 id="task-5-create-a-navigation-bar">Task 5: Create a Navigation Bar</h3>
+<p>Open <code class="highlighter-rouge">05-navbar</code>, and try to make the following layout using flex. The navigation bar should also be anchored to the top so when you scroll, the nav bar stays fixed.</p>
+
+<p><img class="frame large" src="/spring2025/assets/images/tutorials/tutorial03/exercise05.png" /></p>
+
+<p>Hints:</p>
+
+<ul class="compact">
+  <li>Both the <code class="highlighter-rouge">nav</code> and <code class="highlighter-rouge">ul</code> elements will need to be put into flex mode.</li>
+  <li>Use the Chrome inspector to adjust the alignment properties.</li>
+  <li>To turn the bullets off, set the <code class="highlighter-rouge">list-style-type</code> property to <code class="highlighter-rouge">none</code>.</li>
+  <li>To create a fixed menu, see <a href="https://codepen.io/vanwars/pen/LYBdyzJ?editors=0100" target="_blank">this code sample</a>:</li>
+</ul>
+
+<h3 id="task-6-create-this-layout">Task 6: Create this layout</h3>
+
+<p>Open <code class="highlighter-rouge">06-grid</code>, and try to make the following layout using CSS Grid. You should not need to modify the HTML file. Note that the gridlines are just for demonstration, but they won’t actually be visible.</p>
+
+<p><img class="small" src="/spring2025/assets/images/tutorials/tutorial03/exercise06b.png" /></p>
+
+<p><strong>Note:</strong> You do NOT have to center the text inside of each section unless you want to.</p>
+
+<h3 id="task-7-create-the-taco-temple-layout">Task 7: Create the Taco Temple layout</h3>
+
+<p>Open <code class="highlighter-rouge">07-tacotemple</code>, and try to make the following layout using CSS Grid. You should only have to edit the CSS file.</p>
+
+<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial03/tacotemple01.png" /></p>
+
+<p><strong>A few hints:</strong>
+The <code class="highlighter-rouge">main</code> container is a grid with two columns – no rows specified). See grid lines:</p>
+
+<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial03/tacotemple02.png" /></p>
+
+<p>The <code class="highlighter-rouge">section</code> container is also a grid with two columns. See grid lines:</p>
+
+<p><img class="small" src="/spring2025/assets/images/tutorials/tutorial03/tacotemple03.png" /></p>
+
+<h2 id="what-to-turn-in">What to turn in</h2>
+<p>Please create a link from your homepage to your completed tutorial 3 (see <a href="https://vanwars.github.io/csci344" target="_blank">Sarah’s homepage</a> for an example). Then, commit and push all of your edits to GitHub and, paste a link to your GitHub Repository and to your GitHub pages in the Moodle submission.</p>
+
+<ul>
+  <li>If you collaborated with someone, please list your partner’s name in the comments section.</li>
+</ul>
+
+
+
+            </article>  
+        </main>
+        <footer>
+            <p>    
+                Department of Computer Science, UNC Asheville
+            </p>
+        </footer>
+        
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

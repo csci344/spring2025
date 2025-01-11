@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Intro to Fast API</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="two-column">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li class="active" ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/11Ra-DrGJOYMOC6Ag_3GS6ShxZFCPdKh6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                <ol class="side-menu">
+  <li><a href="#video-walkthroughs-for-tutorial-9">Video Walkthroughs for Tutorial 9</a></li>
+  <li><a href="#background-readings">Background Readings</a></li>
+  <li><a href="#1-install-python">1. Install Python</a>
+    <ol>
+      <li><a href="#what-if-ive-already-installed-python-on-my-laptop">What if I’ve already installed Python on my laptop?</a></li>
+    </ol>
+  </li>
+  <li><a href="#2-intro-to-flask">2. Intro to Flask</a></li>
+  <li><a href="#3-intro-to-python-virtual-environments">3. Intro to Python Virtual Environments</a>
+    <ol>
+      <li><a href="#mac--unix--linux">Mac / Unix / Linux</a></li>
+      <li><a href="#windows-powershell-or-command-prompt">Windows Powershell or Command Prompt</a></li>
+    </ol>
+  </li>
+  <li><a href="#4-set-up">4. Set Up</a>
+    <ol>
+      <li><a href="#set-up-your-virtual-environment">Set Up Your Virtual Environment</a>
+        <ol>
+          <li><a href="#for-mac-unix-linux-or-gitbash">For Mac, Unix, Linux, or GitBash</a></li>
+          <li><a href="#for-windows-powershell-or-command-prompt">For Windows Powershell or Command Prompt</a></li>
+        </ol>
+      </li>
+      <li><a href="#run-your-flask-web-server">Run Your Flask Web Server</a></li>
+    </ol>
+  </li>
+  <li><a href="#5-required-flask-exercises">5. Required Flask Exercises</a>
+    <ol>
+      <li><a href="#task_1">1. Display personalized greeting</a></li>
+      <li><a href="#task_2">2. Grab Data from “database”</a></li>
+      <li><a href="#task_3">3. Grab data from another server</a>
+        <ol>
+          <li><a href="#your-task">Your Task</a></li>
+        </ol>
+      </li>
+      <li><a href="#task_4">4. Merge your data with a template</a>
+        <ol>
+          <li><a href="#your-task-1">Your Task</a></li>
+        </ol>
+      </li>
+      <li><a href="#task_5">5. Merge someone else’s data with a template</a>
+        <ol>
+          <li><a href="#your-task-2">Your Task</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><a href="#extra_credit">5. Extra Credit (5pts)</a>
+    <ol>
+      <li><a href="#1-looping-using-jinja">1. Looping using Jinja</a></li>
+      <li><a href="#2-includes">2. Includes</a></li>
+    </ol>
+  </li>
+  <li><a href="#what-to-turn-in">What to Turn In</a></li>
+</ol>
+
+            </aside>
+            <article>
+                
+
+    
+        <h1>
+            <a href="../assignments/">Assignments</a> > 
+            Tutorial 11: Intro to Fast API
+        </h1>
+    
+ 
+                <p>
+    
+        Due on Fri, 04/11 @ 11:59PM.
+    
+    
+        6 Points.
+    
+    
+</p>
+
+<style>
+    table th:first-child, table td:first-child {
+        min-width: auto;
+        max-width: auto;
+        width: auto;
+    }
+
+    .mtop {
+        margin-top: 50px;
+    }
+</style>
+
+<blockquote class="info">
+  <h2 id="video-walkthroughs-for-tutorial-9">Video Walkthroughs for Tutorial 9</h2>
+
+  <p>The following video walkthroughs walk through all of the required Tutorial 9 exercises.</p>
+
+  <ol>
+    <li><span class="update">11:09</span> <a href="https://drive.google.com/file/d/1l5pgMD_ITAKJuYJPzBc_CeWN-TlI41nN/view?usp=drive_link" target="_blank">Setup</a></li>
+    <li><span class="update">12:12</span> <a href="https://drive.google.com/file/d/1LaOsFkX0yBiMvHwyd9Rdfwh9Kg207GU9/view?usp=drive_link" target="_blank">Exercise 1</a></li>
+    <li><span class="update">06:15</span> <a href="https://drive.google.com/file/d/1W8ot-pst_MR3y8J63k4uJW-hP8SaLYp8/view?usp=drive_link" target="_blank">Exercise 2</a></li>
+    <li><span class="update">10:51</span> <a href="https://drive.google.com/file/d/1nb4cI0AtEUup5j2ulb5WrtvlLQiCUiMA/view?usp=drive_link" target="_blank">Exercise 3</a></li>
+    <li><span class="update">13:26</span> <a href="https://drive.google.com/file/d/13N0hSMg3IRZx7Bk0uQfgYWQQEH43rWJB/view?usp=drive_link" target="_blank">Exercise 4</a></li>
+    <li><span class="update">14:18</span> <a href="https://drive.google.com/file/d/1uyA6cAEP8u9glWpy3Jh7g5m3gaoPpAxz/view?usp=drive_link" target="_blank">Exercise 5</a></li>
+  </ol>
+
+  <p>The folder of videos can also be found <a href="https://drive.google.com/drive/folders/1lueba1ca4mWlfQmd5lqztwdYNLXaVnkb?usp=drive_link" target="_blank">here</a>.</p>
+</blockquote>
+
+<blockquote class="mtop">
+  <h2 id="background-readings">Background Readings</h2>
+  <p>Before beginning this tutorial, please read (or at least skim) the following:</p>
+
+  <ul class="compact">
+    <li>Towards Data Science. <a href="https://towardsdatascience.com/virtual-environments-104c62d48c54#8025" target="_blank">Intro to Python Virtual Environments</a></li>
+    <li>Flask website. <a href="https://flask.palletsprojects.com/en/2.0.x/quickstart/" target="_blank">Flask Quickstart Guide</a></li>
+  </ul>
+</blockquote>
+
+<h2 id="1-install-python">1. Install Python</h2>
+
+<blockquote class="info">
+  <h3 id="what-if-ive-already-installed-python-on-my-laptop">What if I’ve already installed Python on my laptop?</h3>
+  <p>Note: many people who have programmed with Python before already have Python 3.x installed. To check, search for an existing Python installation. If you already have a version of Python3 that is greater than Python 3.8, move on to Part 2. It doesn’t hurt to install another version of Python, but it’s not necessary. If you have any questions, feel free to ask Sarah or one of the peer mentors / TAs.</p>
+</blockquote>
+
+<p>To install python, download the latest version (3.13.x) of python here: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a></p>
+
+<p>After going through the installation process, navigate to the folder on your machine where Python was installed. For me, on a Mac, my IDLE was saved to Applications &gt; Python 3.9 (or you can also search for it). For Windows users, it will likely be in a folder inside of Program Files (which you can also search for).</p>
+
+<p>Inside, the Python 3.13 folder, you’ll find a file called <strong>IDLE</strong> - this is the IDLE executable. Double click on that file to run it. You should then see something like this (the screen shows version 3.8, but any version &gt;= 3.8 is OK):</p>
+
+<p><img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial09/python-cmd-1.png" /></p>
+
+<p>I recommend keeping IDLE in your dock (on a Mac) or making a Desktop Shortcut to IDLE (on Windows).</p>
+
+<p>At the <strong>&gt;&gt;&gt;</strong> prompt, you can type any valid python command. For example, type <code class="highlighter-rouge">print("hello world!")</code> and hit enter. You should see something like this:</p>
+
+<p><img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial09/python-cmd-2.png" /></p>
+
+<p>If you have any issues installing Python or IDLE, come to office hours.</p>
+
+<h2 id="2-intro-to-flask">2. Intro to Flask</h2>
+<p><a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">Flask</a> is a framework, built with Python, for helping people build dynamic, scalable web applications. I have selected Flask as our web server engine for this semester because it has a relatively simple set of common abstractions, and is therefore easier to learn than some other frameworks. At the same time, it is also very powerful, and has features such as:</p>
+
+<ul>
+  <li>Templating, using the <a href="https://jinja.palletsprojects.com/en/3.0.x/" target="_blank">Jinja template engine</a></li>
+  <li>A simple way to define <a href="https://flask.palletsprojects.com/en/2.0.x/api/#url-route-registrations" target="_blank">routes</a> (which bind URL addresses to functions), and to specify which HTTP methods are valid for a particular route (HEAD, OPTIONS, GET, POST, PUT, PATCH, DELETE)</li>
+  <li>A way to listen for and parse HTTP requests over a specified port</li>
+  <li>A way to create and send HTTP responses</li>
+</ul>
+
+<p>In addition, since Flask is written in Python, you have access to any and all Python libraries (e.g., for connecting to various databases, taking advantage of pretrained models, and so forth).</p>
+
+<p>Most frameworks have abstractions similar to those offered by Flask, so once you learn Flask, learning new server-side web frameworks will be easier. Some other web frameworks that are analagous to Flask (that you may have heard of) include:</p>
+
+<table class="small">
+  <tbody>
+    <tr>
+      <td>Python</td>
+      <td>Flask, Django, Web2Py, Pyramid, etc.</td>
+    </tr>
+    <tr>
+      <td>Node.js</td>
+      <td>Express, etc.</td>
+    </tr>
+    <tr>
+      <td>PHP</td>
+      <td>Larvel, Symfony, etc.</td>
+    </tr>
+    <tr>
+      <td>Ruby</td>
+      <td>Rails, etc.</td>
+    </tr>
+    <tr>
+      <td>Java</td>
+      <td>Spring, Struts, Guice, etc.</td>
+    </tr>
+    <tr>
+      <td>C#</td>
+      <td>ASP.NET</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="3-intro-to-python-virtual-environments">3. Intro to Python Virtual Environments</h2>
+<p>To run Flask, we are going to create a self-contained Python virtual environment, to ensure that your python dependencies don’t interfere with any global python installations you might have.</p>
+
+<blockquote class="blockquote-no-margin">
+  <p>From the <a href="https://docs.python.org/3/library/venv.html" target="_blank">Python Docs</a>:</p>
+
+  <p>A virtual environment is a Python environment such that the Python interpreter, libraries and scripts installed into it are isolated from those installed in other virtual environments, and (by default) any libraries installed in a “system” Python, i.e., one which is installed as part of your operating system.</p>
+</blockquote>
+
+<p>Practically speaking, a virtual environment (venv) “sandboxes” your Python installation so that anything installed within a venv is not available outside of it. Libraries installed in a “system” Python ARE available to your venv, but can be overridden from within the venv. For instance, <code class="highlighter-rouge">numpy</code> is a python module that is commonly used in data science tasks. So, if <code class="highlighter-rouge">numpy version 1.15.4</code> is installed on your “system” Python and you decide to install <code class="highlighter-rouge">numpy version 1.16.1</code> in your venv, then within the venv, <code class="highlighter-rouge">1.16.1</code> will take precedence.</p>
+
+<p>Some commands to know:</p>
+
+<h3 id="mac--unix--linux">Mac / Unix / Linux</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">-m</span> venv <span class="nb">env</span>      <span class="c"># creates a new virtual environment called "env"</span>
+<span class="nb">source env</span>/bin/activate  <span class="c"># activates the virtual environment</span>
+deactivate               <span class="c"># deactivates the virtual environment</span>
+</code></pre></div></div>
+
+<h3 id="windows-powershell-or-command-prompt">Windows Powershell or Command Prompt</h3>
+
+<pre><code class="language-dos">py -m venv env          # creates a new virtual environment called "env"
+env\Scripts\activate    # activates the virtual environment
+deactivate              # deactivates the virtual environment
+</code></pre>
+
+<p>Note that when your venv is activated, there will be a <code class="highlighter-rouge">(env)</code> prefix in front of your command prompt. When activated, any python or <code class="highlighter-rouge">pip install</code> commands will be interacting with your virtual environment.</p>
+
+<h2 id="4-set-up">4. Set Up</h2>
+<p>After you have installed Python is installed, download tutorial09.zip (below), unzip it, and move your <code class="highlighter-rouge">tutorial09</code> folder inside of your <code class="highlighter-rouge">tutorials</code> folder.</p>
+
+<p><a class="nu-button" href="/spring2025/course-files/tutorials/tutorial09.zip">tutorial09.zip<i class="fas fa-download" aria-hidden="true"></i></a></p>
+
+<h3 id="set-up-your-virtual-environment">Set Up Your Virtual Environment</h3>
+<p>Open the terminal and navigate to your <code class="highlighter-rouge">tutorial09</code> folder. Then, set up a virtual environment and install the dependencies as follows (depending on your operating system):</p>
+
+<h4 id="for-mac-unix-linux-or-gitbash">For Mac, Unix, Linux, or GitBash</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">-m</span> venv <span class="nb">env
+source env</span>/bin/activate
+pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt    <span class="c"># install dependencies</span>
+</code></pre></div></div>
+
+<h4 id="for-windows-powershell-or-command-prompt">For Windows Powershell or Command Prompt</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># create the virtual environment</span>
+py <span class="nt">-m</span> venv <span class="nb">env</span>  
+
+<span class="c"># run the activate.bat script as follows:</span>
+<span class="nb">env</span><span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+
+<span class="c"># and finally, install the Python dependencies</span>
+py <span class="nt">-m</span> pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+</code></pre></div></div>
+
+<h3 id="run-your-flask-web-server">Run Your Flask Web Server</h3>
+
+<p>When you’re done, try running your flask app from your command line:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flask run <span class="nt">--debug</span>
+
+<span class="c"># if you named your app something other than app.py (say, hello.py) type this:</span>
+<span class="c"># flask flask --app hello run --debug</span>
+</code></pre></div></div>
+
+<p>You should see the following output:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">*</span> Serving Flask app <span class="s2">"app.py"</span> <span class="o">(</span>lazy loading<span class="o">)</span>
+ <span class="k">*</span> Environment: development
+ <span class="k">*</span> Debug mode: on
+ <span class="k">*</span> Running on http://127.0.0.1:5000/ <span class="o">(</span>Press CTRL+C to quit<span class="o">)</span>
+ <span class="k">*</span> Restarting with <span class="nb">stat</span>
+ <span class="k">*</span> Debugger is active!
+ <span class="k">*</span> Debugger PIN: 273-580-071
+</code></pre></div></div>
+
+<p>Navigate to <a href="http://127.0.0.1:5000/" target="_blank">http://127.0.0.1:5000/</a>, and you should see a screen that lists the exercises that you are to complete:</p>
+
+<p><img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial09/home.png" /></p>
+
+<h2 id="5-required-flask-exercises">5. Required Flask Exercises</h2>
+<p>Once you’ve set up your flask installation, you will complete 5 required exercises. You may also complete the optional exercise (#6) for extra credit:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Exercise</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.</td>
+      <td><a href="#task_1">Display personalized greeting</a></td>
+      <td>Practice generating and sending a dynamic string via HTTP</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td><a href="#task_2">Grab data from a “database”</a></td>
+      <td>Practice sending a JSON string from a “database” via HTTP</td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td><a href="#task_3">Grab data from another server</a></td>
+      <td>Query another REST API and then forward the resulting data as an HTTP response. Allow the user to specify criteria using query parameters.</td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td><a href="#task_4">Merge your data with a template</a></td>
+      <td>Practice creating a data-driven, server-side HTML file from a template. Templates allow you to separate the data from the presentation of the data.</td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td><a href="#task_5">Merge someone else’s data with a template</a></td>
+      <td>Merge yelp data with a template that you design.</td>
+    </tr>
+    <tr>
+      <td>6.</td>
+      <td><a href="#extra_credit">Merge someone else’s data with a template</a> (more practice)</td>
+      <td><strong>Extra Credit</strong> Same as task 5 except that you will loop through each restaurant using Jinja looping syntax.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Each of these exercises is intended to help you get a sense of the kinds of things you can do with Flask (or any web framework):</p>
+
+<h3 id="task_1">1. Display personalized greeting</h3>
+<p>Update the <code class="highlighter-rouge">exercise1</code> function so that it returns a personalized greeting to the user. In other words, replace “Hello World!” with something like, “Hi Erick Rubi!”</p>
+<ul>
+  <li>Assume that the <code class="highlighter-rouge">current_user</code> variable, defined at the top of <code class="highlighter-rouge">app.py</code> represents the user who is currently logged in.</li>
+</ul>
+
+<p><img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial09/hello-erick.png" /></p>
+
+<h3 id="task_2">2. Grab Data from “database”</h3>
+<p>The big idea with REST APIs is that they expose a subset of your organization’s data (from a database) to the outside world. Within <code class="highlighter-rouge">app.py</code>, scroll down to the <code class="highlighter-rouge">exercise2</code> function. This function opens a simple “database” file (just a JSON file), loads the data into memory, and then sends it as response to the requestor. Currently, it just returns an empty dictionary. You will replace the return statement with the following:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>After editing the function, test your endpoint by accessing <a href="http://127.0.0.1:5000/data/quotes/" target="_blank">http://127.0.0.1:5000/data/quotes/</a>. If your code worked, you should see JSON of “famous quotes.”</p>
+
+<p><img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial09/quotes-json.png" /></p>
+
+<p>A quick note on the <code class="highlighter-rouge">json</code> library:</p>
+<ul class="compact">
+  <li><code class="highlighter-rouge">json.dumps()</code> converts a Python dictionary into JSON (a string).</li>
+  <li><code class="highlighter-rouge">json.loads()</code> convert JSON (a string) into a Python dictionary.</li>
+</ul>
+
+<h3 id="task_3">3. Grab data from another server</h3>
+<p>Servers can also be clients that issue requests to other servers (the thing doing the “asking” is usually referred to as the client). In other words, your Flask server can query data from other servers (using HTTP or other protocols) and then make use of that data in their own way. The <code class="highlighter-rouge">exercise3</code> function queries a proxy server that Sarah made (<a href="https://www.apitutor.org" target="_blank">https://www.apitutor.org</a>) for accessing Yelp (and other providers). In this example, we are querying Yelp for restaurants that match a <strong><em>location</em></strong> and <strong><em>term</em></strong>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/data/yelp/'</span><span class="p">)</span>
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/data/yelp'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">exercise3</span><span class="p">():</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">args</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">search_term</span> <span class="o">=</span> <span class="s">'pizza'</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="s">'Asheville, NC'</span>
+    <span class="c1"># go fetch data from another server and give it to the requestor:
+</span>    <span class="n">url</span> <span class="o">=</span> <span class="s">'https://www.apitutor.org/yelp/simple/v3/businesses/search?location={location}&amp;term={search_term}&amp;limit={count}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span>
+        <span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span> 
+        <span class="n">search_term</span><span class="o">=</span><span class="n">search_term</span><span class="p">,</span> 
+        <span class="n">count</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>You are going to make this route more customizable by allowing the requestor to pass query parameters to the <code class="highlighter-rouge">/data/yelp/</code> endpoint. For instance:</p>
+
+<p><a href="http://127.0.0.1:5000/data/yelp/?location=Asheville+NC&amp;term=thai" target="_blank">http://127.0.0.1:5000/data/yelp/?location=Asheville+NC&amp;term=thai</a></p>
+
+<p>Recall from previous lectures:</p>
+
+<ul class="compact">
+  <li>The <code class="highlighter-rouge">?</code> character is used to specify where the route ends and the query parameters begin.</li>
+  <li>If there is more than one query parameter, then each parameter/argument pair is separated by an <code class="highlighter-rouge">&amp;</code> character (see examples below).</li>
+  <li>The parameter name is on the left side of the <code class="highlighter-rouge">=</code> and the value is on the right side.</li>
+  <li>In flask, you can access the query parameters via the <code class="highlighter-rouge">request.args</code>, which stores a dictionary representation of any query parameters associated with a given route.</li>
+</ul>
+
+<h4 id="your-task">Your Task</h4>
+<p>Replace the hard-coded ‘pizza’ and ‘Asheville, NC’ terms with the user’s preferences, using the the <code class="highlighter-rouge">request.args</code> dictionary. In python, to get a key from a dictionary, you can do this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">search_term</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">args</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'term'</span><span class="p">)</span>
+<span class="n">location</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">args</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'location'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Also, be sure to check if they passed in both a “location” and a “term” parameter. If they didn’t, give them an error message and tell them to try again:</p>
+
+<ul>
+  <li><a href="http://127.0.0.1:5000/data/yelp/?location=Asheville,+NC&amp;term=chinese" target="_blank">http://127.0.0.1:5000/data/yelp/?location=Asheville,+NC&amp;term=chinese</a> (Chinese restaurants in Asheville)</li>
+  <li><a href="http://127.0.0.1:5000/data/yelp/?location=San+Diego,CA&amp;term=thai" target="_blank">http://127.0.0.1:5000/data/yelp/?location=San+Diego,CA&amp;term=thai</a> (Thai restaurants in San Diego)</li>
+</ul>
+
+<p>If you implemented this function correctly:</p>
+
+<ul class="compact">
+  <li>The “location” search parameter is honored</li>
+  <li>The “term” search parameter is honored</li>
+  <li>If either parameter is missing, an error message displays</li>
+</ul>
+
+<p><img class="large frame" src="/spring2025/assets/images/tutorials/tutorial09/yelp-json.png" /></p>
+
+<h3 id="task_4">4. Merge your data with a template</h3>
+<p>The <code class="highlighter-rouge">exercise4</code> function uses a template to generate an HTML string, which is returned as a response. Specifically, python parses the <code class="highlighter-rouge">templates/quote-of-the-day.html</code> file, finds any Jinja syntax, evaluates that syntax, and finally sends a “plain” HTML file back to the client (very similar to a template literal or JSX, but with more power):</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/quote'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">exercise2</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span>
+        <span class="s">'quote-of-the-day.html'</span><span class="p">,</span>
+        <span class="n">user</span><span class="o">=</span><span class="n">current_user</span>
+    <span class="p">)</span>
+</code></pre></div></div>
+<p>Open the <code class="highlighter-rouge">templates/quote-of-the-day.html</code> file and examine how the Jinja template allows python logic to be evaluated from within the HTML template (using double curly brace notation). Note that <strong>in order to give your template access to data, it must be passed into the <code class="highlighter-rouge">render_template</code> function as a keyword argument</strong> (from <code class="highlighter-rouge">app.py</code>). You may pass in as many keyword arguments (i.e. pieces of data) as you like into the template. These pieces of data are often referred to as the template’s “context.”</p>
+
+<h4 id="your-task-1">Your Task</h4>
+<p>Please make the following modifications:</p>
+<ol>
+  <li>In <code class="highlighter-rouge">app.py</code>, add another context variable, called <code class="highlighter-rouge">quote</code> that holds a randomly selected quote from the <code class="highlighter-rouge">quotes</code> list (see ~line 17).
+    <ul>
+      <li>The context variable must be included as a keyword argument in your <code class="highlighter-rouge">render_template</code> function.</li>
+      <li>I recommend that you use Python’s built-in <a href="https://www.w3schools.com/python/ref_random_choice.asp" target="_blank">random.choice</a> function to select a random element from a list.</li>
+    </ul>
+  </li>
+  <li>In <code class="highlighter-rouge">templates/quote-of-the-day.html</code>, update the template so that the quote of the day is displayed.
+    <ul>
+      <li><a href="https://www.codecademy.com/learn/learn-flask/modules/flask-templates-and-forms/cheatsheet">Jinja Cheatsheet</a></li>
+    </ul>
+  </li>
+</ol>
+
+<p><img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial09/erick-quote.png" /></p>
+
+<!-- {:#task_5}
+### 5. Accessing data from other servers -->
+
+<h3 id="task_5">5. Merge someone else’s data with a template</h3>
+<p>Now, you’re going to create a data-driven <strong>template</strong> to display information about the “Top Restaurant” (according to Yelp) that matches your search criteria. Consider the following code:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/ui/first-restaurant/'</span><span class="p">)</span>
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/ui/first-restaurant'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">exercise5</span><span class="p">():</span>
+    <span class="c1"># code to parse the query parameters (like in exercise 3):
+</span>    <span class="n">args</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">args</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="n">args</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'location'</span><span class="p">)</span>
+    <span class="n">search_term</span> <span class="o">=</span> <span class="n">args</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'term'</span><span class="p">)</span>
+    
+    <span class="c1"># error handling:
+</span>    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">location</span> <span class="ow">and</span> <span class="n">search_term</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">'"location" and "term" are required query parameters'</span>
+
+    <span class="c1"># code to query yelp:
+</span>    <span class="n">url</span> <span class="o">=</span> <span class="s">'https://www.apitutor.org/yelp/simple/v3/businesses/search?location={0}&amp;term={1}&amp;limit=1'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span>
+        <span class="n">location</span><span class="p">,</span> <span class="n">search_term</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">restaurants</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
+    
+    <span class="c1"># code to render the template (and to pass the template the data it needs)
+</span>    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span>
+        <span class="s">'restaurant.html'</span><span class="p">,</span>
+        <span class="n">endpoint</span><span class="o">=</span><span class="s">'/ui/first-restaurant/'</span><span class="p">,</span>
+        <span class="n">user</span><span class="o">=</span><span class="n">current_user</span><span class="p">,</span>
+        <span class="n">search_term</span><span class="o">=</span><span class="n">search_term</span><span class="p">,</span>
+        <span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span>
+        <span class="n">restaurant</span><span class="o">=</span><span class="n">restaurants</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># just show the first restaurant
+</span>    <span class="p">)</span>
+</code></pre></div></div>
+
+<p>It works very similarly to the code in exercise 3, except for it merges with the <code class="highlighter-rouge">restaurant.html</code> template (instead of dumping raw JSON data). Please try testing these routes by experimenting with the following URLs:</p>
+
+<ul>
+  <li><a href="http://127.0.0.1:5000/ui/first-restaurant/?location=Asheville,%20NC&amp;term=chinese" target="_blank">http://127.0.0.1:5000/ui/first-restaurant/?location=Asheville,%20NC&amp;term=chinese</a> (Chinese restaurants in Asheville)</li>
+  <li><a href="http://127.0.0.1:5000/ui/first-restaurant/?location=San Diego,%20CA&amp;term=thai" target="_blank">http://127.0.0.1:5000/ui/first-restaurant/?location=San Diego,%20CA/thai</a> (Thai restaurants in San Diego)</li>
+</ul>
+
+<p>Note that the <code class="highlighter-rouge">restaurant.html</code> template uses a new construct – the “include” – as a way to modularize code.</p>
+
+<p><img class="large frame" src="/spring2025/assets/images/tutorials/tutorial09/template-before.png" /></p>
+
+<h4 id="your-task-2">Your Task</h4>
+<p>Modify the HTML in the <code class="highlighter-rouge">restaurant.html</code> template so that it displays the Yelp data in a more visual format. For instance, Sarah made her’s look like this:</p>
+
+<p><img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial09/template-after.png" /></p>
+
+<p>Feel free to jazz up your template any way you like!</p>
+<ul>
+  <li><a href="https://www.codecademy.com/learn/learn-flask/modules/flask-templates-and-forms/cheatsheet">Jinja Cheatsheet</a></li>
+</ul>
+
+<h2 id="extra_credit">5. Extra Credit (5pts)</h2>
+<p>If you have more time, please also try <code class="highlighter-rouge">exercise6</code>. It’s similar to <code class="highlighter-rouge">exercise5</code>, but requires a Jinja</p>
+
+<h3 id="1-looping-using-jinja">1. Looping using Jinja</h3>
+<p>In <code class="highlighter-rouge">exercise5</code>, you only display a single restaurant. Look at the <a href="https://jinja.palletsprojects.com/en/3.0.x/templates/" target="_blank">Jinja documentation</a> and see if you can figure out how to output all of the matching restaurants for the search (not just the first one). See if you can make your template look like this one:</p>
+
+<p><img class="large frame" src="/spring2025/assets/images/tutorials/tutorial09/restaurants.png" /></p>
+
+<h3 id="2-includes">2. Includes</h3>
+<p>See if you can convert the HTML that shows a single restaurant card into an include file (similar to <code class="highlighter-rouge">includes/header.html</code>)</p>
+
+<h2 id="what-to-turn-in">What to Turn In</h2>
+<p>To submit Tutorial 9, you can either:</p>
+<ol>
+  <li>Commit and sync your code to GitHub using git and paste a link to your repo. You do not need to link this exercise to your home page, because GitHub Pages doesn’t know how to run a Flask application. We will need a more complicated server architecture for that.</li>
+</ol>
+
+<p>If you worked with a partner, list your partner as a comment.
+If you did the extra credit, tell me so that I can look for it.</p>
+
+
+
+
+            </article>  
+        </main>
+        <footer>
+            <p>    
+                Department of Computer Science, UNC Asheville
+            </p>
+        </footer>
+        
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

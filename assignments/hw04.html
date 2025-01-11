@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>React Client</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="two-column">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li class="active" ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/11Ra-DrGJOYMOC6Ag_3GS6ShxZFCPdKh6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                <ol class="side-menu">
+  <li><a href="#video-walkthroughs-for-tutorial-8">Video Walkthroughs for Tutorial 8</a></li>
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#setup">Setup</a></li>
+  <li><a href="#tasks">Tasks</a>
+    <ol>
+      <li><a href="#moodle-submission">Moodle Submission</a></li>
+    </ol>
+  </li>
+</ol>
+
+            </aside>
+            <article>
+                
+
+    
+        <h1>
+            <a href="../assignments/">Assignments</a> > 
+            HW4: React Client
+        </h1>
+    
+ 
+                <p>
+    
+        Due on Tue, 04/22 @ 11:59PM.
+    
+    
+        50 Points.
+    
+    
+</p>
+
+<blockquote class="info">
+  <h2 id="video-walkthroughs-for-tutorial-8">Video Walkthroughs for Tutorial 8</h2>
+  <p>The following video walkthroughs go over all of the requirements for Tutorial 8. To complete Homework 4, you will have
+to implement <strong>stories</strong>, <strong>profile</strong>, and <strong>suggestions</strong> on your own as well as <strong>liking / unliking posts</strong>.</p>
+  <ol>
+    <li><span class="update">06:43</span> <a href="https://drive.google.com/file/d/15H0gyytlsMO_fdOPmTtrxx-0n-RjnSHv/view?usp=sharing" target="_blank">Setup</a></li>
+    <li><span class="update">15:05</span> <a href="https://drive.google.com/file/d/1oNuGHr8brGTq2tVF2uffubKId_WwyXjg/view?usp=sharing" target="_blank">Component
+ organization</a></li>
+    <li><span class="update">04:06</span> <a href="https://drive.google.com/file/d/1OZa3gyvA4RDPHf6dyYeJYtUiNv17DCRB/view?usp=sharing" target="_blank">Understanding the NavBar component</a></li>
+    <li><span class="update">15:40</span> <a href="https://drive.google.com/file/d/16ExsaEYCIFRpyXP2PGE-hDNdz6wXuUd-/view?usp=sharing" target="_blank">Fetching
+ Posts from the course API (via HTTP)</a></li>
+    <li><span class="update">08:55</span> <a href="https://drive.google.com/file/d/1KtPaQGmGhK4chtDCeGHmqZBs4vK9HUY2/view?usp=sharing" target="_blank">Creating a
+ Post component</a></li>
+    <li><span class="update">17:03</span> <a href="https://drive.google.com/file/d/1Ncr0Ib2Tu3W4ABlmVIpq-l4-ckhs2JjS/view?usp=sharing" target="_blank">Enhancing
+ the Post component</a></li>
+    <li><span class="update">12:15</span> <a href="https://drive.google.com/file/d/1jG9MsvgXaI925155w4Uij6_nrdAZ_Ie6/view?usp=sharing" target="_blank">Like &amp;
+ Bookmark Buttons</a></li>
+    <li><span class="update">17:42</span> <a href="https://drive.google.com/file/d/1Iy6hFu1Fvtxr7XlfTSTvXqhr8ET3coKK/view?usp=sharing" target="_blank">Creating &amp;
+ Deleting Bookmarks on the course API (via HTTP)</a></li>
+    <li><span class="update">12:30</span> <a href="https://drive.google.com/file/d/18J3C3edGYx2zhczGX4kMiES0y5QMyCeN/view?usp=sharing" target="_blank">Redrawing
+ the Post after a state change</a></li>
+    <li><span class="update">02:52</span> <a href="https://drive.google.com/file/d/1QKKNAmBf7OZKAzztyTNITU38x_HGxAJK/view?usp=sharing" target="_blank">Transpiling and linking to your home page</a></li>
+  </ol>
+
+  <p>The folder of videos can also be found <a href="https://drive.google.com/drive/folders/16N0oCD_qvo9F5ZcBqFht1Y2JSoYts17H?usp=drive_link" target="_blank">here</a>.</p>
+</blockquote>
+
+<style>
+    .compact li {
+        margin-bottom: 4px;
+        line-height: 1.5em;
+    }
+
+    .two-column table th:first-child,
+    .two-column table td:first-child {
+        min-width: auto;
+        width: 50px;
+    }
+
+    .two-column table th:nth-child(2),
+    .two-column table th:nth-child(2) {
+        min-width: auto;
+        width: 140px;
+    }
+
+</style>
+
+<h2 id="overview">Overview</h2>
+<p>In this homework assignment, you will re-implement your HW3 code in React (with a few minor changes to improve the usability of your app). I recommend building from this starter code provided below (which uses Tailwind). That said, feel free to do it your way. I won’t be grading you on CSS, but please do make it look nice. You’re also welcome to customize the look and feel to make it your own.</p>
+
+<p><a href="/spring2025/course-files/homework/hw04.zip" class="nu-button">HW4 Starter Code <i class="fas fa-download"></i></a></p>
+
+<p>When you’re done, your React version of the PhotoApp should behave like this one: <a href="https://photo-app-secured.herokuapp.com/" target="_blank">https://photo-app-secured.herokuapp.com/</a>.</p>
+
+<h2 id="setup">Setup</h2>
+<ol>
+  <li>Download and unzip the <code class="highlighter-rouge">hw04</code> starter files and move them to your <code class="highlighter-rouge">csci344/homework/</code> directory.</li>
+  <li>Open a terminal and make sure that you are inside the <code class="highlighter-rouge">hw04</code> directory.</li>
+  <li>Install the node packages as follows: <code class="highlighter-rouge">npm install</code></li>
+  <li>Run the React bundler and local server by typing: <code class="highlighter-rouge">npm run dev</code></li>
+  <li>Keep this process running while you are developing in React.</li>
+</ol>
+
+<h2 id="tasks">Tasks</h2>
+<p>In the section below, I’ve mapped out a suggested implementation strategy. If you implement your React functionality differently, that’s fine, but I will be verifying that you did indeed make a series of components (versus just copying your HW3 file into a React folder and only making minor changes). The “AddComment” component can be implemented for extra credit.</p>
+
+<p><img style="width:100%;margin:20px 0px;" src="/spring2025/assets/images/homework/hw04/react-diagram.svg" /></p>
+
+<table class="rubric">
+    <thead>
+        <tr>
+            <th>Points</th>
+            <th></th>
+            <th>Component / Task</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0pts</td>
+            <td>
+                <span class="update">On Your Own</span>
+            </td>
+            <td>
+                <strong>NavBar.js</strong><br />
+                Displays the Header
+            </td>
+            <td>
+                <strong>(Already done for you)</strong> Create a <code class="highlighter-rouge">NavBar</code> component that displays the username of the logged in user, a logout button, and a link to the API tester as shown in the <a href="https://photo-app-secured.herokuapp.com/" target="_blank">demo</a>. Notes:
+                <ul class="compact">
+                    <li>
+                        This task requires that you fetch data from the <code class="highlighter-rouge">/api/profile</code> endpoint.
+                    </li>
+                    <li>
+                        It's OK that the <code class="highlighter-rouge">logout</code> and <code class="highlighter-rouge">api</code> functionality hasn't yet been implemented (this will come later).
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>4pts</td>
+            <td>
+                <span class="update">On Your Own</span>
+            </td>
+            <td>
+                <strong>Profile.js</strong><br />
+                Display Profile
+            </td>
+            <td>
+                Create a <code class="highlighter-rouge">Profile</code> component that displays the current user's profile (inside of the right panel) using data from the <code class="highlighter-rouge">/api/profile</code> endpoint.
+            </td>
+        </tr>
+        <tr>
+            <td>4pts</td>
+            <td>
+                <span class="update">On Your Own</span>
+            </td>
+            <td>
+                <strong>Stories.js</strong><br />
+                Display Stories
+            </td>
+            <td>
+                Create a <code class="highlighter-rouge">Stories</code> component that displays stories from the user's network. This component will both fetch the stories from <code class="highlighter-rouge">/api/stories</code>, and draw the stories.
+            </td>
+        </tr>
+        <tr>
+            <td>4pts</td>
+            <td>
+                <span class="update">On Your Own</span>
+            </td>
+            <td>
+                <strong>Suggestions.js</strong><br />
+                Display All Suggestions
+            </td>
+            <td>
+                Create a <code class="highlighter-rouge">Suggestions</code> component that displays suggested user accounts. This component will both fetch the suggestions from <code class="highlighter-rouge">/api/suggestions</code>, and draw the suggested users with the help of the <code class="highlighter-rouge">Suggestion.js</code> child component (see below).
+            </td>
+        </tr>
+        <tr>
+            <td>4pts</td>
+            <td>
+                <span class="update">On Your Own</span>
+            </td>
+            <td>
+                <strong>Suggestion.js</strong><br />
+                Display Individual Suggestion
+            </td>
+            <td>
+                Create a <code class="highlighter-rouge">Suggestion</code> component that will render a representation fo each user.
+            </td>
+        </tr>
+        <tr>
+            <td>4pts</td>
+            <td>
+                <span class="lab">Tutorial 8</span>
+            </td>
+            <td>
+                <strong>Posts.js</strong><br />
+                Display All Posts
+            </td>
+            <td>
+                Create a <code class="highlighter-rouge">Posts</code> component that displays all of the posts user accounts. This component will both fetch the posts from <code class="highlighter-rouge">/api/posts</code>, and draw each post users with the help of the <code class="highlighter-rouge">Post.js</code> child component (see below).
+            </td>
+        </tr>
+        <tr>
+            <td>8pts</td>
+            <td>
+                <span class="lab">Tutorial 8</span>
+            </td>
+            <td>
+                <strong>Post.js</strong><br />
+                Display Individual Post
+            </td>
+            <td>
+                Create a <code class="highlighter-rouge">Post</code> component so that it looks like the post from HW4. To do this:
+                <ul class="compact">
+                    <li>
+                        The Like/Unlike functionality should be handled by a <code class="highlighter-rouge">LikeButton</code> child component (details below).
+                    </li>
+                    <li>
+                        The Bookmark/Unbookmark functionality should be handled by a <code class="highlighter-rouge">BookmarkButton</code> child component (details below).
+                    </li>
+                    <li>
+                        You can handle the display of the "comment button" and "last comment" any way you like. You could create a <code class="highlighter-rouge">Comments</code> and/or <code class="highlighter-rouge">Comment</code> child component, or you could render comments directly in your Post's render method.
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>4pts</td>
+            <td>
+                <span class="update">On Your Own</span>
+            </td>
+            <td>
+                <strong>LikeButton.js</strong><br />
+                Like / Unlike Post
+            </td>
+            <td>
+                Create a <code class="highlighter-rouge">LikeButton</code> component that will:
+                <ul class="compact">
+                    <li>
+                        Render a solid / filled in heart (depending on whether the post is liked / unliked by the current user).
+                    </li>
+                    <li>
+                        Handle the like / unlike fetch requests to the <code class="highlighter-rouge">/api/posts/&lt;post_id&gt;/likes</code> and <code class="highlighter-rouge">/api/posts/&lt;post_id&gt;/likes/&lt;id&gt;</code> endpoints.
+                    </li>
+                    <li>
+                        Redraw the Post if the like / unlike requests is successful (hint: use a state variable).
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>4pts</td>
+            <td>
+                <span class="lab">Tutorial 8</span>
+            </td>
+            <td>
+                <strong>BookmarkButton.js</strong><br />
+                Bookmark / Un-Bookmark Post
+            </td>
+            <td>
+                Create a <code class="highlighter-rouge">BookmarkButton</code> component that will:
+                <ul class="compact">
+                    <li>
+                        Render a solid / filled in bookmark (depending on whether the post is bookmarked / un-bookmarked by the current user).
+                    </li>
+                    <li>
+                        Handle the bookmark / un-bookmark fetch requests to the <code class="highlighter-rouge">/api/posts/bookmarks</code> and <code class="highlighter-rouge">/api/bookmarks/&lt;id&gt;</code> endpoints.
+                    </li>
+                    <li>
+                        Redraw the Post if the bookmark / un-bookmark request is successful (hint: use a state variable).
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>2pts</td>
+            <td>
+                <span class="update">On Your Own</span>
+            </td>
+            <td>
+                <strong>Keyboard Navigation</strong>
+            </td>
+            <td>
+                <ul class="compact">
+                    <li>Ensure that all of the buttons are tabbable</li>
+                    <li>Ensure that all the event handlers can be triggered using the "spacebar" or "enter / return" keys.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>4pts</td>
+            <td>
+                <span class="update">On Your Own</span>
+            </td>
+            <td>
+                <strong>Aria attributes</strong>
+            </td>
+            <td>
+                Use the "aria-label" and "aria-checked" attributes (in conjunction with the role="switch" attribute) to indicate to the screen reader whether the following buttons are turned on or off:
+                <ul class="compact">
+                    <li>Like / Unlike button</li>
+                    <li>Bookmark / Unbookmark button</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>8pts</td>
+            <td>
+                <span class="lab">Tutorial 8</span>
+            </td>
+            <td>
+                <strong>Transpile</strong><br />
+                Transpile your React App and link it to your homepage
+            </td>
+            <td>
+                Since React uses language features that your browser can't understand, you'll need to "transpile" your code to "vanilla" HTML, CSS, and JavaScript. Luckily, Vite can do this for you. Please do the following:
+                <ul class="compact">
+                    <li>
+                        Run the build process from the command line as follows: <code class="highlighter-rouge">npm run build</code>
+                    </li>
+                    <li>Verify that a new "dist" directory was built.</li>
+                    <li>In your "dist" directory, verify that the transpile process worked by previewing the <code class="highlighter-rouge">index.html</code> file like you would any static HTML file (using live server)</li>
+                    <li>Link to the transpiled version of your app from your homepage (homework/hw04/dist/index.html).</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>5pts</td>
+            <td>
+                <span class="hw">Extra Credit</span>
+            </td>
+            <td>
+                <strong>
+                     AddComment.js
+                </strong><br />
+                Add a Comment
+            </td>
+            <td>
+                Create an <code class="highlighter-rouge">AddComment</code> component that will:
+                <ul>
+                    <li>
+                        Render an "Add comment" textbox and button.
+                    </li>
+                    <li>
+                       Post the user's comment to the <code class="highlighter-rouge">/api/comments</code> endpoint.
+                    </li>
+                    <li>Redraw the Post (parent component) if the POST request is successful (hint: use the Post's <code class="highlighter-rouge">requeryPost</code> function).</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>5pts</td>
+            <td>
+                <span class="hw">Extra Credit</span>
+            </td>
+            <td>
+                <strong>
+                    Follow / Unfollow
+                </strong>
+            </td>
+            <td>
+                <ul>
+                    <li>
+                        Handle the follow/unfollow fetch requests to the <code class="highlighter-rouge">/api/following</code> and <code class="highlighter-rouge">/api/following/&lt;id&gt;</code> endpoints.
+                    </li>
+                    <li>Redraw the HTML after a follow / unfollow requests is successfully issued.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>5pts</td>
+            <td>
+                <span class="hw">Extra Credit</span>
+            </td>
+            <td>
+                <strong>
+                    Form Accessibility
+                </strong>
+                <br />Extra handling for "Add Comment"
+            </td>
+            <td>
+                <ul class="compact">
+                    <li>After a comment is submitted by the user, ensure that the focus is set back to the input. Hint: use React's built-in "autoFocus" property.</li>
+                    <li>Add an event handler to the input control so that it submits when the user presses the "Enter/Return" key. To do this, consider using the form's "onSubmit" event versus attaching event handlers to the input and button.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="moodle-submission">Moodle Submission</h3>
+<p>Please review the requirements above and ensure you have met them. When you’re done, please submit the following to the Moodle:</p>
+
+<ul class="checkbox-list">
+  <li>A link to your GitHub Repository</li>
+  <li>A link to your GitHub Pages (which should link to your transpiled <code class="highlighter-rouge">index.html</code> file in the <code class="highlighter-rouge">dist</code> directory)</li>
+  <li>The name of your partner (if applicable)</li>
+  <li>Whether you completed any of the extra credit (so that I can look for it)</li>
+</ul>
+
+
+
+
+            </article>  
+        </main>
+        <footer>
+            <p>    
+                Department of Computer Science, UNC Asheville
+            </p>
+        </footer>
+        
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

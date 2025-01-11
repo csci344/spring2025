@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Activity: Getting Started with React</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="two-column">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/11Ra-DrGJOYMOC6Ag_3GS6ShxZFCPdKh6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                <ol class="side-menu">
+  <li><a href="#1-do-the-readings">1. Do the Readings</a></li>
+  <li><a href="#2-install-nodejs">2. Install Node.js</a></li>
+  <li><a href="#3-browse-the-node-faqs">3. Browse the Node FAQs</a>
+    <ol>
+      <li><a href="#what-are-some-useful-nodejs-commands-in-the-context-of-react">What are some useful Node.js commands in the context of React?</a></li>
+      <li><a href="#what-is-nodejs">What is Node.js?</a></li>
+      <li><a href="#what-is-a-nodejs-package">What is a Node.js Package?</a></li>
+      <li><a href="#if-react-is-a-client-side-technology-why-does-it-use-nodejs">If React is a client-side technology, why does it use Node.js?</a></li>
+    </ol>
+  </li>
+  <li><a href="#4-create-your-first-react-project">4. Create Your First React Project</a></li>
+</ol>
+
+            </aside>
+            <article>
+                
+
+    
+        <h1>
+            <a href="../assignments/">Assignments</a> > 
+            Activity 5: Activity: Getting Started with React
+        </h1>
+    
+ 
+                <blockquote class="blockquote-no-margin">
+  <h2 id="1-do-the-readings">1. Do the Readings</h2>
+  <p>If you haven’t take a look at these documents, carve out some time to do it.</p>
+  <ul>
+    <li><a href="https://beta.reactjs.org/learn" target="_blank">Quick Start</a></li>
+    <li><a href="https://beta.reactjs.org/learn/tutorial-tic-tac-toe" target="_blank">Tic Tac Toe</a></li>
+    <li><a href="https://beta.reactjs.org/learn/thinking-in-react" target="_blank">Thinking in React</a></li>
+    <li><a href="https://beta.reactjs.org/learn/sharing-state-between-components" target="_blank">Sharing state between components</a></li>
+  </ul>
+</blockquote>
+
+<h2 id="2-install-nodejs">2. Install Node.js</h2>
+<p>If you haven’t already, please <a href="https://nodejs.org/en/download/">install Node.js</a>.</p>
+
+<h2 id="3-browse-the-node-faqs">3. Browse the Node FAQs</h2>
+
+<h3 id="what-are-some-useful-nodejs-commands-in-the-context-of-react">What are some useful Node.js commands in the context of React?</h3>
+<p>Here are a few of the most common ones:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span>     <span class="c"># installs node packages if there's a package.json file found</span>
+npm start       <span class="c"># starts your react app</span>
+npm build      <span class="c"># builds a production-ready version of your react app</span>
+</code></pre></div></div>
+
+<h3 id="what-is-nodejs">What is Node.js?</h3>
+<p>Node.js is an open-source, server-side platform built on top of the V8 JavaScript engine used for building scalable network applications. It allows developers to use JavaScript on the server-side to build fast and scalable web applications that can handle a large number of simultaneous connections with high throughput. Node.js provides an event-driven, non-blocking I/O model that makes it an ideal choice for building real-time, data-intensive applications.</p>
+
+<p>One of the key benefits of Node.js is its ability to handle I/O operations asynchronously, which makes it well-suited for building applications that require real-time communication and streaming data. It’s commonly used to build web servers, APIs, microservices, and web applications. Node.js is supported on multiple platforms, including Windows, macOS, and Linux, and is widely used by developers around the world.</p>
+
+<h3 id="what-is-a-nodejs-package">What is a Node.js Package?</h3>
+<p>In Node.js, a package is a collection of code that is typically published to the npm (Node Package Manager) registry and can be installed into a Node.js project using the npm install command. Typically, packages are installed by reading the <code class="highlighter-rouge">package.json</code> file and are stored in a <code class="highlighter-rouge">node_modules</code> directory.</p>
+<ul>
+  <li>Note: always exclude your <code class="highlighter-rouge">node_modules</code> directory from version control by adding it to a <code class="highlighter-rouge">.gitignore</code> file.</li>
+</ul>
+
+<h3 id="if-react-is-a-client-side-technology-why-does-it-use-nodejs">If React is a client-side technology, why does it use Node.js?</h3>
+<p>While Node.js is primarily a server-side platform, it is also used to build, transpile, and/or bundle JavaScript libraries (including React), CSS, and other web assets for deployment. React needs Node.js to transpiles JSX and other Node modules into “vanilla” HTML, CSS, and JavaScript that any browser can understand.</p>
+
+<p>Node.js can also be used to automate tasks such as minifying JavaScript and CSS files, compiling Sass or Less files into CSS, and running tests. Node also has it’s own test web server that React uses, to streamline the web development process.</p>
+
+<h2 id="4-create-your-first-react-project">4. Create Your First React Project</h2>
+<p>Complete the React <a href="https://beta.reactjs.org/learn/tutorial-tic-tac-toe" target="_blank">Tic Tac Toe Tutorial</a>. Begin by downloading the starter files below and saving them in <code class="highlighter-rouge">csci344/activities/react-get-started</code>.</p>
+
+<p><a href="/spring2025/course-files/activities/react-get-started.zip" class="nu-button">React Tic Tac Toe Starter Files <i class="fas fa-download"></i></a></p>
+
+
+            </article>  
+        </main>
+        <footer>
+            <p>    
+                Department of Computer Science, UNC Asheville
+            </p>
+        </footer>
+        
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

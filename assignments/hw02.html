@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Make the Photo App Interface: Part I</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="two-column">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li class="active" ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/11Ra-DrGJOYMOC6Ag_3GS6ShxZFCPdKh6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                <ol class="side-menu">
+  <li><a href="#collaboration-and-code-sharing-policy-read-carefully">Collaboration and Code Sharing Policy: Read Carefully</a></li>
+  <li><a href="#part-1-setup">Part 1: Setup</a>
+    <ol>
+      <li><a href="#1-create-two-files">1. Create two files</a></li>
+    </ol>
+  </li>
+  <li><a href="#part-2-build-the-photoapp-interface">Part 2: Build the PhotoApp Interface</a>
+    <ol>
+      <li><a href="#requirements">Requirements</a>
+        <ol>
+          <li><a href="#navbar">1. Navigation Bar (2 points)</a></li>
+          <li><a href="#recommendations">2. Recommendations Panel (4 points)</a>
+            <ol>
+              <li><a href="#tips">Tips</a></li>
+            </ol>
+          </li>
+          <li><a href="#stories">3. Stories Panel (3 points)</a></li>
+          <li><a href="#card">4. Card (7 points)</a>
+            <ol>
+              <li><a href="#tips-1">Tips</a></li>
+            </ol>
+          </li>
+          <li><a href="#composition">5. Composition (5 points)</a>
+            <ol>
+              <li><a href="#desktop-interface">Desktop Interface</a></li>
+              <li><a href="#mobile-interface">Mobile Interface</a></li>
+            </ol>
+          </li>
+          <li><a href="#accessibility">6. Accessibility (4 points)</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><a href="#part-3-submit">Part 3: Submit</a></li>
+  <li><a href="#what-to-turn-in">What to turn in</a></li>
+</ol>
+
+            </aside>
+            <article>
+                
+
+    
+        <h1>
+            <a href="../assignments/">Assignments</a> > 
+            HW2: Make the Photo App Interface: Part I
+        </h1>
+    
+ 
+                <p>
+    
+        Due on Fri, 02/14 @ 11:59PM.
+    
+    
+        25 Points.
+    
+    
+</p>
+
+<style>
+    .interface-table {
+        width: 95%;
+        border: solid 1px #ccc;
+    }
+    .interface-table tr, .interface-table th, .interface-table td {
+        border: solid 0px #000;
+        background: #f2f2f2;
+    }
+    .interface-table td {
+        padding: 0px;
+    }
+    .interface-table .right {
+        width: 60%;
+        text-align: right;
+    }
+    .interface-table .right img {
+        width: 85%;
+    }
+    .interface-table .left {
+        width: 40%;
+        text-align: left;
+    }
+    .interface-table .left img {
+        width: 85%;
+    }
+</style>
+
+<blockquote>
+  <h2 class="callout" id="collaboration-and-code-sharing-policy-read-carefully">Collaboration and Code Sharing Policy: Read Carefully</h2>
+  <p>For this homework, you are welcome to work in pairs (optional). Even if you collaborate with someone else, you must still submit your own HTML and CSS files on Moodle. If you collaborate, you’ll just list your partner in the comments section of Moodle.</p>
+
+  <p>For those of you who are collaborating, please do not (a) “free ride” on your teammates or (b) enable free riders. Everyone in your group should understand every line of code they submit.</p>
+</blockquote>
+
+<p>In this assignment, you will create a high-fidelity prototype of a photo sharing app using HTML &amp; CSS. You will complete all of the <a href="#requirements">requirements</a> and then submit your assignment via a zip file to the course Moodle.</p>
+
+<h2 id="part-1-setup">Part 1: Setup</h2>
+
+<h3 id="1-create-two-files">1. Create two files</h3>
+<p>Create a folder called <code class="highlighter-rouge">homework</code>. Inside of it, create a folder called <code class="highlighter-rouge">hw02</code>. Inside of it, create two files – an HTML file called <code class="highlighter-rouge">index.html</code> and a CSS file called <code class="highlighter-rouge">styles.css</code>.</p>
+
+<p>When you’re done, your directory structure should look something like this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>csci344
+├── homework
+│   └── hw02
+│       ├── index.html
+│       └── styles.css
+├── index.html
+├── lectures
+│       ...
+└── tutorials
+        ...
+</code></pre></div></div>
+
+<h2 id="part-2-build-the-photoapp-interface">Part 2: Build the PhotoApp Interface</h2>
+<p>Using HTML &amp; CSS (no JavaScript yet), you are going to build a webpage that looks like this:</p>
+
+<p><strong>Desktop Version</strong></p>
+<table class="interface-table">
+    <tr>
+        <td colspan="2">
+            <img style="width:100%;" src="/spring2025/assets/images/homework/hw02/navbar.png" />
+        </td>
+    </tr>
+    <tr class="body">
+        <td class="right">
+            <img src="/spring2025/assets/images/homework/hw02/stories.png" />
+            <img src="/spring2025/assets/images/homework/hw02/card.png" />
+        </td>
+        <td class="left">
+            <img src="/spring2025/assets/images/homework/hw02/recommendations.png" />
+        </td>
+    </tr>
+</table>
+
+<p><strong>Mobile Version</strong></p>
+
+<p>Same as the desktop version, except that the recommendations panel is hidden (e.g. <code class="highlighter-rouge">display: none;</code>)</p>
+<table class="interface-table" style="width:50%;">
+    <tr>
+        <td>
+            <img style="width:100%;" src="/spring2025/assets/images/homework/hw02/navbar-mobile.png" />
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center;">
+            <img style="width:95%;" src="/spring2025/assets/images/homework/hw02/stories.png" />
+            <img style="width:95%;" src="/spring2025/assets/images/homework/hw02/card.png" />
+        </td>
+    </tr>
+</table>
+
+<p>The webpage is composed of 4 components: a navigation bar, a recommendations, panel, a “stories” panel, and a series of cards that display a user’s post and associated comments. Your web page should look nice on both mobile and desktop screens.</p>
+
+<h3 id="requirements">Requirements</h3>
+
+<h4 id="navbar">1. Navigation Bar (2 points)</h4>
+
+<ul class="checkbox-list">
+  <li>The title of the app (or logo) should be on the left-hand side</li>
+  <li>The username and log out button should be on the right-hand side (grouped together)</li>
+  <li>It should have a white background and some padding (so that it looks like the first figure shown below)</li>
+  <li>Nav bar should be anchored to the top of the screen (fixed position)</li>
+</ul>
+
+<p>The first image illustrates how the nav bar should look. The second illustrates one way of nesting HTML elements to produce the desired effect (each HTML element is outlined). Feel free to use your own approach. This is just a suggestion.</p>
+
+<p><img style="border: solid 1px #CCC;" class="large" src="/spring2025/assets/images/homework/hw02/navbar.png" />
+<img style="border: solid 1px #CCC;" class="large" src="/spring2025/assets/images/homework/hw02/navbar-debug.png" /></p>
+
+<h4 id="recommendations">2. Recommendations Panel (4 points)</h4>
+<p>The recommendations panel suggests accounts that the user should follow. It should look like the first figure shown below. Specifically:</p>
+
+<ul class="checkbox-list">
+  <li>A circular profile pic and a username of the current user should be at the top of the panel</li>
+  <li>“Suggestions for you” text should be underneath the user profile</li>
+  <li>5 suggested accounts (use any names / pics you want) should be present</li>
+  <li>Each suggested account should be displayed horizontally with a photo, username (with “suggested for you” below the username), and link to “follow” the user; the “follow” link should be blue but not have an underline</li>
+</ul>
+
+<h5 id="tips">Tips</h5>
+<ul>
+  <li>Consider using the placeholder image generator found here: <a href="https://picsum.photos/" target="_blank">https://picsum.photos/</a>. You’re also welcome to use your own images. Up to you.</li>
+  <li>The second image below (with the boxes) illustrates one way of nesting HTML elements to produce the desired effect (each HTML element is outlined). In it:
+    <ul class="compact">
+      <li>The “suggestion container” is a div that holds a user’s picture, name, and a button</li>
+      <li>The “suggestion container is in “grid mode” and has a layout of:<br /> <code class="highlighter-rouge">grid-template-columns: 80px auto 80px</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Feel free to use your own approach. This is just a suggestion.</p>
+
+<p><img align="top" style="width:30%;" src="/spring2025/assets/images/homework/hw02/recommendations.png" />
+<img style="width:35%;" src="/spring2025/assets/images/homework/hw02/recommendations-debug.png" /></p>
+
+<h4 id="stories">3. Stories Panel (3 points)</h4>
+<p>The stories panel displays stories of accounts that the user follows. It should look like the first figure shown below. Specifically:</p>
+
+<ul class="checkbox-list">
+  <li>Each story should be represented by a circular profile pic on top and a username underneath</li>
+  <li>There should be 5 stories displayed</li>
+  <li>All of the stories should be left-justified</li>
+</ul>
+
+<p>The second image (below) illustrates one way of nesting HTML elements to produce the desired effect. Feel free to use your own approach. This is just a suggestion.
+<img style="width:80%;border: solid 1px #CCC;" src="/spring2025/assets/images/homework/hw02/stories.png" />
+<img style="width:80%;border: solid 1px #CCC;" src="/spring2025/assets/images/homework/hw02/stories-debug.png" /></p>
+
+<h4 id="card">4. Card (7 points)</h4>
+<p>The card represents a post in your photo sharing app. It is the most complicated widget in your webpage, consisting of the username of the person who posted the image, the image itself, a caption, buttons, a list of comments, and the ability to post a comment. It should look like the first figure shown below. Specifically:</p>
+
+<ul class="checkbox-list">
+  <li>The top of the card should have the creator’s username and an icon with 3 dots</li>
+  <li>The picture should be displayed below the username</li>
+  <li>There should be a row of icons (heart, comment, and plane on the left; bookmark on the right) below the picture</li>
+  <li>There should be bolded text with the number of likes below the icons</li>
+  <li>The caption of the photo, with the creator’s username, the text of the caption, and a “more” link (respectively) should be below the likes</li>
+  <li>Below the caption, display 2 comments with the commentor’s username and the text of the comment (as pictured)</li>
+  <li>Finally, create an “Add a comment section” with a smiley face, a text input, and a “Post” link (as pictured)</li>
+</ul>
+
+<h5 id="tips-1">Tips</h5>
+<p>Consider using Font Awesome to display the icons. To do this, embed the following link within the head section of your HTML file…</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Photo App<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"</span><span class="nt">&gt;</span>
+    ...
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa-solid fa-face-smile"</span><span class="nt">&gt;&lt;/i&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>…and then use the <a href="https://fontawesome.com/search?o=r&amp;m=free" target="_blank">documentation</a> to find the icons you want!</p>
+
+<p><a href="https://github.com/csci344/spring2025/blob/main/course-files/lectures/lecture07/for-hw02-font-awesome/index.html" target="_blank">Here is an example</a>.</p>
+
+<p>The first image illustrates how each card should look. The second image illustrates one way of nesting HTML elements to produce the desired effect (each HTML element is outlined). Feel free to use your own approach.</p>
+
+<p><img align="top" style="width:60%;" src="/spring2025/assets/images/homework/hw02/card.png" /></p>
+
+<p><img style="width:60%;" src="/spring2025/assets/images/homework/hw02/card-debug.png" /></p>
+
+<h4 id="composition">5. Composition (5 points)</h4>
+
+<ul class="checkbox-list">
+  <li>Headings should use the <a href="https://fonts.google.com/specimen/Comfortaa?category=Serif,Display,Handwriting" target="_blank">Comfortaa</a> font family. Body copy should use any sans-serif font (e.g., Arial, Helvetica, etc.)</li>
+  <li>Arrange the 4 components as shown below
+    <ul>
+      <li>Nav bar at the top (fixed)</li>
+      <li>Recommendations on the right (fixed)</li>
+      <li>Stories and posts on the left, scrollable</li>
+    </ul>
+  </li>
+  <li>There should be 4 posts showing (feel free top copy the same post multiple times, as this is just a prototype)</li>
+  <li>Desktop view: The Navigation Bar and Recommendations Panel should stay in place as the user scrolls (see animation below)</li>
+  <li>Mobile view: The Navigation Bar should stay in place as the user scrolls; the Recommendations Panel should be hidden (see animation below)</li>
+</ul>
+
+<h5 id="desktop-interface">Desktop Interface</h5>
+<p><img style="width:95%;border:solid 1px #CCC;" src="/spring2025/assets/images/homework/hw02/hw02-desktop.gif" /></p>
+
+<h5 id="mobile-interface">Mobile Interface</h5>
+<p>Same as the desktop version, except that the side panel is missing, and there is less spacing around the cards:</p>
+
+<p><img class="frame medium" src="/spring2025/assets/images/homework/hw02/hw02-mobile.gif" /></p>
+
+<h4 id="accessibility">6. Accessibility (4 points)</h4>
+
+<ul class="checkbox-list">
+  <li>Make sure your site is tabbable: that is, <strong>all links, buttons, and form controls</strong> (if applicable) can be accessed <strong>without</strong> the use of the mouse, by simply using the tab key to get to them
+    <ul>
+      <li>Hint: this should be automatic unless you change the CSS or are not using the appropriate tag</li>
+    </ul>
+  </li>
+  <li>Make sure <strong>font colors</strong> have sufficient <strong>contrast</strong> with the background being used
+    <ul>
+      <li>Hint: there are a couple tools that help analyze contrast on the <a href="/spring2025/resources/accessibility">course’s accessibility resources</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="part-3-submit">Part 3: Submit</h2>
+<p>Please consult the rubric below to ensure you have met the requirements for this assignment (all of the tasks with checkmarks next to them):</p>
+
+<table class="small">
+    <thead>
+        <tr>
+            <th>Component / Task</th>
+            <th>Subtasks</th>
+            <th>Points</th>
+        </tr>
+    </thead>
+    <tr>
+        <th>Nav Bar</th>
+        <td>
+            <a href="#navbar">4 requirements</a>
+        </td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <th>Recommendations Panel</th>
+        <td>
+            <a href="#recommendations">4 requirements</a>
+        </td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <th>Stories Panel</th>
+        <td>
+            <a href="#stories">3 requirements</a>
+        </td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <th>Card</th>
+        <td>
+            <a href="#card">7 requirements</a>
+        </td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <th>Composition</th>
+        <td>
+            <a href="#composition">5 requirements</a>
+        </td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <th>Accessibility</th>
+        <td>
+            <a href="#accessibility">2 requirements</a>
+        </td>
+        <td>4</td>
+    </tr>
+    <tfoot>
+        <tr>
+            <th></th>
+            <th>Total</th>
+            <th>25</th>
+        </tr>
+    </tfoot>
+</table>
+
+<h2 id="what-to-turn-in">What to turn in</h2>
+<p>Please create a link from your homepage to your completed homework 2 webpage (see <a href="https://vanwars.github.io/csci344" target="_blank">Sarah’s homepage</a> for an example). Then, commit and push all of your edits to GitHub and, paste a link to your GitHub Repository and to your GitHub pages in the Moodle submission.</p>
+
+<ul>
+  <li>If you collaborated with someone, please list your partner’s name in the comments section.</li>
+</ul>
+
+
+
+            </article>  
+        </main>
+        <footer>
+            <p>    
+                Department of Computer Science, UNC Asheville
+            </p>
+        </footer>
+        
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

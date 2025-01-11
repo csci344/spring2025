@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>React: Custom & Third-Party Components</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="two-column">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li class="active" ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/11Ra-DrGJOYMOC6Ag_3GS6ShxZFCPdKh6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                <ol class="side-menu">
+  <li><a href="#1-setup">1. Setup</a></li>
+  <li><a href="#2-download-and-configure-the-ant-design-system-dependencies">2. Download and Configure the Ant Design System Dependencies</a>
+    <ol>
+      <li><a href="#why-are-design-systems-useful">Why are design systems useful?</a></li>
+    </ol>
+  </li>
+  <li><a href="#3-experiment-with-some-of-the-other-widgets">3. Experiment with some of the other widgets</a></li>
+</ol>
+
+            </aside>
+            <article>
+                
+
+    
+        <h1>
+            <a href="../assignments/">Assignments</a> > 
+            Tutorial 8: React: Custom & Third-Party Components
+        </h1>
+    
+ 
+                <p>
+    
+        Due on Mon, 03/31 @ 11:59PM.
+    
+    
+        6 Points.
+    
+    
+</p>
+
+<h2 id="1-setup">1. Setup</h2>
+<ol>
+  <li>Open your entire <code class="highlighter-rouge">csci344</code> folder in VS Code.</li>
+  <li>
+    <p>Download and unzip the starter code:</p>
+
+    <p><a href="/spring2025/course-files/activities/design-systems.zip" class="nu-button"><i class="fas fa-download"></i> Design Systems Starter Code </a></p>
+  </li>
+  <li>Save the <code class="highlighter-rouge">design-systems</code> folder inside of `csci344/lectures.</li>
+  <li>From the command line, navigate into your<code class="highlighter-rouge">design-systems</code> folder. You can also open the VS Code Integrated terminal.</li>
+  <li>Verify that you’re in the correct folder by typing <strong>pwd</strong></li>
+  <li>
+    <p>Issue the following commands</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> npm <span class="nb">install</span>
+</code></pre></div>    </div>
+
+    <p>This will install all of the dependencies needed to run your react app.</p>
+  </li>
+  <li>
+    <p>Next, run the <strong><code class="highlighter-rouge">npm run dev</code></strong> command on the command line to start your react app. When you do, you should see the following output:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">**</span>VITE<span class="k">**</span> v5.2.6  ready <span class="k">in</span> <span class="k">**</span>307<span class="k">**</span> ms
+ ➜  <span class="k">**</span>Local<span class="k">**</span>:   http://localhost:<span class="k">**</span>5173<span class="k">**</span>/
+ ➜  <span class="k">**</span>Network<span class="k">**</span>: use <span class="k">**</span><span class="nt">--host</span><span class="k">**</span> to expose
+ ➜  press <span class="k">**</span>h + enter<span class="k">**</span> to show <span class="nb">help</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Finally, navigate to <a href="http://localhost:5173/">http://localhost:<strong>5173</strong>/</a> in your web browser. You should see a web page. If you open the browser console, you should see a minimally styled page that has the text “Design Systems Test”.</li>
+</ol>
+
+<h2 id="2-download-and-configure-the-ant-design-system-dependencies">2. Download and Configure the Ant Design System Dependencies</h2>
+<ol>
+  <li>Navigate back to your command line and stop the server (usually you can do this by clicking in the terminal and typing Ctrl+C or Ctrl+D).</li>
+  <li>
+    <p>Install the <code class="highlighter-rouge">antd</code> design system as follows:</p>
+
+    <pre><code class="language-basn"> npm install antd
+</code></pre>
+
+    <p>This will install the Ant Design System in your <code class="highlighter-rouge">node_modules</code> folder.</p>
+  </li>
+  <li>
+    <p>Next, try using your first <code class="highlighter-rouge">antd</code> component – the antd <code class="highlighter-rouge">Image</code> component – by first importing it at the top…</p>
+
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">// at the top:</span>
+ <span class="k">import</span> <span class="p">{</span><span class="nx">Image</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">antd</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div>    </div>
+
+    <p>…and then adding the following component instances inside of the <code class="highlighter-rouge">&lt;main&gt;...&lt;/main&gt;</code> tag:</p>
+
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;h2</span> <span class="na">className=</span><span class="s">"font-Comfortaa my-4 font-bold text-xl"</span><span class="nt">&gt;</span>
+     Photo Gallery
+ <span class="nt">&lt;/h2&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">className=</span><span class="s">"flex flex-wrap content-start"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;Image</span>
+         <span class="na">src=</span><span class="s">"https://picsum.photos/600/600?id=1"</span>
+         <span class="na">width=</span><span class="s">{200}</span>
+     <span class="nt">/&gt;</span>
+     <span class="nt">&lt;Image</span>
+         <span class="na">src=</span><span class="s">"https://picsum.photos/600/600?id=2"</span>
+         <span class="na">width=</span><span class="s">{200}</span>
+     <span class="nt">/&gt;</span>
+     <span class="nt">&lt;Image</span>
+         <span class="na">src=</span><span class="s">"https://picsum.photos/600/600?id=3"</span>
+         <span class="na">width=</span><span class="s">{200}</span>
+     <span class="nt">/&gt;</span>
+     <span class="nt">&lt;Image</span>
+         <span class="na">src=</span><span class="s">"https://picsum.photos/600/600?id=4"</span>
+         <span class="na">width=</span><span class="s">{200}</span>
+     <span class="nt">/&gt;</span>
+     <span class="nt">&lt;Image</span>
+         <span class="na">src=</span><span class="s">"https://picsum.photos/600/600?id=5"</span>
+         <span class="na">width=</span><span class="s">{200}</span>
+     <span class="nt">/&gt;</span>
+     <span class="nt">&lt;Image</span>
+         <span class="na">src=</span><span class="s">"https://picsum.photos/600/600?id=6"</span>
+         <span class="na">width=</span><span class="s">{200}</span>
+     <span class="nt">/&gt;</span>
+     <span class="nt">&lt;Image</span>
+         <span class="na">src=</span><span class="s">"https://picsum.photos/600/600?id=7"</span>
+         <span class="na">width=</span><span class="s">{200}</span>
+     <span class="nt">/&gt;</span>
+     <span class="nt">&lt;Image</span>
+         <span class="na">src=</span><span class="s">"https://picsum.photos/600/600?id=8"</span>
+         <span class="na">width=</span><span class="s">{200}</span>
+     <span class="nt">/&gt;</span>
+     <span class="nt">&lt;Image</span>
+         <span class="na">src=</span><span class="s">"https://picsum.photos/600/600?id=9"</span>
+         <span class="na">width=</span><span class="s">{200}</span>
+     <span class="nt">/&gt;</span>
+     <span class="nt">&lt;Image</span>
+         <span class="na">src=</span><span class="s">"https://picsum.photos/600/600?id=10"</span>
+         <span class="na">width=</span><span class="s">{200}</span>
+     <span class="nt">/&gt;</span>
+ <span class="nt">&lt;/div&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Finally, restart your react app and see what happens: <code class="highlighter-rouge">npm run dev</code></li>
+</ol>
+
+<blockquote class="info">
+  <h3 id="why-are-design-systems-useful">Why are design systems useful?</h3>
+  <ul class="compact">
+    <li>Consider how much time this <code class="highlighter-rouge">Image</code> component saves, and how it enforces consistency across your site.</li>
+    <li>You could also develop your own custom design system if you enjoy this kind of thing!</li>
+  </ul>
+</blockquote>
+
+<h2 id="3-experiment-with-some-of-the-other-widgets">3. Experiment with some of the other widgets</h2>
+<p>Now that you have used your first design system component, take a look at the Ant Design documentation and see what else you can make! Some fun components to get started with…</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://ant.design/components/carousel" target="_blank">Carousel</a></td>
+      <td>Configurable carousel component</td>
+    </tr>
+    <tr>
+      <td><a href="https://ant.design/components/time-picker" target="_blank">Time Picker</a></td>
+      <td>Good for helping user not have typos when picking a date</td>
+    </tr>
+    <tr>
+      <td><a href="https://ant.design/components/drawer" target="_blank">Drawer</a></td>
+      <td>Nice alternative to a popup menu or jumping to a new page.</td>
+    </tr>
+    <tr>
+      <td><a href="https://ant.design/components/calendar" target="_blank">Calendar</a></td>
+      <td>For calendar apps.</td>
+    </tr>
+    <tr>
+      <td><a href="https://ant.design/components/card" target="_blank">Card</a></td>
+      <td>Different types / styles of cards.</td>
+    </tr>
+    <tr>
+      <td><a href="https://ant.design/components/collapse" target="_blank">Collapse Menus</a></td>
+      <td>Useful for Navigation</td>
+    </tr>
+    <tr>
+      <td><a href="https://ant.design/components/tour" target="_blank">Tour</a></td>
+      <td>Useful for teaching your user new features</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+            </article>  
+        </main>
+        <footer>
+            <p>    
+                Department of Computer Science, UNC Asheville
+            </p>
+        </footer>
+        
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

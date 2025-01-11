@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Activity: Intro to React (Carousel + Server-Generated Gallery)</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="two-column">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/11Ra-DrGJOYMOC6Ag_3GS6ShxZFCPdKh6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                <ol class="side-menu">
+  <li><a href="#1-relevant-readings">1. Relevant Readings</a></li>
+  <li><a href="#2-download-the-starter-files">2. Download the starter files</a></li>
+  <li><a href="#3-install-the-dependencies">3. Install the dependencies</a></li>
+  <li><a href="#4-complete-the-following-tasks">4. Complete the following tasks</a>
+    <ol>
+      <li><a href="#part-1-observe">Part 1: Observe</a></li>
+      <li><a href="#part-2-using-the-useeffect-function">Part 2: Using the <code class="highlighter-rouge">useEffect</code> function</a></li>
+    </ol>
+  </li>
+</ol>
+
+            </aside>
+            <article>
+                
+
+    
+        <h1>
+            <a href="../assignments/">Assignments</a> > 
+            Activity 4: Activity: Intro to React (Carousel + Server-Generated Gallery)
+        </h1>
+    
+ 
+                <h2 id="1-relevant-readings">1. Relevant Readings</h2>
+<ul>
+  <li><a href="https://beta.reactjs.org/learn/synchronizing-with-effects" target="_blank">Synchronizing with effects</a></li>
+  <li><a href="https://beta.reactjs.org/learn/you-might-not-need-an-effect" target="_blank">You might not need an effect</a></li>
+</ul>
+
+<h2 id="2-download-the-starter-files">2. Download the starter files</h2>
+<p><a href="/spring2025/course-files/lectures/lecture17.zip" class="nu-button">Carousel + Server Data <i class="fas fa-download"></i></a></p>
+
+<h2 id="3-install-the-dependencies">3. Install the dependencies</h2>
+<p>Navigate to the <code class="highlighter-rouge">lecture17</code> folder on your command line. Then run:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span>     <span class="c"># installs node packages from the package.json file</span>
+npm start       <span class="c"># starts your react app</span>
+</code></pre></div></div>
+
+<h2 id="4-complete-the-following-tasks">4. Complete the following tasks</h2>
+
+<h3 id="part-1-observe">Part 1: Observe</h3>
+<p>Get oriented with the code and understand what it’s doing:</p>
+
+<ul>
+  <li>Open the Carousel component.
+    <ul>
+      <li>It should look similar to the one you just made (more or less).</li>
+    </ul>
+  </li>
+  <li>Open the developer tools, navigate to the console panel, and then toggle between the different products (each product has a corresponding gallery).</li>
+  <li>Note that a different endpoint address is printed to the screen each time you click a different gallery
+    <ul>
+      <li>Copy that endpoint address into a browser tab and take a look at the data that’s returned.</li>
+      <li>Note also that the galleries are switched out using the same technique that we used in Activity 16 (initiated from the <code class="highlighter-rouge">Galleries</code> component).</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="part-2-using-the-useeffect-function">Part 2: Using the <code class="highlighter-rouge">useEffect</code> function</h3>
+<ul>
+  <li>Modify the <code class="highlighter-rouge">Carousel</code> component so that when the gallery switches, it fetches the photos from the server.
+    <ul>
+      <li>You will have to use the built-in <code class="highlighter-rouge">useEffect</code> hook</li>
+      <li>DEMO (see answers folder if you get stuck)</li>
+    </ul>
+  </li>
+</ul>
+
+
+            </article>  
+        </main>
+        <footer>
+            <p>    
+                Department of Computer Science, UNC Asheville
+            </p>
+        </footer>
+        
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

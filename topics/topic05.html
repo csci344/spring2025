@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>JavaScript: Foundational Concepts</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="one-column">
+        <div class="container">
+            <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+            <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/11Ra-DrGJOYMOC6Ag_3GS6ShxZFCPdKh6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+            <main>
+                
+
+    
+
+        
+        
+        <h1>
+            <a href="../">Topics</a> > 5.  JavaScript: Foundational Concepts
+        </h1>
+        
+        
+    
+   
+                <style>
+    h2 a,
+    h2 a:hover {
+        border-bottom: dotted 1px !important;
+        /* background-color: transparent; */
+    }
+
+    td .reading,
+    td .lecture,
+    td .badge,
+    td .lab,
+    td .activity {
+        font-size: 0.8rem !important;
+    }
+
+    .mb-1 {
+        margin-bottom: 4px;
+    }
+
+    .reading {
+        vertical-align: bottom;
+    }
+
+    .inline-block span {
+        font-weight: 500;
+    }
+
+    .assignments.topics ul {
+        padding: 0;
+        padding-left: 35px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    .assignments.topics table {
+        margin-bottom: 50px;
+        border-color: #CCC;
+        border-width: 0px;
+    }
+
+    .assignments.topics table tr {
+        display: grid;
+        grid-template-columns: 80px 80px 300px 1fr;
+        border-bottom: dotted 1px #CCC;
+    }
+
+    .assignments.topics table th:nth-child(2),
+    .assignments.topics table td:nth-child(2) {
+        min-width: 120px;
+    }
+    .assignments.topics p,
+    .assignments.li {
+        margin-bottom: 10;
+        line-height: 1.6em;
+    }
+
+    .card {
+        border: solid 1px #F9F9F9;
+        border-radius: 6px;
+        padding: 20px;
+        background-color: #FAFAFA;
+        margin-bottom: 20px;
+    }
+
+
+
+    @media screen and (max-width: 1000px) {
+        main {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .assignments.topics table tr {
+            display: grid;
+            grid-template-columns: 80px 80px 1fr;
+        }
+
+        .assignments.topics table tr td:nth-child(4) {
+            grid-column: 3 / 4;
+        }
+
+        .assignments.topics table tr th:nth-child(4) {
+            display: none;
+        }
+    }
+</style>
+
+
+
+
+<section class="assignments topics">
+    
+    
+
+    <p>JavaScript is a versatile, high-level programming language that runs in web browsers, enabling interactivity and dynamic content. It allows developers to manipulate the Document Object Model (DOM) and implement features like animations, forms, and real-time updates. This unit introduces core JavaScript concepts like variables, data types, functions, loops, and event handling. By the end of this section, you will know enough to start building simple, interactive web applications.
+</p>
+
+    
+    
+    <h2>Readings & Activities</h2>
+    <table>
+        <thead>
+            <th>Week</th>
+            <th></th>
+            <th>Slides / Activities</th>
+            <th>Readings</th>
+        </thead>
+        <tbody>
+            <!-- Topic Details -->
+            
+            
+            <tr>
+                <td>
+                    
+                    <strong>Week 5</strong>
+                    
+                    
+                </td>
+                <td>
+                    Wed, 2/12
+                </td>
+                <td>
+                    
+
+<!-- Slides -->
+
+
+    <span class='mb-1 block'><span class='badge'>Slides</span><span style='display: none'>: </span><span>Intro to the JavaScript Language</span> </span>
+
+
+<!-- Activities -->
+
+
+    <span class='mb-1 block'><span class='badge'>Activity</span><span style='display: none'>: </span><span>Intro to the language</span> </span>
+
+
+<!-- Tutorials -->
+
+
+                </td>
+                <td>
+                    
+
+
+
+
+
+<!-- Required Readings -->
+
+
+Required:
+<ul>
+    
+    <li class="mb-4">
+        <span class='mb-1'>Please read the <a href="/spring2025/resources/programming-review">Intro to Programming with JavaScript</a> page.
+</span><div></div>
+    </li>
+    
+</ul>
+
+
+<!-- Skimmable Readings -->
+
+
+
+<!-- Pick One Readings -->
+
+
+
+<!-- Optional Readings -->
+
+
+
+
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td>
+                    
+                </td>
+                <td>
+                    Fri, 2/14
+                </td>
+                <td>
+                    
+
+<!-- Slides -->
+
+
+
+<!-- Activities -->
+
+
+
+<!-- Tutorials -->
+
+
+    <span class='mb-1 block'><span class='badge'>Tutorial 4</span><span style='display: none'>: </span><span>Programming Review</span> (due Mon, 2/17)</span>
+
+                </td>
+                <td>
+                    
+
+
+
+
+
+<!-- Required Readings -->
+
+
+
+<!-- Skimmable Readings -->
+
+
+
+<!-- Pick One Readings -->
+
+
+
+<!-- Optional Readings -->
+
+
+
+
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td>
+                    
+                    <strong>Week 6</strong>
+                    
+                    
+                </td>
+                <td>
+                    Mon, 2/17
+                </td>
+                <td>
+                    
+
+<!-- Slides -->
+
+
+    <span class='mb-1 block'><span class='badge'>Lecture</span><span style='display: none'>: </span><span>Working with the DOM: Part I</span> </span>
+
+
+<!-- Activities -->
+
+
+    <span class='mb-1 block'><span class='badge'>Activity</span><span style='display: none'>: </span><span>DOM manipulation practice</span> </span>
+
+
+<!-- Tutorials -->
+
+
+                </td>
+                <td>
+                    
+
+
+
+
+
+<!-- Required Readings -->
+
+
+Required:
+<ul>
+    
+    <li class="mb-4">
+        <span class='mb-1'><a href="https://www.digitalocean.com/community/tutorials/introduction-to-the-dom" target="_blank">Intro to the DOM</a>. <em>Digital Ocean</em>
+</span><div></div>
+    </li>
+    
+    <li class="mb-4">
+        <span class='mb-1'><a href="https://www.digitalocean.com/community/tutorials/how-to-access-elements-in-the-dom" target="_blank">How To Access Elements in the DOM</a>. <em>Digital Ocean</em>
+</span><div></div>
+    </li>
+    
+    <li class="mb-4">
+        <span class='mb-1'><a href="https://www.digitalocean.com/community/tutorials/how-to-access-elements-in-the-dom" target="_blank">How To Access Elements in the DOM</a>. <em>Digital Ocean</em>
+</span><div></div>
+    </li>
+    
+    <li class="mb-4">
+        <span class='mb-1'><a href="https://www.digitalocean.com/community/tutorials/how-to-modify-attributes-classes-and-styles-in-the-dom" target="_blank">How to Modify Attributes, Classes, and Styles in the DOM</a>. <em>Digital Ocean</em>
+</span><div></div>
+    </li>
+    
+</ul>
+
+
+<!-- Skimmable Readings -->
+
+
+Skim:
+<ul>
+    
+    <li class="mb-4">
+        <span class='mb-1'>Sarah's interactive <a href="/spring2025/course-files/activities/dom-tester" target="_blank">DOM manipulation worksheet</a>
+</span><div></div>
+    </li>
+    
+</ul>
+
+
+<!-- Pick One Readings -->
+
+
+
+<!-- Optional Readings -->
+
+
+
+
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td>
+                    
+                </td>
+                <td>
+                    Wed, 2/19
+                </td>
+                <td>
+                    
+
+<!-- Slides -->
+
+
+    <span class='mb-1 block'><span class='badge'>Lecture</span><span style='display: none'>: </span><span>Working with the DOM: Part II</span> </span>
+
+
+<!-- Activities -->
+
+
+
+<!-- Tutorials -->
+
+
+                </td>
+                <td>
+                    
+
+
+
+
+
+<!-- Required Readings -->
+
+
+Required:
+<ul>
+    
+    <li class="mb-4">
+        <span class='mb-1'><a href="https://www.digitalocean.com/community/tutorials/understanding-events-in-javascript" target="_blank">Understanding Events in JavaScript</a>. <em>Digital Ocean</em>
+</span><div></div>
+    </li>
+    
+</ul>
+
+
+<!-- Skimmable Readings -->
+
+
+
+<!-- Pick One Readings -->
+
+
+
+<!-- Optional Readings -->
+
+
+Optional:
+<ul>
+    
+    <li class="mb-4">
+        <span class='mb-1'><a href="https://www.digitalocean.com/community/tutorials/understanding-the-dom-tree-and-nodes" target="_blank">Understanding the DOM Tree and Nodes</a>. <em>Digital Ocean</em>
+</span><div></div>
+    </li>
+    
+    <li class="mb-4">
+        <span class='mb-1'><a href="https://www.digitalocean.com/community/tutorials/how-to-traverse-the-dom" target="_blank">How to Traverse the DOM</a>. <em>Digital Ocean</em>
+</span><div></div>
+    </li>
+    
+    <li class="mb-4">
+        <span class='mb-1'><a href="https://www.digitalocean.com/community/tutorials/how-to-make-changes-to-the-dom" target="_blank">How to Make Changes to the DOM</a>. <em>Digital Ocean</em>
+</span><div></div>
+    </li>
+    
+</ul>
+
+
+
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td>
+                    
+                </td>
+                <td>
+                    Fri, 2/21
+                </td>
+                <td>
+                    
+
+<!-- Slides -->
+
+
+
+<!-- Activities -->
+
+
+
+<!-- Tutorials -->
+
+
+    <span class='mb-1 block'><span class='badge'>Tutorial 5</span><span style='display: none'>: </span><span>JavaScript: Event Handlers</span> (due Mon, 2/24)</span>
+
+                </td>
+                <td>
+                    
+
+
+
+
+
+<!-- Required Readings -->
+
+
+
+<!-- Skimmable Readings -->
+
+
+
+<!-- Pick One Readings -->
+
+
+
+<!-- Optional Readings -->
+
+
+
+
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+    
+
+
+    
+    <h2>Study Questions / Concepts</h2>
+    <ol>
+        
+        <li class="mb-4">What is the difference between an interpreted and a compiled language?</li>
+        
+        <li class="mb-4">What does it mean that JavaScript is not a "strongly typed language"?</li>
+        
+        <li class="mb-4">What are the three different ways declare a variable? What does each declaration keyword mean? Which legacy declaration keyword should be avoided if possible?</li>
+        
+        <li class="mb-4">Know how to write a function using arrow functions and using "traditional" function declaration syntax.</li>
+        
+        <li class="mb-4">Know the differences between equality (==) and strict equality (===) (and use strict equality as much as possible)</li>
+        
+        <li class="mb-4">Know the basic control structures (if/else if/else, for loops, while loops, for...of loops)</li>
+        
+        <li class="mb-4">Remember that JavaScript can be interpreted with Node.js or by a web browser</li>
+        
+        <li class="mb-4">Review the <a href="/spring2025/resources/programming-review">programming with JavaScript cheatsheet</a> for a review.</li>
+        
+        <li class="mb-4">Remember that DOM objects and methods are only used in <strong>"client-side" programming</strong> (within a browser). They are not supported in Node.js</li>
+        
+        <li class="mb-4">Be able to use JavaScript to manipulate HTML and CSS dynamically (usually through event handlers).</li>
+        
+        <li class="mb-4">Practice targeting and changing DOM elements using the <a href="/spring2025/course-files/activities/dom-tester" target="_blank">DOM manipulation worksheet</a></li>
+        
+        <li class="mb-4">Please refer to the <a href="/spring2025/resources/js-concepts#working-with-the-dom" target="_blank">working with the DOM</a> section of the JavaScript cheatsheet and make sure you know how to interact with the DOM.</li>
+        
+    </ol>
+    
+    </div>
+
+
+</section>
+            </main>
+            <footer>
+    <p>    
+        Department of Computer Science, UNC Asheville
+    </p>
+</footer>
+
+        </div>
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>
