@@ -47,7 +47,7 @@
 # to the `gh-pages` branch, excluding unnecessary files like `node_modules` or `*.pyc`. 
 
 # -- Build with no baseurl
-bundle exec jekyll build 
+rvm use 2.7 && bundle exec jekyll build 
 
 # -- Define a temporary directory for filtered site files
 TEMP_DIR=$(mktemp -d)
