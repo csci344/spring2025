@@ -53,15 +53,15 @@ bundle exec jekyll build
 TEMP_DIR=$(mktemp -d)
 
 # -- Use rsync to copy files from _site to TEMP_DIR, excluding unwanted files
-rsync -av --exclude='node_modules' --exclude='*.pyc' _site/ "$TEMP_DIR"
+rsync -av --exclude='node_modules' --exclude='*.pyc' --exclude='*.md' _site/ "$TEMP_DIR"
 
 # -- Checkout gh-pages and pull latest changes (in case anything is already there)
-git fetch origin
-git checkout gh-pages
-git pull origin gh-pages
+# git fetch origin
+# git checkout gh-pages
+# git pull origin gh-pages
 
 # -- Check for changes in the _site folder by comparing with the existing gh-pages branch
-git rm -rf . # Remove any existing files in gh-pages branch
+# git rm -rf . # Remove any existing files in gh-pages branch
 
 # Copy the contents from the TEMP_DIR to the working directory
 cp -r "$TEMP_DIR/" .
