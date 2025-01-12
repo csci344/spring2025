@@ -5,11 +5,7 @@ type: lecture
 num: 14
 draft: 1
 start_date: 2025-03-03
-slides:
-    - title: "Intro to HTTP"
-      type: slides
-      draft: 1
-      url: #
+slides_url: #
 readings: 
     - type: reading
       citation: >

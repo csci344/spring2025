@@ -1,15 +1,10 @@
 ---
-layout: module
 title: Intro to the Course
 type: lecture
 num: 1
-draft: 1
+draft: 0
 start_date: 2025-01-13
-slides:
-    - title: Intro to the Course
-      type: lecture
-      draft: 1
-      url: https://docs.google.com/presentation/d/1JdVt_AVQLOv6SPNCSnOCAG4TIgf4nYyX/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
+slides_url: https://docs.google.com/presentation/d/1JdVt_AVQLOv6SPNCSnOCAG4TIgf4nYyX/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings: 
     - type: reading
       citation: >

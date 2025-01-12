@@ -5,12 +5,7 @@ type: lecture
 num: 12
 draft: 1
 start_date: 2025-02-24
-slides:
-    - title: "High-Order Functions (forEach, map, filter, reduce)"
-      type: lecture
-      num: 12
-      draft: 1
-      url: https://docs.google.com/presentation/d/1nP4LfWZi2cz1lNC47_Q-rw9NxE8Ysp9z/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
+slides_url: https://docs.google.com/presentation/d/1nP4LfWZi2cz1lNC47_Q-rw9NxE8Ysp9z/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings: 
     - type: reading
       citation: >

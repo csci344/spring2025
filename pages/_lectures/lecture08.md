@@ -5,12 +5,7 @@ type: lecture
 num: 8
 draft: 1
 start_date: 2025-02-05
-slides:
-    - title: Design with Accessibility in Mind
-      type: slides
-      num: 8
-      draft: 1
-      url: https://docs.google.com/presentation/d/1UymkCliLyKWju3wAkc5juFI4whjaFFHD8J8gJfY8Vbs/edit?usp=sharing
+slides_url: https://docs.google.com/presentation/d/1UymkCliLyKWju3wAkc5juFI4whjaFFHD8J8gJfY8Vbs/edit?usp=sharing
 readings: 
     - type: reading
       citation: > 

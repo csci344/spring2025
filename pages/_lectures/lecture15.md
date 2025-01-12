@@ -5,11 +5,7 @@ type: lecture
 num: 15
 draft: 1
 start_date: 2025-03-05
-slides:
-    - title: "Asynchronous Functions and the JavaScript Fetch API"
-      type: slides
-      draft: 1
-      url: #
+slides_url: #
 readings: 
     - type: reading
       citation: >

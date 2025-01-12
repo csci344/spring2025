@@ -5,12 +5,7 @@ type: lecture
 num: 4
 draft: 1
 start_date: 2025-01-22
-slides:
-    - title: Intro to HTML
-      type: lecture
-      num: 4
-      draft: 1
-      url: https://docs.google.com/presentation/d/1U8KFD9jWyQp6nqQOS-cUe3_vHVaKoF_T/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
+slides_url: https://docs.google.com/presentation/d/1U8KFD9jWyQp6nqQOS-cUe3_vHVaKoF_T/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings:
    - url: /resources/html-resources
      type: reading

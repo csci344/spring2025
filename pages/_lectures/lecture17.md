@@ -5,11 +5,7 @@ type: lecture
 num: 17
 draft: 1
 start_date: 2025-03-21
-slides:
-    - title: "React I"
-      type: slides
-      draft: 1
-      url: #
+slides_url: #
 readings:
     - type: reading
       citation: >

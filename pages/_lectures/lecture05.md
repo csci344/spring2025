@@ -5,12 +5,7 @@ type: lecture
 num: 5
 draft: 1
 start_date: 2025-01-24
-slides:
-    - title: Intro to semantic tags, more linking, intro to GitHub
-      type: lecture
-      num: 5
-      draft: 1
-      url: https://docs.google.com/presentation/d/1h-grizseMadQCAno5iL2dkDm0h9VlT1o/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
+slides_url: https://docs.google.com/presentation/d/1h-grizseMadQCAno5iL2dkDm0h9VlT1o/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings:
    - url: /resources/linking
      type: reading

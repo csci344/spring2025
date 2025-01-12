@@ -1,19 +1,15 @@
 ---
 layout: module
-title: Intro to the Course
+title: Web & Internet Infrastructure
 type: lecture
 num: 2
 draft: 1
 start_date: 2025-01-15
-slides:
-    - title: Intro to the Internet
-      type: lecture
-      draft: 1
-      url: https://docs.google.com/presentation/d/1vOZvK4tq4ApRtzza6-lKKkKt7UsKFtt_/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
-    - title: Intro to the Web
-      type: lecture
-      draft: 1
-      url: https://docs.google.com/presentation/d/1fAUlJgp9mez7DDm9Y0hEMGgsfYF0CNKZ/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
+slides_url: https://docs.google.com/presentation/d/1vOZvK4tq4ApRtzza6-lKKkKt7UsKFtt_/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
+    # - title: Intro to the Web
+    #   type: lecture
+    #   draft: 1
+    #   url: https://docs.google.com/presentation/d/1fAUlJgp9mez7DDm9Y0hEMGgsfYF0CNKZ/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings: 
     - type: reading
       citation: >

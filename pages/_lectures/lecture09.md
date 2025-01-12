@@ -5,12 +5,7 @@ type: lecture
 num: 9
 draft: 1
 start_date: 2025-02-12
-slides:
-    - title: Intro to the JavaScript Language
-      type: slides
-      num: 9
-      draft: 1
-      url: #
+slides_url: #
 readings: 
     - type: reading
       citation: >

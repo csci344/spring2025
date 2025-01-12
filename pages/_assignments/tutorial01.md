@@ -1,6 +1,6 @@
 ---
 layout: assignment-two-column
-title: Client-Side Warmups
+title: HTML Exercises
 type: tutorial
 abbreviation: Tutorial 1
 draft: 0

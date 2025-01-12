@@ -5,11 +5,7 @@ type: lecture
 num: 24
 draft: 1
 start_date: 2025-04-21
-slides:
-    - title: "Security"
-      type: slides
-      draft: 1
-      url: #
+slides_url: #
 readings:
     - type: reading
       citation: >

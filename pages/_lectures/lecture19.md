@@ -5,11 +5,7 @@ type: lecture
 num: 19
 draft: 1
 start_date: 2025-03-26
-slides:
-    - title: "React Component Libraries"
-      type: slides
-      draft: 1
-      url: #
+slides_url: #
 readings:
     - type: reading
       citation: >

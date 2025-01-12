@@ -9,7 +9,8 @@
     <div class="group">
         <h3>Topics</h3>
         <ol>
-            {% for topic in site.topics %}
+            {% assign topics = site.topics | where: 'type', 'topic' %}
+            {% for topic in topics %}
             <li>
 
                 {% if topic.draft == 1 %}

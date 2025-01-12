@@ -5,11 +5,7 @@ type: lecture
 num: 26
 draft: 1
 start_date: 2025-04-28
-slides:
-    - title: "Reflection & Next Steps"
-      type: slides
-      draft: 1
-      url: #
+slides_url: #
 readings:
     - type: reading
       citation: >

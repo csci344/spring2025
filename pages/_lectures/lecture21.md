@@ -5,11 +5,7 @@ type: lecture
 num: 21
 draft: 1
 start_date: 2025-04-07
-slides:
-    - title: "HTTP & REST"
-      type: slides
-      draft: 1
-      url: #
+slides_url: #
 readings:
     - type: reading
       citation: >

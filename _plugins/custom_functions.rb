@@ -64,11 +64,16 @@ module Jekyll
 
 
       def display_link_or_badge(page, hide_title=false, new_line=true, simple=false, show_notes=true)
+        if page.nil?
+            return ""
+        end
+        
         type = page['type'] == "homework" ? "hw" : page['type']
-        class_name = new_line ? "block" : "inline"
+        url = page['slides_url'] || page['url']
+        url = get_url(url)
+        target = get_target(url)
         badge_text = simple ? page['title'] : "#{type.capitalize}#{' ' + page['num'].to_s if %w[homework tutorial quiz].include?(page['type'])}"
-        url = get_url(page['url'])
-        target = get_target(page['url'])
+        class_name = new_line ? "block" : "inline"
         title = (hide_title || simple) ? "" : "<span>#{page['title']}</span>"
         colon = "<span style='display: none'>: </span>"
         is_draft = page['draft'] == 1
@@ -123,7 +128,7 @@ module Jekyll
       # Retrieve labs, projects, or tutorials by module
       def get_items_by_module(page, site, type)
         items = page[type]
-        site['assignments'].select { |item| items&.include?(item['num']) && item['type'] == type[0..-2] } || []
+        site['assignments'].select { |item| items&.include?(item['num']) && item['type'] == type } || []
       end
   
       def get_labs_by_module(page, site)
@@ -136,6 +141,10 @@ module Jekyll
   
       def get_tutorials_by_topic(topic, site)
         get_items_by_module(topic, site, 'tutorials')
+      end
+
+      def get_homework_by_lecture(lecture, site)
+        get_items_by_module(lecture, site, 'homework')
       end
   
       def get_lectures_by_topic(topic, site)

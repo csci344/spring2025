@@ -5,12 +5,7 @@ type: lecture
 num: 6
 draft: 1
 start_date: 2025-01-29
-slides:
-    - title: Intro to CSS
-      type: slides
-      num: 6
-      draft: 1
-      url: https://docs.google.com/presentation/d/1r0l-4HMA2f7XWm6_d1UaLZY_xUP-440d/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
+slides_url: https://docs.google.com/presentation/d/1r0l-4HMA2f7XWm6_d1UaLZY_xUP-440d/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings: 
    - url: /resources/css-rules-of-thumb
      title: "CSS Rules of Thumb"

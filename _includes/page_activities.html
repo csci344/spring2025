@@ -1,19 +1,24 @@
 {% assign lecture = topic | get_lectures_by_topic: site | filter_list_by_date: date | first %}
 
 <!-- Slides -->
-{% assign slides = lecture.slides %}
-{% for slide in slides %}
-    {{ slide | display_link_or_badge: false, true }}
-{% endfor %}
+{% if lecture %}
+    {{ lecture | display_link_or_badge: false, true }}
 
-<!-- Activities -->
-{% assign activities = lecture.activities %}
-{% for activity in activities %}
-    {{ activity | display_link_or_badge: false, true }}
-{% endfor %}
+    <!-- Activities -->
+    {% assign activities = lecture.activities %}
+    {% for activity in activities %}
+        {{ activity | display_link_or_badge: false, true }}
+    {% endfor %}
 
-<!-- Tutorials -->
-{% assign tutorials = topic | get_tutorials_by_topic: site | filter_list_by_date: date %}
-{% for tutorial in tutorials %}
-    {{ tutorial | display_link_or_badge: false, true }}
-{% endfor %}
+    <!-- Tutorials -->
+    {% assign tutorials = topic | get_tutorials_by_topic: site | filter_list_by_date: date %}
+    {% for tutorial in tutorials %}
+        {{ tutorial | display_link_or_badge: false, true }}
+    {% endfor %}
+
+    <!-- Homework -->
+    {% assign homework_assignments = lecture | get_homework_by_lecture: site %}
+    {% for homework in homework_assignments %}
+        {{ homework | display_link_or_badge: false, true }}
+    {% endfor %}
+{% endif %}

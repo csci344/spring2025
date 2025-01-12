@@ -5,11 +5,7 @@ type: lecture
 num: 16
 draft: 1
 start_date: 2025-03-17
-slides:
-    - title: "JavaScript Review"
-      type: slides
-      draft: 1
-      url: #
+slides_url: #
 readings:
     - type: reading
       citation: Language features

@@ -5,11 +5,7 @@ type: lecture
 num: 20
 draft: 1
 start_date: 2025-04-02
-slides:
-    - title: "Python Primer"
-      type: slides
-      draft: 1
-      url: #
+slides_url: #
 readings:
     - type: reading
       citation: >

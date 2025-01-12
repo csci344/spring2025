@@ -5,11 +5,7 @@ type: lecture
 num: 25
 draft: 1
 start_date: 2025-04-23
-slides:
-    - title: "Authentication"
-      type: slides
-      draft: 1
-      url: #
+slides_url: #
 readings:
     - type: reading
       citation: >
