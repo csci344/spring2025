@@ -50,7 +50,7 @@ layout: default
             <td>
                 {% if topic.draft == 0 %}
                     <a class="{{topic.type}}" href="/spring2025{{topic.url}}">
-                        <i class='fa-solid fa-link'></i> {{topic.type}} {{topic.num}}
+                        {{topic.type}} {{topic.num}} <i class='fa-solid fa-link'></i> 
                     </a>
                 {% else %}
                     <span class="badge">{{topic.type}} {{topic.num}}</span>

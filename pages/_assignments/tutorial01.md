@@ -3,7 +3,7 @@ layout: assignment-two-column
 title: HTML Exercises
 type: tutorial
 abbreviation: Tutorial 1
-draft: 0
+draft: 1
 points: 6
 num: 1
 start_date: 2025-01-27

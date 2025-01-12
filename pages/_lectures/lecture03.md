@@ -5,7 +5,7 @@ type: lecture
 num: 3
 draft: 1
 start_date: 2025-01-17
-slides_url: "#"
+slides_url: https://docs.google.com/presentation/d/1fAUlJgp9mez7DDm9Y0hEMGgsfYF0CNKZ/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 homework: [ 1 ]
 readings: 
     - type: reading

@@ -14,16 +14,13 @@ module Jekyll
       def extract_due_dates(pages)
         pages.map { |page| page['due_date'] if page['due_date'] }.compact.uniq.sort
       end
+
   
       # Combine and sort dates from two arrays
       def combine_dates(arr1, arr2)
         (arr1 + arr2).map { |date| convert_to_date_if_not_already(date) }.compact.uniq.sort
       end
-  
-      # Get the week number difference between two dates
-    #   def get_week_number(start_date, end_date)
-    #     ((Date.parse(end_date) - Date.parse(start_date)) / 7).to_i + 1
-    #   end
+
 
       def get_week_number(start_date, end_date)
         start_date = start_date.is_a?(Date) ? start_date : Date.parse(start_date)
@@ -32,14 +29,17 @@ module Jekyll
         ((end_date - start_date) / 7).to_i + 1
       end
   
+
       # Normalize URL and set target attribute
       def get_url(url)
         url&.start_with?("http") ? url : "/spring2025#{url}"
       end
+
   
       def get_target(url)
         url&.start_with?("http") ? "_blank" : ""
       end
+
 
       def display_reading(reading)
         type = reading['type']
@@ -85,7 +85,7 @@ module Jekyll
         # Handle anchor or span rendering
         if url && !is_draft
           return "<span class='mb-1 #{class_name}'>"\
-                   "<a class='#{link_class}' href='#{url}' target='#{target}'>#{link_icon} #{page['tag'] || badge_text}</a>"\
+                   "<a class='#{link_class}' href='#{url}' target='#{target}'>#{page['tag'] || badge_text} #{link_icon}</a>"\
                    "#{colon}#{title} #{due_date}"\
                  "</span>#{notes}"
         end
@@ -97,22 +97,26 @@ module Jekyll
         "</span>#{notes}"
       end
   
+
       # Display assignment links or labels
       def display_assignment(page, hide_title = false, new_line = true)
         return "<div class='mb-1'>Lab #{page['num']}</div>" if page['type'] == 'lab'
         display_link_or_badge(page, hide_title, new_line)
       end
+
   
       # Check for holidays or deadlines
       def has_holiday_or_deadline(pages)
         pages.any? { |page| %w[holiday deadline].include?(page['type']) }
       end
+
   
       # Convert a date if needed
       def convert_to_date_if_not_already(date)
         return Date.strptime(date, '%Y-%m-%d') if date.is_a?(String)
         return date if date.is_a?(Date)
       end
+
   
       # Filter content by date
       def filter_list_by_date(list, date)
@@ -124,33 +128,43 @@ module Jekyll
           convert_to_date_if_not_already(item['start_date']) == date
         end
       end
+
   
       # Retrieve labs, projects, or tutorials by module
-      def get_items_by_module(page, site, type)
-        items = page[type]
+      def get_items_by_module(items, site, type)
         site['assignments'].select { |item| items&.include?(item['num']) && item['type'] == type } || []
       end
   
+
       def get_labs_by_module(page, site)
-        get_items_by_module(page, site, 'labs')
-      end
-  
-      def get_projects_by_module(page, site)
-        get_items_by_module(page, site, 'projects')
-      end
-  
-      def get_tutorials_by_topic(topic, site)
-        get_items_by_module(topic, site, 'tutorials')
+        items = page['labs']
+        get_items_by_module(items, site, 'labs')
       end
 
-      def get_homework_by_lecture(lecture, site)
-        get_items_by_module(lecture, site, 'homework')
+  
+      def get_projects_by_module(page, site)
+        items = page['projects']
+        get_items_by_module(items, site, 'project')
       end
   
+
+      def get_tutorials_by_topic(topic, site)
+        items = topic['tutorials']
+        get_items_by_module(items, site, 'tutorial')
+      end
+
+
+      def get_homework_by_lecture(page, site)
+        items = page['homework']
+        get_items_by_module(items, site, 'homework')
+      end
+  
+
       def get_lectures_by_topic(topic, site)
         topic['lectures']&.map { |num| site['lectures'].find { |item| item['num'] == num } } || []
       end
   
+
       # Filter readings by type
       def filter_readings(readings, type)
         return [] unless readings
@@ -162,18 +176,21 @@ module Jekyll
         else []
         end
       end
+
   
       # Combine module activities (lectures, tutorials)
       def get_all_module_activities(topic, site)
         get_lectures_by_topic(topic, site) + get_tutorials_by_topic(topic, site)
       end
   
+
       # Get module dates
       def get_module_dates(page, site)
         get_all_module_activities(page, site).map do |item| 
           item && item['start_date'] ? convert_to_date_if_not_already(item['start_date']) : nil
         end.compact.uniq.sort
       end
+
     end
   end
   
