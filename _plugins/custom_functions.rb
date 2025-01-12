@@ -72,7 +72,7 @@ module Jekyll
         url = page['slides_url'] || page['url']
         url = get_url(url)
         target = get_target(url)
-        badge_text = simple ? page['title'] : "#{type.capitalize}#{' ' + page['num'].to_s if %w[homework tutorial quiz].include?(page['type'])}"
+        badge_text = simple ? page['title'] : "#{type.capitalize} #{page['num']}"
         class_name = new_line ? "block" : "inline"
         title = (hide_title || simple) ? "" : "<span>#{page['title']}</span>"
         colon = "<span style='display: none'>: </span>"
