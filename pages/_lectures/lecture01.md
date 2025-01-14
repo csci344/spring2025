@@ -17,7 +17,7 @@ readings:
 activities:
     - num: 1
       type: activity
-      draft: 1
+      draft: 0
       title: Pre-course assessment questions & answers
       url: /activities/pre-course-assessment
 ---
