@@ -5,7 +5,7 @@ layout: default
     {% if page.show_outline %}
         <div class="outline">
             <h3>Overview</h3>
-            {% include toc.html html=content class='toc' ordered=false %}
+            {% include toc.html html=content class='toc' ordered=false h_max=page.h_max %}
         </div>
     {% endif %}
     {{ content }}

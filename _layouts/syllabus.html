@@ -12,7 +12,7 @@
     {% assign all_content = schedule_simple | append: content %}
     <main>
         <aside>
-            {% include toc.html html=all_content class='side-menu' ordered=true %}
+            {% include toc.html html=all_content class='side-menu' ordered=true h_max=page.h_max %}
         </aside>
         <article>
             {% include page_title.html %}

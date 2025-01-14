@@ -26,7 +26,7 @@
                 <!-- {% include page_title.html %}  -->
                 {% if page.show_outline %}
                     <div class="outline">
-                        {% include toc.html html=content ordered=true %}
+                        {% include toc.html html=content ordered=true h_max=page.h_max %}
                     </div>
                 {% endif %}
                 {{ content }}

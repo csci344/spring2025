@@ -5,6 +5,7 @@ type: tutorial
 abbreviation: Activity 1
 draft: 1
 points: 6
+h_max: 3
 num: 2
 ---
 
