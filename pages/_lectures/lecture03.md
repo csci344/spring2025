@@ -3,7 +3,7 @@ layout: module
 title: The Internet & Society
 type: lecture
 num: 3
-draft: 1
+draft: 0
 start_date: 2025-01-17
 slides_url: https://docs.google.com/presentation/d/1fAUlJgp9mez7DDm9Y0hEMGgsfYF0CNKZ/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 homework: [ 1 ]
@@ -32,4 +32,10 @@ readings:
     - type: reading
       citation: >
         Wall Street Journal (7 mins): <a href="https://www.wsj.com/video/how-advertisers-use-internet-cookies-to-track-you/92E525EB-9E4A-4399-817D-8C4E6EF68F93.html" target="_blank">Third-party cookies, explained</a>
+activities:
+    - num: 3
+      draft: 0
+      type: activity
+      title: "The Internet and Society: Discussion Questions"
+      url: https://docs.google.com/document/d/1cmc07CHLTmd9b5SzmC_y6I9kHtTdVXE81YoJKzJNick/edit?usp=sharing
 ---
