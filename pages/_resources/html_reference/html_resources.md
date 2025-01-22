@@ -55,16 +55,16 @@ Learning HTML requires three main kinds of knowledge:
 3. Finally, an understanding of **how to seek out and effectively use information and resources**
 
 ## How to Use This Reference
-This section will help you to develop the three kinds of knowledge listed above (grammar, vocabulary, and using online resources). The first section reviews HTML *grammar* rules, which are presented as [10 Rules of Thumb](rules_of_thumb/).
+This section will help you to develop the three kinds of knowledge listed above (grammar, vocabulary, and using online resources). The first section reviews HTML *grammar* rules, which are presented as [10 Rules of Thumb](rules_of_thumb).
 
 After reviewing these grammar rules, please review the 7 sub-sections within this chapter, which cover some of the most common HTML tags, or * HTML vocabulary*:
-1. [10 Rules of Thumb](rules-of-thumb/)
-1. [Text Markup](text-tags/)
-1. [Hyperlinks](links/)
-1. [Image Tags](images/)
-1. [Media Tags](media-tags/)
-1. [Compound Tags](compound-tags/)
-1. [Semantic Tags](semantic-tags/)
-1. [Form Tags](forms/)
+1. [10 Rules of Thumb](html-rules-of-thumb)
+1. [Text Markup](text-tags)
+1. [Hyperlinks](linking)
+1. [Image Tags](image-tags)
+1. [Media Tags](media-tags)
+1. [Compound Tags](complex-tags)
+1. [Semantic Tags](semantic-tags)
+1. [Form Tags](form-tags)
 
 Each of the HTML tag pages includes one or more interactive code samples that you are welcome to manipulate and incorporate into your own HTML files. Finally, at the end of each page, will be a list of additional resources that will help you get oriented with the larger web design and development community.

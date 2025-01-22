@@ -1,6 +1,6 @@
 ---
 layout: module
-title: Introduction to HTML
+title: Introduction to HTML (Continued)
 type: lecture
 num: 5
 draft: 1

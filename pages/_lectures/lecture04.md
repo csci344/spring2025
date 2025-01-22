@@ -3,9 +3,9 @@ layout: module
 title: Introduction to HTML
 type: lecture
 num: 4
-draft: 1
+draft: 0
 start_date: 2025-01-22
-slides_url: https://docs.google.com/presentation/d/1R_TTREM7v18VvzuWYZqFGCGvD2-weoSf/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true 
+slides_url: https://docs.google.com/presentation/d/1R_TTREM7v18VvzuWYZqFGCGvD2-weoSf/edit#slide=id.p1
 readings:
    - url: /resources/html-resources
      type: reading
@@ -51,10 +51,10 @@ readings:
      source: https://www.html5rocks.com/
      date: 2011
 activities:
-    - num: 3
-      draft: 1
+    - num: 4
+      draft: 0
       type: activity
       title: Write your first HTML page
-      url: https://docs.google.com/document/d/1S6P6G3xBS4nBcAZEWBvIC0_lqH5p_Xp6/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
+      url: https://docs.google.com/document/d/1Vu_bVKlnzeQceoxp7hRTXdyTeCcLDQIz/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 ---
 
