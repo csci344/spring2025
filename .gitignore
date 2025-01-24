@@ -26,3 +26,4 @@ my_token.py
 node_modules
 env
 venv
+poetry.lock

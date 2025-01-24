@@ -38,8 +38,8 @@ activities:
       type: activity
       title: Linking (lecture files)
       url: /course-files/lectures/lecture05.zip
-    - num: 5
-      draft: 6
+    - num: 6
+      draft: 0
       type: activity
       title: Configure git and GitHub
       url: /activities/github
