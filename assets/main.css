@@ -13,11 +13,12 @@ section, div, aside { box-sizing: border-box; }
 section a, section a:hover, section a:visited, section a:active, article a, article a:hover, article a:visited, article a:active { text-decoration: none; color: #444; border-bottom: solid #4298B5 1px; }
 section a:hover, article a:hover { background: #f6f6f6; }
 section p, section li, article p, article li { font-size: 16px; color: #5c5962; line-height: 1.6em; }
+section li, article li { line-height: 1.8em; }
 section code, section code *, article code, article code * { font-size: 0.95rem; }
 
 a, a:hover, a:visited, a:active { text-decoration: none; color: #444; border-bottom: solid transparent 2px; }
 
-ol, ul { margin-top: 0px; }
+ol, ul { margin-top: 10px; }
 
 li { line-height: 1.5em; }
 
