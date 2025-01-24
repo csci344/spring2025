@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>Activity: Configuring Git and GitHub</title>
+<title>Activity 6: Configuring Git and GitHub</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
 ">
 <link rel="stylesheet" href="/spring2025/assets/main.css">
@@ -87,10 +87,7 @@
                 
 
     
-        <h1>
-            <a href="../assignments/">Assignments</a> > 
-            Activity 2: Activity: Configuring Git and GitHub
-        </h1>
+        <h1>Activity 6: Configuring Git and GitHub</h1>
     
  
                 <!-- 
@@ -130,7 +127,7 @@ On Mac, people had to install XCode Tools
 
 </style>
 
-<blockquote class="blockquote-no-margin">
+<blockquote class="info">
   <h2 id="overview">Overview</h2>
   <p>The goal of this activity is to help you publish your web page to GitHub. To do this:</p>
 
@@ -181,17 +178,15 @@ On Mac, people had to install XCode Tools
 <h2 id="part4">4. Configure the Git / Visual Studio Code Plugin</h2>
 
 <h3 id="1-tell-the-system-who-you-are">1. Tell the system who you are</h3>
-<p>Tell your computer who you are on Git by running the following commands in GitBash (Windows) or in the Terminal (Mac):</p>
+<p>Tell your computer who you are on Git by running the commands shown below in GitBash (Windows) or in the Terminal (Mac). Please use <strong>your name</strong>, and the <strong>email you used when registering with GitHub</strong>.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> user.name <span class="s2">"Sarah"</span>
 git config <span class="nt">--global</span> user.email <span class="s2">"my_email@gmail.com"</span>
 </code></pre></div></div>
 
-<p>Please use <strong>your name</strong>, and the <strong>email you used when registering with GitHub</strong>.</p>
-
-<blockquote class="blockquote-no-margin">
+<blockquote class="info">
   <h4 id="note-for-computer-lab-computers">Note for Computer Lab Computers</h4>
-  <p>If you are using a computer lab computer, you will need to complete this step each time you use git.</p>
+  <p>If you are using a computer lab computer, you will need to complete this step each time you use git in class.</p>
 </blockquote>
 
 <h3 id="2-verify-your-file-structure">2. Verify your file structure</h3>
@@ -200,9 +195,9 @@ git config <span class="nt">--global</span> user.email <span class="s2">"my_emai
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>csci334
 ├── lectures
-│   └── lecture03
-│   │    └── index.html
 │   └── lecture04
+│   │    └── index.html
+│   └── lecture05
 │       ├── README.md
 │       └── my_website
 │           ├── files
@@ -226,41 +221,41 @@ git config <span class="nt">--global</span> user.email <span class="s2">"my_emai
 <h3 id="3-initialize-a-git-repository">3. Initialize a Git Repository</h3>
 <p>After you’ve doublechecked your file structure, open your entire <code class="highlighter-rouge">csci344</code> folder in VS Code. Next, click on the icon that looks like a tree branch, and click the blue button that says “Initialize Repository”:</p>
 
-<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial02-github/ss2.png" /></p>
+<p><img class="large" src="/spring2025/assets/images/activities/configure-github/ss2.png" /></p>
 
 <p>You have now created a git repository on your computer in the same folder as your <code class="highlighter-rouge">csci344</code> folder. Now, you will want to “stage” all of your changes. Click the button with the three dots, then select “Changes”, and then “Stage All changes”:</p>
 
-<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial02-github/ss3.png" /></p>
+<p><img class="large" src="/spring2025/assets/images/activities/configure-github/ss3.png" /></p>
 
 <p>After you “stage” your changes, you will note that the left-hand panel has changed. Specifically:</p>
 
-<ul class="compact">
+<ul>
   <li>The panel lists all of the files that are “staged” to be committed, with an “A” next to each file (indicating that you are adding the files for the first time).</li>
   <li>To commit these changes, type a message in the text box that says “My First Commit” and then click the check button to actually issue the commit:</li>
 </ul>
 
-<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial02-github/ss4.png" /></p>
+<p><img class="large" src="/spring2025/assets/images/activities/configure-github/ss4.png" /></p>
 
 <p>Afterwards, a button will appear that says “Publish Branch.” Click this button. It may prompt you to install a GitHub plugin. Please agree that you are OK to install the GitHub plugin.</p>
 
-<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial02-github/ss5.png" /></p>
+<p><img class="large" src="/spring2025/assets/images/activities/configure-github/ss5.png" /></p>
 
-<p>You will now create a new GitHub repository called <code class="highlighter-rouge">csci344-coursework</code>. Please ensure that you create a PUBLIC repository:</p>
+<p>You will now create a new GitHub repository called <strong><code class="highlighter-rouge">csci344-coursework</code></strong> (instead of csci185-coursework as pictured in the images below). Please ensure that you create a <strong>PUBLIC</strong> repository:</p>
 
-<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial02-github/ss6.png" /></p>
+<p><img class="large" src="/spring2025/assets/images/activities/configure-github/ss6.png" /></p>
 
 <p>After VS code issues the “create repository” request to GitHub, it will give you a message indicating that your files are being sent up to GitHub. When the file transfer is complete, you will see a blue button that says “Open On GitHub”. Click that button.</p>
 
-<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial02-github/ss7.png" /></p>
+<p><img class="large" src="/spring2025/assets/images/activities/configure-github/ss7.png" /></p>
 
 <p>Clicking the button will open your newly created <code class="highlighter-rouge">csci344-coursework</code> repository and show you all of your files (which are now in the cloud):</p>
 
-<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial02-github/ss8.png" /></p>
+<p><img class="large" src="/spring2025/assets/images/activities/configure-github/ss8.png" /></p>
 
 <h2 id="part5">5. Finally, Configure GitHub Pages</h2>
 <p>GitHub also allows you to host pages. To enable GitHub pages:</p>
 
-<ol class="compact">
+<ol>
   <li>Go to your repository and click on the settings tab.</li>
   <li>Click the “GitHub Pages” link in the left-hand menu</li>
   <li>Click the dropdown menu that asks you to select a branch.</li>
@@ -268,17 +263,17 @@ git config <span class="nt">--global</span> user.email <span class="s2">"my_emai
   <li>Click “Save”</li>
 </ol>
 
-<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial02-github/ss9.png" /></p>
+<p><img class="large" src="/spring2025/assets/images/activities/configure-github/ss9.png" /></p>
 
 <p>This will generate a link to your GitHub site.</p>
 
-<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial02-github/ss10.png" /></p>
+<p><img class="large" src="/spring2025/assets/images/activities/configure-github/ss10.png" /></p>
 
 <blockquote>
   <h3 id="a-note-on-github-pages">A note on GitHub Pages</h3>
   <ul>
     <li>It make take a few minutes for your webpage to display</li>
-    <li>In order to preview the webpage you made in the <code class="highlighter-rouge">lecture03</code> folder, you have to append the <code class="highlighter-rouge">/lectures/lecture03/index.html</code> file path to the end of your github pages to indicate which file to display.</li>
+    <li>In order to preview the webpage you made in the <code class="highlighter-rouge">lecture04</code> folder, you have to append the <code class="highlighter-rouge">/lectures/lecture04/index.html</code> file path to the end of your github pages to indicate which file to display.</li>
   </ul>
 </blockquote>
 
