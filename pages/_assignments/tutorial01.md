@@ -3,15 +3,19 @@ layout: assignment-two-column
 title: HTML Exercises
 type: tutorial
 abbreviation: Tutorial 1
-draft: 1
+draft: 0
 points: 6
 num: 1
 start_date: 2025-01-27
 due_date: 2025-01-29
 ---
 
-{:.blockquote-no-margin}
-> **Assumptions:** This tutorial assumes that you have reviewed the materials assigned in the [Intro to HTML lecture](/spring2025/lectures/topic02).
+{:.info}
+> **Assumptions:** This tutorial assumes that you have:
+>
+> 1. [Installed and configured VS Code (Activity 4)](https://docs.google.com/document/d/1Vu_bVKlnzeQceoxp7hRTXdyTeCcLDQIz/edit#heading=h.gjdgxs)
+> 2. [Installed and configured GitHub (Activity 6)](/spring2025/activities/github)
+> 3. Reviewed the materials assigned in the [Intro to HTML lecture](/spring2025/topics/topic02)
 
 ## Part 1. Setting Up Your Development Environment
 
@@ -20,7 +24,7 @@ Download and install Visual Studio Code: <a href="https://code.visualstudio.com/
 * This does not need to be done if you are working on the computer lab computers -- just if you're working on your laptop.
 
 ### 2. Organize your files
-<a href="/spring2025/course-files/tutorials/tutorial02a.zip" class="nu-button">Download Tutorial Files <i class="fas fa-download"></i></a>
+<a href="/spring2025/course-files/tutorials/tutorial01.zip" class="nu-button">Download Tutorial Files <i class="fas fa-download"></i></a>
 
 File management and organization are an essential part of programming and web development. As such, we suggest the following system:
 1. Create a course folder called **csci344** somewhere on your computer. Many people store theirs in Documents or on their Desktop.
@@ -35,8 +39,8 @@ csci344
     │   ...
     │   
     └── lectures
-        ├── lecture03
-        └── lecture04
+        ├── lecture04
+        └── lecture05
 ```
 
 ### 3. Take a look at your files
@@ -44,7 +48,7 @@ You will be ***editing*** your files using VS Code (or another code editor of yo
 
 #### A. View file in Visual Studio Code
 1. Open VS Code (your code editor).
-2. Add your entire csci344 folder to VS Code by 
+2. Add **your entire csci344 folder** to VS Code by 
    * clicking `File >> Add Folder to Workspace...`  
    * and then navigating to your csci344 folder (wherever you saved it)
 3. Open your index.html file inside of the `tutorial01` folder and take a look at it. You should see a very simple HTML file that looks like this:
@@ -84,7 +88,7 @@ Once you’ve taken a look at the code in VS Code, view it in your browser using
 ## Part 2. Completing the Exercises
 Now that you're set up, please complete the 6 tasks below:
 
-{:.blockquote-no-margin}
+{:.info}
 > 1. [Connect your stylesheet to your HTML files](#step1)
 > 1. [Link your HTML files together](#step2)
 > 1. [Add some images to index.html](#step3)
@@ -203,11 +207,11 @@ Please [follow these instructions](../activities/github) to publish your tutoria
 ## How to think about this exercise (meta-comment)
 The purpose of this tutorial was to get you familiar with some HTML widgets and conventions. We are now officially done with HTML instruction. What you should be comfortable with after this tutorial:
 
-{:.compact}
+
 1. Finding online resources (like <a href="https://www.w3schools.com/html/default.asp" target="_blank">W3Schools</a> and the [course HTML reference](/spring2025/resources/html-resources)) that help you learn about and integrate HTML tags.
 2. Understanding the rules of various tags, and how to nest them.
 3. Understanding how to link files together using both relative and absolute paths (more next week).
 4. Semantic containers
 
 ## What to turn in
-Please commit and push all of your edits to GitHub. Then, paste a link to your GitHub Repository and to your GitHub pages in the Moodle submission.
+Please commit and push all of your edits to GitHub. Then, paste a link to your GitHub Repository (code files) and to your GitHub pages (website) in the Moodle submission.

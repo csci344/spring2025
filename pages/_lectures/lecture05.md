@@ -3,7 +3,7 @@ layout: module
 title: Introduction to HTML (Continued)
 type: lecture
 num: 5
-draft: 1
+draft: 0
 start_date: 2025-01-24
 slides_url: https://docs.google.com/presentation/d/1kNOqFQyWuWcKUhh_XUjOXk0SASBDeWLO/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings:
@@ -33,13 +33,13 @@ readings:
      title: "Using GitHub with Visual Studio Code"
      type: reading
 activities:
-    - num: 4
-      draft: 1
+    - num: 5
+      draft: 0
       type: activity
       title: Linking (lecture files)
       url: /course-files/lectures/lecture05.zip
     - num: 5
-      draft: 1
+      draft: 6
       type: activity
       title: Configure git and GitHub
       url: /activities/github

@@ -57,6 +57,10 @@ section, article {
         color: #5c5962;
         line-height: 1.6em;
     }
+    li {
+
+        line-height: 1.8em;
+    }
     code, code * {
         font-size: 0.95rem;
     }
@@ -76,7 +80,7 @@ a, a:hover, a:visited, a:active {
 
 
 ol, ul {
-    margin-top: 0px;
+    margin-top: 10px;
 }
 li {
     line-height: 1.5em;

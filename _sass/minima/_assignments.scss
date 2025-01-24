@@ -241,6 +241,13 @@ blockquote.info {
     border-width: 0;
     padding: 20px 0px 20px 40px;
     border-radius: 10px;
+    ul, ol {
+        margin-top: 15px;
+
+        li {
+            line-height: 1.8em;
+        }
+    }
 } 
 
 blockquote.caveat {
