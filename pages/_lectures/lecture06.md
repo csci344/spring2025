@@ -3,9 +3,9 @@ layout: module
 title: Introduction to CSS
 type: lecture
 num: 6
-draft: 1
+draft: 0
 start_date: 2025-01-29
-slides_url: https://docs.google.com/presentation/d/1r0l-4HMA2f7XWm6_d1UaLZY_xUP-440d/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
+slides_url: https://docs.google.com/presentation/d/1JZVw7Z2TlChdp4YD2KMDl_2y5o-Fvoko/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings: 
    - url: /resources/css-reference
      title: "Intro to CSS"
@@ -33,7 +33,7 @@ readings:
      required: 1
 activities:
     - num: 6
-      draft: 1
+      draft: 0
       type: activity
       title: Design a Photo Gallery
       url: /activities/intro-css
