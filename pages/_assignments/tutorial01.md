@@ -11,6 +11,8 @@ due_date: 2025-01-29
 ---
 
 {:.info}
+> **Announcements:** <a href="https://docs.google.com/presentation/d/1ik3u0Ut7MgHPBfMu_vftQc2x-mWtqQCc/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">See slides</a>
+> <br><br>
 > **Assumptions:** This tutorial assumes that you have:
 >
 > 1. [Installed and configured VS Code (Activity 4)](https://docs.google.com/document/d/1Vu_bVKlnzeQceoxp7hRTXdyTeCcLDQIz/edit#heading=h.gjdgxs)

@@ -7,31 +7,30 @@ draft: 1
 start_date: 2025-01-29
 slides_url: https://docs.google.com/presentation/d/1r0l-4HMA2f7XWm6_d1UaLZY_xUP-440d/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings: 
+   - url: /resources/css-reference
+     title: "Intro to CSS"
+     type: reading
+     required: 1
    - url: /resources/css-rules-of-thumb
      title: "CSS Rules of Thumb"
      type: reading
      required: 1
-     internal: 1
    - url: /resources/selectors/
      title: "Selectors"
      type: reading
      required: 1
-     internal: 1
    - url: /resources/color/
      title: "Color"
      type: reading
      required: 1
-     internal: 1
    - url: /resources/fonts/
      title: "Text & fonts"
      type: reading
      required: 1
-     internal: 1
    - url: /resources/box-model/
      title: "The Box Model"
      type: reading
      required: 1
-     internal: 1
 activities:
     - num: 6
       draft: 1

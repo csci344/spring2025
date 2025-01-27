@@ -5,9 +5,9 @@ nav_order: 11
 has_children: true
 ---
 
-<blockquote class="blockquote-no-margin">
+<blockquote class="info">
     <h2>Recommended Online Tutorials / References</h2>
-    <ul class="compact">
+    <ul>
         <li>
             <a href="https://www.w3schools.com/css/" target="_blank">
             W3Schools — Learn CSS</a>
@@ -64,14 +64,14 @@ Below, I have curated some resources to help you learn about CSS. Don't feel lik
 {: .prose}
 
 ### Course Website
-1. [CSS Rules of Thumb]({{site.baseurl}}/css-reference/rules-of-thumb/)
-1. [CSS Selectors]({{site.baseurl}}/css-reference/selectors/)
-1. [Color]({{site.baseurl}}/css-reference/color/)
-1. [Text & Fonts]({{site.baseurl}}/css-reference/fonts/)
-1. [Box Model]({{site.baseurl}}/css-reference/box-model/)
-1. [CSS Units]({{site.baseurl}}/css-reference/units/)
-1. [Flexbox]({{site.baseurl}}/css-reference/flexbox/)
-1. [CSS Grid]({{site.baseurl}}/css-reference/css-grid/)
-1. [Media Queries]({{site.baseurl}}/css-reference/media-queries/)
-1. [Style Guides]({{site.baseurl}}/css-reference/style-guides/)
+1. [CSS Rules of Thumb]({{site.baseurl}}/resources/css-rules-of-thumb/)
+1. [CSS Selectors]({{site.baseurl}}/resources/selectors/)
+1. [Color]({{site.baseurl}}/resources/color/)
+1. [Text & Fonts]({{site.baseurl}}/resources/fonts/)
+1. [Box Model]({{site.baseurl}}/resources/box-model/)
+1. [CSS Units]({{site.baseurl}}/resources/units/)
+1. [Flexbox]({{site.baseurl}}/resources/flexbox/)
+1. [CSS Grid]({{site.baseurl}}/resources/css-grid/)
+1. [Media Queries]({{site.baseurl}}/resources/media-queries/)
+1. [Style Guides]({{site.baseurl}}/resources/style-guides/)
 
