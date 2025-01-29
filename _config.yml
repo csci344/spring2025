@@ -37,24 +37,24 @@ collections:
   assignments:
     output: true
     sort_by: ordering
-    permalink: /assignments/:name/
+    permalink: /assignments/:name
   lectures:
     output: true
     sort_by: lecture_date
-    permalink: /lectures/:name/
+    permalink: /lectures/:name
   topics:
     output: true
-    permalink: /topics/:name/
+    permalink: /topics/:name
   activities:
     output: true
-    permalink: /activities/:name/
+    permalink: /activities/:name
   quizzes:
     output: true
     sort_by: lecture_date
-    permalink: /quizzes/:name/
+    permalink: /quizzes/:name
   resources:
     output: true
-    permalink: /resources/:name/
+    permalink: /resources/:name
 
 
 collections_dir: pages
