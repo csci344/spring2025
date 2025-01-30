@@ -54,7 +54,7 @@ collections:
     permalink: /quizzes/:name
   resources:
     output: true
-    permalink: /resources/:name
+    permalink: /resources/:name/
 
 
 collections_dir: pages
