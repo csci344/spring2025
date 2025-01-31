@@ -3,9 +3,9 @@ layout: module
 title: CSS Layouts
 type: lecture
 num: 7
-draft: 1
+draft: 0
 start_date: 2025-01-31
-slides_url: https://docs.google.com/presentation/d/1PjbqofH0W1PCIyM9TqDYib1poSJdeoia/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
+slides_url: https://docs.google.com/presentation/d/1LYXPi2izZ5ulCT8uJPQADP4uKqu7MlKt/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings: 
    - url: /resources/units/
      title: Units
@@ -50,12 +50,12 @@ readings:
      title: W3 Schools Flexbox Guide
      type: reading
 activities:
-    - draft: 1
-      type: activity
-      title: HW1 presentations
     - num: 7
-      draft: 1
+      draft: 0
       type: activity
       title: Lecture files
       url: /course-files/lectures/lecture07.zip
+    - draft: 1
+      type: activity
+      title: HW1 presentations
 ---
