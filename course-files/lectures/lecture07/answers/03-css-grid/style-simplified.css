@@ -22,7 +22,7 @@ body {
 
 .container {
     display: grid;
-    min-height: 100vh;
+    min-height: 100vh; 
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 50px 50px auto 50px;
     column-gap: 20px;

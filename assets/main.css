@@ -184,8 +184,8 @@ ol.readings li, ul.readings li { margin-top: 0px; }
 .lectures ol li, .schedule ol li, .readings ol li { margin-bottom: 5px; }
 
 blockquote.info { background-color: #0076a514; padding: 25px 50px; border-width: 0; padding: 20px 0px 20px 40px; border-radius: 10px; }
-blockquote.info ul, blockquote.info ol { margin-top: 15px; }
-blockquote.info ul li, blockquote.info ol li { line-height: 1.8em; }
+blockquote.info ul, blockquote.info ol, blockquote.info p { margin-top: 15px; }
+blockquote.info ul li, blockquote.info ol li, blockquote.info p li { line-height: 1.8em; }
 
 blockquote.caveat { margin: 20px 0px 20px 40px; background: none; border-left: 0px; padding: 25px; padding: 0px; }
 

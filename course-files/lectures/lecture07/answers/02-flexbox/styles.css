@@ -20,7 +20,7 @@ main {
 section {
     border: solid 4px orangered;
     width: 200px;
-    height: 75px;
+    min-height: 75px;
     display: flex;
     align-items: center;
     justify-content: center;
