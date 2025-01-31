@@ -4,7 +4,7 @@ show_schedule: 1
 title: "Quiz 1: Web Architecture, HTML, CSS, and Accessibility"
 type: quiz
 abbreviation: "Quiz 1"
-draft: 1
+draft: 0
 num: 1
 start_date: 2025-02-10
 due_date: 2025-02-10
@@ -18,5 +18,5 @@ Quiz 1 will be completed during class on Monday, 2/10. It is due at the end of c
     * You **MAY NOT** (a) use ChatGPT or (b) communicate with another human being during the quiz.
 
 ## 2. Study Materials
-* Review the <a href="https://docs.google.com/document/d/1iR0Yw6Z1Knf_kwsRRKF91iJP1xTffqzbcybggNXhHIQ/edit?usp=sharing" target="_blank">Study Guide</a>
+* Review the <a href="https://docs.google.com/document/d/18eE6w02OOY52t735uT05IZ1s8763K9Hm/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Study Guide</a>
 * Review the lecture slides, readings, tutorials, and lecture files
