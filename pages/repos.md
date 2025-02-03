@@ -4,31 +4,32 @@ title: Student Repositories
 permalink: /repos-hidden/
 ---
 
-## Section 1 (9:30-10:45PM)
-
 {:.repos}
-| | Name | Repo | GitHub Pages | Notes |
+|  | Name | Repo | GitHub Pages | Notes |
 |--|--|--|--|--|
-| 1 | Abigail | [repo](https://github.com/amarcus0724/csci344) | [pages](https://amarcus0724.github.io/csci344/) |  |
-| 2 | Alejandro | [repo](https://github.com/ajrest1103/CSCI344) | [pages](https://ajrest1103.github.io/CSCI344/) |  Case-sensitivity issues |
-| 3 | Anis  | [repo](https://github.com/agolriz714/csci344) | [pages](https://agolriz714.github.io/csci344/) |  |
-| 4 | Ari | [repo](https://github.com/AriMoore/csci344) | [pages](https://AriMoore.github.io/csci344/) |  |
-| 5 | Ben | [repo](https://github.com/blynch87/csci344-coursework) | [pages](https://blynch87.github.io/csci344-coursework/) |  |
-| 6 | Brendan | [repo](https://github.com/ringojuic/csci344-coursework) | [pages](https://ringojuic.github.io/csci344-coursework/) | Missing homepage |
-| 7 | Chris  | [repo](https://github.com/ChrisB220/csci344) | [pages](https://chrisb220.github.io/csci344/) |  |
-| 8 | Dorsey  | [repo](https://github.com/dtkelleher/CSCI-344-coursework) | [pages](https://dtkelleher.github.io/CSCI-344-coursework/) |  |
-| 9 | Ethan | [repo](https://github.com/EPC233/csci344) | [pages](https://epc233.github.io/csci344/) |  |
-| 10 | Given | [repo](https://github.com/givensuman/csci344) | [pages](https://givensuman.github.io/csci344/) |  |
-| 11 | Jesse  | [repo](https://github.com/JesseRayCrouse/csci344) | [pages](https://jesseraycrouse.github.io/csci344/) |  |
-| 12 | Kiko  | [repo](https://github.com/KiCorp/csci344) | [pages](https://kicorp.github.io/csci344/) |  |
-| 13 | Laiza  | [repo](https://github.com/HLaiK/csci344) | [pages](https://hlaik.github.io/csci344/main.html) | Homepage is named "main.html" |
-| 14 | Maria  | [repo](https://github.com/Tangerinedream13/csci344) | [pages](https://tangerinedream13.github.io/csci344/) |  |
-| 15 | Max  | [repo](https://github.com/MaxwellChalmers/csci344-coursework) | [pages](https://maxwellchalmers.github.io/csci344-coursework/) |  |
-| 16 | Natasha  | [repo](https://github.com/NatashaEarley/csci344) | [pages](https://natashaearley.github.io/csci344/) |  |
-| 17 | Nathan | [repo](https://github.com/nhouston125/csci344-coursework) | [pages](https://nhouston125.github.io/csci344-coursework/) |  |
-| 18 | Noah | [repo](https://github.com/noahcsc/csci344) | [pages](https://noahcsc.github.io/csci344/) |  |
-| 19 | Olive | [repo](https://github.com/OliveRoquesUNCA/csci344-coursework) | [pages](https://oliveroquesunca.github.io/csci344-coursework/) |  |
-| 20 | Sofia | [repo](https://github.com/sofiarc19/csci-344-coursework) | [pages](https://sofiarc19.github.io/csci-344-coursework/) |  |
-| 21 | Sophie | [repo](https://github.com/slundin24/csci344) | [pages](https://slundin24.github.io/csci344/) |  |
-| 22 | Tyler | [repo](https://github.com/Swissssst/csci344) | [pages](https://swissssst.github.io/csci344/) | |
-| 23 | Vlad | [repo](https://github.com/vlkrvc/CSCI344/) | [pages](https://vlkrvc.github.io/CSCI344/) | |
+| 1. | Alina | [repo](https://github.com/azatyazh/csci344) | [pages](https://azatyazh.github.io/csci344/) |  |
+| 2. | Andrew | [repo](https://github.com/alwillis4/csci344-coursework) | [pages](https://alwillis4.github.io/csci344-coursework) | |
+| 3. | Anthony I. | [repo](https://github.com/Aindelic/csci-344) | [pages](https://aindelic.github.io/csci-344) | |
+| 4. | Anthony B. | [repo](https://github.com/anthonyablazer/csci344-coursework) | [pages](https://anthonyablazer.github.io/csci344-coursework/) | |
+| 5. | Ben L. | [repo](https://github.com/blynch87/csci344-coursework) | [pages](https://blynch87.github.io/csci344-coursework/) | |
+| 6. | Ben H. | repo | pages | Missing |
+| 7. | Brian | [repo](https://github.com/bmungal/csci344/) | [pages](https://bmungal.github.io/csci344) | |
+| 8. | Caleb | [repo](https://github.com/TerminalCalamitas/csci344-coursework) | [pages](https://terminalcalamitas.github.io/csci344-coursework) | |
+| 9. | Chase | [repo](https://github.com/Neptune-C-Providence/csci344-coursework) | [pages](https://neptune-c-providence.github.io/csci344-coursework) | |
+| 10. | Christian | [repo](https://github.com/Csluder2/csci344-coursework) | [pages](https://csluder2.github.io/csci344-coursework/tutorials/tutorial01/videos.html) | |
+| 11. | Colton | [repo](https://github.com/Colt32905/csci344-coursework) | [pages](https://colt32905.github.io/csci344-coursework) | Website not working. |
+| 12. | Destiny | [repo](https://github.com/dwhit7905/csci344-coursework) | [pages](https://dwhit7905.github.io/csci344-coursework) | |
+| 13. | Eli | [repo](https://github.com/eutterba/csci344) | [pages](https://eutterba.github.io/csci344/) | |
+| 14. | Jae | [repo](https://github.com/JuhJaemond/csci344-coursework) | [pages](https://juhjaemond.github.io/csci344-coursework) |  |
+| 15. | Jahfari | [repo](https://github.com/Jcoumarb/CSCI344Tutorial1) | [pages](https://jcoumarb.github.io/CSCI344Tutorial1/index.html) | Has a repo just for Tutorial 1. Needs one for all assignments. |
+| 16. | Josie | [repo](https://github.com/jandersoj/csci344-coursework) | [pages](https://jandersoj.github.io/csci344-coursework) | |
+| 17. | Kate | [repo](https://github.com/kgary432/csci344) | [pages](https://kgary432.github.io/csci344) | |
+| 18. | Kati | [repo](https://github.com/kpr0vence/csci344) | [pages](https://kpr0vence.github.io/csci344/) | |
+| 19. | Lucas | [repo](https://github.com/lucas-simmons/csci344) | [pages](https://lucas-simmons.github.io/csci344) | |
+| 20. | Mira | [repo](https://github.com/m-mazzotta/csci344) | [pages](https://m-mazzotta.github.io/csci344) | |
+| 21. | Olle | [repo](https://github.com/OlleSL/csci344-coursework) | [pages](https://OlleSL.github.io/csci344-coursework) | |
+| 22. | Ryan | [repo](https://github.com/rizzo-unca/csci344-coursework) | [pages](https://rizzo-unca.github.io/csci344-coursework) | |
+| 23. | Seamus | [repo](https://github.com/seamusrooneyy/csci344) | [pages](https://seamusrooneyy.github.io/csci344) | |
+| 24. | Seth | repo | pages | Missing |
+| 25. | Sumner | [repo](https://github.com/sstremmi/CSCI344) | [pages](https://sstremmi.github.io/CSCI344/) | |
+| 26. | Violet | [repo](https://github.com/VWoolard/csci344) | [pages](https://vwoolard.github.io/csci344) | |
