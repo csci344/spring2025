@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>Security & Authentication</title>
+<title>Databases & Object-Relational Mappings</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
 ">
 <link rel="stylesheet" href="/spring2025/assets/main.css">
@@ -62,7 +62,7 @@
         
         
         <h1>
-            <a href="../">Topics</a> > 14.  Security & Authentication
+            <a href="../">Topics</a> > 13.  Databases & Object-Relational Mappings
         </h1>
         
         
@@ -155,14 +155,14 @@
     }
 </style>
 
-<p>TBD</p>
+
 
 
 <section class="assignments topics">
     
     
 
-    <p>Web security ensures the protection of applications from common vulnerabilities like XSS, CSRF, and SQL injection. Authentication is the process of verifying user identity so that the application can tailor content and functionality while maintaining data privacy. In this unit, you will learn learn to identify risks and implement best practices such as input validation, secure authentication, and encryption. You will also learn about authentication strategies (e.g., JWT) in order to implement a secure login system.
+    <p>Databases store and organize data used by web applications, while Object-Relational Mapping (ORM) tools allow developers to interact with databases using object-oriented programming. ORMs like SQLAlchemy simplify the process of querying, updating, and managing data in relational databases. Learning about databases and ORMs is crucial for building data-driven web applications.
 </p>
 
     
@@ -182,22 +182,25 @@
             <tr>
                 <td>
                     
-                    <strong>Week 15</strong>
+                    <strong>Week 13</strong>
                     
                     
                 </td>
                 <td>
-                    Mon, 4/21
+                    Fri, 4/11
                 </td>
                 <td>
                     
 
 
     <!-- Slides -->
-    <span class='mb-1 block'><span class='badge'>Lecture 24</span><span style='display: none'>: </span><span>Security</span> </span>
+    <span class='mb-1 block'><span class='badge'>Lecture 22</span><span style='display: none'>: </span><span>Intro to Databases</span> </span>
 
     <!-- Activities -->
     
+    
+        <span class='mb-1 block'><span class='badge'>Activity </span><span style='display: none'>: </span><span>Get started on Tutorial 12</span> </span><div>See if you can get through the installation and configuration tasks.
+</div>
     
 
     <!-- Homework -->
@@ -223,7 +226,37 @@ Required:
 <ul>
     
     <li class="mb-4">
-        <span class='mb-1'><a href="https://www.youtube.com/watch?v=eHqbh0kyRYk" target="_blank">CSRF Explained | Understanding Cross Site Request Forgery | What is XSRF?</a>
+        <span class='mb-1'><a href="https://www.postgresql.org/about/" target="_blank">About PostgreSQL</a>
+</span><div></div>
+    </li>
+    
+    <li class="mb-4">
+        <span class='mb-1'><a href="https://www.postgresqltutorial.com/psql-commands/" target="_blank">psql commands</a> (command line)
+</span><div></div>
+    </li>
+    
+    <li class="mb-4">
+        <span class='mb-1'><a href="https://www.postgresql.org/docs/current/tutorial-select.html" target="_blank">Querying a Table</a>
+</span><div></div>
+    </li>
+    
+    <li class="mb-4">
+        <span class='mb-1'><a href="https://www.postgresql.org/docs/current/tutorial-join.html" target="_blank">Joins Between Tables</a>
+</span><div></div>
+    </li>
+    
+    <li class="mb-4">
+        <span class='mb-1'><a href="https://www.postgresql.org/docs/current/tutorial-populate.html" target="_blank">Inserts</a>
+</span><div></div>
+    </li>
+    
+    <li class="mb-4">
+        <span class='mb-1'><a href="https://www.postgresql.org/docs/current/tutorial-update.html" target="_blank">Updates</a>
+</span><div></div>
+    </li>
+    
+    <li class="mb-4">
+        <span class='mb-1'><a href="https://www.postgresql.org/docs/current/tutorial-delete.html" target="_blank">Deletions</a>
 </span><div></div>
     </li>
     
@@ -241,6 +274,16 @@ Required:
 <!-- Optional Readings -->
 
 
+Optional:
+<ul>
+    
+    <li class="mb-4">
+        <span class='mb-1'><a href="https://www.postgresql.org/docs/current/tutorial-agg.html" target="_blank">Aggregate Functions</a>
+</span><div></div>
+    </li>
+    
+</ul>
+
 
 
                 </td>
@@ -250,19 +293,24 @@ Required:
             <tr>
                 <td>
                     
+                    <strong>Week 14</strong>
+                    
+                    
                 </td>
                 <td>
-                    Wed, 4/23
+                    Mon, 4/14
                 </td>
                 <td>
                     
 
 
     <!-- Slides -->
-    <span class='mb-1 block'><span class='badge'>Lecture 25</span><span style='display: none'>: </span><span>Authentication</span> </span>
+    <span class='mb-1 block'><span class='badge'>Lecture 23</span><span style='display: none'>: </span><span>Intro to Object-Relational Mappings (ORMs)</span> </span>
 
     <!-- Activities -->
     
+    
+        <span class='mb-1 block'><span class='badge'>Activity </span><span style='display: none'>: </span><span>SQL Alchemy & Object-Relational Mappings</span> </span>
     
 
     <!-- Homework -->
@@ -284,19 +332,19 @@ Required:
 <!-- Required Readings -->
 
 
-Required:
+
+<!-- Skimmable Readings -->
+
+
+Skim:
 <ul>
     
     <li class="mb-4">
-        <span class='mb-1'><a href="https://medium.com/@prashantramnyc/difference-between-session-cookies-vs-jwt-json-web-tokens-for-session-management-4be67d2f066e#:~:text=The%20JWT%20tokens%20are%20sometimes,by%20the%20%E2%80%9Csecret%20key%E2%80%9D." target="_blank">Difference between Session Cookies vs. JWT (JSON Web Tokens), for session management</a>
+        <span class='mb-1'><a href="https://docs.sqlalchemy.org/en/20/orm/queryguide/index.html" target="_blank">SQL Alchemy Documentation</a>
 </span><div></div>
     </li>
     
 </ul>
-
-
-<!-- Skimmable Readings -->
-
 
 
 <!-- Pick One Readings -->
@@ -317,7 +365,7 @@ Required:
                     
                 </td>
                 <td>
-                    Fri, 4/25
+                    Wed, 4/16
                 </td>
                 <td>
                     
@@ -327,7 +375,53 @@ Required:
 
 
     <!-- Tutorials -->
-    <span class='mb-1 block'><span class='badge'>Tutorial 14</span><span style='display: none'>: </span><span>Get Started on HW6</span> (due Fri, 4/25)</span>
+    <span class='mb-1 block'><span class='badge'>Tutorial 12</span><span style='display: none'>: </span><span>Database / ORM Activity</span> (due Fri, 4/18)</span>
+
+                </td>
+                <td>
+                    
+
+
+
+
+
+<!-- Required Readings -->
+
+
+
+<!-- Skimmable Readings -->
+
+
+
+<!-- Pick One Readings -->
+
+
+
+<!-- Optional Readings -->
+
+
+
+
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td>
+                    
+                </td>
+                <td>
+                    Fri, 4/18
+                </td>
+                <td>
+                    
+
+
+
+
+
+    <!-- Tutorials -->
+    <span class='mb-1 block'><span class='badge'>Tutorial 13</span><span style='display: none'>: </span><span>Get Started on HW5</span> (due Fri, 4/18)</span>
 
                 </td>
                 <td>

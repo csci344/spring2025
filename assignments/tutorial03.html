@@ -116,14 +116,22 @@
         max-width: 100%;
         width: 100%;
     }
+
+    .info > ul > li, .info > ol > li  {
+        margin-bottom: 20px;
+
+    }
+    li ul, li ol {
+        margin-bottom: 20px;
+    }
 </style>
 
-<blockquote>
+<blockquote class="info">
   <p><strong>About Today’s Tutorial:</strong> Today’s tutorial is based on the <a href="https://www.youtube.com/watch?v=sNXfI3woBEw" target="_blank">Get Started With Tailwind CSS</a> video tutorial by John Komarnicki. If you would like additional context / explanation, please check out the video!</p>
 </blockquote>
 
 <h2 id="suggested-readings">Suggested Readings</h2>
-<ul class="compact">
+<ul>
   <li>[Theory] <a href="https://designlab.com/blog/guide-to-ux-design-systems" target="_blank">Design Systems 101: An Introductory Guide</a></li>
   <li>[Theory] <a href="https://johnpolacek.medium.com/by-the-numbers-a-year-and-half-with-atomic-css-39d75b1263b4" target="_blank">By The Numbers: A Year and Half with Atomic CSS</a>: How design systems improve efficiency</li>
   <li>[Practice] <a href="https://www.creative-tim.com/twcomponents/cheatsheet" target="_blank">Tailwind Cheatsheet</a></li>
@@ -132,15 +140,14 @@
 <h2 id="set-up--configuration">Set Up &amp; Configuration</h2>
 <p>Most practicing front-end developers use frameworks to help them organize and maintain their HTML, CSS, and JavaScript files. In this class, we will be using Node.js to help us manage various client-side frameworks. You already installed Node.js during the first week of CSCI344. When you did this, you installed a JavaScript engine (specifically, the V8 JavaScript Engine that powers Chrome), a built-in package manager, <code class="highlighter-rouge">npm</code> – to manage and install dependencies, and a way to “transpile” higher-level languages (e.g., TypeScript, SCSS, CoffeeScript, React, etc.) into “vanilla” HTML, CSS, and JavaScript. Today, we’re going to try using Node.js to help us work with a third-party CSS library and design system called <strong>Tailwind</strong>. Please follow the set up and configuration instructions below so that you can complete the tutorial.</p>
 
-<p><a href="/spring2025/course-files/tutorials/tutorial04.zip" class="nu-button">Download Tutorial Files <i class="fas fa-download"></i></a></p>
+<p><a href="/spring2025/course-files/tutorials/tutorial03.zip" class="nu-button">Download Tutorial Files <i class="fas fa-download"></i></a></p>
 
-<p>Download the <code class="highlighter-rouge">tutorial04.zip</code> file, unzip it and move the unzipped tutorial04 folder into the <code class="highlighter-rouge">csci344/tutorials</code> folder (see diagram below).</p>
+<p>Download the <code class="highlighter-rouge">tutorial03.zip</code> file, unzip it and move the unzipped tutorial03 folder into the <code class="highlighter-rouge">csci344/tutorials</code> folder (see diagram below).</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>csci344
     |-- tutorials
     │   |-- tutorial02
     │   |-- tutorial03
-    │   |-- tutorial04
     |   ...
     |
     |-- homework
@@ -155,20 +162,20 @@
 </code></pre></div></div>
 
 <h3 id="1-create-a-nodejs-application">1. Create a node.js application</h3>
-<ol class="compact">
+<ol>
   <li>Open your entire <code class="highlighter-rouge">csci344</code> directory in VS Code</li>
   <li>Then, open your terminal in VS Code (<strong><code class="highlighter-rouge">View &gt;&gt; Terminal</code></strong> in the top menu).</li>
-  <li>Use the <code class="highlighter-rouge">cd</code> command to navigate to your <code class="highlighter-rouge">tutorial04</code> directory (within your <code class="highlighter-rouge">csci338</code> directory) in your terminal.</li>
-  <li>Verify that you’re in the <code class="highlighter-rouge">tutorial04</code> directory by typing <code class="highlighter-rouge">pwd</code>.</li>
-  <li>Finally, initialize a new node project as follows:</li>
+  <li>Use the <code class="highlighter-rouge">cd</code> command to navigate to your <code class="highlighter-rouge">tutorial03</code> directory (within your <code class="highlighter-rouge">csci338</code> directory) in your terminal.</li>
+  <li>Verify that you’re in the <code class="highlighter-rouge">tutorial03</code> directory by typing <code class="highlighter-rouge">pwd</code>.</li>
+  <li>Finally, initialize a new node project as follows:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> npm init <span class="nt">-y</span>
+</code></pre></div>    </div>
+  </li>
 </ol>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm init <span class="nt">-y</span>
-</code></pre></div></div>
+<p>If you did this correctly, a <code class="highlighter-rouge">package.json</code> file should have been created at the root of your <code class="highlighter-rouge">tutorial03</code> directory. <code class="highlighter-rouge">package.json</code> is a configuration file that helps you to (among other things):</p>
 
-<p>If you did this correctly, a <code class="highlighter-rouge">package.json</code> file should have been created at the root of your <code class="highlighter-rouge">tutorial04</code> directory. <code class="highlighter-rouge">package.json</code> is a configuration file that helps you to (among other things):</p>
-
-<ol class="compact">
+<ol>
   <li>Keep track of various dependencies that you install to make a client-side web app, and</li>
   <li>Run various testing and compilation scripts on the command line.</li>
 </ol>
@@ -191,10 +198,10 @@
 found 0 vulnerabilities
 </code></pre></div></div>
 
-<p>You should also notice that a <code class="highlighter-rouge">node_modules</code> directory has been created inside of <code class="highlighter-rouge">tutorial04</code>, which contains the third-party modules (tailwind and some dependencies) that you just downloaded from the Internet. We’ll talk more about this in the coming weeks.</p>
+<p>You should also notice that a <code class="highlighter-rouge">node_modules</code> directory has been created inside of <code class="highlighter-rouge">tutorial03</code>, which contains the third-party modules (tailwind and some dependencies) that you just downloaded from the Internet. We’ll talk more about this in the coming weeks.</p>
 
 <blockquote>
-  <p><strong>Pro Tip</strong>: Typically, you exclude third-party packages (like the ones in your <code class="highlighter-rouge">node_modules</code> folder) from version control. To do this in git, create a <code class="highlighter-rouge">.gitignore</code> file and specify all of the files and folders that you do not want to track. Note that this has already been done for you: if you open the <code class="highlighter-rouge">tutorial04/.gitignore</code> file in VS Code, you can see that <code class="highlighter-rouge">.gitignore</code> has excluded the <code class="highlighter-rouge">node_modules</code> folder.</p>
+  <p><strong>Pro Tip</strong>: Typically, you exclude third-party packages (like the ones in your <code class="highlighter-rouge">node_modules</code> folder) from version control. To do this in git, create a <code class="highlighter-rouge">.gitignore</code> file and specify all of the files and folders that you do not want to track. Note that this has already been done for you: if you open the <code class="highlighter-rouge">tutorial03/.gitignore</code> file in VS Code, you can see that <code class="highlighter-rouge">.gitignore</code> has excluded the <code class="highlighter-rouge">node_modules</code> folder.</p>
 </blockquote>
 
 <h3 id="3-configure-tailwind-via-the-tailwindconfigjs-file">3. Configure Tailwind via the <code class="highlighter-rouge">tailwind.config.js</code> file</h3>
@@ -231,7 +238,7 @@ found 0 vulnerabilities
 <p>When you’re done, your <code class="highlighter-rouge">package.json</code> file should look like this:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tutorial04"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tutorial03"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.js"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -268,10 +275,11 @@ found 0 vulnerabilities
 
 <blockquote>
   <p><strong>Tip:</strong> Take a look at the <code class="highlighter-rouge">public/output.css</code> file in your code editor.</p>
-  <ul class="compact">
+  <ul>
     <li>This file is generated by the tailwind bundler (which is run via  the <code class="highlighter-rouge">npm run build:tailwind</code> command).</li>
     <li>You don’t edit this file (or your edits will be overwritten) but this is the actual file that your browser will end up reading.</li>
   </ul>
+
 </blockquote>
 
 <h3 id="7-link-your-compiled-tailwind-stylesheet">7. Link your compiled tailwind stylesheet</h3>
@@ -300,11 +308,11 @@ found 0 vulnerabilities
 <h3 id="8-install-tailwind-css-intellisense">8. Install Tailwind CSS IntelliSense</h3>
 <p>Finally, to make it more convenient for you to use the Tailwind library, please install the <strong>“Tailwind CSS IntelliSense”</strong> extension in VS Code. You will click the “Extensions” icon (left toolbar, looks like 4 squares), search for <strong>“Tailwind CSS IntelliSense”</strong>, and install it:</p>
 
-<p><img class="large frame" src="/spring2025/assets/images/tutorials/tutorial04/extension.png" /></p>
+<p><img class="large frame" src="/spring2025/assets/images/tutorials/tutorial03/extension.png" /></p>
 
 <h3 id="9-review">9. Review</h3>
 <p>To recap what you’ve done, you:</p>
-<ol class="compact">
+<ol>
   <li>Created a new Node.js project (<code class="highlighter-rouge">npm init -y</code>)</li>
   <li>Installed the dependencies (external JavaScript libraries) that allow you to work with tailwind (<code class="highlighter-rouge">npm install -D tailwindcss</code>)</li>
   <li>Configured tailwind to “watch” your <code class="highlighter-rouge">index.html</code> file (within <code class="highlighter-rouge">tailwind.config.js</code>) so that it automatically builds your CSS file when you make changes.</li>
@@ -324,7 +332,7 @@ found 0 vulnerabilities
 <h2 id="your-tasks">Your Tasks</h2>
 <p>To get a sense of what the Tailwind CSS library offers, you are going to create the following “card” using the Tailwind CSS classes. When your done, your <code class="highlighter-rouge">index.html</code> file should produce this web page:</p>
 
-<p><img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial04/tailwind-screenshot.png" /></p>
+<p><img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial03/tailwind-screenshot.png" /></p>
 
 <h3 id="1-add-the-starter-html-code">1. Add the starter HTML code</h3>
 <p>Let’s start our Tailwind experiment by pasting the code block below <strong><em>within the body tag</em></strong> of our <code class="highlighter-rouge">index.html</code> file. These are the HTML instructions for producing an “unstyled” card:</p>
@@ -353,7 +361,7 @@ found 0 vulnerabilities
 
 <p>After adding the above code within the body tag, go ahead and preview your <code class="highlighter-rouge">index.html</code> file in the browser using live server. It should look something like this:</p>
 
-<p><img class="small" src="/spring2025/assets/images/tutorials/tutorial04/tailwind-screenshot-unformatted.png" /></p>
+<p><img class="small" src="/spring2025/assets/images/tutorials/tutorial03/tailwind-screenshot-unformatted.png" /></p>
 
 <h3 id="2-make-some-tailwind-customizations">2. Make some Tailwind customizations</h3>
 <p>Although Tailwind comes with a baseline set of styles, you can override them as you like in order to customize the look and feel of your website. Let’s make a few customizations:</p>
@@ -408,7 +416,7 @@ found 0 vulnerabilities
 <h3 id="3-center-the-card">3. Center the card</h3>
 <p>As you may recall from Tutorial 3, to center the child, you need to set some style properties on the parent (usually either flex or grid). Given this, you will add the following classes to the outermost div:</p>
 
-<ul class="compact">
+<ul>
   <li>font-Poppins (which you just defined in your <code class="highlighter-rouge">tailwind.config.js</code> file)</li>
   <li>flex</li>
   <li>flex-col</li>
@@ -429,7 +437,7 @@ found 0 vulnerabilities
 <h3 id="4-add-styling-to-the-card">4. Add styling to the card</h3>
 <p>Now you will add styling to the <code class="highlighter-rouge">div</code> that holds all of the card information by adding the following Tailwind classes:</p>
 
-<ul class="compact">
+<ul>
   <li>max-w-[350px]  (note that there are some standard styles, but you can also define your own by surrounding a custom unit with hard brackets)</li>
   <li>flex</li>
   <li>flex-col</li>
@@ -439,7 +447,7 @@ found 0 vulnerabilities
 
 <p>When you’re done with steps 1-4, your page should look like this…</p>
 
-<p><img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial04/wip-1.png" /></p>
+<p><img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial03/wip-1.png" /></p>
 
 <p>…and your code should look something like this…</p>
 
@@ -453,7 +461,7 @@ found 0 vulnerabilities
 <h3 id="5-style-the-image">5. Style the image</h3>
 <p>Add the following Tailwind classes to the image…</p>
 
-<ul class="compact">
+<ul>
   <li>max-h-56</li>
   <li>object-cover</li>
   <li>rounded-t-md</li>
@@ -464,11 +472,11 @@ found 0 vulnerabilities
 <h3 id="6-style-the-rest-of-the-content">6. Style the rest of the content</h3>
 <p>Now that you get the basic idea, style the rest of the card using the following styles (see screen shot below):</p>
 
-<p><img class="large frame" src="/spring2025/assets/images/tutorials/tutorial04/the-rest.png" alt="Card code sample" /></p>
+<p><img class="large frame" src="/spring2025/assets/images/tutorials/tutorial03/the-rest.png" alt="Card code sample" /></p>
 
 <p>If you’ve done everything correctly, your page should now look completed:</p>
 
-<p><img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial04/tailwind-screenshot.png" /></p>
+<p><img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial03/tailwind-screenshot.png" /></p>
 
 <h3 id="7-simplify-the-buttons">7. Simplify the buttons</h3>
 <p>One last thing to note in this tutorial is that sometimes you may find yourself writing repetitive code. For instance, the two buttons you just made have many of the same classes:</p>
@@ -508,36 +516,38 @@ found 0 vulnerabilities
 <h3 id="8-takeaways-is-this-really-a-better-way-to-do-things">8. Takeaways: Is this really a better way to do things?</h3>
 <p>One thing you might be thinking is “geee, this is really repetitive and tedious!” Particularly if you’ve been hand-coding CSS for a while, this approach may seem pretty verbose. But consider the following “real world” scenarios:</p>
 
-<ul class="compact">
+<ul>
   <li>Eventually, someone will have to learn your CSS system / conventions, which is also time consuming (and likely far less consistent than a framework)</li>
   <li>If your new developer already knows Tailwind, they can hit the ground running without any learning curve (at least on the CSS side of things).</li>
   <li>The developers of Tailwind and other design systems have spent years abstracting common design patterns so you don’t have to. The framework will ultimately save time.</li>
   <li>Some design systems are cross-platform (iOS, Android, etc.) – so once the design team creates the customized Tailwind theme, each team (web team, iOS team, etc.) can apply the same rules and classes for a consistent, cross-platform look and feel.</li>
 </ul>
 
-<h2 id="recommended-tasks-optional">Recommended Tasks (Optional)</h2>
-<p>If you think that front-end web dev might be something you’d like to pursue, I recommend that you spend a little more time with the Tailwind framework by looking at some pre-made templates and widgets. Here’s a suggested set of tasks:</p>
+<blockquote class="info">
+  <h2 id="recommended-tasks-optional">Recommended Tasks (Optional)</h2>
+  <p>If you think that front-end web dev might be something you’d like to pursue, I recommend that you spend a little more time with the Tailwind framework by looking at some pre-made templates and widgets. Here’s a suggested set of tasks:</p>
 
-<ol>
-  <li>Browse some of the free Tailwind widget / theme websites:
-    <ul class="compact">
-      <li><a href="https://tailwindcss.com/docs/container" target="_blank">Tailwind Documentation</a></li>
-      <li><a href="https://www.hyperui.dev/" target="_blank">HyperUI</a></li>
-      <li><a href="https://merakiui.com/components" target="_blank">MerakiUI</a></li>
-      <li><a href="https://www.tailwindawesome.com/?price=free&amp;type=template" target="_blank">Tailwind Awesome</a></li>
-    </ul>
-  </li>
-  <li>Try to find some HTML snippets common widgets (such as the ones listed below), and paste them into the <code class="highlighter-rouge">get_creative.html</code> webpage:
-    <ul class="compact">
-      <li>A header / nav bar</li>
-      <li>A landing section (sometimes called a “Hero Section”)</li>
-      <li>A card</li>
-      <li>A footer</li>
-    </ul>
-  </li>
-  <li>Try to customize the colors, widths, etc. of the frankenstein page you just made.</li>
-  <li>If you want to take a look at a sample, take a look at <a href="https://vanwars.github.io/csci344/tutorials/tutorial04/get-creative.html" target="_blank">Sarah’s Tailwind experiments</a>.</li>
-</ol>
+  <ol>
+    <li>Browse some of the free Tailwind widget / theme websites:
+      <ul>
+        <li><a href="https://tailwindcss.com/docs/container" target="_blank">Tailwind Documentation</a></li>
+        <li><a href="https://www.hyperui.dev/" target="_blank">HyperUI</a></li>
+        <li><a href="https://merakiui.com/components" target="_blank">MerakiUI</a></li>
+        <li><a href="https://www.tailwindawesome.com/?price=free&amp;type=template" target="_blank">Tailwind Awesome</a></li>
+      </ul>
+    </li>
+    <li>Try to find some HTML snippets common widgets (such as the ones listed below), and paste them into the <code class="highlighter-rouge">get_creative.html</code> webpage:
+      <ul>
+        <li>A header / nav bar</li>
+        <li>A landing section (sometimes called a “Hero Section”)</li>
+        <li>A card</li>
+        <li>A footer</li>
+      </ul>
+    </li>
+    <li>Try to customize the colors, widths, etc. of the frankenstein page you just made.</li>
+    <li>If you want to take a look at a sample, take a look at <a href="https://vanwars.github.io/csci344/tutorials/tutorial03/get-creative.html" target="_blank">Sarah’s Tailwind experiments</a>.</li>
+  </ol>
+</blockquote>
 
 <h2 id="what-to-turn-in">What to Turn In</h2>
 <p>Please create a link from your homepage to your completed tutorial 4 (see <a href="https://vanwars.github.io/csci344" target="_blank">Sarah’s homepage</a> for an example). Then, commit and push all of your edits to GitHub and, paste a link to your GitHub Repository and to your GitHub pages in the Moodle submission.</p>
