@@ -1,14 +1,12 @@
 ---
 layout: topic
-title: Security & Authentication
+title: Databases & Object-Relational Mappings
 type: topic
-num: 14
+num: 13
 description: >
-    Web security ensures the protection of applications from common vulnerabilities like XSS, CSRF, and SQL injection. Authentication is the process of verifying user identity so that the application can tailor content and functionality while maintaining data privacy. In this unit, you will learn learn to identify risks and implement best practices such as input validation, secure authentication, and encryption. You will also learn about authentication strategies (e.g., JWT) in order to implement a secure login system.
+    Databases store and organize data used by web applications, while Object-Relational Mapping (ORM) tools allow developers to interact with databases using object-oriented programming. ORMs like SQLAlchemy simplify the process of querying, updating, and managing data in relational databases. Learning about databases and ORMs is crucial for building data-driven web applications.
 draft: 0
-start_date: 2025-04-21
-lectures: [24, 25]
-tutorials: [14]
+start_date: 2025-04-11
+lectures: [22, 23]
+tutorials: [12, 13]
 ---
-
-TBD

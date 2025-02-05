@@ -1,14 +1,12 @@
 ---
 layout: topic
-title: Python
+title: React
 type: topic
 description: >
-    Python is a versatile programming language widely used for web development, data analysis, and scripting. Students will learn the basics of Python syntax, functions, and libraries like Flask or FastAPI for server-side development. This topic bridges the gap between front-end and back-end development.
+    React is a popular JavaScript library for building user interfaces, especially single-page applications (SPAs). It allows developers to create reusable components and manage the state of an application efficiently through a virtual DOM. React's declarative approach simplifies UI development and is widely adopted in modern web development.
 num: 10
 draft: 0
-start_date: 2025-04-02
-lectures: [20]
-tutorials: [10]
+start_date: 2025-03-21
+lectures: [17, 18, 19]
+tutorials: [8, 9]
 ---
-
-TBD

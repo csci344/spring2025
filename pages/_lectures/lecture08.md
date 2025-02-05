@@ -3,9 +3,9 @@ layout: module
 title: Design with Accessibility in Mind
 type: lecture
 num: 8
-draft: 1
+draft: 0
 start_date: 2025-02-05
-slides_url: https://docs.google.com/presentation/d/1UymkCliLyKWju3wAkc5juFI4whjaFFHD8J8gJfY8Vbs/edit?usp=sharing
+slides_url: https://docs.google.com/presentation/d/1JkWpMpOrohF30GFrM3zdyz-rqiOKGCsU/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings: 
     - type: reading
       citation: > 

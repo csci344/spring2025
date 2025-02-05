@@ -1,12 +1,12 @@
 ---
 layout: topic
-title: JavaScript Review
+title: "JavaScript: HTTP requests and the Fetch API"
+description: > 
+    The Fetch API is a modern JavaScript interface for making HTTP requests to servers and handling responses. It simplifies fetching resources like JSON data, files, or text from external APIs or web services using promises for asynchronous operations. Understanding how to use the Fetch API, handle response statuses, and work with data formats like JSON is key to building dynamic, data-driven web applications.
 type: topic
-description: >
-    Today's class will be dedicated to JavaScript programming review. Please review the study guide and practice problems, and come prepared to ask questions!
 num: 8
 draft: 0
-start_date: 2025-03-17
-lectures: [16]
+start_date: 2025-03-03
+lectures: [14, 15]
+tutorials: [7]
 ---
-

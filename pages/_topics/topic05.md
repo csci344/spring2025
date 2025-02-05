@@ -1,14 +1,14 @@
 ---
 layout: topic
-title: "JavaScript: Foundational Concepts"
+title: "JavaScript: Foundational Concepts & Programming Review"
 description: > 
-    JavaScript is a versatile, high-level programming language that runs in web browsers, enabling interactivity and dynamic content. It allows developers to manipulate the Document Object Model (DOM) and implement features like animations, forms, and real-time updates. This unit introduces core JavaScript concepts like variables, data types, functions, loops, and event handling. By the end of this section, you will know enough to start building simple, interactive web applications.
+    JavaScript is a versatile, high-level programming language that runs in web browsers, enabling interactivity and dynamic content. In this unit, we will review basic programming concepts using JavaScript.
 type: topic
 num: 5
 draft: 0
-start_date: 2025-02-12
-lectures: [9, 10, 11]
-tutorials: [4, 5]
+start_date: 2025-02-10
+lectures: [9]
+tutorials: [4]
 questions:
     - What is the difference between an interpreted and a compiled language?
     - What does it mean that JavaScript is not a "strongly typed language"?

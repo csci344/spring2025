@@ -1,12 +1,12 @@
 ---
 layout: topic
-title: Databases & Object-Relational Mappings
+title: Servers
 type: topic
 num: 12
 description: >
-    Databases store and organize data used by web applications, while Object-Relational Mapping (ORM) tools allow developers to interact with databases using object-oriented programming. ORMs like SQLAlchemy simplify the process of querying, updating, and managing data in relational databases. Learning about databases and ORMs is crucial for building data-driven web applications.
+    Server-side architectures define how web applications process requests and serve responses from the server. This includes understanding client-server models, HTTP request-response cycles, and technologies like RESTful APIs and GraphQL. A solid grasp of server-side architecture is essential for building scalable and efficient web applications.
 draft: 0
-start_date: 2025-04-11
-lectures: [22, 23]
-tutorials: [12, 13]
+start_date: 2025-04-07
+lectures: [21]
+tutorials: [11]
 ---

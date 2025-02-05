@@ -1,12 +1,12 @@
 ---
 layout: topic
-title: "JavaScript: HTTP requests and the Fetch API"
+title: "JavaScript: Functional Programming"
 description: > 
-    The Fetch API is a modern JavaScript interface for making HTTP requests to servers and handling responses. It simplifies fetching resources like JSON data, files, or text from external APIs or web services using promises for asynchronous operations. Understanding how to use the Fetch API, handle response statuses, and work with data formats like JSON is key to building dynamic, data-driven web applications.
+    Functional programming in JavaScript emphasizes the use of pure functions, immutability, and higher-order functions to create predictable and maintainable code. It encourages a declarative style of programming, where the logic of computation is expressed in terms of functions rather than mutable states. This paradigm helps reduce bugs and enhances code reusability.
 type: topic
 num: 7
 draft: 0
-start_date: 2025-03-03
-lectures: [14, 15]
-tutorials: [7]
+start_date: 2025-02-24
+tutorials: [6]
+lectures: [12, 13]
 ---

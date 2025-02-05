@@ -4,7 +4,7 @@ title: Intro to JavaScript
 type: lecture
 num: 9
 draft: 1
-start_date: 2025-02-12
+start_date: 2025-02-10
 slides_url: #
 readings: 
     - type: reading

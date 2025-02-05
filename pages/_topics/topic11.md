@@ -1,12 +1,14 @@
 ---
 layout: topic
-title: Servers
+title: Python
 type: topic
-num: 11
 description: >
-    Server-side architectures define how web applications process requests and serve responses from the server. This includes understanding client-server models, HTTP request-response cycles, and technologies like RESTful APIs and GraphQL. A solid grasp of server-side architecture is essential for building scalable and efficient web applications.
+    Python is a versatile programming language widely used for web development, data analysis, and scripting. Students will learn the basics of Python syntax, functions, and libraries like Flask or FastAPI for server-side development. This topic bridges the gap between front-end and back-end development.
+num: 11
 draft: 0
-start_date: 2025-04-07
-lectures: [21]
-tutorials: [11]
+start_date: 2025-04-02
+lectures: [20]
+tutorials: [10]
 ---
+
+TBD

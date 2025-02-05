@@ -1,11 +1,14 @@
 ---
 layout: topic
-title: Course Synthesis
+title: Security & Authentication
 type: topic
-description: > 
-    In this unit, we will reflect on the concepts and skills learned throughout the course, including integrating frontend and backend technologies, ensuring security, and employing best practices in design and coding. We will also discuss some of the considerations not covered in this course and consider some next steps if you want to enhance your learning.
 num: 14
+description: >
+    Web security ensures the protection of applications from common vulnerabilities like XSS, CSRF, and SQL injection. Authentication is the process of verifying user identity so that the application can tailor content and functionality while maintaining data privacy. In this unit, you will learn learn to identify risks and implement best practices such as input validation, secure authentication, and encryption. You will also learn about authentication strategies (e.g., JWT) in order to implement a secure login system.
 draft: 0
-start_date: 2025-04-28
-lectures: [26]
+start_date: 2025-04-21
+lectures: [24, 25]
+tutorials: [14]
 ---
+
+TBD
