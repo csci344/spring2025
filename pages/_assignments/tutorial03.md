@@ -8,21 +8,6 @@ points: 6
 num: 3
 start_date: 2025-02-07
 due_date: 2025-02-10
-readings:
-    - type: reading
-      citation: > 
-        <a href="https://designlab.com/blog/guide-to-ux-design-systems" target="_blank">Design Systems 101: An Introductory Guide</a>
-      required: 1
-    - type: reading
-      citation: > 
-        <a href="https://johnpolacek.medium.com/by-the-numbers-a-year-and-half-with-atomic-css-39d75b1263b4" target="_blank">By The Numbers: A Year and Half with Atomic CSS</a>: How design systems improve efficiency
-    - type: reading
-      citation: > 
-        <a href="https://www.creative-tim.com/twcomponents/cheatsheet" target="_blank">Tailwind Cheatsheet</a>
-      skim: 1
-    - type: reading
-      citation: >
-        <a href="https://www.youtube.com/watch?v=sNXfI3woBEw" target="_blank">Get Started With Tailwind CSS</a>: Video tutorial that walks you through today's activity
 ---
 
 <style>
@@ -46,6 +31,8 @@ readings:
 
 {:.info}
 > **About Today's Tutorial:** Today's tutorial is based on the <a href="https://www.youtube.com/watch?v=sNXfI3woBEw" target="_blank">Get Started With Tailwind CSS</a> video tutorial by John Komarnicki. If you would like additional context / explanation, please check out the video!
+>
+> Here are today's <a href="https://docs.google.com/presentation/d/1CeW14CVyrmWR1bZiMRMOtKpDq8T1hQP8/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">introductory slides</a>.
 
 
 ## Suggested Readings
@@ -82,7 +69,7 @@ csci344
 ### 1. Create a node.js application
 1. Open your entire `csci344` directory in VS Code
 1. Then, open your terminal in VS Code (**`View >> Terminal`** in the top menu). 
-1. Use the `cd` command to navigate to your `tutorial03` directory (within your `csci338` directory) in your terminal.
+1. Use the `cd` command to navigate to your `tutorial03` directory (within your `csci344` directory) in your terminal.
 1. Verify that you're in the `tutorial03` directory by typing `pwd`. 
 1. Finally, initialize a new node project as follows:
     ```bash
