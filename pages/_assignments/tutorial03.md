@@ -88,7 +88,7 @@ If you did this correctly, a `package.json` file should have been created at the
 Next, you will install the Tailwind library by issuing the following command on the terminal:
 
 ```bash
-npm install -D tailwindcss
+npm install -D tailwindcss@3.4.11
 ```
 
 This command asks the node package manager to go out to the Internet and download the tailwind.css library and any additional dependencies that tailwind requires. When the download is complete, you should see output on your terminal that looks like this:
