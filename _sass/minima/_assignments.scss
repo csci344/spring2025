@@ -235,6 +235,22 @@ ol.readings, ul.readings {
     }
 }
 
+blockquote.info.info.new {
+    background-color: #dac0202b;
+    h2 {
+        color: #86760d;
+    }
+    .badge.info {
+        background-color: #86760d;
+        color: white;
+    }
+    a, a:hover, a:active, a:visited, a:link {
+        border-color: #86760d;
+        background: transparent;
+    }
+}
+
+
 blockquote.info {
     background-color: #0076a514;
     padding: 25px 50px;

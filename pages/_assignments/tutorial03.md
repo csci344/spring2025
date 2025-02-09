@@ -7,7 +7,7 @@ draft: 0
 points: 6
 num: 3
 start_date: 2025-02-07
-due_date: 2025-02-10
+due_date: 2025-02-12
 ---
 
 <style>
@@ -28,6 +28,11 @@ due_date: 2025-02-10
         margin-bottom: 20px;
     }
 </style>
+
+{:.info.new}
+> ## <span class="badge info">New</span> Getting Started Video Walkthrough
+> Here is a <a href="https://drive.google.com/drive/folders/1w8fkXxUfbAKrICKmWvrsLOs_sLtc5c-x?usp=sharing" target="_blank">video walkthrough</a> of Tutorial 3. Sorry about the confusion in class on Friday!
+
 
 {:.info}
 > **About Today's Tutorial:** Today's tutorial is based on the <a href="https://www.youtube.com/watch?v=sNXfI3woBEw" target="_blank">Get Started With Tailwind CSS</a> video tutorial by John Komarnicki. If you would like additional context / explanation, please check out the video!
@@ -204,7 +209,7 @@ Your entire `index.html` file should look something like this (ensure that your 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./public/output.css">
-    <title>Tutorial 4: Tailwind</title>
+    <title>Tutorial 3: Tailwind</title>
 </head>
 
 <body></body>
@@ -452,6 +457,6 @@ One thing you might be thinking is "geee, this is really repetitive and tedious!
 > 1. If you want to take a look at a sample, take a look at <a href="https://vanwars.github.io/csci344/tutorials/tutorial03/get-creative.html" target="_blank">Sarah's Tailwind experiments</a>.
 
 ## What to Turn In
-Please create a link from your homepage to your completed tutorial 4 (see <a href="https://vanwars.github.io/csci344" target="_blank">Sarah's homepage</a> for an example). Then, commit and push all of your edits to GitHub and, paste a link to your GitHub Repository and to your GitHub pages in the Moodle submission.
+Please create a link from your homepage to your completed tutorial 3 (see <a href="https://vanwars.github.io/csci344" target="_blank">Sarah's homepage</a> for an example). Then, commit and push all of your edits to GitHub and, paste a link to your GitHub Repository and to your GitHub pages in the Moodle submission.
 
 * If you collaborated with someone, please list your partner's name in the comments section.
