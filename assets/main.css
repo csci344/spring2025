@@ -183,6 +183,11 @@ ol.readings li, ul.readings li { margin-top: 0px; }
 .lectures ol, .schedule ol, .readings ol { margin-top: 0px; margin-bottom: 0px; padding-left: 14px; }
 .lectures ol li, .schedule ol li, .readings ol li { margin-bottom: 5px; }
 
+blockquote.info.info.new { background-color: #dac0202b; }
+blockquote.info.info.new h2 { color: #86760d; }
+blockquote.info.info.new .badge.info { background-color: #86760d; color: white; }
+blockquote.info.info.new a, blockquote.info.info.new a:hover, blockquote.info.info.new a:active, blockquote.info.info.new a:visited, blockquote.info.info.new a:link { border-color: #86760d; background: transparent; }
+
 blockquote.info { background-color: #0076a514; padding: 25px 50px; border-width: 0; padding: 20px 0px 20px 40px; border-radius: 10px; }
 blockquote.info ul, blockquote.info ol, blockquote.info p { margin-top: 15px; }
 blockquote.info ul li, blockquote.info ol li, blockquote.info p li { line-height: 1.8em; }
