@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Quiz 1: HTML + CSS</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="two-column">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1LqUWReoyqDSOHq3PyGYZvbgdll0_SHl6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                <ol class="side-menu">
+  <li><a href="#paper-quiz">Paper Quiz</a></li>
+  <li><a href="#introduction">Introduction</a>
+    <ol>
+      <li><a href="#guidelines">Guidelines</a></li>
+    </ol>
+  </li>
+  <li><a href="#set-up">Set-Up</a></li>
+  <li><a href="#your-tasks">Your Tasks</a>
+    <ol>
+      <li><a href="#part1">Part 1. HTML Linking [10pts]</a></li>
+      <li><a href="#part2">Part 2. Header [20pts]</a></li>
+      <li><a href="#part3">Part 3. Google Fonts &amp; H1, H2 Styling [15pts]</a></li>
+      <li><a href="#part4">Part 4. Main [25pts]</a></li>
+      <li><a href="#part5">Part 5. Accessibility [10pts]</a></li>
+      <li><a href="#part6">Part 6: Responsive Layout [15pts]</a></li>
+      <li><a href="#part7">Part 7: Add a link from your homepage [5pts]</a></li>
+    </ol>
+  </li>
+  <li><a href="#submit-to-the-moodle">Submit to the Moodle</a>
+    <ol>
+      <li><a href="#before-you-submit">Before you submit</a>
+        <ol>
+          <li><a href="#">Desktop Layout</a></li>
+          <li><a href="#">Tablet / Mobile</a></li>
+        </ol>
+      </li>
+      <li><a href="#submit-to-the-moodle-1">Submit to the Moodle</a></li>
+    </ol>
+  </li>
+</ol>
+
+            </aside>
+            <article>
+                
+
+    
+        <h1>Quiz 1: HTML + CSS</h1>
+    
+ 
+                <style>
+    img.preview {
+        max-width: 60%;
+        min-width: 500px;
+    }
+
+    .verify {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: 4fr 2fr;
+        column-gap: 30px;
+        align-items: flex-start;
+    }
+    .verify > section {
+        border: solid 1px #CCC;
+        border-radius: 4px;
+        padding: 10px;
+    }
+    .verify img {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    @media screen and (max-width: 800px) {
+        .verify {
+            margin-top: 0;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            padding: 20px;
+            justify-items: center;
+        }
+
+        .tablet {
+            max-width: 400px;
+        }
+    }
+</style>
+
+<h2 id="paper-quiz">Paper Quiz</h2>
+<p>Once you complete the <a href="https://docs.google.com/document/d/1UKlyCzrymBubJRnbMFpfHU-l_Z_xTaDR/edit?usp=sharing&amp;ouid=113376576186080604800&amp;rtpof=true&amp;sd=true" target="_blank">written portion of the quiz</a>, please complete the tasks below.</p>
+
+<h2 id="introduction">Introduction</h2>
+<p>For the coding portion of this quiz, you will be replicating part of the Taco Temple interface as pictured below:</p>
+
+<p><img class="large frame" src="/spring2025/assets/images/quizzes/quiz01/tt-screenshot.png" alt="Taco Temple Screenshot" /></p>
+
+<blockquote>
+  <h3 id="guidelines">Guidelines</h3>
+  <ul class="compact">
+    <li>Read the instructions that are outlined under each section very carefully.</li>
+    <li>Complete as many tasks as you can by the end of the quiz.</li>
+    <li>Make your page look as close to the screenshots / demos as possible.</li>
+    <li>You <strong>may</strong> use your notes, any sample code, any prior work you’ve completed, and the Internet</li>
+    <li>You <strong>may not</strong> move the images into a different folder to make the image linking task easier.</li>
+    <li>You <strong>may not</strong> communicate with anyone during the quiz or use ChatGPT</li>
+    <li>Partial credit given. Just do your best!</li>
+  </ul>
+</blockquote>
+
+<h2 id="set-up">Set-Up</h2>
+
+<p><a href="/spring2025/course-files/quizzes/quiz01.zip" class="nu-button">Quiz 1 Starter Files <i class="fas fa-download"></i></a></p>
+
+<ul>
+  <li>Download the starter files and unzip them. They should be unzipped in a folder called <code class="highlighter-rouge">quiz01</code>.</li>
+  <li>Create a <code class="highlighter-rouge">quizzes</code> folder inside of your <code class="highlighter-rouge">csci344</code> folder. Move your <code class="highlighter-rouge">quiz01</code> folder into your <code class="highlighter-rouge">csci344/quizzes</code> folder.</li>
+  <li>Open your entire <code class="highlighter-rouge">csci344</code> folder in VS Code.</li>
+</ul>
+
+<p>Your directory structure should look something like this (it’s OK if your file structure looks different, so long as the quizzes folder looks like the one below):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>csci344
+├── homework
+├── lectures
+├── quizzes
+│   └── quiz01
+├── tutorials
+...
+</code></pre></div></div>
+
+<p>When you’re done with that, complete the Parts 1-7 as described below:</p>
+
+<ol class="compact">
+  <li>(10pts) <a href="#part1">HTML Linking</a></li>
+  <li>(20pts) <a href="#part2">Header</a></li>
+  <li>(15pts) <a href="#part3">Google Fonts</a></li>
+  <li>(25pts) <a href="#part4">Main</a></li>
+  <li>(10pts) <a href="#part5">Accessibility</a></li>
+  <li>(15pts) <a href="#part6">Responsive layout</a></li>
+  <li>(5pts) <a href="#part7">Link from your homepage</a></li>
+</ol>
+
+<h2 id="your-tasks">Your Tasks</h2>
+
+<h3 id="part1">Part 1. HTML Linking [10pts]</h3>
+<p>Currently, all of the image links are broken because their source is pointing to a dummy location (<code class="highlighter-rouge">src="#"</code>). Please fix the broken image links to the logo image and all of the food images. Take a look at the screenshots to see what the images ought to look like.</p>
+
+<h3 id="part2">Part 2. Header [20pts]</h3>
+<p>Make the header section look like the picture below, following the guidelines provided:</p>
+
+<ul class="compact">
+  <li>[10pts] Use <strong>Flex</strong></li>
+  <li>[5pts] Links should be white with no underline</li>
+  <li>[5pts] Don’t forget the spacing surrounding the image and navigation (i.e., the content shouldn’t be too close to the sides)</li>
+</ul>
+
+<p><img class="large" src="/spring2025/assets/images/quizzes/quiz01/header.png" /></p>
+
+<h3 id="part3">Part 3. Google Fonts &amp; H1, H2 Styling [15pts]</h3>
+
+<ul class="compact">
+  <li>[10pts] Use the “Passion One” Google font to style the <code class="highlighter-rouge">h1</code>, <code class="highlighter-rouge">h2</code>, and <code class="highlighter-rouge">h3</code> tags.</li>
+  <li>[2.5pts] Center-align the <code class="highlighter-rouge">h1</code> tag (Our Menu)</li>
+  <li>[2.5pts] Add some top margin to the <code class="highlighter-rouge">h1</code> and <code class="highlighter-rouge">h2</code> tags.</li>
+</ul>
+
+<p>When you’re done, the fonts should look like the ones pictured in <a href="#part4">Part 4</a>.</p>
+
+<h3 id="part4">Part 4. Main [25pts]</h3>
+<p>Within the <code class="highlighter-rouge">main</code> section of your HTML page, create layout shown below by following the guidelines:</p>
+
+<ul class="compact">
+  <li>[12.5pts] The section with the class of “cards” should be a two-column grid (each column should be the same width).
+    <ul>
+      <li>Hint: you’ll only need to specify the columns, <strong>not</strong> the rows, as the cards will be positioned into the next available grid cell by default.</li>
+      <li>Note the spacing between columns and rows</li>
+    </ul>
+  </li>
+  <li>[12.5pts] Each section with a class of “card” should also be a two-column grid (the second column should be narrower than the first).
+    <ul>
+      <li>Make sure you add a border around each card</li>
+      <li>Make sure you apply some padding within each card</li>
+    </ul>
+  </li>
+</ul>
+
+<p><a style="text-decoration: none; border: none;" href="/spring2025/assets/images/quizzes/quiz01/main.png" target="_blank"><img class="frame large" src="/spring2025/assets/images/quizzes/quiz01/main.png" /></a></p>
+
+<h3 id="part5">Part 5. Accessibility [10pts]</h3>
+<p>Use the WAVE browser extension to fix any accessibility errors. When you’re done, you should have no accessibility errors.</p>
+<ul>
+  <li>You <strong>do NOT</strong> have to submit a screenshot of your accessibility report.</li>
+  <li>You <strong>do</strong> have to correct all the errors.</li>
+</ul>
+
+<p><img class="medium" src="/spring2025/assets/images/quizzes/quiz01/wave.png" /></p>
+
+<h3 id="part6">Part 6: Responsive Layout [15pts]</h3>
+<p>Create a media query that activates when the width of the screen is <strong>800px or less</strong>. Within the media query, implement the following rules:</p>
+
+<ul>
+  <li>[10pts] Overide the section with the class of “cards” so that it’s a one-column grid.</li>
+  <li>[5pts] Target the <code class="highlighter-rouge">nav</code> element and set its display to “none” so that the navigation does not display in the tablet or mobile views.</li>
+</ul>
+
+<h3 id="part7">Part 7: Add a link from your homepage [5pts]</h3>
+<ol>
+  <li>Update your homepage by adding a link to the <code class="highlighter-rouge">index.html</code> file that you made in this quiz (and make sure you are using a relative link). Sarah’s quiz looks like this:
+    <ul>
+      <li><a href="https://vanwars.github.io/csci344/" target="_blank">https://vanwars.github.io/csci344/</a></li>
+    </ul>
+  </li>
+  <li>Commit and sync your changes to GitHub.</li>
+</ol>
+
+<h2 id="submit-to-the-moodle">Submit to the Moodle</h2>
+
+<h3 id="before-you-submit">Before you submit</h3>
+
+<p>Verify that you’ve completed <strong>all 7 tasks</strong> and that you’re final Taco Temple menu page (mobile/tablet and desktop) looks as similar as possible to the animations (shown below):</p>
+
+<div class="verify">
+    <section>
+        <h4>Desktop Layout</h4>
+        <img src="/spring2025/assets/images/quizzes/quiz01/desktop-ui.gif" alt="Animation of Desktop layout" />
+    </section>
+    <section class="tablet">
+        <h4>Tablet / Mobile</h4>
+        <img src="/spring2025/assets/images/quizzes/quiz01/mobile-ui.gif" alt="Animation of Tablet / Mobile layout" />
+    </section>
+</div>
+
+<h3 id="submit-to-the-moodle-1">Submit to the Moodle</h3>
+<p><strong>Please Read Carefully:</strong> To submit Quiz 1, paste the following links into the Moodle under the Quiz 1 submission section:</p>
+
+<ol>
+  <li>A link to your <strong>homepage</strong> on GitHub pages.</li>
+  <li>A link to your GitHub <strong>code repository</strong> (where your code files are stored).</li>
+</ol>
+
+<p>If your GitHub is not working for whatever reason, just zip your <strong>COMPLETED</strong> <code class="highlighter-rouge">quiz01</code> folder and upload it to the Moodle.</p>
+
+            </article>  
+        </main>
+        <footer>
+            <p>    
+                Department of Computer Science, UNC Asheville
+            </p>
+        </footer>
+        
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>
