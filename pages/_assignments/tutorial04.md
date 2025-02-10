@@ -3,17 +3,43 @@ layout: assignment-two-column
 title: Programming Review
 type: tutorial
 abbreviation: Tutorial 4
-draft: 1
+draft: 0
 points: 6
 num: 4
 start_date: 2025-02-12
 due_date: 2025-02-17
 ---
 
-TODO: Programming review: Modify this...
+<style>
 
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+        row-gap: 10px;
+        margin-bottom: 40px;
+    }
+    .grid img {
+        width: 100%;
+    }
+
+    .span2 {
+        grid-column: 1 / span 2;
+    }
+
+    @media screen and (max-width: 500px) {
+        .grid {
+            grid-template-columns: 1fr;
+        }
+        .span2 {
+            grid-column: 1 / span 1;
+        }
+    }
+</style>
 
 ## Part 1. Set Up
+
+### 1. Download and examine the code
 
 Download the Tutorial 4 zip file, unzip it, and save it inside of your `tutorials` folder: 
 
@@ -33,7 +59,7 @@ Open your index.html file inside the `tutorial04` folder and take a look at it. 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.min.js" defer></script>
     <script src="utilities.js" defer></script>
     <script src="main.js" defer></script>
-    <title>Circles</title>
+    <title>Loop & Function Practice</title>
 </head>
 
 <body>
@@ -85,7 +111,7 @@ function draw5RedSquares() {
 The most important thing to understand in the `main.js` file is that `setup()` runs when the page first loads. This means that if you want to draw anything, the `setup()` function needs to invoke the function that does the drawing.
 * Note in the code sample above, `draw5Circles()` is invoked in the setup. If you uncomment `draw5RedSquares()`, 5 squares will be drawn as well.
 
-#### B. View file in Web Browser 
+### 2. View file in Web Browser 
 Once you’ve taken a look at the code in VS Code, view it in your browser using the Live Server plugin you installed on Monday. It should look something like this:
 
 <img class="frame small" src="/spring2025/assets/images/tutorials/tutorial04/circles.png" />
@@ -112,22 +138,85 @@ Create a function called `draw5CirclesFor()` that uses a for loop to draw the sa
 Create a function called `drawNCircles(n)` that uses a for loop to draw any number of circles in a vertical column. If I invoke your function as follows: `drawNCircles(20)` it should draw 20 circles in a vertical column. Consider using different starting x and y position for your circles so that they don't draw on top of the existing ones.
 
 ### 4. For Loop - More flexibility
-Create a function called `drawNCirclesFlexible(n, size, x, y)` that uses a for loop to draw  a column of circles of any size, starting at any x, y position. If I invoke your function as follows: `drawNCirclesFlexible(30, 25, 400, 0)` it should produce the following picture:
+Create a function called `drawNCirclesFlexible(n, size, x, y)` that uses a for loop to draw  a column of circles of any size, starting at any x, y position. If I invoke your function within the `setup()` function as follows...
 
-<img class="frame small" src="/spring2025/assets/images/tutorials/tutorial04/flexi-circles.png" />
+```js
+function setup() {
+    // sets up the canvas:
+    createCanvas(canvasWidth, canvasHeight);
+
+    // code invoking the function you just wrote:
+    drawNCirclesFlexible(30, 25, 400, 0);
+    drawNCirclesFlexible(4, 100, 100, 200);
+    drawNCirclesFlexible(8, 50, 700, 100);
+
+    // draws grid at the end:
+    drawGrid(canvasWidth, canvasHeight);
+}
+``` 
+...it should produce the following picture:
+
+<img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial04/flexi-circles.png" />
 
 ### 5. For Loop - Even more flexibility
-Create a function called `drawNShapesFlexible(n, size, x, y, shape)` that uses a for loop to draw  a column of shapes of any size, starting at any x, y position. If the shape === "circle", it will draw a column of circles. Otherwise it will draw a column of squares.
+Create a function called `drawNShapesFlexible(n, size, x, y, shape)` that uses a for loop to draw  a column of shapes of any size, starting at any x, y position. If the shape === "circle", it will draw a column of circles. Otherwise it will draw a column of squares. If I invoke your function within the `setup()` function as follows...
+
+```js
+function setup() {
+    // sets up the canvas:
+    createCanvas(canvasWidth, canvasHeight);
+
+    // code invoking the function you just wrote:
+    drawNShapesFlexible(30, 30, 335, 0, "square");
+    drawNShapesFlexible(4, 100, 120, 200, "circle");
+    drawNShapesFlexible(8, 50, 725, 25, "square");
+
+    // draws grid at the end:
+    drawGrid(canvasWidth, canvasHeight);
+}
+``` 
+...it should produce the following picture (pick any color you want):
+
+<img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial04/flexi-shapes.png" />
 
 ### 6. For Loop - Still more flexibility
 Create a function called `drawNShapesDirectionFlexible(n, size, x, y, shape, direction)` that uses a for loop to draw  a column of shapes of any size, starting at any x, y position. 
 * If the shape === "circle", it will draw a column of circles. Otherwise it will draw a column of squares.
 * If direction === "row", it will draw a column of shapes. Otherwise it will draw a column of shapes.
 
+If I invoke your function within the `setup()` function as follows...
+
+```js
+function setup() {
+    // sets up the canvas:
+    createCanvas(canvasWidth, canvasHeight);
+
+    // code invoking the function you just wrote:
+    drawNShapesDirectionFlexible(30, 30, 335, 0, "square", "column");
+    drawNShapesDirectionFlexible(4, 100, 120, 200, "circle", "row");
+    drawNShapesDirectionFlexible(8, 50, 725, 425, "circle", "row");
+
+    // draws grid at the end:
+    drawGrid(canvasWidth, canvasHeight);
+}
+``` 
+...it should produce the following picture (pick any color you want):
+
+<img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial04/flexi-shapes-directions.png" />
+
 ### 7. [Optional] Make some algorithmic art
-Create some interesting art based on the techniques you experimented with. Use the `fill()` function to change the colors. Use the `Math.random()` function to randomly place your shapes, or to randomly change the sizes and colors of your shapes.
+Create some interesting art based on the techniques you experimented with. Use the `fill()` function to change the colors. Use the `Math.random()` function to randomly place your shapes, or to randomly change the sizes and colors of your shapes. Here are some drawings you could make:
+
+<div class="grid">
+    <img class="span2" src="/spring2025/assets/images/tutorials/tutorial04/art-0.png" /> 
+    <img class="span2" src="/spring2025/assets/images/tutorials/tutorial04/art-1.png" /> 
+    <img src="/spring2025/assets/images/tutorials/tutorial04/art-4.png" /> 
+    <img src="/spring2025/assets/images/tutorials/tutorial04/art-3.png" /> 
+</div>
 
 
+
+{:.info}
 > ## For Folks Wanting More Programming Practice...
 > I highly recommend that you review all of [these introductory exercises](../resources/programming-review#step6), using JavaScript. Here's a suggested workflow:
 > 
