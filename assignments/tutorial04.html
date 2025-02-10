@@ -57,7 +57,11 @@
             <aside>
                 <ol class="side-menu">
   <li><a href="#part-1-set-up">Part 1. Set Up</a>
-    1.  <a href="#b-view-file-in-web-browser">B. View file in Web Browser</a></li>
+    <ol>
+      <li><a href="#1-download-and-examine-the-code">1. Download and examine the code</a></li>
+      <li><a href="#2-view-file-in-web-browser">2. View file in Web Browser</a></li>
+    </ol>
+  </li>
   <li><a href="#part-2-completing-the-exercises">Part 2. Completing the Exercises</a>
     <ol>
       <li><a href="#step1">1. While Loop - 5 Times</a></li>
@@ -94,9 +98,36 @@
     
 </p>
 
-<p>TODO: Programming review: Modify this…</p>
+<style>
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+        row-gap: 10px;
+        margin-bottom: 40px;
+    }
+    .grid img {
+        width: 100%;
+    }
+
+    .span2 {
+        grid-column: 1 / span 2;
+    }
+
+    @media screen and (max-width: 500px) {
+        .grid {
+            grid-template-columns: 1fr;
+        }
+        .span2 {
+            grid-column: 1 / span 1;
+        }
+    }
+</style>
 
 <h2 id="part-1-set-up">Part 1. Set Up</h2>
+
+<h3 id="1-download-and-examine-the-code">1. Download and examine the code</h3>
 
 <p>Download the Tutorial 4 zip file, unzip it, and save it inside of your <code class="highlighter-rouge">tutorials</code> folder:</p>
 
@@ -115,7 +146,7 @@
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.min.js"</span> <span class="na">defer</span><span class="nt">&gt;&lt;/script&gt;</span>
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"utilities.js"</span> <span class="na">defer</span><span class="nt">&gt;&lt;/script&gt;</span>
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"main.js"</span> <span class="na">defer</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;title&gt;</span>Circles<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Loop <span class="err">&amp;</span> Function Practice<span class="nt">&lt;/title&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 
 <span class="nt">&lt;body&gt;</span>
@@ -168,7 +199,7 @@
   <li>Note in the code sample above, <code class="highlighter-rouge">draw5Circles()</code> is invoked in the setup. If you uncomment <code class="highlighter-rouge">draw5RedSquares()</code>, 5 squares will be drawn as well.</li>
 </ul>
 
-<h4 id="b-view-file-in-web-browser">B. View file in Web Browser</h4>
+<h3 id="2-view-file-in-web-browser">2. View file in Web Browser</h3>
 <p>Once you’ve taken a look at the code in VS Code, view it in your browser using the Live Server plugin you installed on Monday. It should look something like this:</p>
 
 <p><img class="frame small" src="/spring2025/assets/images/tutorials/tutorial04/circles.png" /></p>
@@ -192,12 +223,44 @@
 <p>Create a function called <code class="highlighter-rouge">drawNCircles(n)</code> that uses a for loop to draw any number of circles in a vertical column. If I invoke your function as follows: <code class="highlighter-rouge">drawNCircles(20)</code> it should draw 20 circles in a vertical column. Consider using different starting x and y position for your circles so that they don’t draw on top of the existing ones.</p>
 
 <h3 id="4-for-loop---more-flexibility">4. For Loop - More flexibility</h3>
-<p>Create a function called <code class="highlighter-rouge">drawNCirclesFlexible(n, size, x, y)</code> that uses a for loop to draw  a column of circles of any size, starting at any x, y position. If I invoke your function as follows: <code class="highlighter-rouge">drawNCirclesFlexible(30, 25, 400, 0)</code> it should produce the following picture:</p>
+<p>Create a function called <code class="highlighter-rouge">drawNCirclesFlexible(n, size, x, y)</code> that uses a for loop to draw  a column of circles of any size, starting at any x, y position. If I invoke your function within the <code class="highlighter-rouge">setup()</code> function as follows…</p>
 
-<p><img class="frame small" src="/spring2025/assets/images/tutorials/tutorial04/flexi-circles.png" /></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// sets up the canvas:</span>
+    <span class="nx">createCanvas</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="p">,</span> <span class="nx">canvasHeight</span><span class="p">);</span>
+
+    <span class="c1">// code invoking the function you just wrote:</span>
+    <span class="nx">drawNCirclesFlexible</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nx">drawNCirclesFlexible</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+    <span class="nx">drawNCirclesFlexible</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+
+    <span class="c1">// draws grid at the end:</span>
+    <span class="nx">drawGrid</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="p">,</span> <span class="nx">canvasHeight</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>…it should produce the following picture:</p>
+
+<p><img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial04/flexi-circles.png" /></p>
 
 <h3 id="5-for-loop---even-more-flexibility">5. For Loop - Even more flexibility</h3>
-<p>Create a function called <code class="highlighter-rouge">drawNShapesFlexible(n, size, x, y, shape)</code> that uses a for loop to draw  a column of shapes of any size, starting at any x, y position. If the shape === “circle”, it will draw a column of circles. Otherwise it will draw a column of squares.</p>
+<p>Create a function called <code class="highlighter-rouge">drawNShapesFlexible(n, size, x, y, shape)</code> that uses a for loop to draw  a column of shapes of any size, starting at any x, y position. If the shape === “circle”, it will draw a column of circles. Otherwise it will draw a column of squares. If I invoke your function within the <code class="highlighter-rouge">setup()</code> function as follows…</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// sets up the canvas:</span>
+    <span class="nx">createCanvas</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="p">,</span> <span class="nx">canvasHeight</span><span class="p">);</span>
+
+    <span class="c1">// code invoking the function you just wrote:</span>
+    <span class="nx">drawNShapesFlexible</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">335</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="dl">"</span><span class="s2">square</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">drawNShapesFlexible</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="dl">"</span><span class="s2">circle</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">drawNShapesFlexible</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">725</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="dl">"</span><span class="s2">square</span><span class="dl">"</span><span class="p">);</span>
+
+    <span class="c1">// draws grid at the end:</span>
+    <span class="nx">drawGrid</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="p">,</span> <span class="nx">canvasHeight</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>…it should produce the following picture (pick any color you want):</p>
+
+<p><img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial04/flexi-shapes.png" /></p>
 
 <h3 id="6-for-loop---still-more-flexibility">6. For Loop - Still more flexibility</h3>
 <p>Create a function called <code class="highlighter-rouge">drawNShapesDirectionFlexible(n, size, x, y, shape, direction)</code> that uses a for loop to draw  a column of shapes of any size, starting at any x, y position.</p>
@@ -206,10 +269,36 @@
   <li>If direction === “row”, it will draw a column of shapes. Otherwise it will draw a column of shapes.</li>
 </ul>
 
-<h3 id="7-optional-make-some-algorithmic-art">7. [Optional] Make some algorithmic art</h3>
-<p>Create some interesting art based on the techniques you experimented with. Use the <code class="highlighter-rouge">fill()</code> function to change the colors. Use the <code class="highlighter-rouge">Math.random()</code> function to randomly place your shapes, or to randomly change the sizes and colors of your shapes.</p>
+<p>If I invoke your function within the <code class="highlighter-rouge">setup()</code> function as follows…</p>
 
-<blockquote>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// sets up the canvas:</span>
+    <span class="nx">createCanvas</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="p">,</span> <span class="nx">canvasHeight</span><span class="p">);</span>
+
+    <span class="c1">// code invoking the function you just wrote:</span>
+    <span class="nx">drawNShapesDirectionFlexible</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">335</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="dl">"</span><span class="s2">square</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">column</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">drawNShapesDirectionFlexible</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="dl">"</span><span class="s2">circle</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">row</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">drawNShapesDirectionFlexible</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">725</span><span class="p">,</span> <span class="mi">425</span><span class="p">,</span> <span class="dl">"</span><span class="s2">circle</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">row</span><span class="dl">"</span><span class="p">);</span>
+
+    <span class="c1">// draws grid at the end:</span>
+    <span class="nx">drawGrid</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="p">,</span> <span class="nx">canvasHeight</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>…it should produce the following picture (pick any color you want):</p>
+
+<p><img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial04/flexi-shapes-directions.png" /></p>
+
+<h3 id="7-optional-make-some-algorithmic-art">7. [Optional] Make some algorithmic art</h3>
+<p>Create some interesting art based on the techniques you experimented with. Use the <code class="highlighter-rouge">fill()</code> function to change the colors. Use the <code class="highlighter-rouge">Math.random()</code> function to randomly place your shapes, or to randomly change the sizes and colors of your shapes. Here are some drawings you could make:</p>
+
+<div class="grid">
+    <img class="span2" src="/spring2025/assets/images/tutorials/tutorial04/art-0.png" /> 
+    <img class="span2" src="/spring2025/assets/images/tutorials/tutorial04/art-1.png" /> 
+    <img src="/spring2025/assets/images/tutorials/tutorial04/art-4.png" /> 
+    <img src="/spring2025/assets/images/tutorials/tutorial04/art-3.png" /> 
+</div>
+
+<blockquote class="info">
   <h2 id="for-folks-wanting-more-programming-practice">For Folks Wanting More Programming Practice…</h2>
   <p>I highly recommend that you review all of <a href="../resources/programming-review#step6">these introductory exercises</a>, using JavaScript. Here’s a suggested workflow:</p>
 
