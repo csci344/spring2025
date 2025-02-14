@@ -42,8 +42,9 @@ draft: 0
     }
 </style>
 
+
 ## Paper Quiz 
-Once you complete the <a href="https://docs.google.com/document/d/1Qy0P49yKP4JpibLw-KgfoRN8nbCbMWDbm6Y4nTUn4hs/edit?usp=sharing" target="_blank">written portion of the quiz</a>, please complete the tasks below.
+Once you complete the <a href="https://docs.google.com/document/d/1UKlyCzrymBubJRnbMFpfHU-l_Z_xTaDR/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">written portion of the quiz</a>, please complete the tasks below.
 
 ## Introduction
 For the coding portion of this quiz, you will be replicating part of the Taco Temple interface as pictured below:
