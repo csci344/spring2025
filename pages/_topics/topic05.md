@@ -18,8 +18,4 @@ questions:
     - Know the basic control structures (if/else if/else, for loops, while loops, for...of loops)
     - Remember that JavaScript can be interpreted with Node.js or by a web browser
     - Review the <a href="/spring2025/resources/programming-review">programming with JavaScript cheatsheet</a> for a review.
-    - Remember that DOM objects and methods are only used in <strong>"client-side" programming</strong> (within a browser). They are not supported in Node.js
-    - Be able to use JavaScript to manipulate HTML and CSS dynamically (usually through event handlers).
-    - Practice targeting and changing DOM elements using the <a href="/spring2025/course-files/activities/dom-tester" target="_blank">DOM manipulation worksheet</a>
-    - Please refer to the <a href="/spring2025/resources/js-concepts#working-with-the-dom" target="_blank">working with the DOM</a> section of the JavaScript cheatsheet and make sure you know how to interact with the DOM.
 ---

@@ -12,7 +12,7 @@ readings:
         Please read the <a href="/spring2025/resources/programming-review">Intro to Programming with JavaScript</a> page.
       required: 1
 activities:
-    - num: 8
+    - num: 9
       draft: 0
       type: activity
       title: Intro to the language
