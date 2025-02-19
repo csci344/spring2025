@@ -5,7 +5,7 @@ type: lecture
 num: 11
 draft: 0
 start_date: 2025-02-19
-slides_url: #
+slides_url: https://docs.google.com/presentation/d/1aoopafEiFjdhPdBbp5c711qxoudSHL2K/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings: 
     - type: reading
       citation: >
@@ -22,7 +22,7 @@ readings:
         <a href="https://www.digitalocean.com/community/tutorials/how-to-make-changes-to-the-dom" target="_blank">How to Make Changes to the DOM</a>. <em>Digital Ocean</em>
 activities:
     - num: 11
-      draft: 1
+      draft: 0
       type: activity
       title: DOM manipulation practice (part 2)
       url: /course-files/lectures/lecture11.zip
