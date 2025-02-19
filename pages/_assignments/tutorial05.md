@@ -10,12 +10,20 @@ start_date: 2025-02-21
 due_date: 2025-02-24
 ---
 
+<style>
+    .container > * {
+        height: 400px;
+        width: auto;
+        max-width: 100% !important;
+    }
+</style>
+
 
 ## Introduction 
 The goal of today's tutorial is to:
 1. Help you practice using JavaScript to target and modify HTML elements in your DOM Tree.
-2. Continue practicing your CSS skills.
-2. Encourage you to keep thinking about improving the accessibility of your website.
+1. Continue practicing your CSS skills.
+1. Exploring some common UX/UI widgets and how they're implemented using JavaScript.
 
 ## Cheatsheet
 * Below is a cheatsheet (below) with examples of different selector methods and approaches to updating the DOM.
@@ -52,71 +60,86 @@ The goal of today's tutorial is to:
 | padding | document.querySelector("div").style.padding = "10px"; |
 | display | document.querySelector("div").style.display = "none"; |
 
+### Some useful helper functions
+
+| Property | Example | Reference |
+|--|--|--|
+| insertAdjacentHTML(position, htmlString) | document.querySelector("div").style.width = "200px"; |<a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML" target="_blank">insertAdjacentHTML docs</a> |
+| classList.add(className) | document.querySelector("div").classList.add("highlight"); | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList" target="_blank">classList docs</a> |
+| classList.remove(className)  | document.querySelector("div").classList.remove("highlight"); | |
+| classList.toggle(className) | document.querySelector("div").classList.toggle("highlight"); | |
+
 ## Your Tasks
 
 <a href="/spring2025/course-files/tutorials/tutorial05.zip" class="nu-button">Download Tutorial 5 <i class="fas fa-download"></i></a> 
 
 Please download the tutorial05.zip file, unzip it, and move the tutorials folder inside of your `csci344/tutorials` folder. Then complete the tasks:
 
-### 1. Font Size Adjuster
-Open font-switcher/index.html in VS Code, and note the HTML tags. Also note that within the header tag there is a script tag that links to your JavaScript file:
+### 1. Theme Switcher
+Open `styles.css` and scroll down to ~line 70. You will see three classes ( `ocean`, `desert`, and `high-contrast`) which correspond to three different themes. If you apply any of these classes to the `<body></body>` tag and preview your HTML, you will see that the theme changes. Try it out! 
 
-```html
-<script src="index.js" defer></script>
-```
-
-The keyword `defer` means that the script won't run until your entire web page is loaded.
-
-
-Open `01-font-switcher/index.html`:
-1. Attach the `makeBigger()` event handler to the `#bigger` button.
-2. Attach the `makeSmaller()` event handler to the `#smaller` button.
-
-Next, open `01-font-switcher/index.js` and, modify the body of the `makeBigger` and `makeSmaller` functions so that they update the font size of the `div.content` element and the `h1` element. There should be at least two statements within the body of each function (one to target and manipulate `div.content`, and one to target and manipulate `h1`). When you're done, your web page should look like this:
-
-<img class="large frame" src="/spring2025/assets/images/tutorials/tutorial05/font-switcher.gif" />
-
-
-### 2. Theme Switcher
-Another way to make your site more accessible is to create a "high-contrast" stylesheet or CSS class. For this exercise, please do the following:
-
-1. Open `02-theme-switcher/index.js` and attach a click event handler to each of the four of the buttons in the nav bar. 
-2. Each event handler should modify the class of the `body` tag to match the theme of the button that was clicked (just like we did in class for Lecture 10). 
-    * The available theme classes are: `ocean`, `desert` and `high-contrast`. To see the themes, open the `style.css` file and scroll to the bottom.
-3. If the `default` button is clicked, just unset the class on the body tag.
-4. [Optional] If you have time, try creating your own theme in the `../style.css` file and creating another button so that when you click on the new button, your theme shows up.
-
-When you're done, your web page should look like this:
+You job is to make the buttons dynamically change the theme of the web page as pictured below. When you're done, your web page should look like this:
 
 <img class="large frame" src="/spring2025/assets/images/tutorials/tutorial05/theme-switcher.gif" />
 
-### 3. Dyslexia Mode (Recommended, but Optional)
-In part 3, you will use JavaScript to create a method for people with dyslexia to more easily read your web page. This technique is based on this artice: <a href="https://www.smashingmagazine.com/2021/11/dyslexia-friendly-mode-website/" target="_blank">Adding A Dyslexia-Friendly Mode To A Website</a>. Please complete the following tasks:
+### Hints:
+1. Inside of `index.js`, create a single function called `changeClass()` that has one parameter, which will store the name of the class as a string.
+2. Within the `changeClass()` function body, set the body's class attribute to the name of the class passed into the function. If the `default` button is clicked, just unset the class on the body tag.
+3. Attach your `changeClass()` function to the click event of each button. Make sure you're passing in the correct argument. 
+4. Use the cheatsheet associated with this tutorial to figure out how to modify the class attribute.
 
-1. In `style.css`, create a new class called `.dyslexia-mode`. 
-2. Following the recommendations from the Smashing Magazine article above, ensure that your class does the following:
+### Optional
+If you have time, try creating your own theme in the `styles.css` file and creating another button so that when you click on the new button, your theme shows up.
 
-    {:.compact}
-    * Adjust the letter and word spacing to the recommended settings
-    * Disables ligatures
-    * Modify the line spacing
-    * Modify either the font weight (to be bolder) or the color (to be darker)
-    * Make the font-size bigger
-    * Narrow the line width (lines that are too long in the horizontal direction are hard to read)
-3. When you're done, create a button and add the needed functionality to enabled the user to toggle the "Dyslexia Mode" on and off.
-4. Note that the Smashing Magazine also makes use of localStorage so that the site "remembers" the users' preferences for the next time.
 
-When you're done, your web page should look like this:
 
-<img class="large frame" src="/spring2025/assets/images/tutorials/tutorial05/dyslexia.gif" />
+### 2. Hamburger Menu
+As you probably already know, a hamburger menu is a common design pattern for showing and hiding the navigation of your web page if you are on a mobile device. The logic of the hamburger menu implementation is as follows:
+
+#### CSS Tasks (already done for you)
+Preview the `index.html` and notices the responsive styling. Then take a look at the `styles.css` file and see what's going on. Please note the following:
+
+* **Desktop View**: Navigation is showing. Hamburger menu button is hidden.
+* **Mobile View**: Navigation is hidden. Hamburger menu is showing.
+* **Additional Classes**
+    * **Button styling**: If both the `menu-toggle` and `active` classes are added to the `button` element, the hamburger will morph into an "X", indicating that the menu is open.
+    * **Mobile navigation**: If both the `nav-links` and `active` classes are added to the `ul` element, the menu will display on the right-hand side.
+
+#### JavaScript (your task)
+Your job is to modify the JavaScript file so that it achieves the effect shown below. Specifically:
+* When the hamburger menu is clicked when the menu is hidden, the `active` class is **added to** both the `button` and `ul` elements.
+* When the hamburger menu is clicked when the menu is visible, the `active` class is **removed from** both the `button` and `ul` elements.
+
+**Hint**: Consider using the `classList.toggle("some_class")` method (see cheatsheet above, or google it).
+
+#### Demo
+<div class="container">
+    <img class="small frame" src="/spring2025/assets/images/tutorials/tutorial05/hamburger.gif" />
+    <img class="small frame" src="/spring2025/assets/images/tutorials/tutorial05/desktop-hamburger.png" />
+</div>
+
+### 3. Carousel
+If you were on a front-end team and in need of a carousel, you would probably use a pre-made widget from an existing design system / UI kit. That said, it is useful to understand how these widgets work so that you understand the basic idea.
+
+Given this, please open the `03-carousel` folder and make the following changes:
+1. Add comments to the `index.js` file explaining what each of the statements does.
+2. **[Optional]** 
+    * Stylize the buttons using one of the font-awesome icons (or some other image or icon).
+    * Change out the photos.
+    * Make any additional stylistic changes you see fit.
+
+> For this task, you may not use an AI assistant to comment the `index.js` code for you. YOU need to do it.
+
+
+
 
 ## What to Submit
 Please make sure that you have completed the following:
 
 {:.checkbox-list}
 * Implemented the font size adjuster
-* Implemented the theme switcher
-* Implemented "dyslexia mode" (optional, but recommended)
+* Implemented the hamburger menu
+* Commented the carousel widget JavaScript code explaining how it works.
 
 When you're done, please create a link from your homepage to each of your Tutorial 5 web pages (see <a href="https://vanwars.github.io/csci344" target="_blank">Sarah's homepage</a> for an example). Then, commit and push all of your edits to GitHub and, paste a link to your GitHub Repository and to your GitHub pages in the Moodle submission.
 

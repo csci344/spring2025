@@ -1,14 +1,13 @@
 let currentPosition = 0;
 let gap = 10;
-const slideWidth = 500;
+const slideWidth = 400;
 
 function moveCarousel(direction) {
     const items = document.querySelectorAll(".carousel-item");
 
     if (direction == "forward") {
-        // two slides per click + 1
-        const terminationPoint = items.length / 2 + 1;
-        if (currentPosition > terminationPoint) {
+        // minus 2 b/c first 2 slides already showing
+        if (currentPosition >= items.length - 2) {
             return false;
         }
         currentPosition++;
