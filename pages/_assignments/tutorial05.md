@@ -3,7 +3,7 @@ layout: assignment-two-column
 title: "JavaScript: Event Handlers"
 type: tutorial
 abbreviation: Tutorial 5
-draft: 1
+draft: 0
 points: 6
 num: 5
 start_date: 2025-02-21
@@ -16,8 +16,12 @@ due_date: 2025-02-24
         width: auto;
         max-width: 100% !important;
     }
-</style>
 
+    table {
+        width: 90%;
+        max-width: 100%;
+    }
+</style>
 
 ## Introduction 
 The goal of today's tutorial is to:
@@ -25,49 +29,9 @@ The goal of today's tutorial is to:
 1. Continue practicing your CSS skills.
 1. Exploring some common UX/UI widgets and how they're implemented using JavaScript.
 
-## Cheatsheet
-* Below is a cheatsheet (below) with examples of different selector methods and approaches to updating the DOM.
-* You can also try practicing with Sarah's interactive <a href="/spring2025/course-files/activities/dom-tester" target="_blank">DOM manipulation tool</a>.
-
-### Selector Methods 
-
-| Method | Example |
-|--|--|
-| getElementById() | document.getElementById("my_element") |
-| querySelector() | document.querySelector("#my_element")<br>document.querySelector("p")<br>document.querySelector(“.my-announcements") |
-| querySelectorAll() | document.querySelectorAll("p") |
-| getElementsByTagName() | document.getElementsByTagName("div") |
-| getElementsByClassName() | document.getElementsByClassName(".panel") |
-
-### Some examples of HTML attributes you can modify
-
-| Attribute | Example |
-|--|--|
-| className | document.querySelector("div").className = "panel"; |
-| innerHTML | document.querySelector("div").innerHTML = "&lt;p&gt;hi&lt;/p&gt;"; |
-| src (for images) | document.querySelector(".my_image").src = "sponge_bob.png"; |
-| href (for links) | document.querySelector(".my_link").href = 'https://www.wikipedia.org'; |
-
-
-### Some examples of style properties you can modify
-
-| Property | Example |
-|--|--|
-| width | document.querySelector("div").style.width = "200px"; |
-| height | document.querySelector("div").style.width = "200px"; |
-| background-color | document.querySelector("div").style.backgroundColor = "hotpink"; |
-| border-width | document.querySelector("div").style.borderWidth = "5px"; |
-| padding | document.querySelector("div").style.padding = "10px"; |
-| display | document.querySelector("div").style.display = "none"; |
-
-### Some useful helper functions
-
-| Property | Example | Reference |
-|--|--|--|
-| insertAdjacentHTML(position, htmlString) | document.querySelector("div").style.width = "200px"; |<a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML" target="_blank">insertAdjacentHTML docs</a> |
-| classList.add(className) | document.querySelector("div").classList.add("highlight"); | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList" target="_blank">classList docs</a> |
-| classList.remove(className)  | document.querySelector("div").classList.remove("highlight"); | |
-| classList.toggle(className) | document.querySelector("div").classList.toggle("highlight"); | |
+<blockquote class="info">
+{% include dom-manipulation.html %}
+</blockquote>
 
 ## Your Tasks
 
