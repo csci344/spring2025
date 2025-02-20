@@ -57,18 +57,27 @@
             <aside>
                 <ol class="side-menu">
   <li><a href="#introduction">Introduction</a></li>
-  <li><a href="#cheatsheet">Cheatsheet</a>
+  <li><a href="#">Cheatsheet</a>
     <ol>
-      <li><a href="#selector-methods">Selector Methods</a></li>
-      <li><a href="#some-examples-of-html-attributes-you-can-modify">Some examples of HTML attributes you can modify</a></li>
-      <li><a href="#some-examples-of-style-properties-you-can-modify">Some examples of style properties you can modify</a></li>
+      <li><a href="#">Selector Methods</a></li>
+      <li><a href="#">Some examples of HTML attributes you can modify</a></li>
+      <li><a href="#">Some examples of style properties you can modify</a></li>
+      <li><a href="#">Some useful helper functions</a></li>
     </ol>
   </li>
   <li><a href="#your-tasks">Your Tasks</a>
     <ol>
-      <li><a href="#1-font-size-adjuster">1. Font Size Adjuster</a></li>
-      <li><a href="#2-theme-switcher">2. Theme Switcher</a></li>
-      <li><a href="#3-dyslexia-mode-recommended-but-optional">3. Dyslexia Mode (Recommended, but Optional)</a></li>
+      <li><a href="#1-theme-switcher">1. Theme Switcher</a></li>
+      <li><a href="#hints">Hints:</a></li>
+      <li><a href="#optional">Optional</a></li>
+      <li><a href="#2-hamburger-menu">2. Hamburger Menu</a>
+        <ol>
+          <li><a href="#css-tasks-already-done-for-you">CSS Tasks (already done for you)</a></li>
+          <li><a href="#javascript-your-task">JavaScript (your task)</a></li>
+          <li><a href="#demo">Demo</a></li>
+        </ol>
+      </li>
+      <li><a href="#3-carousel">3. Carousel</a></li>
     </ol>
   </li>
   <li><a href="#what-to-submit">What to Submit</a></li>
@@ -95,118 +104,152 @@
     
 </p>
 
+<style>
+    .container > * {
+        height: 400px;
+        width: auto;
+        max-width: 100% !important;
+    }
+
+    table {
+        width: 90%;
+        max-width: 100%;
+    }
+</style>
+
 <h2 id="introduction">Introduction</h2>
 <p>The goal of today’s tutorial is to:</p>
 <ol>
   <li>Help you practice using JavaScript to target and modify HTML elements in your DOM Tree.</li>
   <li>Continue practicing your CSS skills.</li>
-  <li>Encourage you to keep thinking about improving the accessibility of your website.</li>
+  <li>Exploring some common UX/UI widgets and how they’re implemented using JavaScript.</li>
 </ol>
 
-<h2 id="cheatsheet">Cheatsheet</h2>
-<ul>
-  <li>Below is a cheatsheet (below) with examples of different selector methods and approaches to updating the DOM.</li>
-  <li>You can also try practicing with Sarah’s interactive <a href="/spring2025/course-files/activities/dom-tester" target="_blank">DOM manipulation tool</a>.</li>
-</ul>
+<blockquote class="info">
+<h2>Cheatsheet</h2>
+<p>Here are some examples of different selector methods and approaches to updating the DOM. You can also
+    try practicing with Sarah's interactive <a href="/spring2025/course-files/activities/dom-tester" target="_blank">DOM
+        manipulation tool</a>.</p>
 
-<h3 id="selector-methods">Selector Methods</h3>
-
+<h3>Selector Methods</h3>
 <table>
-  <thead>
     <tr>
-      <th>Method</th>
-      <th>Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>getElementById()</td>
-      <td>document.getElementById(“my_element”)</td>
+        <th>Method</th>
+        <th>Example</th>
     </tr>
     <tr>
-      <td>querySelector()</td>
-      <td>document.querySelector(“#my_element”)<br />document.querySelector(“p”)<br />document.querySelector(“.my-announcements”)</td>
+        <td>getElementById()</td>
+        <td><code>document.getElementById("my_element")</code></td>
     </tr>
     <tr>
-      <td>querySelectorAll()</td>
-      <td>document.querySelectorAll(“p”)</td>
+        <td>querySelector()</td>
+        <td><code>document.querySelector("#my_element")<br />document.querySelector("p")<br />document.querySelector(".my-announcements")</code>
+        </td>
     </tr>
     <tr>
-      <td>getElementsByTagName()</td>
-      <td>document.getElementsByTagName(“div”)</td>
+        <td>querySelectorAll()</td>
+        <td><code>document.querySelectorAll("p")</code></td>
     </tr>
     <tr>
-      <td>getElementsByClassName()</td>
-      <td>document.getElementsByClassName(“.panel”)</td>
+        <td>getElementsByTagName()</td>
+        <td><code>document.getElementsByTagName("div")</code></td>
     </tr>
-  </tbody>
+    <tr>
+        <td>getElementsByClassName()</td>
+        <td><code>document.getElementsByClassName(".panel")</code></td>
+    </tr>
 </table>
 
-<h3 id="some-examples-of-html-attributes-you-can-modify">Some examples of HTML attributes you can modify</h3>
-
+<h3>Some examples of HTML attributes you can modify</h3>
 <table>
-  <thead>
     <tr>
-      <th>Attribute</th>
-      <th>Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>className</td>
-      <td>document.querySelector(“div”).className = “panel”;</td>
+        <th>Attribute</th>
+        <th>Example</th>
     </tr>
     <tr>
-      <td>innerHTML</td>
-      <td>document.querySelector(“div”).innerHTML = “&lt;p&gt;hi&lt;/p&gt;”;</td>
+        <td>className</td>
+        <td><code>el.className = "panel";</code></td>
     </tr>
     <tr>
-      <td>src (for images)</td>
-      <td>document.querySelector(“.my_image”).src = “sponge_bob.png”;</td>
+        <td>innerHTML</td>
+        <td><code>el.innerHTML = "&lt;p&gt;hi&lt;/p&gt;";</code></td>
     </tr>
     <tr>
-      <td>href (for links)</td>
-      <td>document.querySelector(“.my_link”).href = ‘https://www.wikipedia.org’;</td>
+        <td>src (for images)</td>
+        <td><code>document.querySelector(".my_image").src = "sponge_bob.png";</code></td>
     </tr>
-  </tbody>
+    <tr>
+        <td>href (for links)</td>
+        <td><code>document.querySelector(".my_link").href = 'https://www.wikipedia.org';</code></td>
+    </tr>
 </table>
 
-<h3 id="some-examples-of-style-properties-you-can-modify">Some examples of style properties you can modify</h3>
-
+<h3>Some examples of style properties you can modify</h3>
 <table>
-  <thead>
     <tr>
-      <th>Property</th>
-      <th>Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>width</td>
-      <td>document.querySelector(“div”).style.width = “200px”;</td>
+        <th>Property</th>
+        <th>Example</th>
     </tr>
     <tr>
-      <td>height</td>
-      <td>document.querySelector(“div”).style.width = “200px”;</td>
+        <td>width</td>
+        <td><code>el.style.width = "200px";</code></td>
     </tr>
     <tr>
-      <td>background-color</td>
-      <td>document.querySelector(“div”).style.backgroundColor = “hotpink”;</td>
+        <td>height</td>
+        <td><code>el.style.height = "200px";</code></td>
     </tr>
     <tr>
-      <td>border-width</td>
-      <td>document.querySelector(“div”).style.borderWidth = “5px”;</td>
+        <td>background-color</td>
+        <td><code>el.style.backgroundColor = "hotpink";</code></td>
     </tr>
     <tr>
-      <td>padding</td>
-      <td>document.querySelector(“div”).style.padding = “10px”;</td>
+        <td>border-width</td>
+        <td><code>el.style.borderWidth = "5px";</code></td>
     </tr>
     <tr>
-      <td>display</td>
-      <td>document.querySelector(“div”).style.display = “none”;</td>
+        <td>padding</td>
+        <td><code>el.style.padding = "10px";</code></td>
     </tr>
-  </tbody>
+    <tr>
+        <td>display</td>
+        <td><code>el.style.display = "none";</code></td>
+    </tr>
 </table>
+
+<h3>Some useful helper functions</h3>
+<table>
+    <tr>
+        <th>Property</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>insertAdjacentHTML(position, htmlString)</td>
+        <td>
+            <code>
+                el.insertAdjacentHTML("beforeend", 
+                    "&lt;p&gt;stuff&lt;/p&gt;");
+            </code><br />
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML" target="_blank">insertAdjacentHTML docs</a>
+        </td>
+    </tr>
+    <tr>
+        <td>classList.add(className)</td>
+        <td>
+            <code>el.classList.add("highlight");</code><br />
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList" target="_blank">classList
+                docs</a>
+        </td>
+    </tr>
+    <tr>
+        <td>classList.remove(className)</td>
+        <td><code>el.classList.remove("highlight");</code></td>
+    </tr>
+    <tr>
+        <td>classList.toggle(className)</td>
+        <td><code>el.classList.toggle("highlight");</code></td>
+    </tr>
+</table>
+</blockquote>
 
 <h2 id="your-tasks">Your Tasks</h2>
 
@@ -214,74 +257,82 @@
 
 <p>Please download the tutorial05.zip file, unzip it, and move the tutorials folder inside of your <code class="highlighter-rouge">csci344/tutorials</code> folder. Then complete the tasks:</p>
 
-<h3 id="1-font-size-adjuster">1. Font Size Adjuster</h3>
-<p>Open font-switcher/index.html in VS Code, and note the HTML tags. Also note that within the header tag there is a script tag that links to your JavaScript file:</p>
+<h3 id="1-theme-switcher">1. Theme Switcher</h3>
+<p>Open <code class="highlighter-rouge">styles.css</code> and scroll down to ~line 70. You will see three classes ( <code class="highlighter-rouge">ocean</code>, <code class="highlighter-rouge">desert</code>, and <code class="highlighter-rouge">high-contrast</code>) which correspond to three different themes. If you apply any of these classes to the <code class="highlighter-rouge">&lt;body&gt;&lt;/body&gt;</code> tag and preview your HTML, you will see that the theme changes. Try it out!</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"index.js"</span> <span class="na">defer</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre></div></div>
-
-<p>The keyword <code class="highlighter-rouge">defer</code> means that the script won’t run until your entire web page is loaded.</p>
-
-<p>Open <code class="highlighter-rouge">01-font-switcher/index.html</code>:</p>
-<ol>
-  <li>Attach the <code class="highlighter-rouge">makeBigger()</code> event handler to the <code class="highlighter-rouge">#bigger</code> button.</li>
-  <li>Attach the <code class="highlighter-rouge">makeSmaller()</code> event handler to the <code class="highlighter-rouge">#smaller</code> button.</li>
-</ol>
-
-<p>Next, open <code class="highlighter-rouge">01-font-switcher/index.js</code> and, modify the body of the <code class="highlighter-rouge">makeBigger</code> and <code class="highlighter-rouge">makeSmaller</code> functions so that they update the font size of the <code class="highlighter-rouge">div.content</code> element and the <code class="highlighter-rouge">h1</code> element. There should be at least two statements within the body of each function (one to target and manipulate <code class="highlighter-rouge">div.content</code>, and one to target and manipulate <code class="highlighter-rouge">h1</code>). When you’re done, your web page should look like this:</p>
-
-<p><img class="large frame" src="/spring2025/assets/images/tutorials/tutorial05/font-switcher.gif" /></p>
-
-<h3 id="2-theme-switcher">2. Theme Switcher</h3>
-<p>Another way to make your site more accessible is to create a “high-contrast” stylesheet or CSS class. For this exercise, please do the following:</p>
-
-<ol>
-  <li>Open <code class="highlighter-rouge">02-theme-switcher/index.js</code> and attach a click event handler to each of the four of the buttons in the nav bar.</li>
-  <li>Each event handler should modify the class of the <code class="highlighter-rouge">body</code> tag to match the theme of the button that was clicked (just like we did in class for Lecture 10).
-    <ul>
-      <li>The available theme classes are: <code class="highlighter-rouge">ocean</code>, <code class="highlighter-rouge">desert</code> and <code class="highlighter-rouge">high-contrast</code>. To see the themes, open the <code class="highlighter-rouge">style.css</code> file and scroll to the bottom.</li>
-    </ul>
-  </li>
-  <li>If the <code class="highlighter-rouge">default</code> button is clicked, just unset the class on the body tag.</li>
-  <li>[Optional] If you have time, try creating your own theme in the <code class="highlighter-rouge">../style.css</code> file and creating another button so that when you click on the new button, your theme shows up.</li>
-</ol>
-
-<p>When you’re done, your web page should look like this:</p>
+<p>You job is to make the buttons dynamically change the theme of the web page as pictured below. When you’re done, your web page should look like this:</p>
 
 <p><img class="large frame" src="/spring2025/assets/images/tutorials/tutorial05/theme-switcher.gif" /></p>
 
-<h3 id="3-dyslexia-mode-recommended-but-optional">3. Dyslexia Mode (Recommended, but Optional)</h3>
-<p>In part 3, you will use JavaScript to create a method for people with dyslexia to more easily read your web page. This technique is based on this artice: <a href="https://www.smashingmagazine.com/2021/11/dyslexia-friendly-mode-website/" target="_blank">Adding A Dyslexia-Friendly Mode To A Website</a>. Please complete the following tasks:</p>
-
+<h3 id="hints">Hints:</h3>
 <ol>
-  <li>In <code class="highlighter-rouge">style.css</code>, create a new class called <code class="highlighter-rouge">.dyslexia-mode</code>.</li>
-  <li>
-    <p>Following the recommendations from the Smashing Magazine article above, ensure that your class does the following:</p>
-
-    <ul class="compact">
-      <li>Adjust the letter and word spacing to the recommended settings</li>
-      <li>Disables ligatures</li>
-      <li>Modify the line spacing</li>
-      <li>Modify either the font weight (to be bolder) or the color (to be darker)</li>
-      <li>Make the font-size bigger</li>
-      <li>Narrow the line width (lines that are too long in the horizontal direction are hard to read)</li>
-    </ul>
-  </li>
-  <li>When you’re done, create a button and add the needed functionality to enabled the user to toggle the “Dyslexia Mode” on and off.</li>
-  <li>Note that the Smashing Magazine also makes use of localStorage so that the site “remembers” the users’ preferences for the next time.</li>
+  <li>Inside of <code class="highlighter-rouge">index.js</code>, create a single function called <code class="highlighter-rouge">changeClass()</code> that has one parameter, which will store the name of the class as a string.</li>
+  <li>Within the <code class="highlighter-rouge">changeClass()</code> function body, set the body’s class attribute to the name of the class passed into the function. If the <code class="highlighter-rouge">default</code> button is clicked, just unset the class on the body tag.</li>
+  <li>Attach your <code class="highlighter-rouge">changeClass()</code> function to the click event of each button. Make sure you’re passing in the correct argument.</li>
+  <li>Use the cheatsheet associated with this tutorial to figure out how to modify the class attribute.</li>
 </ol>
 
-<p>When you’re done, your web page should look like this:</p>
+<h3 id="optional">Optional</h3>
+<p>If you have time, try creating your own theme in the <code class="highlighter-rouge">styles.css</code> file and creating another button so that when you click on the new button, your theme shows up.</p>
 
-<p><img class="large frame" src="/spring2025/assets/images/tutorials/tutorial05/dyslexia.gif" /></p>
+<h3 id="2-hamburger-menu">2. Hamburger Menu</h3>
+<p>As you probably already know, a hamburger menu is a common design pattern for showing and hiding the navigation of your web page if you are on a mobile device. The logic of the hamburger menu implementation is as follows:</p>
+
+<h4 id="css-tasks-already-done-for-you">CSS Tasks (already done for you)</h4>
+<p>Preview the <code class="highlighter-rouge">index.html</code> and notices the responsive styling. Then take a look at the <code class="highlighter-rouge">styles.css</code> file and see what’s going on. Please note the following:</p>
+
+<ul>
+  <li><strong>Desktop View</strong>: Navigation is showing. Hamburger menu button is hidden.</li>
+  <li><strong>Mobile View</strong>: Navigation is hidden. Hamburger menu is showing.</li>
+  <li><strong>Additional Classes</strong>
+    <ul>
+      <li><strong>Button styling</strong>: If both the <code class="highlighter-rouge">menu-toggle</code> and <code class="highlighter-rouge">active</code> classes are added to the <code class="highlighter-rouge">button</code> element, the hamburger will morph into an “X”, indicating that the menu is open.</li>
+      <li><strong>Mobile navigation</strong>: If both the <code class="highlighter-rouge">nav-links</code> and <code class="highlighter-rouge">active</code> classes are added to the <code class="highlighter-rouge">ul</code> element, the menu will display on the right-hand side.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="javascript-your-task">JavaScript (your task)</h4>
+<p>Your job is to modify the JavaScript file so that it achieves the effect shown below. Specifically:</p>
+<ul>
+  <li>When the hamburger menu is clicked when the menu is hidden, the <code class="highlighter-rouge">active</code> class is <strong>added to</strong> both the <code class="highlighter-rouge">button</code> and <code class="highlighter-rouge">ul</code> elements.</li>
+  <li>When the hamburger menu is clicked when the menu is visible, the <code class="highlighter-rouge">active</code> class is <strong>removed from</strong> both the <code class="highlighter-rouge">button</code> and <code class="highlighter-rouge">ul</code> elements.</li>
+</ul>
+
+<p><strong>Hint</strong>: Consider using the <code class="highlighter-rouge">classList.toggle("some_class")</code> method (see cheatsheet above, or google it).</p>
+
+<h4 id="demo">Demo</h4>
+<div class="container">
+    <img class="small frame" src="/spring2025/assets/images/tutorials/tutorial05/hamburger.gif" />
+    <img class="small frame" src="/spring2025/assets/images/tutorials/tutorial05/desktop-hamburger.png" />
+</div>
+
+<h3 id="3-carousel">3. Carousel</h3>
+<p>If you were on a front-end team and in need of a carousel, you would probably use a pre-made widget from an existing design system / UI kit. That said, it is useful to understand how these widgets work so that you understand the basic idea.</p>
+
+<p>Given this, please open the <code class="highlighter-rouge">03-carousel</code> folder and make the following changes:</p>
+<ol>
+  <li>Add comments to the <code class="highlighter-rouge">index.js</code> file explaining what each of the statements does.</li>
+  <li><strong>[Optional]</strong>
+    <ul>
+      <li>Stylize the buttons using one of the font-awesome icons (or some other image or icon).</li>
+      <li>Change out the photos.</li>
+      <li>Make any additional stylistic changes you see fit.</li>
+    </ul>
+  </li>
+</ol>
+
+<blockquote>
+  <p>For this task, you may not use an AI assistant to comment the <code class="highlighter-rouge">index.js</code> code for you. YOU need to do it.</p>
+</blockquote>
 
 <h2 id="what-to-submit">What to Submit</h2>
 <p>Please make sure that you have completed the following:</p>
 
 <ul class="checkbox-list">
   <li>Implemented the font size adjuster</li>
-  <li>Implemented the theme switcher</li>
-  <li>Implemented “dyslexia mode” (optional, but recommended)</li>
+  <li>Implemented the hamburger menu</li>
+  <li>Commented the carousel widget JavaScript code explaining how it works.</li>
 </ul>
 
 <p>When you’re done, please create a link from your homepage to each of your Tutorial 5 web pages (see <a href="https://vanwars.github.io/csci344" target="_blank">Sarah’s homepage</a> for an example). Then, commit and push all of your edits to GitHub and, paste a link to your GitHub Repository and to your GitHub pages in the Moodle submission.</p>

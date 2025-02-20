@@ -18,7 +18,7 @@ main {
 #container {
     background: #F0F0F0;
     height: 350px;
-    width: 1200px;
+    width: 1000px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,7 +26,7 @@ main {
 }
 
 #carousel-track {
-    width: 1000px;
+    width: 800px;
     height: 100%;
     overflow: hidden;
 }
@@ -46,7 +46,7 @@ main {
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 500px;
+    width: 400px;
     background: #333;
     color: #FFF;
     font-size: 16px;
