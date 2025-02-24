@@ -23,7 +23,7 @@
                         {% if child.url == page.url %}
                             {% assign cls = "active" %}
                         {% endif %}
-                        <a href="{{site.baseurl}}{{child.url}}" class="{{cls}}">{{ child.title }}</a>
+                        <a href="{{site.baseurl}}{{child.url}}" class="{{cls}}">{{ child.nav_order }}. {{ child.title }}</a>
                         
                         <!-- Bookmarks for child pages -->
                         {% if child.url == page.url %}

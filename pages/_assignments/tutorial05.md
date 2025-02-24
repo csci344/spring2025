@@ -30,6 +30,7 @@ The goal of today's tutorial is to:
 1. Exploring some common UX/UI widgets and how they're implemented using JavaScript.
 
 <blockquote class="info">
+<h2>Cheatsheet</h2>
 {% include dom-manipulation.html %}
 </blockquote>
 

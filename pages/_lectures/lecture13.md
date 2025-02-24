@@ -6,6 +6,15 @@ num: 13
 draft: 1
 start_date: 2025-02-26
 slides_url: #
+readings: 
+    - type: reading
+      citation: >
+        <a href="/spring2025/resources/05-higher-order-array-functions/">Course Reference: Higher Order Array Functions</a>
+      required: 1
+    - type: reading
+      citation: >
+        <a href="/spring2025/resources/06-higher-order-practice/">Practice Problems: Higher Order Array Functions</a>
+      required: 1
 ---
 
 

@@ -170,6 +170,15 @@
     }
 }
 
+ol.white {
+    background: white;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    margin-bottom: 10px !important;
+    border-bottom: solid 1px #DDD;
+    border: solid 1px #4198B5;
+}
+
 .assignment, .reference, .lecture, .slides, .two-column article, .syllabus, .schedule {
     ul.toc {
         padding-left: 0px;

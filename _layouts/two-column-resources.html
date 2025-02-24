@@ -19,16 +19,10 @@
             <article>
                 <h1>
                     {% if page.parent %}
-                        <a href="../">{{ page.parent }}</a> > {{page.nav_order}}.
+                        <a href="../">{{ page.parent }}</a> >
                     {% endif %}
                     {{ page.title }}
                 </h1>
-                <!-- {% include page_title.html %}  -->
-                {% if page.show_outline %}
-                    <div class="outline">
-                        {% include toc.html html=content ordered=true h_max=page.h_max %}
-                    </div>
-                {% endif %}
                 {{ content }}
                 
             </article>  

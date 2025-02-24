@@ -1,7 +1,7 @@
 ---
 layout: two-column-resources
 title: HTML Resources
-nav_order: 10
+nav_order: 5
 has_children: true
 ---
 <blockquote class="blockquote-no-margin">

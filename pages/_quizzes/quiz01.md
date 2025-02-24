@@ -10,6 +10,11 @@ start_date: 2025-02-14
 due_date: 2025-02-14
 ---
 
+{:.info}
+> ## Actual Quiz
+> * [Instructions](/spring2025/activities/quiz01)
+> * [Solutions](/spring2025/course-files/quizzes/quiz01_answers.zip)
+
 ## 1. Guidelines (Please Read Carefully)
 Quiz 1 will be completed during class on Friday, 2/14. It is due at the end of class.
 * Half of the quiz will paper-based. For this portion, you will not be able to use a computer, but you may bring a 1-page cheatsheet. 

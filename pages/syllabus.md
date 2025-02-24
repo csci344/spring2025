@@ -67,7 +67,6 @@ You will be given regular homework assignments that are intended to give you add
 ### Software
 As this is a programming course, you will be using the free software programs listed below. This software will take about 3-4GB of space to install. Installing and configuring programming software can be a hassle, but it is part of the process of developing your working computing knowledge. I will help you. 
 
-{:.compact}
 * <a href="https://code.visualstudio.com/download" target="_blank">Visual Studio Code</a>
 * <a href="https://github.com/git-guides/install-git" target="_blank">Git and Github</a>
 * <a href="https://nodejs.org/en/" target="_blank">node.js</a> and <a href="https://www.npmjs.com/" target="_blank">npm</a>
@@ -78,7 +77,6 @@ As this is a programming course, you will be using the free software programs li
 ### Course References
 I have compiled a list of web-based reference materials on the course website:
 
-{:.compact}
 * [HTML Resources](/spring2025/resources/html-resources)
 * [CSS Resources](/spring2025/resources/css-reference)
 * [JavaScript Resources](/spring2025/resources/js-concepts)
@@ -92,7 +90,6 @@ Before each class, you may be assigned some videos, readings, or tutorial links 
 ### Office Hours
 My office hours are every Monday, Wednesday, and Friday from 3:30-4:30PM. All questions are welcomed, including (but are not limited to):
 
-{:.compact}
 * I don't know where to start in this week's homework. Can you help?
 * My GitHub repo is broken -- help!
 * My code's not working. How do I debug it.
