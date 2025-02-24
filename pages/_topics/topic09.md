@@ -1,12 +1,12 @@
 ---
 layout: topic
-title: JavaScript Review
+title: React
 type: topic
 description: >
-    Today's class will be dedicated to JavaScript programming review. Please review the study guide and practice problems, and come prepared to ask questions!
+    React is a popular JavaScript library for building user interfaces, especially single-page applications (SPAs). It allows developers to create reusable components and manage the state of an application efficiently through a virtual DOM. React's declarative approach simplifies UI development and is widely adopted in modern web development.
 num: 9
 draft: 0
-start_date: 2025-03-17
-lectures: [16]
+start_date: 2025-03-19
+lectures: [17, 18, 19]
+tutorials: [8, 9]
 ---
-

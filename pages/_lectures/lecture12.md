@@ -1,11 +1,11 @@
 ---
 layout: module
-title: "Higher Order Functions: Part I"
+title: "JavaScript Review + Higher Order Functions"
 type: lecture
 num: 12
 draft: 1
 start_date: 2025-02-24
-slides_url: https://docs.google.com/presentation/d/1nP4LfWZi2cz1lNC47_Q-rw9NxE8Ysp9z/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
+slides_url: https://docs.google.com/presentation/d/1BsGKdRM09ZHerZyn6LGcs5nNNLhd9wn7/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings: 
     - type: reading
       citation: >
@@ -17,8 +17,8 @@ readings:
       required: 1
 activities:
     - num: 12
-      draft: 1
+      draft: 0
       type: activity
-      title: "Lecture 12 files: forEach, map, filter, reduce"
-      url: /spring2025/course-files/lectures/lecture12.zip
+      title: "JavaScript Review So Far"
+      url: /activities/practice-quiz02a
 ---
