@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>DOM Practice Problems</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+        </style>
+    </head>
+    <body class="two-column">
+        <div class="container">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li class="active" ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1LqUWReoyqDSOHq3PyGYZvbgdll0_SHl6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                
+
+
+<ol class="side-menu">
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/" class="">Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/design/" class="">Design Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/accessibility/" class="">Accessibility Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/command-line/" class="">Command Line Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/html-resources/" class="">HTML Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/html-rules-of-thumb/" class="">1. Rules of Thumb</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/text-tags/" class="">2. Text Markup Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/linking/" class="">3. Hyperlinks</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/image-tags/" class="">4. Image Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/media-tags/" class="">5. Media Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/complex-tags/" class="">6. Compound Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/semantic-tags/" class="">7. Semantic Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/form-tags/" class="">8. Form Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/css-reference/" class="">CSS Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/css-rules-of-thumb/" class="">1. Rules of Thumb</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/selectors/" class="">2. Selectors</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/color/" class="">3. Color</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/fonts/" class="">4. Text & Fonts</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/box-model/" class="">5. The Box Model</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/units/" class="">6. CSS Units</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/flexbox/" class="">7. Flexbox</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/css-grid/" class="">8. CSS Grid</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/media-queries/" class="">9. Media Queries</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/style-guides/" class="">10. Style Guides</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/js-reference/" class="">JavaScript Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/01-basic-programming/" class="">1. Basic Programming in JavaScript</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/02-basic-programming-practice/" class="">2. Basic Programming Practice</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/03-the-dom/" class="">3. Working with the DOM</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/04-dom-practice/" class="active">4. DOM Practice Problems</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                            <ol class="white">
+  <li><a href="#1-basic-dom-selection">1. Basic DOM Selection</a></li>
+  <li><a href="#2-dom-creation-and-insertion">2. DOM Creation and Insertion</a></li>
+  <li><a href="#3-event-handling">3. Event Handling</a></li>
+  <li><a href="#4-dynamic-content">4. Dynamic Content</a></li>
+  <li><a href="#5-data-and-dom-integration">5. Data and DOM Integration</a>
+    <ol>
+      <li><a href="#1-display-books">1. Display Books</a></li>
+      <li><a href="#2-image-gallery">2. Image Gallery</a></li>
+    </ol>
+  </li>
+  <li><a href="#sample-solutions">Sample Solutions</a></li>
+</ol>
+
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/05-higher-order-array-functions/" class="">5. Higher Order Array Functions</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/06-higher-order-practice/" class="">6. Higher Order Array Functions: Practice</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/07-spread-operator-object-destructuring/" class="">7. Object Destructuring & the Spread Operator</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+</ol>
+            </aside>
+            <article>
+                <h1>
+                    
+                        <a href="../">JavaScript Resources</a> >
+                    
+                    DOM Practice Problems
+                </h1>
+                <h2 id="1-basic-dom-selection">1. Basic DOM Selection</h2>
+<p>Write JavaScript code to:</p>
+<ol>
+  <li>Select an element with the ID “main-header” and change its text to “Updated Header.”</li>
+  <li>Select the first <code class="highlighter-rouge">&lt;li&gt;</code> element in an unordered list.</li>
+  <li>Select all elements with the class “highlight” and change their background color to yellow.</li>
+  <li>Select all paragraph elements and add the class “text-content” to them.</li>
+  <li>Select all images on the page and log their src attributes.</li>
+</ol>
+
+<h2 id="2-dom-creation-and-insertion">2. DOM Creation and Insertion</h2>
+<p>Complete the following tasks:</p>
+<ol>
+  <li>Create a new <code class="highlighter-rouge">&lt;div&gt;</code> element and add it to the end of the body</li>
+  <li>Create a button element with the text “Click Me” and insert it before an element with ID “target”</li>
+  <li>Create an unordered list with 3 list items (your favorite foods) and append it to an element with ID “menu”</li>
+</ol>
+
+<h2 id="3-event-handling">3. Event Handling</h2>
+<p>Implement the following interactions:</p>
+<ol>
+  <li>Add a click event listener to a button that toggles a “dark-mode” class on the body</li>
+  <li>Add an image to the page body every time the user clicks a button.</li>
+  <li>Create a button that, when clicked, changes the background color of the page to a random color.</li>
+</ol>
+
+<h2 id="4-dynamic-content">4. Dynamic Content</h2>
+<p>Build the following features:</p>
+<ol>
+  <li>Create a todo list where users can add and remove items.</li>
+  <li>Implement a “read more” button that shows hidden text.</li>
+  <li>Show and hide a div when a button is clicked (like the hamburger menu we made in class).</li>
+</ol>
+
+<h2 id="5-data-and-dom-integration">5. Data and DOM Integration</h2>
+<p>Practice working with data arrays and DOM manipulation:</p>
+
+<h3 id="1-display-books">1. Display Books</h3>
+<p>Given this array of books…</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">books</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">The Hobbit</span><span class="dl">'</span><span class="p">,</span> <span class="na">author</span><span class="p">:</span> <span class="dl">'</span><span class="s1">J.R.R. Tolkien</span><span class="dl">'</span><span class="p">,</span> <span class="na">year</span><span class="p">:</span> <span class="mi">1937</span><span class="p">,</span> <span class="na">cover</span><span class="p">:</span> <span class="dl">'</span><span class="s1">hobbit.jpg</span><span class="dl">'</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Dune</span><span class="dl">'</span><span class="p">,</span> <span class="na">author</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Frank Herbert</span><span class="dl">'</span><span class="p">,</span> <span class="na">year</span><span class="p">:</span> <span class="mi">1965</span><span class="p">,</span> <span class="na">cover</span><span class="p">:</span> <span class="dl">'</span><span class="s1">dune.jpg</span><span class="dl">'</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Foundation</span><span class="dl">'</span><span class="p">,</span> <span class="na">author</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Isaac Asimov</span><span class="dl">'</span><span class="p">,</span> <span class="na">year</span><span class="p">:</span> <span class="mi">1951</span><span class="p">,</span> <span class="na">cover</span><span class="p">:</span> <span class="dl">'</span><span class="s1">foundation.jpg</span><span class="dl">'</span> <span class="p">}</span>
+<span class="p">];</span>
+</code></pre></div></div>
+<p>…create a function that generates a book card for each book and displays them in a grid. Each card should show the book’s cover, title, author, and year.</p>
+
+<h3 id="2-image-gallery">2. Image Gallery</h3>
+<p>Given this array of images…</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">gallery</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">nature1.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">caption</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Mountain Lake</span><span class="dl">'</span><span class="p">,</span> <span class="na">tags</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">nature</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">water</span><span class="dl">'</span><span class="p">]</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">nature2.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">caption</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Forest Path</span><span class="dl">'</span><span class="p">,</span> <span class="na">tags</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">nature</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">trees</span><span class="dl">'</span><span class="p">]</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">city1.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">caption</span><span class="p">:</span> <span class="dl">'</span><span class="s1">City Skyline</span><span class="dl">'</span><span class="p">,</span> <span class="na">tags</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">urban</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">night</span><span class="dl">'</span><span class="p">]</span> <span class="p">}</span>
+<span class="p">];</span>
+</code></pre></div></div>
+
+<p>…create an image gallery.</p>
+
+<h2 id="sample-solutions">Sample Solutions</h2>
+<p>Here’s an example solution for the first problem in section 1:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">header</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#main-header</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">header</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Updated Header</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+
+                
+            </article>  
+        </main>
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

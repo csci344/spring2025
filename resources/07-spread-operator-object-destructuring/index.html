@@ -1,0 +1,1074 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Object Destructuring & the Spread Operator</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+        </style>
+    </head>
+    <body class="two-column">
+        <div class="container">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li class="active" ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1LqUWReoyqDSOHq3PyGYZvbgdll0_SHl6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                
+
+
+<ol class="side-menu">
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/" class="">Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/design/" class="">Design Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/accessibility/" class="">Accessibility Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/command-line/" class="">Command Line Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/html-resources/" class="">HTML Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/html-rules-of-thumb/" class="">1. Rules of Thumb</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/text-tags/" class="">2. Text Markup Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/linking/" class="">3. Hyperlinks</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/image-tags/" class="">4. Image Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/media-tags/" class="">5. Media Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/complex-tags/" class="">6. Compound Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/semantic-tags/" class="">7. Semantic Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/form-tags/" class="">8. Form Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/css-reference/" class="">CSS Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/css-rules-of-thumb/" class="">1. Rules of Thumb</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/selectors/" class="">2. Selectors</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/color/" class="">3. Color</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/fonts/" class="">4. Text & Fonts</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/box-model/" class="">5. The Box Model</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/units/" class="">6. CSS Units</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/flexbox/" class="">7. Flexbox</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/css-grid/" class="">8. CSS Grid</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/media-queries/" class="">9. Media Queries</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/style-guides/" class="">10. Style Guides</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/js-reference/" class="">JavaScript Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/01-basic-programming/" class="">1. Basic Programming in JavaScript</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/02-basic-programming-practice/" class="">2. Basic Programming Practice</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/03-the-dom/" class="">3. Working with the DOM</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/04-dom-practice/" class="">4. DOM Practice Problems</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/05-higher-order-array-functions/" class="">5. Higher Order Array Functions</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/06-higher-order-practice/" class="">6. Higher Order Array Functions: Practice</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/07-spread-operator-object-destructuring/" class="active">7. Object Destructuring & the Spread Operator</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                            <ol class="white">
+  <li><a href="#1-spread-operator">1. Spread Operator</a>
+    <ol>
+      <li><a href="#1-with-arrays">1. With Arrays</a></li>
+      <li><a href="#2-with-objects">2. With Objects</a></li>
+      <li><a href="#3-common-use-cases">3. Common Use Cases</a></li>
+    </ol>
+  </li>
+  <li><a href="#2-object-destructuring">2. Object Destructuring</a>
+    <ol>
+      <li><a href="#1-simple-example">1. Simple Example</a></li>
+      <li><a href="#2-renaming-variables">2. Renaming Variables</a></li>
+      <li><a href="#3-nested-objects">3. Nested Objects</a></li>
+      <li><a href="#4-common-use-cases">4. Common Use Cases</a></li>
+    </ol>
+  </li>
+</ol>
+
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+</ol>
+            </aside>
+            <article>
+                <h1>
+                    
+                        <a href="../">JavaScript Resources</a> >
+                    
+                    Object Destructuring & the Spread Operator
+                </h1>
+                <p>The spread operator and object destructuring are two powerful features in JavaScript that allow you to manipulate arrays and objects more easily. You will commonly see these two techniques in sample code and in the wild, so it’s important to understand how they work.</p>
+
+<h2 id="1-spread-operator">1. Spread Operator</h2>
+<p>The spread operator (<code class="highlighter-rouge">...</code>) is like a way to “unpack” or “spread out” the contents of an array or object. Think of it like opening a package and taking all the items out. You can <a href="https://dev.to/marinamosti/understanding-the-spread-operator-in-javascript-485j" target="_blank">read more about the spread operator here</a>.</p>
+
+<p>Here are some practical examples:</p>
+
+<h3 id="1-with-arrays">1. With Arrays</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Imagine you have a box of fruits</span>
+<span class="kd">const</span> <span class="nx">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">apple</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">banana</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">orange</span><span class="dl">'</span><span class="p">];</span>
+
+<span class="c1">// The spread operator (...) unpacks all the fruits</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(...</span><span class="nx">fruits</span><span class="p">);</span>
+<span class="c1">// Prints: apple banana orange</span>
+
+<span class="c1">// It's great for combining arrays</span>
+<span class="kd">const</span> <span class="nx">moreFruits</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">grape</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">mango</span><span class="dl">'</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">allFruits</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">fruits</span><span class="p">,</span> <span class="p">...</span><span class="nx">moreFruits</span><span class="p">];</span>
+<span class="c1">// allFruits is now: ['apple', 'banana', 'orange', 'grape', 'mango']</span>
+</code></pre></div></div>
+
+<h3 id="2-with-objects">2. With Objects</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Let's say you have a student's basic info</span>
+<span class="kd">const</span> <span class="nx">basicInfo</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Walter</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">age</span><span class="p">:</span> <span class="mi">20</span>
+<span class="p">};</span>
+
+<span class="c1">// And their academic info</span>
+<span class="kd">const</span> <span class="nx">academicInfo</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">major</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Computer Science</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">gpa</span><span class="p">:</span> <span class="mf">3.8</span>
+<span class="p">};</span>
+
+<span class="c1">// Spread operator combines them into one object</span>
+<span class="kd">const</span> <span class="nx">studentProfile</span> <span class="o">=</span> <span class="p">{...</span><span class="nx">basicInfo</span><span class="p">,</span> <span class="p">...</span><span class="nx">academicInfo</span><span class="p">};</span>
+<span class="c1">// Result: {name: 'Walter', age: 20, major: 'Computer Science', gpa: 3.8}</span>
+</code></pre></div></div>
+
+<h3 id="3-common-use-cases">3. Common Use Cases</h3>
+
+<h4 id="1-making-copies">1. Making Copies</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create a new array with the same elements</span>
+<span class="kd">const</span> <span class="nx">original</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">copy</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">original</span><span class="p">];</span>
+
+<span class="c1">// Changes to copy won't affect original</span>
+<span class="nx">copy</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h4 id="2-adding-elements">2. Adding Elements</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Add elements to the beginning or end easily</span>
+<span class="kd">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">newNumbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">...</span><span class="nx">numbers</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="c1">// Result: [1, 2, 3, 4, 5]</span>
+</code></pre></div></div>
+
+<h4 id="3-function-arguments">3. Function Arguments</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Spread an array into function arguments</span>
+<span class="kd">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">numbers</span><span class="p">);</span>  <span class="c1">// Same as Math.max(1, 2, 3)</span>
+</code></pre></div></div>
+
+<h2 id="2-object-destructuring">2. Object Destructuring</h2>
+
+<p>Object destructuring allows you to get specific items from an object. It’s just a convenient shortcut.</p>
+
+<h3 id="1-simple-example">1. Simple Example</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Here's our backpack (object)</span>
+<span class="kd">const</span> <span class="nx">backpack</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">laptop</span><span class="p">:</span> <span class="dl">'</span><span class="s1">MacBook</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">water</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Water Bottle</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">snack</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Granola Bar</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="c1">// Old way of getting items:</span>
+<span class="kd">const</span> <span class="nx">laptop</span> <span class="o">=</span> <span class="nx">backpack</span><span class="p">.</span><span class="nx">laptop</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">water</span> <span class="o">=</span> <span class="nx">backpack</span><span class="p">.</span><span class="nx">water</span><span class="p">;</span>
+
+<span class="c1">// New way using destructuring:</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">laptop</span><span class="p">,</span> <span class="nx">water</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">backpack</span><span class="p">;</span>
+<span class="c1">// Now 'laptop' = 'MacBook' and 'water' = 'Water Bottle'</span>
+</code></pre></div></div>
+
+<h3 id="2-renaming-variables">2. Renaming Variables</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Sometimes you want to call your variables something else</span>
+<span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Alex</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">age</span><span class="p">:</span> <span class="mi">20</span>
+<span class="p">};</span>
+
+<span class="c1">// You can rename while destructuring</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="nx">fullName</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="nx">yearsOld</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">person</span><span class="p">;</span>
+<span class="c1">// Now 'fullName' = 'Alex' and 'yearsOld' = 20</span>
+</code></pre></div></div>
+
+<h3 id="3-nested-objects">3. Nested Objects</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Objects inside objects</span>
+<span class="kd">const</span> <span class="nx">student</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Jamie</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">grades</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">math</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+        <span class="na">science</span><span class="p">:</span> <span class="mi">85</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Getting nested values</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">name</span><span class="p">,</span> <span class="na">grades</span><span class="p">:</span> <span class="p">{</span> <span class="nx">math</span><span class="p">,</span> <span class="nx">science</span> <span class="p">}</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">student</span><span class="p">;</span>
+<span class="c1">// name = 'Jamie', math = 90, science = 85</span>
+</code></pre></div></div>
+
+<h3 id="4-common-use-cases">4. Common Use Cases</h3>
+
+<h4 id="1-function-parameters">1. Function Parameters</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Instead of accessing props.name, props.age</span>
+<span class="kd">function</span> <span class="nx">greetStudent</span><span class="p">({</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">age</span> <span class="p">})</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Hello </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">, you are </span><span class="p">${</span><span class="nx">age</span><span class="p">}</span><span class="s2"> years old!`</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">greetStudent</span><span class="p">({</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Sam</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">19</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="2-working-with-api-responses">2. Working with API Responses</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// When you get data from an API</span>
+<span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">status</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">userId</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="na">username</span><span class="p">:</span> <span class="dl">'</span><span class="s1">coder123</span><span class="dl">'</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Get just what you need</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="p">{</span> <span class="nx">username</span> <span class="p">}</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">response</span><span class="p">;</span>
+<span class="c1">// username = 'coder123'</span>
+</code></pre></div></div>
+
+                
+            </article>  
+        </main>
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

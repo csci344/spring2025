@@ -1,0 +1,1362 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Working with the DOM</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+        </style>
+    </head>
+    <body class="two-column">
+        <div class="container">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li class="active" ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1LqUWReoyqDSOHq3PyGYZvbgdll0_SHl6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                
+
+
+<ol class="side-menu">
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/" class="">Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/design/" class="">Design Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/accessibility/" class="">Accessibility Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/command-line/" class="">Command Line Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/html-resources/" class="">HTML Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/html-rules-of-thumb/" class="">1. Rules of Thumb</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/text-tags/" class="">2. Text Markup Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/linking/" class="">3. Hyperlinks</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/image-tags/" class="">4. Image Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/media-tags/" class="">5. Media Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/complex-tags/" class="">6. Compound Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/semantic-tags/" class="">7. Semantic Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/form-tags/" class="">8. Form Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/css-reference/" class="">CSS Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/css-rules-of-thumb/" class="">1. Rules of Thumb</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/selectors/" class="">2. Selectors</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/color/" class="">3. Color</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/fonts/" class="">4. Text & Fonts</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/box-model/" class="">5. The Box Model</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/units/" class="">6. CSS Units</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/flexbox/" class="">7. Flexbox</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/css-grid/" class="">8. CSS Grid</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/media-queries/" class="">9. Media Queries</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/style-guides/" class="">10. Style Guides</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/js-reference/" class="">JavaScript Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/01-basic-programming/" class="">1. Basic Programming in JavaScript</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/02-basic-programming-practice/" class="">2. Basic Programming Practice</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/03-the-dom/" class="active">3. Working with the DOM</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                            <ol class="white">
+  <li><a href="#working-with-the-dom">Working with the DOM</a>
+    <ol>
+      <li><a href="#">Selector Methods</a></li>
+      <li><a href="#">Some examples of HTML attributes you can modify</a></li>
+      <li><a href="#">Some examples of style properties you can modify</a></li>
+      <li><a href="#">Some useful helper functions</a></li>
+      <li><a href="#child--sibling--parent-properties">Child / Sibling / Parent Properties</a></li>
+    </ol>
+  </li>
+  <li><a href="#template-literals">Template Literals</a>
+    <ol>
+      <li><a href="#basic-syntax">Basic Syntax</a></li>
+      <li><a href="#multiline-strings">Multiline Strings</a></li>
+      <li><a href="#expression-interpolation">Expression Interpolation</a></li>
+      <li><a href="#template-literals-for-html-generation">Template Literals for HTML Generation</a></li>
+    </ol>
+  </li>
+  <li><a href="#events">Events</a>
+    <ol>
+      <li><a href="#1-making-events-work-for-you">1. Making events work for you</a></li>
+      <li><a href="#2-the-event-object">2. The “Event” object</a></li>
+    </ol>
+  </li>
+  <li><a href="#debugging">Debugging</a></li>
+</ol>
+
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/04-dom-practice/" class="">4. DOM Practice Problems</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/05-higher-order-array-functions/" class="">5. Higher Order Array Functions</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/06-higher-order-practice/" class="">6. Higher Order Array Functions: Practice</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/07-spread-operator-object-destructuring/" class="">7. Object Destructuring & the Spread Operator</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+</ol>
+            </aside>
+            <article>
+                <h1>
+                    
+                        <a href="../">JavaScript Resources</a> >
+                    
+                    Working with the DOM
+                </h1>
+                <style>
+    .qa th:first-child {
+        width: 40%;
+    }
+    .qa th:nth-child(2) {
+        width: 60%;
+    }
+</style>
+
+<h2 id="working-with-the-dom">Working with the DOM</h2>
+<p>When you are updating the DOM, there are three things you need to specify in your program:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Approach</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1. What element(s) do you want to change?</td>
+      <td>Use one of the selector methods below</td>
+    </tr>
+    <tr>
+      <td>2. What do you want to change about the element(s)?</td>
+      <td>If it’s an attribute, specify which one (see below). If it’s a style property, specify which one (see below).</td>
+    </tr>
+    <tr>
+      <td>3. What do you want to change the element(s)’ attribute / style property to?</td>
+      <td>Use the assignment operator (equal sign) to set the attribute / style property to a valid value.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Some applications of these three considerations are shown below:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// updating attributes</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#my-header</span><span class="dl">'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Hey there!</span><span class="dl">'</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">img</span><span class="dl">'</span><span class="p">).</span><span class="nx">src</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://media1.britannica.com/eb-media/22/65322-004-8FF21CDA.jpg</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// updating style properties</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.panel</span><span class="dl">'</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">hotpink</span><span class="dl">'</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.panel</span><span class="dl">'</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontSize</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">3.5em</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Here are some examples of different selector methods and approaches to updating the DOM. You can also
+    try practicing with Sarah's interactive <a href="/spring2025/course-files/activities/dom-tester" target="_blank">DOM
+        manipulation tool</a>.</p>
+
+<h3>Selector Methods</h3>
+<table>
+    <tr>
+        <th>Method</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>getElementById()</td>
+        <td><code>document.getElementById("my_element")</code></td>
+    </tr>
+    <tr>
+        <td>querySelector()</td>
+        <td><code>document.querySelector("#my_element")<br />document.querySelector("p")<br />document.querySelector(".my-announcements")</code>
+        </td>
+    </tr>
+    <tr>
+        <td>querySelectorAll()</td>
+        <td><code>document.querySelectorAll("p")</code></td>
+    </tr>
+    <tr>
+        <td>getElementsByTagName()</td>
+        <td><code>document.getElementsByTagName("div")</code></td>
+    </tr>
+    <tr>
+        <td>getElementsByClassName()</td>
+        <td><code>document.getElementsByClassName(".panel")</code></td>
+    </tr>
+</table>
+
+<h3>Some examples of HTML attributes you can modify</h3>
+<table>
+    <tr>
+        <th>Attribute</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>className</td>
+        <td><code>el.className = "panel";</code></td>
+    </tr>
+    <tr>
+        <td>innerHTML</td>
+        <td><code>el.innerHTML = "&lt;p&gt;hi&lt;/p&gt;";</code></td>
+    </tr>
+    <tr>
+        <td>src (for images)</td>
+        <td><code>document.querySelector(".my_image").src = "sponge_bob.png";</code></td>
+    </tr>
+    <tr>
+        <td>href (for links)</td>
+        <td><code>document.querySelector(".my_link").href = 'https://www.wikipedia.org';</code></td>
+    </tr>
+</table>
+
+<h3>Some examples of style properties you can modify</h3>
+<table>
+    <tr>
+        <th>Property</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>width</td>
+        <td><code>el.style.width = "200px";</code></td>
+    </tr>
+    <tr>
+        <td>height</td>
+        <td><code>el.style.height = "200px";</code></td>
+    </tr>
+    <tr>
+        <td>background-color</td>
+        <td><code>el.style.backgroundColor = "hotpink";</code></td>
+    </tr>
+    <tr>
+        <td>border-width</td>
+        <td><code>el.style.borderWidth = "5px";</code></td>
+    </tr>
+    <tr>
+        <td>padding</td>
+        <td><code>el.style.padding = "10px";</code></td>
+    </tr>
+    <tr>
+        <td>display</td>
+        <td><code>el.style.display = "none";</code></td>
+    </tr>
+</table>
+
+<h3>Some useful helper functions</h3>
+<table>
+    <tr>
+        <th>Property</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>insertAdjacentHTML(position, htmlString)</td>
+        <td>
+            <code>
+                el.insertAdjacentHTML("beforeend", 
+                    "&lt;p&gt;stuff&lt;/p&gt;");
+            </code><br />
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML" target="_blank">insertAdjacentHTML docs</a>
+        </td>
+    </tr>
+    <tr>
+        <td>classList.add(className)</td>
+        <td>
+            <code>el.classList.add("highlight");</code><br />
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList" target="_blank">classList
+                docs</a>
+        </td>
+    </tr>
+    <tr>
+        <td>classList.remove(className)</td>
+        <td><code>el.classList.remove("highlight");</code></td>
+    </tr>
+    <tr>
+        <td>classList.toggle(className)</td>
+        <td><code>el.classList.toggle("highlight");</code></td>
+    </tr>
+</table>
+
+<h3 id="child--sibling--parent-properties">Child / Sibling / Parent Properties</h3>
+
+<h4 id="html">HTML</h4>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"cards"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"images/field1.jpg"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"images/purple.jpg"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"images/jar.jpg"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</code></pre></div></div>
+<h4 id="javascript">JavaScript</h4>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// EXAMPLE</span>
+<span class="kd">const</span> <span class="nx">cards</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.cards</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="c1">// get first child of cards:</span>
+<span class="kd">const</span> <span class="nx">firstChild</span> <span class="o">=</span> <span class="nx">cards</span><span class="p">.</span><span class="nx">firstElementChild</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">first child:</span><span class="dl">'</span><span class="p">,</span><span class="nx">firstChild</span><span class="p">);</span>
+
+<span class="c1">// get last child of cards:</span>
+<span class="kd">const</span> <span class="nx">lastChild</span> <span class="o">=</span> <span class="nx">cards</span><span class="p">.</span><span class="nx">lastElementChild</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">last child:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">lastChild</span><span class="p">);</span>
+
+<span class="c1">// get first child's next sibling:</span>
+<span class="kd">const</span> <span class="nx">nextSibling</span> <span class="o">=</span> <span class="nx">firstChild</span><span class="p">.</span><span class="nx">nextElementSibling</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">first child</span><span class="se">\'</span><span class="s1">s next sibling:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">nextSibling</span><span class="p">);</span>
+
+<span class="c1">// get last child's previous sibling:</span>
+<span class="kd">const</span> <span class="nx">previousSibling</span> <span class="o">=</span> <span class="nx">lastChild</span><span class="p">.</span><span class="nx">previousElementSibling</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">last child</span><span class="se">\'</span><span class="s1">s previous sibling:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">previousSibling</span><span class="p">);</span>
+
+<span class="c1">// get last child's parent:</span>
+<span class="kd">const</span> <span class="nx">parent</span> <span class="o">=</span> <span class="nx">lastChild</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">last child</span><span class="se">\'</span><span class="s1">s parent:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">parent</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h4 id="more-practice">More practice</h4>
+<p>Use Sarah’s interactive <a href="/spring2025/course-files/activities/dom-tester" target="_blank">DOM manipulation worksheet</a> to get more practice!</p>
+
+<h2 id="template-literals">Template Literals</h2>
+
+<p>Template literals are a way to create strings that are more flexible and readable than traditional string concatenation. They are enclosed by backticks (<code class="highlighter-rouge">`</code>) and allow you to embed expressions within strings using the <code class="highlighter-rouge">${expression}</code> syntax.</p>
+
+<h3 id="basic-syntax">Basic Syntax</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">John</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span> 
+<span class="kd">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">`Hello, my name is </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2"> and I am </span><span class="p">${</span><span class="nx">age</span><span class="p">}</span><span class="s2"> years old.`</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="multiline-strings">Multiline Strings</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">multiline</span> <span class="o">=</span> <span class="s2">`This is a multiline string.
+It can span multiple lines without using special characters.`</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multiline</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="expression-interpolation">Expression Interpolation</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">sum</span> <span class="o">=</span> <span class="s2">`The sum of </span><span class="p">${</span><span class="nx">a</span><span class="p">}</span><span class="s2"> and </span><span class="p">${</span><span class="nx">b</span><span class="p">}</span><span class="s2"> is </span><span class="p">${</span><span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">}</span><span class="s2">.`</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="template-literals-for-html-generation">Template Literals for HTML Generation</h3>
+
+<p>Template literals are particularly useful for creating complex HTML structures. Here’s an example:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pets</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Luna</span><span class="dl">'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">dog</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="na">image</span><span class="p">:</span> <span class="dl">'</span><span class="s1">luna.jpg</span><span class="dl">'</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Milo</span><span class="dl">'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">cat</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="na">image</span><span class="p">:</span> <span class="dl">'</span><span class="s1">milo.jpg</span><span class="dl">'</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bella</span><span class="dl">'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">dog</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">image</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bella.jpg</span><span class="dl">'</span> <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="kd">function</span> <span class="nx">createPetCard</span><span class="p">(</span><span class="nx">pet</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">`
+        &lt;div class="pet-card"&gt;
+            &lt;img src="images/</span><span class="p">${</span><span class="nx">pet</span><span class="p">.</span><span class="nx">image</span><span class="p">}</span><span class="s2">" alt="</span><span class="p">${</span><span class="nx">pet</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2"> the </span><span class="p">${</span><span class="nx">pet</span><span class="p">.</span><span class="nx">type</span><span class="p">}</span><span class="s2">"&gt;
+            &lt;div class="pet-info"&gt;
+                &lt;h3&gt;</span><span class="p">${</span><span class="nx">pet</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">&lt;/h3&gt;
+                &lt;p&gt;</span><span class="p">${</span><span class="nx">pet</span><span class="p">.</span><span class="nx">type</span><span class="p">}</span><span class="s2"> • </span><span class="p">${</span><span class="nx">pet</span><span class="p">.</span><span class="nx">age</span><span class="p">}</span><span class="s2"> years old&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    `</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Insert all pet cards into the container</span>
+<span class="kd">const</span> <span class="nx">container</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.pets-container</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">container</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">&lt;h2&gt;Our Pets&lt;/h2&gt;&lt;div class="pet-grid"&gt;&lt;/div&gt;</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">petGrid</span> <span class="o">=</span> <span class="nx">container</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.pet-grid</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">pets</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">pet</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">petGrid</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="dl">'</span><span class="s1">beforeend</span><span class="dl">'</span><span class="p">,</span> <span class="nx">createPetCard</span><span class="p">(</span><span class="nx">pet</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>This example shows how template literals can:</p>
+<ul>
+  <li>Maintain proper HTML structure and indentation</li>
+  <li>Interpolate variables and expressions</li>
+  <li>Generate multiple elements using array methods</li>
+  <li>Create reusable HTML templates with functions</li>
+</ul>
+
+<p>The corresponding CSS might look like this:</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.pet-grid</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+    <span class="py">grid-template-columns</span><span class="p">:</span> <span class="nb">repeat</span><span class="p">(</span><span class="n">auto-fit</span><span class="p">,</span> <span class="n">minmax</span><span class="p">(</span><span class="m">250px</span><span class="p">,</span> <span class="m">1</span><span class="n">fr</span><span class="p">));</span>
+    <span class="py">gap</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.pet-card</span> <span class="p">{</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#ccc</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">8px</span><span class="p">;</span>
+    <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.pet-card</span> <span class="nt">img</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+    <span class="nl">object-fit</span><span class="p">:</span> <span class="n">cover</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.pet-info</span> <span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">15px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="events">Events</h2>
+<p>When JavaScript is used in HTML pages, JavaScript can “react” to particular “events,” which include (among others):</p>
+<ul>
+  <li>change</li>
+  <li>click</li>
+  <li>mouseover</li>
+  <li>mouseout</li>
+  <li>keydown</li>
+  <li>load</li>
+</ul>
+
+<h3 id="1-making-events-work-for-you">1. Making events work for you</h3>
+<p>Events are comprised of two parts:</p>
+<ol>
+  <li>
+    <p><strong>Event Listeners:</strong> refer to the particular interaction / thing to which you want to listen.</p>
+  </li>
+  <li>
+    <p><strong>Event Handlers:</strong> snippets of code that you want to execute when the event listener triggers the event.</p>
+  </li>
+</ol>
+
+<p>For instance, if I want to attach a “click” <strong><em>event listener</em></strong> to the button with the id of “subscribe”, I would assign the <strong>onclick</strong> event of that button to a function that I specify. Example:</p>
+
+<h4 id="html-1">HTML</h4>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"subscribe"</span><span class="nt">&gt;</span>Subscribe<span class="nt">&lt;/button&gt;</span>
+</code></pre></div></div>
+<h4 id="javascript-1">JavaScript</h4>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// event handler:</span>
+<span class="kd">const</span> <span class="nx">subscribe</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   	<span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Perform subscribe functionality...</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// event listener:</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#subscribe</span><span class="dl">'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">subscribe</span><span class="p">);</span>
+
+<span class="c1">// you can also attach an event listener to an anonymous function: </span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#subscribe</span><span class="dl">'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   	<span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Perform subscribe functionality...</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Therefore, to create an event-driven interaction, you need to tell your browser three things:</p>
+
+<table class="qa">
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Approach</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1. What element(s) do you want to attach an event to?</td>
+      <td>Use one of the selector methods (see the DOM section above).</td>
+    </tr>
+    <tr>
+      <td>2. What is the event of interest?</td>
+      <td>See the list of events above.</td>
+    </tr>
+    <tr>
+      <td>3. What functionality to you want to attach to the event?</td>
+      <td>For this, you will need to create your own event handler – a function – to respond to the event. Moreover, if you need your event handler to use data from the element that triggered the event, use the event object (see below).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="2-the-event-object">2. The “Event” object</h3>
+<p>When you attach an event handler (i.e function) to an event, an event object is passed to the event handler when it is triggered. This event object offers some useful information about the event that has just been fired, including:</p>
+<ol>
+  <li><strong>target:</strong> The element that triggered the event (target)</li>
+  <li><strong>currentTarget:</strong> The element whose event listeners triggered the event</li>
+</ol>
+
+<p>You can learn more about the distinction between the target and the currentTarget <a href="https://medium.com/@florenceliang/javascript-event-delegation-and-event-target-vs-event-currenttarget-c9680c3a46d1" target="_blank">here</a>.</p>
+
+<p>Note in the example below, <code class="highlighter-rouge">ev.currentTarget</code> is used to detect which button was clicked, in order to change the document background to the appropriate color:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"color1"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>teal<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"color2"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>hotpink<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"color3"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>yellow<span class="nt">&lt;/button&gt;</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// event handler:</span>
+<span class="kd">const</span> <span class="nx">changeColor</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ev</span><span class="p">);</span>
+   	<span class="kd">const</span> <span class="nx">sourceElement</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">;</span>
+   	<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">body</span><span class="dl">'</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="nx">sourceElement</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// event listener attach to all of the buttons:</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#color1</span><span class="dl">'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">changeColor</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#color2</span><span class="dl">'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">changeColor</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#color3</span><span class="dl">'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">changeColor</span><span class="p">);</span>
+
+
+<span class="c1">// or...</span>
+<span class="p">[</span><span class="dl">'</span><span class="s1">#color1</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">#color1</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">#color1</span><span class="dl">'</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">item</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">changeColor</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="debugging">Debugging</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Built-in Function</th>
+      <th>Example</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">console.log(some_data);</code><br /><code class="highlighter-rouge">console.log(thing1, thing2, ...);</code></td>
+      <td><code class="highlighter-rouge">console.log("Hello world!");</code><br /><code class="highlighter-rouge">console.log(a, b, c, d);</code></td>
+      <td>Analogous to Python”s <strong>print</strong> function;<br />outputs to the Browser”s console</td>
+    </tr>
+  </tbody>
+</table>
+
+
+                
+            </article>  
+        </main>
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

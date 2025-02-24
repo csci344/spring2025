@@ -1,0 +1,1269 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Higher Order Array Functions</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+        </style>
+    </head>
+    <body class="two-column">
+        <div class="container">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li class="active" ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1LqUWReoyqDSOHq3PyGYZvbgdll0_SHl6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                
+
+
+<ol class="side-menu">
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/" class="">Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/design/" class="">Design Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/accessibility/" class="">Accessibility Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/command-line/" class="">Command Line Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/html-resources/" class="">HTML Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/html-rules-of-thumb/" class="">1. Rules of Thumb</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/text-tags/" class="">2. Text Markup Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/linking/" class="">3. Hyperlinks</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/image-tags/" class="">4. Image Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/media-tags/" class="">5. Media Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/complex-tags/" class="">6. Compound Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/semantic-tags/" class="">7. Semantic Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/form-tags/" class="">8. Form Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/css-reference/" class="">CSS Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/css-rules-of-thumb/" class="">1. Rules of Thumb</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/selectors/" class="">2. Selectors</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/color/" class="">3. Color</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/fonts/" class="">4. Text & Fonts</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/box-model/" class="">5. The Box Model</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/units/" class="">6. CSS Units</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/flexbox/" class="">7. Flexbox</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/css-grid/" class="">8. CSS Grid</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/media-queries/" class="">9. Media Queries</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/style-guides/" class="">10. Style Guides</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/js-reference/" class="">JavaScript Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/01-basic-programming/" class="">1. Basic Programming in JavaScript</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/02-basic-programming-practice/" class="">2. Basic Programming Practice</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/03-the-dom/" class="">3. Working with the DOM</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/04-dom-practice/" class="">4. DOM Practice Problems</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/05-higher-order-array-functions/" class="active">5. Higher Order Array Functions</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                            <ol class="white">
+  <li><a href="#1-foreach-method">1. forEach Method</a>
+    <ol>
+      <li><a href="#basic-syntax">Basic Syntax</a></li>
+      <li><a href="#how-foreach-works">How forEach Works</a></li>
+      <li><a href="#practical-examples">Practical Examples</a></li>
+      <li><a href="#important-notes">Important Notes</a></li>
+    </ol>
+  </li>
+  <li><a href="#2-map-method">2. map Method</a>
+    <ol>
+      <li><a href="#basic-syntax-1">Basic Syntax</a></li>
+      <li><a href="#how-map-works">How map Works</a></li>
+      <li><a href="#practical-examples-1">Practical Examples</a></li>
+      <li><a href="#important-notes-1">Important Notes</a></li>
+    </ol>
+  </li>
+  <li><a href="#3-filter-method">3. filter Method</a>
+    <ol>
+      <li><a href="#basic-syntax-2">Basic Syntax</a></li>
+      <li><a href="#how-filter-works">How filter Works</a></li>
+      <li><a href="#practical-examples-2">Practical Examples</a></li>
+      <li><a href="#important-notes-2">Important Notes</a></li>
+    </ol>
+  </li>
+  <li><a href="#4-reduce-method">4. reduce Method</a>
+    <ol>
+      <li><a href="#basic-syntax-3">Basic Syntax</a></li>
+      <li><a href="#how-reduce-works">How reduce Works</a></li>
+      <li><a href="#practical-examples-3">Practical Examples</a></li>
+      <li><a href="#important-notes-3">Important Notes:</a></li>
+    </ol>
+  </li>
+  <li><a href="#5-find-method">5. find Method</a>
+    <ol>
+      <li><a href="#basic-syntax-4">Basic Syntax</a></li>
+      <li><a href="#how-find-works">How find Works</a></li>
+      <li><a href="#practical-examples-4">Practical Examples</a></li>
+      <li><a href="#important-notes-4">Important Notes</a></li>
+    </ol>
+  </li>
+</ol>
+
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/06-higher-order-practice/" class="">6. Higher Order Array Functions: Practice</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/07-spread-operator-object-destructuring/" class="">7. Object Destructuring & the Spread Operator</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+</ol>
+            </aside>
+            <article>
+                <h1>
+                    
+                        <a href="../">JavaScript Resources</a> >
+                    
+                    Higher Order Array Functions
+                </h1>
+                <p>Higher order array functions are functions that take other functions as arguments or return a function. They are a powerful way to manipulate arrays and are a core concept in JavaScript. You can read more about <a href="https://eloquentjavascript.net/05_higher_order.html" target="_blank">the concept of higher order functions here</a>. Some of the most common higher order array functions – <code class="highlighter-rouge">forEach</code>, <code class="highlighter-rouge">map</code>, <code class="highlighter-rouge">filter</code>, <code class="highlighter-rouge">reduce</code>, and <code class="highlighter-rouge">find</code> – are also covered in <a href="https://www.digitalocean.com/community/tutorials/how-to-use-array-methods-in-javascript-iteration-methods" target="_blank">this Digital Ocean article</a>.</p>
+<h2 id="1-foreach-method">1. forEach Method</h2>
+
+<p>The <code class="highlighter-rouge">forEach</code> method is like a tour guide that visits each item in an array one by one. It’s a simpler way to loop through arrays compared to traditional <code class="highlighter-rouge">for</code> loops. You can <a href="https://www.youtube.com/watch?v=K_CxaSPjd1c" target="_blank">learn more about the forEach method here</a>.</p>
+
+<h3 id="basic-syntax">Basic Syntax</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Let's say we have a list of students</span>
+<span class="kd">const</span> <span class="nx">students</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Alice</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Bob</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Charlie</span><span class="dl">'</span><span class="p">];</span>
+
+<span class="c1">// forEach visits each student and does something</span>
+<span class="nx">students</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">student</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Hello, </span><span class="p">${</span><span class="nx">student</span><span class="p">}</span><span class="s2">!`</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">// Prints:</span>
+<span class="c1">// Hello, Alice!</span>
+<span class="c1">// Hello, Bob!</span>
+<span class="c1">// Hello, Charlie!</span>
+
+<span class="c1">// You can also write it with an arrow function</span>
+<span class="nx">students</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">student</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Hello, </span><span class="p">${</span><span class="nx">student</span><span class="p">}</span><span class="s2">!`</span><span class="p">));</span>
+</code></pre></div></div>
+
+<h3 id="how-foreach-works">How forEach Works</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// forEach will invoke the callback function with three arguments:</span>
+<span class="c1">// 1. The item itself</span>
+<span class="c1">// 2. The index (position)</span>
+<span class="c1">// 3. The original array</span>
+
+<span class="kd">const</span> <span class="nx">grades</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">A</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">B</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">C</span><span class="dl">'</span><span class="p">];</span>
+
+<span class="nx">grades</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">grade</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Grade </span><span class="p">${</span><span class="nx">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">}</span><span class="s2"> of </span><span class="p">${</span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">}</span><span class="s2">: </span><span class="p">${</span><span class="nx">grade</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">// Prints:</span>
+<span class="c1">// Grade 1 of 3: A</span>
+<span class="c1">// Grade 2 of 3: B</span>
+<span class="c1">// Grade 3 of 3: C</span>
+</code></pre></div></div>
+
+<h3 id="practical-examples">Practical Examples</h3>
+
+<h4 id="updating-dom-elements">Updating DOM Elements</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Add a class to multiple elements</span>
+<span class="kd">const</span> <span class="nx">paragraphs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">'</span><span class="s1">p</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">paragraphs</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">paragraph</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">paragraph</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">highlight</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="calculating-totals">Calculating Totals</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Calculate total cost of items</span>
+<span class="kd">const</span> <span class="nx">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="nx">prices</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">price</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">total</span> <span class="o">+=</span> <span class="nx">price</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="c1">// total is now 60</span>
+</code></pre></div></div>
+
+<h3 id="important-notes">Important Notes</h3>
+<ul>
+  <li>You can’t break out of a forEach loop (use a regular for loop if you need to)</li>
+  <li>It always processes all items in the array</li>
+  <li>It doesn’t return anything (use map if you need to create a new array)</li>
+</ul>
+
+<h2 id="2-map-method">2. map Method</h2>
+
+<p>The <code class="highlighter-rouge">map</code> method is very similar to the <code class="highlighter-rouge">forEach</code> method. The only difference is that it <strong>returns a new array</strong> (the <code class="highlighter-rouge">forEach</code> method doesn’t return anything). You can <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank">learn more about the map method here</a>.</p>
+
+<h3 id="basic-syntax-1">Basic Syntax</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Let's say we have a list of students</span>
+<span class="kd">const</span> <span class="nx">students</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Alice</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Bob</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Charlie</span><span class="dl">'</span><span class="p">];</span>       
+
+<span class="c1">// We want to create a new array with the length of each student's name</span>
+<span class="kd">const</span> <span class="nx">nameLengths</span> <span class="o">=</span> <span class="nx">students</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">student</span> <span class="o">=&gt;</span> <span class="nx">student</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nameLengths</span><span class="p">);</span>
+<span class="c1">// Prints: [5, 3, 7]</span>
+</code></pre></div></div>
+
+<h3 id="how-map-works">How map Works</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// map will invoke the callback function with three arguments (just like forEach):</span>
+<span class="c1">// 1. The item itself</span>
+<span class="c1">// 2. The index (position)</span>
+<span class="c1">// 3. The original array</span>
+
+<span class="kd">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+
+<span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">number</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Processing </span><span class="p">${</span><span class="nx">number</span><span class="p">}</span><span class="s2"> at position </span><span class="p">${</span><span class="nx">index</span><span class="p">}</span><span class="s2"> of </span><span class="p">${</span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">number</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="c1">// Prints:</span>
+<span class="c1">// Processing 1 at position 0 of 5</span>
+<span class="c1">// Processing 2 at position 1 of 5</span>
+<span class="c1">// Processing 3 at position 2 of 5</span>
+<span class="c1">// Processing 4 at position 3 of 5</span>
+<span class="c1">// Processing 5 at position 4 of 5</span>
+<span class="c1">// Returns: [2, 4, 6, 8, 10]</span>
+</code></pre></div></div>
+
+<h3 id="practical-examples-1">Practical Examples</h3>
+
+<h4 id="updating-dom-elements-1">Updating DOM Elements</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Add a class to multiple elements</span>
+<span class="kd">const</span> <span class="nx">paragraphs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">'</span><span class="s1">p</span><span class="dl">'</span><span class="p">);</span>  
+<span class="nx">paragraphs</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">paragraph</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">paragraph</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">highlight</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="calculating-totals-1">Calculating Totals</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Calculate total cost of items</span>
+<span class="kd">const</span> <span class="nx">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="nx">prices</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">price</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">total</span> <span class="o">+=</span> <span class="nx">price</span><span class="p">;</span>
+<span class="p">});</span> 
+<span class="c1">// total is now 60</span>
+</code></pre></div></div>
+
+<h3 id="important-notes-1">Important Notes</h3>
+<ul>
+  <li>map always returns a new array</li>
+  <li>It doesn’t modify the original array</li>
+  <li>The returned array will always have the same length as the original array</li>
+</ul>
+
+<h2 id="3-filter-method">3. filter Method</h2>
+
+<p>The <code class="highlighter-rouge">filter</code> method creates a new array containing only the elements that pass a certain test. Think of it like a sieve that only lets certain items through. You can <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank">learn more about the filter method here</a>.</p>
+
+<h3 id="basic-syntax-2">Basic Syntax</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Let's say we have a list of numbers</span>
+<span class="kd">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">];</span>
+
+<span class="c1">// Filter out only the even numbers</span>
+<span class="kd">const</span> <span class="nx">evenNumbers</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">number</span> <span class="o">=&gt;</span> <span class="nx">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">evenNumbers</span><span class="p">);</span>
+<span class="c1">// Prints: [2, 4, 6]</span>
+</code></pre></div></div>
+
+<h3 id="how-filter-works">How filter Works</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// filter will invoke the callback function with three arguments (just like map and forEach):</span>
+<span class="c1">// 1. The item itself</span>
+<span class="c1">// 2. The index (position)</span>
+<span class="c1">// 3. The original array</span>
+
+<span class="kd">const</span> <span class="nx">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">95</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">45</span><span class="p">];</span>
+
+<span class="kd">const</span> <span class="nx">passingScores</span> <span class="o">=</span> <span class="nx">scores</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">score</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Checking score </span><span class="p">${</span><span class="nx">score</span><span class="p">}</span><span class="s2"> at position </span><span class="p">${</span><span class="nx">index</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">score</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="c1">// Prints scores being checked</span>
+<span class="c1">// Returns: [95, 78, 85]</span>
+</code></pre></div></div>
+
+<h3 id="practical-examples-2">Practical Examples</h3>
+
+<h4 id="filtering-objects">Filtering Objects</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">students</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Alice</span><span class="dl">'</span><span class="p">,</span> <span class="na">grade</span><span class="p">:</span> <span class="mi">95</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bob</span><span class="dl">'</span><span class="p">,</span> <span class="na">grade</span><span class="p">:</span> <span class="mi">65</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Charlie</span><span class="dl">'</span><span class="p">,</span> <span class="na">grade</span><span class="p">:</span> <span class="mi">85</span> <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="kd">const</span> <span class="nx">honorsStudents</span> <span class="o">=</span> <span class="nx">students</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">student</span> <span class="o">=&gt;</span> <span class="nx">student</span><span class="p">.</span><span class="nx">grade</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">);</span>
+<span class="c1">// Returns: [{name: 'Alice', grade: 95}, {name: 'Charlie', grade: 85}]</span>
+</code></pre></div></div>
+
+<h4 id="removing-empty-values">Removing Empty Values</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span><span class="p">,</span> <span class="dl">''</span><span class="p">,</span> <span class="dl">'</span><span class="s1">world</span><span class="dl">'</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="dl">'</span><span class="s1">javascript</span><span class="dl">'</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">cleanValues</span> <span class="o">=</span> <span class="nx">values</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">value</span> <span class="o">=&gt;</span> <span class="nx">value</span><span class="p">);</span>
+<span class="c1">// Returns: ['hello', 'world', 'javascript']</span>
+</code></pre></div></div>
+
+<h3 id="important-notes-2">Important Notes</h3>
+<ul>
+  <li>filter returns a new array</li>
+  <li>The new array might be shorter than the original</li>
+  <li>The original array is not modified</li>
+  <li>Elements are only included if the callback returns true</li>
+</ul>
+
+<h2 id="4-reduce-method">4. reduce Method</h2>
+
+<p>The <code class="highlighter-rouge">reduce</code> method combines all elements in an array into a single value. Think of it like a snowball rolling down a hill, collecting snow as it goes. You can <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce" target="_blank">learn more about the reduce method here</a>.</p>
+
+<h3 id="basic-syntax-3">Basic Syntax</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Let's add up all numbers in an array</span>
+<span class="kd">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
+
+<span class="kd">const</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">accumulator</span><span class="p">,</span> <span class="nx">currentValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">accumulator</span> <span class="o">+</span> <span class="nx">currentValue</span><span class="p">;</span>
+<span class="p">},</span> <span class="mi">0</span><span class="p">);</span>  <span class="c1">// 0 is the initial value</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span> <span class="c1">// Prints: 10</span>
+</code></pre></div></div>
+
+<h3 id="how-reduce-works">How reduce Works</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// reduce will invoke the callback function with four arguments:</span>
+<span class="c1">// 1. Accumulator (running total)</span>
+<span class="c1">// 2. Current value</span>
+<span class="c1">// 3. Current index</span>
+<span class="c1">// 4. Original array</span>
+
+<span class="kd">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="nx">numbers</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">curr</span><span class="p">,</span> <span class="nx">idx</span><span class="p">,</span> <span class="nx">arr</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Accumulator: </span><span class="p">${</span><span class="nx">acc</span><span class="p">}</span><span class="s2">, Current: </span><span class="p">${</span><span class="nx">curr</span><span class="p">}</span><span class="s2">, Index: </span><span class="p">${</span><span class="nx">idx</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">acc</span> <span class="o">+</span> <span class="nx">curr</span><span class="p">;</span>
+<span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+<span class="c1">// Prints:</span>
+<span class="c1">// Accumulator: 0, Current: 1, Index: 0</span>
+<span class="c1">// Accumulator: 1, Current: 2, Index: 1</span>
+<span class="c1">// Accumulator: 3, Current: 3, Index: 2</span>
+</code></pre></div></div>
+
+<h3 id="practical-examples-3">Practical Examples</h3>
+
+<h4 id="creating-an-tally-of-each-item-in-an-array">Creating an tally of each item in an array</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">apple</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">banana</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">apple</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">orange</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">banana</span><span class="dl">'</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">fruitCount</span> <span class="o">=</span> <span class="nx">fruits</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">count</span><span class="p">,</span> <span class="nx">fruit</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">count</span><span class="p">[</span><span class="nx">fruit</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nx">count</span><span class="p">[</span><span class="nx">fruit</span><span class="p">]</span> <span class="o">||</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">count</span><span class="p">;</span>
+<span class="p">},</span> <span class="p">{});</span>
+<span class="c1">// Returns: { apple: 2, banana: 2, orange: 1 }</span>
+</code></pre></div></div>
+
+<h4 id="flattening-arrays">Flattening Arrays</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arrays</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]];</span>
+<span class="kd">const</span> <span class="nx">flattened</span> <span class="o">=</span> <span class="nx">arrays</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">flat</span><span class="p">,</span> <span class="nx">current</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[...</span><span class="nx">flat</span><span class="p">,</span> <span class="p">...</span><span class="nx">current</span><span class="p">];</span>
+<span class="p">},</span> <span class="p">[]);</span>
+<span class="c1">// Returns: [1, 2, 3, 4, 5, 6]</span>
+</code></pre></div></div>
+
+<h3 id="important-notes-3">Important Notes:</h3>
+<ul>
+  <li>reduce returns a single value (which can be any type)</li>
+  <li>The initial value is optional but recommended</li>
+  <li>Great for calculations and transformations</li>
+</ul>
+
+<h2 id="5-find-method">5. find Method</h2>
+
+<p>The <code class="highlighter-rouge">find</code> method returns the first element in an array that satisfies a certain condition. Think of it like a detective searching for a specific item. You can <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find" target="_blank">learn more about the find method here</a>.</p>
+
+<h3 id="basic-syntax-4">Basic Syntax</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Let's say we have a list of students</span>
+<span class="kd">const</span> <span class="nx">students</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Alice</span><span class="dl">'</span><span class="p">,</span> <span class="na">grade</span><span class="p">:</span> <span class="mi">95</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bob</span><span class="dl">'</span><span class="p">,</span> <span class="na">grade</span><span class="p">:</span> <span class="mi">65</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Charlie</span><span class="dl">'</span><span class="p">,</span> <span class="na">grade</span><span class="p">:</span> <span class="mi">85</span> <span class="p">}</span>
+<span class="p">];</span>          
+
+<span class="c1">// We want to find the first student with a grade of 95</span>
+<span class="kd">const</span> <span class="nx">student</span> <span class="o">=</span> <span class="nx">students</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">student</span> <span class="o">=&gt;</span> <span class="nx">student</span><span class="p">.</span><span class="nx">grade</span> <span class="o">===</span> <span class="mi">95</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">student</span><span class="p">);</span>
+<span class="c1">// Returns: { name: 'Alice', grade: 95 }</span>
+</code></pre></div></div>
+
+<h3 id="how-find-works">How find Works</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// find will invoke the callback function with three arguments (just like map and forEach):</span>
+<span class="c1">// 1. The item itself</span>
+<span class="c1">// 2. The index (position)</span>
+<span class="c1">// 3. The original array    </span>
+
+<span class="kd">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="nx">numbers</span><span class="p">.</span><span class="nx">find</span><span class="p">((</span><span class="nx">number</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Checking </span><span class="p">${</span><span class="nx">number</span><span class="p">}</span><span class="s2"> at position </span><span class="p">${</span><span class="nx">index</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">number</span> <span class="o">===</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">});</span> 
+<span class="c1">// Prints:</span>
+<span class="c1">// Checking 1 at position 0</span>
+<span class="c1">// Checking 2 at position 1</span>
+<span class="c1">// Checking 3 at position 2</span>
+<span class="c1">// Returns: 3</span>
+</code></pre></div></div>
+
+<h3 id="practical-examples-4">Practical Examples</h3>
+
+<h4 id="finding-a-specific-item">Finding a specific item</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">users</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Alice</span><span class="dl">'</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bob</span><span class="dl">'</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Charlie</span><span class="dl">'</span> <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">users</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">user</span> <span class="o">=&gt;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="mi">2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+<span class="c1">// Returns: { id: 2, name: 'Bob' }</span>
+</code></pre></div></div>
+
+<h4 id="finding-the-first-even-number">Finding the first even number</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">evenNumber</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">number</span> <span class="o">=&gt;</span> <span class="nx">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">evenNumber</span><span class="p">);</span>
+<span class="c1">// Returns: 2</span>
+</code></pre></div></div>
+
+<h3 id="important-notes-4">Important Notes</h3>
+<ul>
+  <li>find returns the first element that satisfies the condition</li>
+  <li>If no element satisfies the condition, it returns undefined</li>
+  <li>It doesn’t modify the original array</li>
+</ul>
+
+
+                
+            </article>  
+        </main>
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

@@ -1,0 +1,1526 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Basic Programming in JavaScript</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+        </style>
+    </head>
+    <body class="two-column">
+        <div class="container">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li class="active" ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1LqUWReoyqDSOHq3PyGYZvbgdll0_SHl6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                
+
+
+<ol class="side-menu">
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/" class="">Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/design/" class="">Design Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/accessibility/" class="">Accessibility Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/command-line/" class="">Command Line Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/html-resources/" class="">HTML Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/html-rules-of-thumb/" class="">1. Rules of Thumb</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/text-tags/" class="">2. Text Markup Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/linking/" class="">3. Hyperlinks</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/image-tags/" class="">4. Image Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/media-tags/" class="">5. Media Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/complex-tags/" class="">6. Compound Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/semantic-tags/" class="">7. Semantic Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/form-tags/" class="">8. Form Tags</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/css-reference/" class="">CSS Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/css-rules-of-thumb/" class="">1. Rules of Thumb</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/selectors/" class="">2. Selectors</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/color/" class="">3. Color</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/fonts/" class="">4. Text & Fonts</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/box-model/" class="">5. The Box Model</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/units/" class="">6. CSS Units</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/flexbox/" class="">7. Flexbox</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/css-grid/" class="">8. CSS Grid</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/media-queries/" class="">9. Media Queries</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/style-guides/" class="">10. Style Guides</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <li>
+            
+            
+            <a href="/spring2025/resources/js-reference/" class="">JavaScript Resources</a>
+
+            <!-- Bookmarks for top-level pages -->
+            
+            <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/01-basic-programming/" class="active">1. Basic Programming in JavaScript</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                            <ol class="white">
+  <li><a href="#step1">1. Data</a>
+    <ol>
+      <li><a href="#data-types">Data Types</a></li>
+      <li><a href="#variables">Variables</a></li>
+    </ol>
+  </li>
+  <li><a href="#step2">2. Expressions &amp; Statements</a>
+    <ol>
+      <li><a href="#expressions">Expressions</a></li>
+      <li><a href="#statements">Statements</a></li>
+      <li><a href="#operators">Operators</a></li>
+      <li><a href="#functions">Functions</a></li>
+    </ol>
+  </li>
+  <li><a href="#step3">3. Control</a>
+    <ol>
+      <li><a href="#ifelse">If…Else</a></li>
+      <li><a href="#loops">Loops</a></li>
+    </ol>
+  </li>
+  <li><a href="#step4">4. Arrays</a></li>
+  <li><a href="#step5">5. Objects &amp; Classes</a></li>
+</ol>
+
+                        
+                    </li>
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/02-basic-programming-practice/" class="">2. Basic Programming Practice</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/03-the-dom/" class="">3. Working with the DOM</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/04-dom-practice/" class="">4. DOM Practice Problems</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/05-higher-order-array-functions/" class="">5. Higher Order Array Functions</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/06-higher-order-practice/" class="">6. Higher Order Array Functions: Practice</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                    <li>
+                        
+                        
+                        <a href="/spring2025/resources/07-spread-operator-object-destructuring/" class="">7. Object Destructuring & the Spread Operator</a>
+                        
+                        <!-- Bookmarks for child pages -->
+                        
+                    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ol>
+        </li>
+    
+
+</ol>
+            </aside>
+            <article>
+                <h1>
+                    
+                        <a href="../">JavaScript Resources</a> >
+                    
+                    Basic Programming in JavaScript
+                </h1>
+                <p>For those of you who are rusty on programming, please complete the following “crash course” on programming. The course covers some of the basic concepts in computer programming using JavaScript. After taking a look at these resources, please complete the practice exercises using Node.js:</p>
+
+<ol>
+  <li><a href="#step1">Data</a></li>
+  <li><a href="#step2">Expressions &amp; Statements</a></li>
+  <li><a href="#step3">Control</a></li>
+  <li><a href="#step4">Arrays</a></li>
+  <li><a href="#step5">Objects &amp; Classes</a></li>
+</ol>
+
+<h2 id="step1">1. Data</h2>
+<h3 id="data-types">Data Types</h3>
+<p>JavaScript has 8 data types. Each datatype has particular capabilities and behaviors that are important to understand:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>number</td>
+      <td>For numbers of any kind: integer or floating-point</td>
+      <td>1.4, 33, 99999999</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>bigint</td>
+      <td>For storing very large integers that can’t be represented by the number datatype</td>
+      <td>BigInt(“123456789012345678901234567890”)</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>string</td>
+      <td>For strings (text). A string may have one or more characters, there’s no separate single-character type</td>
+      <td>“hello world!”</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>boolean</td>
+      <td>for true/false.</td>
+      <td>true, false</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>null</td>
+      <td>for unknown values – has a single value null</td>
+      <td>null</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>undefined</td>
+      <td>for unassigned values – has a single value undefined</td>
+      <td>undefined</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>object</td>
+      <td>for more complex data structures.</td>
+      <td>{ name: “ralph”, species: “dog” }</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>symbol</td>
+      <td>for unique identifiers (we won’t be using this one)</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="use-the-typeof-operator-to-figure-out-the-type-of-data-you-have">Use the <code class="highlighter-rouge">typeof</code> operator to figure out the type of data you have…</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="dl">"</span><span class="s2">hello world!</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="kc">false</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="kc">null</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="kc">undefined</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="mf">23.4</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="mi">4500</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Lester</span><span class="dl">"</span><span class="p">,</span> <span class="na">species</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dog</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">15</span><span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="use-the-built-in-data-type-classes-to-convert-between-data-types">Use the built-in data type classes to convert between data types…</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// String(), Number(), Boolean()</span>
+<span class="c1">// 1. Convert a number to a string</span>
+<span class="kd">let</span> <span class="nx">myString</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span> <span class="c1">// number is an argument</span>
+
+<span class="c1">// 2. Convert a string to a number:</span>
+<span class="kd">let</span> <span class="nx">myNum</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="dl">"</span><span class="s2">123</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="c1">// 3. Convert a string to a boolean</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="dl">"</span><span class="s2">true</span><span class="dl">"</span><span class="p">),</span> <span class="k">typeof</span> <span class="nb">Boolean</span><span class="p">(</span><span class="dl">"</span><span class="s2">true</span><span class="dl">"</span><span class="p">));</span>
+</code></pre></div></div>
+<ul class="compact">
+  <li><a href="https://www.w3schools.com/jsref/jsref_number.asp" target="_blank">W3 Schools: Number Conversions</a></li>
+  <li><a href="https://www.w3schools.com/jsref/jsref_string.asp" target="_blank">W3 Schools: String Conversions</a></li>
+  <li><a href="https://www.w3schools.com/jsref/jsref_obj_boolean.asp" target="_blank">W3 Schools: Boolean Conversions</a></li>
+</ul>
+
+<h3 id="variables">Variables</h3>
+
+<ul class="compact">
+  <li>Variables are containers for storing and / or referencing data</li>
+  <li>Variables can also be used to assign an alias to a function, variable, object, or class</li>
+  <li>Variables are created by using a declaration keyword (var, const, or let)</li>
+  <li>Variables can be declared and assigned within the same statement, or they can be separated</li>
+  <li>You assign values to variables using the assignment operator (equal sign)</li>
+  <li>Variables are <strong>case-sensitive</strong></li>
+  <li>While the JavaScript interpreter doesn’t care what you name things, variable names are typically mnemonic and “camel case” in JavaScript</li>
+</ul>
+
+<p>JavaScript is a <em>dynamically typed language</em>, which means that you don’t need to explicitly declare the type of a variable when you create it. The type is determined automatically based on the value assigned to the variable, and it can change as the program runs. For instance:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">myVar</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>              <span class="c1">// variable is a number</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">myVar</span><span class="p">);</span>   <span class="c1">// "number"</span>
+
+<span class="nx">myVar</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello, world!</span><span class="dl">"</span><span class="p">;</span>     <span class="c1">// now variable is a string</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">myVar</span><span class="p">);</span>   <span class="c1">// "string"</span>
+
+<span class="nx">myVar</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>                <span class="c1">// now variable is a boolean</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">myVar</span><span class="p">);</span>   <span class="c1">// "boolean"</span>
+</code></pre></div></div>
+
+<p>In the example above, <code class="highlighter-rouge">myVar</code> starts out as a number data type (line 1), then changes to a string (line 4), and then changes to a boolean (line 7).</p>
+
+<h4 id="sample-naming-conventions-mnemonic--camel-case">Sample Naming Conventions (Mnemonic &amp; Camel Case)</h4>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// variable names:</span>
+<span class="kd">let</span> <span class="nx">timeLeftTilEndOfClass</span> <span class="o">=</span> <span class="mi">35</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">firstName</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Jazmin</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">lastName</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Morales</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h4 id="declaring-variables">Declaring Variables</h4>
+<p>In JavaScript, there are three keywords for declaring variables: let, const, and var.</p>
+
+<p><strong><code class="highlighter-rouge">let</code></strong>
+Means that the variable may be reassigned / can be changed.</p>
+
+<p><strong><code class="highlighter-rouge">const</code></strong>
+Means that the variable won”t be reassigned. It’s “immutable.” Used in cases where you declare and assign once, but don’t change it afterwards.</p>
+
+<p><strong><code class="highlighter-rouge">var</code></strong>
+For this class: try to avoid (o)ld way to do things prior to ES6). This is not because of efficiency, but because of communication – “The weakest signal available”. When you see it, it’s kind of ambiguous:</p>
+<ul>
+  <li>“The variable may or may not be reassigned” (who knows!?)</li>
+  <li>“The variable may or may not be needed on the global object (<code class="highlighter-rouge">window</code>)</li>
+</ul>
+
+<h2 id="step2">2. Expressions &amp; Statements</h2>
+
+<h3 id="expressions">Expressions</h3>
+<p>An expression is any valid unit of code that resolves to a value (after it is evaluated by an interpreter). Some examples of expressions that all resolve to the value <code class="highlighter-rouge">9</code>:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">myVar</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>          <span class="c1">// 9 is a "constant" expression. Cannot be simplified further</span>
+<span class="nx">myVar</span> <span class="o">=</span> <span class="mi">11</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span>     <span class="c1">// 11 - 2 and 3 * 3 are expressions involving arithmetic operators</span>
+<span class="nx">myVar</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+</code></pre></div></div>
+<p>Expressions are evaluated to their simplest form by the JavaScript interpreter before moving onto the next statement.</p>
+
+<h3 id="statements">Statements</h3>
+<p>A statement <em>performs an action</em> while an expression <em>produces a value</em>. Some examples of statements include:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">var1</span><span class="p">;</span>
+<span class="nx">var1</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">var1</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</code></pre></div></div>
+<p>In the code block above:</p>
+<ul class="compact">
+  <li>line 1 declares a new variable (names it and allocates some memory for storage)</li>
+  <li>line 2 assigns the value 40 to the variable var1</li>
+  <li>line 3 checks if the expression inside the parenthesis is true or false</li>
+</ul>
+
+<h3 id="operators">Operators</h3>
+<p>Operators perform fairly simple tasks (addition, subtraction, comparison, assignment, etc.). The operators shown below typically require two  (operands) and</p>
+
+<h4 id="arithmetic-operators">Arithmetic Operators</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Operator</th>
+      <th>Meaning</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>+</td>
+      <td>Addition</td>
+      <td>Adds values on either side of the operator</td>
+    </tr>
+    <tr>
+      <td>-</td>
+      <td>Subtraction</td>
+      <td>Subtracts right hand operand from left hand operand</td>
+    </tr>
+    <tr>
+      <td>*</td>
+      <td>Multiplication</td>
+      <td>Multiplies values on either side of the operator</td>
+    </tr>
+    <tr>
+      <td>/</td>
+      <td>Division</td>
+      <td>Divides left hand operand by right hand operand</td>
+    </tr>
+    <tr>
+      <td>**</td>
+      <td>Exponent</td>
+      <td>Performs exponential (power) calculation on operators</td>
+    </tr>
+    <tr>
+      <td>%</td>
+      <td>Modulus</td>
+      <td>Divides left hand operand by right hand operand; returns remainder</td>
+    </tr>
+    <tr>
+      <td>++</td>
+      <td>Increment</td>
+      <td>Adds 1 to the number</td>
+    </tr>
+    <tr>
+      <td>–</td>
+      <td>Decrement</td>
+      <td>Subtracts 1 from the number</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="comparison-operators">Comparison Operators</h4>
+<p>Comparison operators always evaluate to <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code> and are often used with if/else statements and loops.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Operator</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>==</td>
+      <td>Equality</td>
+    </tr>
+    <tr>
+      <td>===</td>
+      <td>Strict Equality (both values and data types match)</td>
+    </tr>
+    <tr>
+      <td>!=</td>
+      <td>Not Equal</td>
+    </tr>
+    <tr>
+      <td>&gt;, &gt;=</td>
+      <td>Greater than; greater than or equal to</td>
+    </tr>
+    <tr>
+      <td>&lt;, &lt;=</td>
+      <td>Less than; Less than or equal to</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>See <a href="https://www.w3schools.com/js/js_comparisons.asp" target="_blank">W3 Schools</a> for more information and examples.</p>
+
+<h4 id="logical-operators">Logical Operators</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Operator</th>
+      <th>Meaning</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&amp;&amp;</td>
+      <td>and</td>
+      <td>If both operands are true, then the “and expression” also evaluates to true. Otherwise, the “and expression” evaluates to false.</td>
+    </tr>
+    <tr>
+      <td>||</td>
+      <td>or</td>
+      <td>If either or both of the operands are true, then the “or expression” also evaluates to true. Otherwise, the “or expression” evaluates to false.</td>
+    </tr>
+    <tr>
+      <td>!</td>
+      <td>not</td>
+      <td>if the operand is false, then the “not” of the operand is true (and vice versa).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="assignment-operators">Assignment Operators</h4>
+<p>Assignment operators are used to assign values to variables. Here are some of the most common assignment operators:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Operator</th>
+      <th>Meaning</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>=</td>
+      <td>assignment</td>
+      <td>Assign the value on the right of the <code class="highlighter-rouge">=</code> to the variable on the left of the <code class="highlighter-rouge">=</code>.</td>
+    </tr>
+    <tr>
+      <td>+=</td>
+      <td>add and assign</td>
+      <td>Adds the value of a variable by a specified value and then assigns the result back to that variable.</td>
+    </tr>
+    <tr>
+      <td>-=</td>
+      <td>subtract and assign</td>
+      <td>Subtracts the value of a variable by a specified value and then assigns the result back to that variable.</td>
+    </tr>
+    <tr>
+      <td>*=</td>
+      <td>multiply and assign</td>
+      <td>Multiplies the value of a variable by a specified value and then assigns the result back to that variable.</td>
+    </tr>
+    <tr>
+      <td>/=</td>
+      <td>divide and assign</td>
+      <td>Divides the value of a variable by a specified value and then assigns the result back to that variable.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Examples:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">+=</span> <span class="mi">3</span><span class="p">;</span>         <span class="c1">// Adds 3 to the value stored in x and then reassigns the result to x</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// Outputs 8</span>
+
+<span class="nx">x</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span>         <span class="c1">// Subtracts 2 from the value stored in x and ressigns the result to x</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// Outputs 6</span>
+
+<span class="nx">x</span> <span class="o">*=</span> <span class="mi">4</span><span class="p">;</span>         <span class="c1">// Multiplies the value stored in x by 4 and ressigns the result to x</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// Outputs 24</span>
+
+<span class="nx">x</span> <span class="o">/=</span> <span class="mi">3</span><span class="p">;</span>         <span class="c1">// Dividies the value stored in x by 3 and ressigns the result to x</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// Outputs 8</span>
+</code></pre></div></div>
+
+<h3 id="functions">Functions</h3>
+<ul>
+  <li>Functions are a way to encapsulate and re-use code</li>
+  <li>With functions, you can perform the same operations over and over using different data</li>
+  <li>JavaScript has many built-in functions</li>
+  <li>You can also create your own functions</li>
+</ul>
+
+<p>There are many syntaxes for creating functions that perform a little bit differently:</p>
+
+<h4 id="function-declarations">Function Declarations</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">addTwoNums</span><span class="p">(</span><span class="nx">num1</span><span class="p">,</span> <span class="nx">num2</span><span class="p">)</span> <span class="p">{</span>
+   	<span class="k">return</span> <span class="nx">num1</span> <span class="o">+</span> <span class="nx">num2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="arrow-functions">Arrow Functions</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">nameOfFunction</span> <span class="o">=</span> <span class="p">(</span><span class="nx">parameters</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">statement</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="nx">statement</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">...</span>
+    <span class="k">return</span> <span class="nx">someValue</span><span class="p">;</span> <span class="c1">//optional</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h4 id="differences">Differences</h4>
+<p>Some notable distinctions between arrow functions and function declarations:</p>
+<ul>
+  <li>Function declarations are <a href="https://www.youtube.com/watch?v=EvfRXyKa_GI" target="_blank">hoisted</a>. Arrow functions are not.</li>
+  <li>You can’t use arrow functions as class methods (doesn’t honor the “this” keyword)</li>
+</ul>
+
+<h4 id="terminology">Terminology</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Term</th>
+      <th>Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>arguments</td>
+      <td>the data that you pass into a function</td>
+    </tr>
+    <tr>
+      <td>parameters</td>
+      <td>local variables, inside a function, that are assigned when the function is invoked</td>
+    </tr>
+    <tr>
+      <td>function definition</td>
+      <td>tells you which parameters are required and which are optional (if any)</td>
+    </tr>
+    <tr>
+      <td>function body</td>
+      <td>the statements that are executed when a function is invoked</td>
+    </tr>
+    <tr>
+      <td>return value</td>
+      <td>The data that is returned from a function (optional)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="learn-more">Learn More</h4>
+<p>You can learn more about JavaScript functions here:</p>
+<ul>
+  <li><a href="https://www.w3schools.com/js/js_functions.asp" target="_blank">W3 Schools: JavaScript Functions</a></li>
+  <li><a href="https://www.youtube.com/watch?v=FOD408a0EzU" target="_blank">Web Dev Simplified: How To Create/Use Functions</a></li>
+  <li><a href="https://www.youtube.com/watch?v=h33Srr5J9nY" target="_blank">Web Dev Simplified: Arrow Functions</a></li>
+  <li><a href="https://www.youtube.com/watch?v=TkFN6e9ZDMw" target="_blank">Web Dev Simplified: Variable Scoping</a></li>
+</ul>
+
+<h2 id="step3">3. Control</h2>
+<p>In programming, <strong>control</strong> refers to the techniques that determine the flow of execution of a program. This includes the order in which statements, instructions, or functions are executed based on conditions, loops, or other control structures.</p>
+<h3 id="ifelse">If…Else</h3>
+
+<h4 id="if-statement"><code class="highlighter-rouge">if</code> Statement</h4>
+<p>The <code class="highlighter-rouge">if</code> statement is the most basic form of conditional control. It checks a condition, and if the condition evaluates to true, the block of code within the <code class="highlighter-rouge">if</code> statement is executed. Example:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">You are an adult.</span><span class="dl">"</span><span class="p">);</span>  <span class="c1">// This code runs because the condition is true</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="else-statement"><code class="highlighter-rouge">else</code> Statement</h4>
+<p>The <code class="highlighter-rouge">else</code> statement is used in conjunction with the <code class="highlighter-rouge">if</code> statement. It defines a block of code that will be executed if the condition in the <code class="highlighter-rouge">if</code> statement evaluates to false. Example:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">You are an adult.</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">You are a minor.</span><span class="dl">"</span><span class="p">);</span>  <span class="c1">// This code runs because the condition is false</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="ifelse-ifelse-statement"><code class="highlighter-rouge">if/else if/else</code> Statement</h4>
+<p>The <code class="highlighter-rouge">if/else if/else</code> statement is used when you need to check multiple conditions. You start with an <code class="highlighter-rouge">if</code> statement, followed by one or more <code class="highlighter-rouge">else if</code> statements to check additional conditions. If none of the conditions are true, the <code class="highlighter-rouge">else</code> block (if included) is executed as a fallback. Example:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">score</span> <span class="o">=</span> <span class="mi">85</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">score</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Grade: A</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">score</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Grade: B</span><span class="dl">"</span><span class="p">);</span>  <span class="c1">// This code runs because the score is between 80 and 89</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">score</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Grade: C</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Grade: D or lower</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="references">References</h4>
+<ul>
+  <li><a href="https://www.w3schools.com/jsref/jsref_if.asp" target="_blank">W3 Schools: JavaScript If…Else Statements</a></li>
+  <li><a href="https://www.youtube.com/watch?v=EumXak7TyQ0" target="_blank">Web Dev Simplified: Why I Don’t Use Else When Programming</a>. Interesting perspective on writing cleaner code w/if statements</li>
+</ul>
+
+<h3 id="loops">Loops</h3>
+<p>In JavaScript, loops are used to repeatedly execute a block of code as long as a specified condition is true. JavaScript provides several types of loops to handle different looping scenarios:</p>
+
+<h4 id="while-loop"><code class="highlighter-rouge">while</code> Loop</h4>
+<p>The while loop repeats a block of code as long as the specified condition evaluates to true. It is ideal for situations where the number of iterations is not known beforehand. Example:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>  <span class="c1">// Outputs 0, 1, 2, 3, 4</span>
+    <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Note that in the example above…</p>
+<ol>
+  <li>Statements on lines 3 and 4 keep repeating until the <code class="highlighter-rouge">i &lt; 5</code> condition is no longer true. In other words, eventually the value stored in the variable <code class="highlighter-rouge">i</code> will be 5 or greater, making the <code class="highlighter-rouge">i &lt; 5</code> expression false.</li>
+  <li>If the counter <code class="highlighter-rouge">i</code> is not incremented each time the code block executes, the loop will never terminate. In other words, the loop will never break and the code block will keep printing <code class="highlighter-rouge">0</code> because the value of <code class="highlighter-rouge">i</code> never changes.</li>
+</ol>
+
+<h4 id="for-loop"><code class="highlighter-rouge">for</code> Loop</h4>
+<p>The for loop is the most commonly used loop. It repeats a block of code a specified number of times, based on the initialization, condition, and iteration expressions. Example:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>  <span class="c1">// Outputs 0, 1, 2, 3, 4</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Note that in the example above…</p>
+<ol>
+  <li>The first statement (<code class="highlighter-rouge">let i = 0</code>) in the loop header runs <strong>before the loop begins</strong>,</li>
+  <li>The second statement (<code class="highlighter-rouge">i &lt; 5</code>) is checked <strong>before entering the loop</strong> on every iteration, and</li>
+  <li>The third statement (<code class="highlighter-rouge">i++</code>) runs at the end of every iteration</li>
+</ol>
+
+<h4 id="323-forof-loop">3.2.3. <code class="highlighter-rouge">for...of</code> Loop</h4>
+<p>The <code class="highlighter-rouge">for...of</code> loop is used to iterate over the values of an iterable object (e.g., arrays, strings, maps, sets, etc.). It provides a more straightforward syntax for iterating over array elements and other iterable objects without having to manually index the iterable object. Example:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">dog</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">cat</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">bird</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">fish</span><span class="dl">"</span><span class="p">];</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">item</span> <span class="k">of</span> <span class="nx">myArray</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>  <span class="c1">// Outputs dog, cat, bird, fish</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="references-1">References</h4>
+<ul>
+  <li><a href="https://www.youtube.com/results?search_query=web+dev+simplified+loops" target="_blank">Code Academy: Conceptual Overview</a> (Video)</li>
+  <li><a href="https://www.youtube.com/watch?v=Kn06785pkJg" target="_blank">codeSTACKr: JavaScript Loops Made Easy</a> (Video)</li>
+  <li><a href="https://www.w3schools.com/jsref/jsref_while.asp" target="_blank">W3 Schools: While Loops</a> (Reference)</li>
+  <li><a href="https://www.w3schools.com/jsref/jsref_for.asp" target="_blank">W3 Schools: For Loops</a> (Reference)</li>
+  <li><a href="https://www.w3schools.com/jsref/jsref_forof.asp" target="_blank">W3 Schools: For…Of Loops</a> (Reference)</li>
+</ul>
+
+<h2 id="step4">4. Arrays</h2>
+<p>Arrays in JavaScript are objects used to store multiple values in a single variable. They can hold elements of any type, including numbers, strings, objects, other arrays, and more. They also provide various methods for managing and manipulating collections of data.</p>
+
+<p>There are numerous resources that go over key array methods and approaches. That said, make sure you understand how to…</p>
+<ol>
+  <li>Create, read, modify, add, and remove elements from an array.</li>
+  <li>Some commonly used JavaScript array methods (see video below).</li>
+</ol>
+
+<p>Here is an example of some common JavaScript array uses:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create an array</span>
+<span class="kd">let</span> <span class="nx">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">apple</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">banana</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">cherry</span><span class="dl">"</span><span class="p">];</span>
+
+<span class="c1">// Add elements to the array</span>
+<span class="nx">fruits</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">"</span><span class="s2">date</span><span class="dl">"</span><span class="p">);</span>         <span class="c1">// Adds "date" to the end of the array</span>
+<span class="nx">fruits</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="dl">"</span><span class="s2">apricot</span><span class="dl">"</span><span class="p">);</span>   <span class="c1">// Adds "apricot" to the beginning of the array</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">After adding elements:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fruits</span><span class="p">);</span> 
+<span class="c1">// Outputs: ["apricot", "apple", "banana", "cherry", "date"]</span>
+
+<span class="c1">// Remove elements from the array</span>
+<span class="nx">fruits</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>                <span class="c1">// Removes the last element ("date")</span>
+<span class="nx">fruits</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>              <span class="c1">// Removes the first element ("apricot")</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">After removing elements:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fruits</span><span class="p">);</span> 
+<span class="c1">// Outputs: ["apple", "banana", "cherry"]</span>
+
+<span class="c1">// Access elements in the array</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">First element:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fruits</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>   <span class="c1">// Outputs: "apple"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Second element:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fruits</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>  <span class="c1">// Outputs: "banana"</span>
+
+<span class="c1">// Modify elements in the array</span>
+<span class="nx">fruits</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">blueberry</span><span class="dl">"</span><span class="p">;</span>    <span class="c1">// Change the second element to "blueberry"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">After modifying elements:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fruits</span><span class="p">);</span> 
+<span class="c1">// Outputs: ["apple", "blueberry", "cherry"]</span>
+
+<span class="c1">// Delete elements from the array</span>
+<span class="k">delete</span> <span class="nx">fruits</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>           <span class="c1">// Deletes the first element, leaves an undefined hole</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">After deleting an element:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fruits</span><span class="p">);</span> 
+<span class="c1">// Outputs: [undefined, "blueberry", "cherry"]</span>
+</code></pre></div></div>
+
+<p>References</p>
+<ul>
+  <li><a href="https://www.w3schools.com/js/js_arrays.asp" target="_blank">W3 Schools: JavaScript Arrays</a> (Reference)</li>
+  <li><a href="https://dev.to/shrihankp/higher-order-array-methods-in-javascript-14e7" target="_blank">Higher Order Array Methods in JavaScript</a> (Reference)</li>
+  <li><a href="https://www.youtube.com/watch?v=R8rmfD9Y5-c" target="_blank">Web Dev Simplified: 8 Must Know JavaScript Array Methods</a> (Video): <code class="highlighter-rouge">filter</code>, <code class="highlighter-rouge">map</code>, <code class="highlighter-rouge">find</code>, <code class="highlighter-rouge">forEach</code>, <code class="highlighter-rouge">some</code>, <code class="highlighter-rouge">every</code>, <code class="highlighter-rouge">reduce</code>, <code class="highlighter-rouge">includes</code></li>
+</ul>
+
+<h2 id="step5">5. Objects &amp; Classes</h2>
+<p>Nice video explanation here:</p>
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=5AWRivBk0Gw" target="_blank">Web Dev Simplified: What are Classes, Objects, and Constructors?
+</a> (Video)</li>
+</ul>
+
+                
+            </article>  
+        </main>
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>

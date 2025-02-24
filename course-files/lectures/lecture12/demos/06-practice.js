@@ -97,10 +97,10 @@ const statuses = [
 /**
  * 
  * Using any of the tools at your disposal, complete the following:
- *   1. create a function that returns a list of all of the image_urls
+ *   1. create a function that returns a list of all of the image_urls (use map and filter)
  *   2. create a function that returns a list of screen_names of 
- *      statuses with at least 500 retweets.
- *   3. create a function that returns the status with the most retweets.
+ *      statuses with at least 500 retweets. (use map and filter)
+ *   3. create a function that returns the status with the most retweets (use reduce).
  *   4. create a function that returns the total number of retweets 
- *      (across all of the statuses in the list).
+ *      (across all of the statuses in the list) (use reduce).
  */
