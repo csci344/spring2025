@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Practice Quiz 2a</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="two-column">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1LqUWReoyqDSOHq3PyGYZvbgdll0_SHl6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                <ol class="side-menu">
+  <li><a href="#written-portion-practice-problems">Written Portion Practice Problems</a></li>
+  <li><a href="#hands-on-coding-portion">Hands-On Coding Portion</a></li>
+  <li><a href="#1-change-colors">1. Change Colors</a></li>
+  <li><a href="#2-draw-a-monster">2. Draw a Monster</a></li>
+  <li><a href="#3-course-viewer">3. Course Viewer</a></li>
+  <li><a href="#4-dom-manipulation">4. DOM Manipulation</a></li>
+  <li><a href="#5-functions">5. Functions</a></li>
+  <li><a href="#6-loops--conditionals">6. Loops + Conditionals</a></li>
+</ol>
+
+            </aside>
+            <article>
+                
+
+    
+        <h1>Practice Quiz 2a</h1>
+    
+ 
+                <p>Quiz 2a will cover <a href="../topics/topic05">Topic 5</a> and <a href="../topics/topic06">Topic 6</a>, including <a href="../assignments/tutorial04">Tutorial 4</a> and <a href="../assignments/tutorial05">Tutorial 5</a>. In addition to studying those materials, the best way to study is by complete the practice quizzes (below):</p>
+
+<blockquote class="info">
+  <h2 id="written-portion-practice-problems">Written Portion Practice Problems</h2>
+  <p>Half of quiz 2a will be paper-based. For this portion, you will not be able to use a computer, but you may bring a 1-page cheatsheet. <a href="https://docs.google.com/document/d/1TaFmHDe2Bozqjbvj2x7_vSj7F8AYdxT7R_9e88iVH2g/edit?usp=sharing" target="_blank">Here are some practice problems</a> that you can use to prepare for the paper portion of the quiz.</p>
+</blockquote>
+
+<h2 id="hands-on-coding-portion">Hands-On Coding Portion</h2>
+
+<p>Please download the starter files (below) and complete the tasks described below. Read the instructions that are outlined under each task <strong>very carefully.</strong> You must complete each exercise exactly as the instructions indicate to receive full credit. Otherwise, you will receive partial credit for the parts you correctly completed.</p>
+
+<p><a href="/spring2025/course-files/practice-quizzes/quiz02.zip" class="nu-button">Quiz 2 Starter Files <i class="fas fa-download"></i></a></p>
+
+<h2 id="1-change-colors">1. Change Colors</h2>
+<p>Open the <code class="highlighter-rouge">exercise01</code> folder and add click event handlers to all of the div tags. When a div element is clicked, its background should change color (pick any color you like). When you’re done, your page should look like the demo shown below:</p>
+
+<p><img class="medium frame" src="/spring2025/assets/images/practice-quizzes/quiz02/exercise01.gif" /></p>
+
+<h2 id="2-draw-a-monster">2. Draw a Monster</h2>
+
+<p>Open the <code class="highlighter-rouge">exercise02</code> folder and create a function called <code class="highlighter-rouge">drawMonster</code> that draws a picture of a monster as pictured below. The function should have the following parameters defined (in order):</p>
+<ol>
+  <li><code class="highlighter-rouge">x</code> (number) – the x-coordinate of the center of the square(s).</li>
+  <li><code class="highlighter-rouge">y</code> (number) – the y-coordinate of the center of the square(s).</li>
+  <li><code class="highlighter-rouge">size</code> (number) – the width of the larger square.</li>
+  <li><code class="highlighter-rouge">color</code> (number) – the color of the monster’s face.</li>
+  <li><code class="highlighter-rouge">isSurprised</code> (boolean) – whether or not the monster should look surprised</li>
+</ol>
+
+<p>If the argument for <code class="highlighter-rouge">isSurprised</code> is set to true, a “surprised mouth” should be drawn (smaller). Otherwise, a “regular mouth” should be drawn. When I invoke your function as follows (within the <code class="highlighter-rouge">setup()</code> function)…</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">drawMonster</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="dl">'</span><span class="s1">#0bc9cd</span><span class="dl">'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="nx">drawMonster</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="dl">'</span><span class="s1">#8093f1</span><span class="dl">'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">drawMonster</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">325</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="dl">'</span><span class="s1">#8093f1</span><span class="dl">'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="nx">drawMonster</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">375</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="dl">'</span><span class="s1">#7fb285</span><span class="dl">'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">drawMonster</span><span class="p">(</span><span class="mi">550</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="dl">'</span><span class="s1">#7fb285</span><span class="dl">'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>…the image pictured below should be drawn to the screen:</p>
+
+<p><img class="medium frame" src="/spring2025/assets/images/practice-quizzes/quiz02/exercise02.png" /></p>
+
+<p><strong>Implementation suggestions (optional):</strong></p>
+<ul>
+  <li>Use p5.js’s built-in <a href="https://p5js.org/reference/#/p5/rect">rect function</a>.</li>
+  <li>If you include this statement, <code class="highlighter-rouge">rectMode(CENTER);</code> the <code class="highlighter-rouge">rect()</code> function will treat the x- and y-coordinates as the center of the rectangle (instead of as the top left-hand corner). You can read more about rectMode <a href="https://p5js.org/reference/#/p5/rectMode" target="_blank">here</a>.</li>
+</ul>
+
+<h2 id="3-course-viewer">3. Course Viewer</h2>
+
+<p>Open the <code class="highlighter-rouge">exercise03</code> folder and examine all of the files. Inside of <code class="highlighter-rouge">main.js</code>, there is a <code class="highlighter-rouge">fetchCourses</code> function (already built for you) that fetches all of the UNCA course offerings for Spring, 2023: (<a href="https://meteor.unca.edu/registrar/class-schedules/api/v1/courses/2023/spring/">here</a>). Note that by modifying the year or term in the URL string, you can also view course offerings from previous semesters. Your job is to:</p>
+
+<ol>
+  <li>Modify the <em>function body</em> of the <code class="highlighter-rouge">displayResults(courses)</code> function so that it outputs to the <code class="highlighter-rouge">#results</code> element only courses that offered within the <strong>CSCI department.</strong> You may use any kind of loop that you like.</li>
+  <li>Ensure that your HTML snippet displays the following information for each course (using a template literal):
+    <ul>
+      <li>Title</li>
+      <li>Instructor</li>
+      <li>Location</li>
+      <li>Days (i.e., which days does the course meet?)</li>
+    </ul>
+  </li>
+  <li>Location and Days may be <code class="highlighter-rouge">null</code>. That’s OK for this exercise (though in real life, you’d probably want to output a friendlier message).</li>
+</ol>
+
+<p><img class="medium frame" src="/spring2025/assets/images/practice-quizzes/quiz02/exercise03.png" /></p>
+
+<p><strong>Hints</strong></p>
+<ul>
+  <li>Loop through the <code class="highlighter-rouge">courses</code> array.</li>
+  <li>If the current course’s <code class="highlighter-rouge">Department</code> property is “CSCI”, then insert an HTML representation of the course into the <code class="highlighter-rouge">&lt;div class="results"&gt;&lt;/div&gt;</code> container.</li>
+  <li>Partial credit will be given.</li>
+  <li>We went over this in Lectures 22-24 (and there are lecture videos that you can even follow along with).</li>
+  <li>A sample of the HTML representation of a course is shown below, and also in <code class="highlighter-rouge">exercise03/template.html</code>:</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"course"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h3&gt;</span>NM 101.001: Digital Design Principles<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Instructor: Cosette, Ashe<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Location: OWE 305<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Days: MW<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</code></pre></div></div>
+
+<h2 id="4-dom-manipulation">4. DOM Manipulation</h2>
+<p>Open the <code class="highlighter-rouge">exercise04</code> folder and add event handlers to all of the buttons. When a button is clicked, the image tag should display the corresponding animal (see the <code class="highlighter-rouge">images</code> folder), and there should be a label below the image describing the picture. When you’re done, your page should look like the animation shown below:</p>
+
+<p><img class="medium frame" src="/spring2025/assets/images/practice-quizzes/quiz02/animals.gif" /></p>
+
+<h2 id="5-functions">5. Functions</h2>
+<p>Open the <code class="highlighter-rouge">exercise05</code> folder and create a function called <code class="highlighter-rouge">drawElmo</code> that draws a picture of Elmo. The function should have the following parameters defined (in order):</p>
+<ol>
+  <li><code class="highlighter-rouge">x</code> (number) – the x-coordinate of the center of the circle(s).</li>
+  <li><code class="highlighter-rouge">y</code> (number) – the y-coordinate of the center of the circle(s).</li>
+  <li><code class="highlighter-rouge">size</code> (number) – the diameter of the larger circle.</li>
+  <li><code class="highlighter-rouge">color</code> (number) – the color of Elmo’s face.</li>
+  <li><code class="highlighter-rouge">hasNose</code> (boolean) – whether or not Elmo should have a nose (just default the color to a reddish color).</li>
+</ol>
+
+<p>If the argument for <code class="highlighter-rouge">hasNose</code> is set to true, a nose is drawn. Otherwise, no nose is drawn. A decent looking nose can be made with the ellipse function…</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">fill</span><span class="p">(</span><span class="dl">'</span><span class="s1">#db5461</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">ellipse</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>  <span class="c1">// x, y, width, height (but yours needs to scale)</span>
+</code></pre></div></div>
+
+<p>…but of course yours will need to be dynamically positioned / scaled according to the function arguments (just like you’ve been doing for the past several weeks).</p>
+
+<p>When I invoke your function as follows (within the <code class="highlighter-rouge">setup()</code> function)…</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">drawElmo</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="dl">'</span><span class="s1">#0bc9cd</span><span class="dl">'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>   <span class="c1">// nose drawn</span>
+<span class="nx">drawElmo</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="dl">'</span><span class="s1">#0bc9cd</span><span class="dl">'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>   <span class="c1">// no nose drawn</span>
+<span class="nx">drawElmo</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">325</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="dl">'</span><span class="s1">#8093f1</span><span class="dl">'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>  <span class="c1">// no nose drawn</span>
+<span class="nx">drawElmo</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">375</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="dl">'</span><span class="s1">#7fb285</span><span class="dl">'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>   <span class="c1">// nose drawn</span>
+<span class="nx">drawElmo</span><span class="p">(</span><span class="mi">550</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="dl">'</span><span class="s1">#102e4a</span><span class="dl">'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>   <span class="c1">// nose drawn</span>
+</code></pre></div></div>
+
+<p>…the image pictured below should be drawn to the screen:</p>
+
+<p><img class="medium frame" src="/spring2025/assets/images/practice-quizzes/quiz02/elmos.png" /></p>
+
+<h2 id="6-loops--conditionals">6. Loops + Conditionals</h2>
+
+<p>Open the <code class="highlighter-rouge">exercise06</code> folder. Inside of <code class="highlighter-rouge">main.js</code>, write a program, using any kind of loop you want, that draws all of the pictures to the screen where the <code class="highlighter-rouge">is_favorite</code> property is set to true. You don’t have to worry about formatting (the CSS), so long as following 8 images are displayed:</p>
+
+<p><img class="medium frame" src="/spring2025/assets/images/practice-quizzes/quiz02/photos.png" /></p>
+
+<p><strong>Hints</strong></p>
+<ul>
+  <li>Loop through the <code class="highlighter-rouge">photos</code> array.</li>
+  <li>If the current photo’s <code class="highlighter-rouge">is_favorite</code> property is set to true, append an image element (<code class="highlighter-rouge">img</code> tag) to the <code class="highlighter-rouge">&lt;div class="images"&gt;&lt;/div&gt;</code> container.</li>
+  <li>Consider using a template literal.</li>
+  <li>Partial credit will be given.</li>
+</ul>
+
+            </article>  
+        </main>
+        <footer>
+            <p>    
+                Department of Computer Science, UNC Asheville
+            </p>
+        </footer>
+        
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>
