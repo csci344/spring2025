@@ -6,7 +6,7 @@ description: >
 type: topic
 num: 7
 draft: 0
-start_date: 2025-02-24
+start_date: 2025-02-26
 tutorials: [6]
-lectures: [12, 13]
+lectures: [13]
 ---

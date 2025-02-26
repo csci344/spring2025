@@ -7,7 +7,7 @@ type: topic
 num: 6
 draft: 0
 start_date: 2025-02-17
-lectures: [10, 11]
+lectures: [10, 11, 12]
 tutorials: [5]
 questions:
     - Remember that DOM objects and methods are only used in <strong>"client-side" programming</strong> (within a browser). They are not supported in Node.js

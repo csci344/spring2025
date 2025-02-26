@@ -16,12 +16,12 @@ permalink: /repos-hidden/
 | 7. | Brian | [repo](https://github.com/bmungal/csci344/) | [pages](https://bmungal.github.io/csci344) | |
 | 8. | Caleb | [repo](https://github.com/TerminalCalamitas/csci344-coursework) | [pages](https://terminalcalamitas.github.io/csci344-coursework) | |
 | 9. | Chase | [repo](https://github.com/Neptune-C-Providence/csci344-coursework) | [pages](https://neptune-c-providence.github.io/csci344-coursework) | |
-| 10. | Christian | [repo](https://github.com/Csluder2/csci344-coursework) | [pages](https://csluder2.github.io/csci344-coursework/tutorials/tutorial01/videos.html) | |
-| 11. | Colton | [repo](https://github.com/Colt32905/csci344-coursework) | [pages](https://colt32905.github.io/csci344-coursework) | Website not working. |
+| 10. | Christian | [repo](https://github.com/Csluder2/csci344-coursework) | [pages](https://csluder2.github.io/csci344-coursework/) | |
+| 11. | Colton | [repo](https://github.com/Colt32905/csci344-coursework) | [pages](https://colt32905.github.io/csci344-coursework) |  |
 | 12. | Destiny | [repo](https://github.com/dwhit7905/csci344-coursework) | [pages](https://dwhit7905.github.io/csci344-coursework) | |
 | 13. | Eli | [repo](https://github.com/eutterba/csci344) | [pages](https://eutterba.github.io/csci344/) | |
 | 14. | Jae | [repo](https://github.com/JuhJaemond/csci344-coursework) | [pages](https://juhjaemond.github.io/csci344-coursework) |  |
-| 15. | Jahfari | [repo](https://github.com/Jcoumarb/CSCI344Tutorial1) | [pages](https://jcoumarb.github.io/CSCI344Tutorial1/index.html) | Has a repo just for Tutorial 1. Needs one for all assignments. |
+| 15. | Jahfari | [repo](https://github.com/Jcoumarb/CSCI344) | [pages](https://jcoumarb.github.io/CSCI344) |  |
 | 16. | Josie | [repo](https://github.com/jandersoj/csci344-coursework) | [pages](https://jandersoj.github.io/csci344-coursework) | |
 | 17. | Kate | [repo](https://github.com/kgary432/csci344) | [pages](https://kgary432.github.io/csci344) | |
 | 18. | Kati | [repo](https://github.com/kpr0vence/csci344) | [pages](https://kpr0vence.github.io/csci344/) | |
