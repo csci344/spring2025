@@ -3,7 +3,7 @@ layout: assignment-two-column
 title: "JavaScript: Practice with higher-order iteration functions"
 type: tutorial
 abbreviation: Tutorial 6
-draft: 1
+draft: 0
 points: 6
 num: 6
 start_date: 2025-02-28
@@ -15,15 +15,8 @@ due_date: 2025-03-03
        width:60%;
        min-width: 500px;
     }
-    /* .frame {
-        border: solid 3px #0076A5;
-    } */
-
 </style>
 
-> ## Introductory Slides
-> * <a href="https://docs.google.com/presentation/d/1FgfR9MteqUbuqx-EKmqoWEFoDbMgQlxo/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Tutorial 6 Slides</a>
-> * <a href="https://drive.google.com/file/d/1vFNp0vToM72-j2steBQXBa8u77m4CSOW/view?usp=drive_link" target="_blank">Lecture recording</a>
 
 For Tutorial 6, you will make a UNCA Course Search interface for the Computer Science Department that works like this:
 
@@ -37,31 +30,33 @@ Please download the starter files below and then complete the following tasks:
 
 ### 1. Filter functions
 Implement two filter functions (which should return either true or false):
-* `filterClassFull`: This function will take a course object as an argument and return `true` if the course is full, and `false` if it is not.
-* `filterTermMatched`: This function will take a course object as an argument and return `true` if the course "matches" the search term, and `false` if it does not.
+* `isClassFull`: This function will take a course object as an argument and return `true` if the course is full, and `false` if it is not.
+* `doesTermMatch`: This function will take a course object as an argument and return `true` if the course "matches" the search term, and `false` if it does not.
     * Use your discretion to determine a good matching algorithm. For instance, you could return `true` if the search string matches (or partially matches) one or more of the data fields (Code, CRN, Title, one of the instructor's names, etc.).
-
-#### Tips
-1. Use some of the <a href="https://www.javascripttutorial.net/javascript-string-methods/" target="_blank">JavaScript built-in string methods</a>. It also might be useful to convert everything to uppercase / lowercase. Some particularly useful methods to checkout:
-    {:.compact}
-    * includes()
-    * toUpperCase()
-    * toLowerCase()
-1. The filter must conform to one of the [function signatures specified in the JavaScript language](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).
 
 ```js
 // Part 1.1a
-const filterClassFull = course => {
+const isClassFull = course => {
     // modify this
     return true;
 }
 
 // Part 1.1b
-const filterTermMatched = course => {
+const doesTermMatch = course => {
     // modify this
     return true;
 }
 ```
+
+{:.info}
+> #### Tips
+> Use some of the <a href="https://www.javascripttutorial.net/javascript-string-methods/" target="_blank">JavaScript built-in string methods</a>. It also might be useful to convert everything to uppercase / lowercase. Some particularly useful methods to checkout:
+> 
+> * includes()
+> * toUpperCase()
+> * toLowerCase()
+
+
 
 ### 2. "Data to HTML" function
 Implement the `dataToHTML` function, which takes a course object as an argument and returns an HTML string that represents the course.
@@ -69,43 +64,45 @@ Implement the `dataToHTML` function, which takes a course object as an argument 
 
 ```js
 // Part 1.2
-const dataToHTML = course => {
-    // modify this
-    return `Some HTML representation of the course...`;
-}
+const dataToHTML = (course) => {
+    // modify this to be more detailed
+    return `
+        <section class="course">
+            ${course.Code}
+        </section>
+    `;
+};
 ```
 
+{:.info}
 > #### Tips
 > * Use a template literal (backticks).
 > * Feel free to create some helper variables to format the string output.
 > {:.compact}
 
-## II. Implement the showData function / event handler
+## II. Implement the showMatchingCourses function / event handler
 
-### Implement the showData function
-To actually display relevant course "cards" to the screen, you will also need to implement a `showData` function. To do this, use the built-in **filter**, **map**, and **join** array methods -- and any relevant DOM methods -- to build the interface. Specifically, you will:
+### Implement the showMatchingCourses function
+To actually display relevant course "cards" to the screen, you will also need to implement a `showMatchingCourses` function. To do this, use the built-in **filter** and **forEach** higher-order array methods -- and any relevant DOM methods -- to build the interface. Specifically, you will:
 
-
+1. Clear out the existing courses in the DOM.
 1. Use the array's built in "filter" method, which takes a filter function as an argument, to return an array of objects that match the search criteria.
-    * You will make use of the  `filterClassFull` and `filterTermMatched` functions.
-    * Consider chaining multiple invocations of the filter method to progressively winnow down the courses matching the search criteria.<br>For instance: `const matches = data.filter(filterClassFull).filter(filterTermMatched)`).
-2. Use the array's built in "map" method to generate an array of HTML strings.
-3. Use the array's built in "join" method to convert the array of strings to one large HTML string (join on the empty string or the newline character).
-4. Clear out the existing courses in the DOM.
-5. And finally, insert the HTML string into the DOM (suggestion: use the `insertAdjacentHTML` method).
+    * You will make use of the  `isClassFull` and `doesTermMatch` functions.
+    * Consider chaining multiple invocations of the filter method to progressively winnow down the courses matching the search criteria.<br>For instance: `const matches = courseList.filter(isClassFull).filter(doesTermMatch)`).
+1. Use the array's built in "forEach" method to:
+    * Generate an HTML snippet of the course (by invoking the `dataToHTML` function), and
+    * Insert the HTML snippet into the DOM (suggestion: use the `insertAdjacentHTML` method).
 
 ```js
 // Part 2
-const showData = (searchTerm, openOnly) => {
-    console.log(searchTerm, openOnly);
-    console.log(data); // imported from course-data.js
-    // Your code here:
-    
-}
-```
+const showMatchingCourses = () => {
+    console.log(`Search term: ${searchTerm}`);
+    console.log(`Only show open classes: ${openOnly}`);
+    console.log(`Course data: ${courseList}`);
 
-### Attach your showData function to the button's click event
-Now that you have implemented your button, don't forget to attach your event handler to the button's click event (like we've been doing in class for the past few weeks).
+    // output all of the matching courses to the screen:
+};
+```
 
 ## III. What to Submit
 When you’re done, please create a link from your homepage to your Tutorial 6 web page (see Sarah’s homepage for an example). Then, commit and push all of your edits to GitHub and, paste a link to your GitHub Repository and to your GitHub pages in the Moodle submission.
