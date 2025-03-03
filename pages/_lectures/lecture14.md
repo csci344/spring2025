@@ -1,11 +1,11 @@
 ---
 layout: module
-title: "Higher Order Functions: Part II"
+title: "Tutorial 6 Wrap; Intro to HTTP"
 type: lecture
 num: 14
-draft: 1
+draft: 0
 start_date: 2025-03-03
-slides_url: #
+slides_url: https://docs.google.com/presentation/d/1B5kWy0FPGEQihrzGNAuiIOphppY3hrBj/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings: 
     - type: reading
       citation: >
