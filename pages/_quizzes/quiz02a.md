@@ -15,10 +15,10 @@ due_date: 2025-03-07
 
 ## What to Study
 ### JavaScript Reference Materials
-* [Basic Programming in JavaScript](resources/01-basic-programming/): Know this material well. 
-* [Basic Programming Practice Problems](/resources/02-basic-programming-practice/)   
-* [Working with the DOM](/resources/03-the-dom/)   
-* [Working with the DOM: Practice Problems](/resources/04-dom-practice/)  
+* [Basic Programming in JavaScript](/spring2025/resources/01-basic-programming/): Know this material well. 
+* [Basic Programming Practice Problems](/spring2025/resources/02-basic-programming-practice/)   
+* [Working with the DOM](/spring2025/resources/03-the-dom/)   
+* [Working with the DOM: Practice Problems](/spring2025/resources/04-dom-practice/)  
 
 ### Practice Paper Quizzes and hands-on coding exercises
 * [Practice quizzes](../activities/practice-quiz02a) (paper-based and coding practice)
