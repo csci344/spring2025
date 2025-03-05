@@ -3,7 +3,7 @@ layout: assignment-two-column
 title: "Get Started on HW3: GET, POST, and DELETE"
 type: tutorial
 abbreviation: Tutorial 7
-draft: 1
+draft: 0
 points: 6
 num: 7
 start_date: 2025-03-17

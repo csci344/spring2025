@@ -3,13 +3,13 @@ layout: module
 title: "Asynchronous Functions and the JavaScript Fetch API"
 type: lecture
 num: 15
-draft: 1
+draft: 0
 start_date: 2025-03-05
-slides_url: #
+slides_url: https://docs.google.com/presentation/d/12fe-Y6Vo_Vjtw3zEmdU2_bld4rI_P31s/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings: 
     - type: reading
       citation: >
-        Lazaris, Louis (2020). <a href="" target="_blank">Fetch API Tutorial for Beginners: How to Use Fetch API</a>.
+        Hughes, Noah (2023). <a href="https://dev.to/paperbyte/async-await-vs-fetchthen-20oe" target="_blank">Async Await vs Fetch.Then()</a>.
       required: 1
     - type: reading
       citation: >
@@ -29,7 +29,7 @@ readings:
       required: 1
 activities:
     - type: activity
-      draft: 1
+      draft: 0
       title: Fetch Examples
       url: /course-files/lectures/lecture15.zip
 ---
