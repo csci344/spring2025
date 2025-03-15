@@ -7,6 +7,6 @@ description: >
 num: 9
 draft: 0
 start_date: 2025-03-19
-lectures: [17, 18, 19]
+lectures: [17, 18]
 tutorials: [8, 9]
 ---
