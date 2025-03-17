@@ -13,8 +13,7 @@ due_date: 2025-03-21
 {% include walkthrough-hw03.html %}
 
 ## Introductory Slides
-* <a href="https://docs.google.com/presentation/d/1txLx35U4GMYCBqsefAcUKj-72vecU8xl/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Tutorial 7 Slides</a>
-* <a href="https://drive.google.com/file/d/1JxSLmUWhC9tVZO8V6N3iitz5zoAiMouT/view?usp=drive_link" target="_blank">Lecture recording</a>
+* <a href="https://docs.google.com/presentation/d/1mzNNpxuYxLasm4AEuBoSh6NvkLj4f4PO/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true" target="_blank">Tutorial 7 Slides</a>
 
 
 ## Overview
