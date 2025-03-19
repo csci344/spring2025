@@ -8,5 +8,5 @@ description: >
 draft: 0
 start_date: 2025-04-11
 lectures: [22, 23]
-tutorials: [12, 13]
+tutorials: [11, 12]
 ---

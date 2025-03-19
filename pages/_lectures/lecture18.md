@@ -4,7 +4,7 @@ title: "React II"
 type: lecture
 num: 18
 draft: 1
-start_date: 2025-03-21
+start_date: 2025-03-24
 slides_url: #
 readings:
     - type: reading

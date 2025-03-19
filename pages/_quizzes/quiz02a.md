@@ -10,8 +10,14 @@ due_date: 2025-03-07
 ---
 
 {:.info}
-> ## What will be covered?
-> Quiz 2a will cover [Topic 5](../topics/topic05) and [Topic 6](../topics/topic06), including [Tutorial 4](../assignments/tutorial04) and [Tutorial 5](../assignments/tutorial05). In addition to studying those materials, the best way to study is by complete the practice quizzes (below).
+> ## Quiz 2a Materials + Solutions
+> * <a href="https://docs.google.com/document/d/1mB1Ii9HD07GNZ0kR2-LXsznm31YbEoyoQJgnfVA7EJg/edit?usp=sharing" target="_blank">Paper Quiz</a> &bull; <a href="https://docs.google.com/document/d/1RXdSC2jaxs5bSzJ4WdNiPw0-cJAbQa8WlsmhleEzkV4/edit?tab=t.0" target="_blank">Answers</a>
+> * <a href="../activities/quiz02a" target="_blank">Digital Quiz</a> &bull; <a href="/spring2025/course-files/quizzes/quiz02a_answers.zip" target="_blank">Answers</a>
+
+
+
+## What will be covered?
+Quiz 2a will cover [Topic 5](../topics/topic05) and [Topic 6](../topics/topic06), including [Tutorial 4](../assignments/tutorial04) and [Tutorial 5](../assignments/tutorial05). In addition to studying those materials, the best way to study is by complete the practice quizzes (below).
 
 ## What to Study
 ### JavaScript Reference Materials
