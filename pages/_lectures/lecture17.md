@@ -3,9 +3,9 @@ layout: module
 title: "React I"
 type: lecture
 num: 17
-draft: 1
+draft: 
 start_date: 2025-03-21
-slides_url: #
+slides_url: https://docs.google.com/presentation/d/1neAphwkVry2vBG7mQN9552NgxjITfuGD/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings:
     - type: reading
       citation: >
@@ -17,6 +17,6 @@ readings:
 activities: 
     - title: Hands-on React Activity
       url: /activities/react-activity
-      draft: 1
+      draft: 0
       type: activity
 ---

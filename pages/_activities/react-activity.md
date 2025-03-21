@@ -1,13 +1,13 @@
 ---
 layout: two-column
-title: "Activity: Intro to React (Carousel + Server-Generated Gallery)"
+title: "Intro to React (Carousel + Server-Generated Gallery)"
 type: tutorial
 abbreviation: Activity 4
 draft: 1
 num: 4
 ---
 
-{% include walkthrough-react-activity.html %}
+<!-- {% include walkthrough-react-activity.html %} -->
 
 
 ## 1. Don't forget to do the readings
