@@ -84,12 +84,16 @@ module Jekyll
       
         # Handle anchor or span rendering
         if url && !is_draft
-          return "<span class='mb-1 #{class_name}'>"\
+            if page['type'] == "lecture" && page['slides_url'] == nil
+                return "#{title} #{due_date} #{notes}"
+            end
+            return "<span class='mb-1 #{class_name}'>"\
                    "<a class='#{link_class}' href='#{url}' target='#{target}'>#{page['tag'] || badge_text} #{link_icon}</a>"\
                    "#{colon}#{title} #{due_date}"\
                  "</span>#{notes}"
         end
-      
+        
+        
         # Handle span rendering for drafts or no URL
         return "<span class='mb-1 #{class_name}'>"\
           "<span class='#{link_class}'>#{page['tag'] || badge_text}</span>#{colon}"\

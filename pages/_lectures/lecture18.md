@@ -3,9 +3,9 @@ layout: module
 title: "React II"
 type: lecture
 num: 18
-draft: 1
+draft: 0
 start_date: 2025-03-24
-slides_url: #
+notes: "(see Lecture 17 slides)"
 readings:
     - type: reading
       citation: >
