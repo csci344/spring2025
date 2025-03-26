@@ -3,13 +3,12 @@ layout: assignment-two-column
 title: "React: Custom & Third-Party Components"
 type: tutorial
 abbreviation: Tutorial 8
-draft: 1
+draft: 0
 points: 6
 num: 8
 start_date: 2025-03-26
-due_date: 2025-03-28
+due_date: 2025-03-31
 ---
-
 
 
 ## 1. Setup
@@ -118,6 +117,8 @@ due_date: 2025-03-28
 ## 3. Experiment with some of the other widgets
 Now that you have used your first design system component, take a look at the Ant Design documentation and see what else you can make! Some fun components to get started with...
 
+You must include **at least three different `antd` components** in your final product.
+
 | Component | Description | 
 |--|--|
 | <a href="https://ant.design/components/carousel" target="_blank">Carousel</a> | Configurable carousel component |
@@ -127,3 +128,12 @@ Now that you have used your first design system component, take a look at the An
 | <a href="https://ant.design/components/card" target="_blank">Card</a> | Different types / styles of cards. |
 | <a href="https://ant.design/components/collapse" target="_blank">Collapse Menus</a> | Useful for Navigation |
 | <a href="https://ant.design/components/tour" target="_blank">Tour</a> | Useful for teaching your user new features |
+
+## What to Submit (Please Read Carefully)
+Remember that your Browser doesn't understand React because it uses some language features that aren't HTML, CSS, or JavaScript. We therefore need to "transpile" our code so that it can be displayed on our GitHub server. To do this:
+
+1. Navigate to your `tutorial08` folder on the command line and run the following:<br> `npm run build`. 
+    * This should transpile your code in a folder called `dist`.  
+1. Next, make sure you link to the compiled version of your code (`tutorial08/dist/index.html`) from your homepage.
+
+To submit this tutorial, commit and push all of your edits to GitHub and, paste a link to your GitHub Repository and to your GitHub pages in the Moodle submission for Tutorial 8.
