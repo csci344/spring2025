@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Quiz 2b: JavaScript Programming with the DOM</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="two-column">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1LqUWReoyqDSOHq3PyGYZvbgdll0_SHl6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                <ol class="side-menu">
+  <li><a href="#paper-quiz">Paper Quiz</a></li>
+  <li><a href="#set-up">Set-Up</a></li>
+  <li><a href="#task-1-analyzing-user-data-20pts">Task 1: Analyzing User Data [20pts]</a>
+    <ol>
+      <li><a href="#11-array-of-usernames-10pts">1.1. Array of usernames [10pts]</a></li>
+      <li><a href="#12-array-of-active-users-10pts">1.2. Array of active users [10pts]</a></li>
+    </ol>
+  </li>
+  <li><a href="#task-2-fetch-and-display-wikipedia-data-20pts">Task 2: Fetch and Display Wikipedia Data [20pts]</a>
+    <ol>
+      <li><a href="#21-fetching-wikipedia-data-10pts">2.1. Fetching Wikipedia data [10pts]</a></li>
+      <li><a href="#22-displaying-the-data-visually-10pts">2.2. Displaying the data visually [10pts]</a></li>
+    </ol>
+  </li>
+  <li><a href="#what-to-submit">What to Submit</a>
+    <ol>
+      <li><a href="#before-you-submit">Before you submit</a></li>
+      <li><a href="#submit-to-the-moodle">Submit to the Moodle</a></li>
+    </ol>
+  </li>
+</ol>
+
+            </aside>
+            <article>
+                
+
+    
+        <h1>Quiz 2b: JavaScript Programming with the DOM</h1>
+    
+ 
+                <style>
+    li .highlight {
+        line-height: 1.2rem;
+    }
+</style>
+
+<h2 id="paper-quiz">Paper Quiz</h2>
+<p>Once you complete the <a href="https://docs.google.com/document/d/1upKwfG7j8VMxIAHqA5XzIDIx5TztX8k1powcHyvTfaU/edit?usp=sharing" target="_blank">written portion of the quiz</a>, please complete the tasks below.</p>
+
+<h2 id="set-up">Set-Up</h2>
+
+<p><a href="/spring2025/course-files/quizzes/quiz02b.zip" class="nu-button">Quiz 2b Starter Files <i class="fas fa-download"></i></a></p>
+
+<ul>
+  <li>Download the starter files and unzip them. They should be unzipped in a folder called <code class="highlighter-rouge">quiz02b</code>.</li>
+  <li>Create a <code class="highlighter-rouge">quizzes</code> folder inside of your <code class="highlighter-rouge">csci344</code> folder. Move your <code class="highlighter-rouge">quiz02b</code> folder into your <code class="highlighter-rouge">csci344/quizzes</code> folder.</li>
+  <li>Open your entire <code class="highlighter-rouge">csci344</code> folder in VS Code.</li>
+</ul>
+
+<p>Your directory structure should look something like this (it’s OK if your file structure looks different, so long as the quizzes folder looks like the one below):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>csci344
+├── homework
+├── lectures
+├── quizzes
+│   ├── quiz01
+│   ├── quiz02a
+│   └── quiz02b
+├── tutorials
+...
+</code></pre></div></div>
+
+<h2 id="task-1-analyzing-user-data-20pts">Task 1: Analyzing User Data [20pts]</h2>
+<p>Please answer the following two questions based on the <code class="highlighter-rouge">users</code> array, located in <code class="highlighter-rouge">task01/main.js</code> and displayed below:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">users</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Alice</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="na">isActive</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">role</span><span class="p">:</span> <span class="dl">"</span><span class="s2">admin</span><span class="dl">"</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Bob</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="na">isActive</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">role</span><span class="p">:</span> <span class="dl">"</span><span class="s2">user</span><span class="dl">"</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Charlie</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> <span class="na">isActive</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">role</span><span class="p">:</span> <span class="dl">"</span><span class="s2">moderator</span><span class="dl">"</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">David</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span> <span class="na">isActive</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">role</span><span class="p">:</span> <span class="dl">"</span><span class="s2">user</span><span class="dl">"</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Eve</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span> <span class="na">isActive</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">role</span><span class="p">:</span> <span class="dl">"</span><span class="s2">admin</span><span class="dl">"</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Frank</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="na">isActive</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">role</span><span class="p">:</span> <span class="dl">"</span><span class="s2">moderator</span><span class="dl">"</span> <span class="p">},</span>
+<span class="p">];</span>
+</code></pre></div></div>
+
+<h3 id="11-array-of-usernames-10pts">1.1. Array of usernames [10pts]</h3>
+<p>Inside of <code class="highlighter-rouge">task01/main.js</code>, use the <code class="highlighter-rouge">map</code> array method to create an array of names (array of strings). Output this array to the console. Expected result:</p>
+
+<p><img class="xsmall frame" src="/spring2025/assets/images/quizzes/quiz02b/task1.1.png" /></p>
+
+<h3 id="12-array-of-active-users-10pts">1.2. Array of active users [10pts]</h3>
+<p>Inside of <code class="highlighter-rouge">task01/main.js</code>, use the <code class="highlighter-rouge">filter</code> array method to create an array of only active users. Output this array to the console. Expected result:</p>
+
+<p><img class="medium frame" src="/spring2025/assets/images/quizzes/quiz02b/task1.2.png" /></p>
+
+<h2 id="task-2-fetch-and-display-wikipedia-data-20pts">Task 2: Fetch and Display Wikipedia Data [20pts]</h2>
+<h3 id="21-fetching-wikipedia-data-10pts">2.1. Fetching Wikipedia data [10pts]</h3>
+<p>Create an asynchronous function called <code class="highlighter-rouge">getWikipediaInfo</code> in <code class="highlighter-rouge">task01/main.js</code>:</p>
+<ul>
+  <li>The function should take a <code class="highlighter-rouge">searchTerm</code> as an argument and return a data object that contains Wikipedia information pertaining to the search term.</li>
+  <li>The function should query this endpoint using the browser’s built-in <code class="highlighter-rouge">fetch</code> function:
+    <ul>
+      <li><code class="highlighter-rouge">https://en.wikipedia.org/api/rest_v1/page/summary/&lt;some_search_term&gt;</code> .</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Here are some sample queries</strong> (click to see the data):</p>
+<ul>
+  <li><a href="https://en.wikipedia.org/api/rest_v1/page/summary/Western Carolina" target="_blank">https://en.wikipedia.org/api/rest_v1/page/summary/Western Carolina</a> (search term: <strong>Western Carolina</strong>)</li>
+  <li><a href="https://en.wikipedia.org/api/rest_v1/page/summary/UNC Asheville" target="_blank">https://en.wikipedia.org/api/rest_v1/page/summary/UNC Asheville</a> (search term: <strong>UNC Asheville</strong>)</li>
+  <li><a href="https://en.wikipedia.org/api/rest_v1/page/summary/UNC Charlotte" target="_blank">https://en.wikipedia.org/api/rest_v1/page/summary/UNC Charlotte</a> (search term: <strong>UNC Charlotte</strong>)</li>
+</ul>
+
+<p>Notice that even though the search term does not match the title of the article exactly, the Wikipedia API is smart enough to figure out the correct article and redirect to it.</p>
+
+<p>When you’re done implementing your <code class="highlighter-rouge">getWikipediaInfo</code> function, test it by:</p>
+
+<ul>
+  <li>Uncommenting the <code class="highlighter-rouge">testGetWikipediaArticles()</code> function at the bottom of <code class="highlighter-rouge">task01/main.js</code></li>
+  <li>Previewing task01/index.html in your browser, and</li>
+  <li>Looking at the JavaScript console (using the browser’s built-in developer tools) to ensure that that data returned by the various queries is accurate.</li>
+</ul>
+
+<h3 id="22-displaying-the-data-visually-10pts">2.2. Displaying the data visually [10pts]</h3>
+<p>Create another function in <code class="highlighter-rouge">task01/main.js</code> called <code class="highlighter-rouge">dataToHTML</code>. This function will take a Wikipedia data object as an argument and return an HTML representation of the Wikipedia page that includes:</p>
+
+<ul>
+  <li>A thumbnail of the image on the Wikipedia page (as an <code class="highlighter-rouge">img</code> tag).</li>
+  <li>The <code class="highlighter-rouge">title</code> of the Wikipedia page (as an <code class="highlighter-rouge">h2</code> tag)</li>
+  <li>The <code class="highlighter-rouge">extract_html</code> data field (no tag, since this information is already represented as HTML).</li>
+</ul>
+
+<p>Here’s a suggested HTML format:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://picsum.photos/150"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;h2&gt;</span>Title of Wikipedia Page<span class="nt">&lt;/h2&gt;</span>
+        Information from the "extract_html" data field
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</code></pre></div></div>
+
+<h4 id="testing-your-datatohtml-function">Testing your <code class="highlighter-rouge">dataToHTML</code> function</h4>
+<p>Test your <code class="highlighter-rouge">dataToHTML</code> function by:</p>
+<ul>
+  <li>Uncommenting <code class="highlighter-rouge">testDisplayArticles()</code> at the bottom of task01/main.js, and</li>
+  <li>Previewing task01/index.html in your browser</li>
+</ul>
+
+<p>If you did it correctly, you should see a screen that looks like the one pictured below:</p>
+
+<p><img class="large frame" src="/spring2025/assets/images/quizzes/quiz02b/wikipedia.png" /></p>
+
+<h2 id="what-to-submit">What to Submit</h2>
+
+<h3 id="before-you-submit">Before you submit</h3>
+
+<p>Verify that you’ve completed <strong>both required tasks</strong>. Then, add the links to your tasks to your homepage under the quiz section (see Sarah’s homepage for an example): <a href="https://vanwars.github.io/csci344/" target="_blank">https://vanwars.github.io/csci344/</a>.</p>
+
+<h3 id="submit-to-the-moodle">Submit to the Moodle</h3>
+<p><strong>Please Read Carefully:</strong> To submit Quiz 2b, paste the following links into the Moodle under the Quiz 2b submission section:</p>
+
+<ol>
+  <li>A link to your <strong>homepage</strong> on GitHub pages.</li>
+  <li>A link to your GitHub <strong>code repository</strong> (where your code files are stored).</li>
+</ol>
+
+<p>If your GitHub is not working for whatever reason, just zip your <strong>COMPLETED</strong> <code class="highlighter-rouge">quiz02b</code> folder and upload it to the Moodle.</p>
+
+<blockquote class="info">
+  <h4 id="a-note-on-timestamps">A note on timestamps</h4>
+  <p>When I am grading the quiz, I will look at the timestamps for your Quiz 2b submission on GitHub to ensure that I am only grading code that was submitted before the end of class on the day of the quiz.</p>
+</blockquote>
+
+            </article>  
+        </main>
+        <footer>
+            <p>    
+                Department of Computer Science, UNC Asheville
+            </p>
+        </footer>
+        
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>
