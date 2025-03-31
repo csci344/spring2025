@@ -74,15 +74,15 @@ Create an asynchronous function called `getWikipediaInfo` in `task01/main.js`:
 
 Notice that even though the search term does not match the title of the article exactly, the Wikipedia API is smart enough to figure out the correct article and redirect to it.
 
-When you're done implementing your `getWikipediaInfo` function, test it by:
+When you're done implementing your `getWikipediaArticle` function, test it by:
 
-* Uncommenting the `testGetWikipediaArticles()` function at the bottom of `task01/main.js`
+* Uncommenting the `testGetWikipediaArticles()` function at the bottom of `task02/main.js`
 * Previewing task01/index.html in your browser, and
 * Looking at the JavaScript console (using the browser’s built-in developer tools) to ensure that that data returned by the various queries is accurate.
 
 
 ### 2.2. Displaying the data visually [10pts]
-Create another function in `task01/main.js` called `dataToHTML`. This function will take a Wikipedia data object as an argument and return an HTML representation of the Wikipedia page that includes:
+Create another function in `task02/main.js` called `dataToHTML`. This function will take a Wikipedia data object as an argument and return an HTML representation of the Wikipedia page that includes:
 
 * A thumbnail of the image on the Wikipedia page (as an `img` tag).
 * The `title` of the Wikipedia page (as an `h2` tag)
