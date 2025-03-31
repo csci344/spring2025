@@ -4,7 +4,7 @@ title: "Intro to Databases"
 type: lecture
 num: 22
 draft: 1
-start_date: 2025-04-11
+start_date: 2025-04-14
 slides_url: #
 readings:
     - type: reading

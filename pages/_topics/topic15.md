@@ -7,5 +7,5 @@ description: >
 num: 15
 draft: 0
 start_date: 2025-04-28
-lectures: [26]
+lectures: [25]
 ---
