@@ -17,6 +17,7 @@ Once you complete the <a href="https://docs.google.com/document/d/1upKwfG7j8VMxI
 ## Set-Up
 
 <a href="/spring2025/course-files/quizzes/quiz02b.zip" class="nu-button">Quiz 2b Starter Files <i class="fas fa-download"></i></a>
+<a href="/spring2025/course-files/quizzes/quiz02b_answers.zip" class="button">Quiz 2b Answers<i class="fas fa-download"></i></a>
 
 * Download the starter files and unzip them. They should be unzipped in a folder called `quiz02b`.
 * Create a `quizzes` folder inside of your `csci344` folder. Move your `quiz02b` folder into your `csci344/quizzes` folder.

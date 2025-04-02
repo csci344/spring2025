@@ -9,6 +9,13 @@ start_date: 2025-03-31
 due_date: 2025-03-31
 ---
 
+{:.info}
+> ## Quiz 2a Materials + Solutions
+> * <a href="https://docs.google.com/document/d/1upKwfG7j8VMxIAHqA5XzIDIx5TztX8k1powcHyvTfaU/edit?usp=sharing" target="_blank">Paper Quiz</a> &bull; <a href="https://docs.google.com/document/d/1dcLKxqPUNqDtVFScA--c5hw9W-AgRqWbndEbKvvx4u8/edit?usp=sharing" target="_blank">Answers</a>
+> * <a href="../activities/quiz02b">Digital Quiz</a> &bull; <a href="/spring2025/course-files/quizzes/quiz02b_answers.zip">Answers</a>
+
+
+
 ## 1. Quiz Format
 Quiz 2b will be completed during class on **Monday, 3/31**. It is due at the end of class.
 * Half of the quiz will paper-based. For this portion, you will not be able to use a computer, but you may bring a 1-page cheatsheet (front and back). 
