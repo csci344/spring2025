@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>Intro to Flask</title>
+<title>Database / ORM Activity</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
 ">
 <link rel="stylesheet" href="/spring2025/assets/main.css">
@@ -56,42 +56,48 @@
         <main>
             <aside>
                 <ol class="side-menu">
-  <li><a href="#video-walkthroughs-for-tutorial-9">Video Walkthroughs for Tutorial 9</a></li>
-  <li><a href="#background-readings">Background Readings</a></li>
-  <li><a href="#1-install-python">1. Install Python</a>
+  <li><a href="#introduction">Introduction</a>
     <ol>
-      <li><a href="#what-if-ive-already-installed-python-on-my-laptop">What if I’ve already installed Python on my laptop?</a></li>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#why-are-we-learning-to-use-a-relational-database">Why are we learning to use a relational database?</a></li>
+      <li><a href="#what-is-sql">What is SQL?</a></li>
     </ol>
   </li>
-  <li><a href="#2-intro-to-flask">2. Intro to Flask</a></li>
-  <li><a href="#3-intro-to-python-virtual-environments">3. Intro to Python Virtual Environments</a>
+  <li><a href="#installation">1. Installation</a></li>
+  <li><a href="#configuration">2. Configuration</a>
     <ol>
-      <li><a href="#mac--unix--linux">Mac / Unix / Linux</a></li>
-      <li><a href="#windows-powershell-or-command-prompt">Windows Powershell or Command Prompt</a></li>
+      <li><a href="#1-verify-that-your-path-is-configured-correctly">1. Verify that your path is configured correctly</a></li>
+      <li><a href="#db_setup">2. Set up your database</a></li>
     </ol>
   </li>
-  <li><a href="#4-set-up">4. Set Up</a>
+  <li><a href="#sql">3. Walkthrough of SQL Commands</a>
     <ol>
-      <li><a href="#set-up-your-virtual-environment">Set Up Your Virtual Environment</a></li>
-      <li><a href="#run-your-flask-web-server">Run Your Flask Web Server</a></li>
+      <li><a href="#1-administrative-commands-if-you-use-the-command-line-interface">1. Administrative commands if you use the command line interface</a></li>
+      <li><a href="#2-select">2. SELECT</a></li>
+      <li><a href="#3-update">3. UPDATE</a></li>
+      <li><a href="#4-insert">4. INSERT</a></li>
+      <li><a href="#5-delete">5. DELETE</a></li>
     </ol>
   </li>
-  <li><a href="#5-required-flask-exercises">5. Required Flask Exercises</a>
+  <li><a href="#practice">4. Your Tasks (What you will be turning in)</a>
     <ol>
-      <li><a href="#task_1">1. Display personalized greeting</a></li>
-      <li><a href="#task_2">2. Grab Data from “database”</a></li>
-      <li><a href="#task_3">3. Grab data from another server</a></li>
-      <li><a href="#task_4">4. Merge your data with a template</a></li>
-      <li><a href="#task_5">5. Merge someone else’s data with a template</a></li>
+      <li><a href="#1-selecting-all-columns">1. Selecting all columns</a></li>
+      <li><a href="#2-selecting-some-columns">2. Selecting some columns</a></li>
+      <li><a href="#3-sorting">3. Sorting</a></li>
+      <li><a href="#4-filtering">4. Filtering</a></li>
+      <li><a href="#5-filtering-logical-operators">5. Filtering: logical operators</a></li>
+      <li><a href="#6-using-functions-in-a-select-statement">6. Using functions in a select statement</a></li>
+      <li><a href="#7-aggregating-data">7. Aggregating data</a></li>
+      <li><a href="#8-joining-two-tables">8. Joining: two tables</a></li>
+      <li><a href="#9-more-joining-practice-two-tables">9. More joining practice: two tables</a></li>
+      <li><a href="#10-more-joining-practice-three-tables-optional">10. More joining practice: three tables (Optional)</a></li>
+      <li><a href="#11-inserting-records">11. Inserting records</a></li>
+      <li><a href="#12-deleting-records">12. Deleting records</a></li>
+      <li><a href="#13-updating-records">13. Updating records</a></li>
+      <li><a href="#14-more-querying-practice-optional">14. More Querying Practice (Optional)</a></li>
     </ol>
   </li>
-  <li><a href="#extra_credit">5. Extra Credit (5pts)</a>
-    <ol>
-      <li><a href="#1-looping-using-jinja">1. Looping using Jinja</a></li>
-      <li><a href="#2-includes">2. Includes</a></li>
-    </ol>
-  </li>
-  <li><a href="#what-to-turn-in">What to Turn In</a></li>
+  <li><a href="#what-to-turn-in">What to turn in</a></li>
 </ol>
 
             </aside>
@@ -101,13 +107,13 @@
     
         <h1>
             <a href="../assignments/">Assignments</a> > 
-            Tutorial 10: Intro to Flask
+            Tutorial 10: Database / ORM Activity
         </h1>
     
  
                 <p>
     
-        Due on Mon, 04/14 @ 11:59PM.
+        Due on Mon, 04/21 @ 11:59PM.
     
     
         6 Points.
@@ -116,424 +122,861 @@
 </p>
 
 <style>
-    table th:first-child, table td:first-child {
-        min-width: auto;
-        max-width: auto;
+    table.admin th:first-child, 
+    table.admin td:first-child {
         width: auto;
+        min-width:200px;
     }
 
-    .mtop {
-        margin-top: 50px;
+    table.admin th:last-child, 
+    table.admin td:last-child {
+        width: auto;
+        min-width:180px;
     }
 </style>
 
-<blockquote class="info">
-  <h2 id="video-walkthroughs-for-tutorial-9">Video Walkthroughs for Tutorial 9</h2>
-
-  <p>The following video walkthroughs walk through all of the required Tutorial 9 exercises.</p>
-
-  <ol>
-    <li><span class="update">11:09</span> <a href="https://drive.google.com/file/d/1l5pgMD_ITAKJuYJPzBc_CeWN-TlI41nN/view?usp=drive_link" target="_blank">Setup</a></li>
-    <li><span class="update">12:12</span> <a href="https://drive.google.com/file/d/1LaOsFkX0yBiMvHwyd9Rdfwh9Kg207GU9/view?usp=drive_link" target="_blank">Exercise 1</a></li>
-    <li><span class="update">06:15</span> <a href="https://drive.google.com/file/d/1W8ot-pst_MR3y8J63k4uJW-hP8SaLYp8/view?usp=drive_link" target="_blank">Exercise 2</a></li>
-    <li><span class="update">10:51</span> <a href="https://drive.google.com/file/d/1nb4cI0AtEUup5j2ulb5WrtvlLQiCUiMA/view?usp=drive_link" target="_blank">Exercise 3</a></li>
-    <li><span class="update">13:26</span> <a href="https://drive.google.com/file/d/13N0hSMg3IRZx7Bk0uQfgYWQQEH43rWJB/view?usp=drive_link" target="_blank">Exercise 4</a></li>
-    <li><span class="update">14:18</span> <a href="https://drive.google.com/file/d/1uyA6cAEP8u9glWpy3Jh7g5m3gaoPpAxz/view?usp=drive_link" target="_blank">Exercise 5</a></li>
-  </ol>
-
-  <p>The folder of videos can also be found <a href="https://drive.google.com/drive/folders/1lueba1ca4mWlfQmd5lqztwdYNLXaVnkb?usp=drive_link" target="_blank">here</a>.</p>
-</blockquote>
-
-<blockquote class="mtop">
-  <h2 id="background-readings">Background Readings</h2>
-  <p>Before beginning this tutorial, please read (or at least skim) the following:</p>
-
-  <ul class="compact">
-    <li>Towards Data Science. <a href="https://towardsdatascience.com/virtual-environments-104c62d48c54#8025" target="_blank">Intro to Python Virtual Environments</a></li>
-    <li>Flask website. <a href="https://flask.palletsprojects.com/en/2.0.x/quickstart/" target="_blank">Flask Quickstart Guide</a></li>
-  </ul>
-</blockquote>
-
-<h2 id="1-install-python">1. Install Python</h2>
-
-<blockquote class="info">
-  <h3 id="what-if-ive-already-installed-python-on-my-laptop">What if I’ve already installed Python on my laptop?</h3>
-  <p>Note: many people who have programmed with Python before already have Python 3.x installed. To check, search for an existing Python installation. If you already have a version of Python3 that is greater than Python 3.8, move on to Part 2. It doesn’t hurt to install another version of Python, but it’s not necessary. If you have any questions, feel free to ask Sarah or one of the peer mentors / TAs.</p>
-</blockquote>
-
-<p>To install python, download the latest version (3.13.x) of python here: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a></p>
-
-<p>After going through the installation process, navigate to the folder on your machine where Python was installed. For me, on a Mac, my IDLE was saved to Applications &gt; Python 3.9 (or you can also search for it). For Windows users, it will likely be in a folder inside of Program Files (which you can also search for).</p>
-
-<p>Inside, the Python 3.13 folder, you’ll find a file called <strong>IDLE</strong> - this is the IDLE executable. Double click on that file to run it. You should then see something like this (the screen shows version 3.8, but any version &gt;= 3.8 is OK):</p>
-
-<p><img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial09/python-cmd-1.png" /></p>
-
-<p>I recommend keeping IDLE in your dock (on a Mac) or making a Desktop Shortcut to IDLE (on Windows).</p>
-
-<p>At the <strong>&gt;&gt;&gt;</strong> prompt, you can type any valid python command. For example, type <code class="highlighter-rouge">print("hello world!")</code> and hit enter. You should see something like this:</p>
-
-<p><img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial09/python-cmd-2.png" /></p>
-
-<p>If you have any issues installing Python or IDLE, come to office hours.</p>
-
-<h2 id="2-intro-to-flask">2. Intro to Flask</h2>
-<p><a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">Flask</a> is a framework, built with Python, for helping people build dynamic, scalable web applications. I have selected Flask as our web server engine for this semester because it has a relatively simple set of common abstractions, and is therefore easier to learn than some other frameworks. At the same time, it is also very powerful, and has features such as:</p>
-
-<ul>
-  <li>Templating, using the <a href="https://jinja.palletsprojects.com/en/3.0.x/" target="_blank">Jinja template engine</a></li>
-  <li>A simple way to define <a href="https://flask.palletsprojects.com/en/2.0.x/api/#url-route-registrations" target="_blank">routes</a> (which bind URL addresses to functions), and to specify which HTTP methods are valid for a particular route (HEAD, OPTIONS, GET, POST, PUT, PATCH, DELETE)</li>
-  <li>A way to listen for and parse HTTP requests over a specified port</li>
-  <li>A way to create and send HTTP responses</li>
-</ul>
-
-<p>In addition, since Flask is written in Python, you have access to any and all Python libraries (e.g., for connecting to various databases, taking advantage of pretrained models, and so forth).</p>
-
-<p>Most frameworks have abstractions similar to those offered by Flask, so once you learn Flask, learning new server-side web frameworks will be easier. Some other web frameworks that are analagous to Flask (that you may have heard of) include:</p>
-
-<table class="small">
-  <tbody>
-    <tr>
-      <td>Python</td>
-      <td>Flask, Django, Web2Py, Pyramid, etc.</td>
-    </tr>
-    <tr>
-      <td>Node.js</td>
-      <td>Express, etc.</td>
-    </tr>
-    <tr>
-      <td>PHP</td>
-      <td>Larvel, Symfony, etc.</td>
-    </tr>
-    <tr>
-      <td>Ruby</td>
-      <td>Rails, etc.</td>
-    </tr>
-    <tr>
-      <td>Java</td>
-      <td>Spring, Struts, Guice, etc.</td>
-    </tr>
-    <tr>
-      <td>C#</td>
-      <td>ASP.NET</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="3-intro-to-python-virtual-environments">3. Intro to Python Virtual Environments</h2>
-<p>To run Flask, we are going to create a self-contained Python virtual environment, to ensure that your python dependencies don’t interfere with any global python installations you might have.</p>
+<h2 id="introduction">Introduction</h2>
 
 <blockquote class="blockquote-no-margin">
-  <p>From the <a href="https://docs.python.org/3/library/venv.html" target="_blank">Python Docs</a>:</p>
+  <h3 id="overview">Overview</h3>
+  <p>In this lab, you will be doing the following:</p>
 
-  <p>A virtual environment is a Python environment such that the Python interpreter, libraries and scripts installed into it are isolated from those installed in other virtual environments, and (by default) any libraries installed in a “system” Python, i.e., one which is installed as part of your operating system.</p>
+  <ol class="compact">
+    <li><a href="#installation">Installing PostgreSQL</a></li>
+    <li><a href="#configuration">Configuring</a> PGAdmin and the command line interface</li>
+    <li><a href="#sql">Walking through the SQL Rules</a> to create, read, update, and delete (CRUD) data from your database.</li>
+    <li><a href="#practice">Completing the SQL exercises</a></li>
+  </ol>
 </blockquote>
 
-<p>Practically speaking, a virtual environment (venv) “sandboxes” your Python installation so that anything installed within a venv is not available outside of it. Libraries installed in a “system” Python ARE available to your venv, but can be overridden from within the venv. For instance, <code class="highlighter-rouge">numpy</code> is a python module that is commonly used in data science tasks. So, if <code class="highlighter-rouge">numpy version 1.15.4</code> is installed on your “system” Python and you decide to install <code class="highlighter-rouge">numpy version 1.16.1</code> in your venv, then within the venv, <code class="highlighter-rouge">1.16.1</code> will take precedence.</p>
+<h3 id="why-are-we-learning-to-use-a-relational-database">Why are we learning to use a relational database?</h3>
 
-<p>Some commands to know:</p>
+<p>Relational databases offer a standardized way to store and query structured data using SQL (Structured Query Language). Many website backends use some form of a relational database. We will be using <a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a> as our database, though there are many other options, including Oracle, Microsoft’s SQL Server, MySQL, SQLite, and more!</p>
 
-<h3 id="mac--unix--linux">Mac / Unix / Linux</h3>
+<p>In two weeks, we will be configuring a database “in the cloud,” and querying it by asking python to issue various SQL commands. Today, we will just be getting familiar with some of the basic SQL syntax.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">-m</span> venv <span class="nb">env</span>      <span class="c"># creates a new virtual environment called "env"</span>
-<span class="nb">source env</span>/bin/activate  <span class="c"># activates the virtual environment</span>
-deactivate               <span class="c"># deactivates the virtual environment</span>
+<h3 id="what-is-sql">What is SQL?</h3>
+<p>SQL is a declarative programming language that functions at a higher level of abstraction than, say, Python or JavaScript. Using SQL, you tell the database what data operations you want it to execute, but the underlying database system figures out how to actually go about manipulating / retrieving the data. Here is an example of a SQL query that retrieved data from two tables, <code class="highlighter-rouge">users</code> and <code class="highlighter-rouge">posts</code>, in order to figure out which user has the most posts:</p>
+
+<div class="overflow highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT users.username, count(posts.id) as post_count
+FROM posts
+INNER JOIN users ON
+    posts.user_id = users.id
+GROUP BY users.username
+ORDER BY count(posts.id) desc;
+
+
+     username      | post_count 
+-------------------+------------
+ adam_wilcox       |         12
+ shannon_dyer      |         12
+ mary_green        |         12
+ rachel_murphy     |         12
+ jamie_evans       |         12
+ john_hughes       |         12
+ erika_smith       |         12
+ carla_fleming     |         11
+ timothy_maldonado |         11
+ lori_horton       |         11
+ mr._daniel_turner |         10
+ heather_moore     |         10
+ david_robinson    |         10
+ webdev            |         10
+ russell_sellers   |         10
+ ryan_valentine    |          9
+ geoffrey_reed     |          9
+ rebecca_brown     |          9
+ daniel_myers      |          9
+ jason_morris      |          9
+ rodney_marshall   |          8
+ stephen_landry    |          8
+ nicholas_khan     |          8
+ john_morales      |          8
+ barbara_armstrong |          8
+ kayla_johnson     |          7
+ tyler_williams    |          7
+ sharon_ritter     |          7
+ david_cole        |          7
+ barbara_stone     |          6
+ george_thomas     |          6
+(31 rows)
 </code></pre></div></div>
 
-<h3 id="windows-powershell-or-command-prompt">Windows Powershell or Command Prompt</h3>
+<p>With very few lines of “declarative” code, we have merged two data structures together, selected a few attributes, counted the posts by user, and sorted the post_counts in decending order. It’s useful to think about how you might do something like this manually, with python, if you had 2 lists of dictionaries (doable, but it would take a lot longer).</p>
 
-<pre><code class="language-dos">py -m venv env          # creates a new virtual environment called "env"
-env\Scripts\activate    # activates the virtual environment
-deactivate              # deactivates the virtual environment
-</code></pre>
+<p>Another nice thing about SQL is that these queries can be optimized to be very efficient (though this is well beyond the scope of this course). If you want to learn more, consider taking <strong>CSCI 343. Database Management Systems</strong>.</p>
 
-<p>Note that when your venv is activated, there will be a <code class="highlighter-rouge">(env)</code> prefix in front of your command prompt. When activated, any python or <code class="highlighter-rouge">pip install</code> commands will be interacting with your virtual environment.</p>
+<h2 id="installation">1. Installation</h2>
+<p>In order to complete today’s lab, you will need to install PostgreSQL on your laptop. These installation instructions are based on the  <a href="https://neon.tech/postgresql/postgresql-getting-started" target="_blank">PostgreSQL Getting Started Guide</a>. Please do the following:</p>
 
-<h2 id="4-set-up">4. Set Up</h2>
-<p>After you have installed Python is installed, download tutorial09.zip (below), unzip it, and move your <code class="highlighter-rouge">tutorial09</code> folder inside of your <code class="highlighter-rouge">tutorials</code> folder.</p>
+<ul>
+  <li><a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads" target="_blank">Download the latest PostgreSQL version</a> (currently v. 15.x) for either Windows or Mac</li>
+  <li>Follow the OS-Specific instructions to install and verify your PostgreSQL installation:
+    <ul>
+      <li><a href="https://neon.tech/postgresql/postgresql-getting-started/install-postgresql" target="_blank">Windows</a></li>
+      <li><a href="https://neon.tech/postgresql/postgresql-getting-started/install-postgresql-macos" target="_blank">Mac</a></li>
+    </ul>
+  </li>
+  <li>A few notes as you run the installer:
+    <ul>
+      <li><strong>DO NOT FORGET</strong> the DB Admin password you assign for the <code class="highlighter-rouge">postgres</code> account</li>
+      <li>Take all the defaults, and use a default port of <code class="highlighter-rouge">5432</code></li>
+      <li>If, for some reason, port 5432 is taken, just use the suggested port given by the installer (and make a note of it)</li>
+      <li>You do NOT need to install the “Stack Builder” (unless you want to)</li>
+    </ul>
+  </li>
+</ul>
 
-<p><a class="nu-button" href="/spring2025/course-files/tutorials/tutorial09.zip">tutorial09.zip<i class="fas fa-download" aria-hidden="true"></i></a></p>
+<h2 id="configuration">2. Configuration</h2>
+<p>In order to do today’s tutorial, you need to create a new database and load your data. There are two ways to do this:</p>
+<ol>
+  <li>Through the PGAdmin GUI (graphical user interface)</li>
+  <li>Using the <code class="highlighter-rouge">psql</code> command line tool.</li>
+</ol>
 
-<h3 id="set-up-your-virtual-environment">Set Up Your Virtual Environment</h3>
-<p>Open the terminal and navigate to your <code class="highlighter-rouge">tutorial09</code> folder. Then, set up a virtual environment and install the dependencies as follows (depending on your operating system):</p>
+<h3 id="1-verify-that-your-path-is-configured-correctly">1. Verify that your path is configured correctly</h3>
+<p>Open your command line and type: <code class="highlighter-rouge">psql -U postgres</code>. If your command was recognized, jump to <a href="#db_setup">Part 2</a> (“Set up your database”). Otherwise, you’ll have to add it to your path by following the instructions below:</p>
 
-<h4 id="for-mac-unix-linux-or-gitbash">For Mac, Unix, Linux, or GitBash</h4>
+<h4 id="1-mac-instructions">1. Mac instructions</h4>
+<p>Note: you only have to do this if the <code class="highlighter-rouge">psql -U postgres</code> command was NOT recognized on your Terminal.</p>
+<ol>
+  <li>Find the location of your <code class="highlighter-rouge">psql</code> executable on your computer by searching for <code class="highlighter-rouge">psql</code>. It should be in your <code class="highlighter-rouge">/Library</code> folder somewhere. Make a note of where it is (for Sarah, it’s located at <code class="highlighter-rouge">/Library/PostgreSQL/15/bin/psql</code>)</li>
+  <li>Open a Terminal window. Figure out which shell you’re using by typing <code class="highlighter-rouge">echo $SHELL</code> at the command prompt.</li>
+  <li>Depending on the shell version you’re using, open <em>one</em> of the files below (in your home directory) in a text editor:
+    <ul>
+      <li>for zsh edit one of these:
+        <ul>
+          <li><code class="highlighter-rouge">~/.zshrc</code></li>
+          <li><code class="highlighter-rouge">~/.zprofile</code></li>
+        </ul>
+      </li>
+      <li>for bash, edit one of these:
+        <ul>
+          <li><code class="highlighter-rouge">~/.bashrc</code></li>
+          <li><code class="highlighter-rouge">~/.bash_profile</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>In the file you just opened, add the following line:<br /><code class="highlighter-rouge">PATH=$PATH:/Library/PostgreSQL/15/bin</code> (but use <strong><em>your</em></strong> bin/psql path) to the end.</li>
+  <li>Source the file you just edited by typing <code class="highlighter-rouge">source ~/.bashrc</code> (or whatever file you just edited). This will load your updated path variable and make it accessible to your shell.</li>
+  <li>When you’re done, type <code class="highlighter-rouge">psql -U postgres</code> on your command line and it should work.</li>
+</ol>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">-m</span> venv <span class="nb">env
-source env</span>/bin/activate
-pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt    <span class="c"># install dependencies</span>
-</code></pre></div></div>
+<p>You can read more about each shell here:</p>
+<ul>
+  <li><a href="https://www.baeldung.com/linux/bashrc-vs-bash-profile-vs-profile" target="_blank">bash</a></li>
+  <li><a href="https://apple.stackexchange.com/questions/388622/zsh-zprofile-zshrc-zlogin-what-goes-where" target="_blank">zsh</a></li>
+</ul>
 
-<h4 id="for-windows-powershell-or-command-prompt">For Windows Powershell or Command Prompt</h4>
+<h4 id="2-windows-instructions">2. Windows instructions</h4>
+<p>Note: you only have to do this if the <code class="highlighter-rouge">psql -U postgres</code> command was NOT recognized on your command prompt.
+Follow <a href="https://sqlbackupandftp.com/blog/setting-windows-path-for-postgres-tools" target="_blank">this tutorial</a>. Notes:</p>
+<ol>
+  <li>You will first need to find where your PostgreSQL bin has been installed on your computer. Should be something like: <code class="highlighter-rouge">C:\Program Files\PostgreSQL\15\bin</code></li>
+  <li>Once you do, you will append the path to your PostgreSQL bin to your PATH environment variable. <a href="https://www.mathworks.com/matlabcentral/answers/94933-how-do-i-edit-my-system-path-in-windows" target="_blank">Here is how to do this</a>.</li>
+  <li>Once you save your changes, be sure to restart your command prompt.</li>
+  <li>Finally, type <code class="highlighter-rouge">psql -U postgres</code> on your command line and it should work.</li>
+</ol>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># create the virtual environment</span>
-py <span class="nt">-m</span> venv <span class="nb">env</span>  
+<h3 id="db_setup">2. Set up your database</h3>
 
-<span class="c"># run the activate.bat script as follows:</span>
-<span class="nb">env</span><span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+<p><a class="nu-button" href="/spring2025/course-files/tutorials/tutorial10.zip">tutorial10.zip<i class="fas fa-download" aria-hidden="true"></i></a></p>
 
-<span class="c"># and finally, install the Python dependencies</span>
-py <span class="nt">-m</span> pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
-</code></pre></div></div>
+<ul>
+  <li>Download tutorial10.zip (above) and unzip it, and move it into your <code class="highlighter-rouge">csci344/tutorials</code> folder / git repo.</li>
+  <li>Create a new database and load in the Photo App sample data by following the procedure outlined in <a href="https://neon.tech/postgresql/postgresql-getting-started/load-postgresql-sample-database" target="_blank">these instructions</a> – but with the following modifications:
+    <ul>
+      <li>Instead of creating a database called <code class="highlighter-rouge">dvdrental</code>, name your database <code class="highlighter-rouge">tutorial10</code>. You can do this using either the command line interface or the PGAdmin GUI interface.</li>
+      <li>Instead of loading the <code class="highlighter-rouge">dvdrental.tar</code> file, load the <code class="highlighter-rouge">tutorial10.tar</code> file (in the tutorial10 folder you just downloaded) into the empty <code class="highlighter-rouge">tutorial10</code> database (to create the table structure and table data).
+        <ul>
+          <li>Again, you can do this via PGAdmin or throught the <code class="highlighter-rouge">pg_restore</code> command on the command line.</li>
+          <li>If you want to use <code class="highlighter-rouge">pg_restore</code>, navigate to your <code class="highlighter-rouge">tutorial10</code> folder on the command line and run this command: <code class="highlighter-rouge">pg_restore -U postgres -d tutorial10 tutorial10.tar</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-<h3 id="run-your-flask-web-server">Run Your Flask Web Server</h3>
+<!-- pg_dump -U postgres -p 5432 -Ft photo-app > ~/Desktop/tutorial10.tar
+postgres=# CREATE DATABASE tutorial10;
+pg_restore -U postgres -d tutorial10 ~/Desktop/tutorial10.tar -->
 
-<p>When you’re done, try running your flask app from your command line:</p>
+<p>After you have configured your database, your <code class="highlighter-rouge">tutorial10</code> database should have the following structure:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flask run <span class="nt">--debug</span>
+<p><img class="large" src="/spring2025/assets/images/tutorials/tutorial10/schema.svg" /></p>
 
-<span class="c"># if you named your app something other than app.py (say, hello.py) type this:</span>
-<span class="c"># flask flask --app hello run --debug</span>
-</code></pre></div></div>
+<h2 id="sql">3. Walkthrough of SQL Commands</h2>
+<p>This section walks you through some of the SQL commands you will be using in <a href="#practice">Part 4</a>. Please try executing these commands to understand how they work:</p>
 
-<p>You should see the following output:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">*</span> Serving Flask app <span class="s2">"app.py"</span> <span class="o">(</span>lazy loading<span class="o">)</span>
- <span class="k">*</span> Environment: development
- <span class="k">*</span> Debug mode: on
- <span class="k">*</span> Running on http://127.0.0.1:5000/ <span class="o">(</span>Press CTRL+C to quit<span class="o">)</span>
- <span class="k">*</span> Restarting with <span class="nb">stat</span>
- <span class="k">*</span> Debugger is active!
- <span class="k">*</span> Debugger PIN: 273-580-071
-</code></pre></div></div>
+<h3 id="1-administrative-commands-if-you-use-the-command-line-interface">1. Administrative commands if you use the command line interface</h3>
+<p>To enter the postgreSQL shell, type: <code class="highlighter-rouge">psql -U postgres</code> (connecting as the postgres superuser). Once you’re in the psql shell, try using the following commands:</p>
 
-<p>Navigate to <a href="http://127.0.0.1:5000/" target="_blank">http://127.0.0.1:5000/</a>, and you should see a screen that lists the exercises that you are to complete:</p>
-
-<p><img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial09/home.png" /></p>
-
-<h2 id="5-required-flask-exercises">5. Required Flask Exercises</h2>
-<p>Once you’ve set up your flask installation, you will complete 5 required exercises. You may also complete the optional exercise (#6) for extra credit:</p>
-
-<table>
+<table class="admin">
   <thead>
     <tr>
-      <th> </th>
-      <th>Exercise</th>
-      <th>Purpose</th>
+      <th>Command</th>
+      <th>Explanation</th>
+      <th>Example</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>1.</td>
-      <td><a href="#task_1">Display personalized greeting</a></td>
-      <td>Practice generating and sending a dynamic string via HTTP</td>
+      <td><code class="highlighter-rouge">\q</code></td>
+      <td>Exits the psql shell</td>
+      <td> </td>
     </tr>
     <tr>
-      <td>2.</td>
-      <td><a href="#task_2">Grab data from a “database”</a></td>
-      <td>Practice sending a JSON string from a “database” via HTTP</td>
+      <td><code class="highlighter-rouge">\l</code></td>
+      <td>Lists all the available databases</td>
+      <td> </td>
     </tr>
     <tr>
-      <td>3.</td>
-      <td><a href="#task_3">Grab data from another server</a></td>
-      <td>Query another REST API and then forward the resulting data as an HTTP response. Allow the user to specify criteria using query parameters.</td>
+      <td><code class="highlighter-rouge">\c &lt;dbname&gt; &lt;username&gt;</code></td>
+      <td>Connect to specific database</td>
+      <td><code class="highlighter-rouge">\c photo_app_tutorial postgres</code></td>
     </tr>
     <tr>
-      <td>4.</td>
-      <td><a href="#task_4">Merge your data with a template</a></td>
-      <td>Practice creating a data-driven, server-side HTML file from a template. Templates allow you to separate the data from the presentation of the data.</td>
+      <td><code class="highlighter-rouge">\dt</code></td>
+      <td>Lists all of the tables in the database you’re connected to</td>
+      <td> </td>
     </tr>
     <tr>
-      <td>5.</td>
-      <td><a href="#task_5">Merge someone else’s data with a template</a></td>
-      <td>Merge yelp data with a template that you design.</td>
+      <td><code class="highlighter-rouge">\d &lt;table_name&gt;</code></td>
+      <td>Describes the structure (i.e., “schema”) of a table</td>
+      <td><code class="highlighter-rouge">\d posts</code></td>
     </tr>
     <tr>
-      <td>6.</td>
-      <td><a href="#extra_credit">Merge someone else’s data with a template</a> (more practice)</td>
-      <td><strong>Extra Credit</strong> Same as task 5 except that you will loop through each restaurant using Jinja looping syntax.</td>
+      <td><code class="highlighter-rouge">\du</code></td>
+      <td>List all users and their roles</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>space bar</td>
+      <td>If you query data in a table that has multiple pages, the space bar will show you the next set of records.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>q</td>
+      <td>If you query data in a table that has multiple pages, and you want to go back to the psql prompt.</td>
+      <td> </td>
     </tr>
   </tbody>
 </table>
 
-<p>Each of these exercises is intended to help you get a sense of the kinds of things you can do with Flask (or any web framework):</p>
+<p>For instance, to connect to the database you just made, type:</p>
 
-<h3 id="task_1">1. Display personalized greeting</h3>
-<p>Update the <code class="highlighter-rouge">exercise1</code> function so that it returns a personalized greeting to the user. In other words, replace “Hello World!” with something like, “Hi Erick Rubi!”</p>
+<p>From terminal / command prompt</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>psql <span class="nt">-U</span> postgres
+</code></pre></div></div>
+
+<p>Within psql environment:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\c photo_app_tutorial
+\dt
+</code></pre></div></div>
+
+<p>Output:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>photo_app_tutorial10=# \dt
+             List of relations
+ Schema |      Name      | Type  |  Owner   
+--------+----------------+-------+----------
+ public | bookmarks      | table | postgres
+ public | comments       | table | postgres
+ public | following      | table | postgres
+ public | likes_comments | table | postgres
+ public | likes_posts    | table | postgres
+ public | posts          | table | postgres
+ public | stories        | table | postgres
+ public | users          | table | postgres
+(8 rows)
+</code></pre></div></div>
+
+<p>Consult <a href="https://www.postgresqltutorial.com/psql-commands/" target="_blank">this guide</a> for more details.</p>
+
+<h3 id="2-select">2. SELECT</h3>
+<p>After you’ve connected to a database, you can query and manipulate data. Selecting is the most complex part of the SQL language. Some of the most commonly used commands in a select statement are listed below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Clause</th>
+      <th>Example</th>
+      <th>Documentation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SELECT</td>
+      <td>SELECT statement that retrieves data from a single table:<br /><br />SELECT * FROM posts;<br />SELECT id, caption FROM posts;</td>
+      <td><a href="https://www.postgresqltutorial.com/postgresql-select/" target="_blank">SELECT docs</a></td>
+    </tr>
+    <tr>
+      <td>ORDER BY</td>
+      <td>The ORDER BY clause allows you to sort rows returned by a SELECT clause in ascending or descending order based on a sort expression:<br /><br />SELECT * FROM users ORDER BY last_name;<br />SELECT * FROM users ORDER BY last_name desc;</td>
+      <td><a href="https://www.postgresqltutorial.com/postgresql-order-by/" target="_blank">ORDER BY docs</a></td>
+    </tr>
+    <tr>
+      <td>WHERE</td>
+      <td>The WHERE clause uses a condition to filter the rows returned from the SELECT clause:<br /><br />SELECT * FROM users WHERE id = 3;<br />SELECT * FROM users WHERE id &gt; 10;</td>
+      <td><a href="https://www.postgresqltutorial.com/postgresql-where/" target="_blank">WHERE docs</a></td>
+    </tr>
+    <tr>
+      <td>INNER JOIN</td>
+      <td>Joins two tables where the values of two columns are equal. For instance, if we want to know the usernames of the people who Thomas Choi (id=3) is following, we would join the <code class="highlighter-rouge">following</code> table to the <code class="highlighter-rouge">users</code> table as follows:<br /><br />SELECT following.id, users.username<br />FROM following<br />INNER JOIN users ON following.following_id = users.id<br />WHERE following.user_id = 3;</td>
+      <td><a href="https://www.postgresqltutorial.com/postgresql-inner-join/" target="_blank">INNER JOIN docs</a></td>
+    </tr>
+    <tr>
+      <td>GROUP BY</td>
+      <td>The Group By statement allows you aggregate your data  (e.g. sum, count, etc.) by groupings. For instance, if you want to know how many posts each user has made or how many likes each post has, the GROUP BY function can help:<br /><br />SELECT user_id, count(*) FROM bookmarks GROUP BY user_id ORDER BY count(*) desc;</td>
+      <td><a href="https://www.postgresqltutorial.com/postgresql-group-by/" target="_blank">GROUP BY docs</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="3-update">3. UPDATE</h3>
+<p>Updating allows you to alter records in a table. The syntax is as follows:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">UPDATE</span> <span class="k">table_name</span>
+<span class="k">SET</span> <span class="n">column1</span> <span class="o">=</span> <span class="n">value1</span><span class="p">,</span>
+    <span class="n">column2</span> <span class="o">=</span> <span class="n">value2</span><span class="p">,</span>
+    <span class="p">...</span>
+<span class="k">WHERE</span> <span class="n">condition</span><span class="p">;</span>
+
+<span class="c1">-- specific example:</span>
+<span class="k">UPDATE</span> <span class="n">posts</span>
+<span class="k">SET</span> <span class="n">caption</span> <span class="o">=</span> <span class="s1">'This is my dog'</span> 
+<span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>A common mistake is forgetting to include the where clause. Without it, the update will be made to EVERY RECORD of your table.</p>
+
+<p><a href="https://www.postgresqltutorial.com/postgresql-update/" target="_blank">UPDATE docs</a></p>
+
+<h3 id="4-insert">4. INSERT</h3>
+<p>Inserting allows you to add records to a table. The syntax is as follows:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">table_name</span><span class="p">(</span><span class="n">column1</span><span class="p">,</span> <span class="n">column2</span><span class="p">,</span> <span class="err">…</span><span class="p">)</span>
+<span class="k">VALUES</span> <span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">,</span> <span class="err">…</span><span class="p">);</span>
+
+<span class="c1">-- Specific example:</span>
+<span class="c1">-- Note that now() is a built-in PostgreSQL function that gets the current timestamp.</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">comments</span> <span class="p">(</span><span class="nb">text</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">post_id</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="p">(</span><span class="s1">'Great photo!'</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">now</span><span class="p">());</span>
+
+</code></pre></div></div>
+<p><a href="https://www.postgresqltutorial.com/postgresql-insert/" target="_blank">INSERT docs</a></p>
+
+<h3 id="5-delete">5. DELETE</h3>
+<p>The DELETE statement allows you to delete one or more rows from a table.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="k">table_name</span>
+<span class="k">WHERE</span> <span class="n">condition</span><span class="p">;</span>
+
+<span class="c1">-- specific example:</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">comments</span>
+<span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Note: if you forget to include the where clause, you will delete every record in your table by accident. Yikes!</p>
+
+<p><a href="https://www.postgresqltutorial.com/postgresql-delete/" target="_blank">DELETE docs</a></p>
+
+<h2 id="practice">4. Your Tasks (What you will be turning in)</h2>
+
+<p>For each of the exercises below, write the SQL statement that achieves the goal described in the prompt. When you’ve figured it out, paste the statement (or statements) into the <code class="highlighter-rouge">answers.sql</code> file (that you downloaded) beneath the corresponding exercise number.</p>
+
+<h3 id="1-selecting-all-columns">1. Selecting all columns</h3>
+<p>Write a query to retrieve all of the records in the <code class="highlighter-rouge">users</code> table. It should return the following data:</p>
+
+<div class="overflow highlighter-rouge"><div class="highlight"><pre class="highlight"><code> id | first_name |   last_name   |     username      |    password_plaintext    |                                             password_hash                                              |            email            |              image_url               |             thumb_url              |        date_created        | is_verified | is_disabled 
+----+------------+---------------+-------------------+--------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------+--------------------------------------+------------------------------------+----------------------------+-------------+-------------
+  1 | Webdev     | User          | webdev            | password                 | pbkdf2:sha256:260000$F1DNoH1iCqK0LI5t$7a8c70ef93b705e209dd66195d320de93b40556c3ef753502fe2b3620c5f16b2 | webdev@u.northwestern.edu   | https://picsum.photos/300/200?id=566 | https://picsum.photos/30/30?id=589 | 2022-09-04 17:45:59.163585 | f           | f
+  2 | David      | Cole          | david_cole        | up_knowledge_end         | pbkdf2:sha256:260000$apWgUPOjsMiGkMDv$f15a8ce254ffe961e17c5bb6d9fb10b3123e82e8e846ddf7d7034cf8647e55b4 | david_cole@yahoo.com        | https://picsum.photos/300/200?id=313 | https://picsum.photos/30/30?id=958 | 2022-09-04 17:46:03.979957 | f           | f
+  3 | Jamie      | Evans         | jamie_evans       | police_start_series      | pbkdf2:sha256:260000$umfdYNHpQAwyil8s$1b04bcfa094321daff5dff07ffd66bf38a53a004575247c3cf048d3bf0c5975d | jamie_evans@hotmail.com     | https://picsum.photos/300/200?id=328 | https://picsum.photos/30/30?id=124 | 2022-09-04 17:46:03.979963 | f           | f
+  4 | Mary       | Green         | mary_green        | effect_painting          | pbkdf2:sha256:260000$oEXou2jcxRoQj4iE$c8bb4629b989de55708924da83e569550a24782f6c8f000aef4d991fe28293de | mary_green@yahoo.com        | https://picsum.photos/300/200?id=637 | https://picsum.photos/30/30?id=397 | 2022-09-04 17:46:03.979966 | f           | f
+  5 | Jason      | Morris        | jason_morris      | building_seek            | pbkdf2:sha256:260000$IegvobCoRH2s5gWd$ee3e25a8ad9a7adaeb77f8191807144d818cf256ef450d4479f454ccc45395aa | jason_morris@yahoo.com      | https://picsum.photos/300/200?id=812 | https://picsum.photos/30/30?id=370 | 2022-09-04 17:46:03.979969 | f           | f
+  6 | Erika      | Smith         | erika_smith       | area_how_area            | pbkdf2:sha256:260000$7jddojBiVhNAgF6J$484b91a4aec1741ad4aeb5b619ea7bbef867d481f9f9c3ce65097ea2b2f3cd2a | erika_smith@yahoo.com       | https://picsum.photos/300/200?id=809 | https://picsum.photos/30/30?id=923 | 2022-09-04 17:46:03.979971 | f           | f
+  7 | Timothy    | Maldonado     | timothy_maldonado | thus_difficult           | pbkdf2:sha256:260000$EUuh12mYmnKm6Yjp$ca6007aa630aec090f82a028db16fa59a4a5cea3efe0a288d3b7cfb65114c81b | timothy_maldonado@yahoo.com | https://picsum.photos/300/200?id=525 | https://picsum.photos/30/30?id=666 | 2022-09-04 17:46:03.979973 | f           | f
+  8 | Rachel     | Murphy        | rachel_murphy     | team_property_much       | pbkdf2:sha256:260000$yZx8RM3e7DFyiCwy$ccc9e9952cb8a208ba415c51385187d693094a04c41264c02f0d27d4a1f1744b | rachel_murphy@yahoo.com     | https://picsum.photos/300/200?id=335 | https://picsum.photos/30/30?id=600 | 2022-09-04 17:46:03.979976 | f           | f
+  9 | Sharon     | Ritter        | sharon_ritter     | culture_avoid            | pbkdf2:sha256:260000$zFqp3eBo7UCHYzCD$bc103e6235b9c56de34155f523410b00f15fcb851992f90da76d119e1eeada72 | sharon_ritter@hotmail.com   | https://picsum.photos/300/200?id=355 | https://picsum.photos/30/30?id=117 | 2022-09-04 17:46:03.979978 | f           | f
+ 10 | Carla      | Fleming       | carla_fleming     | skill                    | pbkdf2:sha256:260000$grhLOI018dy9Dsgu$326fa7f1f9f2835590dd97e6c096c7d4e124393f92543ee0e4f6753321e56730 | carla_fleming@yahoo.com     | https://picsum.photos/300/200?id=295 | https://picsum.photos/30/30?id=973 | 2022-09-04 17:46:03.979981 | f           | f
+ 11 | Kayla      | Johnson       | kayla_johnson     | common_else_while        | pbkdf2:sha256:260000$tLvL58hfE6en23aE$f42a85d8202da749dcc146cbf9fececf441084f70037feb6da48735b4936279b | kayla_johnson@hotmail.com   | https://picsum.photos/300/200?id=635 | https://picsum.photos/30/30?id=668 | 2022-09-04 17:46:03.979983 | f           | f
+ 12 | Rebecca    | Brown         | rebecca_brown     | hand_help_save           | pbkdf2:sha256:260000$mDa1Cp5UA5RCb4FQ$2440db2dd530318a83f23ecb63f6e28ae7573fd3f79e6b1fd99281bd9bb399a1 | rebecca_brown@yahoo.com     | https://picsum.photos/300/200?id=527 | https://picsum.photos/30/30?id=714 | 2022-09-04 17:46:03.979985 | f           | f
+ 13 | Ryan       | Valentine     | ryan_valentine    | phone                    | pbkdf2:sha256:260000$zFsRgNl4zKQRZDZT$a61675c1c5a7b64903d7275d6c13d7bd333794e9367adb9faf6f1110fce88a0f | ryan_valentine@hotmail.com  | https://picsum.photos/300/200?id=378 | https://picsum.photos/30/30?id=909 | 2022-09-04 17:46:03.979988 | f           | f
+ 14 | Adam       | Wilcox        | adam_wilcox       | next_wish                | pbkdf2:sha256:260000$zzQDAbKj6w9al9o0$77e1327648f71eff922353d0aa771dc49f753562967e17d71424fe2a2f8edc77 | adam_wilcox@hotmail.com     | https://picsum.photos/300/200?id=346 | https://picsum.photos/30/30?id=671 | 2022-09-04 17:46:03.97999  | f           | f
+ 15 | John       | Morales       | john_morales      | city_baby                | pbkdf2:sha256:260000$i9VMHH4LqWMRjaZb$68f9c6d69e763d1c38d1cc7241f4544c12199c3abacf3848f8db495453148fd7 | john_morales@gmail.com      | https://picsum.photos/300/200?id=421 | https://picsum.photos/30/30?id=845 | 2022-09-04 17:46:03.980003 | f           | f
+ 16 | David      | Robinson      | david_robinson    | miss_ground              | pbkdf2:sha256:260000$LEsaYcAhkEGowwmy$252fcfaf4615e02cfa733c0d5a6454f700cb2a514f8446b9a472f1850e387a0a | david_robinson@gmail.com    | https://picsum.photos/300/200?id=982 | https://picsum.photos/30/30?id=947 | 2022-09-04 17:46:03.980005 | f           | f
+ 17 | Stephen    | Landry        | stephen_landry    | interesting_little       | pbkdf2:sha256:260000$bYZYzHJJmEI4Mj6o$ef181877de16261f1c965910b981891f701e0138964a2e15ee7ab0b49617c175 | stephen_landry@gmail.com    | https://picsum.photos/300/200?id=582 | https://picsum.photos/30/30?id=996 | 2022-09-04 17:46:03.980008 | f           | f
+ 18 | Tyler      | Williams      | tyler_williams    | save_remain_rest_public  | pbkdf2:sha256:260000$71aNF161vumjYK9O$60632348a29df11ed2373a9ab95c3f65b1447cb908cc0311ae49581b4eb7d7e4 | tyler_williams@yahoo.com    | https://picsum.photos/300/200?id=449 | https://picsum.photos/30/30?id=270 | 2022-09-04 17:46:03.98001  | f           | f
+ 19 | Mr.        | Daniel Turner | mr._daniel_turner | word_perform_ball        | pbkdf2:sha256:260000$K38BeuLHLY787mCR$f45360fa41344a185727a269d08441469dd38f44c4dde1993b4ece2d06d9c279 | mr._daniel_turner@yahoo.com | https://picsum.photos/300/200?id=336 | https://picsum.photos/30/30?id=810 | 2022-09-04 17:46:03.980012 | f           | f
+ 20 | Geoffrey   | Reed          | geoffrey_reed     | health_inside_high       | pbkdf2:sha256:260000$uVPRasclLW3CA9Yc$47f9d75875c75fcad094803be2b2873cad8ef3afecca78f5680ef02f81ed90cb | geoffrey_reed@hotmail.com   | https://picsum.photos/300/200?id=369 | https://picsum.photos/30/30?id=825 | 2022-09-04 17:46:03.980015 | f           | f
+ 21 | Russell    | Sellers       | russell_sellers   | pick_body_pass_audience  | pbkdf2:sha256:260000$1xu4UBaMeWahEHjt$eee72b86340655aaa760666637006d9ad7862d9a44e47aecfed93a34acb80f61 | russell_sellers@yahoo.com   | https://picsum.photos/300/200?id=579 | https://picsum.photos/30/30?id=541 | 2022-09-04 17:46:03.980017 | f           | f
+ 22 | Rodney     | Marshall      | rodney_marshall   | somebody_reach_agency    | pbkdf2:sha256:260000$3h6vr3HEHkdlRujC$123c51c924cba211d86a24913de4bfddbca77098abe7c74467ec471d962da7eb | rodney_marshall@hotmail.com | https://picsum.photos/300/200?id=293 | https://picsum.photos/30/30?id=984 | 2022-09-04 17:46:03.980019 | f           | f
+ 23 | George     | Thomas        | george_thomas     | second_decade_despite    | pbkdf2:sha256:260000$arNwdma41nx3WnrT$9a13754a2b27a02d0c61b1a38077bd933406c3693cd3ab19ef57ef04e82b6f28 | george_thomas@gmail.com     | https://picsum.photos/300/200?id=157 | https://picsum.photos/30/30?id=461 | 2022-09-04 17:46:03.980022 | f           | f
+ 24 | Lori       | Horton        | lori_horton       | their_realize            | pbkdf2:sha256:260000$J7uxTO6hTl4MDKk1$2c50befdbef69d71ebb0db37aa4d64977475431cf3039f5fed1c2e40cc2f5211 | lori_horton@yahoo.com       | https://picsum.photos/300/200?id=757 | https://picsum.photos/30/30?id=864 | 2022-09-04 17:46:03.980024 | f           | f
+ 25 | Daniel     | Myers         | daniel_myers      | officer_natural          | pbkdf2:sha256:260000$JK0Po4tnSI5cLMA4$bf120278bb2bd5348b6a775e947a4330e417f7f2226b18fc32aa1d0250ceb167 | daniel_myers@gmail.com      | https://picsum.photos/300/200?id=110 | https://picsum.photos/30/30?id=894 | 2022-09-04 17:46:03.980027 | f           | f
+ 26 | Nicholas   | Khan          | nicholas_khan     | everything_change_answer | pbkdf2:sha256:260000$wcQkkkj9adctcdCN$dee3043de0f4e007eaaab4f94a4a0151b1c5cd6b236ef5bd0625666f2e1ff08a | nicholas_khan@gmail.com     | https://picsum.photos/300/200?id=893 | https://picsum.photos/30/30?id=47  | 2022-09-04 17:46:03.980045 | f           | f
+ 27 | Barbara    | Armstrong     | barbara_armstrong | painting_material        | pbkdf2:sha256:260000$2u4px7fehQt4DKyP$4840a43930c3e5fce505dd13bc6c12f2fce467776bc450a08f5842ce38859d3e | barbara_armstrong@gmail.com | https://picsum.photos/300/200?id=82  | https://picsum.photos/30/30?id=595 | 2022-09-04 17:46:03.980052 | f           | f
+ 28 | Heather    | Moore         | heather_moore     | nor_nice                 | pbkdf2:sha256:260000$ifanUDOqYyZSDmSi$a8c2bfc911c836ac8d4c8e16615c113ca3c2f3d70a6e9f1abd5e3414afbb9b31 | heather_moore@yahoo.com     | https://picsum.photos/300/200?id=434 | https://picsum.photos/30/30?id=563 | 2022-09-04 17:46:03.980057 | f           | f
+ 29 | John       | Hughes        | john_hughes       | whether_open_mouth       | pbkdf2:sha256:260000$jrbPqV2Oy4E0Q111$08cddc76dd0aaf2820a6dcb842fdd5f23f5d138c450f281525e5ea86ace003ac | john_hughes@gmail.com       | https://picsum.photos/300/200?id=962 | https://picsum.photos/30/30?id=860 | 2022-09-04 17:46:03.980059 | f           | f
+ 30 | Barbara    | Stone         | barbara_stone     | media_table              | pbkdf2:sha256:260000$NwXMDTOvdecGLpsL$3c02600be389049dd48bd6adbabaecdb25d134fc5fb9a84ff52305d5b7f391ce | barbara_stone@yahoo.com     | https://picsum.photos/300/200?id=81  | https://picsum.photos/30/30?id=199 | 2022-09-04 17:46:03.980061 | f           | f
+ 31 | Shannon    | Dyer          | shannon_dyer      | couple_few               | pbkdf2:sha256:260000$NAobYTH9gXhdcrZS$886c55bff5b2099da9f0d1b85eccb6c33e486c6e8d81385dafc7768b60ef01e9 | shannon_dyer@yahoo.com      | https://picsum.photos/300/200?id=732 | https://picsum.photos/30/30?id=693 | 2022-09-04 17:46:03.980064 | f           | f
+(31 rows)
+
+</code></pre></div></div>
+
+<h3 id="2-selecting-some-columns">2. Selecting some columns</h3>
+<p>Write a query to retrieve the <code class="highlighter-rouge">id</code>, <code class="highlighter-rouge">first_name</code>, and <code class="highlighter-rouge">last_name</code> of each record in the <code class="highlighter-rouge">users</code> table. It should return the following data:</p>
+
+<div class="overflow highlighter-rouge"><div class="highlight"><pre class="highlight"><code> id | first_name |   last_name   
+----+------------+---------------
+  1 | Webdev     | User
+  2 | David      | Cole
+  3 | Jamie      | Evans
+  4 | Mary       | Green
+  5 | Jason      | Morris
+  6 | Erika      | Smith
+  7 | Timothy    | Maldonado
+  8 | Rachel     | Murphy
+  9 | Sharon     | Ritter
+ 10 | Carla      | Fleming
+ 11 | Kayla      | Johnson
+ 12 | Rebecca    | Brown
+ 13 | Ryan       | Valentine
+ 14 | Adam       | Wilcox
+ 15 | John       | Morales
+ 16 | David      | Robinson
+ 17 | Stephen    | Landry
+ 18 | Tyler      | Williams
+ 19 | Mr.        | Daniel Turner
+ 20 | Geoffrey   | Reed
+ 21 | Russell    | Sellers
+ 22 | Rodney     | Marshall
+ 23 | George     | Thomas
+ 24 | Lori       | Horton
+ 25 | Daniel     | Myers
+ 26 | Nicholas   | Khan
+ 27 | Barbara    | Armstrong
+ 28 | Heather    | Moore
+ 29 | John       | Hughes
+ 30 | Barbara    | Stone
+ 31 | Shannon    | Dyer
+(31 rows)
+</code></pre></div></div>
+
+<h3 id="3-sorting">3. Sorting</h3>
+<p>Write a query to retrieve the <code class="highlighter-rouge">id</code>, <code class="highlighter-rouge">first_name</code>, and <code class="highlighter-rouge">last_name</code> of each record in the <code class="highlighter-rouge">users</code> table sorted by <code class="highlighter-rouge">last_name</code>. Use an <code class="highlighter-rouge">ORDER BY</code> clause. Your query should return the following data:</p>
+
+<div class="overflow highlighter-rouge"><div class="highlight"><pre class="highlight"><code> id | first_name |   last_name   
+----+------------+---------------
+ 27 | Barbara    | Armstrong
+ 12 | Rebecca    | Brown
+  2 | David      | Cole
+ 19 | Mr.        | Daniel Turner
+ 31 | Shannon    | Dyer
+  3 | Jamie      | Evans
+ 10 | Carla      | Fleming
+  4 | Mary       | Green
+ 24 | Lori       | Horton
+ 29 | John       | Hughes
+ 11 | Kayla      | Johnson
+ 26 | Nicholas   | Khan
+ 17 | Stephen    | Landry
+  7 | Timothy    | Maldonado
+ 22 | Rodney     | Marshall
+ 28 | Heather    | Moore
+ 15 | John       | Morales
+  5 | Jason      | Morris
+  8 | Rachel     | Murphy
+ 25 | Daniel     | Myers
+ 20 | Geoffrey   | Reed
+  9 | Sharon     | Ritter
+ 16 | David      | Robinson
+ 21 | Russell    | Sellers
+  6 | Erika      | Smith
+ 30 | Barbara    | Stone
+ 23 | George     | Thomas
+  1 | Webdev     | User
+ 13 | Ryan       | Valentine
+ 14 | Adam       | Wilcox
+ 18 | Tyler      | Williams
+(31 rows)
+</code></pre></div></div>
+
+<h3 id="4-filtering">4. Filtering</h3>
+<p>Write a query to retrieve the <code class="highlighter-rouge">id</code>, <code class="highlighter-rouge">user_id</code>, and <code class="highlighter-rouge">image_url</code> for the <code class="highlighter-rouge">posts</code> created by Nicholas Khan (user_id=26). Use a <code class="highlighter-rouge">WHERE CLAUSE</code>. Your query should return the following data:</p>
+
+<div class="overflow highlighter-rouge"><div class="highlight"><pre class="highlight"><code> id  |              image_url               | user_id 
+-----+--------------------------------------+---------
+ 237 | https://picsum.photos/600/430?id=647 |      26
+ 238 | https://picsum.photos/600/430?id=46  |      26
+ 239 | https://picsum.photos/600/430?id=207 |      26
+ 240 | https://picsum.photos/600/430?id=37  |      26
+ 241 | https://picsum.photos/600/430?id=601 |      26
+ 242 | https://picsum.photos/600/430?id=934 |      26
+ 243 | https://picsum.photos/600/430?id=487 |      26
+ 244 | https://picsum.photos/600/430?id=991 |      26
+(8 rows)
+</code></pre></div></div>
+
+<h3 id="5-filtering-logical-operators">5. Filtering: logical operators</h3>
+<p>Write a query to retrieve the <code class="highlighter-rouge">id</code>, <code class="highlighter-rouge">image_url</code>, and <code class="highlighter-rouge">user_id</code> for the <code class="highlighter-rouge">posts</code> created by either Nicholas Khan (user_id=26) or Rebecca Brown (user_id=12). It should return the following data:</p>
+
+<div class="overflow highlighter-rouge"><div class="highlight"><pre class="highlight"><code> id  |              image_url               | user_id 
+-----+--------------------------------------+---------
+ 111 | https://picsum.photos/600/430?id=162 |      12
+ 112 | https://picsum.photos/600/430?id=119 |      12
+ 113 | https://picsum.photos/600/430?id=189 |      12
+ 114 | https://picsum.photos/600/430?id=610 |      12
+ 115 | https://picsum.photos/600/430?id=880 |      12
+ 116 | https://picsum.photos/600/430?id=67  |      12
+ 117 | https://picsum.photos/600/430?id=702 |      12
+ 118 | https://picsum.photos/600/430?id=261 |      12
+ 119 | https://picsum.photos/600/430?id=663 |      12
+ 237 | https://picsum.photos/600/430?id=647 |      26
+ 238 | https://picsum.photos/600/430?id=46  |      26
+ 239 | https://picsum.photos/600/430?id=207 |      26
+ 240 | https://picsum.photos/600/430?id=37  |      26
+ 241 | https://picsum.photos/600/430?id=601 |      26
+ 242 | https://picsum.photos/600/430?id=934 |      26
+ 243 | https://picsum.photos/600/430?id=487 |      26
+ 244 | https://picsum.photos/600/430?id=991 |      26
+(17 rows)
+</code></pre></div></div>
+
+<h3 id="6-using-functions-in-a-select-statement">6. Using functions in a select statement</h3>
+<p>Write a query that uses the <code class="highlighter-rouge">count</code> function in the SELECT clause to figure out how many posts there are in the <code class="highlighter-rouge">posts</code> table. Your query should return the following:</p>
+
+<div class="overflow highlighter-rouge"><div class="highlight"><pre class="highlight"><code> count 
+-------
+   292
+(1 row)
+</code></pre></div></div>
+
+<h3 id="7-aggregating-data">7. Aggregating data</h3>
+<p>Write a query that uses the <code class="highlighter-rouge">count</code> function and a <code class="highlighter-rouge">GROUP BY</code> clause to find out how many comments each user has made. Order by the number of comments, descending. Your query should return the following:</p>
+
+<div class="overflow highlighter-rouge"><div class="highlight"><pre class="highlight"><code> user_id | count 
+---------+-------
+       4 |    33
+      12 |    32
+      30 |    30
+       7 |    30
+      26 |    29
+       3 |    27
+      23 |    27
+      27 |    27
+      24 |    27
+      28 |    27
+      17 |    27
+      22 |    26
+       1 |    26
+      13 |    24
+       9 |    24
+      16 |    24
+      21 |    24
+      29 |    23
+       8 |    23
+      10 |    22
+      20 |    22
+      31 |    20
+       6 |    19
+       5 |    17
+      18 |    17
+      19 |    17
+      25 |    17
+       2 |    16
+      15 |    16
+      14 |    14
+      11 |    13
+(31 rows)
+</code></pre></div></div>
+
+<h3 id="8-joining-two-tables">8. Joining: two tables</h3>
+<p>Write a query to retrieve the <code class="highlighter-rouge">id</code>, <code class="highlighter-rouge">image_url</code>, and <code class="highlighter-rouge">user_id</code> for the <code class="highlighter-rouge">posts</code> created by either Nicholas Khan (user_id=26) or Rebecca Brown (user_id=12) – just like in #5. However, this time you will also join on the <code class="highlighter-rouge">users</code> table so that you can also display the <code class="highlighter-rouge">username</code>, <code class="highlighter-rouge">first_name</code>, and <code class="highlighter-rouge">last_name</code> of the creators.</p>
 <ul>
-  <li>Assume that the <code class="highlighter-rouge">current_user</code> variable, defined at the top of <code class="highlighter-rouge">app.py</code> represents the user who is currently logged in.</li>
+  <li>HINT: You will join the tables where the <code class="highlighter-rouge">user.id</code> is the same as <code class="highlighter-rouge">posts.user_id</code>.</li>
 </ul>
 
-<p><img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial09/hello-erick.png" /></p>
+<p>Your query should return the following data:</p>
 
-<h3 id="task_2">2. Grab Data from “database”</h3>
-<p>The big idea with REST APIs is that they expose a subset of your organization’s data (from a database) to the outside world. Within <code class="highlighter-rouge">app.py</code>, scroll down to the <code class="highlighter-rouge">exercise2</code> function. This function opens a simple “database” file (just a JSON file), loads the data into memory, and then sends it as response to the requestor. Currently, it just returns an empty dictionary. You will replace the return statement with the following:</p>
+<div class="overflow highlighter-rouge"><div class="highlight"><pre class="highlight"><code> id  |              image_url               | user_id |   username    | first_name | last_name 
+-----+--------------------------------------+---------+---------------+------------+-----------
+ 111 | https://picsum.photos/600/430?id=162 |      12 | rebecca_brown | Rebecca    | Brown
+ 112 | https://picsum.photos/600/430?id=119 |      12 | rebecca_brown | Rebecca    | Brown
+ 113 | https://picsum.photos/600/430?id=189 |      12 | rebecca_brown | Rebecca    | Brown
+ 114 | https://picsum.photos/600/430?id=610 |      12 | rebecca_brown | Rebecca    | Brown
+ 115 | https://picsum.photos/600/430?id=880 |      12 | rebecca_brown | Rebecca    | Brown
+ 116 | https://picsum.photos/600/430?id=67  |      12 | rebecca_brown | Rebecca    | Brown
+ 117 | https://picsum.photos/600/430?id=702 |      12 | rebecca_brown | Rebecca    | Brown
+ 118 | https://picsum.photos/600/430?id=261 |      12 | rebecca_brown | Rebecca    | Brown
+ 119 | https://picsum.photos/600/430?id=663 |      12 | rebecca_brown | Rebecca    | Brown
+ 237 | https://picsum.photos/600/430?id=647 |      26 | nicholas_khan | Nicholas   | Khan
+ 238 | https://picsum.photos/600/430?id=46  |      26 | nicholas_khan | Nicholas   | Khan
+ 239 | https://picsum.photos/600/430?id=207 |      26 | nicholas_khan | Nicholas   | Khan
+ 240 | https://picsum.photos/600/430?id=37  |      26 | nicholas_khan | Nicholas   | Khan
+ 241 | https://picsum.photos/600/430?id=601 |      26 | nicholas_khan | Nicholas   | Khan
+ 242 | https://picsum.photos/600/430?id=934 |      26 | nicholas_khan | Nicholas   | Khan
+ 243 | https://picsum.photos/600/430?id=487 |      26 | nicholas_khan | Nicholas   | Khan
+ 244 | https://picsum.photos/600/430?id=991 |      26 | nicholas_khan | Nicholas   | Khan
+(17 rows)
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>After editing the function, test your endpoint by accessing <a href="http://127.0.0.1:5000/data/quotes/" target="_blank">http://127.0.0.1:5000/data/quotes/</a>. If your code worked, you should see JSON of “famous quotes.”</p>
-
-<p><img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial09/quotes-json.png" /></p>
-
-<p>A quick note on the <code class="highlighter-rouge">json</code> library:</p>
-<ul class="compact">
-  <li><code class="highlighter-rouge">json.dumps()</code> converts a Python dictionary into JSON (a string).</li>
-  <li><code class="highlighter-rouge">json.loads()</code> convert JSON (a string) into a Python dictionary.</li>
-</ul>
-
-<h3 id="task_3">3. Grab data from another server</h3>
-<p>Servers can also be clients that issue requests to other servers (the thing doing the “asking” is usually referred to as the client). In other words, your Flask server can query data from other servers (using HTTP or other protocols) and then make use of that data in their own way. The <code class="highlighter-rouge">exercise3</code> function queries a proxy server that Sarah made (<a href="https://www.apitutor.org" target="_blank">https://www.apitutor.org</a>) for accessing Yelp (and other providers). In this example, we are querying Yelp for restaurants that match a <strong><em>location</em></strong> and <strong><em>term</em></strong>:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/data/yelp/'</span><span class="p">)</span>
-<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/data/yelp'</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">exercise3</span><span class="p">():</span>
-    <span class="n">args</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">args</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-    <span class="n">search_term</span> <span class="o">=</span> <span class="s">'pizza'</span>
-    <span class="n">location</span> <span class="o">=</span> <span class="s">'Asheville, NC'</span>
-    <span class="c1"># go fetch data from another server and give it to the requestor:
-</span>    <span class="n">url</span> <span class="o">=</span> <span class="s">'https://www.apitutor.org/yelp/simple/v3/businesses/search?location={location}&amp;term={search_term}&amp;limit={count}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span>
-        <span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span> 
-        <span class="n">search_term</span><span class="o">=</span><span class="n">search_term</span><span class="p">,</span> 
-        <span class="n">count</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>You are going to make this route more customizable by allowing the requestor to pass query parameters to the <code class="highlighter-rouge">/data/yelp/</code> endpoint. For instance:</p>
-
-<p><a href="http://127.0.0.1:5000/data/yelp/?location=Asheville+NC&amp;term=thai" target="_blank">http://127.0.0.1:5000/data/yelp/?location=Asheville+NC&amp;term=thai</a></p>
-
-<p>Recall from previous lectures:</p>
-
-<ul class="compact">
-  <li>The <code class="highlighter-rouge">?</code> character is used to specify where the route ends and the query parameters begin.</li>
-  <li>If there is more than one query parameter, then each parameter/argument pair is separated by an <code class="highlighter-rouge">&amp;</code> character (see examples below).</li>
-  <li>The parameter name is on the left side of the <code class="highlighter-rouge">=</code> and the value is on the right side.</li>
-  <li>In flask, you can access the query parameters via the <code class="highlighter-rouge">request.args</code>, which stores a dictionary representation of any query parameters associated with a given route.</li>
-</ul>
-
-<h4 id="your-task">Your Task</h4>
-<p>Replace the hard-coded ‘pizza’ and ‘Asheville, NC’ terms with the user’s preferences, using the the <code class="highlighter-rouge">request.args</code> dictionary. In python, to get a key from a dictionary, you can do this:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">search_term</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">args</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'term'</span><span class="p">)</span>
-<span class="n">location</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">args</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'location'</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>Also, be sure to check if they passed in both a “location” and a “term” parameter. If they didn’t, give them an error message and tell them to try again:</p>
-
+<h3 id="9-more-joining-practice-two-tables">9. More joining practice: two tables</h3>
+<p>Write a query that displays the <code class="highlighter-rouge">id</code> and <code class="highlighter-rouge">pub_date</code> from the <code class="highlighter-rouge">posts</code> table alongside the <code class="highlighter-rouge">id</code> of the following table for all of the users that Nicholas Khan (user_id=26) is following. To do this, you will have to join the <code class="highlighter-rouge">posts</code> table with the <code class="highlighter-rouge">following</code> table.</p>
 <ul>
-  <li><a href="http://127.0.0.1:5000/data/yelp/?location=Asheville,+NC&amp;term=chinese" target="_blank">http://127.0.0.1:5000/data/yelp/?location=Asheville,+NC&amp;term=chinese</a> (Chinese restaurants in Asheville)</li>
-  <li><a href="http://127.0.0.1:5000/data/yelp/?location=San+Diego,CA&amp;term=thai" target="_blank">http://127.0.0.1:5000/data/yelp/?location=San+Diego,CA&amp;term=thai</a> (Thai restaurants in San Diego)</li>
+  <li>HINT: Join where the <code class="highlighter-rouge">user_id</code> of the <code class="highlighter-rouge">post</code> table is the same as the <code class="highlighter-rouge">following_id</code> of the <code class="highlighter-rouge">following</code> table.</li>
 </ul>
 
-<p>If you implemented this function correctly:</p>
+<p>Your query should return the following data:</p>
 
-<ul class="compact">
-  <li>The “location” search parameter is honored</li>
-  <li>The “term” search parameter is honored</li>
-  <li>If either parameter is missing, an error message displays</li>
-</ul>
-
-<p><img class="large frame" src="/spring2025/assets/images/tutorials/tutorial09/yelp-json.png" /></p>
-
-<h3 id="task_4">4. Merge your data with a template</h3>
-<p>The <code class="highlighter-rouge">exercise4</code> function uses a template to generate an HTML string, which is returned as a response. Specifically, python parses the <code class="highlighter-rouge">templates/quote-of-the-day.html</code> file, finds any Jinja syntax, evaluates that syntax, and finally sends a “plain” HTML file back to the client (very similar to a template literal or JSX, but with more power):</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/quote'</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">exercise2</span><span class="p">():</span>
-    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span>
-        <span class="s">'quote-of-the-day.html'</span><span class="p">,</span>
-        <span class="n">user</span><span class="o">=</span><span class="n">current_user</span>
-    <span class="p">)</span>
+<div class="overflow highlighter-rouge"><div class="highlight"><pre class="highlight"><code> id  |          pub_date          | following_id 
+-----+----------------------------+--------------
+   1 | 2022-09-04 08:46:04.107741 |            1
+   2 | 2022-09-01 01:46:04.109636 |            1
+   3 | 2022-09-02 14:46:04.109914 |            1
+   4 | 2022-09-01 13:46:04.110164 |            1
+   5 | 2022-09-02 14:46:04.110432 |            1
+   6 | 2022-09-01 03:46:04.110664 |            1
+   7 | 2022-08-31 12:46:04.110901 |            1
+   8 | 2022-09-01 03:46:04.111115 |            1
+   9 | 2022-08-31 12:46:04.111333 |            1
+  10 | 2022-08-31 11:46:04.111537 |            1
+  18 | 2022-09-01 11:46:04.119333 |            3
+  19 | 2022-09-02 03:46:04.122143 |            3
+  20 | 2022-09-04 11:46:04.122361 |            3
+  21 | 2022-09-03 02:46:04.122557 |            3
+  22 | 2022-09-02 08:46:04.122763 |            3
+  23 | 2022-09-01 16:46:04.12298  |            3
+  24 | 2022-08-31 22:46:04.123155 |            3
+  25 | 2022-09-01 12:46:04.123328 |            3
+  26 | 2022-09-02 17:46:04.123505 |            3
+  27 | 2022-09-02 22:46:04.123696 |            3
+  28 | 2022-09-04 10:46:04.123897 |            3
+  29 | 2022-09-03 12:46:04.124087 |            3
+  63 | 2022-09-01 04:46:04.141871 |            7
+  64 | 2022-09-01 20:46:04.146565 |            7
+  65 | 2022-09-01 13:46:04.146911 |            7
+  66 | 2022-08-31 18:46:04.147154 |            7
+  67 | 2022-09-03 12:46:04.147364 |            7
+  68 | 2022-09-01 10:46:04.147587 |            7
+  69 | 2022-09-02 08:46:04.147805 |            7
+  70 | 2022-09-01 20:46:04.148125 |            7
+  71 | 2022-09-01 12:46:04.149393 |            7
+  72 | 2022-09-03 20:46:04.150657 |            7
+  73 | 2022-09-03 22:46:04.151621 |            7
+  86 | 2022-09-01 15:46:04.157701 |            9
+  87 | 2022-08-31 16:46:04.16126  |            9
+  88 | 2022-09-01 13:46:04.161501 |            9
+  89 | 2022-09-01 04:46:04.161717 |            9
+  90 | 2022-09-02 16:46:04.161915 |            9
+  91 | 2022-09-02 18:46:04.162115 |            9
+  92 | 2022-09-02 23:46:04.162303 |            9
+ 111 | 2022-09-04 06:46:04.173387 |           12
+ 112 | 2022-09-02 11:46:04.176721 |           12
+ 113 | 2022-08-31 17:46:04.176973 |           12
+ 114 | 2022-09-03 11:46:04.177188 |           12
+ 115 | 2022-09-01 20:46:04.177394 |           12
+ 116 | 2022-09-01 22:46:04.17761  |           12
+ 117 | 2022-09-04 07:46:04.177816 |           12
+ 118 | 2022-09-04 04:46:04.178003 |           12
+ 119 | 2022-09-03 02:46:04.178177 |           12
+ 129 | 2022-09-02 13:46:04.183366 |           14
+ 130 | 2022-09-01 04:46:04.18636  |           14
+ 131 | 2022-09-03 04:46:04.186605 |           14
+ 132 | 2022-09-01 07:46:04.186818 |           14
+ 133 | 2022-09-04 12:46:04.187029 |           14
+ 134 | 2022-09-02 09:46:04.187244 |           14
+ 135 | 2022-09-02 16:46:04.187434 |           14
+ 136 | 2022-09-01 02:46:04.187638 |           14
+ 137 | 2022-09-01 14:46:04.187832 |           14
+ 138 | 2022-09-01 16:46:04.18803  |           14
+ 139 | 2022-09-01 06:46:04.188211 |           14
+ 140 | 2022-09-02 09:46:04.188385 |           14
+ 141 | 2022-09-03 20:46:04.188572 |           15
+ 142 | 2022-09-02 00:46:04.192009 |           15
+ 143 | 2022-09-03 19:46:04.192274 |           15
+ 144 | 2022-08-31 22:46:04.192526 |           15
+ 145 | 2022-08-31 15:46:04.192746 |           15
+ 146 | 2022-09-02 15:46:04.192964 |           15
+ 147 | 2022-08-31 10:46:04.193175 |           15
+ 148 | 2022-09-02 00:46:04.193359 |           15
+ 149 | 2022-09-01 22:46:04.193548 |           16
+ 150 | 2022-09-01 01:46:04.196439 |           16
+ 151 | 2022-09-01 19:46:04.196667 |           16
+ 152 | 2022-09-02 01:46:04.196886 |           16
+ 153 | 2022-09-02 01:46:04.197089 |           16
+ 154 | 2022-08-31 16:46:04.19728  |           16
+ 155 | 2022-09-01 23:46:04.197598 |           16
+ 156 | 2022-09-04 09:46:04.197831 |           16
+ 157 | 2022-09-01 06:46:04.198055 |           16
+ 158 | 2022-09-02 03:46:04.198384 |           16
+ 217 | 2022-09-02 19:46:04.232795 |           24
+ 218 | 2022-08-31 12:46:04.237888 |           24
+ 219 | 2022-09-02 04:46:04.238135 |           24
+ 220 | 2022-09-02 17:46:04.23835  |           24
+ 221 | 2022-09-04 10:46:04.238647 |           24
+ 222 | 2022-09-01 09:46:04.238853 |           24
+ 223 | 2022-09-04 00:46:04.239056 |           24
+ 224 | 2022-09-03 01:46:04.239256 |           24
+ 225 | 2022-09-02 14:46:04.239441 |           24
+ 226 | 2022-09-03 01:46:04.239652 |           24
+ 227 | 2022-09-04 01:46:04.239837 |           24
+ 245 | 2022-09-03 02:46:04.249785 |           27
+ 246 | 2022-09-01 06:46:04.25299  |           27
+ 247 | 2022-09-03 15:46:04.253233 |           27
+ 248 | 2022-09-02 07:46:04.253455 |           27
+ 249 | 2022-09-02 12:46:04.253678 |           27
+ 250 | 2022-09-03 14:46:04.2539   |           27
+ 251 | 2022-08-31 18:46:04.254123 |           27
+ 252 | 2022-09-03 23:46:04.254296 |           27
+(98 rows)
 </code></pre></div></div>
-<p>Open the <code class="highlighter-rouge">templates/quote-of-the-day.html</code> file and examine how the Jinja template allows python logic to be evaluated from within the HTML template (using double curly brace notation). Note that <strong>in order to give your template access to data, it must be passed into the <code class="highlighter-rouge">render_template</code> function as a keyword argument</strong> (from <code class="highlighter-rouge">app.py</code>). You may pass in as many keyword arguments (i.e. pieces of data) as you like into the template. These pieces of data are often referred to as the template’s “context.”</p>
 
-<h4 id="your-task-1">Your Task</h4>
-<p>Please make the following modifications:</p>
+<h3 id="10-more-joining-practice-three-tables-optional">10. More joining practice: three tables (Optional)</h3>
+<p>Write a query that displays the same information as in the previous exercise, but adds an additional column that displays the <code class="highlighter-rouge">username</code> of the person who created the post. To do this, you will have to join on a third table, <code class="highlighter-rouge">users</code>, to retrieve the usernames. Please also sort the posts by the <code class="highlighter-rouge">pub_date</code> in decending order (much like a feed might work).</p>
+
+<div class="overflow highlighter-rouge"><div class="highlight"><pre class="highlight"><code> id  |          pub_date          | following_id |     username      
+-----+----------------------------+--------------+-------------------
+ 133 | 2022-09-04 12:46:04.187029 |           14 | adam_wilcox
+  20 | 2022-09-04 11:46:04.122361 |            3 | jamie_evans
+ 221 | 2022-09-04 10:46:04.238647 |           24 | lori_horton
+  28 | 2022-09-04 10:46:04.123897 |            3 | jamie_evans
+ 156 | 2022-09-04 09:46:04.197831 |           16 | david_robinson
+   1 | 2022-09-04 08:46:04.107741 |            1 | webdev
+ 117 | 2022-09-04 07:46:04.177816 |           12 | rebecca_brown
+ 111 | 2022-09-04 06:46:04.173387 |           12 | rebecca_brown
+ 118 | 2022-09-04 04:46:04.178003 |           12 | rebecca_brown
+ 227 | 2022-09-04 01:46:04.239837 |           24 | lori_horton
+ 223 | 2022-09-04 00:46:04.239056 |           24 | lori_horton
+ 252 | 2022-09-03 23:46:04.254296 |           27 | barbara_armstrong
+  73 | 2022-09-03 22:46:04.151621 |            7 | timothy_maldonado
+ 141 | 2022-09-03 20:46:04.188572 |           15 | john_morales
+  72 | 2022-09-03 20:46:04.150657 |            7 | timothy_maldonado
+ 143 | 2022-09-03 19:46:04.192274 |           15 | john_morales
+ 247 | 2022-09-03 15:46:04.253233 |           27 | barbara_armstrong
+ 250 | 2022-09-03 14:46:04.2539   |           27 | barbara_armstrong
+  67 | 2022-09-03 12:46:04.147364 |            7 | timothy_maldonado
+  29 | 2022-09-03 12:46:04.124087 |            3 | jamie_evans
+ 114 | 2022-09-03 11:46:04.177188 |           12 | rebecca_brown
+ 131 | 2022-09-03 04:46:04.186605 |           14 | adam_wilcox
+ 245 | 2022-09-03 02:46:04.249785 |           27 | barbara_armstrong
+ 119 | 2022-09-03 02:46:04.178177 |           12 | rebecca_brown
+  21 | 2022-09-03 02:46:04.122557 |            3 | jamie_evans
+ 226 | 2022-09-03 01:46:04.239652 |           24 | lori_horton
+ 224 | 2022-09-03 01:46:04.239256 |           24 | lori_horton
+  92 | 2022-09-02 23:46:04.162303 |            9 | sharon_ritter
+  27 | 2022-09-02 22:46:04.123696 |            3 | jamie_evans
+ 217 | 2022-09-02 19:46:04.232795 |           24 | lori_horton
+  91 | 2022-09-02 18:46:04.162115 |            9 | sharon_ritter
+ 220 | 2022-09-02 17:46:04.23835  |           24 | lori_horton
+  26 | 2022-09-02 17:46:04.123505 |            3 | jamie_evans
+ 135 | 2022-09-02 16:46:04.187434 |           14 | adam_wilcox
+  90 | 2022-09-02 16:46:04.161915 |            9 | sharon_ritter
+ 146 | 2022-09-02 15:46:04.192964 |           15 | john_morales
+ 225 | 2022-09-02 14:46:04.239441 |           24 | lori_horton
+   5 | 2022-09-02 14:46:04.110432 |            1 | webdev
+   3 | 2022-09-02 14:46:04.109914 |            1 | webdev
+ 129 | 2022-09-02 13:46:04.183366 |           14 | adam_wilcox
+ 249 | 2022-09-02 12:46:04.253678 |           27 | barbara_armstrong
+ 112 | 2022-09-02 11:46:04.176721 |           12 | rebecca_brown
+ 140 | 2022-09-02 09:46:04.188385 |           14 | adam_wilcox
+ 134 | 2022-09-02 09:46:04.187244 |           14 | adam_wilcox
+  69 | 2022-09-02 08:46:04.147805 |            7 | timothy_maldonado
+  22 | 2022-09-02 08:46:04.122763 |            3 | jamie_evans
+ 248 | 2022-09-02 07:46:04.253455 |           27 | barbara_armstrong
+ 219 | 2022-09-02 04:46:04.238135 |           24 | lori_horton
+ 158 | 2022-09-02 03:46:04.198384 |           16 | david_robinson
+  19 | 2022-09-02 03:46:04.122143 |            3 | jamie_evans
+ 153 | 2022-09-02 01:46:04.197089 |           16 | david_robinson
+ 152 | 2022-09-02 01:46:04.196886 |           16 | david_robinson
+ 148 | 2022-09-02 00:46:04.193359 |           15 | john_morales
+ 142 | 2022-09-02 00:46:04.192009 |           15 | john_morales
+ 155 | 2022-09-01 23:46:04.197598 |           16 | david_robinson
+ 149 | 2022-09-01 22:46:04.193548 |           16 | david_robinson
+ 116 | 2022-09-01 22:46:04.17761  |           12 | rebecca_brown
+ 115 | 2022-09-01 20:46:04.177394 |           12 | rebecca_brown
+  70 | 2022-09-01 20:46:04.148125 |            7 | timothy_maldonado
+  64 | 2022-09-01 20:46:04.146565 |            7 | timothy_maldonado
+ 151 | 2022-09-01 19:46:04.196667 |           16 | david_robinson
+ 138 | 2022-09-01 16:46:04.18803  |           14 | adam_wilcox
+  23 | 2022-09-01 16:46:04.12298  |            3 | jamie_evans
+  86 | 2022-09-01 15:46:04.157701 |            9 | sharon_ritter
+ 137 | 2022-09-01 14:46:04.187832 |           14 | adam_wilcox
+  88 | 2022-09-01 13:46:04.161501 |            9 | sharon_ritter
+  65 | 2022-09-01 13:46:04.146911 |            7 | timothy_maldonado
+   4 | 2022-09-01 13:46:04.110164 |            1 | webdev
+  71 | 2022-09-01 12:46:04.149393 |            7 | timothy_maldonado
+  25 | 2022-09-01 12:46:04.123328 |            3 | jamie_evans
+  18 | 2022-09-01 11:46:04.119333 |            3 | jamie_evans
+  68 | 2022-09-01 10:46:04.147587 |            7 | timothy_maldonado
+ 222 | 2022-09-01 09:46:04.238853 |           24 | lori_horton
+ 132 | 2022-09-01 07:46:04.186818 |           14 | adam_wilcox
+ 246 | 2022-09-01 06:46:04.25299  |           27 | barbara_armstrong
+ 157 | 2022-09-01 06:46:04.198055 |           16 | david_robinson
+ 139 | 2022-09-01 06:46:04.188211 |           14 | adam_wilcox
+ 130 | 2022-09-01 04:46:04.18636  |           14 | adam_wilcox
+  89 | 2022-09-01 04:46:04.161717 |            9 | sharon_ritter
+  63 | 2022-09-01 04:46:04.141871 |            7 | timothy_maldonado
+   8 | 2022-09-01 03:46:04.111115 |            1 | webdev
+   6 | 2022-09-01 03:46:04.110664 |            1 | webdev
+ 136 | 2022-09-01 02:46:04.187638 |           14 | adam_wilcox
+ 150 | 2022-09-01 01:46:04.196439 |           16 | david_robinson
+   2 | 2022-09-01 01:46:04.109636 |            1 | webdev
+ 144 | 2022-08-31 22:46:04.192526 |           15 | john_morales
+  24 | 2022-08-31 22:46:04.123155 |            3 | jamie_evans
+ 251 | 2022-08-31 18:46:04.254123 |           27 | barbara_armstrong
+  66 | 2022-08-31 18:46:04.147154 |            7 | timothy_maldonado
+ 113 | 2022-08-31 17:46:04.176973 |           12 | rebecca_brown
+ 154 | 2022-08-31 16:46:04.19728  |           16 | david_robinson
+  87 | 2022-08-31 16:46:04.16126  |            9 | sharon_ritter
+ 145 | 2022-08-31 15:46:04.192746 |           15 | john_morales
+ 218 | 2022-08-31 12:46:04.237888 |           24 | lori_horton
+   9 | 2022-08-31 12:46:04.111333 |            1 | webdev
+   7 | 2022-08-31 12:46:04.110901 |            1 | webdev
+  10 | 2022-08-31 11:46:04.111537 |            1 | webdev
+ 147 | 2022-08-31 10:46:04.193175 |           15 | john_morales
+(98 rows)
+</code></pre></div></div>
+
+<h3 id="11-inserting-records">11. Inserting records</h3>
+<p>Nicholas (user_id=26) wants to bookmark a few of his posts (specifically, post ids 219, 220, and 221). Write three INSERT statements that add the appropriate entries in the <code class="highlighter-rouge">bookmarks</code> table. The table requires a valid <code class="highlighter-rouge">user_id</code> and a valid <code class="highlighter-rouge">post_id</code>.</p>
+
+<h3 id="12-deleting-records">12. Deleting records</h3>
+<p>Nicholas changed his mind and now wants to delete his bookmarks for post ids 219, 220, and 221. Write three DELETE statements that remove the three entries that were just added to the database.</p>
+
+<h3 id="13-updating-records">13. Updating records</h3>
+<p>Nicholas has a new email address: knick2022@gmail.com. Write an UPDATE statement that updates Nicholas’s email address in the <code class="highlighter-rouge">users</code> table.</p>
+
+<h3 id="14-more-querying-practice-optional">14. More Querying Practice (Optional)</h3>
+<p>Write a query that displays the <code class="highlighter-rouge">id</code> and <code class="highlighter-rouge">caption</code> of every blog post that Nicholas has published, along with a count of how many comments each post has.</p>
+
+<div class="overflow highlighter-rouge"><div class="highlight"><pre class="highlight"><code> id  | user_id | count |                        concat                        
+-----+---------+-------+------------------------------------------------------
+ 244 |      26 |     5 | Age look simply star behind beat manage art as ph...
+ 240 |      26 |     5 | Remain suggest base her Mrs sing land race appear...
+ 241 |      26 |     5 | Southern behavior force everybody public conditio...
+ 242 |      26 |     5 | Environmental close turn fine by simply rock here...
+ 238 |      26 |     4 | Car treat manager financial ready hit American be...
+ 239 |      26 |     4 | Action must continue international three successf...
+ 237 |      26 |     4 | As huge party model arm plant authority discuss k...
+ 243 |      26 |     2 | Place anyone morning their fund their training al...
+(8 rows)
+</code></pre></div></div>
+
+<h2 id="what-to-turn-in">What to turn in</h2>
+<p>To submit Tutorial 10, upload a zip file with the following two files:</p>
+
 <ol>
-  <li>In <code class="highlighter-rouge">app.py</code>, add another context variable, called <code class="highlighter-rouge">quote</code> that holds a randomly selected quote from the <code class="highlighter-rouge">quotes</code> list (see ~line 17).
+  <li>answers.sql</li>
+  <li>A text file that answers the following questions:
     <ul>
-      <li>The context variable must be included as a keyword argument in your <code class="highlighter-rouge">render_template</code> function.</li>
-      <li>I recommend that you use Python’s built-in <a href="https://www.w3schools.com/python/ref_random_choice.asp" target="_blank">random.choice</a> function to select a random element from a list.</li>
-    </ul>
-  </li>
-  <li>In <code class="highlighter-rouge">templates/quote-of-the-day.html</code>, update the template so that the quote of the day is displayed.
-    <ul>
-      <li><a href="https://www.codecademy.com/learn/learn-flask/modules/flask-templates-and-forms/cheatsheet">Jinja Cheatsheet</a></li>
+      <li>What is a join (just in your own words) and why is it useful?</li>
+      <li>Consider the structure of the <code class="highlighter-rouge">posts</code> table: why would you want to use a foreign key (<code class="highlighter-rouge">user_id</code>) to the <code class="highlighter-rouge">users</code> table instead of storing the <code class="highlighter-rouge">username</code>, <code class="highlighter-rouge">first_name</code>, and <code class="highlighter-rouge">last_name</code> in the <code class="highlighter-rouge">posts</code> table?</li>
     </ul>
   </li>
 </ol>
-
-<p><img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial09/erick-quote.png" /></p>
-
-<!-- {:#task_5}
-### 5. Accessing data from other servers -->
-
-<h3 id="task_5">5. Merge someone else’s data with a template</h3>
-<p>Now, you’re going to create a data-driven <strong>template</strong> to display information about the “Top Restaurant” (according to Yelp) that matches your search criteria. Consider the following code:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/ui/first-restaurant/'</span><span class="p">)</span>
-<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/ui/first-restaurant'</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">exercise5</span><span class="p">():</span>
-    <span class="c1"># code to parse the query parameters (like in exercise 3):
-</span>    <span class="n">args</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">args</span>
-    <span class="n">location</span> <span class="o">=</span> <span class="n">args</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'location'</span><span class="p">)</span>
-    <span class="n">search_term</span> <span class="o">=</span> <span class="n">args</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'term'</span><span class="p">)</span>
-    
-    <span class="c1"># error handling:
-</span>    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">location</span> <span class="ow">and</span> <span class="n">search_term</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">'"location" and "term" are required query parameters'</span>
-
-    <span class="c1"># code to query yelp:
-</span>    <span class="n">url</span> <span class="o">=</span> <span class="s">'https://www.apitutor.org/yelp/simple/v3/businesses/search?location={0}&amp;term={1}&amp;limit=1'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span>
-        <span class="n">location</span><span class="p">,</span> <span class="n">search_term</span><span class="p">)</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">restaurants</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
-    
-    <span class="c1"># code to render the template (and to pass the template the data it needs)
-</span>    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span>
-        <span class="s">'restaurant.html'</span><span class="p">,</span>
-        <span class="n">endpoint</span><span class="o">=</span><span class="s">'/ui/first-restaurant/'</span><span class="p">,</span>
-        <span class="n">user</span><span class="o">=</span><span class="n">current_user</span><span class="p">,</span>
-        <span class="n">search_term</span><span class="o">=</span><span class="n">search_term</span><span class="p">,</span>
-        <span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span>
-        <span class="n">restaurant</span><span class="o">=</span><span class="n">restaurants</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># just show the first restaurant
-</span>    <span class="p">)</span>
-</code></pre></div></div>
-
-<p>It works very similarly to the code in exercise 3, except for it merges with the <code class="highlighter-rouge">restaurant.html</code> template (instead of dumping raw JSON data). Please try testing these routes by experimenting with the following URLs:</p>
-
-<ul>
-  <li><a href="http://127.0.0.1:5000/ui/first-restaurant/?location=Asheville,%20NC&amp;term=chinese" target="_blank">http://127.0.0.1:5000/ui/first-restaurant/?location=Asheville,%20NC&amp;term=chinese</a> (Chinese restaurants in Asheville)</li>
-  <li><a href="http://127.0.0.1:5000/ui/first-restaurant/?location=San Diego,%20CA&amp;term=thai" target="_blank">http://127.0.0.1:5000/ui/first-restaurant/?location=San Diego,%20CA/thai</a> (Thai restaurants in San Diego)</li>
-</ul>
-
-<p>Note that the <code class="highlighter-rouge">restaurant.html</code> template uses a new construct – the “include” – as a way to modularize code.</p>
-
-<p><img class="large frame" src="/spring2025/assets/images/tutorials/tutorial09/template-before.png" /></p>
-
-<h4 id="your-task-2">Your Task</h4>
-<p>Modify the HTML in the <code class="highlighter-rouge">restaurant.html</code> template so that it displays the Yelp data in a more visual format. For instance, Sarah made her’s look like this:</p>
-
-<p><img class="medium frame" src="/spring2025/assets/images/tutorials/tutorial09/template-after.png" /></p>
-
-<p>Feel free to jazz up your template any way you like!</p>
-<ul>
-  <li><a href="https://www.codecademy.com/learn/learn-flask/modules/flask-templates-and-forms/cheatsheet">Jinja Cheatsheet</a></li>
-</ul>
-
-<h2 id="extra_credit">5. Extra Credit (5pts)</h2>
-<p>If you have more time, please also try <code class="highlighter-rouge">exercise6</code>. It’s similar to <code class="highlighter-rouge">exercise5</code>, but requires a Jinja</p>
-
-<h3 id="1-looping-using-jinja">1. Looping using Jinja</h3>
-<p>In <code class="highlighter-rouge">exercise5</code>, you only display a single restaurant. Look at the <a href="https://jinja.palletsprojects.com/en/3.0.x/templates/" target="_blank">Jinja documentation</a> and see if you can figure out how to output all of the matching restaurants for the search (not just the first one). See if you can make your template look like this one:</p>
-
-<p><img class="large frame" src="/spring2025/assets/images/tutorials/tutorial09/restaurants.png" /></p>
-
-<h3 id="2-includes">2. Includes</h3>
-<p>See if you can convert the HTML that shows a single restaurant card into an include file (similar to <code class="highlighter-rouge">includes/header.html</code>)</p>
-
-<h2 id="what-to-turn-in">What to Turn In</h2>
-<p>To submit Tutorial 9, you can either:</p>
-<ol>
-  <li>Commit and sync your code to GitHub using git and paste a link to your repo. You do not need to link this exercise to your home page, because GitHub Pages doesn’t know how to run a Flask application. We will need a more complicated server architecture for that.</li>
-</ol>
-
-<p>If you worked with a partner, list your partner as a comment.
-If you did the extra credit, tell me so that I can look for it.</p>
-
 
 
 
