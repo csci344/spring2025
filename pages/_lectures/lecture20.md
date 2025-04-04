@@ -4,7 +4,7 @@ title: "HTTP & REST"
 type: lecture
 num: 20
 draft: 1
-start_date: 2025-04-09
+start_date: 2025-04-07
 slides_url: #
 readings:
     - type: reading

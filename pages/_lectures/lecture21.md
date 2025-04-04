@@ -40,9 +40,9 @@ readings:
         <a href="https://www.postgresql.org/docs/current/tutorial-agg.html" target="_blank">Aggregate Functions</a>
 activities:
     - type: activity
-      title: Get started on Tutorial 12
+      title: Get started on Tutorial 10
       draft: 1
-      url: /assignments/tutorial12
+      url: /assignments/tutorial10
       notes: >
         See if you can get through the installation and configuration tasks.
 ---
