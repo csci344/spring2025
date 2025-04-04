@@ -1,6 +1,6 @@
 ---
 layout: assignment-two-column
-title: Intro to Fast API
+title: Intro to Flask
 type: tutorial
 abbreviation: Tutorial 10
 draft: 1

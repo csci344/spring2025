@@ -1,21 +1,48 @@
 ---
 layout: module
-title: "HTTP & REST"
+title: "Intro to Databases"
 type: lecture
 num: 21
 draft: 1
-start_date: 2025-04-09
+start_date: 2025-04-14
 slides_url: #
 readings:
     - type: reading
       citation: >
-        <a href="https://nickjanetakis.com/blog/server-side-templates-vs-rest-api-and-javascript-front-end" target="_blank">Server Side Templates vs REST API and Javascript Front-End</a>. Janetakis, Nick (Oct., 2017).
+        <a href="https://www.postgresql.org/about/" target="_blank">About PostgreSQL</a>
       required: 1
     - type: reading
       citation: >
-        Avraham, Shif Ben (Sept. 5, 2017). <a href="https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-1-introduction-b4a072f8740f" target="_blank">What is REST — A Simple Explanation for Beginners</a>. 
+        <a href="https://www.postgresqltutorial.com/psql-commands/" target="_blank">psql commands</a> (command line)
       required: 1
     - type: reading
       citation: >
-        Fielding, Roy (2000). <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm" target="_blank">Roy Fielding's original paper</a>. For you reference.
+        <a href="https://www.postgresql.org/docs/current/tutorial-select.html" target="_blank">Querying a Table</a>
+      required: 1
+    - type: reading
+      citation: >
+        <a href="https://www.postgresql.org/docs/current/tutorial-join.html" target="_blank">Joins Between Tables</a>
+      required: 1
+    - type: reading
+      citation: >
+        <a href="https://www.postgresql.org/docs/current/tutorial-populate.html" target="_blank">Inserts</a>
+      required: 1
+    - type: reading
+      citation: >
+        <a href="https://www.postgresql.org/docs/current/tutorial-update.html" target="_blank">Updates</a>
+      required: 1
+    - type: reading
+      citation: >
+       <a href="https://www.postgresql.org/docs/current/tutorial-delete.html" target="_blank">Deletions</a>
+      required: 1
+    - type: reading
+      citation: >
+        <a href="https://www.postgresql.org/docs/current/tutorial-agg.html" target="_blank">Aggregate Functions</a>
+activities:
+    - type: activity
+      title: Get started on Tutorial 12
+      draft: 1
+      url: /assignments/tutorial12
+      notes: >
+        See if you can get through the installation and configuration tasks.
 ---

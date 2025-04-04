@@ -1,18 +1,16 @@
 ---
 layout: module
-title: "Security & Authentication"
+title: "Reflection & Next Steps"
 type: lecture
 num: 24
 draft: 1
-start_date: 2025-04-23
+start_date: 2025-04-28
 slides_url: #
 readings:
     - type: reading
       citation: >
-        <a href="https://www.youtube.com/watch?v=eHqbh0kyRYk" target="_blank">CSRF Explained | Understanding Cross Site Request Forgery | What is XSRF?</a>
-      required: 1
+        <a href="https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f" target="_blank">How it feels to learn JavaScript in 2016</a>. Jose Aguinaga
     - type: reading
       citation: >
-        <a href="https://medium.com/@prashantramnyc/difference-between-session-cookies-vs-jwt-json-web-tokens-for-session-management-4be67d2f066e#:~:text=The%20JWT%20tokens%20are%20sometimes,by%20the%20%E2%80%9Csecret%20key%E2%80%9D." target="_blank">Difference between Session Cookies vs. JWT (JSON Web Tokens), for session management</a>
-      required: 1
+        <a href="https://www.youtube.com/watch?v=Uo3cL4nrGOk" target="_blank">Interview with Senior JS Developer</a> (Parody)
 ---

@@ -7,8 +7,6 @@ description: >
 num: 11
 draft: 0
 start_date: 2025-04-04
-lectures: [20]
+lectures: [19]
 tutorials: [9]
 ---
-
-TBD
