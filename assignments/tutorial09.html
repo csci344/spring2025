@@ -58,18 +58,9 @@
                 <ol class="side-menu">
   <li><a href="#video-walkthroughs-for-tutorial-9">Video Walkthroughs for Tutorial 9</a></li>
   <li><a href="#background-readings">Background Readings</a></li>
-  <li><a href="#1-install-python">1. Install Python</a>
-    <ol>
-      <li><a href="#what-if-ive-already-installed-python-on-my-laptop">What if I’ve already installed Python on my laptop?</a></li>
-    </ol>
-  </li>
+  <li><a href="#1-install-python--poetry">1. Install Python &amp; Poetry</a></li>
   <li><a href="#2-intro-to-flask">2. Intro to Flask</a></li>
-  <li><a href="#3-intro-to-python-virtual-environments">3. Intro to Python Virtual Environments</a>
-    <ol>
-      <li><a href="#mac--unix--linux">Mac / Unix / Linux</a></li>
-      <li><a href="#windows-powershell-or-command-prompt">Windows Powershell or Command Prompt</a></li>
-    </ol>
-  </li>
+  <li><a href="#3-intro-to-virtual-environments">3. Intro to Virtual Environments</a></li>
   <li><a href="#4-set-up">4. Set Up</a>
     <ol>
       <li><a href="#set-up-your-virtual-environment">Set Up Your Virtual Environment</a></li>
@@ -130,10 +121,10 @@
 <blockquote class="info">
   <h2 id="video-walkthroughs-for-tutorial-9">Video Walkthroughs for Tutorial 9</h2>
 
-  <p>The following video walkthroughs walk through all of the required Tutorial 9 exercises.</p>
+  <p>This video walkthrough was made during Helene. We are using a different approach to managing dependencies this
+semester (using poetry instead of python’s <code class="highlighter-rouge">venv</code> module), but everything else should be the same.</p>
 
   <ol>
-    <li><span class="update">11:09</span> <a href="https://drive.google.com/file/d/1l5pgMD_ITAKJuYJPzBc_CeWN-TlI41nN/view?usp=drive_link" target="_blank">Setup</a></li>
     <li><span class="update">12:12</span> <a href="https://drive.google.com/file/d/1LaOsFkX0yBiMvHwyd9Rdfwh9Kg207GU9/view?usp=drive_link" target="_blank">Exercise 1</a></li>
     <li><span class="update">06:15</span> <a href="https://drive.google.com/file/d/1W8ot-pst_MR3y8J63k4uJW-hP8SaLYp8/view?usp=drive_link" target="_blank">Exercise 2</a></li>
     <li><span class="update">10:51</span> <a href="https://drive.google.com/file/d/1nb4cI0AtEUup5j2ulb5WrtvlLQiCUiMA/view?usp=drive_link" target="_blank">Exercise 3</a></li>
@@ -148,34 +139,14 @@
   <h2 id="background-readings">Background Readings</h2>
   <p>Before beginning this tutorial, please read (or at least skim) the following:</p>
 
-  <ul class="compact">
-    <li>Towards Data Science. <a href="https://towardsdatascience.com/virtual-environments-104c62d48c54#8025" target="_blank">Intro to Python Virtual Environments</a></li>
+  <ul>
+    <li><a href="https://realpython.com/dependency-management-python-poetry" target="_blank">Intro to Python Poetry</a> (skim)</li>
     <li>Flask website. <a href="https://flask.palletsprojects.com/en/2.0.x/quickstart/" target="_blank">Flask Quickstart Guide</a></li>
   </ul>
 </blockquote>
 
-<h2 id="1-install-python">1. Install Python</h2>
-
-<blockquote class="info">
-  <h3 id="what-if-ive-already-installed-python-on-my-laptop">What if I’ve already installed Python on my laptop?</h3>
-  <p>Note: many people who have programmed with Python before already have Python 3.x installed. To check, search for an existing Python installation. If you already have a version of Python3 that is greater than Python 3.8, move on to Part 2. It doesn’t hurt to install another version of Python, but it’s not necessary. If you have any questions, feel free to ask Sarah or one of the peer mentors / TAs.</p>
-</blockquote>
-
-<p>To install python, download the latest version (3.13.x) of python here: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a></p>
-
-<p>After going through the installation process, navigate to the folder on your machine where Python was installed. For me, on a Mac, my IDLE was saved to Applications &gt; Python 3.9 (or you can also search for it). For Windows users, it will likely be in a folder inside of Program Files (which you can also search for).</p>
-
-<p>Inside, the Python 3.13 folder, you’ll find a file called <strong>IDLE</strong> - this is the IDLE executable. Double click on that file to run it. You should then see something like this (the screen shows version 3.8, but any version &gt;= 3.8 is OK):</p>
-
-<p><img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial09/python-cmd-1.png" /></p>
-
-<p>I recommend keeping IDLE in your dock (on a Mac) or making a Desktop Shortcut to IDLE (on Windows).</p>
-
-<p>At the <strong>&gt;&gt;&gt;</strong> prompt, you can type any valid python command. For example, type <code class="highlighter-rouge">print("hello world!")</code> and hit enter. You should see something like this:</p>
-
-<p><img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial09/python-cmd-2.png" /></p>
-
-<p>If you have any issues installing Python or IDLE, come to office hours.</p>
+<h2 id="1-install-python--poetry">1. Install Python &amp; Poetry</h2>
+<p>To complete this tutorial, you will need to install python (at least version 3.8) and poetry (package manager). We did this in class. If you need assistance, please come to office hours.</p>
 
 <h2 id="2-intro-to-flask">2. Intro to Flask</h2>
 <p><a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">Flask</a> is a framework, built with Python, for helping people build dynamic, scalable web applications. I have selected Flask as our web server engine for this semester because it has a relatively simple set of common abstractions, and is therefore easier to learn than some other frameworks. At the same time, it is also very powerful, and has features such as:</p>
@@ -220,34 +191,23 @@
   </tbody>
 </table>
 
-<h2 id="3-intro-to-python-virtual-environments">3. Intro to Python Virtual Environments</h2>
-<p>To run Flask, we are going to create a self-contained Python virtual environment, to ensure that your python dependencies don’t interfere with any global python installations you might have.</p>
+<h2 id="3-intro-to-virtual-environments">3. Intro to Virtual Environments</h2>
+<p>To run Flask, we are going to create a self-contained Python virtual environment, using <strong><code class="highlighter-rouge">poetry</code></strong>. This ensures that the python dependencies needed for this tutorial don’t interfere with any global python installations you might have. By using a virtual environment, the libraries we install are isolated from those installed in other virtual environments, and (by default) any libraries installed in a “system” Python, i.e., one which is installed as part of your operating system.</p>
 
-<blockquote class="blockquote-no-margin">
-  <p>From the <a href="https://docs.python.org/3/library/venv.html" target="_blank">Python Docs</a>:</p>
-
-  <p>A virtual environment is a Python environment such that the Python interpreter, libraries and scripts installed into it are isolated from those installed in other virtual environments, and (by default) any libraries installed in a “system” Python, i.e., one which is installed as part of your operating system.</p>
-</blockquote>
-
-<p>Practically speaking, a virtual environment (venv) “sandboxes” your Python installation so that anything installed within a venv is not available outside of it. Libraries installed in a “system” Python ARE available to your venv, but can be overridden from within the venv. For instance, <code class="highlighter-rouge">numpy</code> is a python module that is commonly used in data science tasks. So, if <code class="highlighter-rouge">numpy version 1.15.4</code> is installed on your “system” Python and you decide to install <code class="highlighter-rouge">numpy version 1.16.1</code> in your venv, then within the venv, <code class="highlighter-rouge">1.16.1</code> will take precedence.</p>
+<p>Note that libraries installed in a “system” Python ARE available to your venv, but can be overridden from within the venv. For instance, <code class="highlighter-rouge">numpy</code> is a python module that is commonly used in data science tasks. So, if <code class="highlighter-rouge">numpy version 1.15.4</code> is installed on your “system” Python and you decide to install <code class="highlighter-rouge">numpy version 1.16.1</code> in your venv, then within the venv, <code class="highlighter-rouge">1.16.1</code> will take precedence.</p>
 
 <p>Some commands to know:</p>
 
-<h3 id="mac--unix--linux">Mac / Unix / Linux</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># installs all of your python dependencies by reading the `pyproject.toml` file.</span>
+poetry <span class="nb">install</span>      
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">-m</span> venv <span class="nb">env</span>      <span class="c"># creates a new virtual environment called "env"</span>
-<span class="nb">source env</span>/bin/activate  <span class="c"># activates the virtual environment</span>
-deactivate               <span class="c"># deactivates the virtual environment</span>
+<span class="c"># run a file within your poetry virtual environment by prepending your command with "poetry run":</span>
+poetry run &lt;some_command&gt;
+
+<span class="c"># examples:</span>
+poetry run python main.py
+poetry run flask run <span class="nt">--debug</span>
 </code></pre></div></div>
-
-<h3 id="windows-powershell-or-command-prompt">Windows Powershell or Command Prompt</h3>
-
-<pre><code class="language-dos">py -m venv env          # creates a new virtual environment called "env"
-env\Scripts\activate    # activates the virtual environment
-deactivate              # deactivates the virtual environment
-</code></pre>
-
-<p>Note that when your venv is activated, there will be a <code class="highlighter-rouge">(env)</code> prefix in front of your command prompt. When activated, any python or <code class="highlighter-rouge">pip install</code> commands will be interacting with your virtual environment.</p>
 
 <h2 id="4-set-up">4. Set Up</h2>
 <p>After you have installed Python is installed, download tutorial09.zip (below), unzip it, and move your <code class="highlighter-rouge">tutorial09</code> folder inside of your <code class="highlighter-rouge">tutorials</code> folder.</p>
@@ -255,35 +215,16 @@ deactivate              # deactivates the virtual environment
 <p><a class="nu-button" href="/spring2025/course-files/tutorials/tutorial09.zip">tutorial09.zip<i class="fas fa-download" aria-hidden="true"></i></a></p>
 
 <h3 id="set-up-your-virtual-environment">Set Up Your Virtual Environment</h3>
-<p>Open the terminal and navigate to your <code class="highlighter-rouge">tutorial09</code> folder. Then, set up a virtual environment and install the dependencies as follows (depending on your operating system):</p>
+<p>Open the terminal and navigate to your <code class="highlighter-rouge">tutorial09</code> folder. Then, set up a virtual environment as follows:</p>
 
-<h4 id="for-mac-unix-linux-or-gitbash">For Mac, Unix, Linux, or GitBash</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">-m</span> venv <span class="nb">env
-source env</span>/bin/activate
-pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt    <span class="c"># install dependencies</span>
-</code></pre></div></div>
-
-<h4 id="for-windows-powershell-or-command-prompt">For Windows Powershell or Command Prompt</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># create the virtual environment</span>
-py <span class="nt">-m</span> venv <span class="nb">env</span>  
-
-<span class="c"># run the activate.bat script as follows:</span>
-<span class="nb">env</span><span class="se">\S</span>cripts<span class="se">\a</span>ctivate
-
-<span class="c"># and finally, install the Python dependencies</span>
-py <span class="nt">-m</span> pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>poetry <span class="nb">install</span>
 </code></pre></div></div>
 
 <h3 id="run-your-flask-web-server">Run Your Flask Web Server</h3>
 
 <p>When you’re done, try running your flask app from your command line:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flask run <span class="nt">--debug</span>
-
-<span class="c"># if you named your app something other than app.py (say, hello.py) type this:</span>
-<span class="c"># flask flask --app hello run --debug</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>poetry run flask run <span class="nt">--debug</span>
 </code></pre></div></div>
 
 <p>You should see the following output:</p>
@@ -527,12 +468,13 @@ py <span class="nt">-m</span> pip <span class="nb">install</span> <span class="n
 
 <h2 id="what-to-turn-in">What to Turn In</h2>
 <p>To submit Tutorial 9, you can either:</p>
-<ol>
-  <li>Commit and sync your code to GitHub using git and paste a link to your repo. You do not need to link this exercise to your home page, because GitHub Pages doesn’t know how to run a Flask application. We will need a more complicated server architecture for that.</li>
-</ol>
+<ul>
+  <li>Commit and sync your code to GitHub using git and paste a link to your repo.</li>
+  <li>If you worked with a partner, list your partner as a comment.</li>
+  <li>If you did the extra credit, tell me so that I can look for it.</li>
+</ul>
 
-<p>If you worked with a partner, list your partner as a comment.
-If you did the extra credit, tell me so that I can look for it.</p>
+<p>You do not need to link this exercise to your home page, because GitHub Pages doesn’t know how to run a Flask application. We will need a more complicated server architecture for that.</p>
 
 
 
