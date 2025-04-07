@@ -3,7 +3,7 @@ layout: assignment-two-column
 title: Intro to Flask
 type: tutorial
 abbreviation: Tutorial 9
-draft: 1
+draft: 0
 points: 6
 num: 9
 start_date: 2025-04-11
@@ -28,33 +28,12 @@ due_date: 2025-04-14
 {:.mtop}
 > ## Background Readings
 > Before beginning this tutorial, please read (or at least skim) the following:
-> 
-> {:.compact}
-> * Towards Data Science. <a href="https://towardsdatascience.com/virtual-environments-104c62d48c54#8025" target="_blank">Intro to Python Virtual Environments</a>
+>
+> * <a href="https://realpython.com/dependency-management-python-poetry" target="_blank">Intro to Python Poetry</a> (skim)
 > * Flask website. <a href="https://flask.palletsprojects.com/en/2.0.x/quickstart/" target="_blank">Flask Quickstart Guide</a>
 
-## 1. Install Python
-
-{:.info}
-> ### What if I've already installed Python on my laptop?
-> Note: many people who have programmed with Python before already have Python 3.x installed. To check, search for an existing Python installation. If you already have a version of Python3 that is greater than Python 3.8, move on to Part 2. It doesn't hurt to install another version of Python, but it's not necessary. If you have any questions, feel free to ask Sarah or one of the peer mentors / TAs.
-
-To install python, download the latest version (3.13.x) of python here: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a>
-
-After going through the installation process, navigate to the folder on your machine where Python was installed. For me, on a Mac, my IDLE was saved to Applications > Python 3.9 (or you can also search for it). For Windows users, it will likely be in a folder inside of Program Files (which you can also search for).
-
-Inside, the Python 3.13 folder, you'll find a file called **IDLE** - this is the IDLE executable. Double click on that file to run it. You should then see something like this (the screen shows version 3.8, but any version >= 3.8 is OK):
-
-<img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial09/python-cmd-1.png" />
-
-I recommend keeping IDLE in your dock (on a Mac) or making a Desktop Shortcut to IDLE (on Windows).
-
-At the **&gt;&gt;&gt;** prompt, you can type any valid python command. For example, type `print("hello world!")` and hit enter. You should see something like this:
-
-<img class="frame medium" src="/spring2025/assets/images/tutorials/tutorial09/python-cmd-2.png" />
-
-If you have any issues installing Python or IDLE, come to office hours.
-
+## 1. Install Python & Poetry
+To complete this tutorial, you will need to install python (at least version 3.8) and poetry (package manager). We did this in class. If you need assistance, please come to office hours.
 
 ## 2. Intro to Flask
 <a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">Flask</a> is a framework, built with Python, for helping people build dynamic, scalable web applications. I have selected Flask as our web server engine for this semester because it has a relatively simple set of common abstractions, and is therefore easier to learn than some other frameworks. At the same time, it is also very powerful, and has features such as:
@@ -77,35 +56,24 @@ Most frameworks have abstractions similar to those offered by Flask, so once you
 | C# | ASP.NET |
 
 
-## 3. Intro to Python Virtual Environments
-To run Flask, we are going to create a self-contained Python virtual environment, to ensure that your python dependencies don't interfere with any global python installations you might have.
+## 3. Intro to Virtual Environments
+To run Flask, we are going to create a self-contained Python virtual environment, using **`poetry`**. This ensures that the python dependencies needed for this tutorial don't interfere with any global python installations you might have. By using a virtual environment, the libraries we install are isolated from those installed in other virtual environments, and (by default) any libraries installed in a “system” Python, i.e., one which is installed as part of your operating system.
 
-{:.blockquote-no-margin}
-> From the <a href="https://docs.python.org/3/library/venv.html" target="_blank">Python Docs</a>: 
->
-> A virtual environment is a Python environment such that the Python interpreter, libraries and scripts installed into it are isolated from those installed in other virtual environments, and (by default) any libraries installed in a “system” Python, i.e., one which is installed as part of your operating system.
-
-Practically speaking, a virtual environment (venv) "sandboxes" your Python installation so that anything installed within a venv is not available outside of it. Libraries installed in a "system" Python ARE available to your venv, but can be overridden from within the venv. For instance, `numpy` is a python module that is commonly used in data science tasks. So, if `numpy version 1.15.4` is installed on your "system" Python and you decide to install `numpy version 1.16.1` in your venv, then within the venv, `1.16.1` will take precedence. 
+Note that libraries installed in a "system" Python ARE available to your venv, but can be overridden from within the venv. For instance, `numpy` is a python module that is commonly used in data science tasks. So, if `numpy version 1.15.4` is installed on your "system" Python and you decide to install `numpy version 1.16.1` in your venv, then within the venv, `1.16.1` will take precedence. 
 
 Some commands to know:
 
-### Mac / Unix / Linux
-
 ```bash
-python3 -m venv env      # creates a new virtual environment called "env"
-source env/bin/activate  # activates the virtual environment
-deactivate               # deactivates the virtual environment
+# installs all of your python dependencies by reading the `pyproject.toml` file.
+poetry install      
+
+# run a file within your poetry virtual environment by prepending your command with "poetry run":
+poetry run <some_command>
+
+# examples:
+poetry run python main.py
+poetry run flask run --debug
 ```
-
-### Windows Powershell or Command Prompt
-
-```dos
-py -m venv env          # creates a new virtual environment called "env"
-env\Scripts\activate    # activates the virtual environment
-deactivate              # deactivates the virtual environment
-```
-
-Note that when your venv is activated, there will be a `(env)` prefix in front of your command prompt. When activated, any python or `pip install` commands will be interacting with your virtual environment. 
 
 
 ## 4. Set Up
@@ -115,28 +83,12 @@ After you have installed Python is installed, download tutorial09.zip (below), u
 
 
 ### Set Up Your Virtual Environment
-Open the terminal and navigate to your `tutorial09` folder. Then, set up a virtual environment and install the dependencies as follows (depending on your operating system):
-
-#### For Mac, Unix, Linux, or GitBash
+Open the terminal and navigate to your `tutorial09` folder. Then, set up a virtual environment as follows:
 
 ```bash
-python3 -m venv env
-source env/bin/activate
-pip install -r requirements.txt    # install dependencies
+poetry install
 ```
 
-#### For Windows Powershell or Command Prompt
-
-```bash
-# create the virtual environment
-py -m venv env  
-
-# run the activate.bat script as follows:
-env\Scripts\activate
-
-# and finally, install the Python dependencies
-py -m pip install -r requirements.txt
-```
 
 ### Run Your Flask Web Server
 
@@ -144,10 +96,7 @@ When you're done, try running your flask app from your command line:
 
 
 ```bash
-flask run --debug
-
-# if you named your app something other than app.py (say, hello.py) type this:
-# flask flask --app hello run --debug
+poetry run flask run --debug
 ```
 
 You should see the following output:
@@ -359,8 +308,10 @@ See if you can convert the HTML that shows a single restaurant card into an incl
 
 ## What to Turn In
 To submit Tutorial 9, you can either:
-1. Commit and sync your code to GitHub using git and paste a link to your repo. You do not need to link this exercise to your home page, because GitHub Pages doesn't know how to run a Flask application. We will need a more complicated server architecture for that.
+* Commit and sync your code to GitHub using git and paste a link to your repo. 
+* If you worked with a partner, list your partner as a comment.
+* If you did the extra credit, tell me so that I can look for it.
 
-If you worked with a partner, list your partner as a comment.
-If you did the extra credit, tell me so that I can look for it.
+You do not need to link this exercise to your home page, because GitHub Pages doesn't know how to run a Flask application. We will need a more complicated server architecture for that.
+
 

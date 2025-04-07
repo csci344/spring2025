@@ -5,3 +5,5 @@ lib
 Scripts
 env
 venv
+.venv
+poetry.lock

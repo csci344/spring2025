@@ -81,11 +81,10 @@ e.g., http://127.0.0.1:5000/yelp-proxy/location=NY,%20NY&term=chinese&count=3
 def exercise3():
     search_term = 'pizza'
     location = 'Asheville, NC'
+    count = 10
     # go fetch data from another server and give it to the requestor:
-    url = 'https://www.apitutor.org/yelp/simple/v3/businesses/search?location={location}&term={search_term}&limit={count}'.format(
-        location=location, 
-        search_term=search_term, 
-        count=5)
+    base_url = 'https://www.apitutor.org/yelp/simple/v3/businesses/search'
+    url = f'{base_url}?location={location}&term={search_term}&limit={count}'
     response = requests.get(url)
     data = response.json()
     return json.dumps(data)
@@ -119,8 +118,9 @@ def exercise5():
     if not (location and search_term):
         return '"location" and "term" are required query parameters'
 
-    url = 'https://www.apitutor.org/yelp/simple/v3/businesses/search?location={0}&term={1}&limit=1'.format(
-        location, search_term)
+    base_url = 'https://www.apitutor.org/yelp/simple/v3/businesses/search'
+    url = f'{base_url}?location={location}&term={search_term}&limit=1'
+    print(url)
     response = requests.get(url)
     restaurants = response.json()
     pprint(restaurants[0])  # for debugging
@@ -145,9 +145,9 @@ def exercise6():
     search_term = args.get('term')
     if not (location and search_term):
         return '"location" and "term" are required query parameters'
-    
-    url = 'https://www.apitutor.org/yelp/simple/v3/businesses/search?location={0}&term={1}'.format(
-        location, search_term)
+    base_url = 'https://www.apitutor.org/yelp/simple/v3/businesses/search'
+    url = f'{base_url}?location={location}&term={search_term}'
+
     response = requests.get(url)
     restaurants = response.json()
     return render_template(

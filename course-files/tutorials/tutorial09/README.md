@@ -1,37 +1,19 @@
 ### Set Up Your Virtual Environment
-Open the terminal and navigate to your `tutorial09` folder. Then, set up a virtual environment and install the dependencies as follows (depending on your operating system):
-
-#### For Mac, Unix, Linux, or GitBash
+Open the terminal and navigate to your `tutorial09` folder. Then, install your dependencies and build your virtual environment as follows:
 
 ```bash
-python3 -m venv env
-source env/bin/activate
-pip install -r requirements.txt    # install dependencies
+poetry install
 ```
 
-#### For Windows Powershell or Command Prompt
+Note that this should create a `.venv` folder at the root of your `tutorial09` folder.
 
-```bash
-# create the virtual environment
-py -m venv env  
-
-# run the activate.bat script as follows:
-env\Scripts\activate
-
-# and finally, install the Python dependencies
-py -m pip install -r requirements.txt
-```
 
 ### Run Your Flask Web Server
 
-When you're done, try running your flask app from your command line:
-
+When you're done, try running your flask app from your command line, using the poetry virtual environment:
 
 ```bash
-flask run --debug
-
-# if you named your app something other than app.py (say, hello.py) type this:
-# flask flask --app hello run --debug
+poetry run flask run --debug
 ```
 
 You should see the following output:

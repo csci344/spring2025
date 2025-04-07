@@ -3,9 +3,9 @@ layout: module
 title: "HTTP & REST"
 type: lecture
 num: 20
-draft: 1
+draft: 0
 start_date: 2025-04-07
-slides_url: #
+slides_url: https://docs.google.com/presentation/d/1M7ss1u1h-6xw5MMtEoUuxZIfpHRhpFVG/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings:
     - type: reading
       citation: >
