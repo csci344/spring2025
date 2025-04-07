@@ -1,60 +1,29 @@
 # Set Up
-1. Create a virtual environment:
+1. Create a virtual environment and install the dependencies using poetry:
 
     ```bash
-    python3 -m venv env
+    poetry install
     ```
-
-2. Activate your virtual environment:
+2. Build the database (make sure you have a postgres database running and that the .env file is set up correctly with your DB_URL):
 
     ```bash
-    source env/bin/activate
+    poetry run python populate.py
     ```
 
-3. Install the python requirements (from te virtual environment):
+3. Run the flask server:
 
     ```bash
-    python -m pip install -r requirements.txt
-    ```
-    ```
-
-4. Run the flask server:
-
-    ```bash
-    flask run --debug
+    poetry run flask run --debug
     ```
 
-5. Run the tests as follows (and make sure that your local Flask server is running):
+4. Run the tests as follows (and make sure that your local Flask server is running):
 
     ```bash
     cd tests                                            # switch to your tests directory
-    python run_tests.py                                 # run all tests
-    python run_tests.py -v                              # run all tests verbose
-    python run_tests.py TestCommentListEndpoint -v      # run some tests verbose
+    poetry run python run_tests.py                                 # run all tests
+    poetry run python run_tests.py -v                              # run all tests verbose
+    poetry run python run_tests.py TestCommentListEndpoint -v      # run some tests verbose
 
     # run a single test
-    python run_tests.py TestCommentListEndpoint.test_comment_post_valid_request_201 -v       
+    poetry run python run_tests.py TestCommentListEndpoint.test_comment_post_valid_request_201 -v       
     ```
-
-6. Advanced: if you want to run the linter / isort options:
-
-    * Install the dependencies from within the virtual environment.
-        
-        ```
-        pip install isort
-        pip install black
-        pip install flake8
-        ```
-
-    * Run isort, ignoring the virtual environment using the skip flag:
-
-        ```
-        isort . -s env
-        ```
-    
-    * Run black, ignoring the virtual environment using the skip flag:
-
-        ```
-        black . --exclude env
-        ```
-
