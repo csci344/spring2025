@@ -101,9 +101,7 @@ Another nice thing about SQL is that these queries can be optimized to be very e
 In order to complete today's lab, you will need to install PostgreSQL on your laptop. These installation instructions are based on the  <a href="https://neon.tech/postgresql/postgresql-getting-started" target="_blank">PostgreSQL Getting Started Guide</a>. Please do the following:
 
 * <a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads" target="_blank">Download the latest PostgreSQL version</a> (currently v. 15.x) for either Windows or Mac
-* Follow the OS-Specific instructions to install and verify your PostgreSQL installation:
-    * <a href="https://neon.tech/postgresql/postgresql-getting-started/install-postgresql" target="_blank">Windows</a>
-    * <a href="https://neon.tech/postgresql/postgresql-getting-started/install-postgresql-macos" target="_blank">Mac</a>
+* Follow the <a href="https://neon.tech/postgresql/postgresql-getting-started/install-postgresql" target="_blank">OS-Specific instructions</a> to install and verify your PostgreSQL installation:
 * A few notes as you run the installer:
     * **DO NOT FORGET** the DB Admin password you assign for the `postgres` account
     * Take all the defaults, and use a default port of `5432`
@@ -155,7 +153,7 @@ Follow <a href="https://sqlbackupandftp.com/blog/setting-windows-path-for-postgr
 <a class="nu-button" href="/spring2025/course-files/tutorials/tutorial10.zip">tutorial10.zip<i class="fas fa-download" aria-hidden="true"></i></a>
 
 * Download tutorial10.zip (above) and unzip it, and move it into your `csci344/tutorials` folder / git repo.
-* Create a new database and load in the Photo App sample data by following the procedure outlined in <a href="https://neon.tech/postgresql/postgresql-getting-started/load-postgresql-sample-database" target="_blank">these instructions</a> -- but with the following modifications:
+* Create a new database and load in the Photo App sample data by following the procedure outlined in <a href="https://neon.tech/postgresql/postgresql-getting-started/postgresql-sample-database" target="_blank">these instructions</a> -- but with the following modifications:
     * Instead of creating a database called `dvdrental`, name your database `tutorial10`. You can do this using either the command line interface or the PGAdmin GUI interface.
     * Instead of loading the `dvdrental.tar` file, load the `tutorial10.tar` file (in the tutorial10 folder you just downloaded) into the empty `tutorial10` database (to create the table structure and table data).
         * Again, you can do this via PGAdmin or throught the `pg_restore` command on the command line.
