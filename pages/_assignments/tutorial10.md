@@ -3,7 +3,7 @@ layout: assignment-two-column
 title: Database / ORM Activity
 type: tutorial
 abbreviation: Tutorial 10
-draft: 1
+draft: 0
 points: 6
 num: 10
 start_date: 2025-04-18

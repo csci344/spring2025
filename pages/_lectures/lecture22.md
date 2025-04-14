@@ -5,7 +5,7 @@ type: lecture
 num: 22
 draft: 1
 start_date: 2025-04-16
-slides_url: #
+slides_url: https://docs.google.com/presentation/d/1GEvnwQvWJNUIZlQzEjSrAIoblGKhHYsj/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings:
     - type: reading
       citation: >
