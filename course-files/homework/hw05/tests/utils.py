@@ -5,10 +5,11 @@ import requests
 from dotenv import load_dotenv
 from flask import Flask
 from sqlalchemy import create_engine, inspect, text
+from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 
 load_dotenv()
 
-
+DEBUG = False
 def modify_system_path():
     import inspect
     import os
@@ -61,7 +62,9 @@ def get_user(user_id):
     with db.engine.connect() as conn:
         inspector = inspect(db)
         columns = [c.get("name") for c in inspector.get_columns("users")]
-        rows = conn.execute(text("SELECT * FROM users where id={0}".format(user_id)))
+        rows = conn.execute(
+            text("SELECT * FROM users where id={0}".format(user_id))
+        )
         conn.close()
         # print(rows)
         return _zip(columns, rows)
@@ -139,104 +142,155 @@ def get_unliked_post_id_by_user(user_id):
 
 
 def restore_post_by_id(post):
-    with db.engine.connect() as conn:
-        transaction = conn.begin()
-        sql = """
-            INSERT INTO posts(id, image_url, caption, alt_text, pub_date, user_id) 
-            VALUES({id}, '{image_url}', '{caption}', '{alt_text}', now(), {user_id})
-        """.format(
-            id=post.get("id"),
-            image_url=post.get("image_url"),
-            caption=post.get("caption"),
-            alt_text=post.get("alt_text"),
-            user_id=post.get("user_id"),
-        )
-        conn.execute(text(sql))
-        transaction.commit()
-        conn.close()
+    sql = text(
+        """
+        INSERT INTO posts(id, image_url, caption, alt_text, pub_date, user_id) 
+        VALUES(:id, :image_url, :caption, :alt_text, now(), :user_id)
+    """
+    )
+
+    try:
+        with db.engine.connect() as conn:
+            with conn.begin():
+                conn.execute(
+                    sql,
+                    {
+                        "id": post.get("id"),
+                        "image_url": post.get("image_url"),
+                        "caption": post.get("caption"),
+                        "alt_text": post.get("alt_text"),
+                        "user_id": post.get("user_id"),
+                    },
+                )
+    except IntegrityError as e:
+        if DEBUG:
+            print("Post restore failed due to integrity error:", e)
 
 
 def restore_comment_by_id(comment):
-    with db.engine.connect() as conn:
-        transaction = conn.begin()
-        sql = """
-            INSERT INTO comments(id, post_id, user_id, text, pub_date) 
-            VALUES({id}, {post_id}, {user_id}, '{text}', now())
-        """.format(
-            id=comment.get("id"),
-            post_id=comment.get("post_id"),
-            user_id=comment.get("user_id"),
-            text=comment.get("text"),
-        )
-        conn.execute(text(sql))
-        transaction.commit()
-        conn.close()
+    sql = text(
+        """
+        INSERT INTO comments(id, post_id, user_id, text, pub_date) 
+        VALUES(:id, :post_id, :user_id, :text, now())
+    """
+    )
+
+    try:
+        with db.engine.connect() as conn:
+            with conn.begin():
+                conn.execute(
+                    sql,
+                    {
+                        "id": comment.get("id"),
+                        "post_id": comment.get("post_id"),
+                        "user_id": comment.get("user_id"),
+                        "text": comment.get("text"),
+                    },
+                )
+    except IntegrityError as e:
+        if DEBUG:
+            print("Comment restore failed due to integrity error:", e)
 
 
 def restore_bookmark(bookmark):
-    with db.engine.connect() as conn:
-        transaction = conn.begin()
-        sql = """
-            INSERT INTO bookmarks(id, post_id, user_id, timestamp) 
-            VALUES({id}, {post_id}, {user_id}, now())
-        """.format(
-            id=bookmark.get("id"),
-            post_id=bookmark.get("post_id"),
-            user_id=bookmark.get("user_id"),
-        )
-        conn.execute(text(sql))
-        transaction.commit()
-        conn.close()
+    sql = text(
+        """
+        INSERT INTO bookmarks(id, post_id, user_id, timestamp) 
+        VALUES(:id, :post_id, :user_id, now())
+    """
+    )
+
+    try:
+        with db.engine.connect() as conn:
+            with conn.begin():  # This handles commit/rollback automatically
+                conn.execute(
+                    sql,
+                    {
+                        "id": bookmark.get("id"),
+                        "post_id": bookmark.get("post_id"),
+                        "user_id": bookmark.get("user_id"),
+                    },
+                )
+    except IntegrityError as e:
+        # This exception includes unique constraint violations
+        if DEBUG:
+            print("Bookmark restore failed due to integrity error:", e)
 
 
 def restore_liked_post(liked_post):
-    with db.engine.connect() as conn:
-        transaction = conn.begin()
-        sql = """
-            INSERT INTO likes_posts(id, post_id, user_id, timestamp) 
-            VALUES({id}, {post_id}, {user_id}, now())
-        """.format(
-            id=liked_post.get("id"),
-            post_id=liked_post.get("post_id"),
-            user_id=liked_post.get("user_id"),
-        )
-        conn.execute(text(sql))
-        transaction.commit()
-        conn.close()
+    sql = text(
+        """
+        INSERT INTO likes_posts(id, post_id, user_id, timestamp) 
+        VALUES(:id, :post_id, :user_id, now())
+    """
+    )
+
+    try:
+        with db.engine.connect() as conn:
+            with conn.begin():
+                conn.execute(
+                    sql,
+                    {
+                        "id": liked_post.get("id"),
+                        "post_id": liked_post.get("post_id"),
+                        "user_id": liked_post.get("user_id"),
+                    },
+                )
+    except IntegrityError as e:
+        if DEBUG:
+            print("Like restore failed due to integrity error:", e)
 
 
 def restore_post(post_original_data):
-    with db.engine.connect() as conn:
-        transaction = conn.begin()
-        sql = """
+    sql = text(
+        """
         UPDATE posts
-        SET image_url = '{0}', caption = '{1}', alt_text = '{2}'
-        WHERE id = {3}
-        """.format(
-            post_original_data.get("image_url"),
-            post_original_data.get("caption"),
-            post_original_data.get("alt_text"),
-            post_original_data.get("id"),
-        )
-        conn.execute(text(sql))
-        transaction.commit()
-        conn.close()
+        SET image_url = :image_url,
+            caption = :caption,
+            alt_text = :alt_text
+        WHERE id = :id
+    """
+    )
+
+    try:
+        with db.engine.connect() as conn:
+            with conn.begin():
+                conn.execute(
+                    sql,
+                    {
+                        "image_url": post_original_data.get("image_url"),
+                        "caption": post_original_data.get("caption"),
+                        "alt_text": post_original_data.get("alt_text"),
+                        "id": post_original_data.get("id"),
+                    },
+                )
+    except SQLAlchemyError as e:
+        if DEBUG:
+            print("Post update failed:", e)
 
 
 def restore_following(following_original):
-    with db.engine.connect() as conn:
-        transaction = conn.begin()
-        sql = """
+    sql = text(
+        """
         INSERT INTO following(id, user_id, following_id) 
-            VALUES({id}, {user_id}, {following_id})
-        """.format(
-            id=following_original.get("id"),
-            user_id=following_original.get("user_id"),
-            following_id=following_original.get("following_id"),
-        )
-        conn.execute(text(sql))
-        transaction.commit()
-        conn.close()
+        VALUES(:id, :user_id, :following_id)
+    """
+    )
+
+    try:
+        with db.engine.connect() as conn:
+            with conn.begin():
+                conn.execute(
+                    sql,
+                    {
+                        "id": following_original.get("id"),
+                        "user_id": following_original.get("user_id"),
+                        "following_id": following_original.get("following_id"),
+                    },
+                )
+    except IntegrityError as e:
+        if DEBUG:
+            print("Following restore failed due to integrity error:", e)
 
 
 def get_following_ids(user_id):
@@ -488,7 +542,9 @@ def get_access_token(user_id):
 
 def issue_get_request(url, user_id):
     access_token = get_access_token(user_id=user_id)
-    return requests.get(url, headers={"Authorization": "Bearer " + access_token})
+    return requests.get(
+        url, headers={"Authorization": "Bearer " + access_token}
+    )
 
 
 def issue_delete_request(url, user_id):

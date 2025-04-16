@@ -57,12 +57,11 @@
             <aside>
                 <ol class="side-menu">
   <li><a href="#video-walkthroughs-for-homework-5">Video Walkthroughs for Homework 5</a></li>
-  <li><a href="#modified-scope-12112024">Modified Scope (12/11/2024)</a></li>
   <li><a href="#part1">Introduction</a></li>
   <li><a href="#part2">Set Up</a>
     <ol>
       <li><a href="#1-download-the-hw5-files-and-save-them-inside-of-your-csci344-folder">1. Download the HW5 files and save them inside of your csci344 folder</a></li>
-      <li><a href="#venv">2. Create a virtual environment and install the dependencies</a></li>
+      <li><a href="#venv">2. Install the dependencies using poetry</a></li>
       <li><a href="#3-create-a-new-database-and-populate-it">3. Create a new database and populate it</a></li>
       <li><a href="#4-verify-your-installation">4. Verify Your Installation</a></li>
     </ol>
@@ -102,10 +101,10 @@
  
                 <p>
     
-        Due on Thu, 05/08 @ 11:59PM.
+        Due on Fri, 05/02 @ 11:59PM.
     
     
-        22 Points.
+        40 Points.
     
     
 </p>
@@ -153,17 +152,26 @@
     }
 </style>
 
+<!-- > 1. <span class="update">07:55</span> <a
+    href="https://drive.google.com/file/d/1XmDmpGiW82PPzw07tEeRNP-6UqjkxiVn/view?usp=drive_link"
+    target="_blank">Introduction</a>
+> 1. <span class="update">07:23</span> <a
+    href="https://drive.google.com/file/d/1IHHQDBbt6jn16c0arUNffkXydltxmZIk/view?usp=drive_link" target="_blank">Create
+    a database</a>
+> 1. <span class="update">04:24</span> <a
+    href="https://drive.google.com/file/d/1m9mTtMAd83NLRQiYV2WT8pJezaIh3lnv/view?usp=drive_link"
+    target="_blank">Database connection string</a>
+> 1. <span class="update">11:02</span> <a
+    href="https://drive.google.com/file/d/1DtyZi2XxAH8MAbVFA3mP4WzfwsoxOSUB/view?usp=drive_link"
+    target="_blank">Populating your database</a>
+> 1. <span class="update">04:34</span> <a
+    href="https://drive.google.com/file/d/1U7-jc5amZjb4vFh4PTN3OdL3Xb_aTXB5/view?usp=drive_link" target="_blank">Verify
+    your installation / configuration</a> -->
+
 <blockquote class="info">
   <h2 id="video-walkthroughs-for-homework-5">Video Walkthroughs for Homework 5</h2>
   <p>The following video walkthroughs go over the concepts needed to complete Homework 5.</p>
   <ol>
-    <li><span class="update">07:55</span> <a href="https://drive.google.com/file/d/1XmDmpGiW82PPzw07tEeRNP-6UqjkxiVn/view?usp=drive_link" target="_blank">Introduction</a></li>
-    <li><span class="update">07:23</span> <a href="https://drive.google.com/file/d/1IHHQDBbt6jn16c0arUNffkXydltxmZIk/view?usp=drive_link" target="_blank">Create
- a database</a></li>
-    <li><span class="update">04:24</span> <a href="https://drive.google.com/file/d/1m9mTtMAd83NLRQiYV2WT8pJezaIh3lnv/view?usp=drive_link" target="_blank">Database connection string</a></li>
-    <li><span class="update">11:02</span> <a href="https://drive.google.com/file/d/1DtyZi2XxAH8MAbVFA3mP4WzfwsoxOSUB/view?usp=drive_link" target="_blank">Populating your database</a></li>
-    <li><span class="update">04:34</span> <a href="https://drive.google.com/file/d/1U7-jc5amZjb4vFh4PTN3OdL3Xb_aTXB5/view?usp=drive_link" target="_blank">Verify
- your installation / configuration</a></li>
     <li><span class="update">19:25</span> <a href="https://drive.google.com/file/d/1F__fY919h-Ec7HcJ0xc7UPhkbhb6T07b/view?usp=drive_link" target="_blank">SQLAlchemy - Part 1</a></li>
     <li><span class="update">11:28</span> <a href="https://drive.google.com/file/d/1KYpOGmSU1EzaqJyJuah-VhbE7ydfo9Y8/view?usp=drive_link" target="_blank">SQLAlchemy - Part 2</a></li>
     <li><span class="update">10:57</span> <a href="https://drive.google.com/file/d/1ii-C_-C4TrYO23yOutGSnfdC8XPcDsc1/view?usp=drive_link" target="_blank">Flask
@@ -183,28 +191,25 @@
     <li><span class="update">11:15</span> <a href="https://drive.google.com/file/d/1zEoDx4S8VCArNYp8-FO0D9lXwZgiqmUG/view?usp=drive_link" target="_blank">Running
  the test suite</a></li>
   </ol>
-
-  <p>The folder of videos can also be found <a href="https://drive.google.com/file/d/1XmDmpGiW82PPzw07tEeRNP-6UqjkxiVn/view?usp=drive_link" target="_blank">here</a>.</p>
 </blockquote>
 
-<blockquote class="info updates">
-  <h2 id="modified-scope-12112024">Modified Scope (12/11/2024)</h2>
-  <ul>
-    <li>All of the Post endpoints are required (listed below):
-      <ul>
-        <li>/api/posts (GET and POST)</li>
-        <li>/api/posts/<int:id> (GET, PATCH, DELETE)</int:id></li>
-      </ul>
-    </li>
-    <li>The homework assignment is worth 22 points.</li>
-    <li>Everything else is extra credit (you may earn up to 20 points EC applied to the homework category). I strongly encourage you to finish, as I think this activity is valuable to your learning.</li>
-  </ul>
-</blockquote>
+<!-- >
+> The folder of videos can also be found <a
+    href="https://drive.google.com/file/d/1XmDmpGiW82PPzw07tEeRNP-6UqjkxiVn/view?usp=drive_link"
+    target="_blank">here</a>. -->
+
+<!-- {:.info.updates}
+> ## Modified Scope (12/11/2024)
+> * All of the Post endpoints are required (listed below):
+>     * /api/posts (GET and POST)
+>     * /api/posts/<int:id> (GET, PATCH, DELETE)
+> * The homework assignment is worth 22 points.
+> * Everything else is extra credit (you may earn up to 20 points EC applied to the homework category). I strongly encourage you to finish, as I think this activity is valuable to your learning. -->
 
 <h2 id="part1">Introduction</h2>
 <p>For homework 5, you are going to create a REST API using Flask and PostgreSQL. To do this, you will:</p>
 
-<ol class="compact">
+<ol>
   <li>Create and populate a local database</li>
   <li>Configure your python code to interact with the database using SQL Alchemy</li>
   <li>Use Flask RESTful to implement a few API endpoints</li>
@@ -226,7 +231,7 @@
 ├── app.py
 ├── models
 ├── populate.py
-├── requirements.txt
+├── pyproject.toml
 ├── static
 ├── templates
 ├── tests
@@ -235,31 +240,11 @@
 └── views
 </code></pre></div></div>
 
-<h3 id="venv">2. Create a virtual environment and install the dependencies</h3>
+<h3 id="venv">2. Install the dependencies using poetry</h3>
 
-<p>Navigate to the <code class="highlighter-rouge">hw05</code> folder on your command line. Then create a virtual environment and install the dependencies.</p>
+<p>Navigate to the <code class="highlighter-rouge">hw05</code> folder on your command line and install the dependencies as follows:</p>
 
-<h4 id="for-mac-unix-linux">For Mac, Unix, Linux</h4>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># creates the virtual environment</span>
-python3 <span class="nt">-m</span> venv <span class="nb">env</span> 
-
-<span class="c"># activates your virtual environment</span>
-<span class="nb">source env</span>/bin/activate
-
-<span class="c"># install any new Python dependencies</span>
-python <span class="nt">-m</span> pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt 
-</code></pre></div></div>
-
-<h4 id="for-windows-powershell-or-command-prompt">For Windows Powershell or Command Prompt</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># creates the virtual environment</span>
-py <span class="nt">-m</span> venv <span class="nb">env</span> 
-
-<span class="c"># run the activate.bat script as follows:</span>
-<span class="nb">env</span><span class="se">\S</span>cripts<span class="se">\a</span>ctivate
-
-<span class="c"># install any new Python dependencies</span>
-py <span class="nt">-m</span> pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>poetry install
 </code></pre></div></div>
 
 <h3 id="3-create-a-new-database-and-populate-it">3. Create a new database and populate it</h3>
@@ -267,7 +252,7 @@ py <span class="nt">-m</span> pip <span class="nb">install</span> <span class="n
 <h4 id="1-create-a-new-database">1. Create a new database</h4>
 <p>Create a new database called <code class="highlighter-rouge">photo-app</code>. In my opinion, the easiest way to do this is via the command line:</p>
 
-<ul class="compact">
+<ul>
   <li>Type: <code class="highlighter-rouge">psql -U postgres</code></li>
   <li>From within the psql shell, type: <code class="highlighter-rouge">CREATE DATABASE "photo-app";</code></li>
   <li>Type: <code class="highlighter-rouge">\q</code> to exit the shell</li>
@@ -280,7 +265,7 @@ py <span class="nt">-m</span> pip <span class="nb">install</span> <span class="n
 <h4 id="2-add-db_url-to-your-env-file">2. Add DB_URL to your .env file</h4>
 <p>Create an environment variable called <code class="highlighter-rouge">DB_URL</code> in your <code class="highlighter-rouge">.env</code> file. This variable will store the path to your database in a format that SQLAlchemy can understand. Your database connection information is represented as follows…</p>
 
-<p><code class="highlighter-rouge">postgresql://{user}:{password}@{host}/{database}</code></p>
+<p><code class="highlighter-rouge">postgresql+psycopg://{user}:{password}@{host}/{database}</code></p>
 
 <p>Each parameter of the connection string is described in the table below:</p>
 
@@ -308,18 +293,18 @@ py <span class="nt">-m</span> pip <span class="nb">install</span> <span class="n
 <p>Here is Sarah’s <code class="highlighter-rouge">.env</code> file (your postgres password will be different):</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">FLASK_APP</span><span class="o">=</span>app.py
-<span class="c"># postgresql://{user}:{password}@{host}/{database}</span>
-<span class="nv">DB_URL</span><span class="o">=</span>postgresql://postgres:12345@localhost/photo-app
+<span class="c"># postgresql+psycopg://{user}:{password}@{host}/{database}</span>
+<span class="nv">DB_URL</span><span class="o">=</span>postgresql+psycopg://postgres:12345@localhost/photo-app
 </code></pre></div></div>
 
 <h4 id="3-populate-your-database">3. Populate your database</h4>
 <p>When you’re done, populate your database by running the following command on the command line (from the <code class="highlighter-rouge">photo-app</code> directory):</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># run from within the photo-app directory on the command line (with your venv activated):</span>
-python populate.py
+poetry run python populate.py
 </code></pre></div></div>
 
-<p>Each time the <code class="highlighter-rouge">populate.py</code> script is run, it will delete all of the tables and recreate them with some fake data using the SQL Alchemy library. Feel free to take a look at how this script works if you’re curious! As you’re testing, feel free to run the <code class="highlighter-rouge">populate.py</code> script to get a fresh copy of your database.</p>
+<p>Each time the <code class="highlighter-rouge">populate.py</code> script is run, it will delete all of the tables and recreate them with the people in this class (reads from <code class="highlighter-rouge">users.csv</code>). Feel free to take a look at how this script works if you’re curious! As you’re testing, feel free to run the <code class="highlighter-rouge">populate.py</code> script to get a fresh copy of your database.</p>
 
 <h3 id="4-verify-your-installation">4. Verify Your Installation</h3>
 <p>To verify your installation…</p>
@@ -327,7 +312,7 @@ python populate.py
 <h4 id="1-run-flask">1. Run Flask</h4>
 <p>Run flask with your virtual environment activated as follows:</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python app.py
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>poetry run flask run <span class="nt">--debug</span>
 </code></pre></div></div>
 
 <p>You should see output that looks similar to this:</p>
@@ -349,25 +334,24 @@ python populate.py
 <p>This UI can help you test your API (as can the automated tests and Postman).</p>
 
 <h4 id="3-run-the-automated-test-suite">3. Run the automated test suite</h4>
-<p>From a new terminal / shell window, navigate into the <code class="highlighter-rouge">hw05/tests</code> and run the test suite <strong>while Flask is running</strong>. In other words, you will have 2 terminals open: one that’s running flask and one that’s for the test suite:</p>
+<p>From a new terminal / shell window, navigate into the <code class="highlighter-rouge">hw05/tests</code> and run the test suite <strong>while Flask is running</strong>. Note that you will need to have 2 terminals open: one that’s running flask and one that’s for the test suite.</p>
 
-<p><img class="small frame" src="/spring2025/assets/images/homework/rest-api/shell-run-flask.png" /></p>
-
-<p><img class="small frame" src="/spring2025/assets/images/homework/rest-api/shell-run-tests.png" /></p>
+<p>Run the tests:</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>tests
-python run_tests.py 
+poetry run python run_tests.py 
 </code></pre></div></div>
 
-<p>The test suite should run 68 tests. You should see a bunch of error messages output to the screen with a summary at the bottom telling you that there were a bunch of failures and errors</p>
+<p>The test suite should run 44 tests. You should see a bunch of error messages output to the screen with a summary at the bottom telling you that there were a bunch of failures and errors</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>F.FEFFFFFEEFF.FEFFFFF.............F..EFFFFEF.FFF.FFFF.FFFFFF..FFEF..
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>run python run_tests.py
+F.F.FFFFFFFFF...FFFF.F.FFF.FFFF.FFFFFF..FFFF
 
 A bunch of error messages....
 
-Ran 68 tests <span class="k">in </span>2.697s
+Ran 44 tests <span class="k">in </span>1.121s
 
-FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=</span>37, <span class="nv">errors</span><span class="o">=</span>7<span class="o">)</span>
+FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=</span>33<span class="o">)</span>
 </code></pre></div></div>
 
 <p>Your goal is to get all of the tests to pass.</p>
@@ -375,7 +359,7 @@ FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=
 <h2 id="part3">Background Readings and Concepts</h2>
 <p>Before you start coding, let’s spend a few minutes reviewing some of the libraries and principles that we’ll be using for this assignment. Specifically:</p>
 
-<ol class="compact">
+<ol>
   <li><a href="#sqlalchemy">SQL Alchemy</a></li>
   <li><a href="#flaskrestfulintro">Flask RESTful</a></li>
 </ol>
@@ -388,7 +372,7 @@ FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=
 
 <p>You will be using the <code class="highlighter-rouge">Resource</code> class from Flask RESTful to build our various endpoints. I have already created a bunch of starter endpoints for you in the <code class="highlighter-rouge">views</code> directory that you will be editing for this assignment. Note that each file in the <code class="highlighter-rouge">views</code> directory has a <code class="highlighter-rouge">List</code> and <code class="highlighter-rouge">Detail</code> resource defined:</p>
 
-<ul class="compact">
+<ul>
   <li>The <code class="highlighter-rouge">List</code> resource is for returning lists of resources and creating new resources.</li>
   <li>The <code class="highlighter-rouge">Detail</code> resource is for reading, updating, and deleting individual resources.</li>
 </ul>
@@ -404,7 +388,7 @@ FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=
 <h4 id="verify-the-postman-can-interact-with-your-various-endpoints">Verify the Postman can interact with your various endpoints</h4>
 <p>When you’re done inspecting this file, please open Postman to test one of the <code class="highlighter-rouge">Post</code> endpoints. You will have to download “Postman Agent” in order for Postman to be able to access endpoints on your local computer.</p>
 
-<ol class="compact">
+<ol>
   <li>Paste http://127.0.0.1:5000/api/posts/ into the address bar</li>
   <li>Ensure that the GET method is selected</li>
   <li>Click the “Send” button.</li>
@@ -422,12 +406,12 @@ FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=
 <ol>
   <li><a href="#post">Post</a></li>
   <li><a href="#user">User</a></li>
-  <li><a href="#comment">Comment</a></li>
   <li><a href="#bookmark">Bookmark</a></li>
   <li><a href="#likepost">LikePost</a></li>
-  <li><a href="#following">Following</a></li>
-  <li><a href="#follower">Follower</a></li>
   <li><a href="#story">Story</a></li>
+  <li><span class="badge">Optional</span> <a href="#comment">Comment</a></li>
+  <li><span class="badge">Optional</span> <a href="#following">Following</a></li>
+  <li><span class="badge">Optional</span> <a href="#follower">Follower</a></li>
 </ol>
 
 <h4 id="post">1. Post</h4>
@@ -510,25 +494,7 @@ FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<h4 id="comment">3. Comment</h4>
-<p>The Comment resource should be structured like this:</p>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Than join finish special force according heart beautiful actually him candidate down site when or threat much commercial own suddenly food investment finally class into base friend still understand."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"post_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joseph"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mclaughlin"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"joseph_mclaughlin"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"joseph_mclaughlin@yahoo.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://picsum.photos/300/200?id=474"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://picsum.photos/30/30?id=987"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-<h4 id="bookmark">4. Bookmark</h4>
+<h4 id="bookmark">3. Bookmark</h4>
 <p>The Bookmark resource should just be an id and a post object without the comments:</p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"id:"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
@@ -550,7 +516,7 @@ FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<h4 id="likepost">5. LikePost</h4>
+<h4 id="likepost">4. LikePost</h4>
 <p>The LikePost resource should be structured like this:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
@@ -560,39 +526,7 @@ FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<h4 id="following">6. Following</h4>
-<p>The Following resource should just be an id and a user object structured like this:</p>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">302</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"following"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ashley"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thornton"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ashley_thornton"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ashley_thornton@hotmail.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://picsum.photos/300/200?id=939"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://picsum.photos/30/30?id=465"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-<h4 id="follower">7. Follower</h4>
-<p>The Follower resource (which is created using the “Following” model)resource should just be an id and a user object structured like this:</p>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">302</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"follower"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ashley"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thornton"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ashley_thornton"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ashley_thornton@hotmail.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://picsum.photos/300/200?id=939"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://picsum.photos/30/30?id=465"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-<h4 id="story">8. Story</h4>
+<h4 id="story">5. Story</h4>
 <p>The Story resource should be structured like this (mostly just a placeholder for now):</p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
@@ -609,6 +543,56 @@ FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
+<h4 id="comment">6. Comment <span class="badge">Optional</span></h4>
+<p>The Comment resource should be structured like this:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Than join finish special force according heart beautiful actually him candidate down site when or threat much commercial own suddenly food investment finally class into base friend still understand."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"post_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joseph"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mclaughlin"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"joseph_mclaughlin"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"joseph_mclaughlin@yahoo.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://picsum.photos/300/200?id=474"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://picsum.photos/30/30?id=987"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="following">7. Following <span class="badge">Optional</span></h4>
+<p>The Following resource should just be an id and a user object structured like this:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">302</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"following"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ashley"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thornton"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ashley_thornton"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ashley_thornton@hotmail.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://picsum.photos/300/200?id=939"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://picsum.photos/30/30?id=465"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="follower">8. Follower <span class="badge">Optional</span></h4>
+<p>The Follower resource (which is created using the “Following” model)resource should just be an id and a user object structured like this:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">302</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"follower"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ashley"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thornton"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ashley_thornton"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ashley_thornton@hotmail.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://picsum.photos/300/200?id=939"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://picsum.photos/30/30?id=465"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 <h3 id="2-security">2. Security</h3>
 <p>Access to data is contextual, based on the user who is logged into the system. For now, the person logged into the system is represented by the <code class="highlighter-rouge">current_user</code> variable, which is set in <code class="highlighter-rouge">app.py</code>.</p>
 
@@ -620,14 +604,14 @@ FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=
 <h4 id="read-permissions">Read Permissions</h4>
 <p>Our photo sharing app is more private than Instagram, and the rules are simple:</p>
 
-<ul class="compact">
+<ul>
   <li>The user can only see their own posts and stories, and the posts and stories (and associated comments) of people they’re following.</li>
   <li>The user can only see their own bookmarks, followers, and who is following them (this is private information).</li>
 </ul>
 
 <h4 id="write-permissions">Write Permissions</h4>
 
-<ul class="compact">
+<ul>
   <li>The user can only bookmark, like, and comment on their own posts and the posts of people they’re following.</li>
   <li>The user can only edit and delete comments, posts, and stories that they created themselves.</li>
 </ul>
@@ -635,7 +619,7 @@ FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=
 <h3 id="3-http-status-codes">3. HTTP Status Codes</h3>
 <p>All HTTP responses have an attached status code, which represents additional information about the request. A list of all valid HTTP status codes can be found <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank">here</a>. For this assignment:</p>
 
-<ul class="compact">
+<ul>
   <li>All routes should return a 200 status code for a valid request unless POST is used, in which case a 201 status should be used.</li>
   <li>If a requests asks for information about data that does not exist (e.g. retrieving a Post with an id that isn’t present in the data), a 404 code should be used.</li>
   <li>If the user sent a request that is invalid, a 400 code should be used.</li>
@@ -734,7 +718,7 @@ FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=
 <h3 id="implement-post-patch-and-delete-routes-26-points">Implement POST, PATCH, and DELETE routes (26 points)</h3>
 <p>The next set of routes involves storing and manipulating data in your PostgreSQL. A few notes:</p>
 
-<ul class="compact">
+<ul>
   <li>PATCH and DELETE methods can fail to find an object if it does not exist within data or if the current user does not have access to it. In these cases, you should mark the status of the response as 404, indicating that the requested resource could not be found.</li>
   <li>Receiving two POST requests with identical bodies should create two different objects with distinct ids.</li>
   <li>PostgreSQL will create ids for you automatically.</li>
@@ -797,31 +781,6 @@ FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=
         </tr>
         <tr>
             <td>4.</td>
-            <td>POST /api/comments</td>
-            <td>
-                Should create a new comment associated with the specified post.
-            </td>
-            <td>
-                <ul>
-                    <li>post_id: int (required)</li>
-                    <li>text: string (required)</li>
-                </ul>
-            </td>
-            <td>Comment Object</td>
-            <td>2</td>
-        </tr>
-        <tr>
-            <td>5.</td>
-            <td>DELETE /api/comments/&lt;int:id&gt;</td>
-            <td>
-                Should delete a comment. Remember, you can only delete a comment that you created.
-            </td>
-            <td></td>
-            <td>Some JSON message</td>
-            <td>2</td>
-        </tr>
-        <tr>
-            <td>6.</td>
             <td>POST /api/bookmarks/</td>
             <td>
                 Should create a bookmark (saves a post to bookmarks).
@@ -835,7 +794,7 @@ FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=
             <td>2</td>
         </tr>
         <tr>
-            <td>7.</td>
+            <td>5.</td>
             <td>DELETE /api/bookmarks/&lt;int:id&gt;</td>
             <td>
                 Should delete a bookmark. Remember, you can only delete a bookmark that you created.
@@ -845,7 +804,7 @@ FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=
             <td>2</td>
         </tr>
         <tr>
-            <td>8.</td>
+            <td>6.</td>
             <td>POST /api/posts/likes</td>
             <td>
                 Should create a like.
@@ -859,7 +818,7 @@ FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=
             <td>2</td>
         </tr>
         <tr>
-            <td>9.</td>
+            <td>7.</td>
             <td>DELETE /api/posts/likes/&lt;int:id&gt;</td>
             <td>
                 Should delete a like. Remember, you can only delete a "like" that you created.
@@ -869,8 +828,33 @@ FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=
             <td>2</td>
         </tr>
         <tr>
+            <td>8.</td>
+            <td><span class="badge">Optional</span> POST /api/comments</td>
+            <td>
+                Should create a new comment associated with the specified post.
+            </td>
+            <td>
+                <ul>
+                    <li>post_id: int (required)</li>
+                    <li>text: string (required)</li>
+                </ul>
+            </td>
+            <td>Comment Object</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>9.</td>
+            <td><span class="badge">Optional</span> DELETE /api/comments/&lt;int:id&gt;</td>
+            <td>
+                Should delete a comment. Remember, you can only delete a comment that you created.
+            </td>
+            <td></td>
+            <td>Some JSON message</td>
+            <td>2</td>
+        </tr>
+        <tr>
             <td>10.</td>
-            <td>POST /api/following</td>
+            <td><span class="badge">Optional</span> POST /api/following</td>
             <td>
                 Should create a following record.
             </td>
@@ -884,7 +868,7 @@ FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=
         </tr>
         <tr>
             <td>11.</td>
-            <td>DELETE /api/following/&lt;int:id&gt;</td>
+            <td><span class="badge">Optional</span> DELETE /api/following/&lt;int:id&gt;</td>
             <td>
                 Should delete a following record. Remember, you can only delete a "following" that you created.
             </td>
@@ -898,20 +882,16 @@ FAILED <span class="o">(</span><span class="nv">failures</span><span class="o">=
 <h2 id="part5">What to Turn In</h2>
 <p>Please review the requirements above and ensure you have met them. Specifically:</p>
 
-<ul class="compact">
-  <li>4 points for getting everything set up and running</li>
-  <li><span class="update">Assignment Modification</span>  18 points for getting all <code class="highlighter-rouge">Post</code> endpoints working and tests passing.</li>
-  <li>
-    <s>20 points for GET requests</s>
-  </li>
-  <li>
-    <s>26 points for POST / PATCH / DELETE requests</s>
-  </li>
+<ul>
+  <li>2 points for getting everything set up and running</li>
+  <li>20 points for GET requests</li>
+  <li>18 points for POST / PATCH / DELETE requests</li>
+  <li><span class="badge">Extra credit</span> 8 points (Comments, Follow / Unfollow)</li>
 </ul>
 
 <p>When you’re done, please submit the following to the Moodle:</p>
 
-<ul class="compact">
+<ul>
   <li>A link to your GitHub Repo</li>
   <li>If you worked with a partner, please list your partner</li>
 </ul>
