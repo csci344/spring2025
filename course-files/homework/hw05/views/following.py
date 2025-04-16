@@ -31,7 +31,7 @@ class FollowingListEndpoint(Resource):
         except Exception:
             return Response(
                 json.dumps(
-                    {"message": f"User id={body.get("user_id")} does not exist"}
+                    {"message": f"User id={body.get('user_id')} does not exist"}
                 ),
                 mimetype="application/json",
                 status=400,

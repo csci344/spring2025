@@ -17,7 +17,9 @@ class TestStoryListEndpoint(unittest.TestCase):
         stories = response.json()
         self.assertEqual(response.status_code, 200)
 
-        authorized_user_ids = utils.get_authorized_user_ids(self.current_user.get("id"))
+        authorized_user_ids = utils.get_authorized_user_ids(
+            self.current_user.get("id")
+        )
         story_ids = utils.get_stories_by_user(self.current_user.get("id"))
         self.assertTrue(len(stories) > 1)
         self.assertEqual(len(story_ids), len(stories))
@@ -32,6 +34,7 @@ class TestStoryListEndpoint(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         stories = response.json()
 
+        self.assertGreater(len(stories), 0)
         story = stories[0]
         self.assertTrue("id" in story and type(story["id"]) == int)
         self.assertTrue("user" in story and type(story["user"]) == dict)
@@ -39,16 +42,20 @@ class TestStoryListEndpoint(unittest.TestCase):
         user = story.get("user")
         self.assertTrue("id" in user and type(user["id"]) == int)
         self.assertTrue(
-            "first_name" in user and type(user["first_name"]) in [str, type(None)]
+            "first_name" in user
+            and type(user["first_name"]) in [str, type(None)]
         )
         self.assertTrue(
-            "last_name" in user and type(user["last_name"]) in [str, type(None)]
+            "last_name" in user
+            and type(user["last_name"]) in [str, type(None)]
         )
         self.assertTrue(
-            "image_url" in user and type(user["image_url"]) in [str, type(None)]
+            "image_url" in user
+            and type(user["image_url"]) in [str, type(None)]
         )
         self.assertTrue(
-            "thumb_url" in user and type(user["thumb_url"]) in [str, type(None)]
+            "thumb_url" in user
+            and type(user["thumb_url"]) in [str, type(None)]
         )
 
 

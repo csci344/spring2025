@@ -6,4 +6,5 @@ dist
 env
 .vscode
 .DS_Store
-users.csv
+.pytest_cache
+__pycache__
