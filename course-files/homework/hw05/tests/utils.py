@@ -9,7 +9,7 @@ from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 
 load_dotenv()
 
-
+DEBUG = False
 def modify_system_path():
     import inspect
     import os
@@ -163,7 +163,8 @@ def restore_post_by_id(post):
                     },
                 )
     except IntegrityError as e:
-        print("Post restore failed due to integrity error:", e)
+        if DEBUG:
+            print("Post restore failed due to integrity error:", e)
 
 
 def restore_comment_by_id(comment):
@@ -187,7 +188,8 @@ def restore_comment_by_id(comment):
                     },
                 )
     except IntegrityError as e:
-        print("Comment restore failed due to integrity error:", e)
+        if DEBUG:
+            print("Comment restore failed due to integrity error:", e)
 
 
 def restore_bookmark(bookmark):
@@ -211,7 +213,8 @@ def restore_bookmark(bookmark):
                 )
     except IntegrityError as e:
         # This exception includes unique constraint violations
-        print("Bookmark restore failed due to integrity error:", e)
+        if DEBUG:
+            print("Bookmark restore failed due to integrity error:", e)
 
 
 def restore_liked_post(liked_post):
@@ -234,7 +237,8 @@ def restore_liked_post(liked_post):
                     },
                 )
     except IntegrityError as e:
-        print("Like restore failed due to integrity error:", e)
+        if DEBUG:
+            print("Like restore failed due to integrity error:", e)
 
 
 def restore_post(post_original_data):
@@ -261,7 +265,8 @@ def restore_post(post_original_data):
                     },
                 )
     except SQLAlchemyError as e:
-        print("Post update failed:", e)
+        if DEBUG:
+            print("Post update failed:", e)
 
 
 def restore_following(following_original):
@@ -284,7 +289,8 @@ def restore_following(following_original):
                     },
                 )
     except IntegrityError as e:
-        print("Following restore failed due to integrity error:", e)
+        if DEBUG:
+            print("Following restore failed due to integrity error:", e)
 
 
 def get_following_ids(user_id):

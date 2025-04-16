@@ -14,16 +14,19 @@ from tests.test_posts_list_post import TestPostListEndpoint
 from tests.test_profile import TestProfileEndpoint
 from tests.test_stories_list import TestStoryListEndpoint
 
-from tests.test_comments_delete import TestCommentDetailEndpoint
-from tests.test_comments_post import TestCommentListEndpoint
-from tests.test_followers_list import TestFollowerListEndpoint
-from tests.test_following_delete import TestFollowingDetailEndpoint
-from tests.test_following_list_post import TestFollowingListEndpoint
-from tests.test_suggestions_list import TestSuggestionListEndpoint
+# from tests.test_comments_delete import TestCommentDetailEndpoint
+# from tests.test_comments_post import TestCommentListEndpoint
+# from tests.test_followers_list import TestFollowerListEndpoint
+# from tests.test_following_delete import TestFollowingDetailEndpoint
+# from tests.test_following_list_post import TestFollowingListEndpoint
+# from tests.test_suggestions_list import TestSuggestionListEndpoint
 
 if __name__ == "__main__":
     unittest.main()
 
+###################
+# Required tests: #
+###################
 # Note: to run on command line (from the tests directory):
 # poetry run python run_tests.py -v
 # poetry run python run_tests.py TestPostListEndpoint -v
@@ -36,7 +39,9 @@ if __name__ == "__main__":
 # poetry run python run_tests.py TestStoryListEndpoint -v
 
 
-# Extra credit tests:
+#######################
+# Extra credit tests: #
+#######################
 # poetry run python run_tests.py TestCommentDetailEndpoint -v
 # poetry run python run_tests.py TestCommentListEndpoint -v
 # poetry run python run_tests.py TestFollowerListEndpoint -v

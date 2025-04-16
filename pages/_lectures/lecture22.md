@@ -4,7 +4,7 @@ title: "Intro to Object-Relational Mappings (ORMs)"
 type: lecture
 num: 22
 draft: 1
-start_date: 2025-04-16
+start_date: 2025-04-18
 slides_url: https://docs.google.com/presentation/d/1GEvnwQvWJNUIZlQzEjSrAIoblGKhHYsj/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings:
     - type: reading
