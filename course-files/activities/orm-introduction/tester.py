@@ -2,6 +2,7 @@
 from models import Post, db, User, Comment, Following, Bookmark, LikePost
 from utils import with_app_context
 from sqlalchemy import func
+from datetime import datetime
 
 ########################
 # Function Definitions #
@@ -130,6 +131,22 @@ def create_and_delete_bookmark(user_id, post_id):
     return True
 
 
+# TASK 14
+@with_app_context
+def create_post(user_id, image_url, caption=None, alt_text=None):
+    # Create a new post
+    new_post = Post(
+        user_id=user_id,
+        image_url=image_url,
+        caption=caption,
+        alt_text=alt_text,
+        pub_date=datetime.utcnow()
+    )
+    db.session.add(new_post)
+    db.session.commit()
+    return new_post
+
+
 ######################
 # Test the functions #
 ######################
@@ -195,9 +212,9 @@ def tester():
     for post_id, image_url, comment_count in results:
         print(f"Post {post_id}: {comment_count} comments")
 
-    print("\n------------------------------------------------")
+    print("\n-----------------------------------------------")
     print("Test 10: Get user's feed (following + own posts)")
-    print("------------------------------------------------")
+    print("-----------------------------------------------")
     feed_posts = get_user_feed_posts(1)  # get feed for user 1
     print(f"Number of posts in feed: {len(feed_posts)}")
     for post in feed_posts[:3]:  # show first 3 posts
@@ -226,6 +243,19 @@ def tester():
     result = create_and_delete_bookmark(3, 10)
     if result:
         print("Successfully demonstrated bookmark creation and deletion!")
+
+    print("\n----------------------------------------")
+    print("Test 14: Create a new post")
+    print("----------------------------------------")
+    new_post = create_post(
+        user_id=1,
+        image_url='https://example.com/image.jpg',
+        caption='My new test post!',
+        alt_text='A test image'
+    )
+    print(f"Created new post: ID={new_post.id}")
+    print(f"Posted by: {new_post.user.username}")
+    print(f"Caption: {new_post.caption}")
 
 
 if __name__ == "__main__":

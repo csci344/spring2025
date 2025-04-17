@@ -14,7 +14,7 @@
     Once you get a "Database Created" message, exit `psql` (`\q`).
 
 
-2. **Flask / Python Setup**
+2. **Python Setup**
 
     Download the sample files (`orm-introduction` folder) and save them to your lectures folder.
 
@@ -53,3 +53,4 @@
 
     ```bash
     poetry run python tester.py
+    ```

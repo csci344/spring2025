@@ -14,6 +14,8 @@ class Following(db.Model):
     following_id = db.Column(
         db.Integer, db.ForeignKey("users.id", ondelete="cascade"), nullable=False
     )
+
+    
     follower = db.relationship(
         "User", backref="follower", lazy=False, foreign_keys="Following.user_id"
     )

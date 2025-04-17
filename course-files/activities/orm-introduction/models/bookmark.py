@@ -10,10 +10,14 @@ class Bookmark(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(
-        db.Integer, db.ForeignKey("users.id", ondelete="cascade"), nullable=False
+        db.Integer,
+        db.ForeignKey("users.id", ondelete="cascade"),
+        nullable=False,
     )
     post_id = db.Column(
-        db.Integer, db.ForeignKey("posts.id", ondelete="cascade"), nullable=False
+        db.Integer,
+        db.ForeignKey("posts.id", ondelete="cascade"),
+        nullable=False,
     )
     timestamp = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
@@ -25,7 +29,11 @@ class Bookmark(db.Model):
         self.post_id = int(post_id)
 
     def to_dict(self):
-        return {"id": self.id, "post": self.post.to_dict(include_comments=False)}
+        return {
+            "id": self.id,
+            "owner_id": self.user_id,
+            "post": self.post.to_dict(include_comments=False),
+        }
 
     def __repr__(self):
-        return "<Bookmark %r>" % self.id
+        return f"<Bookmark {self.id} (user_id={self.user_id}, post_id={self.post_id})>"
