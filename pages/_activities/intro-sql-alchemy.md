@@ -289,7 +289,7 @@ Using **Flask SQL Alchemy** via the flask shell:
 from models.post import Post
 from models import db
 # get single post based on primary key (id column):
-post = Post.query.get(5)
+post = db.session.get(Post, id)
 print(post)
 
 ```
@@ -327,7 +327,6 @@ session = db.session
 ##########################################################
 # 1. query for substring matches using a "like" function #
 ##########################################################
-posts = Post.query.filter(Post.caption.ilike('%tree%')).all()
 '''
 -- analagous SQL query:
 SELECT *
@@ -336,6 +335,8 @@ LEFT OUTER JOIN users
     AS users_1 ON users_1.id = posts.user_id 
 WHERE posts.caption ILIKE '%tree%';
 '''
+
+posts = Post.query.filter(Post.caption.ilike('%tree%')).all()
 
 ##################
 # 2. "in" clause #

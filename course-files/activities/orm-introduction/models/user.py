@@ -1,7 +1,9 @@
-from flask_sqlalchemy import SQLAlchemy
-from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 
+from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import check_password_hash, generate_password_hash
+
+from utilities import account_utilities
 
 """
 References:
@@ -9,19 +11,6 @@ References:
 """
 from . import db
 
-
-def generate_image(id: int = None, width: int = 300, height: int = 200):
-    """
-    Generates fake image:
-        * id (int): image identifier
-        * width (int): width of the pic
-        * height (int): height of the pic
-    Returns an image url.
-    """
-    image_id = id or random.randint(0, 1000)
-    return "https://picsum.photos/{w}/{h}?id={id}".format(
-        id=image_id, w=width, h=height
-    )
 
 class User(db.Model):
     __tablename__ = "users"
@@ -37,9 +26,7 @@ class User(db.Model):
     email = db.Column(db.String(256), nullable=False, unique=True)
     image_url = db.Column(db.String(512), nullable=True)
     thumb_url = db.Column(db.String(512), nullable=True)
-    date_created = db.Column(
-        db.DateTime, nullable=False, default=datetime.utcnow
-    )
+    date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     is_verified = db.Column(db.Boolean(), nullable=False, default=False)
     is_disabled = db.Column(db.Boolean(), nullable=False, default=False)
 
@@ -55,8 +42,8 @@ class User(db.Model):
             last_name,
             username,
             email,
-            image_url=generate_image(),
-            thumb_url=generate_image(width=30, height=30),
+            image_url=account_utilities.generate_image(),
+            thumb_url=account_utilities.generate_image(width=30, height=30),
         )
 
         # generate encrypted password:

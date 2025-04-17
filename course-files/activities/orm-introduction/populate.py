@@ -1,20 +1,22 @@
-from models import (
-    db,
-    User,
-    Post,
-    Following,
-    LikePost,
-    Bookmark
-)
+import csv
 import os
 import random
-import csv
-from flask import Flask
-import requests
-from faker import Faker
 from datetime import datetime, timedelta
 
+import requests
 from dotenv import load_dotenv
+from faker import Faker
+from flask import Flask
+
+from models import db
+from models.bookmark import Bookmark
+from models.comment import Comment
+from models.following import Following
+from models.like_comment import LikeComment
+from models.like_post import LikePost
+from models.post import Post
+from models.story import Story
+from models.user import User
 
 load_dotenv()
 
@@ -125,6 +127,37 @@ def _create_post(user):
     )
 
 
+def _create_story(user):
+    time_of_post = datetime.now() - timedelta(hours=random.randint(1, 100))
+    return Story(
+        fake.sentence(nb_words=random.randint(10, 30)),
+        user.id,
+        pub_date=time_of_post,
+    )
+
+
+# def _create_post_likes(post, follower_ids):
+#     user_ids = follower_ids.copy()
+#     # only followers of the current user (or the current user) can like
+#     # the user's post:
+#     # print('Creating post likes...')
+#     for _ in range(random.randint(0, 5)):
+#         i = random.randint(0, len(user_ids) - 1)
+#         user_id = user_ids.pop(i)
+#         like = LikePost(user_id, post.id)
+#         db.session.add(like)
+#         if len(user_ids) == 0:
+#             break
+
+
+def _create_comment(post, follower_ids):
+    return Comment(
+        fake.sentence(nb_words=random.randint(15, 50)),
+        random.choice(follower_ids),
+        post.id,
+    )
+
+
 def create_users(n=29):
     for _ in range(n):
         user = _create_user()
@@ -142,6 +175,7 @@ def create_users_from_csv():
             users.append(user)
             db.session.add(user)
     db.session.commit()
+
 
 def create_accounts_that_you_follow(users):
     for user in users:
@@ -255,6 +289,46 @@ def create_bookmarks(users, posts):
     db.session.commit()
 
 
+def create_comments(users, posts):
+    for current_user in users:
+        # get all users that the current user follows:
+        auth_user_ids = _get_people_who_the_user_follows_including_oneself(
+            current_user.id
+        )
+
+        # for each user, create between 5 and 20 comments
+        limit = random.randint(5, 20)
+        counter = 0
+        random.shuffle(posts)
+        for post in posts:
+            if post.user_id in auth_user_ids:
+                comment = Comment(
+                    fake.sentence(nb_words=random.randint(15, 50)),
+                    current_user.id,
+                    post.id,
+                )
+                db.session.add(comment)
+                comments.append(comment)
+                counter += 1
+            if counter > limit:
+                break
+
+        db.session.commit()
+
+
+def create_comment_likes(comments):
+    for comment in comments:
+        auth_user_ids = _get_people_who_the_user_follows_including_oneself(
+            comment.user_id
+        )
+        for _ in range(random.randint(0, 3)):
+            i = random.randint(0, len(auth_user_ids) - 1)
+            user_id = auth_user_ids.pop(i)
+            like = LikeComment(user_id, comment.id)
+            db.session.add(like)
+            if len(auth_user_ids) == 0:
+                break
+    db.session.commit()
 
 
 # creates all of the tables if they don't exist:
@@ -292,12 +366,24 @@ with app.app_context():
     create_posts(users)
     step += 1
 
+    print("{0}. creating fake stories...".format(step))
+    create_stories(users)
+    step += 1
+
     print("{0}. creating fake post likes...".format(step))
     create_likes(users, posts)
     step += 1
 
     print("{0}. creating fake bookmarks...".format(step))
     create_bookmarks(users, posts)
+    step += 1
+
+    print("{0}. creating fake comments...".format(step))
+    create_comments(users, posts)
+    step += 1
+
+    print("{0}. creating fake comment likes...".format(step))
+    create_comment_likes(comments)
     step += 1
 
     print("DONE!")
