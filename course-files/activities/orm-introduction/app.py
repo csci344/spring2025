@@ -4,6 +4,9 @@ from flask_restful import Api
 from models import User, db, Bookmark, Post, LikePost, Following
 from flask_cors import CORS
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # initializes flask app:
 app = Flask(__name__)
@@ -57,6 +60,7 @@ def get_bookmarks():
         status=200,
     )
 
+
 def get_posts_by_user():
     # Handle GET request - return all posts
     query = Post.query.filter_by(user_id=current_user.id)
@@ -68,6 +72,7 @@ def get_posts_by_user():
         mimetype="application/json",
         status=200,
     )
+
 
 def create_post():
     # Handle POST request - create new post
@@ -81,26 +86,24 @@ def create_post():
         )
         db.session.add(new_post)
         db.session.commit()
-        
+
         return Response(
             json.dumps(new_post.to_dict()),
             mimetype="application/json",
-            status=201
+            status=201,
         )
     except Exception as e:
         return Response(
-            json.dumps({
-                "message": "Could not create post",
-                "error": str(e)
-            }),
+            json.dumps({"message": "Could not create post", "error": str(e)}),
             mimetype="application/json",
-            status=400
+            status=400,
         )
+
 
 @app.route("/api/posts", methods=["GET", "POST"])
 def posts():
-    if request.method == 'GET':
+    if request.method == "GET":
         return get_posts_by_user()
-    
-    elif request.method == 'POST':
+
+    elif request.method == "POST":
         return create_post()
