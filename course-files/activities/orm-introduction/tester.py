@@ -60,7 +60,7 @@ def get_posts_liked_by_user(user_id):
 @with_app_context
 def get_posts_with_substring(substring):
     # get all posts where caption contains the substring
-    posts = Post.query.filter(Post.caption.ilike(f'%{substring}%')).all()
+    posts = Post.query.filter(Post.caption.ilike(f"%{substring}%")).all()
     return posts
 
 
@@ -78,8 +78,8 @@ def get_posts_with_comment_counts():
     # get posts with their comment counts
     posts = (
         db.session.query(Post.id, Post.image_url, func.count(Comment.id))
-        .join(User, User.id==Post.user_id)
-        .outerjoin(Comment, Post.id==Comment.post_id)
+        .join(User, User.id == Post.user_id)
+        .outerjoin(Comment, Post.id == Comment.post_id)
         .group_by(Post.id)
         .all()
     )
@@ -91,7 +91,7 @@ def get_posts_with_comment_counts():
 def get_user_feed_posts(user_id):
     # Get all posts from users that the current user is following
     # plus their own posts
-    following = Following.query.filter(Following.user_id==user_id).all()
+    following = Following.query.filter(Following.user_id == user_id).all()
     user_ids = [f.following_id for f in following]
     user_ids.append(user_id)  # include user's own posts
     return Post.query.filter(Post.user_id.in_(user_ids)).all()
@@ -122,12 +122,12 @@ def create_and_delete_bookmark(user_id, post_id):
     bookmark = Bookmark(user_id=user_id, post_id=post_id)
     db.session.add(bookmark)
     db.session.commit()
-    print('Bookmark created!')
-    
+    print("Bookmark created!")
+
     # Delete the bookmark
     db.session.delete(bookmark)
     db.session.commit()
-    print('Bookmark deleted!')
+    print("Bookmark deleted!")
     return True
 
 
@@ -140,10 +140,11 @@ def create_post(user_id, image_url, caption=None, alt_text=None):
         image_url=image_url,
         caption=caption,
         alt_text=alt_text,
-        pub_date=datetime.utcnow()
+        pub_date=datetime.utcnow(),
     )
     db.session.add(new_post)
     db.session.commit()
+    db.session.refresh(new_post)
     return new_post
 
 
@@ -196,7 +197,7 @@ def tester():
     print("\n----------------------------------------")
     print("Test 7: Get posts with 'tree' in caption")
     print("----------------------------------------")
-    posts = get_posts_with_substring('tree')
+    posts = get_posts_with_substring("tree")
     print(posts)
 
     print("\n----------------------------------------")
@@ -233,7 +234,9 @@ def tester():
     print("-------------------------------------------------")
     try:
         new_like = create_like(3, 10)
-        print(f"Created like: user_id={new_like.user_id}, post_id={new_like.post_id}")
+        print(
+            f"Created like: user_id={new_like.user_id}, post_id={new_like.post_id}"
+        )
     except Exception as e:
         print(f"Could not create like (might already exist): {str(e)}")
 
@@ -249,9 +252,9 @@ def tester():
     print("----------------------------------------")
     new_post = create_post(
         user_id=1,
-        image_url='https://example.com/image.jpg',
-        caption='My new test post!',
-        alt_text='A test image'
+        image_url="https://example.com/image.jpg",
+        caption="My new test post!",
+        alt_text="A test image",
     )
     print(f"Created new post: ID={new_post.id}")
     print(f"Posted by: {new_post.user.username}")
