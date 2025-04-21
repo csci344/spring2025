@@ -10,4 +10,4 @@ start_date: 2025-04-21
 due_date: 2025-04-21
 ---
 
-Graded on attendance.
+Graded on attendance. Here is a link to [Homework 5](hw05)
