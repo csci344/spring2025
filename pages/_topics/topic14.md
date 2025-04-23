@@ -9,5 +9,3 @@ draft: 0
 start_date: 2025-04-23
 lectures: [23]
 ---
-
-TBD

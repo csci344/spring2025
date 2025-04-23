@@ -3,9 +3,9 @@ layout: module
 title: "Security & Authentication"
 type: lecture
 num: 23
-draft: 1
+draft: 0
 start_date: 2025-04-23
-slides_url: #
+slides_url: https://docs.google.com/presentation/d/1WFSJ_hvJESjSM-vAGWhV5mQvZXqFnK1j/edit?usp=sharing&ouid=113376576186080604800&rtpof=true&sd=true
 readings:
     - type: reading
       citation: >
