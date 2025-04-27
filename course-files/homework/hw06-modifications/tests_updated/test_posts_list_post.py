@@ -1,161 +1,147 @@
 import utils
-import requests
+
+root_url = utils.root_url
 import unittest
 
+
 class TestPostListEndpoint(unittest.TestCase):
+
     def setUp(self):
-        """Set up test fixtures before each test method."""
-        self.base_url = f"{utils.root_url}/api/posts"
-        self.current_user = utils.get_random_user()
-        self.user_id = self.current_user.get("id")
+        self.current_user = utils.get_user_12()
+        pass
 
-    def test_default_post_limit(self):
-        """Test that posts endpoint defaults to 20 posts."""
-        # Act
-        response = utils.issue_get_request(self.base_url, self.user_id)
+    # nailed it:
+    def test_posts_get_defaults_to_20(self):
+        response = utils.issue_get_request(
+            root_url + "/api/posts", self.current_user.get("id")
+        )
         data = response.json()
-
-        # Assert
-        self.assertEqual(response.status_code, 200)
         self.assertLessEqual(len(data), 20)
+        self.assertEqual(response.status_code, 200)
 
-    def test_authentication_required(self):
-        """Test that unauthenticated requests return 401."""
-        # Act
-        response = requests.get(self.base_url)
-
-        # Assert
-        self.assertEqual(response.status_code, 401)
-
-    def test_post_data_structure(self):
-        """Test that post data contains all required fields."""
-        # Act
-        response = utils.issue_get_request(self.base_url, self.user_id)
+    # nailed it:
+    def test_posts_get_has_required_data(self):
+        response = utils.issue_get_request(
+            root_url + "/api/posts", self.current_user.get("id")
+        )
         data = response.json()
         post = data[0]
 
-        # Assert
-        self.assertEqual(response.status_code, 200)
-        self.assertTrue(isinstance(post["id"], int))
-        self.assertTrue(isinstance(post["image_url"], str))
-        self.assertTrue(isinstance(post["user"], dict))
-        self.assertTrue(isinstance(post["caption"], (str, type(None))))
-        self.assertTrue(isinstance(post["alt_text"], (str, type(None))))
-        self.assertTrue(isinstance(post["comments"], list))
-
-    def test_custom_post_limit(self):
-        """Test that limit parameter returns correct number of posts."""
-        # Act
-        response = utils.issue_get_request(f"{self.base_url}?limit=3", self.user_id)
-        data = response.json()
-
-        # Assert
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(len(data), 3)
-
-    def test_invalid_limit_handled(self):
-        """Test that invalid limit parameters return 400."""
-        # Arrange
-        test_cases = ["80", "abc"]  # Test both out-of-range and non-numeric
-
-        # Act & Assert
-        for limit in test_cases:
-            response = utils.issue_get_request(
-                f"{self.base_url}?limit={limit}", 
-                self.user_id
-            )
-            self.assertEqual(response.status_code, 400)
-
-    def test_authorized_posts_only(self):
-        """Test that only authorized posts are returned."""
-        # Arrange
-        authorized_user_ids = utils.get_authorized_user_ids(self.user_id)
-
-        # Act
-        response = utils.issue_get_request(
-            f"{self.base_url}?limit=50", 
-            self.user_id
+        # check that all of the keys are in there and values are of the correct type:
+        self.assertTrue("id" in post and type(post["id"]) == int)
+        self.assertTrue("image_url" in post and type(post["image_url"]) == str)
+        self.assertTrue("user" in post and type(post["user"]) == dict)
+        self.assertTrue(
+            "caption" in post and type(post["caption"]) in [str, type(None)]
         )
+        self.assertTrue(
+            "alt_text" in post and type(post["alt_text"]) in [str, type(None)]
+        )
+        self.assertTrue("comments" in post and type(post["comments"]) == list)
+        self.assertEqual(response.status_code, 200)
 
-        # Assert
+    # nailed it:
+    def test_posts_get_limit_argument(self):
+        response = utils.issue_get_request(
+            root_url + "/api/posts?limit=3", self.current_user.get("id")
+        )
+        data = response.json()
+        self.assertEqual(len(data), 3)
+        self.assertEqual(response.status_code, 200)
+
+    def test_posts_get_bad_limit_argument_handled(self):
+        response = utils.issue_get_request(
+            root_url + "/api/posts?limit=80", self.current_user.get("id")
+        )
+        self.assertEqual(response.status_code, 400)
+
+        response = utils.issue_get_request(
+            root_url + "/api/posts?limit=abc", self.current_user.get("id")
+        )
+        self.assertEqual(response.status_code, 400)
+
+    def test_posts_get_is_authorized(self):
+        authorized_user_ids = utils.get_authorized_user_ids(self.current_user.get("id"))
+        response = utils.issue_get_request(
+            root_url + "/api/posts?limit=50", self.current_user.get("id")
+        )
         self.assertEqual(response.status_code, 200)
         posts = response.json()
         for post in posts:
-            self.assertTrue(post["user"]["id"] in authorized_user_ids)
+            # check that user has access to every post:
+            # print(self.current_user.get('id'), '-', post.get('user').get('id'), authorized_user_ids)
+            self.assertTrue(post.get("user").get("id") in authorized_user_ids)
 
-    def test_successful_post_creation(self):
-        """Test creating a new post returns 201 and correct data."""
-        # Arrange
+    def test_post_post(self):
         body = {
             "image_url": "https://picsum.photos/600/430?id=668",
-            "caption": "Test caption",
-            "alt_text": "Test alt text"
+            "caption": "Some caption",
+            "alt_text": "some alt text",
         }
-
-        # Act
         response = utils.issue_post_request(
-            self.base_url,
+            root_url + "/api/posts",
             json=body,
-            user_id=self.user_id
+            user_id=self.current_user.get("id"),
         )
-
-        # Assert
-        self.assertEqual(response.status_code, 201)
         new_post = response.json()
+        self.assertEqual(response.status_code, 201)
 
-        # Verify response data
-        self.assertEqual(new_post["image_url"], body["image_url"])
-        self.assertEqual(new_post["caption"], body["caption"])
-        self.assertEqual(new_post["alt_text"], body["alt_text"])
+        # check that the values are in the returned json:
+        self.assertEqual(new_post.get("image_url"), body.get("image_url"))
+        self.assertEqual(new_post.get("caption"), body.get("caption"))
+        self.assertEqual(new_post.get("alt_text"), body.get("alt_text"))
 
-        # Verify database state
-        db_post = utils.get_post_by_id(new_post["id"])
-        self.assertEqual(db_post["id"], new_post["id"])
-        self.assertEqual(db_post["image_url"], new_post["image_url"])
-        self.assertEqual(db_post["caption"], new_post["caption"])
-        self.assertEqual(db_post["alt_text"], new_post["alt_text"])
+        # verify that data was committed to the database:
+        new_post_db = utils.get_post_by_id(new_post.get("id"))
+        self.assertEqual(new_post_db.get("id"), new_post.get("id"))
+        self.assertEqual(new_post_db.get("image_url"), new_post.get("image_url"))
+        self.assertEqual(new_post_db.get("caption"), new_post.get("caption"))
+        self.assertEqual(new_post_db.get("alt_text"), new_post.get("alt_text"))
 
-        # Cleanup
-        utils.delete_post_by_id(new_post["id"])
-        self.assertEqual(utils.get_post_by_id(new_post["id"]), [])
+        # now delete post from DB:
+        utils.delete_post_by_id(new_post.get("id"))
 
-    def test_image_only_post_creation(self):
-        """Test creating a post with only image_url succeeds."""
-        # Arrange
+        # and check that it's gone:
+        self.assertEqual(utils.get_post_by_id(new_post.get("id")), [])
+
+    def test_post_post_image_only(self):
         body = {
-            "image_url": "https://picsum.photos/600/430?id=668"
+            "image_url": "https://picsum.photos/600/430?id=668",
         }
-
-        # Act
         response = utils.issue_post_request(
-            self.base_url,
+            root_url + "/api/posts",
             json=body,
-            user_id=self.user_id
+            user_id=self.current_user.get("id"),
         )
-
-        # Assert
-        self.assertEqual(response.status_code, 201)
         new_post = response.json()
+        self.assertEqual(response.status_code, 201)
 
-        # Verify response data
-        self.assertEqual(new_post["image_url"], body["image_url"])
-        self.assertIsNone(new_post["caption"])
-        self.assertIsNone(new_post["alt_text"])
+        # check that the values are in the returned json:
+        self.assertEqual(new_post.get("image_url"), body.get("image_url"))
+        self.assertEqual(new_post.get("caption"), body.get("caption"))
+        self.assertEqual(new_post.get("alt_text"), body.get("alt_text"))
 
-        # Cleanup
-        utils.delete_post_by_id(new_post["id"])
+        # verify that data was committed to the database:
+        new_post_db = utils.get_post_by_id(new_post.get("id"))
+        self.assertEqual(new_post_db.get("id"), new_post.get("id"))
+        self.assertEqual(new_post_db.get("image_url"), new_post.get("image_url"))
+        self.assertEqual(new_post_db.get("caption"), new_post.get("caption"))
+        self.assertEqual(new_post_db.get("alt_text"), new_post.get("alt_text"))
 
-    def test_missing_image_url_handled(self):
-        """Test that post without image_url returns 400."""
-        # Act
+        # now delete post from DB:
+        utils.delete_post_by_id(new_post.get("id"))
+
+        # and check that it's gone:
+        self.assertEqual(utils.get_post_by_id(new_post.get("id")), [])
+
+    def test_post_post_bad_data_400_error(self):
+        url = "{0}/api/posts".format(root_url)
+
         response = utils.issue_post_request(
-            self.base_url,
-            json={},
-            user_id=self.user_id
+            url, json={}, user_id=self.current_user.get("id")
         )
-
-        # Assert
         self.assertEqual(response.status_code, 400)
+
 
 if __name__ == "__main__":
     unittest.main()

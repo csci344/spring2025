@@ -284,6 +284,7 @@
 └── hw06-modifications
     ├── decorators.py
     ├── models
+    │   ├── __init__.py
     │   └── api_navigator.py
     ├── static
     │   ├── css
@@ -340,6 +341,10 @@
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">models/__init__.py</code></td>
+      <td>Adding a few additional import statements.</td>
+    </tr>
     <tr>
       <td><code class="highlighter-rouge">models/api_navigator.py</code></td>
       <td>New routes (<code class="highlighter-rouge">/login</code>, <code class="highlighter-rouge">/logout</code>, <code class="highlighter-rouge">/api/token</code>, and <code class="highlighter-rouge">/api/token/refresh</code>) added to the tester.</td>
@@ -514,29 +519,26 @@
 <p>Next, replace the routes that are defined below this line of code…</p>
 
 <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Initialize routes for all of your API endpoints:
-</span><span class="n">initialize_routes</span><span class="p">(</span><span class="n">api</span><span class="p">)</span>
+</span><span class="n">initialize_routes</span><span class="p">(</span><span class="n">api</span><span class="p">,</span> <span class="n">flask_jwt_extended</span><span class="p">.</span><span class="n">current_user</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>…with these routes…</p>
 
 <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Route for serving static react files
-</span><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">"/static/react-client/dist/&lt;path:filename&gt;"</span><span class="p">)</span>
+</span><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">"/static/react-client/&lt;path:filename&gt;"</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">custom_static</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">send_from_directory</span><span class="p">(</span><span class="n">app</span><span class="p">.</span><span class="n">root_path</span> <span class="o">+</span> <span class="s">"/static/react-client/dist"</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
     <span class="k">except</span> <span class="nb">FileNotFoundError</span><span class="p">:</span>
         <span class="k">return</span> <span class="s">"File not found, probably because you're in development mode."</span><span class="p">,</span> <span class="mi">404</span>
 
 
-
-<span class="c1"># Route for redirecting all non-logged in users to the login form:
-</span><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">"/"</span><span class="p">)</span>
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">"/"</span><span class="p">)</span>
 <span class="o">@</span><span class="n">decorators</span><span class="p">.</span><span class="n">jwt_or_login</span>
 <span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">os</span><span class="p">.</span><span class="n">getenv</span><span class="p">(</span><span class="s">"ENVIRONMENT"</span><span class="p">)</span> <span class="o">!=</span> <span class="s">"development"</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">send_from_directory</span><span class="p">(</span>
-        <span class="n">app</span><span class="p">.</span><span class="n">root_path</span> <span class="o">+</span> <span class="s">"/static/react-client"</span><span class="p">,</span> <span class="s">"index.html"</span>
+        <span class="n">app</span><span class="p">.</span><span class="n">root_path</span> <span class="o">+</span> <span class="s">"/static/react-client/dist"</span><span class="p">,</span> <span class="s">"index.html"</span>
     <span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s">'''
@@ -545,8 +547,8 @@
             In production mode, this route will serve your react app.
         '''</span>
 
-<span class="c1"># Modified API tester that embeds the user's JWT:
-</span><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">"/api"</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">"/api"</span><span class="p">)</span>
 <span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">"/api/"</span><span class="p">)</span>
 <span class="o">@</span><span class="n">decorators</span><span class="p">.</span><span class="n">jwt_or_login</span>
 <span class="k">def</span> <span class="nf">api_docs</span><span class="p">():</span>
@@ -562,6 +564,12 @@
         <span class="n">csrf</span><span class="o">=</span><span class="n">csrf</span><span class="p">,</span>
         <span class="n">url_root</span><span class="o">=</span><span class="n">request</span><span class="p">.</span><span class="n">url_root</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>  <span class="c1"># trim trailing slash
 </span>    <span class="p">)</span>
+
+
+<span class="c1"># enables flask app to run using "python3 app.py"
+</span><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">()</span>
+
 </code></pre></div></div>
 
 <h3 id="53-build-your-react-client">5.3. Build Your React Client</h3>
@@ -570,7 +578,13 @@
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run build
 </code></pre></div></div>
 
-<p>This should create a new directory called “dist” that will house your compiled React app. When you’re done, restart your flask app and navigate to <a href="http://127.0.0.1:5000" target="_blank">http://127.0.0.1:5000</a>. You should see your react app running.</p>
+<p>This should create a new directory called “dist” that will house your compiled React app.</p>
+
+<p>Finally, add one more environment variable called <code class="highlighter-rouge">ENVIRONMENT</code> and set it’s value to production, which indicates that you have a react app that will be served from the static directory.</p>
+
+<p><code class="highlighter-rouge">ENVIRONMENT=production</code></p>
+
+<p>When you’re done, restart your flask app and navigate to <a href="http://127.0.0.1:5000" target="_blank">http://127.0.0.1:5000</a>. You should see your react app running.</p>
 
 <h3 id="54-secure-the-user-interface-15-points">5.4. Secure the User Interface (15 Points)</h3>
 <p>Secure the user interface as follows:</p>

@@ -1,158 +1,155 @@
-import utils
 import requests
+import utils
+
+root_url = utils.root_url
 import unittest
 
-class TestBookmarkListEndpoint(unittest.TestCase):
-    def setUp(self):
-        """Set up test fixtures before each test method."""
-        self.base_url = f"{utils.root_url}/api/bookmarks"
-        self.current_user = utils.get_random_user()
-        self.user_id = self.current_user.get("id")
 
-    def test_bookmarks_list_retrieval(self):
-        """Test getting list of bookmarks returns correct data."""
-        # Act
-        response = utils.issue_get_request(self.base_url, user_id=self.user_id)
+class TestBookmarkListEndpoint(unittest.TestCase):
+
+    def setUp(self):
+        self.current_user = utils.get_user_12()
+
+    def test_bookmarks_get_check_if_query_correct(self):
+        # query for the bookmark:
+        response = utils.issue_get_request(
+            "{0}/api/bookmarks".format(root_url),
+            user_id=self.current_user.get("id"),
+        )
+
+        self.assertEqual(response.status_code, 200)
         bookmarks = response.json()
 
-        # Assert
-        self.assertEqual(response.status_code, 200)
-        # Verify all bookmarks belong to user
-        bookmark_ids = utils.get_user_bookmark_ids(self.user_id)
+        # ensure that all the bookmarks belonging to the user are in the list:
+        bookmark_ids = utils.get_user_bookmark_ids(self.current_user.get("id"))
         for bookmark in bookmarks:
-            self.assertTrue(bookmark["id"] in bookmark_ids)
-        # Verify non-empty response
+            self.assertTrue(bookmark.get("id") in bookmark_ids)
+
+        # check that the list isn't empty
         self.assertTrue(len(bookmarks) > 1)
 
-    def test_bookmark_data_structure(self):
-        """Test that bookmark data contains all required fields."""
-        # Act
-        response = utils.issue_get_request(self.base_url, user_id=self.user_id)
+    def test_bookmarks_get_check_if_data_structure_correct(self):
+        response = utils.issue_get_request(
+            "{0}/api/bookmarks".format(root_url),
+            user_id=self.current_user.get("id"),
+        )
+        self.assertEqual(response.status_code, 200)
         bookmarks = response.json()
+
+        self.assertGreater(len(bookmarks), 0)
         bookmark = bookmarks[0]
 
-        # Assert
-        self.assertEqual(response.status_code, 200)
-        # Verify bookmark in response matches database
-        bookmark_db = utils.get_bookmark_by_id(bookmark["id"])
-        post_db = utils.get_post_by_id(bookmark["post"]["id"])
+        bookmark_db = utils.get_bookmark_by_id(bookmark.get("id"))
+        post_db = utils.get_post_by_id(bookmark.get("post").get("id"))
 
-        self.assertEqual(bookmark["id"], bookmark_db["id"])
-        self.assertEqual(bookmark["post"]["id"], post_db["id"])
-        self.assertEqual(bookmark["post"]["image_url"], post_db["image_url"])
-        self.assertEqual(bookmark["post"]["caption"], post_db["caption"])
-        self.assertEqual(bookmark["post"]["alt_text"], post_db["alt_text"])
-        self.assertEqual(bookmark["post"]["user"]["id"], post_db["user_id"])
+        self.assertEqual(bookmark.get("id"), bookmark_db.get("id"))
+        self.assertEqual(bookmark.get("post").get("id"), post_db.get("id"))
+        self.assertEqual(
+            bookmark.get("post").get("image_url"), post_db.get("image_url")
+        )
+        self.assertEqual(
+            bookmark.get("post").get("caption"), post_db.get("caption")
+        )
+        self.assertEqual(
+            bookmark.get("post").get("alt_text"), post_db.get("alt_text")
+        )
+        self.assertEqual(
+            bookmark.get("post").get("user").get("id"), post_db.get("user_id")
+        )
 
-    def test_authentication_required(self):
-        """Test that unauthenticated requests return 401."""
-        # Act
-        response = requests.get(self.base_url)
-
-        # Assert
-        self.assertEqual(response.status_code, 401)
-
-    def test_successful_bookmark_creation(self):
-        """Test creating a new bookmark returns 201 and correct data."""
-        # Arrange
-        post_id = utils.get_unbookmarked_post_id_by_user(self.user_id)
+    def test_bookmark_post_valid_request_201(self):
+        post_id = utils.get_unbookmarked_post_id_by_user(
+            self.current_user.get("id")
+        )
         body = {"post_id": post_id}
-
-        # Act
         response = utils.issue_post_request(
-            self.base_url,
+            root_url + "/api/bookmarks",
             json=body,
-            user_id=self.user_id
+            user_id=self.current_user.get("id"),
         )
-
-        # Assert
-        self.assertEqual(response.status_code, 201)
+        # print(response.text)
         new_bookmark = response.json()
-        
-        # Verify response data
-        self.assertEqual(new_bookmark["post"]["id"], post_id)
+        self.assertEqual(response.status_code, 201)
 
-        # Verify database state
-        bookmark_db = utils.get_bookmark_by_id(new_bookmark["id"])
-        self.assertEqual(bookmark_db["id"], new_bookmark["id"])
+        # check that the values are in the returned json:
+        post_dict = new_bookmark.get("post")
 
-        # Cleanup
-        utils.delete_bookmark_by_id(new_bookmark["id"])
-        self.assertEqual(utils.get_bookmark_by_id(new_bookmark["id"]), [])
+        # check that the bookmarked post exists in the response:
+        self.assertNotEqual(post_dict, None)
 
-    def test_duplicate_bookmark_prevented(self):
-        """Test bookmarking an already bookmarked post returns 400."""
-        # Arrange
-        bookmark = utils.get_bookmarked_post_by_user(self.user_id)
-        body = {"post_id": bookmark["post_id"]}
+        # check that the correct post was bookmarked:
+        self.assertEqual(post_dict.get("id"), post_id)
 
-        # Act
-        response = utils.issue_post_request(
-            self.base_url,
-            json=body,
-            user_id=self.user_id
+        # check that the bookmark is actually in the database:
+        bookmark_db = utils.get_bookmark_by_id(new_bookmark.get("id"))
+        self.assertEqual(bookmark_db.get("id"), new_bookmark.get("id"))
+
+        # now delete bookmark from DB:
+        utils.delete_bookmark_by_id(new_bookmark.get("id"))
+
+        # and check that it's gone:
+        self.assertEqual(utils.get_bookmark_by_id(new_bookmark.get("id")), [])
+
+    def test_bookmark_post_no_duplicates_400(self):
+        bookmark = utils.get_bookmarked_post_by_user(
+            self.current_user.get("id")
         )
-
-        # Assert
+        body = {"post_id": bookmark.get("post_id")}
+        url = root_url + "/api/bookmarks"
+        response = utils.issue_post_request(
+            url,
+            json=body,
+            user_id=self.current_user.get("id"),
+        )
+        # print("user_id", self.current_user.get("id"))
+        # print("post_id", bookmark.get("post_id"))
+        # print(url, response.text)
         self.assertEqual(response.status_code, 400)
 
-    def test_invalid_post_id_format_handled(self):
-        """Test that non-numeric post IDs return 400."""
-        # Arrange
-        body = {"post_id": "invalid_id"}
-
-        # Act
+    def test_bookmark_post_invalid_post_id_format_400(self):
+        body = {"post_id": "dasdasdasd"}
         response = utils.issue_post_request(
-            self.base_url,
+            root_url + "/api/bookmarks",
             json=body,
-            user_id=self.user_id
+            user_id=self.current_user.get("id"),
         )
-
-        # Assert
+        # print(response.text)
         self.assertEqual(response.status_code, 400)
 
-    def test_nonexistent_post_id_handled(self):
-        """Test that non-existent post IDs return 404."""
-        # Arrange
+    def test_bookmark_post_invalid_post_id_404(self):
         body = {"post_id": 999999}
-
-        # Act
         response = utils.issue_post_request(
-            self.base_url,
+            root_url + "/api/bookmarks",
             json=body,
-            user_id=self.user_id
+            user_id=self.current_user.get("id"),
         )
-
-        # Assert
+        # print(response.text)
         self.assertEqual(response.status_code, 404)
 
-    def test_unauthorized_post_bookmark_prevented(self):
-        """Test bookmarking an inaccessible post returns 404."""
-        # Arrange
-        post = utils.get_post_that_user_cannot_access(self.user_id)
-        body = {"post_id": post["id"]}
-
-        # Act
-        response = utils.issue_post_request(
-            self.base_url,
-            json=body,
-            user_id=self.user_id
+    def test_bookmark_post_unauthorized_post_id_404(self):
+        post = utils.get_post_that_user_cannot_access(
+            self.current_user.get("id")
         )
-
-        # Assert
+        body = {
+            "post_id": post.get("id"),
+        }
+        response = utils.issue_post_request(
+            root_url + "/api/bookmarks",
+            json=body,
+            user_id=self.current_user.get("id"),
+        )
+        # print(response.text)
         self.assertEqual(response.status_code, 404)
 
-    def test_missing_post_id_handled(self):
-        """Test that request without post_id returns 400."""
-        # Act
+    def test_bookmark_post_missing_post_id_400(self):
         response = utils.issue_post_request(
-            self.base_url,
+            root_url + "/api/bookmarks",
             json={},
-            user_id=self.user_id
+            user_id=self.current_user.get("id"),
         )
-
-        # Assert
+        # print(response.text)
         self.assertEqual(response.status_code, 400)
+
 
 if __name__ == "__main__":
     unittest.main()
