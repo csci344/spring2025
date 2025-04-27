@@ -119,69 +119,6 @@
     
 </p>
 
-<!-- 
-<style>
-    table.cheatsheet th:first-child,
-    table.cheatsheet td:first-child {
-        min-width: 200px;
-    }
-    /* table th:first-child, table td:first-child {
-        min-width: 230px;
-    } */
-    table.rubric-indent th:first-child, table.rubric-indent td:first-child {
-        min-width: 20px;
-        width: 30px;
-    }
-    table.rubric-indent th:last-child, table.rubric-indent td:last-child {
-        min-width: 100px;
-        width: 100px;
-    }
-    table.rubric code, table.rubric-indent code {
-        font-size: 1.1em;
-        font-weight: bold;
-    }
-    table.rubric pre {
-        font-size: 1.1em;
-        /* font-weight: 600; */
-        background: #F3F3F3;
-        padding: 5px;
-        border-radius: 5px;
-    }
-    blockquote.updates {
-        background-color: #d4edda;
-        border: solid 1px #c3e6cb;
-        margin-top: 0;
-    }
-    blockquote.updates h2, 
-    blockquote.updates h3, 
-    blockquote.updates p, 
-    blockquote.updates li, 
-    blockquote.updates a {
-        color: #155724 !important;
-    }
-    blockquote.updates h2 {
-        border-bottom: solid 1px #155724;
-    }
-    blockquote.updates a:hover {
-        background-color: transparent;
-    }
-</style>
-
-{:.updates}
-> ## Updates
-> ### Video Walkthroughs
-> Sarah has created a set of "get started" files that should help you with this assignment:
-> 
-> 1. <a href="https://drive.google.com/file/d/1UYo8n7ST1BEvuFpWa4qZcdLs0nwBKCFN/view?usp=sharing" target="_blank">Setup</a>
-> 1. <a href="https://drive.google.com/file/d/1w12BbQqyMcnnvvw7qEM9U5HGUd-_3Qpj/view?usp=sharing" target="_blank">Implementing /api/token</a>
-> 1. <a href="https://drive.google.com/file/d/1C0LXyJT8D8QPeRFadrJIx1rf7FwyAB9d/view?usp=sharing" target="_blank">Locking down the endpoints</a>
-> 1. <a href="https://drive.google.com/file/d/1tLeGm5hYOT7JZZYSx6ixFJmyGa6uQce2/view?usp=sharing" target="_blank">UI integration</a>
-> 1. <a href="https://drive.google.com/file/d/17JFV3ZXRYRzKNT4uOCjEAs-74Xx8KlV1/view?usp=sharing" target="_blank">Login form</a>
->
-> ### Errata & Notes
-> * There were a few bugs in the integration instructions / tests, so if you downloaded the starter files before 4/23 at 10PM, please re-download the starter files (and the tests_updated directory in particular).
-> * Within the views/posts.py file: please make sure that when you convert the Post objects to JSON, you pass the current_user into the to_dict() method. Example:<br><br>**`json.dumps(post.to_dict(user=self.current_user))`**<br><br>This is necessary for generating `current_user_like_id` and `current_user_bookmark_id` (which are needed for the like / bookmark functionality to work with the React client). -->
-
 <h2 id="1-introduction">1. Introduction</h2>
 <p>In this homework assignment, you are going to lock down your system so that <strong>only logged in users</strong> can interact with it by using JSON Web Tokens (JWTs). This requires the following changes:</p>
 
@@ -295,9 +232,9 @@
 <p>To help you implement the JWT workflow, you will be using the <code class="highlighter-rouge">flask-jwt-extended</code> library, which offers some common JSON Web Token functionality that will help you. Please refer to the full documentation to get a more comprehensive explanation. Some links that we have found to be particularly helpful:</p>
 
 <ul>
-  <li><a href="https://flask-jwt-extended.readthedocs.io/en/latest/options/#general-options" target="_blank">Configuration options</a></li>
-  <li><a href="https://flask-jwt-extended.readthedocs.io/en/latest/api/#verify-tokens-in-request" target="_blank">Verification &amp; helper functionality</a></li>
-  <li><a href="https://flask-jwt-extended.readthedocs.io/en/latest/refreshing_tokens/" target="_blank">Refreshing tokens</a></li>
+  <li><a href="https://flask-jwt-extended.readthedocs.io/en/stable/token_locations.html" target="_blank">Token locations</a></li>
+  <li><a href="https://flask-jwt-extended.readthedocs.io/en/stable/api.html#flask_jwt_extended.create_access_token" target="_blank">Creating access tokens</a></li>
+  <li><a href="https://flask-jwt-extended.readthedocs.io/en/stable/api.html#flask_jwt_extended.create_refresh_token" target="_blank">Creating refresh tokens</a></li>
 </ul>
 
 <h2 id="3-setup">3. Setup</h2>
@@ -333,7 +270,7 @@
 <h3 id="2-integrate-the-new-files">2. Integrate the new files</h3>
 <p>Download <code class="highlighter-rouge">hw06-modifications.zip</code>, unzip it, and also save it in your <code class="highlighter-rouge">homework</code> folder.</p>
 
-<p><a class="nu-button" href="/spring2023/course-files/homework/hw06.zip">hw06-modifications.zip<i class="fas fa-download" aria-hidden="true"></i></a></p>
+<p><a class="nu-button" href="/spring2025/course-files/homework/hw06-modifications.zip">hw06-modifications.zip<i class="fas fa-download" aria-hidden="true"></i></a></p>
 
 <p>Your <code class="highlighter-rouge">csci344/homework</code> folder should now look like this:</p>
 
