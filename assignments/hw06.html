@@ -55,7 +55,48 @@
 </nav>
         <main>
             <aside>
-                
+                <ol class="side-menu">
+  <li><a href="#1-introduction">1. Introduction</a></li>
+  <li><a href="#2-background--relevant-concepts">2. Background &amp; Relevant Concepts</a>
+    <ol>
+      <li><a href="#1-bearer-tokens-external-v-cookies--csrf-tokens-internal">1. Bearer Tokens (External) v. Cookies + CSRF Tokens (Internal)</a></li>
+      <li><a href="#2-external-client-workflow">2. External Client Workflow</a></li>
+      <li><a href="#3-internal-client-workflow">3. Internal Client Workflow</a></li>
+      <li><a href="#4-the-flask-jwt-extended-library">4. The Flask-JWT-Extended Library</a></li>
+    </ol>
+  </li>
+  <li><a href="#3-setup">3. Setup</a>
+    <ol>
+      <li><a href="#1-duplicate-your-completed-hw05-folder">1. Duplicate your COMPLETED <code class="highlighter-rouge">hw05</code> folder</a></li>
+      <li><a href="#verify-your-code-still-works">Verify your code still works</a></li>
+      <li><a href="#2-integrate-the-new-files">2. Integrate the new files</a></li>
+      <li><a href="#1-add-new-files">1. Add (new files)</a></li>
+      <li><a href="#2-replace">2. Replace</a></li>
+      <li><a href="#3-install-dependencies">3. Install dependencies</a></li>
+      <li><a href="#4-create-a-new-environment-variable">4. Create a new environment variable</a></li>
+      <li><a href="#5-run-your-old-tests">5. Run your old tests</a></li>
+    </ol>
+  </li>
+  <li><a href="#rest">4. REST API Tasks</a>
+    <ol>
+      <li><a href="#41-modify-apppy">4.1. Modify app.py</a></li>
+      <li><a href="#42-secure-the-rest-api-20-points">4.2. Secure the REST API (20 Points)</a></li>
+    </ol>
+  </li>
+  <li><a href="#ui">5. UI Tasks</a>
+    <ol>
+      <li><a href="#51-integrate-your-react-client">5.1. Integrate Your React Client</a></li>
+      <li><a href="#52-modify-apppy">5.2. Modify app.py</a></li>
+      <li><a href="#53-build-your-react-client">5.3. Build Your React Client</a></li>
+      <li><a href="#54-secure-the-user-interface-15-points">5.4. Secure the User Interface (15 Points)</a></li>
+    </ol>
+  </li>
+  <li><a href="#6-what-to-turn-in">6. What to Turn In</a>
+    <ol>
+      <li><a href="#moodle-submission">Moodle Submission</a></li>
+    </ol>
+  </li>
+</ol>
 
             </aside>
             <article>
@@ -73,55 +114,635 @@
         Due on Wed, 05/07 @ 11:59PM.
     
     
-        20 Points.
+        35 Points.
     
     
 </p>
 
+<!-- 
 <style>
-    table li {
-        margin-bottom: 0px;
+    table.cheatsheet th:first-child,
+    table.cheatsheet td:first-child {
+        min-width: 200px;
     }
-    .emphasize {
-        font-weight: 700;
-        color: #e76610;
+    /* table th:first-child, table td:first-child {
+        min-width: 230px;
+    } */
+    table.rubric-indent th:first-child, table.rubric-indent td:first-child {
+        min-width: 20px;
+        width: 30px;
     }
-    .gif-right {
-        float: right;
-        width: 180px;
-        margin-top: -40px;
+    table.rubric-indent th:last-child, table.rubric-indent td:last-child {
+        min-width: 100px;
+        width: 100px;
     }
-    .updates {
-        background: #fff3cd !important;
+    table.rubric code, table.rubric-indent code {
+        font-size: 1.1em;
+        font-weight: bold;
     }
-    .updates h2 {
-        border-bottom: 0 !important;
+    table.rubric pre {
+        font-size: 1.1em;
+        /* font-weight: 600; */
+        background: #F3F3F3;
+        padding: 5px;
+        border-radius: 5px;
     }
-    code.highlighter-rouge {
-        /* background: #f3f3f387; */
-        background: transparent;
-        font-weight: 600;
+    blockquote.updates {
+        background-color: #d4edda;
+        border: solid 1px #c3e6cb;
+        margin-top: 0;
     }
-    img.small {
-        max-width: 47%;
+    blockquote.updates h2, 
+    blockquote.updates h3, 
+    blockquote.updates p, 
+    blockquote.updates li, 
+    blockquote.updates a {
+        color: #155724 !important;
     }
-
-    img.xsmall {
-        max-width: 30%;
+    blockquote.updates h2 {
+        border-bottom: solid 1px #155724;
     }
-    table td:first-child, table th:first-child {
-        min-width: auto;
-        max-width: auto;
-        width: auto;
-    }
-    table td:nth-child(2), table th:nth-child(2) {
-        min-width: 80px;
-        max-width: auto;
-        width: auto;
+    blockquote.updates a:hover {
+        background-color: transparent;
     }
 </style>
 
-<p>TBD</p>
+{:.updates}
+> ## Updates
+> ### Video Walkthroughs
+> Sarah has created a set of "get started" files that should help you with this assignment:
+> 
+> 1. <a href="https://drive.google.com/file/d/1UYo8n7ST1BEvuFpWa4qZcdLs0nwBKCFN/view?usp=sharing" target="_blank">Setup</a>
+> 1. <a href="https://drive.google.com/file/d/1w12BbQqyMcnnvvw7qEM9U5HGUd-_3Qpj/view?usp=sharing" target="_blank">Implementing /api/token</a>
+> 1. <a href="https://drive.google.com/file/d/1C0LXyJT8D8QPeRFadrJIx1rf7FwyAB9d/view?usp=sharing" target="_blank">Locking down the endpoints</a>
+> 1. <a href="https://drive.google.com/file/d/1tLeGm5hYOT7JZZYSx6ixFJmyGa6uQce2/view?usp=sharing" target="_blank">UI integration</a>
+> 1. <a href="https://drive.google.com/file/d/17JFV3ZXRYRzKNT4uOCjEAs-74Xx8KlV1/view?usp=sharing" target="_blank">Login form</a>
+>
+> ### Errata & Notes
+> * There were a few bugs in the integration instructions / tests, so if you downloaded the starter files before 4/23 at 10PM, please re-download the starter files (and the tests_updated directory in particular).
+> * Within the views/posts.py file: please make sure that when you convert the Post objects to JSON, you pass the current_user into the to_dict() method. Example:<br><br>**`json.dumps(post.to_dict(user=self.current_user))`**<br><br>This is necessary for generating `current_user_like_id` and `current_user_bookmark_id` (which are needed for the like / bookmark functionality to work with the React client). -->
+
+<h2 id="1-introduction">1. Introduction</h2>
+<p>In this homework assignment, you are going to lock down your system so that <strong>only logged in users</strong> can interact with it by using JSON Web Tokens (JWTs). This requires the following changes:</p>
+
+<p><strong>REST API Changes</strong></p>
+<ul>
+  <li>Implementing two new API endpoints (<code class="highlighter-rouge">/api/token</code> and <code class="highlighter-rouge">/api/token/refresh</code>) so that third-party clients can also access your REST API.</li>
+  <li>Locking down all of your endpoints so that they require a valid JWT.</li>
+  <li>Deprecating the hard-coded session variable for user #12 and replace it with code that retrieves the user if from the JWT.</li>
+</ul>
+
+<p><strong>User Interface Changes</strong></p>
+<ul>
+  <li>Creating a login form to handle authentication via JWT cookies.</li>
+  <li>Integrating your React App into Flask so that your front-end is secured.</li>
+</ul>
+
+<h2 id="2-background--relevant-concepts">2. Background &amp; Relevant Concepts</h2>
+
+<h3 id="1-bearer-tokens-external-v-cookies--csrf-tokens-internal">1. Bearer Tokens (External) v. Cookies + CSRF Tokens (Internal)</h3>
+<p>You can pass JWTs between the client and the server in a variety of different ways: through cookies, through custom HTTP headers, through the request body, and/or as query parameters.</p>
+
+<ul>
+  <li><strong>External Clients:</strong> For <a href="hw03">HW3</a> &amp; <a href="hw04">HW4</a>, you created an <strong>external client</strong> – located on a different server than the API – to interact with your REST API. To do this, you passed the <strong>JWT Bearer token</strong> in the HTTP. In this context, you did not need the CSRF token or cookies.</li>
+  <li><strong>Internal Clients:</strong> For HW6 (this homework), you will be using an <strong>internal client</strong> that will be hosted within the same web app as the REST API. This allows you to take advantage of some additional security measures, namely using an http-only JWT <strong>cookie</strong>, and incorporating a CSRF token in the HTTP header.</li>
+</ul>
+
+<h3 id="2-external-client-workflow">2. External Client Workflow</h3>
+
+<p>External clients do not rely on cookies. Instead, they usually pass authentication information via “Bearer Tokens” passed using HTTP headers. Given this, you need to implement the following features within the REST API:</p>
+
+<ol>
+  <li>A way for a user to authenticate with the REST API order to receive an access and refresh token.</li>
+  <li>Security measures on all of your REST API endpoints that require an access token.</li>
+</ol>
+
+<p>As you have already seen, the followint code shows how you might fetch a protected resource from an <strong><em>external</em></strong> web application (running on a separate server), using a Bearer token:</p>
+
+<p>For JavaScript clients that issue requests from other servers (not one that you own):</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">getPosts</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://localhost:5000/api/posts/?limit=3</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bearer access_token</span><span class="dl">'</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>For Python clients:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s">'http://localhost:5000/api/posts'</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer '</span> <span class="o">+</span> <span class="n">access_token</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Status Code:'</span><span class="p">,</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div></div>
+
+<h3 id="3-internal-client-workflow">3. Internal Client Workflow</h3>
+<p>Internal, browser-based clients can take advantage of additional security measures that aren’t available to external clients. Namely http-only JWT Cookies and CSRF tokens. Specifically:</p>
+
+<ol>
+  <li>You will write code to generate a JWT cookie, which will sent back and forth between the browser and the server via request and response headers.</li>
+  <li>
+    <p>The <code class="highlighter-rouge">flask-jwt-extended</code> library has a few convenience functions that will help you generate and set these cookies:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">create_access_token()</code> – generates the token</li>
+      <li><code class="highlighter-rouge">set_access_cookies()</code> – sets the access cookies on the response header</li>
+    </ul>
+  </li>
+  <li>
+    <p>Workflow:</p>
+
+    <ol>
+      <li>User sends username and password to the server via a login form.</li>
+      <li>If the credentials are valid, the server sets the JWT tokens using cookies.</li>
+      <li>Because the JWT cookies are set, the system will know who is logged in.
+        <ul>
+          <li>Web applications will also pass an <code class="highlighter-rouge">X-CSRF-TOKEN</code> as an extra security measure (see below).</li>
+        </ul>
+      </li>
+      <li>When the JWT access token expires, the system redirects the user to the login screen.</li>
+    </ol>
+  </li>
+</ol>
+
+<p>Then, rather than using a Bearer Token, you will not only rely on the JWT http-only server cookie, but also on an <code class="highlighter-rouge">X-CSRF-TOKEN</code> token, which will be included in all POST, PATCH, PUT, and DELETE requests. This token will protect against Cross-Site Request Forgery attacks. Here is an example of how you might use fetch to access a protected REST Endpoint from within your UI:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">getPosts</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://localhost:5000/api/posts/?limit=3</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">X-CSRF-TOKEN</span><span class="dl">'</span><span class="p">:</span> <span class="nx">csrf_token</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="4-the-flask-jwt-extended-library">4. The Flask-JWT-Extended Library</h3>
+<p>To help you implement the JWT workflow, you will be using the <code class="highlighter-rouge">flask-jwt-extended</code> library, which offers some common JSON Web Token functionality that will help you. Please refer to the full documentation to get a more comprehensive explanation. Some links that we have found to be particularly helpful:</p>
+
+<ul>
+  <li><a href="https://flask-jwt-extended.readthedocs.io/en/latest/options/#general-options" target="_blank">Configuration options</a></li>
+  <li><a href="https://flask-jwt-extended.readthedocs.io/en/latest/api/#verify-tokens-in-request" target="_blank">Verification &amp; helper functionality</a></li>
+  <li><a href="https://flask-jwt-extended.readthedocs.io/en/latest/refreshing_tokens/" target="_blank">Refreshing tokens</a></li>
+</ul>
+
+<h2 id="3-setup">3. Setup</h2>
+
+<h3 id="1-duplicate-your-completed-hw05-folder">1. Duplicate your COMPLETED <code class="highlighter-rouge">hw05</code> folder</h3>
+<p>Before you do anything with the new code, make a copy of your <code class="highlighter-rouge">hw05</code> homework folder. Rename the duplicated folder <code class="highlighter-rouge">hw06</code>. Your <code class="highlighter-rouge">csci344/homework</code> folder should now look something like this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>homework
+├── hw01
+├── hw02
+├── hw03
+├── hw04
+├── hw05
+└── hw06  &lt;<span class="nt">--</span> this folder is an exact copy of HW5
+</code></pre></div></div>
+
+<blockquote class="info">
+  <h3 id="verify-your-code-still-works">Verify your code still works</h3>
+  <p>On your terminal:</p>
+  <ol>
+    <li>Navigate to your <code class="highlighter-rouge">hw06</code> folder.</li>
+    <li>Create a new python virtual environment and install the dependencies: <code class="highlighter-rouge">poetry install</code></li>
+    <li>Run your flask server: <code class="highlighter-rouge">poetry run flask run --debug</code></li>
+    <li>Run your tests (keep your flask server running, but run your tests in a new terminal shell):
+      <ul>
+        <li><code class="highlighter-rouge">cd tests</code></li>
+        <li><code class="highlighter-rouge">poetry run python run_tests.py</code></li>
+      </ul>
+    </li>
+  </ol>
+</blockquote>
+
+<h3 id="2-integrate-the-new-files">2. Integrate the new files</h3>
+<p>Download <code class="highlighter-rouge">hw06-modifications.zip</code>, unzip it, and also save it in your <code class="highlighter-rouge">homework</code> folder.</p>
+
+<p><a class="nu-button" href="/spring2023/course-files/homework/hw06.zip">hw06-modifications.zip<i class="fas fa-download" aria-hidden="true"></i></a></p>
+
+<p>Your <code class="highlighter-rouge">csci344/homework</code> folder should now look like this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>homework
+├── hw01
+├── hw02
+├── hw03
+├── hw04
+├── hw05
+├── hw06
+└── hw06-modifications
+    ├── decorators.py
+    ├── models
+    │   └── api_navigator.py
+    ├── static
+    │   ├── css
+    │   └── js
+    ├── templates
+    │   ├── api
+    │   ├── includes
+    │   └── login.html
+    ├── tests_updated
+    └── views
+        ├── __init__.py
+        ├── authentication.py
+        └── token.py
+</code></pre></div></div>
+
+<p>Please integrate the starter files <strong>VERY CAREFULLY</strong> from <code class="highlighter-rouge">hw06-modifications</code> into <code class="highlighter-rouge">hw06</code> as follows:</p>
+
+<h3 id="1-add-new-files">1. Add (new files)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>File / Folder</th>
+      <th>What is this file?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">tests_updated</code> (entire folder)</td>
+      <td>Updated tests that incorporate authentication.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">views/authentication.py</code></td>
+      <td>View that handles the login / logout form functionality.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">views/token.py</code></td>
+      <td>API Endpoint that issues access / refresh token if authorized credentials are provided.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">decorators.py</code></td>
+      <td>Used to lockdown your UI to work with the login form.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="2-replace">2. Replace</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>File / Folder</th>
+      <th>What Changed?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">models/api_navigator.py</code></td>
+      <td>New routes (<code class="highlighter-rouge">/login</code>, <code class="highlighter-rouge">/logout</code>, <code class="highlighter-rouge">/api/token</code>, and <code class="highlighter-rouge">/api/token/refresh</code>) added to the tester.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">static</code> (entire folder)</td>
+      <td>A few new helper JavaScript and CSS files.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">templates</code> (entire folder)</td>
+      <td>Now includes sample code for how to make requests with the authentication headers.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">views/__init__.py</code></td>
+      <td><code class="highlighter-rouge">initialize_routes</code> function updated to include new routes (<code class="highlighter-rouge">/login</code>, <code class="highlighter-rouge">/logout</code>, <code class="highlighter-rouge">/api/token</code>, and <code class="highlighter-rouge">/api/token/refresh</code>).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="3-install-dependencies">3. Install dependencies</h3>
+<p>On the command line / Terminal / shell, add the new required dependencies to support JSON Web Tokens (this may already be installed, but just in case):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>poetry add Flask-JWT-Extended
+</code></pre></div></div>
+
+<h3 id="4-create-a-new-environment-variable">4. Create a new environment variable</h3>
+<p>In your <code class="highlighter-rouge">.env</code> file, add a new environment variable for your JWT secret. You can make this secret anything you want:</p>
+
+<p><code class="highlighter-rouge">JWT_SECRET=MY_SECRET</code></p>
+
+<h3 id="5-run-your-old-tests">5. Run your old tests</h3>
+<p>Run your old tests one more time (in the <code class="highlighter-rouge">tests</code> directory). They should all still pass. Now, navigate to <code class="highlighter-rouge">tests_updated</code> and run all of those tests. They should not be currently passing, but they will pass after this assignment is complete!</p>
+
+<h2 id="rest">4. REST API Tasks</h2>
+
+<h3 id="41-modify-apppy">4.1. Modify app.py</h3>
+<p>In order to integrate JWT security measures into your app, you will have to make some modifications to <code class="highlighter-rouge">app.py</code>. Please complete the following 4 steps:</p>
+
+<p>(1) Add the new import statements:</p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># import statement at the top
+</span><span class="kn">import</span> <span class="nn">flask_jwt_extended</span>                       
+</code></pre></div></div>
+
+<p>(2) Replace CORS statement:</p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># replace CORS statement with this one:
+# update:
+</span><span class="n">cors</span> <span class="o">=</span> <span class="n">CORS</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> 
+    <span class="n">resources</span><span class="o">=</span><span class="p">{</span><span class="sa">r</span><span class="s">"/api/*"</span><span class="p">:</span> <span class="p">{</span><span class="s">"origins"</span><span class="p">:</span> <span class="s">'*'</span><span class="p">}},</span> 
+    <span class="n">supports_credentials</span><span class="o">=</span><span class="bp">True</span> <span class="c1"># new
+</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>(3) Turn on the JWT Manager:</p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 4. Turn on the JWT Manager
+</span><span class="n">app</span><span class="p">.</span><span class="n">config</span><span class="p">[</span><span class="s">"JWT_SECRET_KEY"</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'JWT_SECRET'</span><span class="p">)</span>
+<span class="n">app</span><span class="p">.</span><span class="n">config</span><span class="p">[</span><span class="s">"JWT_TOKEN_LOCATION"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"headers"</span><span class="p">,</span> <span class="s">"cookies"</span><span class="p">]</span>
+<span class="n">app</span><span class="p">.</span><span class="n">config</span><span class="p">[</span><span class="s">"JWT_COOKIE_SECURE"</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">app</span><span class="p">.</span><span class="n">config</span><span class="p">[</span><span class="s">'PROPAGATE_EXCEPTIONS'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span> 
+<span class="n">jwt</span> <span class="o">=</span> <span class="n">flask_jwt_extended</span><span class="p">.</span><span class="n">JWTManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>(4) Add the JWT user lookup convenience function (<a href="https://flask-jwt-extended.readthedocs.io/en/stable/automatic_user_loading/" target="_blank">https://flask-jwt-extended.readthedocs.io/en/stable/automatic_user_loading/</a>)</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Include JWT starter code for querying the DB for user info:
+</span><span class="o">@</span><span class="n">jwt</span><span class="p">.</span><span class="n">user_lookup_loader</span>
+<span class="k">def</span> <span class="nf">user_lookup_callback</span><span class="p">(</span><span class="n">_jwt_header</span><span class="p">,</span> <span class="n">jwt_data</span><span class="p">):</span>
+    <span class="c1"># print('JWT data:', jwt_data)
+</span>    <span class="n">user_id</span> <span class="o">=</span> <span class="n">jwt_data</span><span class="p">[</span><span class="s">"sub"</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">User</span><span class="p">.</span><span class="n">query</span><span class="p">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">user_id</span><span class="p">).</span><span class="n">one_or_none</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="42-secure-the-rest-api-20-points">4.2. Secure the REST API (20 Points)</h3>
+<p>After updating <code class="highlighter-rouge">app.py</code>, you will make the following three changes to your REST API in order to implement JWT authentication:</p>
+
+<table class="rubric-indent">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Method/Route</th>
+            <th>Description</th>
+            <th>Parameters</th>
+            <th>Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1.</td>
+            <td>POST /api/token</td>
+            <td>Issues an access and refresh token if the correct credentials are posted to the endpoint.<br /><br />Example (truncated for readability):
+            <pre>{
+    "access_token": "e0e.dsc.3NI6Ij",
+    "refresh_token": "e0e.mcm.6ktQ"
+}</pre>
+            </td>
+            <td>
+                <ul>
+                    <li><code>username</code> (string, required): The username of the person logging in.</li>
+                    <li><code>password</code> (string, required): The password of the person logging in.</li>
+                </ul>
+            </td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>POST /api/token/refresh</td>
+            <td>
+                Issues new access token if a valid refresh token is posted to the endpoint.<br /><br />Example (truncated for readability):
+                <pre>{
+    "access_token": "e0e.Ras.i3NyZ"
+}</pre>
+            </td>
+            <td>
+                Done for you!
+                <ul>
+                    <li><code>refresh_token</code> (string, required): The refresh token that was previously issued to the user from the /api/token endpoint.</li>
+                </ul>
+            </td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>All routes</td>
+            <td>
+                Lockdown all endpoints (see <a href="#note">note below</a>).
+                <ul class="compact">
+                    <li>Every API endpoint in the system should now require a JWT token using the <code>@flask_jwt_extended.jwt_required()</code> decorator.</li>
+                    <li>Replace <code>app.current_user</code> with <code>flask_jwt_extended.current_user</code>.</li>
+                    <li>All tests should pass with the new test suite.</li>
+                </ul>
+            </td>
+            <td></td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td>app.py</td>
+            <td>
+               Deprecate <code>app.current_user</code> (which is hardcoded to User #12) and use the user_id embedded in the JWT instead. 
+            </td>
+            <td></td>
+            <td>5</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4 id="note">Note on Deprecating User #12</h4>
+<p>Deprecate <code class="highlighter-rouge">app.current_user</code> by commenting out the following lines in <code class="highlighter-rouge">app.py</code></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># set logged in user
+</span><span class="k">with</span> <span class="n">app</span><span class="p">.</span><span class="n">app_context</span><span class="p">():</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">current_user</span> <span class="o">=</span> <span class="n">User</span><span class="p">.</span><span class="n">query</span><span class="p">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">12</span><span class="p">).</span><span class="n">one</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>When you’re done, you will replace ALL instances of <code class="highlighter-rouge">app.current_user</code> with <code class="highlighter-rouge">flask_jwt_extended.current_user</code>.</p>
+
+<p>When you’re done with the 4 tasks listed above all of the tests in <code class="highlighter-rouge">tests_updated</code> should pass (just run <code class="highlighter-rouge">run_tests.py</code>) EXCEPT for <code class="highlighter-rouge">test_login.py</code> and <code class="highlighter-rouge">test_logout.py</code> (you’ll do that in the next step).</p>
+
+<h2 id="ui">5. UI Tasks</h2>
+<p>In addition to modifying the REST API Endpoints, you are also going to secure your React client by integrating it into your Flask App and creating a login screen to protect it. To do this, please complete the following tasks:</p>
+
+<h3 id="51-integrate-your-react-client">5.1. Integrate Your React Client</h3>
+<p>Copy your react client folder (from HW4) into the root of the <code class="highlighter-rouge">static</code> directory in your Flask app. Rename that folder to <code class="highlighter-rouge">react-client</code> (you can call it anything, but let’s keep it consistent for simplicity).</p>
+
+<h3 id="52-modify-apppy">5.2. Modify app.py</h3>
+<p>When you’re done, you will need to make a few changes to <code class="highlighter-rouge">app.py</code>.</p>
+
+<p>First, import a new module at the top:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">send_from_directory</span>
+</code></pre></div></div>
+
+<p>Next, replace the routes that are defined below this line of code…</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Initialize routes for all of your API endpoints:
+</span><span class="n">initialize_routes</span><span class="p">(</span><span class="n">api</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>…with these routes…</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Route for serving static react files
+</span><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">"/static/react-client/dist/&lt;path:filename&gt;"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">custom_static</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">send_from_directory</span><span class="p">(</span><span class="n">app</span><span class="p">.</span><span class="n">root_path</span> <span class="o">+</span> <span class="s">"/static/react-client/dist"</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+    <span class="k">except</span> <span class="nb">FileNotFoundError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">"File not found, probably because you're in development mode."</span><span class="p">,</span> <span class="mi">404</span>
+
+
+
+<span class="c1"># Route for redirecting all non-logged in users to the login form:
+</span><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">"/"</span><span class="p">)</span>
+<span class="o">@</span><span class="n">decorators</span><span class="p">.</span><span class="n">jwt_or_login</span>
+<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">os</span><span class="p">.</span><span class="n">getenv</span><span class="p">(</span><span class="s">"ENVIRONMENT"</span><span class="p">)</span> <span class="o">!=</span> <span class="s">"development"</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">send_from_directory</span><span class="p">(</span>
+        <span class="n">app</span><span class="p">.</span><span class="n">root_path</span> <span class="o">+</span> <span class="s">"/static/react-client"</span><span class="p">,</span> <span class="s">"index.html"</span>
+    <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s">'''
+            Hello, </span><span class="si">{</span><span class="n">flask_jwt_extended</span><span class="p">.</span><span class="n">current_user</span><span class="p">.</span><span class="n">username</span><span class="si">}</span><span class="s">.
+            In development mode, React is served by Vite.
+            In production mode, this route will serve your react app.
+        '''</span>
+
+<span class="c1"># Modified API tester that embeds the user's JWT:
+</span><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">"/api"</span><span class="p">)</span>
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">"/api/"</span><span class="p">)</span>
+<span class="o">@</span><span class="n">decorators</span><span class="p">.</span><span class="n">jwt_or_login</span>
+<span class="k">def</span> <span class="nf">api_docs</span><span class="p">():</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">cookies</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"access_token_cookie"</span><span class="p">)</span>
+    <span class="n">csrf</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">cookies</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"csrf_access_token"</span><span class="p">)</span>
+
+    <span class="n">navigator</span> <span class="o">=</span> <span class="n">ApiNavigator</span><span class="p">(</span><span class="n">flask_jwt_extended</span><span class="p">.</span><span class="n">current_user</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span>
+        <span class="s">"api/api-docs.html"</span><span class="p">,</span>
+        <span class="n">user</span><span class="o">=</span><span class="n">flask_jwt_extended</span><span class="p">.</span><span class="n">current_user</span><span class="p">,</span>
+        <span class="n">endpoints</span><span class="o">=</span><span class="n">navigator</span><span class="p">.</span><span class="n">get_endpoints</span><span class="p">(),</span>
+        <span class="n">access_token</span><span class="o">=</span><span class="n">access_token</span><span class="p">,</span>
+        <span class="n">csrf</span><span class="o">=</span><span class="n">csrf</span><span class="p">,</span>
+        <span class="n">url_root</span><span class="o">=</span><span class="n">request</span><span class="p">.</span><span class="n">url_root</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>  <span class="c1"># trim trailing slash
+</span>    <span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="53-build-your-react-client">5.3. Build Your React Client</h3>
+<p>Navigate into your <code class="highlighter-rouge">react-client</code> folder from the command line and compile your react application by issuing the following command:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run build
+</code></pre></div></div>
+
+<p>This should create a new directory called “dist” that will house your compiled React app. When you’re done, restart your flask app and navigate to <a href="http://127.0.0.1:5000" target="_blank">http://127.0.0.1:5000</a>. You should see your react app running.</p>
+
+<h3 id="54-secure-the-user-interface-15-points">5.4. Secure the User Interface (15 Points)</h3>
+<p>Secure the user interface as follows:</p>
+
+<table class="rubric-indent">
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Description</th>
+            <th>Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th colspan="2">1. Create login form for UI</th>
+            <th>10 points</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                Create an HTML login form for your app (feel free to borrow code from the Lecture 25 files) by editing the <code>templates/login.html</code> html file. The form should POST to the <code>/login</code> endpoint.
+            </td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                Ensure that the form is accessible by using the Wave Chrome extension.
+            </td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                Implement the <code>/login</code> POST endpoint by editing <code>views/authentication.py</code>. If the enpoint receives a valid <code>username</code> and <code>password</code>, it should set the JWT cookie in the response header and redirect the user to the home screen (<code>/</code>).
+            </td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                If the <code>/login</code> POST endpoint does not receive a valid username and password, redisplay the form with an appropriate error message. 
+                <ul>
+                    <li>When you're done, your <code>tests_updated/test_login.py</code> tests should pass.</li>
+                </ul>
+            </td> 
+            <td>3</td>
+        </tr>
+        <tr>
+            <th colspan="2">2. Create logout form for UI</th>
+            <th>0 points</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <strong>Done for you!</strong> Create logout endpoint (GET) by editing <code>views/authentication.py</code>. This endpoint should unset the JWT cookies and redirect the user to the <code>/login</code> page. When you're done, your <code>tests_updated/test_logout.py</code> tests should pass.
+            </td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th colspan="2">3. Lockdown your UI Endpoints</th>
+            <th>5 points</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                Use the <code>@decorators.jwt_or_login</code> (from <code>decorators.py</code>) to secure your <code>/</code> and <code>/api</code> endpoints in <code>app.py</code>. 
+                <ul class="compact">
+                    <li>If the user is logged in (i.e. a JWT cookie is present), allow them to access the page.</li>
+                    <li>If the user is not logged in, redirect them to the login page.</li>
+                </ul>
+                The code has already been provided for you (but is commented out). You will uncomment it. Please also examine <code>decorators.py</code> to make sure you understand what this decorator is actually doing.
+            </td>
+            <td>5</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>When you’re done, all of the <code class="highlighter-rouge">tests_updated</code> tests should pass.</p>
+
+<h2 id="6-what-to-turn-in">6. What to Turn In</h2>
+<p>Please review the requirements above and ensure you have met them. Specifically:</p>
+
+<table class="medium">
+  <thead>
+    <tr>
+      <th>Points</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#rest">20 points</a></td>
+      <td>REST API Tasks</td>
+    </tr>
+    <tr>
+      <td><a href="#ui">15 points</a></td>
+      <td>User Interface Related Tasks</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="moodle-submission">Moodle Submission</h3>
+<p>When you’re done, please submit the following to Moodle:</p>
+
+<ul class="checkbox-list">
+  <li>Either a link to your GitHub Repo (preferred) or a zip file of your code (excluding <code class="highlighter-rouge">node_modules</code> and your <code class="highlighter-rouge">.venv</code> python environemnt)</li>
+  <li>If you worked with a partner, please list your partner</li>
+</ul>
 
 
 
