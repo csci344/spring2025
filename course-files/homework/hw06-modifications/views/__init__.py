@@ -42,7 +42,7 @@ def can_view_post(post_id, user):
     return True
 
 
-def initialize_routes(api):
+def initialize_routes(api, current_user):
     from .bookmarks import initialize_routes as init_bookmark_routes
     from .comments import initialize_routes as init_comment_routes
     from .followers import initialize_routes as init_follower_routes
@@ -53,18 +53,16 @@ def initialize_routes(api):
     from .stories import initialize_routes as init_story_routes
     from .suggestions import initialize_routes as init_suggestion_routes
     from .authentication import initialize_routes as init_authentication_routes
-    from .registration import initialize_routes as init_registration_routes
     from .token import initialize_routes as init_token_routes
 
-    init_bookmark_routes(api)
-    init_comment_routes(api)
-    init_follower_routes(api)
-    init_following_routes(api)
-    init_post_routes(api)
-    init_post_like_routes(api)
-    init_profile_routes(api)
-    init_story_routes(api)
-    init_suggestion_routes(api)
+    init_bookmark_routes(api, current_user)
+    init_comment_routes(api, current_user)
+    init_follower_routes(api, current_user)
+    init_following_routes(api, current_user)
+    init_post_routes(api, current_user)
+    init_post_like_routes(api, current_user)
+    init_profile_routes(api, current_user)
+    init_story_routes(api, current_user)
+    init_suggestion_routes(api, current_user)
     init_authentication_routes(api.app)
-    init_registration_routes(api.app)
     init_token_routes(api)
