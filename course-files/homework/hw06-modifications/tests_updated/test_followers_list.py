@@ -1,57 +1,61 @@
 import utils
-
-root_url = utils.root_url
+import requests
 import unittest
 
-
 class TestFollowerListEndpoint(unittest.TestCase):
-
     def setUp(self):
-        self.current_user = utils.get_user_12()
-        pass
+        """Set up test fixtures before each test method."""
+        self.base_url = f"{utils.root_url}/api/followers"
+        self.current_user = utils.get_random_user()
+        self.user_id = self.current_user.get("id")
 
-    def test_followers_get(self):
-        response = utils.issue_get_request(
-            "{0}/api/followers".format(root_url),
-            user_id=self.current_user.get("id"),
-        )
+    def test_followers_list_retrieval(self):
+        """Test getting list of followers returns correct data."""
+        # Act
+        response = utils.issue_get_request(self.base_url, user_id=self.user_id)
         follower_list = response.json()
-        self.assertEqual(response.status_code, 200)
 
-        authorized_user_ids = utils.get_follower_ids(self.current_user.get("id"))
-        self.assertTrue(len(authorized_user_ids) > 1)
-        self.assertEqual(len(authorized_user_ids), len(follower_list))
+        # Assert
+        self.assertEqual(response.status_code, 200)
+        
+        # Verify followers are correct
+        authorized_follower_ids = utils.get_follower_ids(self.user_id)
+        self.assertTrue(len(authorized_follower_ids) > 1)
+        self.assertEqual(len(authorized_follower_ids), len(follower_list))
+        
+        # Verify each follower is authorized
         for entry in follower_list:
-            # print(entry, authorized_user_ids)
-            self.assertTrue(entry.get("follower").get("id") in authorized_user_ids)
+            self.assertTrue(entry["follower"]["id"] in authorized_follower_ids)
 
-    def test_follower_get_check_data_structure(self):
-        response = utils.issue_get_request(
-            "{0}/api/followers".format(root_url),
-            user_id=self.current_user.get("id"),
-        )
-        self.assertEqual(response.status_code, 200)
+    def test_authentication_required(self):
+        """Test that unauthenticated requests return 401."""
+        # Act
+        response = requests.get(self.base_url)
+
+        # Assert
+        self.assertEqual(response.status_code, 401)
+
+    def test_follower_data_structure(self):
+        """Test that follower data contains all required fields with correct types."""
+        # Act
+        response = utils.issue_get_request(self.base_url, user_id=self.user_id)
         following_list = response.json()
-
         entry = following_list[0]
-        self.assertTrue("id" in entry and type(entry["id"]) == int)
-        self.assertTrue("follower" in entry and type(entry["follower"]) == dict)
-        follower = entry.get("follower")
-        self.assertTrue("id" in follower and type(follower["id"]) == int)
-        self.assertTrue(
-            "first_name" in follower
-            and type(follower["first_name"]) in [str, type(None)]
-        )
-        self.assertTrue(
-            "last_name" in follower and type(follower["last_name"]) in [str, type(None)]
-        )
-        self.assertTrue(
-            "image_url" in follower and type(follower["image_url"]) in [str, type(None)]
-        )
-        self.assertTrue(
-            "thumb_url" in follower and type(follower["thumb_url"]) in [str, type(None)]
-        )
 
+        # Assert
+        self.assertEqual(response.status_code, 200)
+
+        # Check entry structure
+        self.assertTrue(isinstance(entry["id"], int))
+        self.assertTrue(isinstance(entry["follower"], dict))
+
+        # Check follower structure
+        follower = entry["follower"]
+        self.assertTrue(isinstance(follower["id"], int))
+        self.assertTrue(isinstance(follower["first_name"], (str, type(None))))
+        self.assertTrue(isinstance(follower["last_name"], (str, type(None))))
+        self.assertTrue(isinstance(follower["image_url"], (str, type(None))))
+        self.assertTrue(isinstance(follower["thumb_url"], (str, type(None))))
 
 if __name__ == "__main__":
     unittest.main()

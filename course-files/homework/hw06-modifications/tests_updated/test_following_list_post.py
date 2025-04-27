@@ -1,133 +1,149 @@
-import requests
 import utils
-
-root_url = utils.root_url
+import requests
 import unittest
 
 
 class TestFollowingListEndpoint(unittest.TestCase):
 
     def setUp(self):
-        self.current_user = utils.get_user_12()
+        """Set up test fixtures before each test method."""
+        self.base_url = f"{utils.root_url}/api/following"
+        self.current_user = utils.get_random_user()
+        self.user_id = self.current_user.get("id")
 
-    def test_following_get_check_data_structure(self):
-        response = utils.issue_get_request(
-            "{0}/api/following".format(root_url),
-            user_id=self.current_user.get("id"),
-        )
-        self.assertEqual(response.status_code, 200)
+    def test_following_data_structure(self):
+        """Test that following data contains all required fields."""
+        # Act
+        response = utils.issue_get_request(self.base_url, user_id=self.user_id)
         following_list = response.json()
-
         entry = following_list[0]
-        self.assertTrue("id" in entry and type(entry["id"]) == int)
-        self.assertTrue("following" in entry and type(entry["following"]) == dict)
-        following = entry.get("following")
-        self.assertTrue("id" in following and type(following["id"]) == int)
-        self.assertTrue(
-            "first_name" in following
-            and type(following["first_name"]) in [str, type(None)]
-        )
-        self.assertTrue(
-            "last_name" in following
-            and type(following["last_name"]) in [str, type(None)]
-        )
-        self.assertTrue(
-            "image_url" in following
-            and type(following["image_url"]) in [str, type(None)]
-        )
-        self.assertTrue(
-            "thumb_url" in following
-            and type(following["thumb_url"]) in [str, type(None)]
-        )
 
-    def test_following_get_check_if_query_correct(self):
-        response = utils.issue_get_request(
-            "{0}/api/following".format(root_url),
-            user_id=self.current_user.get("id"),
-        )
-        following_list = response.json()
+        # Assert
         self.assertEqual(response.status_code, 200)
+        # Check entry structure
+        self.assertTrue(isinstance(entry["id"], int))
+        self.assertTrue(isinstance(entry["following"], dict))
+        # Check following structure
+        following = entry["following"]
+        self.assertTrue(isinstance(following["id"], int))
+        self.assertTrue(isinstance(following["first_name"], (str, type(None))))
+        self.assertTrue(isinstance(following["last_name"], (str, type(None))))
+        self.assertTrue(isinstance(following["image_url"], (str, type(None))))
+        self.assertTrue(isinstance(following["thumb_url"], (str, type(None))))
 
-        # check that these are actually the people you're following:
-        authorized_user_ids = utils.get_following_ids(self.current_user.get("id"))
-        self.assertTrue(len(authorized_user_ids) > 1)
-        self.assertEqual(len(authorized_user_ids), len(following_list))
+    def test_authentication_required(self):
+        """Test that unauthenticated requests return 401."""
+        # Act
+        response = requests.get(self.base_url)
+
+        # Assert
+        self.assertEqual(response.status_code, 401)
+
+    def test_following_list_retrieval(self):
+        """Test getting list of following returns correct data."""
+        # Act
+        response = utils.issue_get_request(self.base_url, user_id=self.user_id)
+        following_list = response.json()
+
+        # Assert
+        self.assertEqual(response.status_code, 200)
+        authorized_ids = utils.get_following_ids(self.user_id)
+        self.assertTrue(len(authorized_ids) > 1)
+        self.assertEqual(len(authorized_ids), len(following_list))
         for entry in following_list:
-            # print(entry, authorized_user_ids)
-            self.assertTrue(entry.get("following").get("id") in authorized_user_ids)
+            self.assertTrue(entry["following"]["id"] in authorized_ids)
 
-    def test_following_post_valid_request_201(self):
-        user = utils.get_unfollowed_user(self.current_user.get("id"))
-        body = {"user_id": user.get("id")}
+    def test_successful_follow_creation(self):
+        """Test following a new user returns 201 and correct data."""
+        # Arrange
+        user_to_follow = utils.get_unfollowed_user(self.user_id)
+        body = {"user_id": user_to_follow["id"]}
+
+        # Act
         response = utils.issue_post_request(
-            root_url + "/api/following",
+            self.base_url,
             json=body,
-            user_id=self.current_user.get("id"),
+            user_id=self.user_id
         )
-        # print(response.text)
+
+        # Assert
         self.assertEqual(response.status_code, 201)
-        new_person_to_follow = response.json()
-        following = new_person_to_follow.get("following")
+        new_following = response.json()
+        following = new_following["following"]
+        
+        # Verify response data
+        self.assertEqual(user_to_follow["id"], following["id"])
+        self.assertEqual(user_to_follow["first_name"], following["first_name"])
+        self.assertEqual(user_to_follow["last_name"], following["last_name"])
+        self.assertEqual(user_to_follow["username"], following["username"])
+        self.assertEqual(user_to_follow["email"], following["email"])
+        self.assertEqual(user_to_follow["image_url"], following["image_url"])
+        self.assertEqual(user_to_follow["thumb_url"], following["thumb_url"])
 
-        self.assertEqual(user.get("id"), following.get("id"))
-        self.assertEqual(user.get("first_name"), following.get("first_name"))
-        self.assertEqual(user.get("last_name"), following.get("last_name"))
-        self.assertEqual(user.get("username"), following.get("username"))
-        self.assertEqual(user.get("email"), following.get("email"))
-        self.assertEqual(user.get("image_url"), following.get("image_url"))
-        self.assertEqual(user.get("thumb_url"), following.get("thumb_url"))
+        # Verify database state
+        db_record = utils.get_following_by_id(new_following["id"])
+        self.assertEqual(db_record["id"], new_following["id"])
 
-        # check that the record is in the database:get_following_record_by_id
-        db_rec = utils.get_following_by_id(new_person_to_follow.get("id"))
-        self.assertEqual(db_rec.get("id"), new_person_to_follow.get("id"))
+        # Cleanup
+        utils.delete_following_by_id(new_following["id"])
+        self.assertEqual(utils.get_following_by_id(new_following["id"]), [])
 
-        # now delete following record from DB:
-        utils.delete_following_by_id(new_person_to_follow.get("id"))
+    def test_duplicate_follow_prevented(self):
+        """Test following an already-followed user returns 400."""
+        # Arrange
+        already_following = utils.get_following_by_user(self.user_id)
+        body = {"user_id": already_following["following_id"]}
 
-        # and check that it's gone:
-        db_rec = utils.get_following_by_id(new_person_to_follow.get("id"))
-        self.assertEqual(db_rec, [])
-
-    def test_following_post_no_duplicates_400(self):
-        already_following = utils.get_following_by_user(self.current_user.get("id"))
-        body = {"user_id": already_following.get("following_id")}
+        # Act
         response = utils.issue_post_request(
-            root_url + "/api/following",
+            self.base_url,
             json=body,
-            user_id=self.current_user.get("id"),
+            user_id=self.user_id
         )
-        # print(response.text)
+
+        # Assert
         self.assertEqual(response.status_code, 400)
 
-    def test_following_post_invalid_user_id_format_400(self):
-        body = {"user_id": "dasdasdasd"}
+    def test_invalid_user_id_format_handled(self):
+        """Test following with non-numeric user ID returns 400."""
+        # Arrange
+        body = {"user_id": "invalid_id"}
+
+        # Act
         response = utils.issue_post_request(
-            root_url + "/api/following",
+            self.base_url,
             json=body,
-            user_id=self.current_user.get("id"),
+            user_id=self.user_id
         )
-        # print(response.text)
+
+        # Assert
         self.assertEqual(response.status_code, 400)
 
-    def test_following_post_invalid_user_id_404(self):
-        body = {
-            "user_id": 999999,
-        }
+    def test_nonexistent_user_id_handled(self):
+        """Test following non-existent user returns 404."""
+        # Arrange
+        body = {"user_id": 999999}
+
+        # Act
         response = utils.issue_post_request(
-            root_url + "/api/following",
+            self.base_url,
             json=body,
-            user_id=self.current_user.get("id"),
+            user_id=self.user_id
         )
-        # print(response.text)
+
+        # Assert
         self.assertEqual(response.status_code, 404)
 
-    def test_following_post_missing_user_id_400(self):
+    def test_missing_user_id_handled(self):
+        """Test following without user_id returns 400."""
+        # Act
         response = utils.issue_post_request(
-            root_url + "/api/following",
+            self.base_url,
             json={},
-            user_id=self.current_user.get("id"),
+            user_id=self.user_id
         )
-        # print(response.text)
+
+        # Assert
         self.assertEqual(response.status_code, 400)
 
 

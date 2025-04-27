@@ -1,43 +1,68 @@
 import utils
-
-root_url = utils.root_url
+import requests
 import unittest
 
-
 class TestBookmarkDetailEndpoint(unittest.TestCase):
-
     def setUp(self):
-        self.current_user = utils.get_user_12()
+        """Set up test fixtures before each test method."""
+        self.base_url = f"{utils.root_url}/api/bookmarks"
+        self.current_user = utils.get_random_user()
+        self.user_id = self.current_user.get("id")
 
-    def test_bookmark_delete_valid_200(self):
-        bookmark_to_delete = utils.get_bookmark_by_user(self.current_user.get("id"))
-        bookmark_id = bookmark_to_delete.get("id")
-        url = "{0}/api/bookmarks/{1}".format(root_url, bookmark_id)
+    def test_successful_bookmark_deletion(self):
+        """Test deleting an existing bookmark returns 200."""
+        # Arrange
+        bookmark = utils.get_bookmark_by_user(self.user_id)
+        url = f"{self.base_url}/{bookmark['id']}"
 
-        response = utils.issue_delete_request(url, user_id=self.current_user.get("id"))
-        # print(response.text)
+        # Act
+        response = utils.issue_delete_request(url, user_id=self.user_id)
+
+        # Assert
         self.assertEqual(response.status_code, 200)
 
-        # restore the post in the database:
-        utils.restore_bookmark(bookmark_to_delete)
+        # Cleanup
+        utils.restore_bookmark(bookmark)
 
-    def test_bookmark_delete_invalid_id_format_404(self):
-        url = "{0}/api/bookmarks/sdfsdfdsf".format(root_url)
-        response = utils.issue_delete_request(url, user_id=self.current_user.get("id"))
-        self.assertEqual(response.status_code, 404)
-
-    def test_bookmark_delete_invalid_id_404(self):
-        url = "{0}/api/bookmarks/99999".format(root_url)
-        response = utils.issue_delete_request(url, user_id=self.current_user.get("id"))
-        self.assertEqual(response.status_code, 404)
-
-    def test_bookmark_delete_unauthorized_id_404(self):
-        unauthorized_bookmark = utils.get_bookmark_that_user_cannot_delete(
-            self.current_user.get("id")
+    def test_invalid_format_id_handled(self):
+        """Test that non-numeric bookmark IDs return 404."""
+        response = utils.issue_delete_request(
+            f"{self.base_url}/invalid_id", 
+            user_id=self.user_id
         )
-        url = "{0}/api/bookmarks/{1}".format(root_url, unauthorized_bookmark.get("id"))
-        response = utils.issue_delete_request(url, user_id=self.current_user.get("id"))
         self.assertEqual(response.status_code, 404)
+
+    def test_nonexistent_id_handled(self):
+        """Test that non-existent bookmark IDs return 404."""
+        response = utils.issue_delete_request(
+            f"{self.base_url}/99999", 
+            user_id=self.user_id
+        )
+        self.assertEqual(response.status_code, 404)
+
+    def test_unauthorized_deletion_prevented(self):
+        """Test that deleting another user's bookmark returns 404."""
+        # Arrange
+        unauthorized_bookmark = utils.get_bookmark_that_user_cannot_delete(self.user_id)
+        url = f"{self.base_url}/{unauthorized_bookmark['id']}"
+
+        # Act
+        response = utils.issue_delete_request(url, user_id=self.user_id)
+
+        # Assert
+        self.assertEqual(response.status_code, 404)
+
+    def test_authentication_required(self):
+        """Test that unauthenticated requests return 401."""
+        # Arrange
+        bookmark = utils.get_bookmark_by_user(self.user_id)
+        url = f"{self.base_url}/{bookmark['id']}"
+
+        # Act
+        response = requests.delete(url)
+
+        # Assert
+        self.assertEqual(response.status_code, 401)
 
 
 if __name__ == "__main__":

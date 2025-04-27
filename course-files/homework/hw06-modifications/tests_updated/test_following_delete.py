@@ -1,53 +1,87 @@
-import requests
 import utils
-
-root_url = utils.root_url
+import requests
 import unittest
 
-
 class TestFollowingDetailEndpoint(unittest.TestCase):
-
     def setUp(self):
-        self.current_user = utils.get_user_12()
+        """Set up test fixtures before each test method."""
+        self.base_url = f"{utils.root_url}/api/following"
+        self.current_user = utils.get_random_user()
+        self.user_id = self.current_user.get("id")
 
-    def test_following_delete_valid_200(self):
-        following_to_delete = utils.get_following_by_user(self.current_user.get("id"))
-        following_id = following_to_delete.get("id")
-        url = "{0}/api/following/{1}".format(root_url, following_id)
+    def test_successful_unfollow(self):
+        """Test unfollowing a user returns 200 and removes the relationship."""
+        # Arrange
+        following = utils.get_following_by_user(self.user_id)
+        url = f"{self.base_url}/{following['id']}"
 
-        response = utils.issue_delete_request(url, user_id=self.current_user.get("id"))
-        # print(response.text)
+        # Act
+        response = utils.issue_delete_request(url, user_id=self.user_id)
+
+        # Assert
         self.assertEqual(response.status_code, 200)
-
-        # check that it's really deleted:
-        following_db = utils.get_following_by_id(following_id)
+        
+        # Verify relationship is removed
+        following_db = utils.get_following_by_id(following['id'])
         self.assertEqual(following_db, [])
 
-        # restore the post in the database:
-        utils.restore_following(following_to_delete)
+        # Cleanup
+        utils.restore_following(following)
 
-    def test_following_delete_invalid_id_format_404(self):
-        url = "{0}/api/following/sdfsdfdsf".format(root_url)
-        response = utils.issue_delete_request(url, user_id=self.current_user.get("id"))
+    def test_authentication_required(self):
+        """Test that unauthenticated unfollow requests return 401."""
+        # Arrange
+        following = utils.get_following_by_user(self.user_id)
+        url = f"{self.base_url}/{following['id']}"
+
+        # Act
+        response = requests.delete(url)
+
+        # Assert
+        self.assertEqual(response.status_code, 401)
+
+        # Verify relationship still exists (wasn't deleted)
+        following_db = utils.get_following_by_id(following['id'])
+        self.assertNotEqual(following_db, [])
+        self.assertEqual(following_db['id'], following['id'])
+
+    def test_invalid_format_id_handled(self):
+        """Test that non-numeric following IDs return 404."""
+        # Arrange
+        url = f"{self.base_url}/invalid_id"
+
+        # Act
+        response = utils.issue_delete_request(url, user_id=self.user_id)
+
+        # Assert
         self.assertEqual(response.status_code, 404)
 
-    def test_following_delete_invalid_id_404(self):
-        url = "{0}/api/following/99999".format(root_url)
-        response = utils.issue_delete_request(url, user_id=self.current_user.get("id"))
+    def test_nonexistent_id_handled(self):
+        """Test that non-existent following IDs return 404."""
+        # Arrange
+        url = f"{self.base_url}/99999"
+
+        # Act
+        response = utils.issue_delete_request(url, user_id=self.user_id)
+
+        # Assert
         self.assertEqual(response.status_code, 404)
 
-    def test_following_delete_unauthorized_id_404(self):
-        unauthorized_following = utils.get_following_that_user_cannot_delete(
-            self.current_user.get("id")
-        )
-        following_id = unauthorized_following.get("id")
-        url = "{0}/api/following/{1}".format(root_url, following_id)
-        response = utils.issue_delete_request(url, user_id=self.current_user.get("id"))
+    def test_unauthorized_unfollow_prevented(self):
+        """Test that unfollowing another user's relationship returns 404."""
+        # Arrange
+        unauthorized_following = utils.get_following_that_user_cannot_delete(self.user_id)
+        url = f"{self.base_url}/{unauthorized_following['id']}"
+
+        # Act
+        response = utils.issue_delete_request(url, user_id=self.user_id)
+
+        # Assert
         self.assertEqual(response.status_code, 404)
-
-        still_there = utils.get_following_by_id(following_id)
-        self.assertEqual(following_id, still_there.get("id"))
-
+        
+        # Verify relationship still exists
+        still_there = utils.get_following_by_id(unauthorized_following['id'])
+        self.assertEqual(unauthorized_following['id'], still_there['id'])
 
 if __name__ == "__main__":
     unittest.main()
