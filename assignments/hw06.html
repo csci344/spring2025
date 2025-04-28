@@ -56,6 +56,7 @@
         <main>
             <aside>
                 <ol class="side-menu">
+  <li><a href="#video-walkthroughs-for-homework-6">Video Walkthroughs for Homework 6</a></li>
   <li><a href="#1-introduction">1. Introduction</a></li>
   <li><a href="#2-background--relevant-concepts">2. Background &amp; Relevant Concepts</a>
     <ol>
@@ -118,6 +119,12 @@
     
     
 </p>
+
+<blockquote class="info">
+  <h2 id="video-walkthroughs-for-homework-6">Video Walkthroughs for Homework 6</h2>
+  <p>I have created some video walkthroughs to help you with Homework 6, which have been <a href="https://drive.google.com/drive/folders/1zYw44x-49ihwX5YT9jLzOFteUIquBSS0?usp=sharing" target="_blank">posted
+    to Google Drive</a>.</p>
+</blockquote>
 
 <h2 id="1-introduction">1. Introduction</h2>
 <p>In this homework assignment, you are going to lock down your system so that <strong>only logged in users</strong> can interact with it by using JSON Web Tokens (JWTs). This requires the following changes:</p>
@@ -409,11 +416,13 @@
 <p>(4) Add the JWT user lookup convenience function (<a href="https://flask-jwt-extended.readthedocs.io/en/stable/automatic_user_loading/" target="_blank">https://flask-jwt-extended.readthedocs.io/en/stable/automatic_user_loading/</a>)</p>
 
 <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Include JWT starter code for querying the DB for user info:
+# Include JWT starter code for querying the DB for user info:
 </span><span class="o">@</span><span class="n">jwt</span><span class="p">.</span><span class="n">user_lookup_loader</span>
 <span class="k">def</span> <span class="nf">user_lookup_callback</span><span class="p">(</span><span class="n">_jwt_header</span><span class="p">,</span> <span class="n">jwt_data</span><span class="p">):</span>
     <span class="c1"># print('JWT data:', jwt_data)
 </span>    <span class="n">user_id</span> <span class="o">=</span> <span class="n">jwt_data</span><span class="p">[</span><span class="s">"sub"</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">User</span><span class="p">.</span><span class="n">query</span><span class="p">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">user_id</span><span class="p">).</span><span class="n">one_or_none</span><span class="p">()</span>
+    <span class="n">user_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span> <span class="c1"># cast to an integer
+</span>    <span class="k">return</span> <span class="n">User</span><span class="p">.</span><span class="n">query</span><span class="p">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">user_id</span><span class="p">).</span><span class="n">one_or_none</span><span class="p">()</span>
 </code></pre></div></div>
 
 <h3 id="42-secure-the-rest-api-20-points">4.2. Secure the REST API (20 Points)</h3>
@@ -511,10 +520,11 @@
 <h3 id="52-modify-apppy">5.2. Modify app.py</h3>
 <p>When you’re done, you will need to make a few changes to <code class="highlighter-rouge">app.py</code>.</p>
 
-<p>First, import a new module at the top:</p>
+<p>First, import two new modules at the top:</p>
 
 <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">send_from_directory</span>
-</code></pre></div></div>
+<span class="kn">import</span> <span class="nn">decorators</span> <span class="c1"># utility that Sarah made
+</span></code></pre></div></div>
 
 <p>Next, replace the routes that are defined below this line of code…</p>
 
