@@ -535,7 +535,7 @@
 <p>…with these routes…</p>
 
 <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Route for serving static react files
-</span><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">"/static/react-client/&lt;path:filename&gt;"</span><span class="p">)</span>
+</span><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">"/&lt;path:filename&gt;"</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">custom_static</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">send_from_directory</span><span class="p">(</span><span class="n">app</span><span class="p">.</span><span class="n">root_path</span> <span class="o">+</span> <span class="s">"/static/react-client/dist"</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
