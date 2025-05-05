@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/spring2025/assets/images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Quiz 1 Makeup (HTML + CSS)</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+">
+<link rel="stylesheet" href="/spring2025/assets/main.css">
+
+<!-- <script defer src="/spring2025/assets/js/fish-pond.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163192686-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163192686-1');
+</script>
+    </head>
+    <body class="two-column">
+        <!-- banner -->
+<header>
+    <section>
+        <h1 class="desktop"><a href="/spring2025/">CSCI 344: Spring 2025</a></h1>
+        <h2 class="desktop">Advanced Web Technology</h2>
+        <a class="mobile" href="#" title="Toggle Menu">
+            <i class="menu-toggle fas fa-bars"></i>
+        </a>
+        <h1 class="mobile">CSCI 344: Spring 2025</h1>
+    </section>
+    <img src="https://communication.unca.edu/wp-content/themes/tin/assets/logo.svg" alt="UNCA Logo" />
+    <!-- <p class="kudos">
+        Fish by <a href="https://github.com/akeatk/fish-pond" target="_blank">@akeatk</a>
+    </p> -->
+    <!-- <canvas></canvas> -->
+</header>
+
+        <nav>
+    <ul>
+        <li ><a href="/spring2025/syllabus/">Syllabus</a>
+        </li>
+        <li ><a
+                href="/spring2025/">Schedule</a></li>
+        <li ><a
+                href="/spring2025/assignments/">Assignments</a></li>
+        <li ><a href="/spring2025/resources/">Web
+                Reference</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1LqUWReoyqDSOHq3PyGYZvbgdll0_SHl6?usp=sharing"
+                target="_blank">Lecture Recordings</a></li>
+    </ul>
+</nav>
+        <main>
+            <aside>
+                <ol class="side-menu">
+  <li><a href="#should-i-take-this-part-of-the-exam">Should I take this part of the exam?</a>
+    <ol>
+      <li><a href="#desktop">Desktop</a></li>
+      <li><a href="#">Tablet</a></li>
+      <li><a href="#">Mobile</a></li>
+    </ol>
+  </li>
+  <li><a href="#part-1-setup">Part 1: Setup</a></li>
+  <li><a href="#part-2-html-tasks-40-points">Part 2: HTML Tasks (40 Points)</a>
+    <ol>
+      <li><a href="#21-metadata-2-points">2.1. Metadata (2 Points)</a></li>
+      <li><a href="#22-header-section-12-points">2.2. Header Section (12 Points)</a></li>
+      <li><a href="#23-main-section-6-points">2.3. Main Section (6 Points)</a></li>
+      <li><a href="#24-photo-container-16-points">2.4. Photo Container (16 Points)</a></li>
+      <li><a href="#25-footer-4-points">2.5. Footer (4 Points)</a></li>
+    </ol>
+  </li>
+  <li><a href="#part-3-css-tasks-56-points">Part 3: CSS Tasks (56 Points)</a>
+    <ol>
+      <li><a href="#31-header--nav-bar-16-points">3.1. Header &amp; Nav Bar (16 Points)</a></li>
+      <li><a href="#32-custom-font-8-points">3.2. Custom Font (8 Points)</a></li>
+      <li><a href="#33-main-2-points">3.3. Main (2 Points)</a></li>
+      <li><a href="#34-gallery-layout-10-points">3.4. Gallery Layout (10 Points)</a></li>
+      <li><a href="#35-card-styling-10-points">3.5. Card Styling (10 Points)</a></li>
+      <li><a href="#36-footer-2-points">3.6. Footer (2 Points)</a></li>
+      <li><a href="#37-responsive-design-with-media-queries--8-points">3.7 Responsive Design with Media Queries  (8 Points)</a></li>
+    </ol>
+  </li>
+  <li><a href="#part-4-accessibility-tasks-4-points">Part 4: Accessibility Tasks (4 Points)</a></li>
+  <li><a href="#what-to-submit">What to Submit</a></li>
+</ol>
+
+            </aside>
+            <article>
+                
+
+    
+        <h1>Quiz 1 Makeup (HTML + CSS)</h1>
+    
+ 
+                <style> 
+    img.x-small {
+        width: 300px;
+        max-width: 300px;
+    } 
+    img.small {
+        width: 444px;
+        max-width: 500px;
+    }
+
+    table.layout {
+        width: 820px !important; 
+    }
+    table.layout,
+    table.layout tr,
+    table.layout th
+    table.layout td  {
+        border-width: 0 !important;
+    }
+</style>
+
+<blockquote class="blockquote-no-margin">
+  <h2 id="should-i-take-this-part-of-the-exam">Should I take this part of the exam?</h2>
+  <ul>
+    <li>If you are happy with your Quiz 1 score (check Moodle to see), you <strong>DO NOT</strong> need to take this part of the exam.</li>
+    <li>If you do want to replace your Quiz 1 score, download the starter files and follow the instructions below.</li>
+  </ul>
+</blockquote>
+
+<p>You are going to build the webpage pictured below:</p>
+
+<h3 id="desktop">Desktop</h3>
+<p><img class="medium" src="/spring2025/assets/images/quizzes/quiz-makeups/ss-desktop.png" /></p>
+
+<table class="layout">
+<tr>
+    <td>
+        <h3>Tablet</h3>
+        <img class="small" src="/spring2025/assets/images/quizzes/quiz-makeups/ss-tablet.png" />
+    </td>
+    <td>
+        <h3>Mobile</h3>
+        <img class="x-small" src="/spring2025/assets/images/quizzes/quiz-makeups/ss-mobile.png" />
+    </td>
+</tr>
+</table>
+
+<h2 id="part-1-setup">Part 1: Setup</h2>
+<p>Please download the starter files below (if you haven’t already):</p>
+
+<p><a href="/spring2025/course-files/quizzes/quiz01_makeup.zip" class="nu-button">Download Starter Files <i class="fas fa-download"></i></a></p>
+
+<p>Then, inside of the <code class="highlighter-rouge">quiz01_makeup</code> folder, create a brand new HTML file called <code class="highlighter-rouge">index.html</code> that is in <strong>the root</strong> of the <code class="highlighter-rouge">quiz01_makeup</code> folder. If you did it correctly, your file structure should look like this:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>quiz01_makeup
+├── images
+│   ├── img1.jpg
+│   ├── img2.jpg
+│   ├── img3.jpg
+│   ├── img4.jpg
+│   ├── img5.jpg
+│   ├── img6.jpg
+│   ├── img7.jpg
+│   ├── img8.jpg
+│   └── img9.jpg
+├── index.html      &lt;<span class="nt">--</span> Your new HTML file
+└── pages
+    ├── about.html
+    └── contact.html
+</code></pre></div></div>
+
+<p>Edit <code class="highlighter-rouge">index.html</code> file by adding an HTML “skeleton” with the following tags:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h2 id="part-2-html-tasks-40-points">Part 2: HTML Tasks (40 Points)</h2>
+<p>Edit the <code class="highlighter-rouge">index.html</code> pages as follows:</p>
+
+<h3 id="21-metadata-2-points">2.1. Metadata (2 Points)</h3>
+<ol>
+  <li>Add a <code class="highlighter-rouge">title</code> tag inside of the <code class="highlighter-rouge">head</code> tag, with the display text of “Quiz 1 Makeup”</li>
+</ol>
+
+<h3 id="22-header-section-12-points">2.2. Header Section (12 Points)</h3>
+<ol>
+  <li>Add a <code class="highlighter-rouge">header</code> tag inside the <code class="highlighter-rouge">body</code> tag (don’t get the head and the header tag confused).</li>
+  <li>Inside the <code class="highlighter-rouge">header</code> tag, create an <code class="highlighter-rouge">h1</code> tag that displays the text “Quiz 1 Makeup”</li>
+  <li>Also inside the <code class="highlighter-rouge">header</code> tag and below the <code class="highlighter-rouge">h1</code> tag, create a navigation section using the <code class="highlighter-rouge">nav</code> tag.</li>
+  <li>Inside of the <code class="highlighter-rouge">nav</code> tag, create three hyperlinks:
+    <ul class="compact">
+      <li>One that links to <code class="highlighter-rouge">contact.html</code> (in the pages folder) with the display text of “Contact”. Use a <strong>relative path</strong>.</li>
+      <li>One that links to <code class="highlighter-rouge">about.html</code> with the display text of “About Us”. Also use a <strong>relative path</strong>.</li>
+      <li>One that links to Instagram’s home page, the display text of “Instagram”. Use an <strong>absolute path</strong>.</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Note:</strong> you may <strong>NOT</strong> move the <code class="highlighter-rouge">contact.html</code> or <code class="highlighter-rouge">about.html</code> files outside of the <code class="highlighter-rouge">pages</code> folder.</p>
+
+<p><img class="medium" src="/spring2025/assets/images/quizzes/quiz-makeups/header.png" /></p>
+
+<h3 id="23-main-section-6-points">2.3. Main Section (6 Points)</h3>
+<ol>
+  <li>Below the <code class="highlighter-rouge">header</code> tag, create a <code class="highlighter-rouge">main</code> tag.</li>
+  <li>Inside the <code class="highlighter-rouge">main</code> tag, create two children:
+    <ul class="compact">
+      <li>An h2 tag with the text of “Photo Gallery”</li>
+      <li>A section that has a class of “photo-container”.</li>
+    </ul>
+  </li>
+</ol>
+
+<p><img class="medium" src="/spring2025/assets/images/quizzes/quiz-makeups/main.png" /></p>
+
+<h3 id="24-photo-container-16-points">2.4. Photo Container (16 Points)</h3>
+<p>Inside of the “photo-container” section you will make 9 div tags.</p>
+<ul>
+  <li>Each div tag should be assigned a class of <code class="highlighter-rouge">card</code>.</li>
+  <li>Each div tag will contain an <code class="highlighter-rouge">img</code> tag and a <code class="highlighter-rouge">p</code> tag (for the caption).
+    <ul class="compact">
+      <li>Each <code class="highlighter-rouge">img</code> tag will point to one of the images in the <code class="highlighter-rouge">images</code> folder.</li>
+      <li>Use a <strong>relative path</strong> for each image source.</li>
+      <li>Don’t forget to use the <code class="highlighter-rouge">alt</code> attribute to give each image a description (for people who use a screen reader).</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img class="medium" src="/spring2025/assets/images/quizzes/quiz-makeups/photo-container.png" /></p>
+
+<center>...</center>
+
+<h3 id="25-footer-4-points">2.5. Footer (4 Points)</h3>
+<p>Create a footer section below your <code class="highlighter-rouge">main</code> section using the <code class="highlighter-rouge">footer</code> tag. Within the footer, create a paragraph tag that says “Copyright Your Name, 2023.”</p>
+
+<p><img class="medium" src="/spring2025/assets/images/quizzes/quiz-makeups/footer.png" /></p>
+
+<h2 id="part-3-css-tasks-56-points">Part 3: CSS Tasks (56 Points)</h2>
+<p>Create a CSS file called <code class="highlighter-rouge">styles.css</code> that is a <strong><em>direct child</em></strong> of the <code class="highlighter-rouge">quiz01_makeup</code> folder. If you did it correctly, your file structure should look like this:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>quiz01_makeup
+├── images
+│   ├── img1.jpg
+│   ├── img2.jpg
+│   ├── img3.jpg
+│   ├── img4.jpg
+│   ├── img5.jpg
+│   ├── img6.jpg
+│   ├── img7.jpg
+│   ├── img8.jpg
+│   └── img9.jpg
+├── index.html
+├── pages
+│   ├── about.html
+│   └── contact.html
+└── styles.css          &lt;<span class="nt">--</span> Your new CSS file
+</code></pre></div></div>
+
+<p>Edit your <code class="highlighter-rouge">index.html</code> file by adding a link to your stylesheet. Then, complete the following tasks within <code class="highlighter-rouge">styles.css</code>:</p>
+
+<h3 id="31-header--nav-bar-16-points">3.1. Header &amp; Nav Bar (16 Points)</h3>
+<ol>
+  <li>Create some style rules for the <code class="highlighter-rouge">body</code> element:
+    <ul class="compact">
+      <li>Set the background color to a light gray (<code class="highlighter-rouge">#F0F4EF</code>)</li>
+      <li>Set the font family to <code class="highlighter-rouge">Arial, Helvetica, sans-serif</code></li>
+      <li>Set the margin to <code class="highlighter-rouge">0</code></li>
+    </ul>
+  </li>
+  <li>Create some style rules for the <code class="highlighter-rouge">header</code> element:
+    <ul class="compact">
+      <li>Set the background color to <code class="highlighter-rouge">#222222</code></li>
+      <li>Set the height to <code class="highlighter-rouge">10vh</code></li>
+      <li>Set the left and right padding to <code class="highlighter-rouge">10vw</code></li>
+    </ul>
+  </li>
+  <li>Create some style rules for the <code class="highlighter-rouge">h1</code> element (and any relevant child elements) to:
+    <ul class="compact">
+      <li>Set the font color to <code class="highlighter-rouge">white</code></li>
+      <li>Set the font size to <code class="highlighter-rouge">1.2em</code></li>
+    </ul>
+  </li>
+  <li>Create some style rules for <code class="highlighter-rouge">a</code> elements inside the <code class="highlighter-rouge">nav</code> element:
+    <ul class="compact">
+      <li>Set the link color to <code class="highlighter-rouge">white</code></li>
+      <li>Set the text decoration to <code class="highlighter-rouge">none</code></li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="32-custom-font-8-points">3.2. Custom Font (8 Points)</h3>
+<p>Use the “Tangerine” Google font to style the <code class="highlighter-rouge">h2</code> tag (see screenshot above).</p>
+
+<h3 id="33-main-2-points">3.3. Main (2 Points)</h3>
+<p>Set the left and right padding of the <code class="highlighter-rouge">main</code> tag to <code class="highlighter-rouge">10vw</code>.</p>
+
+<h3 id="34-gallery-layout-10-points">3.4. Gallery Layout (10 Points)</h3>
+<p>Create some style rules for the <code class="highlighter-rouge">photo-container</code> class that implement the following requirements:</p>
+<ol class="compact">
+  <li>Use CSS Grid</li>
+  <li>Define <strong>three</strong> evenly spaced columns</li>
+  <li>Create a column gap and row gap of <code class="highlighter-rouge">30px</code>.</li>
+</ol>
+
+<h3 id="35-card-styling-10-points">3.5. Card Styling (10 Points)</h3>
+<p>Create some style rules for the <code class="highlighter-rouge">card</code> class that implement the following requirements:</p>
+<ol class="compact">
+  <li>The background should be white</li>
+  <li>The border should be solid and light gray</li>
+  <li>The image contained inside the card should span the full width of its div container</li>
+  <li>The caption should not be too close to the sides of the div</li>
+</ol>
+
+<h3 id="36-footer-2-points">3.6. Footer (2 Points)</h3>
+<p>Create some style rules to set the footer’s background color to <code class="highlighter-rouge">#222222</code>, and the footer’s text color to white.</p>
+
+<h3 id="37-responsive-design-with-media-queries--8-points">3.7 Responsive Design with Media Queries  (8 Points)</h3>
+
+<ol class="compact">
+  <li>When the width of the screen is less than <code class="highlighter-rouge">1200px</code>, the <code class="highlighter-rouge">photo-container</code> section should display <strong>two</strong> cards per row.</li>
+  <li>When the width of the screen is less than <code class="highlighter-rouge">600px</code>, the <code class="highlighter-rouge">photo-container</code> section should display <strong>one</strong> card per row.</li>
+</ol>
+
+<h2 id="part-4-accessibility-tasks-4-points">Part 4: Accessibility Tasks (4 Points)</h2>
+<p>Run the WAVE extension and make sure there are no accessibility issues. Correct any issues that you find.</p>
+
+<h2 id="what-to-submit">What to Submit</h2>
+<p><strong>Please read carefully:</strong> Doublecheck your work to make sure you’ve completed all of the tasks. Then, update your homepage by adding a linking to the index.html page you just completed. After committing and syncing your changes to GitHub, paste a link to your <strong>homepage</strong> on GitHub pages into the Moodle.</p>
+
+<ul>
+  <li>If your GitHub is not working for whatever reason, just zip your <strong>COMPLETED</strong> <code class="highlighter-rouge">quiz01_makeup</code> folder and upload it to the Moodle.</li>
+</ul>
+
+            </article>  
+        </main>
+        <footer>
+            <p>    
+                Department of Computer Science, UNC Asheville
+            </p>
+        </footer>
+        
+            <script type="text/javascript" src="/spring2025/assets/js/main.js"></script>
+    
+    <!-- <script>
+        //little bit of a hack:
+        const scrollLeft = () => {
+            //console.log('scrollLeft');
+            document.documentElement.scrollLeft = 0;
+        };
+        setTimeout(scrollLeft, 100);
+    </script> -->
+        <script type="text/javascript" src="/spring2025/assets/js/expandable.js"></script>
+    </body>
+</html>
